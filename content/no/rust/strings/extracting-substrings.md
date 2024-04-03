@@ -6,8 +6,7 @@ description: "\xC5 trekke ut substrings i Rust betyr \xE5 lage nye strenger fra 
 lastmod: '2024-03-13T22:44:40.563097-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut substrings i Rust betyr \xE5 lage nye strenger fra et utvalg\
-  \ av en st\xF8rre streng. Vi gj\xF8r dette for \xE5 analysere, transformere eller\
-  \ validere data\u2026"
+  \ av en st\xF8rre streng."
 title: Uthenting av delstrenger
 weight: 6
 ---

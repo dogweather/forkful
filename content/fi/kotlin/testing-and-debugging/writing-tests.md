@@ -7,7 +7,8 @@ description: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rake
 lastmod: '2024-03-13T22:44:56.534260-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
-  \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"
+  \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen oikeellisuuden,\
+  \ varmistaen niiden toimivan odotetusti."
 title: Testien kirjoittaminen
 weight: 36
 ---

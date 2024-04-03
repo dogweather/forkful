@@ -8,7 +8,8 @@ description: "Tekstitiedostoon kirjoittaminen Pythonissa on perusteht\xE4v\xE4, 
 lastmod: '2024-03-13T22:44:56.161881-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Pythonissa on perusteht\xE4v\xE4, joka sis\xE4\
-  lt\xE4\xE4 tiedoston luomisen tai avaamisen ja sitten tekstin lis\xE4\xE4misen tai\u2026"
+  lt\xE4\xE4 tiedoston luomisen tai avaamisen ja sitten tekstin lis\xE4\xE4misen tai\
+  \ ylikirjoittamisen."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

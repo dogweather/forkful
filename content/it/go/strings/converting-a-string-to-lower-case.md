@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:42.893628-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale che\
   \ permette uniformit\xE0 e coerenza nel trattamento del testo, essenziale per compiti\
-  \ come\u2026"
+  \ come comparazioni non sensibili alle maiuscole o la normalizzazione del testo."
 title: Convertire una stringa in minuscolo
 weight: 4
 ---

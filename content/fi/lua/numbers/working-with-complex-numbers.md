@@ -5,7 +5,7 @@ description: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiul
 lastmod: '2024-03-13T22:44:56.691822-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
-  \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"
+  \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

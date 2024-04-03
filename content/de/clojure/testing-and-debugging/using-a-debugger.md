@@ -6,8 +6,7 @@ description: "Clojure st\xFCtzt sich auf die Java Virtual Machine (JVM), daher e
 lastmod: '2024-03-13T22:44:53.424095-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure st\xFCtzt sich auf die Java Virtual Machine (JVM), daher erfolgt\
-  \ ein Gro\xDFteil des Debuggings mit Java-Tools. Ein solches Werkzeug ist `CIDER`,\
-  \ ein\u2026"
+  \ ein Gro\xDFteil des Debuggings mit Java-Tools."
 title: Einsatz eines Debuggers
 weight: 35
 ---

@@ -6,8 +6,10 @@ description: "Fish heeft geen ingebouwde debugger zoals sommige andere shells, m
   \ je kunt externe hulpmiddelen zoals `gdb` gebruiken voor het debuggen van\u2026"
 lastmod: '2024-03-13T22:44:51.251846-06:00'
 model: gpt-4-0125-preview
-summary: "Fish heeft geen ingebouwde debugger zoals sommige andere shells, maar je\
-  \ kunt externe hulpmiddelen zoals `gdb` gebruiken voor het debuggen van\u2026"
+summary: Fish heeft geen ingebouwde debugger zoals sommige andere shells, maar je
+  kunt externe hulpmiddelen zoals `gdb` gebruiken voor het debuggen van gecompileerde
+  programma's of `fish -d` voor het uitvoeren van fish met debug output op verschillende
+  niveaus.
 title: Een debugger gebruiken
 weight: 35
 ---

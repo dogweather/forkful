@@ -5,9 +5,7 @@ description: "Mit\xE4 & Miksi? Lua:ssa merkkien poistaminen kuvion mukaan on tap
   v\xE4t t\xE4t\xE4 esimerkiksi\u2026"
 lastmod: '2024-03-13T22:44:56.682296-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 & Miksi? Lua:ssa merkkien poistaminen kuvion mukaan on tapa siivota\
-  \ merkkijonoja \u2013 otetaan pois mit\xE4 ei tarvita. Koodarit k\xE4ytt\xE4v\xE4\
-  t t\xE4t\xE4 esimerkiksi\u2026"
+summary: "Mit\xE4 & Miksi."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

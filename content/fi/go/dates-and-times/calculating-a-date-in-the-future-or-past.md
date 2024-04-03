@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.065100-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuudessa tai menneisyydess\xE4\
   \ Go:ssa k\xE4sitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan arvojen manipulointia\
-  \ m\xE4\xE4ritt\xE4m\xE4\xE4n tietyn pisteen suhteessa\u2026"
+  \ m\xE4\xE4ritt\xE4m\xE4\xE4n tietyn pisteen suhteessa annettuun p\xE4iv\xE4m\xE4\
+  \xE4r\xE4\xE4n."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

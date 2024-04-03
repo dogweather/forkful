@@ -5,9 +5,7 @@ description: "Convertire una data in una stringa significa rappresentare la data
   \ \xE8 un\u2026"
 lastmod: '2024-03-13T22:44:43.229941-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una data in una stringa significa rappresentare la data come\
-  \ testo. Lo facciamo perch\xE9 \xE8 pi\xF9 facile da leggere per gli umani e perch\xE9\
-  \ \xE8 un\u2026"
+summary: Convertire una data in una stringa significa rappresentare la data come testo.
 title: Conversione di una data in una stringa
 weight: 28
 ---

@@ -8,8 +8,7 @@ description: "Les tableaux associatifs, ou objets en TypeScript, vous permettent
 lastmod: '2024-03-13T22:44:57.429076-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou objets en TypeScript, vous permettent d'utiliser\
-  \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs.\
-  \ Les\u2026"
+  \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

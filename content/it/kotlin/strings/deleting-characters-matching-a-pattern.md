@@ -6,7 +6,7 @@ description: "Rimuovere caratteri che corrispondono a un modello \xE8 il process
 lastmod: '2024-03-13T22:44:43.376489-06:00'
 model: gpt-4-1106-preview
 summary: "Rimuovere caratteri che corrispondono a un modello \xE8 il processo di eliminare\
-  \ sequenze specifiche di caratteri da una stringa. I programmatori lo fanno\u2026"
+  \ sequenze specifiche di caratteri da una stringa."
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

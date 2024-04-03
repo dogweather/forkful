@@ -7,7 +7,7 @@ description: "Een nieuw project starten betekent het opzetten van een verse code
 lastmod: '2024-03-13T22:44:51.202112-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van een verse codebasis\
-  \ voor je briljante idee\xEBn. Programmeurs doen dit om concepten om te zetten in\u2026"
+  \ voor je briljante idee\xEBn."
 title: Een nieuw project starten
 weight: 1
 ---

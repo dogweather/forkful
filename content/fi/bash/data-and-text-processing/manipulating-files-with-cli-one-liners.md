@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:56.734429-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
   \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\
-  \xE4\u2026"
+  \xE4 tiedostojen, kuten luomisen, lukemisen, p\xE4ivitt\xE4misen tai poistamisen\
+  \ suorittamiseen pelk\xE4st\xE4\xE4n terminaalista."
 title: "Tiedostojen k\xE4sittely komentorivin yksirivisill\xE4 komennoilla"
 weight: 31
 ---

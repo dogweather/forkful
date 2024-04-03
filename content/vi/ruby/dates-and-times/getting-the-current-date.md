@@ -9,9 +9,7 @@ description: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c 
 lastmod: '2024-03-13T22:44:37.355119-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c k\u1EF3\
-  \ \u0111\u01A1n gi\u1EA3n: l\u1EA5y ng\xE0y c\u1EE7a h\xF4m nay. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn c\u1EA7n n\xF3 cho nhi\u1EC1u t\xE1c v\u1EE5 kh\xE1c nhau t\u1EEB\
-  \ ghi log v\xE0 \u0111\xE1nh d\u1EA5u th\u1EDDi\u2026"
+  \ \u0111\u01A1n gi\u1EA3n: l\u1EA5y ng\xE0y c\u1EE7a h\xF4m nay."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

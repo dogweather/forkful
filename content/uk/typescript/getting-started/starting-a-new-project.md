@@ -4,8 +4,7 @@ description: Starting a new coding project is like planting a seed. You do it to
   an app, tool, or service. You start fresh, excited about potential.
 lastmod: '2024-03-13T22:44:48.868446-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new coding project is like planting a seed. You do it to grow
-  an app, tool, or service. You start fresh, excited about potential.
+summary: Starting a new coding project is like planting a seed.
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
   \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 weight: 1

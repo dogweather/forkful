@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.493307-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i Dart handler om \xE5 definere gjenbrukbare\
   \ kodeblokker som utf\xF8rer spesifikke oppgaver, typisk ved \xE5 motta inndata,\
-  \ behandle\u2026"
+  \ behandle data og muligens returnere utdata."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

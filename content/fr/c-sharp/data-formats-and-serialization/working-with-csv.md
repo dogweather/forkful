@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.812507-06:00'
 model: gpt-4-0125-preview
 summary: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es par\
   \ des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9sente\
-  \ des donn\xE9es\u2026"
+  \ des donn\xE9es tabulaires en texte brut, en utilisant des virgules pour s\xE9\
+  parer les valeurs individuelles."
 title: Travailler avec CSV
 weight: 37
 ---

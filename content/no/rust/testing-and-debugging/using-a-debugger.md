@@ -6,7 +6,7 @@ description: "Rust st\xF8tter forskjellige debuggere, men en vanlig en er `gdb` 
 lastmod: '2024-03-13T22:44:40.578387-06:00'
 model: gpt-4-0125-preview
 summary: "Rust st\xF8tter forskjellige debuggere, men en vanlig en er `gdb` for GNU/Linux\
-  \ eller `lldb` for macOS. Du kan ogs\xE5 bruke `rust-gdb` eller `rust-lldb`, som\u2026"
+  \ eller `lldb` for macOS."
 title: "\xC5 bruke en debugger"
 weight: 35
 ---

@@ -6,8 +6,9 @@ description: "Werken met XML in Dart omvat het parsen, bevragen en wijzigen van 
   \ een proces dat cruciaal is voor applicaties die interageren met\u2026"
 lastmod: '2024-03-13T22:44:50.531355-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML in Dart omvat het parsen, bevragen en wijzigen van XML-documenten,\
-  \ een proces dat cruciaal is voor applicaties die interageren met\u2026"
+summary: Werken met XML in Dart omvat het parsen, bevragen en wijzigen van XML-documenten,
+  een proces dat cruciaal is voor applicaties die interageren met webservices, configuratiebestanden
+  of legacy-systemen.
 title: Werken met XML
 weight: 40
 ---

@@ -5,9 +5,7 @@ description: "Kommandoradsargument \xE4r parametrar som skickas till ett program
   \ \xE4ndra koden."
 lastmod: '2024-03-13T22:44:38.266194-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandoradsargument \xE4r parametrar som skickas till ett program vid start.\
-  \ Programmerare anv\xE4nder dem f\xF6r att styra programbeteendet utan att \xE4\
-  ndra koden."
+summary: "Kommandoradsargument \xE4r parametrar som skickas till ett program vid start."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

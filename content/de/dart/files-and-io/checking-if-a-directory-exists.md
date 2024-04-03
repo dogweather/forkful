@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:53.596937-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Dart existiert, dreht sich darum,\
   \ die Anwesenheit eines Verzeichnisses auf einem angegebenen Pfad im Dateisystem\
-  \ zu\u2026"
+  \ zu verifizieren, bevor Operationen wie das Lesen oder Schreiben von Dateien durchgef\xFC\
+  hrt werden."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

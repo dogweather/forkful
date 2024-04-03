@@ -4,8 +4,8 @@ description: "Calculating a future or past date involves figuring out what the d
   \ was, or will be, after or before a specific time interval. Programmers often need\u2026"
 lastmod: '2024-03-13T22:45:00.101493-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating a future or past date involves figuring out what the date was,\
-  \ or will be, after or before a specific time interval. Programmers often need\u2026"
+summary: Calculating a future or past date involves figuring out what the date was,
+  or will be, after or before a specific time interval.
 title: Calculating a date in the future or past
 weight: 26
 ---

@@ -7,7 +7,8 @@ description: "Convertire una stringa in minuscolo in Google Apps Script, un ling
 lastmod: '2024-03-13T22:44:42.940293-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo in Google Apps Script, un linguaggio\
-  \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti\u2026"
+  \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti Google,\
+  \ \xE8 un'operazione fondamentale volta a standardizzare i dati testuali."
 title: Convertire una stringa in minuscolo
 weight: 4
 ---

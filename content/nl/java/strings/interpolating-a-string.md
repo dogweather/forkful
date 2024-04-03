@@ -6,8 +6,8 @@ description: "String interpolatie stelt je in staat om variabelen direct in stri
   \ in te voegen. Het maakt code schoner en gemakkelijker te lezen door onhandige\u2026"
 lastmod: '2024-03-13T22:44:50.666689-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolatie stelt je in staat om variabelen direct in strings in\
-  \ te voegen. Het maakt code schoner en gemakkelijker te lezen door onhandige\u2026"
+summary: String interpolatie stelt je in staat om variabelen direct in strings in
+  te voegen.
 title: Een string interpoleren
 weight: 8
 ---

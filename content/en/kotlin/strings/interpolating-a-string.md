@@ -4,8 +4,7 @@ description: String interpolation lets you embed variables directly in strings. 
   handy for creating dynamic, readable text without clunky concatenation.
 lastmod: '2024-03-13T22:45:00.036167-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you embed variables directly in strings. It's handy
-  for creating dynamic, readable text without clunky concatenation.
+summary: String interpolation lets you embed variables directly in strings.
 title: Interpolating a string
 weight: 8
 ---

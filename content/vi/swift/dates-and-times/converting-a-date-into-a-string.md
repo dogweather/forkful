@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.112914-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7\
   i trong Swift gi\xFAp b\u1EA1n \u0111\u1ECBnh d\u1EA1ng ng\xE0y th\xE1ng cho con\
-  \ ng\u01B0\u1EDDi. \u0110\xE2y l\xE0 ch\xECa kh\xF3a cho vi\u1EC7c hi\u1EC3n th\u1ECB\
-  \ giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng,\u2026"
+  \ ng\u01B0\u1EDDi."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

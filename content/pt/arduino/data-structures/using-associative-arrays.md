@@ -8,7 +8,7 @@ description: "No mundo do Arduino, arrays associativos permitem que voc\xEA asso
 lastmod: '2024-03-13T22:44:46.832415-06:00'
 model: gpt-4-0125-preview
 summary: "No mundo do Arduino, arrays associativos permitem que voc\xEA associe chaves\
-  \ a valores, algo como parear meias com seus pares. Eles s\xE3o uma escolha acertada\u2026"
+  \ a valores, algo como parear meias com seus pares."
 title: Usando arrays associativos
 weight: 15
 ---

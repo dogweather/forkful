@@ -7,7 +7,7 @@ description: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, m
 lastmod: '2024-03-13T22:44:40.342503-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, manipulere\
-  \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner.\u2026"
+  \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner."
 title: Arbeide med XML
 weight: 40
 ---

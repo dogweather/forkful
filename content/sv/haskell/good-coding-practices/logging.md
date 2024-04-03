@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:37.961301-06:00'
 model: gpt-4-1106-preview
 summary: "Loggning i programmering inneb\xE4r i grund och botten att l\xE4mna ett\
   \ sp\xE5r av br\xF6dsmulor i form av registrerade h\xE4ndelser eller meddelanden,\
-  \ vilka kan\u2026"
+  \ vilka kan anv\xE4ndas f\xF6r att sp\xE5ra vad din applikation g\xF6r vid varje\
+  \ given tidpunkt."
 title: Loggning
 weight: 17
 ---

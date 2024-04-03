@@ -6,8 +6,7 @@ description: "Convertir une date en cha\xEEne de caract\xE8res permet d'en affic
 lastmod: '2024-03-13T22:44:58.288263-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet d'en afficher la\
-  \ repr\xE9sentation lisible par un humain. Les programmeurs le font pour afficher\
-  \ des dates\u2026"
+  \ repr\xE9sentation lisible par un humain."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

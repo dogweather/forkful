@@ -5,9 +5,7 @@ description: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107
   ci robi\u0105 to, by zarz\u0105dza\u0107 czasem i\u2026"
 lastmod: '2024-03-13T22:44:35.767172-06:00'
 model: gpt-4-1106-preview
-summary: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3\
-  ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza. Programi\u015B\
-  ci robi\u0105 to, by zarz\u0105dza\u0107 czasem i\u2026"
+summary: (Po co i dlaczego.
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

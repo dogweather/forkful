@@ -7,7 +7,8 @@ description: "Analizar una fecha de una cadena implica extraer informaci\xF3n de
 lastmod: '2024-03-13T22:44:59.510938-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena implica extraer informaci\xF3n de fecha\
-  \ codificada dentro de cadenas y convertirla en un formato estructurado que los\u2026"
+  \ codificada dentro de cadenas y convertirla en un formato estructurado que los\
+  \ entornos de programaci\xF3n pueden reconocer y manipular."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

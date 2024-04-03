@@ -5,7 +5,8 @@ description: "Enlever les guillemets d'une cha\xEEne en PHP signifie retirer ces
 lastmod: '2024-03-13T22:44:57.865521-06:00'
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne en PHP signifie retirer ces caract\xE8\
-  res de guillemets doubles (`\"`) ou simples (`'`) qui peuvent perturber la logique\u2026"
+  res de guillemets doubles (`\"`) ou simples (`'`) qui peuvent perturber la logique\
+  \ de votre code ou vos requ\xEAtes de base de donn\xE9es."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

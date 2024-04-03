@@ -8,8 +8,7 @@ description: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowa
 lastmod: '2024-03-13T22:44:35.606784-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu danymi\
-  \ JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119sto robi\u0105\
-  \ to, aby p\u0142ynnie\u2026"
+  \ JSON bezpo\u015Brednio z linii polece\u0144."
 title: Praca z JSON
 weight: 38
 ---

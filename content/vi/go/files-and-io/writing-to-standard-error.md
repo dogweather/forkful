@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.004655-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Go bao g\u1ED3\
   m vi\u1EC7c ch\u1EC9 \u0111\u1EA1o c\xE1c th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\
-  n \u0111o\xE1n kh\xF4ng d\xE0nh cho d\xF2ng xu\u1EA5t ch\xEDnh. C\xE1c l\u1EADp\
-  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+  n \u0111o\xE1n kh\xF4ng d\xE0nh cho d\xF2ng xu\u1EA5t ch\xEDnh."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

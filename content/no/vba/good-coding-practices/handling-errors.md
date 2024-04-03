@@ -8,7 +8,7 @@ description: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer 
 lastmod: '2024-03-13T22:44:40.628706-06:00'
 model: gpt-4-0125-preview
 summary: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer til prosessen\
-  \ med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons- eller\u2026"
+  \ med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons- eller kommunikasjonsfeil."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.299776-06:00'
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r i ett n\xF6tskal som att h\xE5lla en dagbok f\xF6r din applikation\
   \ \u2013 den registrerar h\xE4ndelser, fel och andra signifikanta \xE5tg\xE4rder\
-  \ som sker medan\u2026"
+  \ som sker medan programvaran k\xF6rs."
 title: Loggning
 weight: 17
 ---

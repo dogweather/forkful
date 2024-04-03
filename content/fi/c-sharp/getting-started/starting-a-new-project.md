@@ -4,8 +4,8 @@ description: "Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohje
   \ kehitysvaiheen aloittamista. Ohjelmoijat tekev\xE4t sen, jotta voivat ratkaista\u2026"
 lastmod: '2024-03-13T22:44:56.573747-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston\
-  \ kehitysvaiheen aloittamista. Ohjelmoijat tekev\xE4t sen, jotta voivat ratkaista\u2026"
+summary: Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston
+  kehitysvaiheen aloittamista.
 title: Uuden projektin aloittaminen
 weight: 1
 ---

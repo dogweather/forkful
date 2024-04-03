@@ -6,8 +6,8 @@ description: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat 
   \ Rust-code direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
 lastmod: '2024-03-13T22:44:50.595770-06:00'
 model: gpt-4-0125-preview
-summary: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code\
-  \ direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
+summary: Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code
+  direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren of leren.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

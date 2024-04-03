@@ -5,9 +5,7 @@ description: "Konkatenacja to fancy s\u0142owo na \u0142\u0105czenie string\xF3w
   dza\u0107 tekstami, \u015Bcie\u017Ckami plik\xF3w czy tworzy\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.574594-06:00'
 model: gpt-4-1106-preview
-summary: "Konkatenacja to fancy s\u0142owo na \u0142\u0105czenie string\xF3w. Robimy\
-  \ to, \u017Ceby zbudowa\u0107 wi\u0119ksze ci\u0105gi znak\xF3w, zarz\u0105dza\u0107\
-  \ tekstami, \u015Bcie\u017Ckami plik\xF3w czy tworzy\u0107\u2026"
+summary: "Konkatenacja to fancy s\u0142owo na \u0142\u0105czenie string\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

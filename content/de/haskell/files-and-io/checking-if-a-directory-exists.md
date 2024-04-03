@@ -7,7 +7,7 @@ description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grund
 lastmod: '2024-03-13T22:44:53.945354-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Operation bei vielen Programmieraufgaben. Es erm\xF6glicht bedingte Aktionen basierend\u2026"
+  \ Operation bei vielen Programmieraufgaben."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

@@ -13,7 +13,7 @@ summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n 
   i kh\xF4ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\u1ED9t th\u01B0\
   \ m\u1EE5c \u0111\xE3 c\xF3 s\u1EB5n tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED th\u1EF1\
   c hi\u1EC7n m\u1ED9t s\u1ED1 h\xE0nh \u0111\u1ED9ng v\u1EDBi n\xF3, nh\u01B0 \u0111\
-  \u1ECDc c\xE1c\u2026"
+  \u1ECDc c\xE1c t\u1EC7p tin ho\u1EB7c l\u01B0u c\xE1c t\u1EC7p m\u1EDBi."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

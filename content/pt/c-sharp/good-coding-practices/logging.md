@@ -6,8 +6,7 @@ description: "Logging (registro de logs) \xE9 o processo de gravar os eventos da
 lastmod: '2024-03-13T22:44:46.590419-06:00'
 model: gpt-4-1106-preview
 summary: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
-  \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\
-  \ de logs\u2026"
+  \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o."
 title: Registro de Logs
 weight: 17
 ---

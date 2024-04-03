@@ -6,8 +6,7 @@ description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n esitt\xE4
 lastmod: '2024-03-13T22:44:56.862042-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n esitt\xE4mist\xE4\
-  \ verkkopalvelimelle. Ohjelmoijat tekev\xE4t t\xE4m\xE4n hankkiakseen tietoa tai\
-  \ toimittaakseen dataa."
+  \ verkkopalvelimelle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -5,7 +5,7 @@ description: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstav
 lastmod: '2024-03-13T22:44:40.782095-06:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstavene i\
-  \ strengen til deres sm\xE5bokstav motstykke. Dette gj\xF8res for konsistens i\u2026"
+  \ strengen til deres sm\xE5bokstav motstykke."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

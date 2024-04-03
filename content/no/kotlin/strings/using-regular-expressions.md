@@ -7,7 +7,8 @@ description: "Regul\xE6re uttrykk (regex) er et kraftig verkt\xF8y for tekstbeha
 lastmod: '2024-03-13T22:44:40.740102-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er et kraftig verkt\xF8y for tekstbehandling,\
-  \ som lar programmerere s\xF8ke, matche og manipulere strenger med avanserte\u2026"
+  \ som lar programmerere s\xF8ke, matche og manipulere strenger med avanserte m\xF8\
+  nsters\xF8kingsteknikker."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

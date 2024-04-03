@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.396996-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA) -ohjelmassa\
   \ tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\xE4 tekem\xE4\
-  ll\xE4\u2026"
+  ll\xE4 pyynt\xF6j\xE4 HTTP:n yli."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -7,7 +7,7 @@ description: "Refaktorisering i programmering inneb\xE4r omstrukturering av befi
 lastmod: '2024-03-13T22:44:37.401423-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
-  \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"
+  \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende."
 title: Refaktorisering
 weight: 19
 ---

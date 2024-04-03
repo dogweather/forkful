@@ -8,7 +8,8 @@ description: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest klucz
 lastmod: '2024-03-13T22:44:35.599618-06:00'
 model: gpt-4-0125-preview
 summary: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym mechanizmem\
-  \ kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu przed\u2026"
+  \ kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu przed wykonaniem\
+  \ operacji na plikach."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

@@ -5,9 +5,7 @@ description: "Comparar datas \xE9 verificar se s\xE3o iguais, qual \xE9 anterior
   \ de eventos."
 lastmod: '2024-03-13T22:44:46.974775-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar datas \xE9 verificar se s\xE3o iguais, qual \xE9 anterior ou posterior.\
-  \ Programadores fazem isso para agendamentos, valida\xE7\xF5es e cronogramas de\
-  \ eventos."
+summary: "Comparar datas \xE9 verificar se s\xE3o iguais, qual \xE9 anterior ou posterior."
 title: Comparando duas datas
 weight: 27
 ---

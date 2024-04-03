@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.543588-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra et format\
   \ som JavaScript Date-objektet forst\xE5r, til et tekstformat mennesker lett kan\
-  \ lese.\u2026"
+  \ lese."
 title: Konvertere en dato til en streng
 weight: 28
 ---

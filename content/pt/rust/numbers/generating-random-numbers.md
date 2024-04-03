@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:46.363662-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em Rust envolve o uso de bibliotecas para\
   \ produzir valores num\xE9ricos imprevis\xEDveis, o que \xE9 indispens\xE1vel para\
-  \ tarefas que v\xE3o\u2026"
+  \ tarefas que v\xE3o desde criptografia e simula\xE7\xF5es at\xE9 jogos e algoritmos\
+  \ randomizados."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

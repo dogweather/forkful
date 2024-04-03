@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.060431-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em C envolve a convers\xE3o de\
   \ representa\xE7\xF5es textuais de datas em um formato que programas podem manipular\
-  \ e\u2026"
+  \ e analisar mais efetivamente."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

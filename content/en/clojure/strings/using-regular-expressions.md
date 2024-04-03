@@ -4,8 +4,9 @@ description: "Regular expressions, a powerful tool for pattern matching and data
   \ are essential in text processing tasks such as validating input,\u2026"
 lastmod: '2024-03-13T22:44:59.736421-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions, a powerful tool for pattern matching and data manipulation,\
-  \ are essential in text processing tasks such as validating input,\u2026"
+summary: Regular expressions, a powerful tool for pattern matching and data manipulation,
+  are essential in text processing tasks such as validating input, searching, and
+  replacing text.
 title: Using regular expressions
 weight: 11
 ---

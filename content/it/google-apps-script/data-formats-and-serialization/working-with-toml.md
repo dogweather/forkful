@@ -8,7 +8,8 @@ description: "TOML, che sta per Tom's Obvious, Minimal Language (Linguaggio Mini
 lastmod: '2024-03-13T22:44:42.982419-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, che sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
-  \ di Tom), \xE8 un formato di file di configurazione facile da leggere grazie alla\u2026"
+  \ di Tom), \xE8 un formato di file di configurazione facile da leggere grazie alla\
+  \ sua chiara semantica."
 title: Lavorare con TOML
 weight: 39
 ---

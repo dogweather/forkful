@@ -6,8 +6,7 @@ description: "En programmation, supprimer des caract\xE8res selon un motif, c'es
 lastmod: '2024-03-13T22:44:57.265241-06:00'
 model: gpt-4-1106-preview
 summary: "En programmation, supprimer des caract\xE8res selon un motif, c'est chercher\
-  \ et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte. On fait\
-  \ \xE7a\u2026"
+  \ et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

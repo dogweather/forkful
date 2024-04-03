@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:05.261278-07:00
 description: ''
 lastmod: '2024-03-13T22:44:49.145153-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: .
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
 weight: 44

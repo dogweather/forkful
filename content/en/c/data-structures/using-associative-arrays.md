@@ -4,8 +4,8 @@ description: "Associative arrays, known in other languages as maps or dictionari
   \ are key-value pairs used for efficient data lookup and manipulation. Unlike\u2026"
 lastmod: '2024-03-13T22:45:00.505217-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, known in other languages as maps or dictionaries, are\
-  \ key-value pairs used for efficient data lookup and manipulation. Unlike\u2026"
+summary: Associative arrays, known in other languages as maps or dictionaries, are
+  key-value pairs used for efficient data lookup and manipulation.
 title: Using associative arrays
 weight: 15
 ---

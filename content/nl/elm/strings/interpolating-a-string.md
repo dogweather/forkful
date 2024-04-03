@@ -6,8 +6,8 @@ description: "Stringinterpolatie stelt je in staat om variabelen direct in een s
   \ in te bedden, zodat het meer leest als normale tekst. Programmeurs gebruiken het\u2026"
 lastmod: '2024-03-13T22:44:50.710616-06:00'
 model: gpt-4-0125-preview
-summary: "Stringinterpolatie stelt je in staat om variabelen direct in een string\
-  \ in te bedden, zodat het meer leest als normale tekst. Programmeurs gebruiken het\u2026"
+summary: Stringinterpolatie stelt je in staat om variabelen direct in een string in
+  te bedden, zodat het meer leest als normale tekst.
 title: Een string interpoleren
 weight: 8
 ---

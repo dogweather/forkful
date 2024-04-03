@@ -7,7 +7,8 @@ description: "Die Arbeit mit XML in Visual Basic f\xFCr Anwendungen (VBA) beinha
 lastmod: '2024-03-13T22:44:53.745579-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das\
-  \ Parsen, Erstellen und Modifizieren von XML-Dokumenten im Kontext von Microsoft\u2026"
+  \ Parsen, Erstellen und Modifizieren von XML-Dokumenten im Kontext von Microsoft\
+  \ Office-Anwendungen."
 title: Arbeiten mit XML
 weight: 40
 ---

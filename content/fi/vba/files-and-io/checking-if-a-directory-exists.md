@@ -7,7 +7,8 @@ description: "Hakemiston olemassaolon tarkistaminen Visual Basic for Application
 lastmod: '2024-03-13T22:44:56.416499-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications -ohjelmointikieless\xE4\
-  \ (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"
+  \ (VBA) liittyy kansion olemassaolon varmentamiseen tiedostoj\xE4rjestelm\xE4ss\xE4\
+  \ ennen toimintoja, kuten tiedostojen tallentamista tai uusien hakemistojen luomista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

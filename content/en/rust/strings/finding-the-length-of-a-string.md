@@ -4,8 +4,8 @@ description: "Finding the length of a string means counting the number of charac
   \ it contains. Programmers do this to validate, format, or process text data\u2026"
 lastmod: '2024-03-13T22:44:59.887724-06:00'
 model: gpt-4-1106-preview
-summary: "Finding the length of a string means counting the number of characters it\
-  \ contains. Programmers do this to validate, format, or process text data\u2026"
+summary: Finding the length of a string means counting the number of characters it
+  contains.
 title: Finding the length of a string
 weight: 7
 ---

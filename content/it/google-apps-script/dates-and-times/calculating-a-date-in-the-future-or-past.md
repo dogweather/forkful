@@ -7,9 +7,8 @@ description: "Calcolare una data nel futuro o nel passato consiste nel manipolar
   \ I\u2026"
 lastmod: '2024-03-13T22:44:42.970881-06:00'
 model: gpt-4-0125-preview
-summary: "Calcolare una data nel futuro o nel passato consiste nel manipolare gli\
-  \ oggetti data per trovare date oltre o prima della data attuale, rispettivamente.\
-  \ I\u2026"
+summary: Calcolare una data nel futuro o nel passato consiste nel manipolare gli oggetti
+  data per trovare date oltre o prima della data attuale, rispettivamente.
 title: Calcolare una data nel futuro o nel passato
 weight: 26
 ---

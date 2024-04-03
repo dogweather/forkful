@@ -8,8 +8,7 @@ description: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywani
 lastmod: '2024-03-13T22:44:34.873444-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu ci\u0105\
-  g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015Bci robi\u0105\
-  \ to, aby\u2026"
+  g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

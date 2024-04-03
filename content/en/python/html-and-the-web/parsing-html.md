@@ -4,8 +4,9 @@ description: "Parsing HTML involves analyzing a webpage's HTML code to extract s
   \ information or elements, a common task for web scraping, data mining, or\u2026"
 lastmod: '2024-03-13T22:44:59.706177-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML involves analyzing a webpage's HTML code to extract specific\
-  \ information or elements, a common task for web scraping, data mining, or\u2026"
+summary: Parsing HTML involves analyzing a webpage's HTML code to extract specific
+  information or elements, a common task for web scraping, data mining, or automating
+  interactions with websites.
 title: Parsing HTML
 weight: 43
 ---

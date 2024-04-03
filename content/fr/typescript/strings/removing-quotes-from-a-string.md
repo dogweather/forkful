@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.423900-06:00'
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8res\
   \ de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
-  raux de cha\xEEne\u2026"
+  raux de cha\xEEne dans le code."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.945597-06:00'
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3digo\
   \ inform\xE1tico existente\u2014cambiando la facturaci\xF3n\u2014sin alterar su\
-  \ comportamiento externo. Los\u2026"
+  \ comportamiento externo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

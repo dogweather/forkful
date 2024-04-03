@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.024001-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto no Fish Shell permite armazenar dados de\
   \ forma persistente, facilitando a recupera\xE7\xE3o ou manipula\xE7\xE3o de dados\
-  \ tanto pelo\u2026"
+  \ tanto pelo mesmo script Fish quanto por outros programas."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

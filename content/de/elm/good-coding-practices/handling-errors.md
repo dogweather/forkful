@@ -4,8 +4,8 @@ description: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und 
   \ Problemen umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"
 lastmod: '2024-03-13T22:44:53.812551-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen\
-  \ umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"
+summary: Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen
+  umgehen kann, wenn etwas schief geht.
 title: Fehlerbehandlung
 weight: 16
 ---

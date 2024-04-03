@@ -8,7 +8,7 @@ description: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r e
 lastmod: '2024-03-13T22:44:37.634360-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
-  sbart format f\xF6r dataserialisering. Programmerare anv\xE4nder det f\xF6r konfigurationsfiler,\u2026"
+  sbart format f\xF6r dataserialisering."
 title: Arbeta med YAML
 weight: 41
 ---

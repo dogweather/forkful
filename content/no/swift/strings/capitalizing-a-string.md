@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.125618-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
   \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
-  \ er med sm\xE5\u2026"
+  \ er med sm\xE5 bokstaver."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

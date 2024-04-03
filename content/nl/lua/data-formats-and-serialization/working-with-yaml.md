@@ -6,8 +6,8 @@ description: "YAML is een gegevensserialisatieformaat dat gemakkelijk door mense
   \ te lezen en te schrijven is. Programmeurs gebruiken het voor configuratiebestanden,\u2026"
 lastmod: '2024-03-13T22:44:50.957527-06:00'
 model: gpt-4-0125-preview
-summary: "YAML is een gegevensserialisatieformaat dat gemakkelijk door mensen te lezen\
-  \ en te schrijven is. Programmeurs gebruiken het voor configuratiebestanden,\u2026"
+summary: YAML is een gegevensserialisatieformaat dat gemakkelijk door mensen te lezen
+  en te schrijven is.
 title: Werken met YAML
 weight: 41
 ---

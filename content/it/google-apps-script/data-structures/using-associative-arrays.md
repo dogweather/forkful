@@ -6,8 +6,8 @@ description: "Gli array associativi, noti come oggetti in Google Apps Script (un
   \ variante di JavaScript), consentono ai programmatori di creare collezioni di coppie\u2026"
 lastmod: '2024-03-13T22:44:42.946852-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, noti come oggetti in Google Apps Script (una variante\
-  \ di JavaScript), consentono ai programmatori di creare collezioni di coppie\u2026"
+summary: Gli array associativi, noti come oggetti in Google Apps Script (una variante
+  di JavaScript), consentono ai programmatori di creare collezioni di coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

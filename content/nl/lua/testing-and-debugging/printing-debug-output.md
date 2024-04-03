@@ -7,8 +7,8 @@ description: "Debugoutput afdrukken is informatie op je scherm gooien om te zien
   \ op\u2026"
 lastmod: '2024-03-13T22:44:50.940006-06:00'
 model: gpt-4-0125-preview
-summary: "Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er\
-  \ aan de hand is met je code. Programmeurs doen dit om gremlins in de machine op\u2026"
+summary: Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er
+  aan de hand is met je code.
 title: Debug-output afdrukken
 weight: 33
 ---

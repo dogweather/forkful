@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.674793-06:00'
 model: gpt-4-1106-preview
 summary: "O tratamento de erros em PHP \xE9 sobre gerenciar e responder a condi\xE7\
   \xF5es que interrompem o fluxo normal de um programa, como arquivos ausentes ou\
-  \ entrada de\u2026"
+  \ entrada de dados incorreta."
 title: Tratamento de erros
 weight: 16
 ---

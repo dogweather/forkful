@@ -7,7 +7,7 @@ description: "Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjo
 lastmod: '2024-03-13T22:44:56.711141-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjoitetaan\
-  \ skriptej\xE4, jotka vuorovaikuttavat tiedostoj\xE4rjestelm\xE4n kanssa. Se varmistaa,\u2026"
+  \ skriptej\xE4, jotka vuorovaikuttavat tiedostoj\xE4rjestelm\xE4n kanssa."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

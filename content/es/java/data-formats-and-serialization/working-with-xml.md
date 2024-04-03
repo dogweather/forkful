@@ -5,9 +5,8 @@ description: "Trabajar con XML implica analizar, consultar y manipular documento
   n de\u2026"
 lastmod: '2024-03-13T22:44:58.961746-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con XML implica analizar, consultar y manipular documentos XML\
-  \ con Java. Los programadores lo hacen para el intercambio de datos, la gesti\xF3\
-  n de\u2026"
+summary: Trabajar con XML implica analizar, consultar y manipular documentos XML con
+  Java.
 title: Trabajando con XML
 weight: 40
 ---

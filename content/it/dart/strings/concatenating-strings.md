@@ -8,7 +8,7 @@ description: "La concatenazione di stringhe nella programmazione implica l'union
 lastmod: '2024-03-13T22:44:43.120519-06:00'
 model: gpt-4-0125-preview
 summary: "La concatenazione di stringhe nella programmazione implica l'unione di due\
-  \ o pi\xF9 stringhe in una sola. I programmatori fanno ci\xF2 per manipolare facilmente\u2026"
+  \ o pi\xF9 stringhe in una sola."
 title: Concatenazione di stringhe
 weight: 3
 ---

@@ -6,8 +6,7 @@ description: "L\xE4sa en textfil inneb\xE4r att tillg\xE5 och anv\xE4nda inneh\x
 lastmod: '2024-03-13T22:44:38.355577-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil inneb\xE4r att tillg\xE5 och anv\xE4nda inneh\xE5llet\
-  \ i en fil i textformat. Programmerare g\xF6r detta f\xF6r att hantera konfigurationer,\
-  \ skript, eller\u2026"
+  \ i en fil i textformat."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

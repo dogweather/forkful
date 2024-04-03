@@ -8,8 +8,7 @@ description: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobierani
 lastmod: '2024-03-13T22:44:34.872299-06:00'
 model: gpt-4-0125-preview
 summary: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobieraniu tre\u015B\
-  ci z pliku zapisanego na dysku w celu przetworzenia lub analizy. Programi\u015B\
-  ci cz\u0119sto\u2026"
+  ci z pliku zapisanego na dysku w celu przetworzenia lub analizy."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

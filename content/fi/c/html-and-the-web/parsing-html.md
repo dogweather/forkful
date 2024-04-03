@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.037534-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen C-kielell\xE4 k\xE4sitt\xE4\xE4 HTML-dokumenttien\
   \ analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein\
-  \ datan\u2026"
+  \ datan louhimisen tai verkon kaapimisen esivaiheena."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.755509-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
   \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\
-  \ datum till\u2026"
+  \ datum till str\xE4ngformat."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

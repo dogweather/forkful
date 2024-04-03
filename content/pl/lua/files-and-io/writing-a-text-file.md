@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.558464-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
   \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
-  \ wstawiania\u2026"
+  \ wstawiania tekstu."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

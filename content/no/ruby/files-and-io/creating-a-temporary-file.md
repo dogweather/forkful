@@ -6,8 +6,7 @@ description: "Midlertidige filer er filer som styres av systemet, og som slettes
 lastmod: '2024-03-13T22:44:41.352763-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er filer som styres av systemet, og som slettes automatisk\
-  \ n\xE5r de ikke lenger er n\xF8dvendige. Programmerere bruker dem for \xE5 h\xE5\
-  ndtere\u2026"
+  \ n\xE5r de ikke lenger er n\xF8dvendige."
 title: Opprette en midlertidig fil
 weight: 21
 ---

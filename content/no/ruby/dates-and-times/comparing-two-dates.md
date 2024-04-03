@@ -6,8 +6,7 @@ description: "Sammenligning av to datoer handler om \xE5 finne ut om en dato kom
 lastmod: '2024-03-13T22:44:41.345660-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer handler om \xE5 finne ut om en dato kommer f\xF8\
-  r, etter, eller er den samme som en annen dato. Programmerere gj\xF8r dette for\
-  \ \xE5\u2026"
+  r, etter, eller er den samme som en annen dato."
 title: Sammenlikning av to datoer
 weight: 27
 ---

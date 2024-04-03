@@ -12,8 +12,8 @@ summary: "\u05D4\u05E0\u05D4 \u05D8\u05E2\u05D9\u05DE\u05D4 \u05E7\u05D8\u05E0\u
   \ \u05E9\u05DC \u05E0\u05D9\u05EA\u05D5\u05D7 \u05D1\u05D0\u05D2\u05D9\u05DD \u05D1\
   -Kotlin \u05E2\u05DD IntelliJ IDEA - \u05E9\u05E8\u05DC\u05D5\u05E7 \u05D4\u05D5\
   \u05DC\u05DE\u05E1 \u05E9\u05DC \u05E1\u05D1\u05D9\u05D1\u05D5\u05EA \u05D4\u05E4\
-  \u05D9\u05EA\u05D5\u05D7: ```kotlin fun main() { val mysteryNumber = 42 var guess\
-  \ = 0 while\u2026"
+  \u05D9\u05EA\u05D5\u05D7:\n\n```kotlin\nfun main() {\n    val mysteryNumber = 42\n\
+  \    var guess = 0\n\n    while (guess ."
 title: "\u05E9\u05D9\u05DE\u05D5\u05E9 \u05D1\u05D3\u05D9\u05D1\u05D0\u05D2\u05E8"
 weight: 35
 ---

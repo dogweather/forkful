@@ -4,8 +4,8 @@ description: "Parsear HTML es interpretar y transformar el contenido de un docum
   \ HTML en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
 lastmod: '2024-03-13T22:44:59.076190-06:00'
 model: unknown
-summary: "Parsear HTML es interpretar y transformar el contenido de un documento HTML\
-  \ en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
+summary: Parsear HTML es interpretar y transformar el contenido de un documento HTML
+  en algo que tu programa C# puede manejar.
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

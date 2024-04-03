@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.367123-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C implique de cr\xE9er des valeurs\
   \ impr\xE9visibles et suivant une distribution sp\xE9cifique, telle que uniforme\
-  \ ou normale.\u2026"
+  \ ou normale."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

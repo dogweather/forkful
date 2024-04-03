@@ -8,7 +8,8 @@ description: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE
 lastmod: '2024-03-13T22:44:57.208343-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE9veloppeurs\
-  \ de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9es accessibles\u2026"
+  \ de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9es accessibles\
+  \ pour une utilisation ou une analyse future."
 title: "R\xE9daction d'un fichier texte"
 weight: 24
 ---

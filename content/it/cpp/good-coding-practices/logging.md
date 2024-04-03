@@ -5,7 +5,7 @@ description: "Nel contesto della programmazione, il logging \xE8 il processo di 
 lastmod: '2024-03-13T22:44:43.733227-06:00'
 model: gpt-4-1106-preview
 summary: "Nel contesto della programmazione, il logging \xE8 il processo di registrazione\
-  \ di eventi, stati e informazioni in un file o in un altro mezzo di output. I\u2026"
+  \ di eventi, stati e informazioni in un file o in un altro mezzo di output."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

@@ -5,9 +5,8 @@ description: "Sending an HTTP request with basic authentication is when you make
   \ do it\u2026"
 lastmod: '2024-03-13T22:45:00.205234-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request with basic authentication is when you make a call\
-  \ to a web server, including a username and password for access. Programmers do\
-  \ it\u2026"
+summary: Sending an HTTP request with basic authentication is when you make a call
+  to a web server, including a username and password for access.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

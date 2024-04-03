@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.373535-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor begynnelsebokstav inneb\xE4r att omvandla det f\xF6\
   rsta tecknet i en given str\xE4ng till versal om det \xE4r i gemen, vilket s\xE4\
-  kerst\xE4ller att\u2026"
+  kerst\xE4ller att str\xE4ngen sticker ut eller f\xF6ljer vissa grammatiska normer."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

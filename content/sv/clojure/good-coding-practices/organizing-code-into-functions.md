@@ -6,7 +6,7 @@ description: "Att organisera kod i funktioner handlar om att paketera kodblock s
 lastmod: '2024-03-13T22:44:37.530800-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att paketera kodblock som utf\xF6\
-  r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4ttare att\u2026"
+  r specifika uppgifter."
 title: Att organisera kod i funktioner
 weight: 18
 ---

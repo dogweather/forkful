@@ -6,8 +6,10 @@ description: "Het maken van een tijdelijk bestand in Dart houdt in dat je een be
   \ genereert dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's\u2026"
 lastmod: '2024-03-13T22:44:50.526032-06:00'
 model: gpt-4-0125-preview
-summary: "Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand\
-  \ genereert dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's\u2026"
+summary: Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand genereert
+  dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's zoals het
+  cachen van gegevens, tijdelijke opslag voor bestandsverwerking, of het bewaren van
+  informatie die te gevoelig is om lang te bewaren.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

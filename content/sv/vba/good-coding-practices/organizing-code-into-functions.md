@@ -8,7 +8,7 @@ description: "Att organisera kod i funktioner i Visual Basic for Applications (V
 lastmod: '2024-03-13T22:44:37.749139-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda som\u2026"
+  r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda som funktioner."
 title: Att organisera kod i funktioner
 weight: 18
 ---

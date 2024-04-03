@@ -6,8 +6,7 @@ description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glic
 lastmod: '2024-03-13T22:44:53.901649-06:00'
 model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
-  \ Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4en.\
-  \ Programmierer\u2026"
+  \ Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4en."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

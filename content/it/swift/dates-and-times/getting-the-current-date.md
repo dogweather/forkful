@@ -7,8 +7,8 @@ description: "Ottenere la data corrente in Swift comporta l'uso della classe `Da
   \ hanno\u2026"
 lastmod: '2024-03-13T22:44:43.780344-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Swift comporta l'uso della classe `Date` per\
-  \ accedere alla data e all'ora in cui l'app viene eseguita. I programmatori hanno\u2026"
+summary: Ottenere la data corrente in Swift comporta l'uso della classe `Date` per
+  accedere alla data e all'ora in cui l'app viene eseguita.
 title: Ottenere la data corrente
 weight: 29
 ---

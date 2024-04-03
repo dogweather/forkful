@@ -7,7 +7,8 @@ description: "Analizar una fecha desde una cadena en C implica convertir represe
 lastmod: '2024-03-13T22:44:59.556192-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha desde una cadena en C implica convertir representaciones\
-  \ textuales de fechas en un formato que los programas pueden manipular y\u2026"
+  \ textuales de fechas en un formato que los programas pueden manipular y analizar\
+  \ de manera m\xE1s efectiva."
 title: Interpretando una fecha de una cadena de texto
 weight: 30
 ---

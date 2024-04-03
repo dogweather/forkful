@@ -8,7 +8,8 @@ description: "Ottenere la data corrente in Elixir implica l'accesso alle informa
 lastmod: '2024-03-13T22:44:43.094145-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Elixir implica l'accesso alle informazioni\
-  \ di data e ora del sistema, un compito comune per log, marcature di dati o\u2026"
+  \ di data e ora del sistema, un compito comune per log, marcature di dati o qualsiasi\
+  \ funzionalit\xE0 che richieda la conoscenza della data corrente."
 title: Ottenere la data corrente
 weight: 29
 ---

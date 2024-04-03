@@ -6,8 +6,7 @@ description: "Lire un fichier texte en Python, c'est collecter les donn\xE9es d'
 lastmod: '2024-03-13T22:44:57.255160-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte en Python, c'est collecter les donn\xE9es d'un fichier\
-  \ stock\xE9 sur disque pour les utiliser dans un programme. C'est essentiel car\
-  \ un\u2026"
+  \ stock\xE9 sur disque pour les utiliser dans un programme."
 title: Lecture d'un fichier texte
 weight: 22
 ---

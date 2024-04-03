@@ -6,8 +6,7 @@ description: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem
 lastmod: '2024-03-13T22:44:41.307690-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
-  \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\
-  \ meldinger,\u2026"
+  \ til \xE9n."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

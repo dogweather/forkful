@@ -8,8 +8,7 @@ description: "Comparar dos fechas en programaci\xF3n es una tarea fundamental qu
 lastmod: '2024-03-13T22:44:58.481765-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar dos fechas en programaci\xF3n es una tarea fundamental que permite\
-  \ a los desarrolladores evaluar la relaci\xF3n cronol\xF3gica entre las fechas.\
-  \ Tales\u2026"
+  \ a los desarrolladores evaluar la relaci\xF3n cronol\xF3gica entre las fechas."
 title: Comparando dos fechas
 weight: 27
 ---

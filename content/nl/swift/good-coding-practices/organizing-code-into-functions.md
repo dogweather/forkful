@@ -6,8 +6,7 @@ description: "Code groeperen in functies is het opsplitsen van taken in herbruik
   \ blokken. Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker\u2026"
 lastmod: '2024-03-13T22:44:51.162688-06:00'
 model: gpt-4-0125-preview
-summary: "Code groeperen in functies is het opsplitsen van taken in herbruikbare blokken.\
-  \ Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker\u2026"
+summary: Code groeperen in functies is het opsplitsen van taken in herbruikbare blokken.
 title: Code organiseren in functies
 weight: 18
 ---

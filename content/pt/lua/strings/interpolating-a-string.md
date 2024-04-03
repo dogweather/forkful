@@ -6,8 +6,7 @@ description: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e expres
 lastmod: '2024-03-13T22:44:46.695687-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
-  es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\
-  mica e flex\xEDvel\u2026"
+  es dentro de uma string."
 title: Interpolando uma string
 weight: 8
 ---

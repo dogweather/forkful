@@ -8,7 +8,8 @@ description: "Lire les arguments de ligne de commande en Go implique d'extraire 
 lastmod: '2024-03-13T22:44:57.151610-06:00'
 model: gpt-4-0125-preview
 summary: "Lire les arguments de ligne de commande en Go implique d'extraire les arguments\
-  \ fournis \xE0 un programme lors de son invocation depuis le terminal ou\u2026"
+  \ fournis \xE0 un programme lors de son invocation depuis le terminal ou l'invite\
+  \ de commande."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

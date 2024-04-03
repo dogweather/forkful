@@ -13,7 +13,7 @@ summary: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF
   \ trong c\xE1c ng\xF4n ng\u1EEF kh\xE1c nh\u01B0 b\u1EA3n \u0111\u1ED3 ho\u1EB7\
   c t\u1EEB \u0111i\u1EC3n, l\xE0 c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB \u0111\u01B0\
   \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7\
-  u m\u1ED9t c\xE1ch\u2026"
+  u m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

@@ -6,8 +6,8 @@ description: "Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulie
   \ von XML-Dokumenten unter Verwendung verschiedener Bibliotheken. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:54.380082-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren von\
-  \ XML-Dokumenten unter Verwendung verschiedener Bibliotheken. Programmierer\u2026"
+summary: Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren von
+  XML-Dokumenten unter Verwendung verschiedener Bibliotheken.
 title: Arbeiten mit XML
 weight: 40
 ---

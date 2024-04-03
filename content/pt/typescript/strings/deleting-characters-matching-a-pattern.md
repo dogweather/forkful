@@ -5,7 +5,7 @@ description: "Deletar caracteres que correspondem a um padr\xE3o significa usar 
 lastmod: '2024-03-13T22:44:46.310097-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o significa usar algoritmos\
-  \ para encontrar e remover certos caracteres de uma string. Fazemos isso para\u2026"
+  \ para encontrar e remover certos caracteres de uma string."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

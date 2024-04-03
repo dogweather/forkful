@@ -4,8 +4,8 @@ description: "Iniziare un nuovo progetto significa creare un ambiente di lavoro 
   \ zero, dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
 lastmod: '2024-03-13T22:44:43.176723-06:00'
 model: gpt-4-1106-preview
-summary: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero,\
-  \ dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
+summary: Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero,
+  dove il codice prende vita.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

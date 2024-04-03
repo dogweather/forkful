@@ -7,8 +7,9 @@ description: "Die Suche und das Ersetzen von Text in der Programmierung erleicht
   \ bei\u2026"
 lastmod: '2024-03-13T22:44:53.270912-06:00'
 model: gpt-4-0125-preview
-summary: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert die\
-  \ Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei\u2026"
+summary: Die Suche und das Ersetzen von Text in der Programmierung erleichtert die
+  Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei
+  der Datenmanipulation und Softwareentwicklung ist.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

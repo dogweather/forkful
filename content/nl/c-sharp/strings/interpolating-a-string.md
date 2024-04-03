@@ -7,7 +7,8 @@ description: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te
 lastmod: '2024-03-13T22:44:50.795991-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
-  ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"
+  ren door expressies binnen een stringliteral op te nemen, waardoor het gemakkelijker\
+  \ wordt om strings te formatteren en te concatenaten."
 title: Een string interpoleren
 weight: 8
 ---

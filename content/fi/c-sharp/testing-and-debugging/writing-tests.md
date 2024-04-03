@@ -8,7 +8,8 @@ description: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptie
 lastmod: '2024-03-13T22:44:56.576501-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien luomista\
-  \ koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy odotetulla\u2026"
+  \ koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy odotetulla\
+  \ tavalla."
 title: Testien kirjoittaminen
 weight: 36
 ---

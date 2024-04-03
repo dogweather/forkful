@@ -7,7 +7,7 @@ description: "Ler um arquivo de texto em Go envolve acessar e recuperar conte\xF
 lastmod: '2024-03-13T22:44:46.079675-06:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em Go envolve acessar e recuperar conte\xFAdo de\
-  \ um arquivo armazenado no disco para processamento ou an\xE1lise. Programadores\u2026"
+  \ um arquivo armazenado no disco para processamento ou an\xE1lise."
 title: Lendo um arquivo de texto
 weight: 22
 ---

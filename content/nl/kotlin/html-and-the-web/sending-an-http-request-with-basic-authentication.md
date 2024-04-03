@@ -7,9 +7,8 @@ description: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinat
   \ om te\u2026"
 lastmod: '2024-03-13T22:44:50.767337-06:00'
 model: gpt-4-0125-preview
-summary: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie op\
-  \ een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier om\
-  \ te\u2026"
+summary: Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie op een
+  HTTP-verzoek.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

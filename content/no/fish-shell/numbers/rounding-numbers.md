@@ -5,7 +5,7 @@ description: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5
 lastmod: '2024-03-13T22:44:41.219777-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
-  \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
+  \ dataene dine eller passe spesifikke formater."
 title: Avrunding av tall
 weight: 13
 ---

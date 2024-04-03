@@ -5,7 +5,7 @@ description: "La gestione degli errori nella programmazione riguarda la gestione
 lastmod: '2024-03-13T22:44:43.482599-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nella programmazione riguarda la gestione dell'inaspettato\
-  \ \u2014 cose che possono andare storte. I programmatori lo fanno per\u2026"
+  \ \u2014 cose che possono andare storte."
 title: Gestione degli errori
 weight: 16
 ---

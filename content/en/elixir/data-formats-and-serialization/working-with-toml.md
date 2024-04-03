@@ -5,8 +5,8 @@ description: "Working with TOML means parsing and generating TOML (Tom's Obvious
   \ files\u2026"
 lastmod: '2024-03-13T22:44:59.803167-06:00'
 model: gpt-4-1106-preview
-summary: "Working with TOML means parsing and generating TOML (Tom's Obvious, Minimal\
-  \ Language) data using Elixir. Programmers use it to handle configuration files\u2026"
+summary: Working with TOML means parsing and generating TOML (Tom's Obvious, Minimal
+  Language) data using Elixir.
 title: Working with TOML
 weight: 39
 ---

@@ -5,8 +5,8 @@ description: "Writing tests in Bash involves scripting test cases to validate th
   \ scripts\u2026"
 lastmod: '2024-03-13T22:45:00.248016-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Bash involves scripting test cases to validate the functionality\
-  \ of your Bash scripts. Programmers conduct tests to ensure their scripts\u2026"
+summary: Writing tests in Bash involves scripting test cases to validate the functionality
+  of your Bash scripts.
 title: Writing tests
 weight: 36
 ---

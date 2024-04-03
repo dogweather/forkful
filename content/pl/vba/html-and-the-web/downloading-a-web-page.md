@@ -8,8 +8,7 @@ description: "Pobieranie strony internetowej w Visual Basic for Applications (VB
 lastmod: '2024-03-13T22:44:35.230352-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w Visual Basic for Applications (VBA) polega\
-  \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
-  ci\u2026"
+  \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu."
 title: Pobieranie strony internetowej
 weight: 42
 ---

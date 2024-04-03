@@ -6,8 +6,9 @@ description: "Het verwijderen van tekens die overeenkomen met een specifiek patr
   \ gaat over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"
 lastmod: '2024-03-13T22:44:50.271023-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van tekens die overeenkomen met een specifiek patroon gaat\
-  \ over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"
+summary: Het verwijderen van tekens die overeenkomen met een specifiek patroon gaat
+  over het verwijderen van bepaalde tekens of reeksen tekens uit strings, gebaseerd
+  op regels die door een patroon zijn gedefinieerd (meestal via reguliere expressies).
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

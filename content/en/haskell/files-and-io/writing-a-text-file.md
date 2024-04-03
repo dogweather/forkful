@@ -5,9 +5,8 @@ description: "Writing to a text file in Haskell is about programmatically creati
   \ as\u2026"
 lastmod: '2024-03-13T22:45:00.145005-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to a text file in Haskell is about programmatically creating or\
-  \ updating files with textual content. Programmers do this to persist data such\
-  \ as\u2026"
+summary: Writing to a text file in Haskell is about programmatically creating or updating
+  files with textual content.
 title: Writing a text file
 weight: 24
 ---

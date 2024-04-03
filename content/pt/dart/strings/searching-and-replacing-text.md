@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.265317-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar e substituir texto em Dart envolve examinar strings para encontrar\
   \ padr\xF5es ou sequ\xEAncias de caracteres e substitu\xED-los por novo conte\xFA\
-  do. Essa\u2026"
+  do."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

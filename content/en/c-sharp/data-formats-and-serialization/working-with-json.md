@@ -4,8 +4,8 @@ description: "Working with JSON (JavaScript Object Notation) involves parsing, g
   \ and querying JSON data, making it a critical skill for modern programming.\u2026"
 lastmod: '2024-03-13T22:45:00.108721-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON (JavaScript Object Notation) involves parsing, generating,\
-  \ and querying JSON data, making it a critical skill for modern programming.\u2026"
+summary: Working with JSON (JavaScript Object Notation) involves parsing, generating,
+  and querying JSON data, making it a critical skill for modern programming.
 title: Working with JSON
 weight: 38
 ---

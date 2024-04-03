@@ -7,8 +7,9 @@ description: "Elm non supporta nativamente YAML, un formato di serializzazione d
   \ del\u2026"
 lastmod: '2024-03-13T22:44:43.369882-06:00'
 model: gpt-4-0125-preview
-summary: "Elm non supporta nativamente YAML, un formato di serializzazione dei dati\
-  \ spesso utilizzato per file di configurazione o condivisione di dati, a causa del\u2026"
+summary: Elm non supporta nativamente YAML, un formato di serializzazione dei dati
+  spesso utilizzato per file di configurazione o condivisione di dati, a causa del
+  suo forte enfasi sulla sicurezza dei tipi e risultati prevedibili.
 title: Lavorare con YAML
 weight: 41
 ---

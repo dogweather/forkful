@@ -6,8 +6,8 @@ description: "Associatieve arrays, of hashmap's, in Clojure stellen je in staat 
   \ data op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand\u2026"
 lastmod: '2024-03-13T22:44:50.411888-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, of hashmap's, in Clojure stellen je in staat om data\
-  \ op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand\u2026"
+summary: Associatieve arrays, of hashmap's, in Clojure stellen je in staat om data
+  op te slaan en op te halen met sleutel-waardeparen.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

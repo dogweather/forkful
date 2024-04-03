@@ -8,7 +8,9 @@ description: "XML:n k\xE4sittely Dartissa sis\xE4lt\xE4\xE4 XML-dokumenttien j\x
 lastmod: '2024-03-13T22:44:56.298056-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Dartissa sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4sennyksen,\
-  \ kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka ovat\u2026"
+  \ kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka ovat\
+  \ vuorovaikutuksessa verkkopalveluiden, konfiguraatiotiedostojen tai perint\xF6\
+  j\xE4rjestelmien kanssa."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

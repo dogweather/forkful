@@ -5,9 +5,8 @@ description: "Changing a string to lower case means making every letter in the s
   \ and\u2026"
 lastmod: '2024-03-13T22:45:00.270406-06:00'
 model: gpt-4-1106-preview
-summary: "Changing a string to lower case means making every letter in the string\
-  \ a small letter. Programmers do this to standardize text, to make comparisons,\
-  \ and\u2026"
+summary: Changing a string to lower case means making every letter in the string a
+  small letter.
 title: Converting a string to lower case
 weight: 4
 ---

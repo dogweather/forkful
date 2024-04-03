@@ -5,7 +5,7 @@ description: "Das Extrahieren von Teilzeichenketten erm\xF6glicht es, bestimmte 
 lastmod: '2024-03-13T22:44:54.090624-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten erm\xF6glicht es, bestimmte Abschnitte\
-  \ eines Strings zu isolieren und zu verwenden. Programmierer machen das, um Daten\u2026"
+  \ eines Strings zu isolieren und zu verwenden."
 title: Teilstrings extrahieren
 weight: 6
 ---

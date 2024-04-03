@@ -7,9 +7,8 @@ description: "Scrivere test in Dart implica la creazione di casi di test per ver
   \ I\u2026"
 lastmod: '2024-03-13T22:44:43.134617-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Dart implica la creazione di casi di test per verificare\
-  \ automaticamente che diverse parti del tuo programma funzionino come previsto.\
-  \ I\u2026"
+summary: Scrivere test in Dart implica la creazione di casi di test per verificare
+  automaticamente che diverse parti del tuo programma funzionino come previsto.
 title: Scrivere i test
 weight: 36
 ---

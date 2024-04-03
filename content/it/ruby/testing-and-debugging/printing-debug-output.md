@@ -5,7 +5,7 @@ description: "Stampare output per debug \xE8 mostrare informazioni interne di un
 lastmod: '2024-03-13T22:44:44.053857-06:00'
 model: gpt-4-1106-preview
 summary: "Stampare output per debug \xE8 mostrare informazioni interne di un programma\
-  \ durante la sua esecuzione. Programmatori lo fanno per capire meglio come il\u2026"
+  \ durante la sua esecuzione."
 title: Stampa dell'output di debug
 weight: 33
 ---

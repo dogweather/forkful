@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.271726-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma String em Dart \xE9 sobre determinar o n\xFA\
   mero de unidades de c\xF3digo (essencialmente, o n\xFAmero de caracteres se pensado\
-  \ de\u2026"
+  \ de forma simplista) em uma dada String."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

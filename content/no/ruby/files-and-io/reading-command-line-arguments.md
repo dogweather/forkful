@@ -6,8 +6,7 @@ description: "Kommandolinjeargumenter lar deg sende data direkte til et Ruby-pro
 lastmod: '2024-03-13T22:44:41.348665-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program n\xE5\
-  r du kj\xF8rer det. Programmere bruker dette for \xE5 gj\xF8re programmene fleksible\
-  \ og\u2026"
+  r du kj\xF8rer det."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

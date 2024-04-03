@@ -7,7 +7,8 @@ description: "Estrarre una data da una stringa implica convertire la rappresenta
 lastmod: '2024-03-13T22:44:43.318205-06:00'
 model: gpt-4-0125-preview
 summary: "Estrarre una data da una stringa implica convertire la rappresentazione\
-  \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"
+  \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\
+  \ pi\xF9 moderno."
 title: Analisi di una data da una stringa
 weight: 30
 ---

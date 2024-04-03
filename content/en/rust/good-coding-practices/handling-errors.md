@@ -4,8 +4,7 @@ description: "Error handling is about dealing with things when they go sideways.
   \ do it to handle the unexpected, ensuring their Rust programs are robust and\u2026"
 lastmod: '2024-03-13T22:44:59.902673-06:00'
 model: gpt-4-1106-preview
-summary: "Error handling is about dealing with things when they go sideways. Programmers\
-  \ do it to handle the unexpected, ensuring their Rust programs are robust and\u2026"
+summary: Error handling is about dealing with things when they go sideways.
 title: Handling errors
 weight: 16
 ---

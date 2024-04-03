@@ -7,7 +7,9 @@ description: "La recherche et le remplacement de texte dans Google Apps Script i
 lastmod: '2024-03-13T22:44:57.166409-06:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte dans Google Apps Script impliquent\
-  \ d'identifier de mani\xE8re programmatique des cha\xEEnes sp\xE9cifiques dans un\u2026"
+  \ d'identifier de mani\xE8re programmatique des cha\xEEnes sp\xE9cifiques dans un\
+  \ document, un tableur ou tout autre type de contenu Google Apps, et de les substituer\
+  \ par d'autres valeurs textuelles."
 title: Recherche et remplacement de texte
 weight: 10
 ---

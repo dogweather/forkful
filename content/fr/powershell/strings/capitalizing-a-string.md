@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.024854-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne dans PowerShell consiste \xE0 transformer\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule tout en laissant\
-  \ le reste de\u2026"
+  \ le reste de la cha\xEEne inchang\xE9."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

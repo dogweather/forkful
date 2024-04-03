@@ -6,8 +6,7 @@ description: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palv
 lastmod: '2024-03-13T22:44:56.824723-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palvelimelle\
-  \ suojattuna. Se on turvallinen tapa p\xE4\xE4st\xE4 k\xE4siksi API:hin tai palveluun,\
-  \ joka vaatii\u2026"
+  \ suojattuna."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

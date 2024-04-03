@@ -7,7 +7,8 @@ description: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -
 lastmod: '2024-03-13T22:44:56.395952-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -ohjelmissa\
-  \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden\u2026"
+  \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden elementtej\xE4\
+  , kuten nopanheitot tai tietojen n\xE4ytteist\xE4minen, simuloimisen."
 title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---

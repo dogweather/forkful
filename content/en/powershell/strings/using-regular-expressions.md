@@ -4,8 +4,8 @@ description: "Regular expressions (regex) are sequences of characters that form 
   \ search pattern, primarily used for string searching and manipulation. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.273121-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) are sequences of characters that form a search\
-  \ pattern, primarily used for string searching and manipulation. Programmers\u2026"
+summary: Regular expressions (regex) are sequences of characters that form a search
+  pattern, primarily used for string searching and manipulation.
 title: Using regular expressions
 weight: 11
 ---

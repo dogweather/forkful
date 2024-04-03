@@ -7,7 +7,8 @@ description: "YAML, forkortet fra \"YAML Ain't Markup Language\", er en menneske
 lastmod: '2024-03-13T22:44:40.950671-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, forkortet fra \"YAML Ain't Markup Language\", er en menneskelesbar\
-  \ data-serialiseringsstandard som ofte brukes for konfigurasjonsfiler og\u2026"
+  \ data-serialiseringsstandard som ofte brukes for konfigurasjonsfiler og datautveksling\
+  \ mellom spr\xE5k."
 title: Arbeider med YAML
 weight: 41
 ---

@@ -6,8 +6,9 @@ description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht 
   \ um die Verarbeitung und Manipulation von tabellarischen Daten, die im\u2026"
 lastmod: '2024-03-13T22:44:54.082036-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um\
-  \ die Verarbeitung und Manipulation von tabellarischen Daten, die im\u2026"
+summary: Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um
+  die Verarbeitung und Manipulation von tabellarischen Daten, die im Klartextformat
+  gespeichert sind.
 title: Arbeiten mit CSV
 weight: 37
 ---

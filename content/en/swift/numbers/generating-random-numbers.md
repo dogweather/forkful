@@ -4,8 +4,8 @@ description: "Generating random numbers in programming is about creating non-det
   \ or unpredictable numeric values. Programmers use random numbers for a variety\u2026"
 lastmod: '2024-03-13T22:45:00.392653-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in programming is about creating non-deterministic\
-  \ or unpredictable numeric values. Programmers use random numbers for a variety\u2026"
+summary: Generating random numbers in programming is about creating non-deterministic
+  or unpredictable numeric values.
 title: Generating random numbers
 weight: 12
 ---

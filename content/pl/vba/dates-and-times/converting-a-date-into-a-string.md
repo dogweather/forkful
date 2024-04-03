@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.244517-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Visual Basic for Applications\
   \ (VBA) to proces zmiany typu danych daty na format \u0142a\u0144cucha znak\xF3\
-  w. Programi\u015Bci cz\u0119sto\u2026"
+  w."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

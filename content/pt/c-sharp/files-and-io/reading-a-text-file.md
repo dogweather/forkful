@@ -6,8 +6,7 @@ description: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos byt
 lastmod: '2024-03-13T22:44:46.601124-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes pra\
-  \ tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem isso\
-  \ porque,\u2026"
+  \ tirar informa\xE7\xF5es \xFAteis de um arquivo `."
 title: Lendo um arquivo de texto
 weight: 22
 ---

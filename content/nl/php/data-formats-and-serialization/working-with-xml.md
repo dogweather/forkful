@@ -6,8 +6,8 @@ description: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en trans
   \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"
 lastmod: '2024-03-13T22:44:50.919865-06:00'
 model: gpt-4-0125-preview
-summary: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
-  \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"
+summary: XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren
+  van gegevens.
 title: Werken met XML
 weight: 40
 ---

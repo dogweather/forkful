@@ -6,8 +6,7 @@ description: "Kun poistetaan merkkej\xE4 kuvion mukaisesti, k\xE4sitell\xE4\xE4n
 lastmod: '2024-03-13T22:44:56.722776-06:00'
 model: gpt-4-1106-preview
 summary: "Kun poistetaan merkkej\xE4 kuvion mukaisesti, k\xE4sitell\xE4\xE4n tekstitiedostoja\
-  \ tai merkkijonoja niin, ett\xE4 tietyt osat saadaan poistettua. Ohjelmoijat tekev\xE4\
-  t\u2026"
+  \ tai merkkijonoja niin, ett\xE4 tietyt osat saadaan poistettua."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

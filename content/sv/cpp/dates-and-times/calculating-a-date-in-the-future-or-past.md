@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.222736-06:00'
 model: gpt-4-1106-preview
 summary: "R\xE4kna ut ett framtida eller f\xF6rflutet datum handlar om att best\xE4\
   mma ett specifikt datum utifr\xE5n ett annat genom att addera eller subtrahera dagar,\
-  \ m\xE5nader\u2026"
+  \ m\xE5nader eller \xE5r."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

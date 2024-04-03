@@ -4,8 +4,8 @@ description: "Working with XML involves manipulating and accessing data structur
   \ in the eXtensible Markup Language. Programmers work with XML to enable\u2026"
 lastmod: '2024-03-13T22:45:00.306269-06:00'
 model: gpt-4-1106-preview
-summary: "Working with XML involves manipulating and accessing data structured in\
-  \ the eXtensible Markup Language. Programmers work with XML to enable\u2026"
+summary: Working with XML involves manipulating and accessing data structured in the
+  eXtensible Markup Language.
 title: Working with XML
 weight: 40
 ---

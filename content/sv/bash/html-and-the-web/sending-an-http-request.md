@@ -6,8 +6,7 @@ description: "Att skicka en HTTP-f\xF6rfr\xE5gan handlar om att be om data fr\xE
 lastmod: '2024-03-13T22:44:38.079475-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan handlar om att be om data fr\xE5n en\
-  \ webbserver. Programmerare g\xF6r detta f\xF6r att interagera med webbaserade tj\xE4\
-  nster eller h\xE4mta\u2026"
+  \ webbserver."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

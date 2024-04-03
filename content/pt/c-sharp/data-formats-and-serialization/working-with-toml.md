@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.607284-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE9 uma sigla para Tom's Obvious, Minimal Language, um formato de\
   \ arquivo de configura\xE7\xE3o que \xE9 f\xE1cil de ler devido \xE0 sua clareza\
-  \ sem\xE2ntica.\u2026"
+  \ sem\xE2ntica."
 title: Trabalhando com TOML
 weight: 39
 ---

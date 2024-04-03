@@ -4,8 +4,8 @@ description: "Writing tests in PowerShell involves creating scripts that automat
   \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"
 lastmod: '2024-03-13T22:45:00.287251-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in PowerShell involves creating scripts that automatically\
-  \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"
+summary: Writing tests in PowerShell involves creating scripts that automatically
+  validate the functionality of your PowerShell code, ensuring it behaves as expected.
 title: Writing tests
 weight: 36
 ---

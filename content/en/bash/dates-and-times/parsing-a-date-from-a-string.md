@@ -4,8 +4,9 @@ description: "Parsing a date from a string in Bash involves extracting and conve
   \ date information from textual data into a format that Bash can manipulate or use\u2026"
 lastmod: '2024-03-13T22:45:00.253084-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string in Bash involves extracting and converting\
-  \ date information from textual data into a format that Bash can manipulate or use\u2026"
+summary: Parsing a date from a string in Bash involves extracting and converting date
+  information from textual data into a format that Bash can manipulate or use for
+  further processes.
 title: Parsing a date from a string
 weight: 30
 ---

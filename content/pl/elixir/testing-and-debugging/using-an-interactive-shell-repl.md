@@ -6,7 +6,7 @@ description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0
 lastmod: '2024-03-13T22:44:35.044109-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
-  \ Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie rzeczywistym.\u2026"
+  \ Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie rzeczywistym."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

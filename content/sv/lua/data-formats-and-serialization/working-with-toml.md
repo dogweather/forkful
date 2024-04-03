@@ -5,7 +5,7 @@ description: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (T
 lastmod: '2024-03-13T22:44:38.062197-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's Obvious,\
-  \ Minimal Language) med Lua. Programmerare anv\xE4nder TOML f\xF6r\u2026"
+  \ Minimal Language) med Lua."
 title: Att arbeta med TOML
 weight: 39
 ---

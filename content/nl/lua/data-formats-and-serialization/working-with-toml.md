@@ -6,8 +6,8 @@ description: "Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvi
   \ Minimal Language) gegevens met Lua in. Programmeurs gebruiken TOML voor\u2026"
 lastmod: '2024-03-13T22:44:50.960341-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious, Minimal\
-  \ Language) gegevens met Lua in. Programmeurs gebruiken TOML voor\u2026"
+summary: Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious, Minimal
+  Language) gegevens met Lua in.
 title: Werken met TOML
 weight: 39
 ---

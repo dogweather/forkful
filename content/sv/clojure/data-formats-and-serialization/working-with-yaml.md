@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.545459-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
   r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\
-  \ och\u2026"
+  \ och datautbyte mellan spr\xE5k med olika datastrukturer."
 title: Att Arbeta med YAML
 weight: 41
 ---

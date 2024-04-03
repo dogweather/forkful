@@ -5,9 +5,7 @@ description: "Elixir jest dostarczany z wbudowanym graficznym debuggerem o nazwi
   czy\u0107 do dzia\u0142aj\u0105cego procesu.\u2026"
 lastmod: '2024-03-13T22:44:35.047574-06:00'
 model: gpt-4-0125-preview
-summary: "Elixir jest dostarczany z wbudowanym graficznym debuggerem o nazwie `:debugger`.\
-  \ Aby go u\u017Cy\u0107, musisz go uruchomi\u0107 i do\u0142\u0105czy\u0107 do dzia\u0142\
-  aj\u0105cego procesu.\u2026"
+summary: Elixir jest dostarczany z wbudowanym graficznym debuggerem o nazwie `:debugger`.
 title: Korzystanie z debugera
 weight: 35
 ---

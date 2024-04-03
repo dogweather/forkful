@@ -6,8 +6,7 @@ description: "Midlertidige filer brukes for \xE5 midlertidig lagre data som tren
 lastmod: '2024-03-13T22:44:40.462685-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer brukes for \xE5 midlertidig lagre data som trengs under\
-  \ en prosess. Programmerere lager slike filer for \xE5 unng\xE5 \xE5 belaste hukommelsen\
-  \ og\u2026"
+  \ en prosess."
 title: Opprette en midlertidig fil
 weight: 21
 ---

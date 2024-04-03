@@ -5,7 +5,7 @@ description: "TOML es un formato de archivo de configuraci\xF3n que es f\xE1cil 
 lastmod: '2024-03-13T22:44:59.614357-06:00'
 model: gpt-4-0125-preview
 summary: "TOML es un formato de archivo de configuraci\xF3n que es f\xE1cil de leer\
-  \ debido a su clara sem\xE1ntica. Los programadores usan TOML para gestionar\u2026"
+  \ debido a su clara sem\xE1ntica."
 title: Trabajando con TOML
 weight: 39
 ---

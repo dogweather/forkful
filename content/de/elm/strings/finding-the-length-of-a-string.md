@@ -5,9 +5,7 @@ description: "\"Was & Warum?\" - Die L\xE4nge eines Strings festzustellen bedeut
   \ zu\u2026"
 lastmod: '2024-03-13T22:44:53.795905-06:00'
 model: gpt-4-1106-preview
-summary: "\"Was & Warum?\" - Die L\xE4nge eines Strings festzustellen bedeutet, die\
-  \ Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe\
-  \ zu\u2026"
+summary: '"Was & Warum.'
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

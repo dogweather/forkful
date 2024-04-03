@@ -6,8 +6,9 @@ description: "Il logging in Visual Basic for Applications (VBA) implica la regis
   \ di informazioni sul comportamento a runtime di un programma in un file, console\u2026"
 lastmod: '2024-03-13T22:44:43.270266-06:00'
 model: gpt-4-0125-preview
-summary: "Il logging in Visual Basic for Applications (VBA) implica la registrazione\
-  \ di informazioni sul comportamento a runtime di un programma in un file, console\u2026"
+summary: Il logging in Visual Basic for Applications (VBA) implica la registrazione
+  di informazioni sul comportamento a runtime di un programma in un file, console
+  o database.
 title: Registrazione
 weight: 17
 ---

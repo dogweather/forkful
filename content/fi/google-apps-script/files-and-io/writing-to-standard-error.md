@@ -7,7 +7,8 @@ description: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 ta
 lastmod: '2024-03-13T22:44:56.116242-06:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
-  \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"
+  \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois standarditulosteesta\
+  \ (stdout)."
 title: Kirjoittaminen vakiovirheeseen
 weight: 25
 ---

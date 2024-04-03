@@ -4,8 +4,8 @@ description: "Reading command line arguments in Visual Basic for Applications (V
   \ involves accessing parameters passed to your program upon execution. This technique\u2026"
 lastmod: '2024-03-13T22:44:59.948289-06:00'
 model: gpt-4-0125-preview
-summary: "Reading command line arguments in Visual Basic for Applications (VBA) involves\
-  \ accessing parameters passed to your program upon execution. This technique\u2026"
+summary: Reading command line arguments in Visual Basic for Applications (VBA) involves
+  accessing parameters passed to your program upon execution.
 title: Reading command line arguments
 weight: 23
 ---

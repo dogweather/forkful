@@ -8,8 +8,7 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vas
 lastmod: '2024-03-13T22:44:56.305663-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vastaavuuden\
-  \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t regexi\xE4 teht\xE4viin\u2026"
+  \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

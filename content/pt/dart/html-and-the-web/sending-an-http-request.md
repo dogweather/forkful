@@ -8,8 +8,7 @@ description: "Enviar uma solicita\xE7\xE3o HTTP em Dart \xE9 o processo de inici
 lastmod: '2024-03-13T22:44:46.278124-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP em Dart \xE9 o processo de iniciar comunica\xE7\
-  \xF5es com um servidor web ou API a partir de uma aplica\xE7\xE3o Dart. Programadores\
-  \ fazem\u2026"
+  \xF5es com um servidor web ou API a partir de uma aplica\xE7\xE3o Dart."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

@@ -8,8 +8,7 @@ description: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to
 lastmod: '2024-03-13T22:44:40.305209-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to eller\
-  \ flere strenger til en enkelt streng. Programmerere gj\xF8r dette for \xE5 dynamisk\
-  \ konstruere\u2026"
+  \ flere strenger til en enkelt streng."
 title: Sammensetting av strenger
 weight: 3
 ---

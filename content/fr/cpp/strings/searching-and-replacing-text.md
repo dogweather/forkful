@@ -5,7 +5,7 @@ description: "La recherche et le remplacement de texte permettent de trouver des
 lastmod: '2024-03-13T22:44:58.144610-06:00'
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
-  nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"
+  nes sp\xE9cifiques dans un texte et de les remplacer par d'autres."
 title: Recherche et remplacement de texte
 weight: 10
 ---

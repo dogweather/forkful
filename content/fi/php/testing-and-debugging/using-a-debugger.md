@@ -5,9 +5,7 @@ description: "PHP:ss\xE4 on interaktiivinen debuggeri nimelt\xE4\xE4n Xdebug. N\
   \ ja konfiguroituna\u2026"
 lastmod: '2024-03-13T22:44:56.660381-06:00'
 model: gpt-4-0125-preview
-summary: "PHP:ss\xE4 on interaktiivinen debuggeri nimelt\xE4\xE4n Xdebug. N\xE4in\
-  \ sit\xE4 k\xE4ytet\xE4\xE4n. Ensiksi, varmista ett\xE4 sinulla on Xdebug asennettuna\
-  \ ja konfiguroituna\u2026"
+summary: "PHP:ss\xE4 on interaktiivinen debuggeri nimelt\xE4\xE4n Xdebug."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

@@ -4,8 +4,8 @@ description: "Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein 
   \ vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen\u2026"
 lastmod: '2024-03-13T22:44:53.858498-06:00'
 model: gpt-4-1106-preview
-summary: "Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum\
-  \ vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen\u2026"
+summary: Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum vor,
+  nach oder am gleichen Tag wie ein anderes liegt.
 title: Vergleich von zwei Daten
 weight: 27
 ---

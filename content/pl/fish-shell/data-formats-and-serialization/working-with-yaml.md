@@ -7,7 +7,8 @@ description: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML A
 lastmod: '2024-03-13T22:44:35.862086-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't Markup\
-  \ Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w\u2026"
+  \ Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w konfiguracyjnych,\
+  \ w \u015Brodowisku Fish Shell."
 title: Praca z YAML
 weight: 41
 ---

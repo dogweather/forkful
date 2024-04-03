@@ -6,8 +6,7 @@ description: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteelli
 lastmod: '2024-03-13T22:44:56.178505-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
-  \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\
-  \ mukaan lukien\u2026"
+  \ yksik\xF6ll\xE4 'i'."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

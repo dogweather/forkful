@@ -6,8 +6,7 @@ description: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sket
 lastmod: '2024-03-13T22:44:46.840221-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sketch) do\
-  \ zero, um c\xF3digo que vai dar vida \xE0 sua ideia. Programadores pegam essa rota\
-  \ para\u2026"
+  \ zero, um c\xF3digo que vai dar vida \xE0 sua ideia."
 title: Iniciando um novo projeto
 weight: 1
 ---

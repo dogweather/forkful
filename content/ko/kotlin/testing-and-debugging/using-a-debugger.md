@@ -8,8 +8,8 @@ lastmod: '2024-03-13T22:44:55.178147-06:00'
 model: gpt-4-0125-preview
 summary: "IntelliJ IDEA\uC640 \uD568\uAED8 Kotlin\uC5D0\uC11C \uB514\uBC84\uAE45\uC744\
   \ \uACBD\uD5D8\uD558\uB294 \uC791\uC740 \uB9DB\uBCF4\uAE30\uC785\uB2C8\uB2E4 - IDE\uC758\
-  \ \uC15C\uB85D \uD648\uC988: ```kotlin fun main() { val mysteryNumber = 42 var guess\
-  \ = 0 while (guess != mysteryNumber) {\u2026"
+  \ \uC15C\uB85D \uD648\uC988:\n\n```kotlin\nfun main() {\n    val mysteryNumber =\
+  \ 42\n    var guess = 0\n\n    while (guess ."
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 weight: 35
 ---

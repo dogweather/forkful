@@ -8,8 +8,7 @@ description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res 
 lastmod: '2024-03-13T22:44:57.749979-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ de convertir du texte en un objet Date. Cette op\xE9ration est fondamentale pour\
-  \ les\u2026"
+  \ de convertir du texte en un objet Date."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.867405-06:00'
 model: gpt-4-0125-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci w Go polega\
   \ na manipulowaniu warto\u015Bciami daty i czasu, aby okre\u015Bli\u0107 konkretny\
-  \ punkt wzgl\u0119dem podanej daty.\u2026"
+  \ punkt wzgl\u0119dem podanej daty."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

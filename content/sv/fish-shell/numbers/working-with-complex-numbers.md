@@ -6,8 +6,7 @@ description: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje til
 lastmod: '2024-03-13T22:44:38.329742-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje till ett\
-  \ tv\xE5dimensionellt komplext plan. Programmerare anv\xE4nder dem inom omr\xE5\
-  den som\u2026"
+  \ tv\xE5dimensionellt komplext plan."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

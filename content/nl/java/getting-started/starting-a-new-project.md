@@ -7,9 +7,8 @@ description: "Een nieuw Java-project starten is alsof je een nieuw doek klaarzet
   \ in\u2026"
 lastmod: '2024-03-13T22:44:50.682613-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw Java-project starten is alsof je een nieuw doek klaarzet voor\
-  \ je meesterwerk. Programmeurs zetten nieuwe projecten op om idee\xEBn om te zetten\
-  \ in\u2026"
+summary: Een nieuw Java-project starten is alsof je een nieuw doek klaarzet voor je
+  meesterwerk.
 title: Een nieuw project starten
 weight: 1
 ---

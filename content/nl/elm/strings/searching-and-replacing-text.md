@@ -7,8 +7,8 @@ description: "Tekst zoeken en vervangen stelt je in staat om specifieke reeksen 
   \ van\u2026"
 lastmod: '2024-03-13T22:44:50.709641-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen stelt je in staat om specifieke reeksen te vinden\
-  \ en ze te ruilen voor iets anders. Programmeurs gebruiken dit voor alles, van\u2026"
+summary: Tekst zoeken en vervangen stelt je in staat om specifieke reeksen te vinden
+  en ze te ruilen voor iets anders.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

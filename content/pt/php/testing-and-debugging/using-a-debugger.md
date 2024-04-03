@@ -5,9 +5,7 @@ description: "O PHP vem com um depurador interativo chamado Xdebug. Aqui est\xE1
   \ no seu\u2026"
 lastmod: '2024-03-13T22:44:46.671922-06:00'
 model: gpt-4-0125-preview
-summary: "O PHP vem com um depurador interativo chamado Xdebug. Aqui est\xE1 como\
-  \ us\xE1-lo. Primeiro, verifique se voc\xEA tem o Xdebug instalado e configurado\
-  \ no seu\u2026"
+summary: O PHP vem com um depurador interativo chamado Xdebug.
 title: Usando um depurador
 weight: 35
 ---

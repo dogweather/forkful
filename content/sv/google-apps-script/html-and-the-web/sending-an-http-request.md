@@ -8,7 +8,7 @@ description: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om
 lastmod: '2024-03-13T22:44:37.434900-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om att programmatiskt\
-  \ g\xF6ra ett anrop till en extern webbserver eller API. Programmerare g\xF6r\u2026"
+  \ g\xF6ra ett anrop till en extern webbserver eller API."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 weight: 44
 ---

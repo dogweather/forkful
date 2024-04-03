@@ -5,8 +5,9 @@ description: "Editing files in-place with CLI (Command Line Interface) one-liner
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.546898-06:00'
 model: gpt-4-0125-preview
-summary: "Editing files in-place with CLI (Command Line Interface) one-liners in Ruby\
-  \ allows you to modify files directly from your terminal, without needing to\u2026"
+summary: Editing files in-place with CLI (Command Line Interface) one-liners in Ruby
+  allows you to modify files directly from your terminal, without needing to open
+  them in an editor, make changes, and save them back.
 title: Editing files in-place with CLI one-liners
 weight: 32
 ---

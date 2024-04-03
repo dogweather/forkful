@@ -7,7 +7,8 @@ description: "Trabajar con archivos CSV (Valores Separados por Comas) implica el
 lastmod: '2024-03-13T22:44:59.523747-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica el an\xE1\
-  lisis, manipulaci\xF3n y generaci\xF3n de datos en un formato tabular que es ampliamente\u2026"
+  lisis, manipulaci\xF3n y generaci\xF3n de datos en un formato tabular que es ampliamente\
+  \ utilizado para el intercambio de datos entre aplicaciones."
 title: Trabajando con CSV
 weight: 37
 ---

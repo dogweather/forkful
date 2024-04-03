@@ -4,8 +4,9 @@ description: "Writing to standard error (stderr) in PowerShell involves sending 
   \ messages or diagnostics directly to the stderr stream, distinct from the standard\u2026"
 lastmod: '2024-03-13T22:45:00.299261-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error (stderr) in PowerShell involves sending error\
-  \ messages or diagnostics directly to the stderr stream, distinct from the standard\u2026"
+summary: Writing to standard error (stderr) in PowerShell involves sending error messages
+  or diagnostics directly to the stderr stream, distinct from the standard output
+  (stdout) stream.
 title: Writing to standard error
 weight: 25
 ---

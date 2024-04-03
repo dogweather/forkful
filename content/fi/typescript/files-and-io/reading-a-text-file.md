@@ -6,8 +6,7 @@ description: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostost
 lastmod: '2024-03-13T22:44:56.332283-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta ohjelman\
-  \ k\xE4ytett\xE4v\xE4ksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta he voivat k\xE4\
-  sitell\xE4 tai\u2026"
+  \ k\xE4ytett\xE4v\xE4ksi."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

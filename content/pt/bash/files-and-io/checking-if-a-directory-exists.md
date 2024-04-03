@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.767096-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9 um mecanismo\
   \ de controle essencial usado para verificar a presen\xE7a de um diret\xF3rio antes\
-  \ de\u2026"
+  \ de realizar opera\xE7\xF5es de arquivo."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

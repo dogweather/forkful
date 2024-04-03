@@ -8,7 +8,7 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi samalla k
 lastmod: '2024-03-13T22:44:56.599431-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi samalla kun varmistetaan,\
-  \ ett\xE4 loput kirjaimet pysyv\xE4t pienin\xE4, on merkkijonon p\xE4\xE4omanlisointia.\u2026"
+  \ ett\xE4 loput kirjaimet pysyv\xE4t pienin\xE4, on merkkijonon p\xE4\xE4omanlisointia."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

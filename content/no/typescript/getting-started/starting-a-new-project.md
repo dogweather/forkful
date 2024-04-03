@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et 
 lastmod: '2024-03-13T22:44:40.532928-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et blankt\
-  \ lerret; det gir deg en ren start for \xE5 kode noe nytt. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+  \ lerret; det gir deg en ren start for \xE5 kode noe nytt."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

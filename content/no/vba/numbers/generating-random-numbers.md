@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.614378-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Visual Basic for Applications (VBA) gir\
   \ muligheten til \xE5 simulere prosesser med elementer av sjanse eller variabilitet,\
-  \ som\u2026"
+  \ som terningkast eller pr\xF8veutvalg."
 title: Generere tilfeldige tall
 weight: 12
 ---

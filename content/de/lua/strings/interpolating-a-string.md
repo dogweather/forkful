@@ -6,8 +6,7 @@ description: "String-Interpolation erm\xF6glicht es, Variablen innerhalb eines S
 lastmod: '2024-03-13T22:44:54.001303-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen innerhalb eines Strings\
-  \ einzuf\xFCgen, um dynamische Nachrichten zu erstellen. Programmierer benutzen\
-  \ das, um\u2026"
+  \ einzuf\xFCgen, um dynamische Nachrichten zu erstellen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

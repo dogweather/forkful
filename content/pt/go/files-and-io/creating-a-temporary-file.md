@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.081770-06:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
   \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
-  \ como\u2026"
+  \ como armazenamento de dados intermedi\xE1rios ou aux\xEDlio em trabalhos de processamento\
+  \ em lote."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

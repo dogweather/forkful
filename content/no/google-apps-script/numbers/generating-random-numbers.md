@@ -7,7 +7,7 @@ description: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i progra
 lastmod: '2024-03-13T22:44:40.309431-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i programmering\
-  \ som brukes til en rekke applikasjoner, som simuleringer, spill og\u2026"
+  \ som brukes til en rekke applikasjoner, som simuleringer, spill og sikkerhetssystemer."
 title: Generere tilfeldige tall
 weight: 12
 ---

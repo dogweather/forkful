@@ -7,9 +7,7 @@ description: "In VBA, il debugger \xE8 integrato nell'Editor di Visual Basic (VB
   \ clic nel\u2026"
 lastmod: '2024-03-13T22:44:43.268075-06:00'
 model: gpt-4-0125-preview
-summary: "In VBA, il debugger \xE8 integrato nell'Editor di Visual Basic (VBE). Ecco\
-  \ come puoi sfruttarlo: 1. **Impostazione dei punti di interruzione**: Fai clic\
-  \ nel\u2026"
+summary: "In VBA, il debugger \xE8 integrato nell'Editor di Visual Basic (VBE)."
 title: Utilizzo di un debugger
 weight: 35
 ---

@@ -5,7 +5,7 @@ description: "Calcular uma data no futuro ou passado \xE9 exatamente isso: deter
 lastmod: '2024-03-13T22:44:46.251421-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou passado \xE9 exatamente isso: determinar\
-  \ uma data al\xE9m ou antes de hoje. Programadores fazem isso para manipular prazos,\u2026"
+  \ uma data al\xE9m ou antes de hoje."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

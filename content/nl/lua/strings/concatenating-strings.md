@@ -6,8 +6,8 @@ description: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt
   \ een nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals\u2026"
 lastmod: '2024-03-13T22:44:50.929416-06:00'
 model: gpt-4-0125-preview
-summary: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een\
-  \ nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals\u2026"
+summary: Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een
+  nieuwe te maken.
 title: Samenvoegen van strings
 weight: 3
 ---

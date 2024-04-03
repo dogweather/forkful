@@ -6,7 +6,7 @@ description: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cac
 lastmod: '2024-03-13T22:44:57.420755-06:00'
 model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
-  \ des mots pour les transformer ou les corriger. Les programmeurs le font pour mettre\u2026"
+  \ des mots pour les transformer ou les corriger."
 title: Recherche et remplacement de texte
 weight: 10
 ---

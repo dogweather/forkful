@@ -4,8 +4,8 @@ description: "Controllare l'esistenza di una directory significa verificare se u
   \ specifica cartella esiste nel file system. I programmatori lo fanno per evitare\u2026"
 lastmod: '2024-03-13T22:44:43.363751-06:00'
 model: unknown
-summary: "Controllare l'esistenza di una directory significa verificare se una specifica\
-  \ cartella esiste nel file system. I programmatori lo fanno per evitare\u2026"
+summary: Controllare l'esistenza di una directory significa verificare se una specifica
+  cartella esiste nel file system.
 title: Verifica dell'esistenza di una directory
 weight: 20
 ---

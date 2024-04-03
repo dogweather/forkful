@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.347360-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
   \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\
-  \ liter\u0119, je\u015Bli ju\u017C\u2026"
+  \ liter\u0119, je\u015Bli ju\u017C taka nie jest."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

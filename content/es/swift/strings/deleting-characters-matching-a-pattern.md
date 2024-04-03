@@ -5,7 +5,7 @@ description: "Eliminar caracteres que coinciden con un patr\xF3n implica buscar 
 lastmod: '2024-03-13T22:44:59.401307-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n implica buscar secuencias\
-  \ espec\xEDficas de texto y quitarlas de una cadena de caracteres. Los programadores\u2026"
+  \ espec\xEDficas de texto y quitarlas de una cadena de caracteres."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

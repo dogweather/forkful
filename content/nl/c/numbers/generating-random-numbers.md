@@ -7,7 +7,8 @@ description: "Het genereren van willekeurige getallen in C houdt in dat waarden 
 lastmod: '2024-03-13T22:44:51.286402-06:00'
 model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in C houdt in dat waarden worden\
-  \ gecre\xEBerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals\u2026"
+  \ gecre\xEBerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals\
+  \ uniform of normaal."
 title: Willekeurige getallen genereren
 weight: 12
 ---

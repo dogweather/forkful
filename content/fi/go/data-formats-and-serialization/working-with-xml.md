@@ -7,7 +7,7 @@ description: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (
 lastmod: '2024-03-13T22:44:56.076742-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (lukemisen)\
-  \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle.\u2026"
+  \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

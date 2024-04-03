@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE
 lastmod: '2024-03-13T22:44:56.442812-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE4ynti\xE4\
-  \ tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi. Teemme\
-  \ sen\u2026"
+  \ tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

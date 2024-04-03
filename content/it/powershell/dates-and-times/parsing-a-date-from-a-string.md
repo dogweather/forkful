@@ -7,7 +7,8 @@ description: "Analizzare una data da una stringa consiste nel riconoscere e conv
 lastmod: '2024-03-13T22:44:43.651958-06:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa consiste nel riconoscere e convertire\
-  \ date scritte in forma di testo in un tipo di dato data che PowerShell pu\xF2 capire\u2026"
+  \ date scritte in forma di testo in un tipo di dato data che PowerShell pu\xF2 capire\
+  \ e con cui pu\xF2 lavorare."
 title: Analisi di una data da una stringa
 weight: 30
 ---

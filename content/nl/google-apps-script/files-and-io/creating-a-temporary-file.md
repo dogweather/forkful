@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:50.352662-06:00'
 model: gpt-4-0125-preview
 summary: "Het cre\xEBren van een tijdelijk bestand in Google Apps Script houdt in\
   \ dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans\
-  \ voor\u2026"
+  \ voor tussentijdse gegevensverwerking, debugging of cache-doeleinden."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

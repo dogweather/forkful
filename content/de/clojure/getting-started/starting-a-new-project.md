@@ -6,8 +6,7 @@ description: "Das Starten eines neuen Projekts bedeutet, Grundsteine f\xFCr etwa
 lastmod: '2024-03-13T22:44:53.420225-06:00'
 model: gpt-4-1106-preview
 summary: "Das Starten eines neuen Projekts bedeutet, Grundsteine f\xFCr etwas Gro\xDF\
-  artiges zu legen. Entwickler tun dies, um ihre Ideen in die Realit\xE4t umzusetzen\
-  \ oder\u2026"
+  artiges zu legen."
 title: Einen neuen Projekt starten
 weight: 1
 ---

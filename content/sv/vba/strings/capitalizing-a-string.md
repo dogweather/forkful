@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.724749-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for Applications\
   \ (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord i en str\xE4\
-  ng till\u2026"
+  ng till versal, samtidigt som man ser till att resten \xE4r i gemen."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

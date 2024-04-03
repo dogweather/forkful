@@ -8,7 +8,8 @@ description: "\xC5 analysere en dato fra en streng i Visual Basic for Applicatio
 lastmod: '2024-03-13T22:44:40.630848-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Visual Basic for Applications (VBA)\
-  \ handler om \xE5 konvertere tekst som representerer en dato til en datatotype for\u2026"
+  \ handler om \xE5 konvertere tekst som representerer en dato til en datatotype for\
+  \ dato."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

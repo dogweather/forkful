@@ -6,8 +6,7 @@ description: "Att arbeta med XML inneb\xE4r att manipulera och komma \xE5t data 
 lastmod: '2024-03-13T22:44:38.150354-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att manipulera och komma \xE5t data strukturerad\
-  \ i det utvidgbara m\xE4rkspr\xE5ket. Programmerare arbetar med XML f\xF6r att m\xF6\
-  jligg\xF6ra\u2026"
+  \ i det utvidgbara m\xE4rkspr\xE5ket."
 title: Att arbeta med XML
 weight: 40
 ---

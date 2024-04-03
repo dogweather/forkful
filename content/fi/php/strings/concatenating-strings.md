@@ -6,8 +6,7 @@ description: "Stringien yhdistely eli konkatenointi tarkoittaa tekstijonojen lii
 lastmod: '2024-03-13T22:44:56.647830-06:00'
 model: gpt-4-1106-preview
 summary: "Stringien yhdistely eli konkatenointi tarkoittaa tekstijonojen liitt\xE4\
-  mist\xE4 yhteen. Sit\xE4 k\xE4ytet\xE4\xE4n, koska usein haluat muodostaa dynaamisia\
-  \ tekstej\xE4, kuten\u2026"
+  mist\xE4 yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.693870-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
   \ w Arduino wi\u0105\u017Ce si\u0119 z odczytem z plik\xF3w CSV i zapisywaniem do\
-  \ nich,\u2026"
+  \ nich, zazwyczaj przechowywanych na karcie SD, co umo\u017Cliwia rejestrowanie\
+  \ danych, ustawienia konfiguracyjne i wiele wi\u0119cej."
 title: Praca z plikami CSV
 weight: 37
 ---

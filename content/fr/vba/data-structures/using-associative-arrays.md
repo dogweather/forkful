@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.548862-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires dans\
   \ Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9er\
-  \ des\u2026"
+  \ des collections de paires cl\xE9-valeur."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

@@ -5,9 +5,8 @@ description: "Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulow
   \ jest on powszechnie\u2026"
 lastmod: '2024-03-13T22:44:35.069695-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie danymi\
-  \ XML. Programi\u015Bci cz\u0119sto zajmuj\u0105 si\u0119 XML, poniewa\u017C jest\
-  \ on powszechnie\u2026"
+summary: Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie danymi
+  XML.
 title: Praca z XML
 weight: 40
 ---

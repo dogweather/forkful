@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.521919-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a an\xE1lise\
   \ e gera\xE7\xE3o de arquivos que armazenam dados tabulares num formato simples\
-  \ de texto puro.\u2026"
+  \ de texto puro."
 title: Trabalhando com CSV
 weight: 37
 ---

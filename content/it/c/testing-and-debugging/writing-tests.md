@@ -7,7 +7,7 @@ description: "Scrivere test in C comporta la creazione di programmi o funzioni a
 lastmod: '2024-03-13T22:44:44.002321-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
-  \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"
+  \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice."
 title: Scrivere test
 weight: 36
 ---

@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros rea
 lastmod: '2024-03-13T22:44:46.493951-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros reais e imagin\xE1\
-  rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1. Eles s\xE3o essenciais\
-  \ em campos como\u2026"
+  rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

@@ -8,7 +8,8 @@ description: "Analizar una fecha de una cadena implica convertir representacione
 lastmod: '2024-03-13T22:44:59.211245-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena implica convertir representaciones textuales\
-  \ de fechas y horas en un formato que se pueda manipular, almacenar o comparar\u2026"
+  \ de fechas y horas en un formato que se pueda manipular, almacenar o comparar f\xE1\
+  cilmente dentro de un programa Lua."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

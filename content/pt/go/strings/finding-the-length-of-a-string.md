@@ -8,8 +8,7 @@ description: "Encontrar o comprimento de uma string em Go trata-se de determinar
 lastmod: '2024-03-13T22:44:46.050858-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em Go trata-se de determinar o n\xFA\
-  mero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\xE3\
-  o\u2026"
+  mero de caracteres que ela cont\xE9m."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

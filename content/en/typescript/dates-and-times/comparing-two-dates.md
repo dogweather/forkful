@@ -5,7 +5,7 @@ description: "Comparing two dates involves figuring out their chronological rela
 lastmod: '2024-03-13T22:44:59.869803-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates involves figuring out their chronological relationship\u2014\
-  are they the same, is one earlier, or maybe later? Programmers do this to\u2026"
+  are they the same, is one earlier, or maybe later."
 title: Comparing two dates
 weight: 27
 ---

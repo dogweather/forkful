@@ -5,7 +5,7 @@ description: "Deletar caracteres que seguem um padr\xE3o espec\xEDfico \xE9 basi
 lastmod: '2024-03-13T22:44:46.483256-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que seguem um padr\xE3o espec\xEDfico \xE9 basicamente\
-  \ filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar\u2026"
+  \ filtrar texto."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

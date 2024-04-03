@@ -7,7 +7,8 @@ description: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na
 lastmod: '2024-03-13T22:44:34.922496-06:00'
 model: gpt-4-0125-preview
 summary: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
-  pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"
+  pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym dost\u0119\
+  pnym chmurowym schowku."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

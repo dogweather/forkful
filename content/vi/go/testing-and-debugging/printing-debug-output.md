@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Trong l\u1EADp tr\xECnh m\xE1y t\xEDnh, \"In th\xF4ng \u0111i\u1EC7p g\u1EE1\
   \ l\u1ED7i\" bao g\u1ED3m vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c th\xF4ng \u0111i\u1EC7\
   p th\xF4ng tin chi ti\u1EBFt gi\xFAp c\xE1c nh\xE0 ph\xE1t tri\u1EC3n hi\u1EC3u\
-  \ \u0111\u01B0\u1EE3c lu\u1ED3ng th\u1EF1c hi\u1EC7n\u2026"
+  \ \u0111\u01B0\u1EE3c lu\u1ED3ng th\u1EF1c hi\u1EC7n c\u1EE7a ch\u01B0\u01A1ng tr\xEC\
+  nh ho\u1EB7c x\xE1c \u0111\u1ECBnh c\xE1c v\u1EA5n \u0111\u1EC1."
 title: "In \u0111\u1EA7u ra debug"
 weight: 33
 ---

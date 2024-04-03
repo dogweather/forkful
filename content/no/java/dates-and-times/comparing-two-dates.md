@@ -6,7 +6,7 @@ description: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, elle
 lastmod: '2024-03-13T22:44:40.678730-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, eller hvilken\
-  \ som kommer f\xF8r eller etter den andre. Dette er kritisk i oppgaver som sortering\u2026"
+  \ som kommer f\xF8r eller etter den andre."
 title: Sammenlikning av to datoer
 weight: 27
 ---

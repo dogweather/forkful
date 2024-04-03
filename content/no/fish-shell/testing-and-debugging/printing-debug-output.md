@@ -6,8 +6,7 @@ description: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva 
 lastmod: '2024-03-13T22:44:41.229511-06:00'
 model: gpt-4-1106-preview
 summary: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
-  \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\
-  \ forst\xE5 flyten\u2026"
+  \ v\xE5r egentlig gj\xF8r."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

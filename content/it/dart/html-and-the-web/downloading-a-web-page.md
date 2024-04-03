@@ -6,8 +6,8 @@ description: "Scaricare una pagina web consiste nel recuperare il contenuto di u
   \ pagina web tramite il suo URL per elaborarlo o memorizzarlo. I programmatori fanno\u2026"
 lastmod: '2024-03-13T22:44:43.128611-06:00'
 model: gpt-4-0125-preview
-summary: "Scaricare una pagina web consiste nel recuperare il contenuto di una pagina\
-  \ web tramite il suo URL per elaborarlo o memorizzarlo. I programmatori fanno\u2026"
+summary: Scaricare una pagina web consiste nel recuperare il contenuto di una pagina
+  web tramite il suo URL per elaborarlo o memorizzarlo.
 title: Scaricare una pagina web
 weight: 42
 ---

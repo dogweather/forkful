@@ -8,7 +8,8 @@ description: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3
 lastmod: '2024-03-13T22:44:58.519593-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n de computadoras,\
-  \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero\u2026"
+  \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero especificado\
+  \ de decimales."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

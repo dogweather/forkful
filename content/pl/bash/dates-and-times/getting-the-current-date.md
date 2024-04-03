@@ -8,8 +8,7 @@ description: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowan
 lastmod: '2024-03-13T22:44:35.595713-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowanych polece\u0144\
-  \ do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach. Programi\u015B\
-  ci u\u017Cywaj\u0105 tej\u2026"
+  \ do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

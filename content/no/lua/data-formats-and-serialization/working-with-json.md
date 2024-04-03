@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.951736-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Lua inneb\xE6rer \xE5 tolke JSON-formaterte strenger\
   \ til Lua-tabeller og omvendt, noe som muliggj\xF8r enkel datautveksling mellom\
-  \ Lua-\u2026"
+  \ Lua-applikasjoner og webtjenester eller eksterne APIer."
 title: Arbeider med JSON
 weight: 38
 ---

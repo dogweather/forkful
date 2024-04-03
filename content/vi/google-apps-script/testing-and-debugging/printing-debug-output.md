@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "In th\xF4ng tin l\u1ED7i \u0111\u1EC3 g\u1EE1 r\u1ED1i bao g\u1ED3m vi\u1EC7\
   c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2u l\u1EC7nh ghi nh\u1EADt\
   \ k\xFD trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB gi\xE1 tr\u1ECB\
-  \ bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o\u2026"
+  \ bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o l\u1ED7i trong th\u1EDD\
+  i gian ch\u1EA1y."
 title: "In ra th\xF4ng tin debug"
 weight: 33
 ---

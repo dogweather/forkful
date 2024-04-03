@@ -5,8 +5,7 @@ description: "Reading a text file is grabbing data from a file that contains tex
   \ are\u2026"
 lastmod: '2024-03-13T22:45:00.104938-06:00'
 model: gpt-4-1106-preview
-summary: "Reading a text file is grabbing data from a file that contains text. Programmers\
-  \ do this to load configurations, read data, or fetch resources that are\u2026"
+summary: Reading a text file is grabbing data from a file that contains text.
 title: Reading a text file
 weight: 22
 ---

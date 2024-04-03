@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.814841-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Elm beinhaltet das Umwandeln\
   \ von Textinformationen, die Daten und Zeiten repr\xE4sentieren, in ein Format,\
-  \ das\u2026"
+  \ das Elm verstehen und manipulieren kann, speziell in den `Date` Typ."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

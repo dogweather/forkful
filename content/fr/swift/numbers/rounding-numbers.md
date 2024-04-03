@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.215056-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie approximer une valeur num\xE9rique \xE0 une\
   \ pr\xE9cision sp\xE9cifique, typiquement pour \xE9liminer les d\xE9cimales ind\xE9\
-  sirables. Les\u2026"
+  sirables."
 title: Arrondir les nombres
 weight: 13
 ---

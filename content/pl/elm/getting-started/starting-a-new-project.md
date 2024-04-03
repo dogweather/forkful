@@ -6,8 +6,7 @@ description: "Zaczynanie nowego projektu to jak otwieranie nowej, pustej ksi\u01
 lastmod: '2024-03-13T22:44:35.322425-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu to jak otwieranie nowej, pustej ksi\u0105\u017C\
-  ki, w kt\xF3r\u0105 mo\u017Cemy wpisa\u0107 dowolny kod. Programi\u015Bci rozpoczynaj\u0105\
-  \ nowe projekty, by tworzy\u0107\u2026"
+  ki, w kt\xF3r\u0105 mo\u017Cemy wpisa\u0107 dowolny kod."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

@@ -4,8 +4,8 @@ description: "Organizing code into functions is about breaking down your code in
   \ reusable blocks with defined purposes. We do it to keep things tidy, prevent\u2026"
 lastmod: '2024-03-13T22:45:00.171969-06:00'
 model: gpt-4-1106-preview
-summary: "Organizing code into functions is about breaking down your code into reusable\
-  \ blocks with defined purposes. We do it to keep things tidy, prevent\u2026"
+summary: Organizing code into functions is about breaking down your code into reusable
+  blocks with defined purposes.
 title: Organizing code into functions
 weight: 18
 ---

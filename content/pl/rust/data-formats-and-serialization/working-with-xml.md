@@ -5,9 +5,7 @@ description: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuz
   \ starszymi systemami,\u2026"
 lastmod: '2024-03-13T22:44:35.210879-06:00'
 model: gpt-4-0125-preview
-summary: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn JSON-a.\
-  \ Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze starszymi\
-  \ systemami,\u2026"
+summary: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn JSON-a."
 title: Praca z XML
 weight: 40
 ---

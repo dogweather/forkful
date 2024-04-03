@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.414523-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) implique de parser des\
   \ donn\xE9es JSON \xE0 partir de cha\xEEnes de caract\xE8res vers des objets Dart\
-  \ et vice\u2026"
+  \ et vice versa, une t\xE2che courante dans le d\xE9veloppement web et d'applications\
+  \ pour l'\xE9change de donn\xE9es."
 title: Travailler avec JSON
 weight: 38
 ---

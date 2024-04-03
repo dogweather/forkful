@@ -7,7 +7,8 @@ description: "Confrontare due date in Google Apps Script, un derivato di JavaScr
 lastmod: '2024-03-13T22:44:42.969487-06:00'
 model: gpt-4-0125-preview
 summary: "Confrontare due date in Google Apps Script, un derivato di JavaScript su\
-  \ misura per la suite di app di Google, \xE8 un compito essenziale per gli\u2026"
+  \ misura per la suite di app di Google, \xE8 un compito essenziale per gli sviluppatori\
+  \ che si occupano di pianificazione, cronologie o qualsiasi dato relativo alle date."
 title: Confrontare due date
 weight: 27
 ---

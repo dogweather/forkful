@@ -8,8 +8,7 @@ description: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se compor
 lastmod: '2024-03-13T22:44:58.423526-06:00'
 model: gpt-4-0125-preview
 summary: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se comporte comme\
-  \ pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent des tests pour\
-  \ assurer la\u2026"
+  \ pr\xE9vu dans diverses conditions."
 title: "R\xE9daction de tests"
 weight: 36
 ---

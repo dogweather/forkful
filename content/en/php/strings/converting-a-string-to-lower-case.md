@@ -4,8 +4,8 @@ description: "In PHP, converting a string to lower case means transforming all a
   \ characters in a string to their lowercase variant. Programmers do this for\u2026"
 lastmod: '2024-03-13T22:45:00.154895-06:00'
 model: gpt-4-1106-preview
-summary: "In PHP, converting a string to lower case means transforming all alphabetical\
-  \ characters in a string to their lowercase variant. Programmers do this for\u2026"
+summary: In PHP, converting a string to lower case means transforming all alphabetical
+  characters in a string to their lowercase variant.
 title: Converting a string to lower case
 weight: 4
 ---

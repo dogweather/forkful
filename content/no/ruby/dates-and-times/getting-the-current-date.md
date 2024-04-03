@@ -8,7 +8,7 @@ description: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enh
 lastmod: '2024-03-13T22:44:41.343413-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver programmeringsinnsats,\
-  \ fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere rapporter\u2026"
+  \ fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere rapporter med datostempler."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

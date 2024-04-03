@@ -8,7 +8,7 @@ description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestan
 lastmod: '2024-03-13T22:44:50.481354-06:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand dat\
-  \ je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag of wanneer\u2026"
+  \ je weggooit na kort gebruik."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

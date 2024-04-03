@@ -5,8 +5,8 @@ description: "L'analyse (parsing) du HTML permet de lire et de manipuler le cont
   \ des\u2026"
 lastmod: '2024-03-13T22:44:57.280165-06:00'
 model: unknown
-summary: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une\
-  \ page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser des\u2026"
+summary: L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une
+  page web.
 title: Analyse syntaxique de HTML
 weight: 43
 ---

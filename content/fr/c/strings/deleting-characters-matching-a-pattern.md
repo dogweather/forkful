@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.353183-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
-  \ caract\xE8res\u2026"
+  \ caract\xE8res r\xE9pondant \xE0 des crit\xE8res pr\xE9d\xE9finis."
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -8,8 +8,7 @@ description: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecny
 lastmod: '2024-03-13T22:44:35.418794-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecnych informacji\
-  \ o dacie i czasie z systemu. Programi\u015Bci cz\u0119sto musz\u0105 uzyska\u0107\
-  \ dost\u0119p do tych\u2026"
+  \ o dacie i czasie z systemu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

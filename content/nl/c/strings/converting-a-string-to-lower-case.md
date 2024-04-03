@@ -6,8 +6,9 @@ description: "Het omzetten van een tekenreeks naar kleine letters in C houdt in 
   \ alle hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
 lastmod: '2024-03-13T22:44:51.276566-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat alle\
-  \ hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
+summary: Het omzetten van een tekenreeks naar kleine letters in C houdt in dat alle
+  hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun overeenkomstige
+  kleine letters.
 title: Een string converteren naar kleine letters
 weight: 4
 ---

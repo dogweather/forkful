@@ -6,8 +6,7 @@ description: "En un clin d'oeil: une requ\xEAte HTTP envoie de l'info vers ou en
 lastmod: '2024-03-13T22:44:57.830477-06:00'
 model: gpt-4-1106-preview
 summary: "En un clin d'oeil: une requ\xEAte HTTP envoie de l'info vers ou en re\xE7\
-  oit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des\
-  \ API,\u2026"
+  oit depuis un serveur web."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

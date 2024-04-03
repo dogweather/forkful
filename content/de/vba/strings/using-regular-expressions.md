@@ -7,7 +7,8 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in Visual Basic for Applications 
 lastmod: '2024-03-13T22:44:53.706517-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Visual Basic for Applications (VBA)\
-  \ bieten eine leistungsstarke M\xF6glichkeit, um Zeichenketten zu durchsuchen, abzugleichen\u2026"
+  \ bieten eine leistungsstarke M\xF6glichkeit, um Zeichenketten zu durchsuchen, abzugleichen\
+  \ und zu manipulieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

@@ -6,8 +6,7 @@ description: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obviou
 lastmod: '2024-03-13T22:44:56.637731-06:00'
 model: gpt-4-0125-preview
 summary: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obvious, Minimal\
-  \ Language) j\xE4sent\xE4misen ja luomisen Haskellilla. Ohjelmoijat tekev\xE4t sen\
-  \ helposti\u2026"
+  \ Language) j\xE4sent\xE4misen ja luomisen Haskellilla."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

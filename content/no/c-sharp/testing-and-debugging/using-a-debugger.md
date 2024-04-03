@@ -5,9 +5,8 @@ description: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg ri
   \ }\u2026"
 lastmod: '2024-03-13T22:44:40.800345-06:00'
 model: gpt-4-0125-preview
-summary: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig:\
-  \ ```C# static void Main() { int resultat = Sum(1, 2); Console.WriteLine(resultat);\
-  \ }\u2026"
+summary: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig:\n\
+  \n```C#\nstatic void Main()\n{\n    int resultat = Sum(1, 2);\n    Console."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

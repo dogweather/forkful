@@ -8,8 +8,7 @@ description: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke str
 lastmod: '2024-03-13T22:44:40.525076-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
-  \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\
-  \ for mer\u2026"
+  \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par."
 title: Bruke associative tabeller
 weight: 15
 ---

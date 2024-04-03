@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
   \ t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) trong JavaScript th\u01B0\u1EDDng c\xF3\
   \ ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
-  n cho b\u1EA3ng t\xEDnh\u2026"
+  n cho b\u1EA3ng t\xEDnh ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

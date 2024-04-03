@@ -5,7 +5,7 @@ description: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezif
 lastmod: '2024-03-13T22:44:53.626426-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
-  \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"
+  \ Genauigkeit."
 title: Zahlen runden
 weight: 13
 ---

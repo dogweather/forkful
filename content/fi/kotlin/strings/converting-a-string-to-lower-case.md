@@ -5,9 +5,7 @@ description: "\"Mit\xE4 & Miksi?\" Stringin muuttaminen pieniksi kirjaimiksi tar
   \ ovat\u2026"
 lastmod: '2024-03-13T22:44:56.518116-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mit\xE4 & Miksi?\" Stringin muuttaminen pieniksi kirjaimiksi tarkoittaa\
-  \ alkuper\xE4isen merkkijonon muuntamista versioksi, jossa kaikki isot kirjaimet\
-  \ ovat\u2026"
+summary: "\"Mit\xE4 & Miksi."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -6,7 +6,8 @@ description: "Fish har ikke en innebygd debugger som noen andre skall har, men d
 lastmod: '2024-03-13T22:44:41.231412-06:00'
 model: gpt-4-0125-preview
 summary: "Fish har ikke en innebygd debugger som noen andre skall har, men du kan\
-  \ bruke eksterne verkt\xF8y som `gdb` for debugging av kompilerte programmer eller\u2026"
+  \ bruke eksterne verkt\xF8y som `gdb` for debugging av kompilerte programmer eller\
+  \ `fish -d` for \xE5 kj\xF8re fish med debug-utdata p\xE5 forskjellige niv\xE5er."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

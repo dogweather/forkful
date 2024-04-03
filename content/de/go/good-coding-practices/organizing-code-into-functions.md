@@ -7,7 +7,7 @@ description: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wi
 lastmod: '2024-03-13T22:44:53.293678-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
-  \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"
+  \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

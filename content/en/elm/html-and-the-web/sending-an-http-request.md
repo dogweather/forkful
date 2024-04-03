@@ -4,8 +4,8 @@ description: "In Elm, sending an HTTP request is how your app talks to other web
   \ to exchange data. Programmers do this to fetch or send info to servers,\u2026"
 lastmod: '2024-03-13T22:45:00.006724-06:00'
 model: gpt-4-1106-preview
-summary: "In Elm, sending an HTTP request is how your app talks to other web services\
-  \ to exchange data. Programmers do this to fetch or send info to servers,\u2026"
+summary: In Elm, sending an HTTP request is how your app talks to other web services
+  to exchange data.
 title: Sending an HTTP request
 weight: 44
 ---

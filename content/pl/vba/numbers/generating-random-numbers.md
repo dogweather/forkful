@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.227144-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
   liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
-  \ takimi jak\u2026"
+  \ takimi jak rzuty kostk\u0105 czy pr\xF3bkowanie danych."
 title: Generowanie liczb losowych
 weight: 12
 ---

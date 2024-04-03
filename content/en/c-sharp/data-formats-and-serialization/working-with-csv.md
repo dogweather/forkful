@@ -4,8 +4,8 @@ description: "CSV (Comma-Separated Values) files are a common data exchange form
   \ that represents tabular data in plain text, using commas to separate individual\u2026"
 lastmod: '2024-03-13T22:45:00.109637-06:00'
 model: gpt-4-0125-preview
-summary: "CSV (Comma-Separated Values) files are a common data exchange format that\
-  \ represents tabular data in plain text, using commas to separate individual\u2026"
+summary: CSV (Comma-Separated Values) files are a common data exchange format that
+  represents tabular data in plain text, using commas to separate individual values.
 title: Working with CSV
 weight: 37
 ---

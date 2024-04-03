@@ -4,8 +4,8 @@ description: "Associative arrays, more commonly known as hashes in Ruby, allow p
   \ unique keys to values. They're indispensable when you need to keep track of\u2026"
 lastmod: '2024-03-13T22:45:00.542284-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, more commonly known as hashes in Ruby, allow pairing\
-  \ unique keys to values. They're indispensable when you need to keep track of\u2026"
+summary: Associative arrays, more commonly known as hashes in Ruby, allow pairing
+  unique keys to values.
 title: Using associative arrays
 weight: 15
 ---

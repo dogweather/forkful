@@ -6,8 +6,7 @@ description: "Arduino IDE:lla voit k\xE4ytt\xE4\xE4 Serial-tulosteita virheenets
 lastmod: '2024-03-13T22:44:56.828299-06:00'
 model: gpt-4-0125-preview
 summary: "Arduino IDE:lla voit k\xE4ytt\xE4\xE4 Serial-tulosteita virheenetsint\xE4\
-  \xE4n, mutta se on v\xE4h\xE4n kuin luolaston tutkimista taskulampun kanssa. Oikeaan\
-  \ debuggaukseen\u2026"
+  \xE4n, mutta se on v\xE4h\xE4n kuin luolaston tutkimista taskulampun kanssa."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

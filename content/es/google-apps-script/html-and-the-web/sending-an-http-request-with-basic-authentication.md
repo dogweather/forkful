@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.529585-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica codificar\
   \ un nombre de usuario y contrase\xF1a en un encabezado de solicitud para acceder\
-  \ a\u2026"
+  \ a recursos protegidos."
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

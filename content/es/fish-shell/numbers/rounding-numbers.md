@@ -5,7 +5,7 @@ description: "Redondear n\xFAmeros consiste en eliminar los decimales para simpl
 lastmod: '2024-03-13T22:44:59.494694-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
-  \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"
+  \ tus datos o ajustarlos a formatos espec\xEDficos."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

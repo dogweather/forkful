@@ -7,7 +7,8 @@ description: "Uudelleenj\xE4rjest\xE4minen (Refactoring) Dart-kieless\xE4 on ole
 lastmod: '2024-03-13T22:44:56.280052-06:00'
 model: gpt-4-0125-preview
 summary: "Uudelleenj\xE4rjest\xE4minen (Refactoring) Dart-kieless\xE4 on olemassa\
-  \ olevan koodin uudelleenrakenteellistamisen prosessi muuttamatta sen ulkoista\u2026"
+  \ olevan koodin uudelleenrakenteellistamisen prosessi muuttamatta sen ulkoista k\xE4\
+  ytt\xE4ytymist\xE4."
 title: "Koodin uudelleenj\xE4rjest\xE4minen"
 weight: 19
 ---

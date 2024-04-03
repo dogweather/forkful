@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.056835-06:00'
 model: gpt-4-1106-preview
 summary: "Le logging, c'est fondamentalement laisser une tra\xEEn\xE9e de miettes\
   \ \xE0 travers votre code - c'est la mani\xE8re de garder un \u0153il sur ce qui\
-  \ se passe lorsque\u2026"
+  \ se passe lorsque votre script est ex\xE9cut\xE9 en production."
 title: Journalisation
 weight: 17
 ---

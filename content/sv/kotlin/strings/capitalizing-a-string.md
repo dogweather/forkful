@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:37.854825-06:00'
 model: gpt-4-0125-preview
 summary: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\
-  \ \xE4r anv\xE4ndbart\u2026"
+  \ \xE4r anv\xE4ndbart f\xF6r att formatera anv\xE4ndarinmatningar eller visa text\
+  \ i ett anv\xE4ndargr\xE4nssnitt p\xE5 ett mer standardiserat eller anv\xE4ndarv\xE4\
+  nligt s\xE4tt."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

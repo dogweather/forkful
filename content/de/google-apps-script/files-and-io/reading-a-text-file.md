@@ -7,7 +7,8 @@ description: "Das Lesen einer Textdatei in Google Apps Script (GAS) umfasst den 
 lastmod: '2024-03-13T22:44:53.352975-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Google Apps Script (GAS) umfasst den Zugriff\
-  \ auf und das Extrahieren von Textdaten aus in Google Drive oder anderem\u2026"
+  \ auf und das Extrahieren von Textdaten aus in Google Drive oder anderem zug\xE4\
+  nglichen Cloud-basierten Speicher gespeicherten Dateien."
 title: Eine Textdatei lesen
 weight: 22
 ---

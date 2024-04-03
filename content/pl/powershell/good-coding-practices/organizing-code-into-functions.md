@@ -6,8 +6,7 @@ description: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w ko
 lastmod: '2024-03-13T22:44:35.635379-06:00'
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w kodu, kt\xF3\
-  re wykonuj\u0105 okre\u015Blone zadania i nadawaniu im nazwy. Robi si\u0119 to,\
-  \ aby kod by\u0142\u2026"
+  re wykonuj\u0105 okre\u015Blone zadania i nadawaniu im nazwy."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

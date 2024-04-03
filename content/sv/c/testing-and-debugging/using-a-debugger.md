@@ -7,9 +7,7 @@ description: "GDB (GNU Debugger) \xE4r den mest anv\xE4nda debuggern f\xF6r C-pr
   \ enkelt C-program.\u2026"
 lastmod: '2024-03-13T22:44:38.387536-06:00'
 model: gpt-4-0125-preview
-summary: "GDB (GNU Debugger) \xE4r den mest anv\xE4nda debuggern f\xF6r C-programmering.\
-  \ H\xE4r \xE4r en kort guide om hur man anv\xE4nder GDB f\xF6r att fels\xF6ka ett\
-  \ enkelt C-program.\u2026"
+summary: "GDB (GNU Debugger) \xE4r den mest anv\xE4nda debuggern f\xF6r C-programmering."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

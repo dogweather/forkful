@@ -4,8 +4,8 @@ description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu e
   \ um deine brillanten Ideen Wirklichkeit werden zu lassen. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:54.060195-06:00'
 model: gpt-4-1106-preview
-summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu erschaffen,\
-  \ um deine brillanten Ideen Wirklichkeit werden zu lassen. Programmierer\u2026"
+summary: Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu erschaffen,
+  um deine brillanten Ideen Wirklichkeit werden zu lassen.
 title: Einen neuen Projekt starten
 weight: 1
 ---

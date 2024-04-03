@@ -9,7 +9,7 @@ description: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8
 lastmod: '2024-03-13T22:44:57.236761-06:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8s le d\xE9\
-  part une structure organis\xE9e et maintenable. Les programmeurs font cela pour\u2026"
+  part une structure organis\xE9e et maintenable."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.636466-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
   \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
-  r man utf\xF8rer\u2026"
+  r man utf\xF8rer operasjoner som \xE5 lagre filer eller opprette nye mapper."
 title: Sjekke om en katalog eksisterer
 weight: 20
 ---

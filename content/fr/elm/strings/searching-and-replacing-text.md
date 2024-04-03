@@ -6,8 +6,7 @@ description: "Chercher et remplacer du texte, c'est juste modifier une cha\xEEne
 lastmod: '2024-03-13T22:44:57.672982-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est juste modifier une cha\xEEne par une\
-  \ autre dans un bloc de texte. Les programmeurs font \xE7a souvent pour corriger\
-  \ des\u2026"
+  \ autre dans un bloc de texte."
 title: Recherche et remplacement de texte
 weight: 10
 ---

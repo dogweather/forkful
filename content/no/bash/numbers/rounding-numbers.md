@@ -5,7 +5,7 @@ description: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere v
 lastmod: '2024-03-13T22:44:40.967274-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi som\
-  \ er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"
+  \ er god nok for en gitt kontekst."
 title: Avrunding av tall
 weight: 13
 ---

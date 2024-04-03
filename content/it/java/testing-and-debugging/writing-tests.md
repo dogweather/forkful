@@ -6,8 +6,8 @@ description: "Scrivere test in Java consiste nel verificare che il proprio codic
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
 lastmod: '2024-03-13T22:44:43.312462-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Java consiste nel verificare che il proprio codice si comporti\
-  \ come previsto in varie condizioni. I programmatori scrivono test per\u2026"
+summary: Scrivere test in Java consiste nel verificare che il proprio codice si comporti
+  come previsto in varie condizioni.
 title: Scrivere test
 weight: 36
 ---

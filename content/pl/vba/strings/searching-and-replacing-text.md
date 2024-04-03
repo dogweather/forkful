@@ -8,7 +8,8 @@ description: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) j
 lastmod: '2024-03-13T22:44:35.214092-06:00'
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest niezb\u0119\
-  dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych i baz\u2026"
+  dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych i baz\
+  \ danych."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

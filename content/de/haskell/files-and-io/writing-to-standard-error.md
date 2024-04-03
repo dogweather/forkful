@@ -7,7 +7,7 @@ description: "Das Schreiben auf Standard Error (stderr) in Haskell erm\xF6glicht
 lastmod: '2024-03-13T22:44:53.947283-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standard Error (stderr) in Haskell erm\xF6glicht es Programmen,\
-  \ ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu\u2026"
+  \ ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu differenzieren."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

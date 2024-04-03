@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.106102-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla voit\
   \ tallentaa tulosteita ja tietoja pysyv\xE4sti, mahdollistaen datan my\xF6hemp\xE4\
-  \xE4\u2026"
+  \xE4 p\xE4\xE4sy\xE4 tai muokkausta varten."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

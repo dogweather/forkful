@@ -6,8 +6,8 @@ description: "Een datum omzetten naar een string betekent het transformeren van 
   \ datumobject naar leesbare tekst voor mensen. Programmeurs doen dit om data in\u2026"
 lastmod: '2024-03-13T22:44:50.431683-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum omzetten naar een string betekent het transformeren van een datumobject\
-  \ naar leesbare tekst voor mensen. Programmeurs doen dit om data in\u2026"
+summary: Een datum omzetten naar een string betekent het transformeren van een datumobject
+  naar leesbare tekst voor mensen.
 title: Een datum converteren naar een string
 weight: 28
 ---

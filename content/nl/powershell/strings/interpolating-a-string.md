@@ -6,8 +6,8 @@ description: "String interpolatie schuift waarden in een stringtemplate zoals st
   \ van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:51.012426-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolatie schuift waarden in een stringtemplate zoals stukken\
-  \ van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs\u2026"
+summary: String interpolatie schuift waarden in een stringtemplate zoals stukken van
+  een puzzel, waardoor strings dynamisch worden en de code schoner.
 title: Een string interpoleren
 weight: 8
 ---

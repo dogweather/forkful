@@ -7,8 +7,9 @@ description: "Command line argumenten lezen is het oppakken van de extra bits di
   \ een\u2026"
 lastmod: '2024-03-13T22:44:51.262613-06:00'
 model: gpt-4-0125-preview
-summary: "Command line argumenten lezen is het oppakken van de extra bits die je typt\
-  \ na de naam van je script, zoals geheime handdrukken om het gedrag van een\u2026"
+summary: Command line argumenten lezen is het oppakken van de extra bits die je typt
+  na de naam van je script, zoals geheime handdrukken om het gedrag van een script
+  aan te passen.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

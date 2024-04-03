@@ -7,7 +7,7 @@ description: "Calcular uma data no futuro ou passado em Go envolve manipular val
 lastmod: '2024-03-13T22:44:46.075486-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou passado em Go envolve manipular valores de\
-  \ data e hora para determinar um ponto espec\xEDfico relativo a uma data dada.\u2026"
+  \ data e hora para determinar um ponto espec\xEDfico relativo a uma data dada."
 title: Calculando uma data no futuro ou no passado
 weight: 26
 ---

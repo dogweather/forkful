@@ -6,7 +6,7 @@ description: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relat
 lastmod: '2024-03-13T22:44:40.448772-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relaterte operasjoner\
-  \ i gjenbrukbare blokker. Vi gj\xF8r dette for \xE5 forbedre lesbarhet og\u2026"
+  \ i gjenbrukbare blokker."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

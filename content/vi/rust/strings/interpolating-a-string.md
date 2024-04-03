@@ -9,9 +9,7 @@ description: "N\u1ED9i suy chu\u1ED7i (String interpolation) ch\xE8n c\xE1c bi\u
 lastmod: '2024-03-13T22:44:36.356942-06:00'
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i (String interpolation) ch\xE8n c\xE1c bi\u1EBFn\
-  \ tr\u1EF1c ti\u1EBFp v\xE0o trong chu\u1ED7i. N\xF3 l\xE0m cho vi\u1EC7c x\xE2\
-  y d\u1EF1ng chu\u1ED7i tr\u1EDF n\xEAn m\u01B0\u1EE3t m\xE0 v\xE0 d\u1EC5 \u0111\
-  \u1ECDc, tr\xE1nh \u0111\u01B0\u1EE3c vi\u1EC7c\u2026"
+  \ tr\u1EF1c ti\u1EBFp v\xE0o trong chu\u1ED7i."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

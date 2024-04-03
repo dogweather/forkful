@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.873691-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en tekststreng i PHP betyr \xE5 strippe\
   \ bort de irriterende doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som kan\
-  \ rotte til\u2026"
+  \ rotte til logikken i koden din eller databaseforesp\xF8rslene."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

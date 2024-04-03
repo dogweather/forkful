@@ -5,7 +5,7 @@ description: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: loka
 lastmod: '2024-03-13T22:44:35.481525-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy\
-  \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne. Czemu? By automatycznie\u2026"
+  \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

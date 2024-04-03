@@ -6,8 +6,7 @@ description: "\xC5 kalkulere en dato i fremtiden eller fortiden betyr \xE5 finne
 lastmod: '2024-03-13T22:44:40.374665-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 kalkulere en dato i fremtiden eller fortiden betyr \xE5 finne en spesifikk\
-  \ dato f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for \xE5 h\xE5\
-  ndtere\u2026"
+  \ dato f\xF8r eller etter en kjent dato."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.102667-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
-  es, jogos e sistemas de\u2026"
+  es, jogos e sistemas de seguran\xE7a."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

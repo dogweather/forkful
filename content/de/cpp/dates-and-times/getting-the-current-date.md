@@ -7,7 +7,8 @@ description: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufg
 lastmod: '2024-03-13T22:44:54.195269-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe f\xFC\
-  r Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\u2026"
+  r Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\
+  \ basieren."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

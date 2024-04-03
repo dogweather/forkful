@@ -6,8 +6,7 @@ description: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga upp de textbit
 lastmod: '2024-03-13T22:44:37.970234-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga upp de textbitar du\
-  \ anger n\xE4r du k\xF6r ett program i terminalen. Programmers g\xF6r det f\xF6\
-  r att l\xE5ta anv\xE4ndare\u2026"
+  \ anger n\xE4r du k\xF6r ett program i terminalen."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

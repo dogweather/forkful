@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong Dart\
   \ l\xE0 nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn khi b\u1EA1n c\u1EA7n hi\u1EC3n th\u1ECB\
   \ th\xF4ng tin ng\xE0y v\xE0 gi\u1EDD d\u01B0\u1EDBi d\u1EA1ng c\xF3 th\u1EC3 \u0111\
-  \u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi con ng\u01B0\u1EDDi, ho\u1EB7c\u2026"
+  \u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi con ng\u01B0\u1EDDi, ho\u1EB7c khi b\u1EA1\
+  n d\u1EF1 \u0111\u1ECBnh tu\u1EA7n t\u1EF1 h\xF3a (serialize) d\u1EEF li\u1EC7u\
+  \ \u0111\u1EC3 l\u01B0u tr\u1EEF ho\u1EB7c truy\u1EC1n d\u1EABn."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

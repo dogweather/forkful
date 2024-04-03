@@ -6,8 +6,7 @@ description: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyyd
 lastmod: '2024-03-13T22:44:56.370426-06:00'
 model: gpt-4-1106-preview
 summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
-  . Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4 esimerkiksi m\xE4\xE4r\xE4aikojen hallintaan\
-  \ tai tapahtumien ajoittamiseen."
+  ."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.323639-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application de communiquer\
   \ avec le monde ext\xE9rieur : r\xE9cup\xE9rer des donn\xE9es, interagir avec des\
-  \ API, etc. Les\u2026"
+  \ API, etc."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

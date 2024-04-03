@@ -8,8 +8,7 @@ description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visu
 lastmod: '2024-03-13T22:44:35.221322-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual Basic\
-  \ for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie zawiera.\
-  \ Programi\u015Bci cz\u0119sto wykonuj\u0105\u2026"
+  \ for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie zawiera."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---

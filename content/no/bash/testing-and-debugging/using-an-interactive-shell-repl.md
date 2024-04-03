@@ -5,7 +5,7 @@ description: "REPL st\xE5r for Read-Eval-Print Loop, et enkelt, interaktivt data
 lastmod: '2024-03-13T22:44:40.976504-06:00'
 model: gpt-4-0125-preview
 summary: "REPL st\xE5r for Read-Eval-Print Loop, et enkelt, interaktivt dataprogrammeringsmilj\xF8\
-  . Kodeutviklere bruker det til raskt \xE5 skrive og teste kode,\u2026"
+  ."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

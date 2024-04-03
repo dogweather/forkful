@@ -5,8 +5,7 @@ description: "Leer un archivo de texto significa acceder y obtener su contenido.
   \ para\u2026"
 lastmod: '2024-03-13T22:44:59.309673-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto significa acceder y obtener su contenido. Los programadores\
-  \ lo hacen para manipular datos, configurar software o simplemente para\u2026"
+summary: Leer un archivo de texto significa acceder y obtener su contenido.
 title: Lectura de un archivo de texto
 weight: 22
 ---

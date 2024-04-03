@@ -4,8 +4,8 @@ description: "HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit 
   \ Servern und APIs spricht. Wir nutzen sie, um Daten zu holen, zu senden oder\u2026"
 lastmod: '2024-03-13T22:44:53.969181-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit anderen\
-  \ Servern und APIs spricht. Wir nutzen sie, um Daten zu holen, zu senden oder\u2026"
+summary: HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit anderen
+  Servern und APIs spricht.
 title: Einen HTTP-Request senden
 weight: 44
 ---

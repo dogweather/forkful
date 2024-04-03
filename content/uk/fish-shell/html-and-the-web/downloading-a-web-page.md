@@ -4,8 +4,7 @@ description: "Downloading a web page means grabbing its HTML content from the in
   \ Programmers do this to automate data collection, test websites, or analyze\u2026"
 lastmod: '2024-03-13T22:44:50.066019-06:00'
 model: gpt-4-1106-preview
-summary: "Downloading a web page means grabbing its HTML content from the internet.\
-  \ Programmers do this to automate data collection, test websites, or analyze\u2026"
+summary: Downloading a web page means grabbing its HTML content from the internet.
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
   \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
 weight: 42

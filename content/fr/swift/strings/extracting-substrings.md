@@ -6,8 +6,7 @@ description: "Extraction de sous-cha\xEEnes signifie r\xE9cup\xE9rer une partie 
 lastmod: '2024-03-13T22:44:58.204782-06:00'
 model: gpt-4-1106-preview
 summary: "Extraction de sous-cha\xEEnes signifie r\xE9cup\xE9rer une partie sp\xE9\
-  cifique d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser\
-  \ des donn\xE9es,\u2026"
+  cifique d'une cha\xEEne de caract\xE8res."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

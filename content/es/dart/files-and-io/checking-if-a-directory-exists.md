@@ -6,8 +6,9 @@ description: "Verificar si un directorio existe en Dart es sobre comprobar la pr
   \ de un directorio en una ruta especificada en el sistema de archivos antes de\u2026"
 lastmod: '2024-03-13T22:44:58.769865-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar si un directorio existe en Dart es sobre comprobar la presencia\
-  \ de un directorio en una ruta especificada en el sistema de archivos antes de\u2026"
+summary: Verificar si un directorio existe en Dart es sobre comprobar la presencia
+  de un directorio en una ruta especificada en el sistema de archivos antes de realizar
+  operaciones como leer o escribir archivos.
 title: Verificando si un directorio existe
 weight: 20
 ---

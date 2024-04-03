@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.354467-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
   \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\
-  iden\u2026"
+  iden rakentamiselle."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

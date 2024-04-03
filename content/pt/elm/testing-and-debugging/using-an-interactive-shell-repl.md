@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.501659-06:00'
 model: gpt-4-0125-preview
 summary: "O La\xE7o Ler-Avaliar-Imprimir (REPL, na sigla em ingl\xEAs) \xE9 um ambiente\
   \ de programa\xE7\xE3o interativo e simples que recebe entradas \xFAnicas do usu\xE1\
-  rio, avalia-as\u2026"
+  rio, avalia-as e retorna o resultado ao usu\xE1rio."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

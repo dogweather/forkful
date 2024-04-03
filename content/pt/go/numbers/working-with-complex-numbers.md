@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.053907-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com n\xFAmeros complexos na programa\xE7\xE3o envolve manipular\
   \ n\xFAmeros que possuem tanto uma parte real quanto uma imagin\xE1ria, tipicamente\
-  \ expressos\u2026"
+  \ expressos como `a + bi`."
 title: "Trabalhando com N\xFAmeros Complexos"
 weight: 14
 ---

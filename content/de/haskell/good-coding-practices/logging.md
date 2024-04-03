@@ -5,7 +5,9 @@ description: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spu
 lastmod: '2024-03-13T22:44:53.937643-06:00'
 model: gpt-4-1106-preview
 summary: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von\
-  \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
+  \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu hinterlassen,\
+  \ die verwendet werden k\xF6nnen, um zu verfolgen, was Ihre Anwendung zu jedem gegebenen\
+  \ Zeitpunkt tut."
 title: Protokollierung
 weight: 17
 ---

@@ -6,8 +6,7 @@ description: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separ
 lastmod: '2024-03-13T22:44:38.273827-06:00'
 model: unknown
 summary: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras med\
-  \ kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och utbyta\
-  \ data mellan\u2026"
+  \ kommatecken."
 title: Arbeta med csv
 weight: 37
 ---

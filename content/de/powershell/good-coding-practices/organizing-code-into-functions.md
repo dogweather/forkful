@@ -5,7 +5,7 @@ description: "Code in Funktionen zu organisieren bedeutet, Codeabschnitte, die s
 lastmod: '2024-03-13T22:44:54.109471-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Codeabschnitte, die spezifische\
-  \ Aufgaben erf\xFCllen, zusammenzufassen und ihnen einen Namen zu geben. Dies wird\u2026"
+  \ Aufgaben erf\xFCllen, zusammenzufassen und ihnen einen Namen zu geben."
 title: Code in Funktionen organisieren
 weight: 18
 ---

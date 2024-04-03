@@ -7,7 +7,9 @@ description: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 ta
 lastmod: '2024-03-13T22:44:56.972205-06:00'
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 tarkoittaa\
-  \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\u2026"
+  \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\
+  \ taulukkomuotoista dataa ulkoisista l\xE4hteist\xE4 tai vied\xE4 dataa k\xE4ytett\xE4\
+  v\xE4ksi muissa ohjelmissa."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

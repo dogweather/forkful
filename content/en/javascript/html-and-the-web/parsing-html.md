@@ -7,8 +7,7 @@ description: "Parsing HTML means extracting data from HTML documents. Programmer
   \ for web\u2026"
 lastmod: '2024-03-13T22:45:00.431554-06:00'
 model: unknown
-summary: "Parsing HTML means extracting data from HTML documents. Programmers do it\
-  \ to interact with or manipulate web content, automate data extraction, or for web\u2026"
+summary: Parsing HTML means extracting data from HTML documents.
 title: Parsing HTML
 weight: 43
 ---

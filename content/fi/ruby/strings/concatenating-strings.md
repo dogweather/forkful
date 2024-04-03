@@ -5,9 +5,7 @@ description: "Yhdist\xE4mme merkkijonoja eli \"stringej\xE4\" saumattomasti yhte
   \ viestej\xE4, rakennetaan dynaamista dataa\u2026"
 lastmod: '2024-03-13T22:44:57.076769-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja eli \"stringej\xE4\" saumattomasti yhteen. T\xE4\
-  h\xE4n on syyns\xE4: n\xE4ytet\xE4\xE4n k\xE4ytt\xE4j\xE4lle kustomoituja viestej\xE4\
-  , rakennetaan dynaamista dataa\u2026"
+summary: "Yhdist\xE4mme merkkijonoja eli \"stringej\xE4\" saumattomasti yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

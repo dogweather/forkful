@@ -6,8 +6,7 @@ description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4
 lastmod: '2024-03-13T22:44:56.458593-06:00'
 model: gpt-4-1106-preview
 summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ymm\xE4\
-  rt\xE4\xE4ksemme aikav\xE4lej\xE4 ja ajastaa tapahtumia. Ohjelmoijat tekev\xE4t\
-  \ t\xE4t\xE4 aikatauluttamisen,\u2026"
+  rt\xE4\xE4ksemme aikav\xE4lej\xE4 ja ajastaa tapahtumia."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

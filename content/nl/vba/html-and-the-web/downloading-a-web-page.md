@@ -6,8 +6,8 @@ description: "Een webpagina downloaden in Visual Basic for Applications (VBA) be
   \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.635454-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden in Visual Basic for Applications (VBA) betekent\
-  \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"
+summary: Een webpagina downloaden in Visual Basic for Applications (VBA) betekent
+  het ophalen van de HTML-inhoud van een webpagina van het internet.
 title: Een webpagina downloaden
 weight: 42
 ---

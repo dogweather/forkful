@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong PHP l\xE0 v\u1EC1 qu\u1EA3n l\xFD v\xE0 ph\u1EA3\
   n \u1EE9ng v\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7n l\xE0m gi\xE1n \u0111o\u1EA1\
   n d\xF2ng ch\u1EA3y b\xECnh th\u01B0\u1EDDng c\u1EE7a ch\u01B0\u01A1ng tr\xECnh,\
-  \ nh\u01B0 t\u1EC7p tin b\u1ECB thi\u1EBFu ho\u1EB7c d\u1EEF li\u1EC7u\u2026"
+  \ nh\u01B0 t\u1EC7p tin b\u1ECB thi\u1EBFu ho\u1EB7c d\u1EEF li\u1EC7u nh\u1EAD\
+  p kh\xF4ng \u0111\xFAng."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

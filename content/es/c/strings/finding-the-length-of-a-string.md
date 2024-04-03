@@ -8,7 +8,7 @@ description: "Encontrar la longitud de una cadena en C implica determinar el n\x
 lastmod: '2024-03-13T22:44:59.535437-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar la longitud de una cadena en C implica determinar el n\xFAmero\
-  \ de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto para\u2026"
+  \ de caracteres antes del terminador nulo `\\0`."
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

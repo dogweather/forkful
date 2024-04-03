@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.927634-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulowanie plikami przy u\u017Cyciu jednoliniowych polece\u0144 CLI w\
   \ Ruby polega na wykonywaniu typowych operacji na plikach bezpo\u015Brednio z poziomu\
-  \ terminala za\u2026"
+  \ terminala za pomoc\u0105 skrypt\xF3w Ruby."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

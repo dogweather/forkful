@@ -8,7 +8,7 @@ description: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cade
 lastmod: '2024-03-13T22:44:58.451447-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas que\
-  \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los programadores\u2026"
+  \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas."
 title: Interpolando una cadena de texto
 weight: 8
 ---

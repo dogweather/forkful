@@ -7,7 +7,8 @@ description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entspreche
 lastmod: '2024-03-13T22:44:53.316455-06:00'
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entsprechen, ist\
-  \ eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu\u2026"
+  \ eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu bereinigen\
+  \ oder zu formatieren."
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
 weight: 5
 ---

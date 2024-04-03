@@ -6,7 +6,7 @@ description: "S\xF6k och ers\xE4tt handlar om att hitta specifika textstr\xE4nga
 lastmod: '2024-03-13T22:44:37.468519-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt handlar om att hitta specifika textstr\xE4ngar och\
-  \ byta ut dem mot andra. Programmerare g\xF6r detta f\xF6r att effektivisera uppdateringar,\u2026"
+  \ byta ut dem mot andra."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

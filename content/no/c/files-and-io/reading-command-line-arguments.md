@@ -7,7 +7,8 @@ description: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumen
 lastmod: '2024-03-13T22:44:41.288683-06:00'
 model: gpt-4-0125-preview
 summary: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumenter at\
-  \ programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\u2026"
+  \ programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\
+  \ og brukervennligheten."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

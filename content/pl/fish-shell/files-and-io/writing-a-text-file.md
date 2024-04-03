@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.860156-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Fish Shell umo\u017Cliwia trwa\u0142e\
   \ przechowywanie danych, co u\u0142atwia ich p\xF3\u017Aniejsze pobieranie lub manipulowanie,\
-  \ zar\xF3wno przez\u2026"
+  \ zar\xF3wno przez ten sam skrypt Fish, jak i inne programy."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

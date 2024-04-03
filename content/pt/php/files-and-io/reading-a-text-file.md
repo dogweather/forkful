@@ -6,8 +6,7 @@ description: "Ler um arquivo de texto em PHP \xE9 basicamente extrair o conte\xF
 lastmod: '2024-03-13T22:44:46.684513-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em PHP \xE9 basicamente extrair o conte\xFAdo de\
-  \ um arquivo armazenado em seu sistema para utiliz\xE1-lo no seu c\xF3digo. Programadores\
-  \ fazem\u2026"
+  \ um arquivo armazenado em seu sistema para utiliz\xE1-lo no seu c\xF3digo."
 title: Lendo um arquivo de texto
 weight: 22
 ---

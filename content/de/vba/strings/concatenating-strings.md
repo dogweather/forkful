@@ -8,7 +8,7 @@ description: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet d
 lastmod: '2024-03-13T22:44:53.708608-06:00'
 model: gpt-4-0125-preview
 summary: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das Zusammenf\xFC\
-  gen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies ist\u2026"
+  gen von zwei oder mehr Zeichenketten zu einer einzigen Einheit."
 title: Strings verketten
 weight: 3
 ---

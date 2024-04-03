@@ -6,7 +6,7 @@ description: "Iniciar un proyecto nuevo significa configurar el entorno base par
 lastmod: '2024-03-13T22:44:58.986084-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo significa configurar el entorno base para escribir\
-  \ y ejecutar c\xF3digo. Lo hacemos para proveer una estructura s\xF3lida y un punto\u2026"
+  \ y ejecutar c\xF3digo."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

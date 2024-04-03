@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.271297-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
   \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\
-  \ de\u2026"
+  \ de traitement de texte telles que la validation d'entr\xE9e, la recherche et le\
+  \ remplacement de texte."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

@@ -6,8 +6,7 @@ description: "I programmering betyr strengkonkatenering \xE5 sette sammen to ell
 lastmod: '2024-03-13T22:44:40.565909-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering betyr strengkonkatenering \xE5 sette sammen to eller flere\
-  \ tekststykker til ett. Vi gj\xF8r det for \xE5 bygge setninger, lage dynamiske\
-  \ meldinger,\u2026"
+  \ tekststykker til ett."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

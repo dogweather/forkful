@@ -6,8 +6,7 @@ description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums hei\xDF
 lastmod: '2024-03-13T22:44:53.859412-06:00'
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums hei\xDFt einfach,\
-  \ ein Datum basierend auf einem anderen Datum zu ermitteln. Programmierer nutzen\
-  \ das\u2026"
+  \ ein Datum basierend auf einem anderen Datum zu ermitteln."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.849253-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em projetos Arduino envolve a obten\xE7\xE3o de informa\xE7\
   \xF5es em tempo real que podem ser cruciais para registro, marca\xE7\xE3o de tempo\
-  \ ou\u2026"
+  \ ou agendamento de tarefas."
 title: Obtendo a data atual
 weight: 29
 ---

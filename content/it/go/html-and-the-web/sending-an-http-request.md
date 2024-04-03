@@ -6,8 +6,9 @@ description: "Inviare una richiesta HTTP comporta l'inizializzazione di una chia
   \ dalla tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"
 lastmod: '2024-03-13T22:44:42.904650-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata dalla\
-  \ tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"
+summary: Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata dalla
+  tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato su
+  HTTP.
 title: Inviare una richiesta HTTP
 weight: 44
 ---

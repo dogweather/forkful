@@ -6,7 +6,7 @@ description: "Concatenar strings \xE9 simplesmente juntar dois ou mais peda\xE7o
 lastmod: '2024-03-13T22:44:46.954689-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 simplesmente juntar dois ou mais peda\xE7os de texto\
-  \ em um s\xF3. Programadores fazem isso para montar mensagens, combinar dados e\u2026"
+  \ em um s\xF3."
 title: Concatenando strings
 weight: 3
 ---

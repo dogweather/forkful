@@ -6,8 +6,7 @@ description: "Travailler avec XML implique l'analyse et la manipulation de docum
 lastmod: '2024-03-13T22:44:57.965915-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique l'analyse et la manipulation de documents XML\
-  \ \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\
-  \ des\u2026"
+  \ \xE0 l'aide de code."
 title: Travailler avec XML
 weight: 40
 ---

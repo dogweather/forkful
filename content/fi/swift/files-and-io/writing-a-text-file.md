@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.924810-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Swift-ohjelmointikielell\xE4 mahdollistaa\
   \ merkkijonotietojen pysyv\xE4n tallentamisen tiedostoj\xE4rjestelm\xE4\xE4n, mik\xE4\
-  \ on olennaista\u2026"
+  \ on olennaista teht\xE4viss\xE4, kuten asetusten tallennuksessa, k\xE4ytt\xE4j\xE4\
+  tietojen tallentamisessa tai lokien tallennuksessa."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

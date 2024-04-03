@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.073448-06:00'
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w j\u0119zyku Dart polega na badaniu ci\u0105\
   g\xF3w znak\xF3w w celu znalezienia okre\u015Blonych wzorc\xF3w lub sekwencji znak\xF3\
-  w i zast\u0105pieniu ich\u2026"
+  w i zast\u0105pieniu ich now\u0105 zawarto\u015Bci\u0105."
 title: "Wyszukiwanie i zast\u0119powanie tekstu"
 weight: 10
 ---

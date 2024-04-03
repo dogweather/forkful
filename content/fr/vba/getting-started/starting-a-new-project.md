@@ -8,7 +8,8 @@ description: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (V
 lastmod: '2024-03-13T22:44:57.574603-06:00'
 model: gpt-4-0125-preview
 summary: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA) implique\
-  \ de configurer un environnement au sein d'une application h\xF4te, comme Excel,\u2026"
+  \ de configurer un environnement au sein d'une application h\xF4te, comme Excel,\
+  \ pour automatiser des t\xE2ches ou \xE9tendre des fonctionnalit\xE9s."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.912494-06:00'
 model: gpt-4-0125-preview
 summary: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache, ein\
   \ Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\
-  \ ist.\u2026"
+  \ ist."
 title: Arbeiten mit TOML
 weight: 39
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.938104-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa n\xE4iden kiusallisten\
   \ lainausmerkkien h\xE4vitt\xE4mist\xE4, jotka voivat sotkea koodiasi, erityisesti\
-  \ kun olet\u2026"
+  \ kun olet j\xE4sent\xE4m\xE4ss\xE4 dataa tai muodostamassa JSON-objekteja."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

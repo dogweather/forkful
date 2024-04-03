@@ -5,9 +5,8 @@ description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainau
   m\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.726137-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien\
-  \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\
-  m\xE4n\u2026"
+summary: Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien
+  karsimista, jotka sulkevat merkkijonon.
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

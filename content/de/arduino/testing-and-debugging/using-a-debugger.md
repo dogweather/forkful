@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:54.148135-06:00'
 model: gpt-4-0125-preview
 summary: "Mit der Arduino-IDE k\xF6nnen Sie Serial-Prints zum Debuggen verwenden,\
   \ aber das ist ein bisschen so, als w\xFCrde man eine Taschenlampe benutzen, um\
-  \ eine H\xF6hle\u2026"
+  \ eine H\xF6hle zu erkunden."
 title: Einsatz eines Debuggers
 weight: 35
 ---

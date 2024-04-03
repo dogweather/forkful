@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:43.649146-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 sostanzialmente lasciare una traccia all'interno del proprio\
   \ codice - \xE8 il modo in cui si tiene traccia di ci\xF2 che sta accadendo quando\
-  \ lo\u2026"
+  \ lo script \xE8 in esecuzione in un ambiente reale."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

@@ -7,7 +7,9 @@ description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, Werte getrennt
 lastmod: '2024-03-13T22:44:54.246942-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, Werte getrennt durch\
-  \ Kommas) beinhaltet das Parsen und Generieren strukturierter Daten aus\u2026"
+  \ Kommas) beinhaltet das Parsen und Generieren strukturierter Daten aus Textdateien,\
+  \ bei denen jede Zeile einen Datensatz repr\xE4sentiert und jeder Datensatz aus\
+  \ durch Kommas getrennten Feldern besteht."
 title: Arbeiten mit CSV
 weight: 37
 ---

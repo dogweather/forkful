@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.314760-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer \xE5\
   \ initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
-  \ Ark, etc.) for\u2026"
+  \ Ark, etc."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

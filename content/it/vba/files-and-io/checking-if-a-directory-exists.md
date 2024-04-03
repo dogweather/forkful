@@ -7,8 +7,9 @@ description: "Verificare se una directory esiste in Visual Basic for Application
   \ system\u2026"
 lastmod: '2024-03-13T22:44:43.279404-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare se una directory esiste in Visual Basic for Applications (VBA)\
-  \ significa accertarsi della presenza di una cartella all'interno del file system\u2026"
+summary: Verificare se una directory esiste in Visual Basic for Applications (VBA)
+  significa accertarsi della presenza di una cartella all'interno del file system
+  prima di eseguire operazioni come salvare file o creare nuove directory.
 title: Verifica se una directory esiste
 weight: 20
 ---

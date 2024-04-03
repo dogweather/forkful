@@ -6,8 +6,9 @@ description: "Refactoring in programmeren houdt in dat je de structuur van code 
   \ zonder het gedrag ervan te veranderen, om aspecten zoals leesbaarheid,\u2026"
 lastmod: '2024-03-13T22:44:50.645494-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in programmeren houdt in dat je de structuur van code wijzigt\
-  \ zonder het gedrag ervan te veranderen, om aspecten zoals leesbaarheid,\u2026"
+summary: Refactoring in programmeren houdt in dat je de structuur van code wijzigt
+  zonder het gedrag ervan te veranderen, om aspecten zoals leesbaarheid, onderhoudbaarheid
+  of prestaties te verbeteren.
 title: Refactoring
 weight: 19
 ---

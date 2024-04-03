@@ -8,8 +8,7 @@ description: "El registro en Dart se refiere al proceso de grabaci\xF3n de vario
 lastmod: '2024-03-13T22:44:58.759129-06:00'
 model: gpt-4-0125-preview
 summary: "El registro en Dart se refiere al proceso de grabaci\xF3n de varios niveles\
-  \ de informaci\xF3n durante la ejecuci\xF3n de un programa. Los programadores lo\
-  \ hacen\u2026"
+  \ de informaci\xF3n durante la ejecuci\xF3n de un programa."
 title: Registro de Actividades
 weight: 17
 ---

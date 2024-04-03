@@ -4,8 +4,7 @@ description: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda de
   \ F\xF6rest\xE4ll dig en fil, `buggy.py`, med en listig bugg: ```Python def add_one(number):\u2026"
 lastmod: '2024-03-13T22:44:37.487630-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda debugger.\
-  \ F\xF6rest\xE4ll dig en fil, `buggy.py`, med en listig bugg: ```Python def add_one(number):\u2026"
+summary: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda debugger."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

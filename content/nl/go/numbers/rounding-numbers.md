@@ -6,8 +6,8 @@ description: "Rond getallen af is het aanpassen van de waarde van een getal naar
   \ dichtstbijzijnde gehele getal of naar een specifiek aantal decimalen. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.282117-06:00'
 model: gpt-4-0125-preview
-summary: "Rond getallen af is het aanpassen van de waarde van een getal naar het dichtstbijzijnde\
-  \ gehele getal of naar een specifiek aantal decimalen. Programmeurs\u2026"
+summary: Rond getallen af is het aanpassen van de waarde van een getal naar het dichtstbijzijnde
+  gehele getal of naar een specifiek aantal decimalen.
 title: Afronden van getallen
 weight: 13
 ---

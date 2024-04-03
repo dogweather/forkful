@@ -5,7 +5,7 @@ description: "TOML \xE8 un formato di file di configurazione, facile da leggere 
 lastmod: '2024-03-13T22:44:43.884240-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE8 un formato di file di configurazione, facile da leggere e scrivere\
-  \ per gli umani, e facile da analizzare e generare per le macchine. I\u2026"
+  \ per gli umani, e facile da analizzare e generare per le macchine."
 title: Lavorare con TOML
 weight: 39
 ---

@@ -7,7 +7,8 @@ description: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-p
 lastmod: '2024-03-13T22:44:40.900826-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
-  \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"
+  \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\
+  \ operasjoner som \xE5 lese fra eller skrive til filer i den."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

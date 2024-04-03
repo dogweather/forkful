@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.179912-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n\
   \ h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi d\xE0\
-  nh cho t\u1EA5t c\u1EA3 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+  nh cho t\u1EA5t c\u1EA3 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

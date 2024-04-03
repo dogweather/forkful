@@ -6,7 +6,8 @@ description: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico pa
 lastmod: '2024-03-13T22:44:59.072480-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para incluir\
-  \ n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen soluciones\u2026"
+  \ n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen soluciones\
+  \ reales."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

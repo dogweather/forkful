@@ -7,7 +7,7 @@ description: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommand
 lastmod: '2024-03-13T22:44:40.985437-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommandoer for\
-  \ \xE5 vise dato og tid i forskjellige formater. Programmerere bruker denne\u2026"
+  \ \xE5 vise dato og tid i forskjellige formater."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

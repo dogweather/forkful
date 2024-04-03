@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.356167-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans les cha\xEEnes de caract\xE8res est crucial pour la validation des donn\xE9\
-  es, leur\u2026"
+  es, leur assainissement ou lors de la pr\xE9paration du texte pour un traitement\
+  \ ult\xE9rieur."
 title: "Supprimer les caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -6,8 +6,7 @@ description: "Interpolar uma string \xE9 o ato de inserir dinamicamente vari\xE1
 lastmod: '2024-03-13T22:44:46.990556-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o ato de inserir dinamicamente vari\xE1veis ou\
-  \ express\xF5es dentro dela. Programadores fazem isso para construir mensagens ou\
-  \ comandos\u2026"
+  \ express\xF5es dentro dela."
 title: Interpolando uma string
 weight: 8
 ---

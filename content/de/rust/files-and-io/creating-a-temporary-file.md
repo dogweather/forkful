@@ -6,8 +6,7 @@ description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCb
 lastmod: '2024-03-13T22:44:53.692212-06:00'
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCbergehende\
-  \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms. Programmierer\
-  \ nutzen sie\u2026"
+  \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

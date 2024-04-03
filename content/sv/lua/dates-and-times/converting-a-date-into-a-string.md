@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.050161-06:00'
 model: gpt-4-1106-preview
 summary: "Datum till str\xE4ng-konvertering handlar om att omvandla den s\xE4tt som\
   \ datum lagras i kod (ofta som ett numeriskt v\xE4rde eller ett datumobjekt) till\
-  \ en l\xE4sbar\u2026"
+  \ en l\xE4sbar textform."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

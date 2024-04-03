@@ -5,9 +5,7 @@ description: "Un nouveau projet Arduino, c'est comme un tableau blanc pour un pe
   mes ou\u2026"
 lastmod: '2024-03-13T22:44:58.111447-06:00'
 model: gpt-4-1106-preview
-summary: "Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre.\
-  \ On d\xE9marre des projets pour donner vie \xE0 nos id\xE9es, r\xE9soudre des probl\xE8\
-  mes ou\u2026"
+summary: Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre.
 title: Lancement d'un nouveau projet
 weight: 1
 ---

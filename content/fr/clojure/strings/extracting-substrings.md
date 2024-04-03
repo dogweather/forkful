@@ -6,8 +6,7 @@ description: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau d
 lastmod: '2024-03-13T22:44:57.270176-06:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau de baguette\
-  \ \u2013 on prend juste la partie qu'on veut. Les programmeurs le font pour manipuler\
-  \ et\u2026"
+  \ \u2013 on prend juste la partie qu'on veut."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

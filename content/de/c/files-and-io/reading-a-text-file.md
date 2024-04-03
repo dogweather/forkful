@@ -7,7 +7,8 @@ description: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Date
 lastmod: '2024-03-13T22:44:54.371676-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei auf\
-  \ Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"
+  \ Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\
+  \ oder anzuzeigen."
 title: Eine Textdatei lesen
 weight: 22
 ---

@@ -8,7 +8,7 @@ description: "YAML, czyli YAML Ain't Markup Language, to format serializacji dan
 lastmod: '2024-03-13T22:44:34.971474-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych czytelny\
-  \ dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105 YAML dla plik\xF3w konfiguracyjnych,\u2026"
+  \ dla cz\u0142owieka."
 title: Praca z YAML
 weight: 41
 ---

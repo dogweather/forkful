@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.726920-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA) \xE4\
   r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
-  \ och databaser.\u2026"
+  \ och databaser."
 title: "S\xF6ka och ers\xE4tta text"
 weight: 10
 ---

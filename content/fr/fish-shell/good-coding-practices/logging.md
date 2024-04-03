@@ -4,8 +4,8 @@ description: "Le journalisation, c'est essentiellement consigner ce que fait vot
   \ application - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
 lastmod: '2024-03-13T22:44:58.331723-06:00'
 model: gpt-4-1106-preview
-summary: "Le journalisation, c'est essentiellement consigner ce que fait votre application\
-  \ - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
+summary: Le journalisation, c'est essentiellement consigner ce que fait votre application
+  - un journal intime, si vous voulez, mais pour le code.
 title: Journalisation
 weight: 17
 ---

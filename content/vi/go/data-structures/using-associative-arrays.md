@@ -13,7 +13,7 @@ summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EB
   n nh\u01B0 l\xE0 b\u1EA3n \u0111\u1ED3 (maps) trong Go, cho ph\xE9p b\u1EA1n l\u01B0\
   u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB n\u01A1i m\u1ED7i kh\xF3a duy\
   \ nh\u1EA5t \u0111\u01B0\u1EE3c \xE1nh x\u1EA1 \u0111\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB\
-  .\u2026"
+  ."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

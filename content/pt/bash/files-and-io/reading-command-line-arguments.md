@@ -6,8 +6,7 @@ description: "Ler argumentos da linha de comando permite aos scripts em Bash peg
 lastmod: '2024-03-13T22:44:46.768077-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite aos scripts em Bash pegar dados\
-  \ externos sem serem est\xE1ticos. Os programadores utilizam essas informa\xE7\xF5\
-  es para\u2026"
+  \ externos sem serem est\xE1ticos."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

@@ -8,7 +8,8 @@ description: "\xC5 skrive tester i Clojure, mye som i andre programmeringsspr\xE
 lastmod: '2024-03-13T22:44:40.405780-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Clojure, mye som i andre programmeringsspr\xE5k, inneb\xE6\
-  rer \xE5 lage dedikert kode for \xE5 verifisere at hovedkodebasen din fungerer som\u2026"
+  rer \xE5 lage dedikert kode for \xE5 verifisere at hovedkodebasen din fungerer som\
+  \ forventet."
 title: Skrive tester
 weight: 36
 ---

@@ -5,7 +5,9 @@ description: "Manipuler des fichiers avec des lignes de commande CLI (Interface 
 lastmod: '2024-03-13T22:44:57.988856-06:00'
 model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des lignes de commande CLI (Interface de Ligne\
-  \ de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"
+  \ de Commande) implique l'utilisation de scripts Bash ou de commandes pour effectuer\
+  \ des actions sur les fichiers, comme les cr\xE9er, les lire, les mettre \xE0 jour\
+  \ ou les supprimer, le tout depuis le terminal."
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

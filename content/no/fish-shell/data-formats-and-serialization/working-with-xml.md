@@ -6,8 +6,7 @@ description: "\xC5 jobbe med XML betyr \xE5 h\xE5ndtere data i et utbredt, struk
 lastmod: '2024-03-13T22:44:41.251730-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 h\xE5ndtere data i et utbredt, strukturert\
-  \ format som brukes i konfigurasjoner, meldingsutveksling og mer. Programmerere\
-  \ manipulerer\u2026"
+  \ format som brukes i konfigurasjoner, meldingsutveksling og mer."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

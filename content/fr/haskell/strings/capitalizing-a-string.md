@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.815801-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8re\
   \ lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
-  \ lettres\u2026"
+  \ lettres restent en minuscule."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

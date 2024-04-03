@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.366036-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i C inneb\xE4r att identifiera specifika\
   \ delstr\xE4ngar inom en st\xF6rre str\xE4ng och byta ut dem mot olika delstr\xE4\
-  ngar. Programmerare\u2026"
+  ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

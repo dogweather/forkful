@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.371576-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
   cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\
-  \ avec les\u2026"
+  \ avec les informations d'identification de l'utilisateur encod\xE9es en Base64."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

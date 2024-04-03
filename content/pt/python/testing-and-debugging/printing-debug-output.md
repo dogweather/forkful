@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.156511-06:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o permite que programadores\
   \ rastreiem e entendam o que est\xE1 acontecendo dentro de seu c\xF3digo ao execut\xE1\
-  -lo. Fazemos isso\u2026"
+  -lo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

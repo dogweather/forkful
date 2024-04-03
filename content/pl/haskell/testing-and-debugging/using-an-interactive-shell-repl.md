@@ -6,8 +6,7 @@ description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Ha
 lastmod: '2024-03-13T22:44:35.453489-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
-  \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\
-  \ szybkiego\u2026"
+  \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

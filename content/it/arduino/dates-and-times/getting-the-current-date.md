@@ -7,7 +7,8 @@ description: "Ottenere la data corrente nei progetti Arduino coinvolge l'acquisi
 lastmod: '2024-03-13T22:44:43.692903-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nei progetti Arduino coinvolge l'acquisizione\
-  \ di informazioni in tempo reale che possono essere cruciali per la registrazione,\u2026"
+  \ di informazioni in tempo reale che possono essere cruciali per la registrazione,\
+  \ l'apposizione di timestamp o la programmazione di attivit\xE0."
 title: Ottenere la data corrente
 weight: 29
 ---

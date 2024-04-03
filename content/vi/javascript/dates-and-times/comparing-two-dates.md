@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.169685-06:00'
 model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra xem ch\xFAng\
   \ c\xF3 gi\u1ED1ng nhau kh\xF4ng ho\u1EB7c x\xE1c \u0111\u1ECBnh c\xE1i n\xE0o \u0111\
-  \u1EBFn tr\u01B0\u1EDBc ho\u1EB7c sau. L\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDD\
-  ng c\u1EA7n \u0111i\u1EC1u n\xE0y cho c\xE1c\u2026"
+  \u1EBFn tr\u01B0\u1EDBc ho\u1EB7c sau."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

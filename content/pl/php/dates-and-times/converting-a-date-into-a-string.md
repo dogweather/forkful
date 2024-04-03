@@ -6,8 +6,7 @@ description: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwa
 lastmod: '2024-03-13T22:44:35.508931-06:00'
 model: gpt-4-1106-preview
 summary: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwala na\
-  \ \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach. Robimy\
-  \ to cz\u0119sto, by dostosowa\u0107 dat\u0119 do\u2026"
+  \ \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

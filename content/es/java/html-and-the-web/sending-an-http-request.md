@@ -5,7 +5,7 @@ description: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar da
 lastmod: '2024-03-13T22:44:58.934636-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar datos a\
-  \ un servidor web. Los programadores lo hacen para interactuar con servicios web,\u2026"
+  \ un servidor web."
 title: Enviando una solicitud http
 weight: 44
 ---

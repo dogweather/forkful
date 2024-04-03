@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1r
 lastmod: '2024-03-13T22:44:46.661371-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria, geralmente\
-  \ escritos como `a + bi`. Eles s\xE3o cruciais em matem\xE1tica avan\xE7ada, f\xED\
-  sica,\u2026"
+  \ escritos como `a + bi`."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

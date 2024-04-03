@@ -6,7 +6,7 @@ description: "Kommandozeilenargumente sind die Parameter, die einem Programm \xF
 lastmod: '2024-03-13T22:44:53.645905-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind die Parameter, die einem Programm \xFCbergeben\
-  \ werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten ihrer\u2026"
+  \ werden, wenn es gestartet wird."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

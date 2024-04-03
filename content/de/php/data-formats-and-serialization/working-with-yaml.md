@@ -7,7 +7,8 @@ description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\x
 lastmod: '2024-03-13T22:44:53.992950-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr Menschen\
-  \ lesbares Daten-Serialisierungsformat, das h\xE4ufig f\xFCr Konfigurationsdateien\u2026"
+  \ lesbares Daten-Serialisierungsformat, das h\xE4ufig f\xFCr Konfigurationsdateien\
+  \ verwendet wird."
 title: Arbeiten mit YAML
 weight: 41
 ---

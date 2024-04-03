@@ -7,9 +7,8 @@ description: "Een nieuw project opstarten in Go houdt in dat je een werkruimte o
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.288139-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet en\
-  \ deze initialiseert met de benodigde Go modules. Programmeurs doen dit om code\
-  \ te\u2026"
+summary: Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet en
+  deze initialiseert met de benodigde Go modules.
 title: Een nieuw project starten
 weight: 1
 ---

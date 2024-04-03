@@ -7,9 +7,7 @@ description: "En VBA, el depurador es integral al Editor de Visual Basic (VBE). 
   \ clic en\u2026"
 lastmod: '2024-03-13T22:44:58.898288-06:00'
 model: gpt-4-0125-preview
-summary: "En VBA, el depurador es integral al Editor de Visual Basic (VBE). As\xED\
-  \ es como puedes aprovecharlo: 1. **Establecer Puntos de Interrupci\xF3n**: Haz\
-  \ clic en\u2026"
+summary: En VBA, el depurador es integral al Editor de Visual Basic (VBE).
 title: Usando un depurador
 weight: 35
 ---

@@ -5,9 +5,7 @@ description: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekstst
   \ uten \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.350070-06:00'
 model: gpt-4-1106-preview
-summary: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng.\
-  \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\
-  \ uten \xE5\u2026"
+summary: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng."
 title: Uthenting av delstrenger
 weight: 6
 ---

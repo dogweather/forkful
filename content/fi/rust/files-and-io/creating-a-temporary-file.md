@@ -5,9 +5,7 @@ description: "Luodaan v\xE4liaikainen tiedosto eli temp-file - mut miksi? Se on 
   \ koska se\u2026"
 lastmod: '2024-03-13T22:44:56.376590-06:00'
 model: gpt-4-1106-preview
-summary: "Luodaan v\xE4liaikainen tiedosto eli temp-file - mut miksi? Se on tiedosto,\
-  \ jota k\xE4ytet\xE4\xE4n v\xE4liaikaisesti dataa tallentaessa, ja sit\xE4 tarvitaan,\
-  \ koska se\u2026"
+summary: "Luodaan v\xE4liaikainen tiedosto eli temp-file - mut miksi."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

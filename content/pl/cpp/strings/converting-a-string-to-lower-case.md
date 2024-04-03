@@ -6,8 +6,7 @@ description: "Zmiana napis\xF3w na ma\u0142e litery oznacza przekszta\u0142cenie
 lastmod: '2024-03-13T22:44:35.699887-06:00'
 model: gpt-4-1106-preview
 summary: "Zmiana napis\xF3w na ma\u0142e litery oznacza przekszta\u0142cenie wszystkich\
-  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Robimy to dla ujednolicenia\
-  \ danych,\u2026"
+  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

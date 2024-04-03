@@ -5,7 +5,8 @@ description: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga 
 lastmod: '2024-03-13T22:44:44.047319-06:00'
 model: gpt-4-0125-preview
 summary: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di Comando)\
-  \ in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"
+  \ in Ruby ti consente di modificare i file direttamente dal tuo terminale, senza\
+  \ la necessit\xE0 di aprirli in un editor, apportare modifiche e salvarli di nuovo."
 title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---

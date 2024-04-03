@@ -6,8 +6,7 @@ description: "Obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci 
 lastmod: '2024-03-13T22:44:35.726219-06:00'
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci to okre\u015B\
-  lenie nowego momentu w czasie wzgl\u0119dem znanego punktu odniesienia. Programi\u015B\
-  ci wykorzystuj\u0105 t\u0119\u2026"
+  lenie nowego momentu w czasie wzgl\u0119dem znanego punktu odniesienia."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

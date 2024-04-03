@@ -7,7 +7,8 @@ description: "Analisar uma data a partir de uma string em Visual Basic for Appli
 lastmod: '2024-03-13T22:44:46.422707-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Visual Basic for Applications\
-  \ (VBA) \xE9 sobre converter texto que representa uma data em um tipo de dados de\u2026"
+  \ (VBA) \xE9 sobre converter texto que representa uma data em um tipo de dados de\
+  \ data."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

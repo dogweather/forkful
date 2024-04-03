@@ -7,7 +7,8 @@ description: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smu
 lastmod: '2024-03-13T22:44:37.455514-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smula missvisande\
-  \ eftersom Google Apps Script, till skillnad fr\xE5n traditionella\u2026"
+  \ eftersom Google Apps Script, till skillnad fr\xE5n traditionella kommandoradsgr\xE4\
+  nssnitt i programmeringsspr\xE5k som Python eller Node."
 title: "L\xE4sa kommandoradsargument"
 weight: 23
 ---

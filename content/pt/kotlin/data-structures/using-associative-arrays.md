@@ -8,8 +8,7 @@ description: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que
 lastmod: '2024-03-13T22:44:46.534467-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que armazenam\
-  \ pares de chave-valor. Os programadores os usam para organizar e recuperar dados\
-  \ de\u2026"
+  \ pares de chave-valor."
 title: Usando arrays associativos
 weight: 15
 ---

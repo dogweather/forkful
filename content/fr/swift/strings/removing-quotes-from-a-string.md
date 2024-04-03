@@ -6,7 +6,7 @@ description: "Supprimer les guillemets d'une cha\xEEne signifie retirer toutes l
 lastmod: '2024-03-13T22:44:58.203634-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie retirer toutes les marques\
-  \ de citation qui encadrent le contenu. Nous faisons cela pour assainir les\u2026"
+  \ de citation qui encadrent le contenu."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

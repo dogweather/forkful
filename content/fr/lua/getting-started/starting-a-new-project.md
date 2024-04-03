@@ -6,8 +6,7 @@ description: "Commencer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er
 lastmod: '2024-03-13T22:44:57.934536-06:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er un programme\
-  \ original. Les programmeurs se lancent dans de nouveaux projets pour r\xE9soudre\
-  \ un\u2026"
+  \ original."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som
 lastmod: '2024-03-13T22:44:38.357566-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som anv\xE4\
-  nds under programk\xF6rningen och som ofta raderas efter\xE5t. Programmerare skapar\
-  \ dem f\xF6r att\u2026"
+  nds under programk\xF6rningen och som ofta raderas efter\xE5t."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

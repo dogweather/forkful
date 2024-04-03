@@ -6,8 +6,7 @@ description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to spos\xF3b na pozby
 lastmod: '2024-03-13T22:44:35.822755-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to spos\xF3b na pozbycie si\u0119\
-  \ niechcianych fragment\xF3w tekstu \u2014 szybkie ci\u0119cie w danych. Programi\u015B\
-  ci robi\u0105 to, gdy chc\u0105\u2026"
+  \ niechcianych fragment\xF3w tekstu \u2014 szybkie ci\u0119cie w danych."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

@@ -9,9 +9,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\u1EA5y d\u1EEF li\u1EC7u 
 lastmod: '2024-03-13T22:44:36.371504-06:00'
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB\
-  \ ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u t\u1EDBi m\u1ED9t m\xE1y ch\u1EE7 web. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\
-  \u01A1ng t\xE1c v\u1EDBi c\xE1c d\u1ECBch v\u1EE5 web ho\u1EB7c API \u2013\u2026"
+  \ ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u t\u1EDBi m\u1ED9t m\xE1y ch\u1EE7 web."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

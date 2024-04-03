@@ -7,7 +7,8 @@ description: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Su
 lastmod: '2024-03-13T22:44:54.215888-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Suchmuster\
-  \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\u2026"
+  \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\
+  \ verwendet werden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

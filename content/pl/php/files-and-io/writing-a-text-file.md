@@ -8,8 +8,7 @@ description: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarc
 lastmod: '2024-03-13T22:44:35.515909-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu pliku\
-  \ i wstawieniu do niego zawarto\u015Bci. Programi\u015Bci robi\u0105 to, aby zachowa\u0107\
-  \ dane,\u2026"
+  \ i wstawieniu do niego zawarto\u015Bci."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

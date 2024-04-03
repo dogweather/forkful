@@ -5,7 +5,7 @@ description: "Ler argumentos da linha de comando significa capturar os dados for
 lastmod: '2024-03-13T22:44:46.599153-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando significa capturar os dados fornecidos\
-  \ quando um programa \xE9 iniciado no terminal. Programadores fazem isso para\u2026"
+  \ quando um programa \xE9 iniciado no terminal."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

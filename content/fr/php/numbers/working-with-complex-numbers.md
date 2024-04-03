@@ -6,8 +6,7 @@ description: "Les nombres complexes ont une partie r\xE9elle et une partie imagi
 lastmod: '2024-03-13T22:44:57.871716-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire,\
-  \ g\xE9n\xE9ralement \xE9crits sous la forme `a + bi`. Ils sont cruciaux dans les\
-  \ math\xE9matiques\u2026"
+  \ g\xE9n\xE9ralement \xE9crits sous la forme `a + bi`."
 title: Manipulation des nombres complexes
 weight: 14
 ---

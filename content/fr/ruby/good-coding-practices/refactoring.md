@@ -4,8 +4,8 @@ description: "Le refactorisage est le processus de restructuration du code infor
   \ existant sans en changer le comportement externe. Les programmeurs refactorisent\u2026"
 lastmod: '2024-03-13T22:44:58.428636-06:00'
 model: gpt-4-0125-preview
-summary: "Le refactorisage est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. Les programmeurs refactorisent\u2026"
+summary: Le refactorisage est le processus de restructuration du code informatique
+  existant sans en changer le comportement externe.
 title: Remaniement de code
 weight: 19
 ---

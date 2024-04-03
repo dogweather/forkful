@@ -8,7 +8,8 @@ description: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwickler
 lastmod: '2024-03-13T22:44:53.662854-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwicklern, mit\
-  \ fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDCbereinstimmungen\u2026"
+  \ fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDCbereinstimmungen\
+  \ zu finden und diese zu manipulieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

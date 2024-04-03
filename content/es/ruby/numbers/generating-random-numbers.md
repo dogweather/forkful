@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.585605-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Ruby implica crear n\xFAmeros que no pueden\
   \ ser predichos l\xF3gicamente, esencial para escenarios como simulaciones, criptograf\xED\
-  a\u2026"
+  a y juegos."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

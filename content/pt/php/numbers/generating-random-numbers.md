@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:46.663228-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em PHP est\xE1 relacionado a produzir valores\
   \ imprevis\xEDveis dentro de uma faixa especificada, o que \xE9 essencial para tarefas\
-  \ como\u2026"
+  \ como criar IDs de usu\xE1rio \xFAnicos, gerar senhas ou para uso em simula\xE7\
+  \xF5es e jogos."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

@@ -6,8 +6,8 @@ description: "Het vergelijken van twee datums betekent controleren of ze gelijk 
   \ of dat de ene voor of na de andere komt. Programmeurs gebruiken dit voor het\u2026"
 lastmod: '2024-03-13T22:44:50.606831-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums betekent controleren of ze gelijk zijn,\
-  \ of dat de ene voor of na de andere komt. Programmeurs gebruiken dit voor het\u2026"
+summary: Het vergelijken van twee datums betekent controleren of ze gelijk zijn, of
+  dat de ene voor of na de andere komt.
 title: Twee datums vergelijken
 weight: 27
 ---

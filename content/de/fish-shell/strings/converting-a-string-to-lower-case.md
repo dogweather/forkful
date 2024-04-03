@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:54.295196-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, alle Gro\xDF\
   buchstaben in ihrem Inhalt in die entsprechenden Kleinbuchstaben zu \xFCberf\xFC\
-  hren. Wir\u2026"
+  hren."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

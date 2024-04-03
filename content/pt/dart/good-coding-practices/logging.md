@@ -8,8 +8,7 @@ description: "Registrar (logging) em Dart refere-se ao processo de grava\xE7\xE3
 lastmod: '2024-03-13T22:44:46.288718-06:00'
 model: gpt-4-0125-preview
 summary: "Registrar (logging) em Dart refere-se ao processo de grava\xE7\xE3o de v\xE1\
-  rios n\xEDveis de informa\xE7\xF5es durante a execu\xE7\xE3o de um programa. Programadores\
-  \ fazem isso\u2026"
+  rios n\xEDveis de informa\xE7\xF5es durante a execu\xE7\xE3o de um programa."
 title: Registro
 weight: 17
 ---

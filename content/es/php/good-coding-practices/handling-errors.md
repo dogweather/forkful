@@ -5,7 +5,8 @@ description: "El manejo de errores en PHP se trata de administrar y responder a 
 lastmod: '2024-03-13T22:44:59.168201-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores en PHP se trata de administrar y responder a condiciones\
-  \ que interrumpen el flujo normal de un programa, como archivos que faltan o\u2026"
+  \ que interrumpen el flujo normal de un programa, como archivos que faltan o entradas\
+  \ de datos err\xF3neas."
 title: Manejo de errores
 weight: 16
 ---

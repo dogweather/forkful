@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.219977-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA) stanowi\u0105\
   \ pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania i manipulowania\
-  \ ci\u0105gami\u2026"
+  \ ci\u0105gami znak\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

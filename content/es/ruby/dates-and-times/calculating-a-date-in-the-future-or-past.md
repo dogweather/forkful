@@ -5,8 +5,8 @@ description: "Calcular una fecha en el futuro o pasado es simplemente ajustar un
   \ como\u2026"
 lastmod: '2024-03-13T22:44:59.604388-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o pasado es simplemente ajustar una fecha\
-  \ dada por cierta cantidad de tiempo. Programadores lo hacen para funciones como\u2026"
+summary: Calcular una fecha en el futuro o pasado es simplemente ajustar una fecha
+  dada por cierta cantidad de tiempo.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

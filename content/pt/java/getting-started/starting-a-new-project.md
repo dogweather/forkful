@@ -6,7 +6,8 @@ description: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digi
 lastmod: '2024-03-13T22:44:46.456710-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digital \u2013\
-  \ voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode resolver\u2026"
+  \ voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode resolver\
+  \ problemas, automatizar tarefas ou at\xE9 divertir."
 title: Iniciando um novo projeto
 weight: 1
 ---

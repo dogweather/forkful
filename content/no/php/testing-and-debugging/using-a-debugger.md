@@ -5,8 +5,7 @@ description: "PHP kommer med en interaktiv debugger kalt Xdebug. Her er hvordan 
   \ din\u2026"
 lastmod: '2024-03-13T22:44:40.891242-06:00'
 model: gpt-4-0125-preview
-summary: "PHP kommer med en interaktiv debugger kalt Xdebug. Her er hvordan du bruker\
-  \ den. F\xF8rst, s\xF8rg for at du har Xdebug installert og konfigurert i din\u2026"
+summary: PHP kommer med en interaktiv debugger kalt Xdebug.
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

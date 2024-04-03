@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.374993-06:00'
 model: gpt-4-0125-preview
 summary: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des messages\
   \ de journal temporaires et informatifs qui peuvent aider les programmeurs \xE0\
-  \ comprendre\u2026"
+  \ comprendre le flux et l'\xE9tat d'un programme pendant son ex\xE9cution."
 title: "Impression de sortie de d\xE9bogage"
 weight: 33
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.034517-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
   \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
-  \ ja\u2026"
+  \ ja ohjelmistokehityksess\xE4."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

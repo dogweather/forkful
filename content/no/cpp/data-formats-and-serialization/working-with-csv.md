@@ -7,7 +7,8 @@ description: "Arbeid med CSV (Comma Separated Values)-filer handler om \xE5 beha
 lastmod: '2024-03-13T22:44:41.122716-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med CSV (Comma Separated Values)-filer handler om \xE5 behandle og\
-  \ manipulere data lagret i et enkelt tekstformat, der hver linje i teksten\u2026"
+  \ manipulere data lagret i et enkelt tekstformat, der hver linje i teksten representerer\
+  \ en rad i en tabell, og kommaer skiller individuelle kolonner."
 title: Arbeide med CSV
 weight: 37
 ---

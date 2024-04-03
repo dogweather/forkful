@@ -6,8 +6,7 @@ description: "Comparer deux dates, c'est voir laquelle vient avant ou apr\xE8s, 
 lastmod: '2024-03-13T22:44:57.450093-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est voir laquelle vient avant ou apr\xE8s, ou si\
-  \ elles sont identiques. Les devs le font pour g\xE9rer des \xE9ch\xE9ances, trier\
-  \ des\u2026"
+  \ elles sont identiques."
 title: Comparer deux dates
 weight: 27
 ---

@@ -7,8 +7,9 @@ description: "L'analisi (parsing) di HTML comporta l'analisi del codice HTML di 
   \ lo\u2026"
 lastmod: '2024-03-13T22:44:42.998704-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una pagina\
-  \ web per estrarre informazioni o elementi specifici, un compito comune per lo\u2026"
+summary: L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una pagina
+  web per estrarre informazioni o elementi specifici, un compito comune per lo scraping
+  del web, il data mining o l'automatizzazione delle interazioni con i siti web.
 title: Analisi del HTML
 weight: 43
 ---

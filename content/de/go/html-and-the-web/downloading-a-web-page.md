@@ -7,7 +7,7 @@ description: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des 
 lastmod: '2024-03-13T22:44:53.286280-06:00'
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts\
-  \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll. Programmierer tun dies oft\u2026"
+  \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll."
 title: Herunterladen einer Webseite
 weight: 42
 ---

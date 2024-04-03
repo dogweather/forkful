@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes 
 lastmod: '2024-03-13T22:44:41.174289-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes for \xE5\
-  \ samsvare med tegnkombinasjoner i strenger. Programmerere bruker dem til \xE5 s\xF8\
-  ke, utvinne\u2026"
+  \ samsvare med tegnkombinasjoner i strenger."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

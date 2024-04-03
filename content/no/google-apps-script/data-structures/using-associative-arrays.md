@@ -7,7 +7,7 @@ description: "Assosiative tabeller, kjent som objekter i Google Apps Script (en 
 lastmod: '2024-03-13T22:44:40.306373-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som objekter i Google Apps Script (en variant\
-  \ av JavaScript), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
+  \ av JavaScript), lar programmerere lage samlinger av n\xF8kkel-verdi-par."
 title: Bruke assosiative tabeller
 weight: 15
 ---

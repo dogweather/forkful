@@ -6,8 +6,7 @@ description: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika tex
 lastmod: '2024-03-13T22:44:38.413749-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
-  ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\
-  \ uppdatera kod,\u2026"
+  ngar och byta ut dem med n\xE5got annat."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

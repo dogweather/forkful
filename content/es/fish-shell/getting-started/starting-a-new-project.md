@@ -5,7 +5,7 @@ description: "Iniciar un nuevo proyecto es como preparar el terreno antes de con
 lastmod: '2024-03-13T22:44:59.502364-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como preparar el terreno antes de construir\
-  \ una casa; es el proceso de configurar las bases para tu c\xF3digo. Los programadores\u2026"
+  \ una casa; es el proceso de configurar las bases para tu c\xF3digo."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att vi fi
 lastmod: '2024-03-13T22:44:38.193551-06:00'
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att vi filtrerar\
-  \ str\xE4ngar f\xF6r att utesluta specifika tecken eller sekvenser. Programmerare\
-  \ g\xF6r detta\u2026"
+  \ str\xE4ngar f\xF6r att utesluta specifika tecken eller sekvenser."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek versturen in Google Apps Script gaat over het pro
   \ maken van een oproep naar een externe webserver of API. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.327642-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek versturen in Google Apps Script gaat over het programmatisch\
-  \ maken van een oproep naar een externe webserver of API. Programmeurs doen\u2026"
+summary: Een HTTP-verzoek versturen in Google Apps Script gaat over het programmatisch
+  maken van een oproep naar een externe webserver of API.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

@@ -6,8 +6,8 @@ description: "Het versturen van een HTTP-verzoek in Dart is het proces van het s
   \ van communicatie met een webserver of API vanuit een Dart-applicatie.\u2026"
 lastmod: '2024-03-13T22:44:50.501425-06:00'
 model: gpt-4-0125-preview
-summary: "Het versturen van een HTTP-verzoek in Dart is het proces van het starten\
-  \ van communicatie met een webserver of API vanuit een Dart-applicatie.\u2026"
+summary: Het versturen van een HTTP-verzoek in Dart is het proces van het starten
+  van communicatie met een webserver of API vanuit een Dart-applicatie.
 title: Het verzenden van een HTTP-verzoek
 weight: 44
 ---

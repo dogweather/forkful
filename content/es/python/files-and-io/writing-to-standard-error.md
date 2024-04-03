@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.630318-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar en Python trata sobre dirigir los mensajes\
   \ de error o diagn\xF3sticos de tu programa al flujo de error (`stderr`), separado\
-  \ de\u2026"
+  \ de la salida est\xE1ndar (`stdout`)."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

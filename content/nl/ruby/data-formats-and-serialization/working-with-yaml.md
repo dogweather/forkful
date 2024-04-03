@@ -6,8 +6,7 @@ description: "YAML staat voor \"YAML Ain't Markup Language.\" Het is een voor me
   \ leesbare gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
 lastmod: '2024-03-13T22:44:51.385447-06:00'
 model: gpt-4-0125-preview
-summary: "YAML staat voor \"YAML Ain't Markup Language.\" Het is een voor mensen leesbare\
-  \ gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
+summary: YAML staat voor "YAML Ain't Markup Language.
 title: Werken met YAML
 weight: 41
 ---

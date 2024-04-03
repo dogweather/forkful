@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire, c'est comme \xE9crire une note qu'
 lastmod: '2024-03-13T22:44:57.854032-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est comme \xE9crire une note qu'on jette\
-  \ apr\xE8s usage. Les programmeurs le font pour stocker des donn\xE9es de mani\xE8\
-  re transitoire\u2026"
+  \ apr\xE8s usage."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

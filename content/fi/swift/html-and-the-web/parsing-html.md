@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.904915-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen viittaa HTML-sis\xE4ll\xF6n rakenteen purkamiseen\
   \ ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai t\xE4m\xE4\
-  n sis\xE4ll\xF6n\u2026"
+  n sis\xE4ll\xF6n ohjelmallisesti k\xE4sittelyyn."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

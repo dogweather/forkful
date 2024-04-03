@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.347608-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Ruby gj\xF8r det mulig for programmerere\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe f\xF8r de utf\xF8rer operasjoner\
-  \ som \xE5 lese\u2026"
+  \ som \xE5 lese filer eller opprette nye mapper."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

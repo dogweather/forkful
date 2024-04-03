@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.238434-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
   \ t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language - Ng\xF4n ng\u1EEF\
-  \ T\u1ED1i gi\u1EA3n, Hi\u1EC3n nhi\xEAn c\u1EE7a Tom) b\u1EB1ng Elixir. L\u1EAD\
-  p\u2026"
+  \ T\u1ED1i gi\u1EA3n, Hi\u1EC3n nhi\xEAn c\u1EE7a Tom) b\u1EB1ng Elixir."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

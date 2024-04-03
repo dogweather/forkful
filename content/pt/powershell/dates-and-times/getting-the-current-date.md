@@ -8,8 +8,7 @@ description: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hor
 lastmod: '2024-03-13T22:44:46.807339-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora atual\
-  \ do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\
-  \ cronometrar\u2026"
+  \ do sistema."
 title: Obtendo a data atual
 weight: 29
 ---

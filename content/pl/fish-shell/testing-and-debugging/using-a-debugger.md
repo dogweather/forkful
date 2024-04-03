@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.845993-06:00'
 model: gpt-4-0125-preview
 summary: "Fish nie ma wbudowanego debugera, tak jak niekt\xF3re inne shelle, ale mo\u017C\
   na u\u017Cywa\u0107 zewn\u0119trznych narz\u0119dzi takich jak `gdb` do debugowania\
-  \ skompilowanych\u2026"
+  \ skompilowanych program\xF3w lub `fish -d` do uruchamiania fisha z wyj\u015Bciem\
+  \ diagnostycznym na r\xF3\u017Cnych poziomach."
 title: Korzystanie z debugera
 weight: 35
 ---

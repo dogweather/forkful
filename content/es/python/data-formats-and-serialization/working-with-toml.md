@@ -6,7 +6,7 @@ description: "TOML, abreviatura de Tom's Obvious, Minimal Language, es un format
 lastmod: '2024-03-13T22:44:58.637785-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abreviatura de Tom's Obvious, Minimal Language, es un formato de serializaci\xF3\
-  n de datos parecido a JSON o YAML, pero apunta a la simplicidad y\u2026"
+  n de datos parecido a JSON o YAML, pero apunta a la simplicidad y legibilidad."
 title: Trabajando con TOML
 weight: 39
 ---

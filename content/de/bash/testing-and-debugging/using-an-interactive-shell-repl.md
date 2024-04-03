@@ -4,8 +4,7 @@ description: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive
   \ Programmierer nutzen es, um schnell Code zu schreiben und zu\u2026"
 lastmod: '2024-03-13T22:44:54.061130-06:00'
 model: gpt-4-0125-preview
-summary: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive Computerprogrammierumgebung.\
-  \ Programmierer nutzen es, um schnell Code zu schreiben und zu\u2026"
+summary: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive Computerprogrammierumgebung."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

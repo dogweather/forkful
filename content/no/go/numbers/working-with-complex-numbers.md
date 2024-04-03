@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.260132-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med komplekse tall i programmering inneb\xE6rer \xE5 manipulere\
   \ tall som har b\xE5de en reell og en imagin\xE6r del, som typisk uttrykkes som\
-  \ `a + bi`.\u2026"
+  \ `a + bi`."
 title: "\xC5 Arbeide med Komplekse Tall"
 weight: 14
 ---

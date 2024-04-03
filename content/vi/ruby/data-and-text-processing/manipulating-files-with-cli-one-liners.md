@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Thao t\xE1c v\u1EDBi t\u1EC7p b\u1EB1ng d\xF2ng l\u1EC7nh CLI trong Ruby\
   \ l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c t\u1EC7p th\xF4ng th\u01B0\
   \u1EDDng tr\u1EF1c ti\u1EBFp t\u1EEB terminal c\u1EE7a b\u1EA1n s\u1EED d\u1EE5\
-  ng c\xE1c script Ruby. \u0110\xE2y\u2026"
+  ng c\xE1c script Ruby."
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

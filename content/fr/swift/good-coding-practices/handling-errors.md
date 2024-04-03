@@ -6,8 +6,7 @@ description: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre au
 lastmod: '2024-03-13T22:44:58.230554-06:00'
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux probl\xE8\
-  mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons pour contr\xF4\
-  ler le\u2026"
+  mes qui surviennent lorsque votre code est ex\xE9cut\xE9."
 title: Gestion des erreurs
 weight: 16
 ---

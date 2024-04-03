@@ -4,8 +4,8 @@ description: "Complex numbers are a set of numbers of the form `a + bi`, where `
   \ and `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming,\u2026"
 lastmod: '2024-03-13T22:44:59.702845-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers are a set of numbers of the form `a + bi`, where `a` and\
-  \ `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming,\u2026"
+summary: Complex numbers are a set of numbers of the form `a + bi`, where `a` and
+  `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`).
 title: Working with complex numbers
 weight: 14
 ---

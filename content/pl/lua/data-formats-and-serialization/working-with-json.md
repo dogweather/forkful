@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.561547-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON w Lua polega na parsowaniu \u0142a\u0144cuch\xF3w znak\xF3\
   w sformatowanych w JSON do tabel Lua i odwrotnie, co umo\u017Cliwia \u0142atw\u0105\
-  \ wymian\u0119 danych mi\u0119dzy\u2026"
+  \ wymian\u0119 danych mi\u0119dzy aplikacjami Lua a us\u0142ugami sieciowymi lub\
+  \ zewn\u0119trznymi API."
 title: Praca z JSON
 weight: 38
 ---

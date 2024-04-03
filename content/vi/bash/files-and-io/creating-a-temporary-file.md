@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong Bash c\xF3 ngh\u0129\
   a l\xE0 t\u1EA1o m\u1ED9t t\u1EADp tin m\xE0 c\xE1c k\u1ECBch b\u1EA3n c\u1EE7a\
   \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF\
-  \ li\u1EC7u m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn. L\u1EADp tr\xECnh\u2026"
+  \ li\u1EC7u m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

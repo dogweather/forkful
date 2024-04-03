@@ -6,8 +6,7 @@ description: "Loggen in programmeren is als het bijhouden van een dagboek voor j
   \ applicatie. Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"
 lastmod: '2024-03-13T22:44:51.345147-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie.\
-  \ Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"
+summary: Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie.
 title: Logboekregistratie
 weight: 17
 ---

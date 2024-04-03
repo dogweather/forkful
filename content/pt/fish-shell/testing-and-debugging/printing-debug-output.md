@@ -6,8 +6,7 @@ description: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o 
 lastmod: '2024-03-13T22:44:47.008567-06:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que um\
-  \ script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem a\
-  \ isso quando o\u2026"
+  \ script est\xE1 fazendo e onde pode estar o problema."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

@@ -5,8 +5,8 @@ description: "Reading command-line arguments in Ruby allows scripts to take inpu
   \ use them\u2026"
 lastmod: '2024-03-13T22:45:00.565435-06:00'
 model: gpt-4-1106-preview
-summary: "Reading command-line arguments in Ruby allows scripts to take input right\
-  \ when they're run, like configuring options or passing data. Programmers use them\u2026"
+summary: Reading command-line arguments in Ruby allows scripts to take input right
+  when they're run, like configuring options or passing data.
 title: Reading command line arguments
 weight: 23
 ---

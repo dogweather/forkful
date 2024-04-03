@@ -6,8 +6,7 @@ description: "Rust soporta varios depuradores, pero uno com\xFAn es `gdb` para G
 lastmod: '2024-03-13T22:44:58.851138-06:00'
 model: gpt-4-0125-preview
 summary: "Rust soporta varios depuradores, pero uno com\xFAn es `gdb` para GNU/Linux\
-  \ o `lldb` para macOS. Tambi\xE9n podr\xEDas usar `rust-gdb` o `rust-lldb`, que\
-  \ son\u2026"
+  \ o `lldb` para macOS."
 title: Usando un depurador
 weight: 35
 ---

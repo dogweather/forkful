@@ -4,8 +4,7 @@ description: "Concatenating strings means smushing them together end to end. Pro
   \ do it when they need to stitch together bits of text to form a new string, like\u2026"
 lastmod: '2024-03-13T22:45:00.120755-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenating strings means smushing them together end to end. Programmers\
-  \ do it when they need to stitch together bits of text to form a new string, like\u2026"
+summary: Concatenating strings means smushing them together end to end.
 title: Concatenating strings
 weight: 3
 ---

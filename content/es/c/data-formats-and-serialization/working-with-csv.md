@@ -7,7 +7,9 @@ description: "En el \xE1mbito de la programaci\xF3n, trabajar con archivos CSV (
 lastmod: '2024-03-13T22:44:59.570252-06:00'
 model: gpt-4-0125-preview
 summary: "En el \xE1mbito de la programaci\xF3n, trabajar con archivos CSV (Valores\
-  \ Separados por Comas) implica leer y escribir datos en archivos de texto organizados\u2026"
+  \ Separados por Comas) implica leer y escribir datos en archivos de texto organizados\
+  \ por filas, donde cada fila representa un registro y los campos de cada registro\
+  \ est\xE1n separados por comas."
 title: Trabajando con CSV
 weight: 37
 ---

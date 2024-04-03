@@ -5,9 +5,7 @@ description: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4
   \ ajoitusten tai\u2026"
 lastmod: '2024-03-13T22:44:56.240560-06:00'
 model: gpt-4-1106-preview
-summary: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien manipulointia.\
-  \ Sit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi vanhentumisp\xE4ivien, tapahtumien ajoitusten\
-  \ tai\u2026"
+summary: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien manipulointia."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

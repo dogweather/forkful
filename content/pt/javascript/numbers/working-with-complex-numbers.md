@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma pa
 lastmod: '2024-03-13T22:44:46.956615-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte imagin\xE1\
-  ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\xE3o, especialmente\
-  \ no\u2026"
+  ria (como 3 + 4i)."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

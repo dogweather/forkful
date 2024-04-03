@@ -5,9 +5,7 @@ description: "\xC5 lese en tekstfil i PHP betyr \xE5 hente data fra en fil p\xE5
   \ eller \xE5 vise\u2026"
 lastmod: '2024-03-13T22:44:40.903745-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil i PHP betyr \xE5 hente data fra en fil p\xE5 serveren.\
-  \ Programmerere gj\xF8r dette for \xE5 behandle informasjon, lagre innstillinger,\
-  \ eller \xE5 vise\u2026"
+summary: "\xC5 lese en tekstfil i PHP betyr \xE5 hente data fra en fil p\xE5 serveren."
 title: Lese en tekstfil
 weight: 22
 ---

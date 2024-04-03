@@ -8,7 +8,8 @@ description: "Analyser le HTML en C implique d'examiner les documents HTML pour 
 lastmod: '2024-03-13T22:44:58.369368-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser le HTML en C implique d'examiner les documents HTML pour en extraire\
-  \ efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques, souvent\u2026"
+  \ efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques, souvent\
+  \ en pr\xE9paration au datamining ou au web scraping."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

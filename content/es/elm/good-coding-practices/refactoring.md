@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.001414-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar es b\xE1sicamente hacer limpieza de primavera en tu base de\
   \ c\xF3digo\u2014se trata de reestructurar el c\xF3digo existente sin cambiar su\
-  \ comportamiento\u2026"
+  \ comportamiento externo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

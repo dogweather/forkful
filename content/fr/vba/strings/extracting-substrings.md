@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.542127-06:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 isoler des parties sp\xE9cifiques d'une cha\xEEne en fonction de crit\xE8\
-  res donn\xE9s.\u2026"
+  res donn\xE9s."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

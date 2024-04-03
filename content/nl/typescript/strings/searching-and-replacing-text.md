@@ -6,8 +6,8 @@ description: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak i
   \ programmering, vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"
 lastmod: '2024-03-13T22:44:50.534488-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak in programmering,\
-  \ vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"
+summary: Tekst zoeken en vervangen in strings is een veelvoorkomende taak in programmering,
+  vaak gebruikt om gegevens te verwerken en te manipuleren.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.668283-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w projektach Arduino polega na tworzeniu warto\u015B\
   ci, kt\xF3re z za\u0142o\u017Cenia s\u0105 nieprzewidywalne, co jest kluczowe dla\
-  \ aplikacji takich\u2026"
+  \ aplikacji takich jak gry, symulacje i systemy bezpiecze\u0144stwa."
 title: Generowanie liczb losowych
 weight: 12
 ---

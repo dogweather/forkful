@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.295965-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\xE4\
   \ teksti-tiedostojen j\xE4sennyksen ja luonnin, miss\xE4 jokainen rivi sis\xE4lt\xE4\
-  \xE4 pilkuilla erotettuja\u2026"
+  \xE4 pilkuilla erotettuja arvoja."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

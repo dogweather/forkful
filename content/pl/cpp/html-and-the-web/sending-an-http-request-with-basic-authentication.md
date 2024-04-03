@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.712530-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to proces, w kt\xF3rym klient internetowy przekazuje dane logowania do serwera\
-  \ w zabezpieczonym formacie.\u2026"
+  \ w zabezpieczonym formacie."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

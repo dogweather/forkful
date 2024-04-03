@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.285660-06:00'
 model: gpt-4-0125-preview
 summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen on\
   \ yleinen teht\xE4v\xE4 ohjelmoijille, jotka ty\xF6skentelev\xE4t aikataulutusten,\
-  \ muistutusten tai mink\xE4\u2026"
+  \ muistutusten tai mink\xE4 tahansa p\xE4iv\xE4m\xE4\xE4r\xE4laskuihin perustuvan\
+  \ ominaisuuden parissa."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

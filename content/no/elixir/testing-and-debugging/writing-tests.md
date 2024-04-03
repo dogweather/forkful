@@ -8,8 +8,7 @@ description: "\xC5 skrive tester i Elixir involverer \xE5 lage automatiserte skr
 lastmod: '2024-03-13T22:44:40.446919-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Elixir involverer \xE5 lage automatiserte skript for\
-  \ \xE5 validere oppf\xF8rselen til koden din. Programmerere gj\xF8r dette for \xE5\
-  \ sikre kvalitet,\u2026"
+  \ \xE5 validere oppf\xF8rselen til koden din."
 title: Skrive tester
 weight: 36
 ---

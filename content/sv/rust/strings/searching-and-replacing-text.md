@@ -6,8 +6,7 @@ description: "Texts\xF6kning och ers\xE4ttning inneb\xE4r att hitta specifika st
 lastmod: '2024-03-13T22:44:37.683246-06:00'
 model: gpt-4-1106-preview
 summary: "Texts\xF6kning och ers\xE4ttning inneb\xE4r att hitta specifika str\xE4\
-  ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att effektivt modifiera\
-  \ data eller\u2026"
+  ngar och byta ut dem mot andra."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

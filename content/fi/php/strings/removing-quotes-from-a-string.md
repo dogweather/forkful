@@ -5,7 +5,8 @@ description: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa ni
 lastmod: '2024-03-13T22:44:56.644035-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden kiusallisten\
-  \ kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"
+  \ kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien poistamista,\
+  \ jotka voivat sotkea koodilogiikkasi tai tietokantakyselyt."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

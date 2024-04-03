@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.556455-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu komunikat\xF3\
   w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego kana\u0142\
-  u, r\xF3\u017Cnego od standardowego\u2026"
+  u, r\xF3\u017Cnego od standardowego wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

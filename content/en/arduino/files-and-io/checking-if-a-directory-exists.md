@@ -4,8 +4,8 @@ description: "In the context of Arduino programming, checking if a directory exi
   \ on an SD card or similar storage module allows you to read or write files without\u2026"
 lastmod: '2024-03-13T22:45:00.333954-06:00'
 model: gpt-4-0125-preview
-summary: "In the context of Arduino programming, checking if a directory exists on\
-  \ an SD card or similar storage module allows you to read or write files without\u2026"
+summary: In the context of Arduino programming, checking if a directory exists on
+  an SD card or similar storage module allows you to read or write files without errors.
 title: Checking if a directory exists
 weight: 20
 ---

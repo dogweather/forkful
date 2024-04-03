@@ -5,9 +5,7 @@ description: "Lesing av tekstfiler lar deg hente data lagret p\xE5 din disk. Pro
   \ hente\u2026"
 lastmod: '2024-03-13T22:44:41.244995-06:00'
 model: gpt-4-1106-preview
-summary: "Lesing av tekstfiler lar deg hente data lagret p\xE5 din disk. Programmerere\
-  \ gj\xF8r dette for \xE5 bearbeide data, konfigurere systemer eller bare for \xE5\
-  \ hente\u2026"
+summary: "Lesing av tekstfiler lar deg hente data lagret p\xE5 din disk."
 title: Lese en tekstfil
 weight: 22
 ---

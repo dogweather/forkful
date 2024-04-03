@@ -7,7 +7,7 @@ description: "Commencer un nouveau projet en Dart implique de mettre en place un
 lastmod: '2024-03-13T22:44:57.390652-06:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Dart implique de mettre en place un environnement\
-  \ propice au d\xE9veloppement, aux tests et au d\xE9ploiement efficaces. Les\u2026"
+  \ propice au d\xE9veloppement, aux tests et au d\xE9ploiement efficaces."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE
 lastmod: '2024-03-13T22:44:46.320846-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3o espec\xED\
-  fica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica para leitura,\
-  \ fins de\u2026"
+  fica."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

@@ -6,8 +6,7 @@ description: "Att l\xE4sa en textfil inneb\xE4r att h\xE4mta information lagrad 
 lastmod: '2024-03-13T22:44:38.143026-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att h\xE4mta information lagrad som text\
-  \ och att g\xF6ra den l\xE4sbar f\xF6r skript eller program. Programmerare g\xF6\
-  r detta f\xF6r att\u2026"
+  \ och att g\xF6ra den l\xE4sbar f\xF6r skript eller program."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

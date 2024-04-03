@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.550102-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des nombres complexes implique d'effectuer des op\xE9rations\
   \ math\xE9matiques sur des nombres ayant \xE0 la fois une partie r\xE9elle et une\
-  \ partie\u2026"
+  \ partie imaginaire."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

@@ -4,8 +4,8 @@ description: "Interpolare una stringa significa inserire variabili o espressioni
   \ di una stringa di testo. I programmatori lo fanno per creare messaggi\u2026"
 lastmod: '2024-03-13T22:44:43.337009-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolare una stringa significa inserire variabili o espressioni all'interno\
-  \ di una stringa di testo. I programmatori lo fanno per creare messaggi\u2026"
+summary: Interpolare una stringa significa inserire variabili o espressioni all'interno
+  di una stringa di testo.
 title: Interpolazione di una stringa
 weight: 8
 ---

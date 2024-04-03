@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.552694-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o, obter a data atual \xE9 uma tarefa fundamental que\
   \ permite aos desenvolvedores acessar, exibir ou manipular a data atual dentro de\
-  \ suas\u2026"
+  \ suas aplica\xE7\xF5es."
 title: Obtendo a data atual
 weight: 29
 ---

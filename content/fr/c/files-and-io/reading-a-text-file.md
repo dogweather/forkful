@@ -7,7 +7,7 @@ description: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre 
 lastmod: '2024-03-13T22:44:58.391458-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre syst\xE8\
-  me pour extraire des informations et les manipuler ou les afficher selon le besoin.\u2026"
+  me pour extraire des informations et les manipuler ou les afficher selon le besoin."
 title: Lire un fichier texte
 weight: 22
 ---

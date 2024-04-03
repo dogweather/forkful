@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:57.231019-06:00'
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 cr\xE9er des\
   \ nombres qui ne peuvent pas \xEAtre pr\xE9dits de mani\xE8re raisonnable autrement\
-  \ que par hasard, ce qui\u2026"
+  \ que par hasard, ce qui est essentiel pour le d\xE9veloppement de simulations,\
+  \ de jeux et d'algorithmes de s\xE9curit\xE9."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

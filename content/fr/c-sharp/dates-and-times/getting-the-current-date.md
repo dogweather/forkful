@@ -8,8 +8,7 @@ description: "Obtenir la date actuelle en C# consiste \xE0 r\xE9cup\xE9rer les d
 lastmod: '2024-03-13T22:44:57.799096-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en C# consiste \xE0 r\xE9cup\xE9rer les d\xE9tails\
-  \ de la date et de l'heure actuelles du syst\xE8me. Les programmeurs ont souvent\
-  \ besoin\u2026"
+  \ de la date et de l'heure actuelles du syst\xE8me."
 title: Obtenir la date actuelle
 weight: 29
 ---

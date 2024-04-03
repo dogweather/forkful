@@ -5,7 +5,7 @@ description: "L'interpolazione di stringhe \xE8 l'atto di inserire valori di var
 lastmod: '2024-03-13T22:44:43.756656-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe \xE8 l'atto di inserire valori di variabili\
-  \ all'interno di stringhe di testo. I programmatori la usano per costruire messaggi\u2026"
+  \ all'interno di stringhe di testo."
 title: Interpolazione di una stringa
 weight: 8
 ---

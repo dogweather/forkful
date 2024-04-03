@@ -6,8 +6,7 @@ description: "Concatenar strings \xE9 o ato de juntar texto em peda\xE7os, crian
 lastmod: '2024-03-13T22:44:46.742848-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o ato de juntar texto em peda\xE7os, criando uma\
-  \ \xFAnica sequ\xEAncia cont\xEDnua. Programadores fazem isso para montar mensagens,\
-  \ gerar\u2026"
+  \ \xFAnica sequ\xEAncia cont\xEDnua."
 title: Concatenando strings
 weight: 3
 ---

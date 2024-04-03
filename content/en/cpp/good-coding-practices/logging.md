@@ -4,8 +4,8 @@ description: "Logging in the context of programming is the process of recording 
   \ states, and information to a file or another output medium. Programmers log to\u2026"
 lastmod: '2024-03-13T22:45:00.363601-06:00'
 model: gpt-4-1106-preview
-summary: "Logging in the context of programming is the process of recording events,\
-  \ states, and information to a file or another output medium. Programmers log to\u2026"
+summary: Logging in the context of programming is the process of recording events,
+  states, and information to a file or another output medium.
 title: Logging
 weight: 17
 ---

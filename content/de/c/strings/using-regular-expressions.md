@@ -7,7 +7,7 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeich
 lastmod: '2024-03-13T22:44:54.341471-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
-  \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer\u2026"
+  \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

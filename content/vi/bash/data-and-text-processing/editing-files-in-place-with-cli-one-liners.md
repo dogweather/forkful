@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n v\u1EEBa ph\xE1t hi\u1EC7\
   n ra r\u1EB1ng b\u1EA1n c\u1EA7n ph\u1EA3i c\u1EADp nh\u1EADt h\xE0ng lo\u1EA1t\
   \ cho m\u1ED9t s\u1ED1 t\u1EC7p c\u1EA5u h\xECnh \u0111ang n\u1EB1m tr\xEAn m\xE1\
-  y ch\u1EE7 c\u1EE7a m\xECnh. B\u1EA1n c\xF3 th\u1EC3 m\u1EDF t\u1EEBng t\u1EC7p,\u2026"
+  y ch\u1EE7 c\u1EE7a m\xECnh."
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
 weight: 32

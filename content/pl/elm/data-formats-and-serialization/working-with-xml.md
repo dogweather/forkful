@@ -6,8 +6,7 @@ description: "Praca z XML oznacza analizowanie, transformowanie i generowanie do
 lastmod: '2024-03-13T22:44:35.346353-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza analizowanie, transformowanie i generowanie dokument\xF3\
-  w XML w Elm. Robi si\u0119 to, aby wsp\xF3\u0142dzia\u0142a\u0107 z wieloma serwisami\
-  \ internetowymi i\u2026"
+  w XML w Elm."
 title: Praca z XML
 weight: 40
 ---

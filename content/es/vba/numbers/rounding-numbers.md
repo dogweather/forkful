@@ -8,8 +8,7 @@ description: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar 
 lastmod: '2024-03-13T22:44:58.887293-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un n\xFA\
-  mero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares decimales.\
-  \ Los\u2026"
+  mero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares decimales."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

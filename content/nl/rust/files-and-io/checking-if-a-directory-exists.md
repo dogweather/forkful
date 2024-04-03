@@ -8,7 +8,7 @@ description: "Controleren of een map bestaat in Rust is het verifi\xEBren of een
 lastmod: '2024-03-13T22:44:50.608793-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Rust is het verifi\xEBren of een map aanwezig\
-  \ is op het bestandssysteem. Programmeurs doen dit om fouten te voorkomen bij\u2026"
+  \ is op het bestandssysteem."
 title: Controleren of een directory bestaat
 weight: 20
 ---

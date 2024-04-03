@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:54.414784-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Ruby existiert, erm\xF6glicht\
   \ es Programmierern, die Pr\xE4senz eines Verzeichnisses zu verifizieren, bevor\
-  \ sie\u2026"
+  \ sie Operationen wie das Lesen von Dateien oder das Erstellen neuer Verzeichnisse\
+  \ durchf\xFChren."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

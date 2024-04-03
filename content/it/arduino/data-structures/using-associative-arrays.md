@@ -6,8 +6,8 @@ description: "Nel mondo di Arduino, gli array associativi ti permettono di abbin
   \ chiavi a valori, un po' come accoppiare i calzini con i loro compagni. Sono la\u2026"
 lastmod: '2024-03-13T22:44:43.676265-06:00'
 model: gpt-4-0125-preview
-summary: "Nel mondo di Arduino, gli array associativi ti permettono di abbinare chiavi\
-  \ a valori, un po' come accoppiare i calzini con i loro compagni. Sono la\u2026"
+summary: Nel mondo di Arduino, gli array associativi ti permettono di abbinare chiavi
+  a valori, un po' come accoppiare i calzini con i loro compagni.
 title: Utilizzo di array associativi
 weight: 15
 ---

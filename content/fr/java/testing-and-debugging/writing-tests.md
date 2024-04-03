@@ -8,8 +8,7 @@ description: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre co
 lastmod: '2024-03-13T22:44:57.643898-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre code se\
-  \ comporte comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent\
-  \ des tests pour\u2026"
+  \ comporte comme pr\xE9vu dans diverses conditions."
 title: "R\xE9daction de tests"
 weight: 36
 ---

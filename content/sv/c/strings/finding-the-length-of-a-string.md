@@ -8,8 +8,7 @@ description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE
 lastmod: '2024-03-13T22:44:38.372477-06:00'
 model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE4mma antalet\
-  \ tecken f\xF6re det nollterminerande tecknet `\\0`. Programmerare g\xF6r detta\
-  \ f\xF6r att korrekt\u2026"
+  \ tecken f\xF6re det nollterminerande tecknet `\\0`."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

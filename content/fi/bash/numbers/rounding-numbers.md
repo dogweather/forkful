@@ -5,7 +5,7 @@ description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista y
 lastmod: '2024-03-13T22:44:56.732573-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
-  \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"
+  \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

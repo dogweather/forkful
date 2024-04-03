@@ -8,7 +8,7 @@ description: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danyc
 lastmod: '2024-03-13T22:44:35.689789-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie\
-  \ SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji danych.\u2026"
+  \ SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji danych."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

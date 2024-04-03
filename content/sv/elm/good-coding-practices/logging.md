@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.835988-06:00'
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r i grund och botten processen att spela in h\xE4ndelser och\
   \ datautg\xE5ngar fr\xE5n en mjukvara n\xE4r den k\xF6rs, t\xE4nk p\xE5 det som\
-  \ mjukvarans dagbok.\u2026"
+  \ mjukvarans dagbok."
 title: Loggning
 weight: 17
 ---

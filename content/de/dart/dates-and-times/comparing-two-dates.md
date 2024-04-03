@@ -7,7 +7,8 @@ description: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung d
 lastmod: '2024-03-13T22:44:53.594625-06:00'
 model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des zeitlichen\
-  \ Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche\u2026"
+  \ Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche Funktionalit\xE4\
+  t in Anwendungen, die Ereignisse, Fristen oder zeitkritische Daten verwalten."
 title: Vergleich von zwei Daten
 weight: 27
 ---

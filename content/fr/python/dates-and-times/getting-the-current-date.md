@@ -7,7 +7,8 @@ description: "L'obtention de la date actuelle en Python est une op\xE9ration ess
 lastmod: '2024-03-13T22:44:57.247791-06:00'
 model: gpt-4-0125-preview
 summary: "L'obtention de la date actuelle en Python est une op\xE9ration essentielle\
-  \ pour de nombreuses applications, telles que la journalisation, l'analyse de\u2026"
+  \ pour de nombreuses applications, telles que la journalisation, l'analyse de donn\xE9\
+  es et la prise de d\xE9cisions bas\xE9e sur le temps."
 title: Obtenir la date actuelle
 weight: 29
 ---

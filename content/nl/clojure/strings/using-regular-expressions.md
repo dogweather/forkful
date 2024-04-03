@@ -6,8 +6,7 @@ description: "Reguliere expressies (regex) zoeken, matchen en manipuleren string
   \ Ze worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
 lastmod: '2024-03-13T22:44:50.408482-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Ze\
-  \ worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
+summary: Reguliere expressies (regex) zoeken, matchen en manipuleren strings.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

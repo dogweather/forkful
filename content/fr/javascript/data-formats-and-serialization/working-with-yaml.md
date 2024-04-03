@@ -8,8 +8,7 @@ description: "YAML, abr\xE9viation de YAML Ain't Markup Language, est un format 
 lastmod: '2024-03-13T22:44:58.299211-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, abr\xE9viation de YAML Ain't Markup Language, est un format de s\xE9\
-  rialisation de donn\xE9es lisible par l'homme. Les programmeurs l'utilisent souvent\
-  \ pour\u2026"
+  rialisation de donn\xE9es lisible par l'homme."
 title: Travailler avec YAML
 weight: 41
 ---

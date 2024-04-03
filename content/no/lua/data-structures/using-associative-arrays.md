@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.923120-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
   istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
-  re hva som helst,\u2026"
+  re hva som helst, noe som gj\xF8r datahenting til en lek."
 title: Bruke associative tabeller
 weight: 15
 ---

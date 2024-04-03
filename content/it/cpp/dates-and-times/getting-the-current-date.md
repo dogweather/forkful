@@ -8,7 +8,7 @@ description: "Recuperare la data corrente in C++ \xE8 un compito fondamentale pe
 lastmod: '2024-03-13T22:44:43.737445-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperare la data corrente in C++ \xE8 un compito fondamentale per i programmi\
-  \ che necessitano di elaborare o visualizzare date basate sull'orologio del\u2026"
+  \ che necessitano di elaborare o visualizzare date basate sull'orologio del sistema."
 title: Ottenere la data corrente
 weight: 29
 ---

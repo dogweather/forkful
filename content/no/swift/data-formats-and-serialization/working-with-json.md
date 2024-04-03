@@ -8,8 +8,7 @@ description: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts da
 lastmod: '2024-03-13T22:44:41.163204-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
-  \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\
-  \ en server og en\u2026"
+  \ for datautveksling."
 title: Arbeider med JSON
 weight: 38
 ---

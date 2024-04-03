@@ -4,8 +4,8 @@ description: "Writing to a text file in Lua involves creating or opening a file 
   \ write mode, then using file operations to insert text. This is a fundamental\u2026"
 lastmod: '2024-03-13T22:45:00.221992-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to a text file in Lua involves creating or opening a file in write\
-  \ mode, then using file operations to insert text. This is a fundamental\u2026"
+summary: Writing to a text file in Lua involves creating or opening a file in write
+  mode, then using file operations to insert text.
 title: Writing a text file
 weight: 24
 ---

@@ -7,7 +7,8 @@ description: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage
 lastmod: '2024-03-13T22:44:40.317949-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage automatiserte\
-  \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\u2026"
+  \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\
+  \ som forventet under forskjellige forhold."
 title: Skrive tester
 weight: 36
 ---

@@ -4,8 +4,7 @@ description: "String interpolation lets you insert variables or computations int
   \ a string. It's handy for building strings dynamically without the mess of\u2026"
 lastmod: '2024-03-13T22:44:59.770453-06:00'
 model: gpt-4-1106-preview
-summary: "String interpolation lets you insert variables or computations into a string.\
-  \ It's handy for building strings dynamically without the mess of\u2026"
+summary: String interpolation lets you insert variables or computations into a string.
 title: Interpolating a string
 weight: 8
 ---

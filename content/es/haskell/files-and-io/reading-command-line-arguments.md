@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.133713-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite a nuestros programas\
   \ en Haskell recibir datos externos al ejecutarse, algo \xFAtil para tareas como\
-  \ la\u2026"
+  \ la automatizaci\xF3n y el procesado de ficheros."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

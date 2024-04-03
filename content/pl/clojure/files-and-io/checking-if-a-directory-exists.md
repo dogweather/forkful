@@ -7,7 +7,7 @@ description: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji o
 lastmod: '2024-03-13T22:44:35.011386-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecno\u015B\
-  ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure. Zadanie to jest kluczowe\u2026"
+  ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.923586-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom na trwa\u0142\
   e przechowywanie danych, umo\u017Cliwiaj\u0105c ich dost\u0119pno\u015B\u0107 na\
-  \ przysz\u0142e u\u017Cycie lub\u2026"
+  \ przysz\u0142e u\u017Cycie lub analiz\u0119."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

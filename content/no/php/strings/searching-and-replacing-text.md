@@ -5,7 +5,7 @@ description: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller
 lastmod: '2024-03-13T22:44:40.870714-06:00'
 model: gpt-4-1106-preview
 summary: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller formatere\
-  \ output. Dette sparer tid og automatiserer kjedelige oppgaver."
+  \ output."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

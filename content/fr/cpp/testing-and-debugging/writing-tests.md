@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.165771-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en C++ implique de cr\xE9er des programmes petits et\
   \ autonomes qui v\xE9rifient automatiquement le comportement de sections de votre\
-  \ base de\u2026"
+  \ base de code."
 title: "R\xE9daction de tests"
 weight: 36
 ---

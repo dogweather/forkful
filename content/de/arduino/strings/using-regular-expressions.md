@@ -8,7 +8,8 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuste
 lastmod: '2024-03-13T22:44:54.135114-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster definieren,\
-  \ die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation verwendet\u2026"
+  \ die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation verwendet\
+  \ werden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

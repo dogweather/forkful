@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.356268-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
   \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
-  fen.\u2026"
+  fen."
 title: Tests schreiben
 weight: 36
 ---

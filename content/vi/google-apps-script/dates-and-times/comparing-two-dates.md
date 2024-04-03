@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y trong Google Apps Script, m\u1ED9t phi\xEAn b\u1EA3\
   n \u0111\u01B0\u1EE3c t\xF9y ch\u1EC9nh c\u1EE7a JavaScript d\xE0nh cho b\u1ED9\
   \ \u1EE9ng d\u1EE5ng c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 quan tr\u1ECD\
-  ng \u0111\u1ED1i v\u1EDBi\u2026"
+  ng \u0111\u1ED1i v\u1EDBi c\xE1c nh\xE0 ph\xE1t tri\u1EC3n khi x\u1EED l\xFD l\u1ECB\
+  ch tr\xECnh, d\xF2ng th\u1EDDi gian, ho\u1EB7c b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7\
+  u n\xE0o li\xEAn quan \u0111\u1EBFn ng\xE0y th\xE1ng."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

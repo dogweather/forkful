@@ -5,7 +5,7 @@ description: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: odna
 lastmod: '2024-03-13T22:44:35.740123-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: odnajdujemy\
-  \ okre\u015Blone frazy i zmieniamy je na inne. Robimy to, gdy potrzebujemy masowo\u2026"
+  \ okre\u015Blone frazy i zmieniamy je na inne."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

@@ -5,8 +5,8 @@ description: "Rimuovere caratteri che corrispondono a un modello significa filtr
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.840176-06:00'
 model: gpt-4-1106-preview
-summary: "Rimuovere caratteri che corrispondono a un modello significa filtrare il\
-  \ testo per eliminare specifici caratteri o sequenze di caratteri. Lo facciamo per\u2026"
+summary: Rimuovere caratteri che corrispondono a un modello significa filtrare il
+  testo per eliminare specifici caratteri o sequenze di caratteri.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

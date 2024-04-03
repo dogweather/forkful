@@ -8,7 +8,8 @@ description: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapei
 lastmod: '2024-03-13T22:44:46.492910-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapeiam chaves\
-  \ para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3o de valores\u2026"
+  \ para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3o de valores\
+  \ extremamente r\xE1pidas."
 title: Usando arrays associativos
 weight: 15
 ---

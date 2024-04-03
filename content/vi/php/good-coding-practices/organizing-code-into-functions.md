@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.774359-06:00'
 model: gpt-4-0125-preview
 summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7c ph\xE2n chia\
   \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i t\xE1i s\u1EED d\u1EE5\
-  ng v\u1EDBi m\u1EE5c \u0111\xEDch x\xE1c \u0111\u1ECBnh. Ch\xFAng ta l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 gi\u1EEF m\u1ECDi th\u1EE9 g\u1ECDn\u2026"
+  ng v\u1EDBi m\u1EE5c \u0111\xEDch x\xE1c \u0111\u1ECBnh."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

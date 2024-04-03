@@ -5,9 +5,7 @@ description: "\u0429\u043E \u0442\u0430 \u043D\u0430\u0432\u0456\u0449\u043E? In
   \ it to build dynamic strings without the\u2026"
 lastmod: '2024-03-13T22:44:49.818312-06:00'
 model: gpt-4-1106-preview
-summary: "\u0429\u043E \u0442\u0430 \u043D\u0430\u0432\u0456\u0449\u043E? Interpolating\
-  \ a string means inserting values into a predefined text format. Programmers do\
-  \ it to build dynamic strings without the\u2026"
+summary: "\u0429\u043E \u0442\u0430 \u043D\u0430\u0432\u0456\u0449\u043E."
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

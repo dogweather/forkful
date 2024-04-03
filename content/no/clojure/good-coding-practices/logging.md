@@ -6,8 +6,7 @@ description: "Logging er i prinsippet programvareekvivalenten til en skipslogg; 
 lastmod: '2024-03-13T22:44:40.408522-06:00'
 model: gpt-4-1106-preview
 summary: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det er\
-  \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
-  \ Utviklere\u2026"
+  \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer."
 title: "Loggf\xF8ring"
 weight: 17
 ---

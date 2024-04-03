@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.964139-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Haskell inneb\xE4r att omvandla\
   \ textuella representationer av datum till ett strukturerat format som programmet\
-  \ kan\u2026"
+  \ kan manipulera."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

@@ -5,9 +5,7 @@ description: "I Java smelter vi sammen tekststrenger ved \xE5 konkatere dem. Det
   \ sammen data til en\u2026"
 lastmod: '2024-03-13T22:44:40.658200-06:00'
 model: gpt-4-1106-preview
-summary: "I Java smelter vi sammen tekststrenger ved \xE5 konkatere dem. Dette gj\xF8\
-  r vi for \xE5 bygge setninger, dynamiske meldinger eller for \xE5 sl\xE5 sammen\
-  \ data til en\u2026"
+summary: "I Java smelter vi sammen tekststrenger ved \xE5 konkatere dem."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

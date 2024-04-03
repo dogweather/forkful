@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te 
   \ of je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"
 lastmod: '2024-03-13T22:44:50.764488-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen of\
-  \ je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"
+summary: Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen of
+  je iets te geven.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

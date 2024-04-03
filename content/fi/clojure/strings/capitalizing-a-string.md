@@ -7,7 +7,7 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon n
 lastmod: '2024-03-13T22:44:56.168640-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, ett\xE4\
-  \ sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"
+  \ sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t muuttumattomina."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

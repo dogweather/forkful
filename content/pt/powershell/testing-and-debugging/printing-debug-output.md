@@ -6,8 +6,7 @@ description: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa
 lastmod: '2024-03-13T22:44:46.799557-06:00'
 model: gpt-4-1106-preview
 summary: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver o\
-  \ que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\
-  \ de depura\xE7\xE3o\u2026"
+  \ que seu c\xF3digo est\xE1 realmente fazendo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

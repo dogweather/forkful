@@ -6,7 +6,7 @@ description: "\xC5 s\xF8ke og erstatte tekst betyr \xE5 finne spesifikke ord ell
 lastmod: '2024-03-13T22:44:40.914655-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 s\xF8ke og erstatte tekst betyr \xE5 finne spesifikke ord eller strenger\
-  \ og bytte dem ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode,\u2026"
+  \ og bytte dem ut med noe annet."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

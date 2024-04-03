@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "\u0110\u1EC3 s\u1EED d\u1EE5ng debugger trong Xcode (m\xF4i tr\u01B0\u1EDD\
   ng ph\xE1t tri\u1EC3n t\xEDch h\u1EE3p d\xE0nh cho Swift), b\u1EA1n c\xF3 th\u1EC3\
   \ \u0111\u1EB7t \u0111i\u1EC3m d\u1EEBng (breakpoints), ki\u1EC3m tra bi\u1EBFn\
-  \ v\xE0 theo d\xF5i bi\u1EC3u\u2026"
+  \ v\xE0 theo d\xF5i bi\u1EC3u th\u1EE9c."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

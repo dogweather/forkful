@@ -5,8 +5,8 @@ description: "HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; s
   \ zu\u2026"
 lastmod: '2024-03-13T22:44:54.012315-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen\
-  \ oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten zu\u2026"
+summary: HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen
+  oder senden Daten an Server.
 title: Einen HTTP-Request senden
 weight: 44
 ---

@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:56.237609-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Elixirissa k\xE4sitt\xE4\xE4\
   \ j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tiedon saavuttamisen, yleinen\
-  \ teht\xE4v\xE4 lokitukseen, datan leimaamiseen\u2026"
+  \ teht\xE4v\xE4 lokitukseen, datan leimaamiseen tai mihin tahansa toimintoon, joka\
+  \ edellytt\xE4\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n tuntemista."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

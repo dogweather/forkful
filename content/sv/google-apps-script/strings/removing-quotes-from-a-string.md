@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.425091-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i Google Apps Script handlar\
   \ om att eliminera on\xF6diga citationstecken som kan omge dina str\xE4ngdata, vanligtvis\
-  \ fr\xE5n\u2026"
+  \ fr\xE5n parsade JSON-objekt, anv\xE4ndarinmatning eller dataextraktion."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

@@ -4,8 +4,8 @@ description: "Scaricare una pagina web significa prelevare il contenuto HTML dir
   \ da Internet. I programmatori fanno ci\xF2 per processare dati, testare\u2026"
 lastmod: '2024-03-13T22:44:43.041138-06:00'
 model: gpt-4-1106-preview
-summary: "Scaricare una pagina web significa prelevare il contenuto HTML direttamente\
-  \ da Internet. I programmatori fanno ci\xF2 per processare dati, testare\u2026"
+summary: Scaricare una pagina web significa prelevare il contenuto HTML direttamente
+  da Internet.
 title: Scaricare una pagina web
 weight: 42
 ---

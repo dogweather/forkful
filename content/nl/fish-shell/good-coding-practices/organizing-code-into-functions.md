@@ -7,8 +7,8 @@ description: "Het organiseren van code in functies gaat over het bundelen van st
   \ script om specifieke taken uit te voeren. We doen dit omdat het de code\u2026"
 lastmod: '2024-03-13T22:44:51.252899-06:00'
 model: gpt-4-0125-preview
-summary: "Het organiseren van code in functies gaat over het bundelen van stukjes\
-  \ script om specifieke taken uit te voeren. We doen dit omdat het de code\u2026"
+summary: Het organiseren van code in functies gaat over het bundelen van stukjes script
+  om specifieke taken uit te voeren.
 title: Code organiseren in functies
 weight: 18
 ---

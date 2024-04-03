@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.670603-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perusteht\xE4v\xE4 PHP-ohjelmoinnissa,\
   \ koska se mahdollistaa hakemiston l\xE4sn\xE4olon varmistamisen ennen toimintoja,\
-  \ kuten\u2026"
+  \ kuten tiedostojen lukemista tai niihin kirjoittamista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

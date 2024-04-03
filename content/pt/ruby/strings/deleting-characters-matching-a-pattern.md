@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:47.078432-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 simplesmente a\
   \ arte de selecionar certos trechos de uma string baseado em regras e dizer adeus\
-  \ a eles.\u2026"
+  \ a eles."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

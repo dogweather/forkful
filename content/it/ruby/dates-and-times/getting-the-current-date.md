@@ -7,7 +7,8 @@ description: "Ottenere la data corrente \xE8 un compito essenziale in quasi ogni
 lastmod: '2024-03-13T22:44:44.061538-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente \xE8 un compito essenziale in quasi ogni impresa\
-  \ di programmazione, dal registrare le attivit\xE0 in un'applicazione al generare\u2026"
+  \ di programmazione, dal registrare le attivit\xE0 in un'applicazione al generare\
+  \ report con timbri di data."
 title: Ottenere la data corrente
 weight: 29
 ---

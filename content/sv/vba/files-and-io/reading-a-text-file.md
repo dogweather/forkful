@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.761909-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
   \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\
-  n inom en\u2026"
+  n inom en Office-applikation."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

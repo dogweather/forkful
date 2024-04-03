@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.297717-06:00'
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
   \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
-  \ type\u2026"
+  \ type Google Apps-innhold, og erstatte dem med andre tekstverdier."
 title: "S\xF8ke og erstatte tekst"
 weight: 10
 ---

@@ -6,7 +6,8 @@ description: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang z
 lastmod: '2024-03-13T22:44:53.672598-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu gesicherten\
-  \ Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter Form mit\u2026"
+  \ Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter Form mit der\
+  \ Anfrage mitsenden."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

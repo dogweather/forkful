@@ -5,8 +5,8 @@ description: "Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstab
   \ um\u2026"
 lastmod: '2024-03-13T22:44:54.088824-06:00'
 model: gpt-4-1106-preview
-summary: "Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben eines\
-  \ Texts in untere Zeichen umzuwandeln. Programmierer nutzen diese Technik, um\u2026"
+summary: Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben eines
+  Texts in untere Zeichen umzuwandeln.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

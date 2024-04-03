@@ -6,8 +6,8 @@ description: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetu
   \ merkkijonon alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
 lastmod: '2024-03-13T22:44:56.037569-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon\
-  \ alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
+summary: Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon
+  alussa ja lopussa olevien lainausmerkkien (`"` tai `'`) eliminointia.
 title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---

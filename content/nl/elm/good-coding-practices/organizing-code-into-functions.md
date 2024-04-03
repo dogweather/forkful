@@ -7,9 +7,7 @@ description: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderv
   \ om\u2026"
 lastmod: '2024-03-13T22:44:50.730541-06:00'
 model: gpt-4-0125-preview
-summary: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverdelen\
-  \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\
-  \ om\u2026"
+summary: "Al je code in \xE9\xE9n grote hoop gooien."
 title: Code organiseren in functies
 weight: 18
 ---

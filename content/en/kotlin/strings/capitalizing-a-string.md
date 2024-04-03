@@ -4,8 +4,10 @@ description: "Capitalizing a string in programming involves converting the first
   \ of the string to uppercase if it's not already, which is useful for\u2026"
 lastmod: '2024-03-13T22:45:00.033521-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string in programming involves converting the first character\
-  \ of the string to uppercase if it's not already, which is useful for\u2026"
+summary: Capitalizing a string in programming involves converting the first character
+  of the string to uppercase if it's not already, which is useful for formatting user
+  inputs or displaying text in a user interface in a more standardized or human-friendly
+  manner.
 title: Capitalizing a string
 weight: 2
 ---

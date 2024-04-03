@@ -6,8 +6,8 @@ description: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das 
   \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"
 lastmod: '2024-03-13T22:44:54.114304-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
-  \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"
+summary: Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle
+  Datum und die Zeit des Systems zu ermitteln.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

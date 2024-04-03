@@ -5,8 +5,7 @@ description: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\x
   sittelyyn."
 lastmod: '2024-03-13T22:44:56.475305-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\xE4ytet\xE4\
-  \xE4n yhdenmukaistamaan dataa, esimerkiksi vertailuun tai sy\xF6tteen k\xE4sittelyyn."
+summary: "\"Mit\xE4 & Miksi."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -7,7 +7,8 @@ description: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VB
 lastmod: '2024-03-13T22:44:56.384594-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA) -ymp\xE4\
-  rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
+  rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen ohjelmallisessa\
+  \ muokkaamisessa."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

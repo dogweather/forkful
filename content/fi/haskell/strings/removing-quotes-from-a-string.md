@@ -5,7 +5,7 @@ description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4ist
 lastmod: '2024-03-13T22:44:56.603897-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten ('\
-  \ ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa.\u2026"
+  \ ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

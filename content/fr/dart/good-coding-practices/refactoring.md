@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.399689-06:00'
 model: gpt-4-0125-preview
 summary: "Le remaniement (Refactoring) dans Dart est le processus de restructuration\
   \ du code existant sans en changer le comportement externe, visant \xE0 am\xE9liorer\
-  \ sa\u2026"
+  \ sa structure interne, sa lisibilit\xE9 et sa maintenabilit\xE9."
 title: Refactorisation
 weight: 19
 ---

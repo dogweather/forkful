@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.543532-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar, en el l\xE9xico de programaci\xF3n, se refiere al proceso\
   \ de reestructurar el c\xF3digo de computadora existente\u2014cambiando la facturaci\xF3\
-  n sin cambiar\u2026"
+  n sin cambiar su comportamiento externo\u2014para mejorar atributos no funcionales."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

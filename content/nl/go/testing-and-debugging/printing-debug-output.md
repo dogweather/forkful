@@ -6,8 +6,9 @@ description: "In computerprogrammering betekent \"Debug-output afdrukken\" het p
   \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"
 lastmod: '2024-03-13T22:44:50.290202-06:00'
 model: gpt-4-0125-preview
-summary: "In computerprogrammering betekent \"Debug-output afdrukken\" het produceren\
-  \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"
+summary: In computerprogrammering betekent "Debug-output afdrukken" het produceren
+  van gedetailleerde informatieve berichten die ontwikkelaars helpen de uitvoeringsstroom
+  van hun programma te begrijpen of problemen op te sporen.
 title: Afdrukken van debug-uitvoer
 weight: 33
 ---

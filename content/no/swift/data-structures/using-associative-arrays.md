@@ -8,8 +8,7 @@ description: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre
 lastmod: '2024-03-13T22:44:41.135004-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og h\xE5\
-  ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
-  \ data\u2026"
+  ndtere data som n\xF8kkel-verdi-par."
 title: Bruke associative tabeller
 weight: 15
 ---

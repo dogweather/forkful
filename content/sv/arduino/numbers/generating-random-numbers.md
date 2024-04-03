@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.164064-06:00'
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga tal i Arduino-projekt inneb\xE4r att producera\
   \ v\xE4rden som \xE4r of\xF6ruts\xE4gbara av design, vilket \xE4r avg\xF6rande f\xF6\
-  r till\xE4mpningar som\u2026"
+  r till\xE4mpningar som spel, simuleringar och s\xE4kerhetssystem."
 title: Generera slumptal
 weight: 12
 ---

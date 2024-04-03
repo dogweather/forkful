@@ -6,8 +6,8 @@ description: "Het verkrijgen van de huidige datum in Python betekent het ophalen
   \ de live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"
 lastmod: '2024-03-13T22:44:50.387107-06:00'
 model: gpt-4-0125-preview
-summary: "Het verkrijgen van de huidige datum in Python betekent het ophalen van de\
-  \ live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"
+summary: Het verkrijgen van de huidige datum in Python betekent het ophalen van de
+  live datum van het systeem waarop het draait.
 title: Het huidige datum ophalen
 weight: 29
 ---

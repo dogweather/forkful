@@ -6,8 +6,7 @@ description: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xE
 lastmod: '2024-03-13T22:44:58.402578-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEEnes de\
-  \ caract\xE8res automagiquement. Les devs le font pour corriger des erreurs, mettre\
-  \ \xE0\u2026"
+  \ caract\xE8res automagiquement."
 title: Recherche et remplacement de texte
 weight: 10
 ---

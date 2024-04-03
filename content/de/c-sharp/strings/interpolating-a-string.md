@@ -7,7 +7,8 @@ description: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen
 lastmod: '2024-03-13T22:44:53.874361-06:00'
 model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen neuen\
-  \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\u2026"
+  \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\
+  \ eingef\xFCgt werden."
 title: Interpolation eines Strings
 weight: 8
 ---

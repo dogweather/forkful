@@ -6,8 +6,7 @@ description: "XML (eXtensible Markup Language) trata-se de estruturar dados em u
 lastmod: '2024-03-13T22:44:46.608227-06:00'
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) trata-se de estruturar dados em um formato\
-  \ leg\xEDvel. Programadores manipulam o XML para configura\xE7\xE3o, troca de dados\
-  \ entre\u2026"
+  \ leg\xEDvel."
 title: Trabalhando com XML
 weight: 40
 ---

@@ -8,7 +8,7 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jo
 lastmod: '2024-03-13T22:44:56.897376-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat\
-  \ haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen tai manipulointiin.\u2026"
+  \ haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen tai manipulointiin."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

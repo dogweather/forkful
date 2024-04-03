@@ -7,7 +7,7 @@ description: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, 
 lastmod: '2024-03-13T22:44:44.042486-06:00'
 model: gpt-4-0125-preview
 summary: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
-  \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"
+  \ di accoppiare chiavi uniche a valori."
 title: Utilizzo di array associativi
 weight: 15
 ---

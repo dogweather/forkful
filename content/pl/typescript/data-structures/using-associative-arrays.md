@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.131607-06:00'
 model: gpt-4-0125-preview
 summary: "Asocjacyjne tablice, czyli obiekty w TypeScript, pozwalaj\u0105 u\u017C\
   ywa\u0107 ci\u0105g\xF3w znak\xF3w (lub kluczy) do dost\u0119pu do par warto\u015B\
-  ci. Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
+  ci."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

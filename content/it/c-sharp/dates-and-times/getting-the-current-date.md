@@ -6,8 +6,8 @@ description: "Ottenere la data corrente in C# implica il recupero dei dettagli d
   \ data e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"
 lastmod: '2024-03-13T22:44:43.444373-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in C# implica il recupero dei dettagli della data\
-  \ e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"
+summary: Ottenere la data corrente in C# implica il recupero dei dettagli della data
+  e dell'ora correnti dal sistema.
 title: Ottenere la data corrente
 weight: 29
 ---

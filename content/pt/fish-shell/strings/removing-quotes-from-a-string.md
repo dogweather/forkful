@@ -5,7 +5,7 @@ description: "Remover aspas de uma string \xE9 sobre eliminar aquelas inc\xF4mod
 lastmod: '2024-03-13T22:44:46.992398-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string \xE9 sobre eliminar aquelas inc\xF4modas aspas\
-  \ simples (' ') ou duplas (\" \") dos seus dados de texto. Programadores frequentemente\u2026"
+  \ simples (' ') ou duplas (\" \") dos seus dados de texto."
 title: Removendo aspas de uma string
 weight: 9
 ---

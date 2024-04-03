@@ -6,8 +6,7 @@ description: "Refatora\xE7\xE3o \xE9 o processo de ajustar seu c\xF3digo sem alt
 lastmod: '2024-03-13T22:44:46.633582-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de ajustar seu c\xF3digo sem alterar seu\
-  \ comportamento externo. \xC9 tudo sobre limpar e organizar sua abordagem para tornar\
-  \ o c\xF3digo\u2026"
+  \ comportamento externo."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

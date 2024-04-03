@@ -6,8 +6,7 @@ description: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakentee
 lastmod: '2024-03-13T22:44:56.747402-06:00'
 model: gpt-4-0125-preview
 summary: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen\
-  \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4rke\xE4\
-  \ k\xE4yt\xE4nt\xF6\u2026"
+  \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
 title: Koodin refaktorointi
 weight: 19
 ---

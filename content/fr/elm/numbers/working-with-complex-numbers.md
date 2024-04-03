@@ -6,8 +6,7 @@ description: "Les nombres complexes sont une combinaison de nombres r\xE9els et 
 lastmod: '2024-03-13T22:44:57.682422-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes sont une combinaison de nombres r\xE9els et imaginaires,\
-  \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1. Ils sont cl\xE9s dans\
-  \ des\u2026"
+  \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1."
 title: Manipulation des nombres complexes
 weight: 14
 ---

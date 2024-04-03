@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.678852-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML no\
   \ es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\
-  \ por\u2026"
+  \ por humanos utilizado para archivos de configuraci\xF3n e intercambio de datos\
+  \ entre lenguajes con estructuras de datos diferentes."
 title: Trabajando con YAML
 weight: 41
 ---

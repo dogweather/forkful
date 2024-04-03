@@ -8,7 +8,8 @@ description: "Das Herunterladen einer Webseite in C beinhaltet den programmatisc
 lastmod: '2024-03-13T22:44:54.350889-06:00'
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in C beinhaltet den programmatischen Zugriff\
-  \ auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern zur\u2026"
+  \ auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern zur\
+  \ Verarbeitung oder zur Offline-Nutzung."
 title: Herunterladen einer Webseite
 weight: 42
 ---

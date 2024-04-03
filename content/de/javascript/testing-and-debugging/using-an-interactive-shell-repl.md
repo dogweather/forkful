@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:54.267778-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) erm\xF6glichen\
   \ es Ihnen, Code spontan auszuf\xFChren, Funktionen, Algorithmen zu testen oder\
-  \ mit Ideen\u2026"
+  \ mit Ideen herumzuspielen."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

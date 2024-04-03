@@ -8,7 +8,8 @@ description: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE
 lastmod: '2024-03-13T22:44:56.780289-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE4ll\xF6\
-  n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4vien\u2026"
+  n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4vien\
+  \ automatisoimiseksi."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

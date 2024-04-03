@@ -6,8 +6,9 @@ description: "Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjel
   \ viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan\u2026"
 lastmod: '2024-03-13T22:44:56.385572-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan\u2026"
+summary: Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa
+  viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan merkkijonoliteraaliin,
+  jolloin voidaan muodostaa dynaamisia merkkijonoja.
 title: Merkkijonon interpolaatio
 weight: 8
 ---

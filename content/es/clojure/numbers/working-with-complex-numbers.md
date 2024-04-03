@@ -6,7 +6,7 @@ description: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una p
 lastmod: '2024-03-13T22:44:58.650522-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte adicional,\
-  \ la unidad imaginaria 'i'. Los programadores los utilizan en varios dominios,\u2026"
+  \ la unidad imaginaria 'i'."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

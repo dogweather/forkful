@@ -6,8 +6,8 @@ description: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, 
   \ Daten wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
 lastmod: '2024-03-13T22:44:53.761143-06:00'
 model: gpt-4-0125-preview
-summary: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten\
-  \ wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
+summary: HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten
+  wie Text, Links oder andere Elemente zu extrahieren.
 title: HTML parsen
 weight: 43
 ---

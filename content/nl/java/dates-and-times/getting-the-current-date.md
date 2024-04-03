@@ -8,7 +8,8 @@ description: "De huidige datum in Java verkrijgen is een fluitje van een cent \u
 lastmod: '2024-03-13T22:44:50.693051-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013 het\
-  \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\u2026"
+  \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\
+  \ systeemklok te halen."
 title: Het huidige datum ophalen
 weight: 29
 ---

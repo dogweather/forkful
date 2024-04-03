@@ -4,8 +4,9 @@ description: "I numeri complessi, costituiti da una parte reale e una immaginari
   \ sono essenziali in vari campi del calcolo come l'ingegneria, la fisica e\u2026"
 lastmod: '2024-03-13T22:44:43.469308-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi, costituiti da una parte reale e una immaginaria, sono\
-  \ essenziali in vari campi del calcolo come l'ingegneria, la fisica e\u2026"
+summary: I numeri complessi, costituiti da una parte reale e una immaginaria, sono
+  essenziali in vari campi del calcolo come l'ingegneria, la fisica e l'elaborazione
+  dei segnali.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

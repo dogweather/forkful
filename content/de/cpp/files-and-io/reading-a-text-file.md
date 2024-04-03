@@ -5,8 +5,8 @@ description: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt ein
   \ die in\u2026"
 lastmod: '2024-03-13T22:44:54.201725-06:00'
 model: gpt-4-1106-preview
-summary: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei\
-  \ in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten, die in\u2026"
+summary: Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei
+  in unserem Programm verwenden.
 title: Textdatei einlesen
 weight: 22
 ---

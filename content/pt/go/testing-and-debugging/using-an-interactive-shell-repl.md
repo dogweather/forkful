@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.062473-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (REPL),\
   \ permite que voc\xEA experimente c\xF3digo Go em tempo real, executando comandos\
-  \ e obtendo\u2026"
+  \ e obtendo feedback imediato."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

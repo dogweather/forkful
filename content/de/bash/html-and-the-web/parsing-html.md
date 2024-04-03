@@ -6,8 +6,8 @@ description: "HTML zu parsen bedeutet, die Struktur und den Inhalt einer HTML-Da
   \ zu durchforsten, um Informationen zu extrahieren. Programmierer tun dies, um auf\u2026"
 lastmod: '2024-03-13T22:44:54.057381-06:00'
 model: gpt-4-0125-preview
-summary: "HTML zu parsen bedeutet, die Struktur und den Inhalt einer HTML-Datei zu\
-  \ durchforsten, um Informationen zu extrahieren. Programmierer tun dies, um auf\u2026"
+summary: HTML zu parsen bedeutet, die Struktur und den Inhalt einer HTML-Datei zu
+  durchforsten, um Informationen zu extrahieren.
 title: HTML parsen
 weight: 43
 ---

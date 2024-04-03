@@ -6,8 +6,7 @@ description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w to po prostu sklejanie s
 lastmod: '2024-03-13T22:44:35.704860-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w to po prostu sklejanie s\u0142\
-  \xF3w lub zda\u0144, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w. Programi\u015B\
-  ci robi\u0105 to, by tworzy\u0107 komunikaty, dynamiczne tre\u015Bci\u2026"
+  \xF3w lub zda\u0144, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

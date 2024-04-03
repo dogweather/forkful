@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.370316-06:00'
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
   ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
-  \ s\xE5som position och\u2026"
+  \ s\xE5som position och l\xE4ngd."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

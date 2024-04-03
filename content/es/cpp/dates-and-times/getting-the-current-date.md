@@ -6,8 +6,8 @@ description: "Obtener la fecha actual en C++ es una tarea fundamental para progr
   \ que necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es\u2026"
 lastmod: '2024-03-13T22:44:59.385574-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en C++ es una tarea fundamental para programas que\
-  \ necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es\u2026"
+summary: Obtener la fecha actual en C++ es una tarea fundamental para programas que
+  necesitan procesar o mostrar fechas basadas en el reloj del sistema.
 title: Obteniendo la fecha actual
 weight: 29
 ---

@@ -6,8 +6,7 @@ description: "Um einen String in Kleinbuchstaben umzuwandeln, ver\xE4ndert man j
 lastmod: '2024-03-13T22:44:53.365386-06:00'
 model: gpt-4-1106-preview
 summary: "Um einen String in Kleinbuchstaben umzuwandeln, ver\xE4ndert man jeden Gro\xDF\
-  buchstaben in seinem \xC4quivalent in Kleinbuchstaben. Dies ist n\xFCtzlich f\xFC\
-  r die\u2026"
+  buchstaben in seinem \xC4quivalent in Kleinbuchstaben."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

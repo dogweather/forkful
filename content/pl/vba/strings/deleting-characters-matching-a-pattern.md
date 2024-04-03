@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.213004-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual Basic\
   \ for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu znak\xF3\
-  w lub ci\u0105g\xF3w,\u2026"
+  w lub ci\u0105g\xF3w, kt\xF3re spe\u0142niaj\u0105 okre\u015Blone kryteria."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

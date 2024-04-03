@@ -4,8 +4,8 @@ description: "Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dok
   \ mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten,\u2026"
 lastmod: '2024-03-13T22:44:54.039633-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten\
-  \ mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten,\u2026"
+summary: Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten
+  mithilfe von Code.
 title: Arbeiten mit XML
 weight: 40
 ---

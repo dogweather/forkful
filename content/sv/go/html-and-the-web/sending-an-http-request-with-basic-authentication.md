@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:37.391737-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering i\
   \ Go inneb\xE4r att l\xE4gga till en auktoriseringsheader till din f\xF6rfr\xE5\
-  gan som inkluderar ett\u2026"
+  gan som inkluderar ett anv\xE4ndarnamn och l\xF6senord i form av en Base64-kodad\
+  \ str\xE4ng."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---

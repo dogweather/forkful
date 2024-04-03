@@ -6,7 +6,7 @@ description: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4ris
 lastmod: '2024-03-13T22:44:56.698805-06:00'
 model: gpt-4-0125-preview
 summary: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\xE4\
-  , jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 kokeiluun,\u2026"
+  , jossa voit nopeasti testata koodia."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

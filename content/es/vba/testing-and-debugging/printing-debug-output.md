@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.896112-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones (VBA)\
   \ implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro de su\
-  \ c\xF3digo\u2026"
+  \ c\xF3digo para mostrar valores de variables, el flujo de ejecuci\xF3n o mensajes\
+  \ de depuraci\xF3n personalizados."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

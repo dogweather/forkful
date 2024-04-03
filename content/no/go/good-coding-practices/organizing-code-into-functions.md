@@ -8,8 +8,7 @@ description: "\xC5 organisere kode i funksjoner i Go inneb\xE6rer \xE5 bryte ned
 lastmod: '2024-03-13T22:44:40.272925-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i Go inneb\xE6rer \xE5 bryte ned kode\
-  \ i gjenbrukbare, modul\xE6re blokker som utf\xF8rer spesifikke oppgaver. Denne\
-  \ tiln\xE6rmingen\u2026"
+  \ i gjenbrukbare, modul\xE6re blokker som utf\xF8rer spesifikke oppgaver."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

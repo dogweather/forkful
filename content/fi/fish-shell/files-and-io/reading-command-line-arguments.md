@@ -5,9 +5,7 @@ description: "Komennon rivin argumentit ovat ohjelmallesi sy\xF6tettyj\xE4 tieto
   ytt\xE4yty\xE4 eri\u2026"
 lastmod: '2024-03-13T22:44:57.010509-06:00'
 model: gpt-4-1106-preview
-summary: "Komennon rivin argumentit ovat ohjelmallesi sy\xF6tettyj\xE4 tietoja. Ne\
-  \ mahdollistavat joustavuuden ja mukautettavuuden, jolloin ohjelmasi voi k\xE4ytt\xE4\
-  yty\xE4 eri\u2026"
+summary: "Komennon rivin argumentit ovat ohjelmallesi sy\xF6tettyj\xE4 tietoja."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

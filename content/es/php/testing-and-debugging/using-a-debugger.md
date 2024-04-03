@@ -4,8 +4,7 @@ description: "PHP viene con un depurador interactivo llamado Xdebug. As\xED es c
   \ se usa. Primero, aseg\xFArate de tener Xdebug instalado y configurado en tu archivo\u2026"
 lastmod: '2024-03-13T22:44:59.165350-06:00'
 model: gpt-4-0125-preview
-summary: "PHP viene con un depurador interactivo llamado Xdebug. As\xED es como se\
-  \ usa. Primero, aseg\xFArate de tener Xdebug instalado y configurado en tu archivo\u2026"
+summary: PHP viene con un depurador interactivo llamado Xdebug.
 title: Usando un depurador
 weight: 35
 ---

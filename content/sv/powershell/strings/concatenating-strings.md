@@ -6,8 +6,7 @@ description: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5
 lastmod: '2024-03-13T22:44:38.116094-06:00'
 model: gpt-4-1106-preview
 summary: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5 eller\
-  \ fler textbitar till en. Programmerare g\xF6r detta f\xF6r att bygga meningar,\
-  \ skapa dynamiska\u2026"
+  \ fler textbitar till en."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

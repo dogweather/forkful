@@ -4,8 +4,8 @@ description: "Creating a temporary file means making a file that you don't need 
   \ stick around once you're done with it. Programmers do this for data that's only\u2026"
 lastmod: '2024-03-13T22:44:59.725141-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file means making a file that you don't need to stick\
-  \ around once you're done with it. Programmers do this for data that's only\u2026"
+summary: Creating a temporary file means making a file that you don't need to stick
+  around once you're done with it.
 title: Creating a temporary file
 weight: 21
 ---

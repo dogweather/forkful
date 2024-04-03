@@ -6,7 +6,7 @@ description: "For \xE5 komme i gang med en debugger i TypeScript, trenger du bar
 lastmod: '2024-03-13T22:44:40.536908-06:00'
 model: gpt-4-0125-preview
 summary: "For \xE5 komme i gang med en debugger i TypeScript, trenger du bare et st\xF8\
-  ttet IDE (som Visual Studio Code) og en `launch.json`-konfigurasjon. Her er et\u2026"
+  ttet IDE (som Visual Studio Code) og en `launch."
 title: "\xC5 bruke en debugger"
 weight: 35
 ---

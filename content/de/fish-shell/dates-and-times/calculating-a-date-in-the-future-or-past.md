@@ -5,7 +5,7 @@ description: "Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeu
 lastmod: '2024-03-13T22:44:54.322432-06:00'
 model: gpt-4-1106-preview
 summary: "Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet, ausgehend\
-  \ vom aktuellen Datum ein bestimmtes Datum vor- oder zur\xFCckzurechnen.\u2026"
+  \ vom aktuellen Datum ein bestimmtes Datum vor- oder zur\xFCckzurechnen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

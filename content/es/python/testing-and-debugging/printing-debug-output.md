@@ -6,8 +6,7 @@ description: "Imprimir mensajes de depuraci\xF3n es como dejar migas de pan en t
 lastmod: '2024-03-13T22:44:58.614725-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n es como dejar migas de pan en tu c\xF3\
-  digo para saber qu\xE9 sucede durante la ejecuci\xF3n. Los programadores lo hacen\
-  \ para\u2026"
+  digo para saber qu\xE9 sucede durante la ejecuci\xF3n."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

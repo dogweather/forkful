@@ -5,8 +5,8 @@ description: "Writing tests in programming involves creating small, separate pie
   \ as\u2026"
 lastmod: '2024-03-13T22:45:00.208905-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in programming involves creating small, separate pieces of\
-  \ code to automatically verify that different parts of your application work as\u2026"
+summary: Writing tests in programming involves creating small, separate pieces of
+  code to automatically verify that different parts of your application work as expected.
 title: Writing tests
 weight: 36
 ---

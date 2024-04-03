@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:58.277294-06:00'
 model: gpt-4-0125-preview
 summary: "Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles de\
   \ Lecture-\xC9valuation-Affichage), vous permettent d'ex\xE9cuter du code \xE0 la\
-  \ vol\xE9e, de\u2026"
+  \ vol\xE9e, de tester des fonctions, des algorithmes, ou de jouer avec des id\xE9\
+  es."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

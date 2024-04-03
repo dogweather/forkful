@@ -5,7 +5,7 @@ description: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9riq
 lastmod: '2024-03-13T22:44:57.920281-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique unidimensionnelle\
-  \ dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"
+  \ dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire."
 title: Manipulation des nombres complexes
 weight: 14
 ---

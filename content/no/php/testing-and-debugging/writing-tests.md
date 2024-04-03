@@ -8,7 +8,7 @@ description: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage og kj\xF
 lastmod: '2024-03-13T22:44:40.890241-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage og kj\xF8re skript\
-  \ som verifiserer at koden oppf\xF8rer seg som forventet under ulike forhold. Programmerere\u2026"
+  \ som verifiserer at koden oppf\xF8rer seg som forventet under ulike forhold."
 title: Skrive tester
 weight: 36
 ---

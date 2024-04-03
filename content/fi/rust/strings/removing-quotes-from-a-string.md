@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.344795-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeettomien\
   \ ylim\xE4\xE4r\xE4isten lainausmerkkien poistamista tekstiaineistosi ymp\xE4rilt\xE4\
-  .\u2026"
+  ."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

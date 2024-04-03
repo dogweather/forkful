@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.279173-06:00'
 model: gpt-4-0125-preview
 summary: "Logging i C inneb\xE6rer \xE5 registrere flyten og merkbare hendelser av\
   \ et program under kj\xF8retiden, som gir en konkret gjennomgang av dets oppf\xF8\
-  rsel og\u2026"
+  rsel og ytelse."
 title: Logging
 weight: 17
 ---

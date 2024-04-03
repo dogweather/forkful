@@ -7,7 +7,7 @@ description: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa vir
 lastmod: '2024-03-13T22:44:57.011542-06:00'
 model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa virheilmoitusten\
-  \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta\u2026"
+  \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta (stdout)."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

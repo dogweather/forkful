@@ -5,7 +5,7 @@ description: "Stringinterpolation bedeutet, Variablen oder Ausdr\xFCcke in einen
 lastmod: '2024-03-13T22:44:54.043565-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolation bedeutet, Variablen oder Ausdr\xFCcke in einen Textstring\
-  \ einzusetzen. Programmierer nutzen das, um dynamische Werte in Skripten einfach\u2026"
+  \ einzusetzen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

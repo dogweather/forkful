@@ -8,7 +8,8 @@ description: "I konteksten av Arduino-programmering, er det \xE5 sjekke om en ma
 lastmod: '2024-03-13T22:44:41.072481-06:00'
 model: gpt-4-0125-preview
 summary: "I konteksten av Arduino-programmering, er det \xE5 sjekke om en mappe eksisterer\
-  \ p\xE5 et SD-kort eller lignende lagringsmodul essensielt for \xE5 kunne lese eller\u2026"
+  \ p\xE5 et SD-kort eller lignende lagringsmodul essensielt for \xE5 kunne lese eller\
+  \ skrive filer uten feil."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

@@ -6,8 +6,7 @@ description: "\"Logging\" \xE9 a pr\xE1tica de manter um registro de eventos, tr
 lastmod: '2024-03-13T22:44:46.845208-06:00'
 model: gpt-4-1106-preview
 summary: "\"Logging\" \xE9 a pr\xE1tica de manter um registro de eventos, transa\xE7\
-  \xF5es ou atividades que acontecem ao longo do tempo em um sistema. Programadores\
-  \ o utilizam\u2026"
+  \xF5es ou atividades que acontecem ao longo do tempo em um sistema."
 title: Registro de Logs
 weight: 17
 ---

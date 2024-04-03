@@ -5,7 +5,6 @@ description: Basic authentication slaps a username:password combo onto an HTTP r
 lastmod: '2024-03-13T22:45:00.048385-06:00'
 model: gpt-4-1106-preview
 summary: Basic authentication slaps a username:password combo onto an HTTP request.
-  Devs use it for a quick-and-dirty way to prove who's asking for what on the web.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

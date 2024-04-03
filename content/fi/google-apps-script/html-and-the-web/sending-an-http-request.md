@@ -8,8 +8,7 @@ description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarko
 lastmod: '2024-03-13T22:44:56.092949-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
-  \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
-  \ Ohjelmoijat\u2026"
+  \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

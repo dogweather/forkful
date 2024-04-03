@@ -5,7 +5,8 @@ description: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f
 lastmod: '2024-03-13T22:44:53.978932-06:00'
 model: gpt-4-1106-preview
 summary: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f\xFCr\
-  \ Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\u2026"
+  \ Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\
+  \ bedeutsamen Datenpunkten, die auftreten, wenn Ihre Anwendung l\xE4uft."
 title: Protokollierung
 weight: 17
 ---

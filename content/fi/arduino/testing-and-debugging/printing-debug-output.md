@@ -5,9 +5,7 @@ description: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 ohjelmassasi tapah
   rt\xE4miseen."
 lastmod: '2024-03-13T22:44:56.826437-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 ohjelmassasi tapahtuu. Sit\xE4\
-  \ k\xE4ytet\xE4\xE4n virheiden etsint\xE4\xE4n ja ohjelman toiminnan ymm\xE4rt\xE4\
-  miseen."
+summary: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 ohjelmassasi tapahtuu."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

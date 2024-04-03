@@ -8,8 +8,7 @@ description: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\x
 lastmod: '2024-03-13T22:44:41.263702-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8ker,\
-  \ er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon. I\
-  \ motsetning\u2026"
+  \ er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon."
 title: Bruke associative tabeller
 weight: 15
 ---

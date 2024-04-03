@@ -6,8 +6,7 @@ description: "Facciamo una passeggiata con GHCi, l'ambiente interattivo di Haske
 lastmod: '2024-03-13T22:44:43.479752-06:00'
 model: gpt-4-0125-preview
 summary: "Facciamo una passeggiata con GHCi, l'ambiente interattivo di Haskell che\
-  \ pu\xF2 fungere da debugger di base. Lo avvii con il tuo codice Haskell e inizi\
-  \ a\u2026"
+  \ pu\xF2 fungere da debugger di base."
 title: Utilizzo di un debugger
 weight: 35
 ---

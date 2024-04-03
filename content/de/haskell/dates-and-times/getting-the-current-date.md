@@ -6,8 +6,8 @@ description: "Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen d
   \ aktuellen Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:53.941682-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen\
-  \ Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer\u2026"
+summary: Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen
+  Systemzeit und deren Umwandlung in ein lesbares Datumsformat.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

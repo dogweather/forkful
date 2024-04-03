@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.084885-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in PowerShell beinhaltet die Umwandlung\
   \ des ersten Zeichens eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der\
-  \ Rest\u2026"
+  \ Rest des Strings unver\xE4ndert bleibt."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

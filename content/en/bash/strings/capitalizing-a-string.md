@@ -4,8 +4,8 @@ description: "Capitalizing a string in Bash involves transforming the first char
   \ of the string to uppercase while leaving the rest of the string unchanged. This\u2026"
 lastmod: '2024-03-13T22:45:00.228086-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string in Bash involves transforming the first character\
-  \ of the string to uppercase while leaving the rest of the string unchanged. This\u2026"
+summary: Capitalizing a string in Bash involves transforming the first character of
+  the string to uppercase while leaving the rest of the string unchanged.
 title: Capitalizing a string
 weight: 2
 ---

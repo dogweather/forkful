@@ -8,7 +8,8 @@ description: "Att tolka ett datum fr\xE5n en str\xE4ng i C inneb\xE4r att konver
 lastmod: '2024-03-13T22:44:38.392740-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i C inneb\xE4r att konvertera textuella\
-  \ representationer av datum till ett format som program kan manipulera och analysera\u2026"
+  \ representationer av datum till ett format som program kan manipulera och analysera\
+  \ mer effektivt."
 title: "Omtolkning av ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

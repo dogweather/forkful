@@ -5,8 +5,8 @@ description: "Handling errors in Swift means anticipating and responding to prob
   \ from\u2026"
 lastmod: '2024-03-13T22:45:00.403054-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors in Swift means anticipating and responding to problems that\
-  \ pop up when your code runs. We do it to control the chaos\u2014keeping apps from\u2026"
+summary: Handling errors in Swift means anticipating and responding to problems that
+  pop up when your code runs.
 title: Handling errors
 weight: 16
 ---

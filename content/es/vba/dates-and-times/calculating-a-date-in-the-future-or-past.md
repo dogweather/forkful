@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.908153-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado implica determinar una fecha\
   \ que est\xE9 a un n\xFAmero especificado de d\xEDas, meses o a\xF1os de distancia\
-  \ desde una\u2026"
+  \ desde una fecha dada."
 title: "C\xE1lculo de una fecha futura o pasada"
 weight: 26
 ---

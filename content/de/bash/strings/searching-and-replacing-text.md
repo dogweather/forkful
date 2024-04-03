@@ -5,7 +5,7 @@ description: "Text suchen und ersetzen erm\xF6glicht es uns, Inhalte in Dateien 
 lastmod: '2024-03-13T22:44:54.042651-06:00'
 model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen erm\xF6glicht es uns, Inhalte in Dateien schnell\
-  \ zu finden und zu modifizieren. Programmierer nutzen dies h\xE4ufig, um Bugs zu\u2026"
+  \ zu finden und zu modifizieren."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

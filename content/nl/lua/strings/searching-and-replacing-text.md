@@ -6,8 +6,8 @@ description: "Tekst zoeken en vervangen betekent specifieke tekenreeksen in een 
   \ omwisselen met andere. Programmeurs doen dit voor taken zoals het herstellen\u2026"
 lastmod: '2024-03-13T22:44:50.922754-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok\
-  \ omwisselen met andere. Programmeurs doen dit voor taken zoals het herstellen\u2026"
+summary: Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok
+  omwisselen met andere.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

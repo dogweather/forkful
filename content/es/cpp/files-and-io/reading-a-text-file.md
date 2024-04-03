@@ -5,7 +5,7 @@ description: "Leer un archivo de texto en C++ significa extracci\xF3n de datos d
 lastmod: '2024-03-13T22:44:59.392238-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en C++ significa extracci\xF3n de datos desde un\
-  \ archivo en tu disco hacia tu programa. Programadores lo hacen para manejar\u2026"
+  \ archivo en tu disco hacia tu programa."
 title: Lectura de un archivo de texto
 weight: 22
 ---

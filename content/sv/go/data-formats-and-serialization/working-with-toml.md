@@ -8,8 +8,7 @@ description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett filformat f\xF6
 lastmod: '2024-03-13T22:44:37.417287-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett filformat f\xF6r konfiguration\
-  \ som \xE4r l\xE4tt att l\xE4sa tack vare sin enkla syntax. Programmerare anv\xE4\
-  nder TOML f\xF6r\u2026"
+  \ som \xE4r l\xE4tt att l\xE4sa tack vare sin enkla syntax."
 title: Att Arbeta med TOML
 weight: 39
 ---

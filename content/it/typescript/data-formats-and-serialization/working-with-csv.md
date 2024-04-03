@@ -7,7 +7,8 @@ description: "Lavorare con i file CSV (Valori Separati da Virgola) implica la le
 lastmod: '2024-03-13T22:44:43.198648-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con i file CSV (Valori Separati da Virgola) implica la lettura\
-  \ e la scrittura di file CSV, un formato comune di scambio dati utilizzato per la\u2026"
+  \ e la scrittura di file CSV, un formato comune di scambio dati utilizzato per la\
+  \ sua semplicit\xE0 e ampia compatibilit\xE0 attraverso varie piattaforme e linguaggi."
 title: Lavorare con i CSV
 weight: 37
 ---

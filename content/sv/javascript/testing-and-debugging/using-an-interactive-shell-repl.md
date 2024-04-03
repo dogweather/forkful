@@ -6,8 +6,7 @@ description: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig 
 lastmod: '2024-03-13T22:44:38.295006-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig k\xF6\
-  ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er. De \xE4\
-  r kodningens\u2026"
+  ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

@@ -5,7 +5,7 @@ description: "Clojure repose sur la Machine Virtuelle Java (JVM), donc beaucoup 
 lastmod: '2024-03-13T22:44:57.287051-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure repose sur la Machine Virtuelle Java (JVM), donc beaucoup de d\xE9\
-  bogage se fait avec des outils Java. Un de ces outils est `CIDER`, un package\u2026"
+  bogage se fait avec des outils Java."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

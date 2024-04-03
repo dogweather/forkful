@@ -5,7 +5,7 @@ description: "Komplexe Zahlen erweitern die reelle Zahlengerade durch Hinzuf\xFC
 lastmod: '2024-03-13T22:44:53.757215-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reelle Zahlengerade durch Hinzuf\xFCgen einer\
-  \ imagin\xE4ren Einheit, `i`, wobei `i^2 = -1` gilt. Sie sind von entscheidender\u2026"
+  \ imagin\xE4ren Einheit, `i`, wobei `i^2 = -1` gilt."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

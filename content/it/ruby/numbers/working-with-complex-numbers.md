@@ -4,8 +4,8 @@ description: "I numeri complessi, costituiti da una parte reale e una immaginari
   \ (come 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"
 lastmod: '2024-03-13T22:44:44.043506-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi, costituiti da una parte reale e una immaginaria (come\
-  \ 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"
+summary: I numeri complessi, costituiti da una parte reale e una immaginaria (come
+  3+4i), sono fondamentali in ingegneria e fisica.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

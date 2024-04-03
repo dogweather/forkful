@@ -7,7 +7,7 @@ description: "Komplexe Zahlen, die als Kombination aus reellen und imagin\xE4ren
 lastmod: '2024-03-13T22:44:53.327236-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, die als Kombination aus reellen und imagin\xE4ren Einheiten\
-  \ dargestellt werden (z.B. 3 + 4i), sind grundlegend f\xFCr verschiedene\u2026"
+  \ dargestellt werden (z."
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

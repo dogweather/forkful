@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.602096-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Visual Basic pour Applications (VBA) implique\
   \ de cr\xE9er, modifier ou ajouter des donn\xE9es textuelles \xE0 des fichiers,\
-  \ une t\xE2che\u2026"
+  \ une t\xE2che fondamentale pour le stockage des sorties, la journalisation ou l'interaction\
+  \ avec d'autres applications."
 title: "R\xE9daction d'un fichier texte"
 weight: 24
 ---

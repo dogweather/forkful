@@ -4,8 +4,7 @@ description: "Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad a
   \ Programmierer tun dies, um Zahlen f\xFCr die Lesbarkeit zu vereinfachen,\u2026"
 lastmod: '2024-03-13T22:44:53.758131-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen.\
-  \ Programmierer tun dies, um Zahlen f\xFCr die Lesbarkeit zu vereinfachen,\u2026"
+summary: Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen.
 title: Zahlen runden
 weight: 13
 ---

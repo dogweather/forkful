@@ -6,8 +6,7 @@ description: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de 
 lastmod: '2024-03-13T22:44:59.193936-06:00'
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
-  \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\
-  \ datos\u2026"
+  \ al final de otra."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

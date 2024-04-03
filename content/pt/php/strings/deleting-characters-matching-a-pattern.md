@@ -6,7 +6,7 @@ description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicament
 lastmod: '2024-03-13T22:44:46.651590-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente filtrar\
-  \ sua string com base em regras espec\xEDficas. Programadores fazem isso para limpar\u2026"
+  \ sua string com base em regras espec\xEDficas."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

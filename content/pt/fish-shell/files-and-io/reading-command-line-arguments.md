@@ -6,8 +6,7 @@ description: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5e
 lastmod: '2024-03-13T22:44:47.021108-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5es que\
-  \ um usu\xE1rio digita quando executa seu script. Programadores fazem isso para\
-  \ permitir que os\u2026"
+  \ um usu\xE1rio digita quando executa seu script."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

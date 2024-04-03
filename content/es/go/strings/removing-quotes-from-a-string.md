@@ -6,8 +6,8 @@ description: "Eliminar las comillas de una cadena en Go se trata de eliminar las
   \ iniciales y finales (`\"` o `'`) de una cadena dada. A menudo, los\u2026"
 lastmod: '2024-03-13T22:44:58.453581-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar las comillas de una cadena en Go se trata de eliminar las comillas\
-  \ iniciales y finales (`\"` o `'`) de una cadena dada. A menudo, los\u2026"
+summary: Eliminar las comillas de una cadena en Go se trata de eliminar las comillas
+  iniciales y finales (`"` o `'`) de una cadena dada.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

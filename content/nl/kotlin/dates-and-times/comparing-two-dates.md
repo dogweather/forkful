@@ -8,8 +8,7 @@ description: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of
 lastmod: '2024-03-13T22:44:50.780288-06:00'
 model: gpt-4-0125-preview
 summary: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of na de\
-  \ andere komt, of dat ze op hetzelfde moment zijn. Programmeurs doen dit voor taken\
-  \ zoals\u2026"
+  \ andere komt, of dat ze op hetzelfde moment zijn."
 title: Twee datums vergelijken
 weight: 27
 ---

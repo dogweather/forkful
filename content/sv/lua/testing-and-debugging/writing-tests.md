@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.042006-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i programmering inneb\xE4r att skapa sm\xE5, separata\
   \ kodstycken f\xF6r att automatiskt verifiera att olika delar av din applikation\
-  \ fungerar som\u2026"
+  \ fungerar som f\xF6rv\xE4ntat."
 title: Skriva tester
 weight: 36
 ---

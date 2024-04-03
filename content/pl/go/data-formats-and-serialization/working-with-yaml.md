@@ -7,7 +7,8 @@ description: "Praca z YAML w Go polega na parsowaniu plik\xF3w YAML (YAML Ain't 
 lastmod: '2024-03-13T22:44:34.875656-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z YAML w Go polega na parsowaniu plik\xF3w YAML (YAML Ain't Markup\
-  \ Language), czyli ludzko-przyjaznego standardu serializacji danych, na struktury\u2026"
+  \ Language), czyli ludzko-przyjaznego standardu serializacji danych, na struktury\
+  \ danych w Go i odwrotnie."
 title: Praca z YAML
 weight: 41
 ---

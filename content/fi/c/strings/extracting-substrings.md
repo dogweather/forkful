@@ -7,7 +7,8 @@ description: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkij
 lastmod: '2024-03-13T22:44:57.027091-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkijono-osan\
-  \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\u2026"
+  \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\
+  \ ja pituuden perusteella."
 title: Alimerkkijonojen erottaminen
 weight: 6
 ---

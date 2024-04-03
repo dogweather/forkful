@@ -5,7 +5,7 @@ description: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta 
 lastmod: '2024-03-13T22:44:43.685129-06:00'
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta facendo\
-  \ e a capire problemi nel codice. Lo facciamo per testare e correggere pi\xF9\u2026"
+  \ e a capire problemi nel codice."
 title: Stampa dell'output di debug
 weight: 33
 ---

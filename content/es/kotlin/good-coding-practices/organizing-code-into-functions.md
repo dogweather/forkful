@@ -6,8 +6,7 @@ description: "Organizar el c\xF3digo en funciones significa dividir tu programa 
 lastmod: '2024-03-13T22:44:59.041365-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones significa dividir tu programa en piezas\
-  \ reutilizables, cada una manejando una tarea espec\xEDfica. Hacemos esto para que\
-  \ el\u2026"
+  \ reutilizables, cada una manejando una tarea espec\xEDfica."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

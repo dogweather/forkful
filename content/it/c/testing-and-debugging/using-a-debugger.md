@@ -8,7 +8,7 @@ description: "GDB (GNU Debugger) \xE8 il debugger pi\xF9 comunemente utilizzato 
 lastmod: '2024-03-13T22:44:44.003546-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) \xE8 il debugger pi\xF9 comunemente utilizzato per la\
-  \ programmazione in C. Ecco una breve guida sull'uso di GDB per il debug di un semplice\u2026"
+  \ programmazione in C."
 title: Utilizzare un debugger
 weight: 35
 ---

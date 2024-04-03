@@ -6,8 +6,7 @@ description: "Czytanie argument\xF3w linii polece\u0144 to sposob odbierania dan
 lastmod: '2024-03-13T22:44:35.811798-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to sposob odbierania danych z\
-  \ zewn\u0105trz przez twoj\u0105 aplikacj\u0119 Node.js. Robimy to, \u017Ceby elastycznie\
-  \ manipulowa\u0107\u2026"
+  \ zewn\u0105trz przez twoj\u0105 aplikacj\u0119 Node."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

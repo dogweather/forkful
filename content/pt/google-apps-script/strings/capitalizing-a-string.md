@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.088327-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar a entrada de modo que o primeiro\
   \ caractere seja mai\xFAsculo, enquanto os restantes permane\xE7am min\xFAsculos,\
-  \ comumente\u2026"
+  \ comumente usado para formatar nomes ou t\xEDtulos."
 title: Capitalizando uma String
 weight: 2
 ---

@@ -6,8 +6,7 @@ description: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-
 lastmod: '2024-03-13T22:44:54.415822-06:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-Skript,\
-  \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen.\
-  \ Das\u2026"
+  \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

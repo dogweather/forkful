@@ -4,8 +4,7 @@ description: "Starting a fresh Java project is like setting up a new canvas for 
   \ masterpiece. Programmers kick off new projects to turn ideas into functional\u2026"
 lastmod: '2024-03-13T22:44:59.973048-06:00'
 model: gpt-4-1106-preview
-summary: "Starting a fresh Java project is like setting up a new canvas for your masterpiece.\
-  \ Programmers kick off new projects to turn ideas into functional\u2026"
+summary: Starting a fresh Java project is like setting up a new canvas for your masterpiece.
 title: Starting a new project
 weight: 1
 ---

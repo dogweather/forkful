@@ -6,8 +6,7 @@ description: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedost
 lastmod: '2024-03-13T22:44:56.550635-06:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto, johon\
-  \ ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4 datan\
-  \ v\xE4liaikaiseen\u2026"
+  \ ohjelmat voivat tallentaa dataa turvallisesti."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

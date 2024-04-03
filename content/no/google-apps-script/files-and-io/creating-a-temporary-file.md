@@ -7,7 +7,8 @@ description: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE
 lastmod: '2024-03-13T22:44:40.337143-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE5 generere\
-  \ en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\u2026"
+  \ en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\
+  \ feils\xF8king eller cache form\xE5l."
 title: Opprette en midlertidig fil
 weight: 21
 ---

@@ -4,8 +4,8 @@ description: "Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem 
   \ liegt. Das ist wichtig f\xFCr Reservierungen, Fristen, Logs oder\u2026"
 lastmod: '2024-03-13T22:44:54.278551-06:00'
 model: gpt-4-1106-preview
-summary: "Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen\
-  \ liegt. Das ist wichtig f\xFCr Reservierungen, Fristen, Logs oder\u2026"
+summary: Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen
+  liegt.
 title: Vergleich von zwei Daten
 weight: 27
 ---

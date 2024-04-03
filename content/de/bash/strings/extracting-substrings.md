@@ -5,7 +5,7 @@ description: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Te
 lastmod: '2024-03-13T22:44:54.046515-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
-  \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"
+  \ aus l\xE4ngeren Strings herauszul\xF6sen."
 title: Teilstrings extrahieren
 weight: 6
 ---

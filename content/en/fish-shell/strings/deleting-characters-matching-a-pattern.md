@@ -4,8 +4,8 @@ description: "Deleting characters matching a pattern is basically filtering out 
   \ characters or sequences from strings or file contents based on rules, known as\u2026"
 lastmod: '2024-03-13T22:45:00.457776-06:00'
 model: gpt-4-1106-preview
-summary: "Deleting characters matching a pattern is basically filtering out unwanted\
-  \ characters or sequences from strings or file contents based on rules, known as\u2026"
+summary: Deleting characters matching a pattern is basically filtering out unwanted
+  characters or sequences from strings or file contents based on rules, known as patterns.
 title: Deleting characters matching a pattern
 weight: 5
 ---

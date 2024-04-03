@@ -8,8 +8,7 @@ description: "Escribir pruebas en TypeScript implica crear scripts automatizados
 lastmod: '2024-03-13T22:44:58.804519-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en TypeScript implica crear scripts automatizados para\
-  \ verificar la funcionalidad y la correcci\xF3n de tu c\xF3digo. Los programadores\
-  \ lo\u2026"
+  \ verificar la funcionalidad y la correcci\xF3n de tu c\xF3digo."
 title: Escribiendo pruebas
 weight: 36
 ---

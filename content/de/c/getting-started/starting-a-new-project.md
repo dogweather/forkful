@@ -6,8 +6,8 @@ description: "Ein neues Projekt in C zu starten, umfasst das Einrichten einer gr
   \ Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten.\u2026"
 lastmod: '2024-03-13T22:44:54.353161-06:00'
 model: gpt-4-0125-preview
-summary: "Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden\
-  \ Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten.\u2026"
+summary: Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden
+  Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten.
 title: Ein neues Projekt starten
 weight: 1
 ---

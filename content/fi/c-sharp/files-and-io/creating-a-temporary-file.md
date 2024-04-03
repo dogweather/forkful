@@ -6,8 +6,7 @@ description: "V\xE4liaikaistiedosto on v\xE4liaikaisessa k\xE4yt\xF6ss\xE4 oleva
 lastmod: '2024-03-13T22:44:56.593461-06:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedosto on v\xE4liaikaisessa k\xE4yt\xF6ss\xE4 oleva tiedosto,\
-  \ joka katoaa, kun se ei ole en\xE4\xE4 tarpeen. Ohjelmoijat luovat niit\xE4 tallentamaan\
-  \ dataa, joka\u2026"
+  \ joka katoaa, kun se ei ole en\xE4\xE4 tarpeen."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

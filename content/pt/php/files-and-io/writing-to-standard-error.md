@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.683477-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em PHP diz respeito a direcionar mensagens\
   \ de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout), permitindo\
-  \ que\u2026"
+  \ que desenvolvedores gerenciem melhor seus fluxos de sa\xEDda para fins de depura\xE7\
+  \xE3o e registro."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

@@ -5,8 +5,8 @@ description: "Converting a date to a string in C# is about changing the format f
   \ dates\u2026"
 lastmod: '2024-03-13T22:45:00.099694-06:00'
 model: gpt-4-1106-preview
-summary: "Converting a date to a string in C# is about changing the format from a\
-  \ DateTime object to a text representation. Programmers do this for displaying dates\u2026"
+summary: Converting a date to a string in C# is about changing the format from a DateTime
+  object to a text representation.
 title: Converting a date into a string
 weight: 28
 ---

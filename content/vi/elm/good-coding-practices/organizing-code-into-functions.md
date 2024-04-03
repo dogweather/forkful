@@ -10,10 +10,7 @@ description: "\u0110\u1ED5 t\u1EA5t c\u1EA3 m\xE3 c\u1EE7a b\u1EA1n v\xE0o m\u1E
 lastmod: '2024-03-13T22:44:36.551851-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ED5 t\u1EA5t c\u1EA3 m\xE3 c\u1EE7a b\u1EA1n v\xE0o m\u1ED9t \u0111\
-  \u1ED1ng l\u1EDBn? \xDD t\u01B0\u1EDFng t\u1ED3i. Chia n\xF3 th\xE0nh c\xE1c h\xE0\
-  m? \xDD t\u01B0\u1EDFng t\u1ED1t. Vi\u1EC7c n\xE0y gi\u1EEF cho m\xE3 Elm c\u1EE7\
-  a b\u1EA1n \u0111\u01B0\u1EE3c s\u1EA1ch s\u1EBD, c\xF3 th\u1EC3 t\xE1i s\u1EED\
-  \ d\u1EE5ng\u2026"
+  \u1ED1ng l\u1EDBn."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

@@ -5,8 +5,7 @@ description: "Substring extraction is about pulling specific parts from a string
   \ from\u2026"
 lastmod: '2024-03-13T22:44:56.132567-06:00'
 model: gpt-4-1106-preview
-summary: "Substring extraction is about pulling specific parts from a string. Programmers\
-  \ do it to process or analyze text data - like extracting usernames from\u2026"
+summary: Substring extraction is about pulling specific parts from a string.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

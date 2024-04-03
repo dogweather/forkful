@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.004180-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa p\xE4\
   iv\xE4m\xE4\xE4r\xE4tiedon erottelua merkkijonoista ja sen muuntamista rakenteelliseen\
-  \ muotoon, jonka\u2026"
+  \ muotoon, jonka ohjelmointiymp\xE4rist\xF6t voivat tunnistaa ja k\xE4sitell\xE4\
+  ."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

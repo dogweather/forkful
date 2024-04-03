@@ -6,8 +6,7 @@ description: "Refaktorisering \xE4r processen att \xE4ndra en dators programs in
 lastmod: '2024-03-13T22:44:38.217400-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att \xE4ndra en dators programs interna\
-  \ struktur utan att f\xF6r\xE4ndra dess externa beteende. Programmerare g\xF6r det\
-  \ f\xF6r att st\xE4da\u2026"
+  \ struktur utan att f\xF6r\xE4ndra dess externa beteende."
 title: Refaktorisering
 weight: 19
 ---

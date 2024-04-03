@@ -4,8 +4,9 @@ description: "In Visual Basic for Applications (VBA), retrieving the current dat
   \ is a common task that enables programmers to dynamically work with dates in their\u2026"
 lastmod: '2024-03-13T22:44:59.943608-06:00'
 model: gpt-4-0125-preview
-summary: "In Visual Basic for Applications (VBA), retrieving the current date is a\
-  \ common task that enables programmers to dynamically work with dates in their\u2026"
+summary: In Visual Basic for Applications (VBA), retrieving the current date is a
+  common task that enables programmers to dynamically work with dates in their macros
+  or applications.
 title: Getting the current date
 weight: 29
 ---

@@ -8,8 +8,7 @@ description: "Att g\xF6ra om en str\xE4ng s\xE5 att f\xF6rsta bokstaven \xE4r st
 lastmod: '2024-03-13T22:44:37.419476-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra om en str\xE4ng s\xE5 att f\xF6rsta bokstaven \xE4r stor och\
-  \ resten sm\xE5 \xE4r en vanlig metoder f\xF6r att formatera namn eller titlar.\
-  \ Det inneb\xE4r att man \xE4ndrar\u2026"
+  \ resten sm\xE5 \xE4r en vanlig metoder f\xF6r att formatera namn eller titlar."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

@@ -7,7 +7,8 @@ description: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, also durch K
 lastmod: '2024-03-13T22:44:54.125914-06:00'
 model: gpt-4-0125-preview
 summary: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, also durch Kommas\
-  \ getrennte Werte) ist eine g\xE4ngige Aufgabe beim Verwalten und Manipulieren von\u2026"
+  \ getrennte Werte) ist eine g\xE4ngige Aufgabe beim Verwalten und Manipulieren von\
+  \ Daten in strukturierter, tabellarischer Form."
 title: Arbeiten mit CSV
 weight: 37
 ---

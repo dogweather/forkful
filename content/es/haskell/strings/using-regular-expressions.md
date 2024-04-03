@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.109414-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares en programaci\xF3n son secuencias de caracteres\
   \ que definen un patr\xF3n de b\xFAsqueda, t\xEDpicamente empleadas para la b\xFA\
-  squeda y\u2026"
+  squeda y manipulaci\xF3n de cadenas de texto."
 title: Usando expresiones regulares
 weight: 11
 ---

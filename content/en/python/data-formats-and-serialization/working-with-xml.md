@@ -5,8 +5,8 @@ description: "\"Working with XML\" refers to the process of reading, creating, a
   \ do it\u2026"
 lastmod: '2024-03-13T22:44:59.729383-06:00'
 model: gpt-4-1106-preview
-summary: "\"Working with XML\" refers to the process of reading, creating, and modifying\
-  \ XML (eXtensible Markup Language) files using programming. Programmers do it\u2026"
+summary: '"Working with XML" refers to the process of reading, creating, and modifying
+  XML (eXtensible Markup Language) files using programming.'
 title: Working with XML
 weight: 40
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.520852-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat tehokas v\xE4line tekstink\xE4\
   sittelyyn, joka mahdollistaa ohjelmoijien hakea, t\xE4sm\xE4t\xE4 ja manipuloida\
-  \ merkkijonoja\u2026"
+  \ merkkijonoja edistyneill\xE4 mallinhakutekniikoilla."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

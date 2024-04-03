@@ -6,8 +6,7 @@ description: "XML \xE4r ett m\xE4rkspr\xE5k f\xF6r att koda dokument p\xE5 ett s
 lastmod: '2024-03-13T22:44:37.549465-06:00'
 model: gpt-4-0125-preview
 summary: "XML \xE4r ett m\xE4rkspr\xE5k f\xF6r att koda dokument p\xE5 ett s\xE4tt\
-  \ som \xE4r l\xE4sbart b\xE5de f\xF6r m\xE4nniskor och maskiner. Det \xE4r viktigt\
-  \ inom webbtj\xE4nster,\u2026"
+  \ som \xE4r l\xE4sbart b\xE5de f\xF6r m\xE4nniskor och maskiner."
 title: Att arbeta med XML
 weight: 40
 ---

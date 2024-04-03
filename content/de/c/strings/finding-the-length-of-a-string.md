@@ -7,7 +7,7 @@ description: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Best
 lastmod: '2024-03-13T22:44:54.342517-06:00'
 model: gpt-4-0125-preview
 summary: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Bestimmung\
-  \ der Anzahl der Zeichen vor dem Nullterminator `\\0`. Programmierer tun dies, um\u2026"
+  \ der Anzahl der Zeichen vor dem Nullterminator `\\0`."
 title: "Die L\xE4nge einer Zeichenkette ermitteln"
 weight: 7
 ---

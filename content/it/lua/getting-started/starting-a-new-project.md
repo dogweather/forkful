@@ -4,8 +4,7 @@ description: "Un nuovo progetto \xE8 una tela bianca per codificare idee. I prog
   \ iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro\u2026"
 lastmod: '2024-03-13T22:44:43.558406-06:00'
 model: gpt-4-1106-preview
-summary: "Un nuovo progetto \xE8 una tela bianca per codificare idee. I programmatori\
-  \ iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro\u2026"
+summary: "Un nuovo progetto \xE8 una tela bianca per codificare idee."
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -8,8 +8,7 @@ description: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na pono
 lastmod: '2024-03-13T22:44:34.857646-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie u\u017C\
-  ywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania. Podej\u015B\
-  cie to poprawia\u2026"
+  ywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

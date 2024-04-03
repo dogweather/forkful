@@ -6,8 +6,7 @@ description: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los probl
 lastmod: '2024-03-13T22:44:59.043386-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas que\
-  \ surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla caer.\
-  \ Los\u2026"
+  \ surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla caer."
 title: Manejo de errores
 weight: 16
 ---

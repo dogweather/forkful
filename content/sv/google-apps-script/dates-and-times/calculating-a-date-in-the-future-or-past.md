@@ -8,7 +8,8 @@ description: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handla
 lastmod: '2024-03-13T22:44:37.453464-06:00'
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar om att\
-  \ manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande datum,\u2026"
+  \ manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande datum,\
+  \ respektive."
 title: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

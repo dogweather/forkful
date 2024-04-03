@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.110843-06:00'
 model: gpt-4-0125-preview
 summary: "La rimozione dei caratteri che corrispondono a uno specifico modello nelle\
   \ stringhe \xE8 fondamentale per la validazione dei dati, la loro sanificazione\
-  \ o\u2026"
+  \ o quando si prepara il testo per ulteriori elaborazioni."
 title: Eliminare caratteri corrispondenti a un pattern
 weight: 5
 ---

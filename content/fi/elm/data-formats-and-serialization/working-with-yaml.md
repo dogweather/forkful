@@ -8,7 +8,8 @@ description: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on data
 lastmod: '2024-03-13T22:44:56.509154-06:00'
 model: gpt-4-0125-preview
 summary: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan serialisointiformaatti\
-  \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan\u2026"
+  \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan jakamisessa,\
+  \ koska se painottaa vahvasti tyypin turvallisuutta ja ennustettavia tuloksia."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

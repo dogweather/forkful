@@ -8,7 +8,8 @@ description: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoit
 lastmod: '2024-03-13T22:44:56.798928-06:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien\
-  \ tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan, joka on\u2026"
+  \ tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan, joka on\
+  \ erillinen standarditulostevirrasta (stdout)."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

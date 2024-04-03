@@ -6,8 +6,7 @@ description: "Interpolera en str\xE4ng inneb\xE4r att infoga variabler eller utt
 lastmod: '2024-03-13T22:44:37.815450-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolera en str\xE4ng inneb\xE4r att infoga variabler eller uttryck i\
-  \ en st\xE5ende textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att enkelt skapa\
-  \ dynamiska\u2026"
+  \ en st\xE5ende textstr\xE4ng."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

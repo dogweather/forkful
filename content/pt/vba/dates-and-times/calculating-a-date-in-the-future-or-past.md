@@ -8,7 +8,7 @@ description: "Calcular uma data no futuro ou passado envolve determinar uma data
 lastmod: '2024-03-13T22:44:46.426928-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou passado envolve determinar uma data que est\xE1\
-  \ um n\xFAmero especificado de dias, meses ou anos distante de uma data dada.\u2026"
+  \ um n\xFAmero especificado de dias, meses ou anos distante de uma data dada."
 title: Calculando uma data no futuro ou no passado
 weight: 26
 ---

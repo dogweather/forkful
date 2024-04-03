@@ -8,8 +8,7 @@ description: "HTML parsen betekent het filteren door de soep van code van een we
 lastmod: '2024-03-13T22:44:51.154594-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het filteren door de soep van code van een website\
-  \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc. Programmeurs\
-  \ doen\u2026"
+  \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc."
 title: HTML Parsen
 weight: 43
 ---

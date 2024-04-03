@@ -4,8 +4,8 @@ description: "Convertire una data in una stringa significa trasformare un dato t
   \ (giorno, mese, anno) in una sequenza di caratteri leggibili. I programmatori lo\u2026"
 lastmod: '2024-03-13T22:44:43.012778-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una data in una stringa significa trasformare un dato temporale\
-  \ (giorno, mese, anno) in una sequenza di caratteri leggibili. I programmatori lo\u2026"
+summary: Convertire una data in una stringa significa trasformare un dato temporale
+  (giorno, mese, anno) in una sequenza di caratteri leggibili.
 title: Conversione di una data in una stringa
 weight: 28
 ---

@@ -4,8 +4,7 @@ description: "String concatenation is stitching together two or more strings end
   \ Programmers do it to build sentences, create messages, or combine input data\u2026"
 lastmod: '2024-03-13T22:45:00.350554-06:00'
 model: gpt-4-1106-preview
-summary: "String concatenation is stitching together two or more strings end-to-end.\
-  \ Programmers do it to build sentences, create messages, or combine input data\u2026"
+summary: String concatenation is stitching together two or more strings end-to-end.
 title: Concatenating strings
 weight: 3
 ---

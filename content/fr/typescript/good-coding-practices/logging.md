@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.443826-06:00'
 model: gpt-4-1106-preview
 summary: "Le logging est le processus d'enregistrement des \xE9v\xE9nements, erreurs\
   \ et autres informations importantes pendant l'ex\xE9cution d'un programme sur un\
-  \ support\u2026"
+  \ support externe, souvent des fichiers ou des bases de donn\xE9es."
 title: Journalisation
 weight: 17
 ---

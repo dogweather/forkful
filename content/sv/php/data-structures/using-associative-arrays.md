@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.989430-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje element\
   \ kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4llet f\xF6\
-  r bara siffror.\u2026"
+  r bara siffror."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

@@ -6,8 +6,8 @@ description: "Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung 
   \ integrierten Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten\u2026"
 lastmod: '2024-03-13T22:44:54.069880-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten\
-  \ Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten\u2026"
+summary: Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten
+  Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten anzuzeigen.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

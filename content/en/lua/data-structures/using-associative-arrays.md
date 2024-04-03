@@ -6,7 +6,8 @@ description: "Associative arrays are like secret handshakes for data in Lua\u201
 lastmod: '2024-03-13T22:45:00.199134-06:00'
 model: gpt-4-0125-preview
 summary: "Associative arrays are like secret handshakes for data in Lua\u2014instead\
-  \ of just numbers lining up dutifully by index, your keys can be whatever you want,\u2026"
+  \ of just numbers lining up dutifully by index, your keys can be whatever you want,\
+  \ making data retrieval a breeze."
 title: Using associative arrays
 weight: 15
 ---

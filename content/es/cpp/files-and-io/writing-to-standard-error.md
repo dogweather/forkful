@@ -7,7 +7,7 @@ description: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar m
 lastmod: '2024-03-13T22:44:59.391256-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
-  \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"
+  \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

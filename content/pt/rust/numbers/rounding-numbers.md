@@ -6,8 +6,7 @@ description: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro
 lastmod: '2024-03-13T22:44:46.362701-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a uma fra\xE7\xE3o com uma certa precis\xE3o. Programadores arredondam\
-  \ n\xFAmeros para\u2026"
+  \ pr\xF3ximo ou a uma fra\xE7\xE3o com uma certa precis\xE3o."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

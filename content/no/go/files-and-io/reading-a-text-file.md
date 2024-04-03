@@ -8,8 +8,7 @@ description: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og 
 lastmod: '2024-03-13T22:44:40.286442-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
-  \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\
-  \ utf\xF8rer ofte\u2026"
+  \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse."
 title: Lese en tekstfil
 weight: 22
 ---

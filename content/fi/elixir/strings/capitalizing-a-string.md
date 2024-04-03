@@ -8,7 +8,8 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijono
 lastmod: '2024-03-13T22:44:56.209464-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijonon ensimm\xE4\
-  isen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, ett\xE4 kaikki\u2026"
+  isen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, ett\xE4 kaikki\
+  \ muut kirjaimet ovat pieni\xE4."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

@@ -7,7 +7,7 @@ description: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de
 lastmod: '2024-03-13T22:44:58.009023-06:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
-  \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats. Les programmeurs\u2026"
+  \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats."
 title: Obtenir la date actuelle
 weight: 29
 ---

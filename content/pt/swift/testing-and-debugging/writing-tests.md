@@ -8,8 +8,7 @@ description: "Escrever testes em Swift envolve criar e executar c\xF3digo que ve
 lastmod: '2024-03-13T22:44:46.923941-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Swift envolve criar e executar c\xF3digo que verifica\
-  \ a corre\xE7\xE3o de outras unidades de c\xF3digo na sua aplica\xE7\xE3o. Programadores\
-  \ fazem isso\u2026"
+  \ a corre\xE7\xE3o de outras unidades de c\xF3digo na sua aplica\xE7\xE3o."
 title: Escrevendo testes
 weight: 36
 ---

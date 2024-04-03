@@ -6,8 +6,7 @@ description: "Het aan elkaar plakken van strings betekent dat je ze achter elkaa
   \ koppelt. We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit\u2026"
 lastmod: '2024-03-13T22:44:51.192514-06:00'
 model: gpt-4-0125-preview
-summary: "Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt.\
-  \ We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit\u2026"
+summary: Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt.
 title: Samenvoegen van strings
 weight: 3
 ---

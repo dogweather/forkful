@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.021715-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i varje ord i en mening till versal, samtidigt som man ser till att resten \xE4\
-  r gemener.\u2026"
+  r gemener."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

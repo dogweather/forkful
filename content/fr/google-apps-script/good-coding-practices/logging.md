@@ -8,8 +8,7 @@ description: "La journalisation en programmation consiste \xE0 enregistrer des \
 lastmod: '2024-03-13T22:44:57.193421-06:00'
 model: gpt-4-0125-preview
 summary: "La journalisation en programmation consiste \xE0 enregistrer des \xE9v\xE9\
-  nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les programmeurs\
-  \ le\u2026"
+  nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution."
 title: Journalisation
 weight: 17
 ---

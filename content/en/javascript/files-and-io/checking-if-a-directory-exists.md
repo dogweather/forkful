@@ -4,8 +4,9 @@ description: "Checking if a directory exists in JavaScript is essential for file
   \ tasks, enabling scripts to verify directory presence before reading from\u2026"
 lastmod: '2024-03-13T22:45:00.447176-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in JavaScript is essential for file manipulation\
-  \ tasks, enabling scripts to verify directory presence before reading from\u2026"
+summary: Checking if a directory exists in JavaScript is essential for file manipulation
+  tasks, enabling scripts to verify directory presence before reading from or writing
+  to it.
 title: Checking if a directory exists
 weight: 20
 ---

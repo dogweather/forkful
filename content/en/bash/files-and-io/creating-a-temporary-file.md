@@ -4,8 +4,8 @@ description: "Creating a temporary file in Bash means making a file that your sc
   \ can use to store data briefly. Programmers do this to stash bits of info while\u2026"
 lastmod: '2024-03-13T22:45:00.261604-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file in Bash means making a file that your scripts\
-  \ can use to store data briefly. Programmers do this to stash bits of info while\u2026"
+summary: Creating a temporary file in Bash means making a file that your scripts can
+  use to store data briefly.
 title: Creating a temporary file
 weight: 21
 ---

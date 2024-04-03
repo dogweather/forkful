@@ -6,8 +6,7 @@ description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiser
 lastmod: '2024-03-13T22:44:38.232894-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiseringsformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
-  \ anv\xE4nder TOML\u2026"
+  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik."
 title: Att arbeta med TOML
 weight: 39
 ---

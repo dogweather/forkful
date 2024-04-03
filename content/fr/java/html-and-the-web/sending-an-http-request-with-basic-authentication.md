@@ -6,8 +6,7 @@ description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'e
 lastmod: '2024-03-13T22:44:57.639741-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est comme\
-  \ donner un mot de passe pour acc\xE9der \xE0 un site s\xE9curis\xE9. On fait \xE7\
-  a pour prot\xE9ger\u2026"
+  \ donner un mot de passe pour acc\xE9der \xE0 un site s\xE9curis\xE9."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

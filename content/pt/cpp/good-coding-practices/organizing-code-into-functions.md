@@ -6,8 +6,7 @@ description: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3d
 lastmod: '2024-03-13T22:44:46.885004-06:00'
 model: gpt-4-1106-preview
 summary: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo em\
-  \ blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3o, tornar\
-  \ nosso c\xF3digo\u2026"
+  \ blocos menores e reutiliz\xE1veis."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

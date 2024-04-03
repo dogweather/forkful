@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.878274-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug f\xFC\
   r das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern erm\xF6\
-  glicht,\u2026"
+  glicht, effizient nach Daten zu suchen, diese zu ersetzen, aufzuteilen oder zu extrahieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

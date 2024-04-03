@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.513916-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w PHP polega na kierowaniu\
   \ komunikat\xF3w b\u0142\u0119d\xF3w lub diagnozy oddzielnie od standardowego wyj\u015B\
-  cia (stdout), co\u2026"
+  cia (stdout), co pozwala programistom lepiej zarz\u0105dza\u0107 swoimi strumieniami\
+  \ wyj\u015Bciowymi dla cel\xF3w debugowania i logowania."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

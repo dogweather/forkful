@@ -6,8 +6,8 @@ description: "Het vergelijken van twee data betekent beoordelen welke eerder is,
   \ of als ze op hetzelfde moment plaatsvinden. Programmeurs doen dit om evenementen\u2026"
 lastmod: '2024-03-13T22:44:50.864947-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee data betekent beoordelen welke eerder is, later,\
-  \ of als ze op hetzelfde moment plaatsvinden. Programmeurs doen dit om evenementen\u2026"
+summary: Het vergelijken van twee data betekent beoordelen welke eerder is, later,
+  of als ze op hetzelfde moment plaatsvinden.
 title: Twee datums vergelijken
 weight: 27
 ---

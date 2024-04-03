@@ -5,7 +5,7 @@ description: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (R
 lastmod: '2024-03-13T22:44:59.418153-06:00'
 model: gpt-4-0125-preview
 summary: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL, por\
-  \ sus siglas en ingl\xE9s), te permite programar de manera interactiva. Los\u2026"
+  \ sus siglas en ingl\xE9s), te permite programar de manera interactiva."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

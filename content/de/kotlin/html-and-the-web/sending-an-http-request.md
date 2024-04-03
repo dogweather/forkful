@@ -4,8 +4,7 @@ description: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web. Prog
   \ verwenden sie, um Daten von Servern zu holen oder an diese zu senden \u2013\u2026"
 lastmod: '2024-03-13T22:44:53.843684-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web. Programmierer\
-  \ verwenden sie, um Daten von Servern zu holen oder an diese zu senden \u2013\u2026"
+summary: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web."
 title: Einen HTTP-Request senden
 weight: 44
 ---

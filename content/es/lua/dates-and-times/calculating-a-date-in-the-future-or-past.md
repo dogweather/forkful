@@ -6,7 +6,7 @@ description: "Calcular una fecha en el futuro o pasado es hallar una fecha espec
 lastmod: '2024-03-13T22:44:59.215700-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es hallar una fecha espec\xEDfica\
-  \ antes o despu\xE9s de otra conocida. Programadores lo hacen para gestionar eventos,\u2026"
+  \ antes o despu\xE9s de otra conocida."
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

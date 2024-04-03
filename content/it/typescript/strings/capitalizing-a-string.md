@@ -8,7 +8,8 @@ description: "Capitalizzare una stringa comporta modificare il primo carattere d
 lastmod: '2024-03-13T22:44:43.159817-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta modificare il primo carattere di una\
-  \ data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata la\u2026"
+  \ data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata la\
+  \ restante parte della stringa."
 title: Capitalizzare una stringa
 weight: 2
 ---

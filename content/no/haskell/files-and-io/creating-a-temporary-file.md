@@ -5,9 +5,8 @@ description: "Oppretting av en midlertidig fil lar programmer lagre data som tre
   \ bli varig lagret\u2026"
 lastmod: '2024-03-13T22:44:40.862751-06:00'
 model: gpt-4-1106-preview
-summary: "Oppretting av en midlertidig fil lar programmer lagre data som trengs for\
-  \ kort tid. Vi gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5 bli\
-  \ varig lagret\u2026"
+summary: Oppretting av en midlertidig fil lar programmer lagre data som trengs for
+  kort tid.
 title: Opprette en midlertidig fil
 weight: 21
 ---

@@ -6,8 +6,7 @@ description: "\xC5 lese en tekstfil i Lua betyr \xE5 hente og bruke data lagret 
 lastmod: '2024-03-13T22:44:40.947394-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil i Lua betyr \xE5 hente og bruke data lagret p\xE5\
-  \ disk. Programmerere gj\xF8r dette fordi det ofte er behov for \xE5 behandle informasjon\
-  \ som ikke\u2026"
+  \ disk."
 title: Lese en tekstfil
 weight: 22
 ---

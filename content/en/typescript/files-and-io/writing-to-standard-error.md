@@ -4,8 +4,8 @@ description: "In TypeScript, writing to standard error (stderr) is a process of 
   \ error messages or logs directly to the error output stream of the environment\u2026"
 lastmod: '2024-03-13T22:44:59.873267-06:00'
 model: gpt-4-0125-preview
-summary: "In TypeScript, writing to standard error (stderr) is a process of sending\
-  \ error messages or logs directly to the error output stream of the environment\u2026"
+summary: In TypeScript, writing to standard error (stderr) is a process of sending
+  error messages or logs directly to the error output stream of the environment (e.
 title: Writing to standard error
 weight: 25
 ---

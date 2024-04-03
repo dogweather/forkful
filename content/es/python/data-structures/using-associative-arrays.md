@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.603487-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
   \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\
-  \ de datos\u2026"
+  \ de datos por un identificador \xFAnico."
 title: Uso de matrices asociativas
 weight: 15
 ---

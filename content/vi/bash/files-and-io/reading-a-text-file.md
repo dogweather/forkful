@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.901656-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
   \ l\u1EA5y n\u1ED9i dung t\u1EEB t\u1EC7p v\xE0o trong k\u1ECBch b\u1EA3n (script)\
-  \ c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
-  y \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u, c\u1EA5u\u2026"
+  \ c\u1EE7a b\u1EA1n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

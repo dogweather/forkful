@@ -6,7 +6,7 @@ description: "\xC5 jobbe med XML betyr analyse, oppretting og manipulering av XM
 lastmod: '2024-03-13T22:44:41.124610-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr analyse, oppretting og manipulering av XML (eXtensible\
-  \ Markup Language)-data. Programmerere h\xE5ndterer XML for \xE5 h\xE5ndtere strukturert\u2026"
+  \ Markup Language)-data."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

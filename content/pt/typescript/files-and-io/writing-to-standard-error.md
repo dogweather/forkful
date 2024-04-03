@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.342435-06:00'
 model: gpt-4-0125-preview
 summary: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
   \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\
-  \ do\u2026"
+  \ do ambiente (por exemplo, o console em node."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

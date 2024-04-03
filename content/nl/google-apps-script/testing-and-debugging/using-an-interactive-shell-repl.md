@@ -6,8 +6,9 @@ description: "Een interactieve shell, of Read-Eval-Print Loop (REPL), is een een
   \ interactieve programmeeromgeving die individuele gebruikersinvoer (expressies)\u2026"
 lastmod: '2024-03-13T22:44:50.333351-06:00'
 model: gpt-4-0125-preview
-summary: "Een interactieve shell, of Read-Eval-Print Loop (REPL), is een eenvoudige,\
-  \ interactieve programmeeromgeving die individuele gebruikersinvoer (expressies)\u2026"
+summary: Een interactieve shell, of Read-Eval-Print Loop (REPL), is een eenvoudige,
+  interactieve programmeeromgeving die individuele gebruikersinvoer (expressies) neemt,
+  deze evalueert en het resultaat aan de gebruiker teruggeeft.
 title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---

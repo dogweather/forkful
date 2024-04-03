@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.096587-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstin,\
   \ joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`- tai `DateTime`-objektiksi,\
-  \ jonka Ruby ymm\xE4rt\xE4\xE4.\u2026"
+  \ jonka Ruby ymm\xE4rt\xE4\xE4."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

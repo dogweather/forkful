@@ -7,7 +7,8 @@ description: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programm
 lastmod: '2024-03-13T22:44:58.370464-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
-  \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
+  \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\
+  \ traitement ou une utilisation hors ligne."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

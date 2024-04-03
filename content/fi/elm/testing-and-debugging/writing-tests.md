@@ -8,8 +8,7 @@ description: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapa
 lastmod: '2024-03-13T22:44:56.492123-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
-  \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\
-  \ Ohjelmoijat\u2026"
+  \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti."
 title: Testien kirjoittaminen
 weight: 36
 ---

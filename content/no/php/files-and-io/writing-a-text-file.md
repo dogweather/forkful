@@ -8,8 +8,7 @@ description: "\xC5 skrive en tekstfil i PHP inneb\xE6rer \xE5 opprette eller \xE
 lastmod: '2024-03-13T22:44:40.904692-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i PHP inneb\xE6rer \xE5 opprette eller \xE5pne en\
-  \ fil og sette inn innhold i den. Programmerere gj\xF8r dette for \xE5 bevare data,\
-  \ som\u2026"
+  \ fil og sette inn innhold i den."
 title: Skrive en tekstfil
 weight: 24
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.625582-06:00'
 model: gpt-4-0125-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Dart inneb\xE4r att utv\xE4rdera den temporala\
   \ skillnaden eller ordningen mellan dem, en v\xE4sentlig funktion i applikationer\
-  \ som hanterar\u2026"
+  \ som hanterar h\xE4ndelser, deadlines eller alla tidsk\xE4nsliga data."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

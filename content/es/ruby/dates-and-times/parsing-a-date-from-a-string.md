@@ -6,8 +6,8 @@ description: "Interpretar una fecha de un string se trata de convertir texto que
   \ una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los\u2026"
 lastmod: '2024-03-13T22:44:59.600595-06:00'
 model: gpt-4-0125-preview
-summary: "Interpretar una fecha de un string se trata de convertir texto que representa\
-  \ una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los\u2026"
+summary: Interpretar una fecha de un string se trata de convertir texto que representa
+  una fecha en un objeto `Date` o `DateTime` que Ruby entiende.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

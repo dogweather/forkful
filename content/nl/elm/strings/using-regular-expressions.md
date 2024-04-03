@@ -6,8 +6,8 @@ description: "Reguliere expressies (regex) zijn patronen die gebruikt worden om 
   \ in strings te vinden. Programmeurs gebruiken ze voor het zoeken,\u2026"
 lastmod: '2024-03-13T22:44:50.714590-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) zijn patronen die gebruikt worden om tekencombinaties\
-  \ in strings te vinden. Programmeurs gebruiken ze voor het zoeken,\u2026"
+summary: Reguliere expressies (regex) zijn patronen die gebruikt worden om tekencombinaties
+  in strings te vinden.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

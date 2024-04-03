@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.323294-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Java \xE8 un'operazione fondamentale\
   \ che comporta la verifica della presenza di una directory nel file system prima\
-  \ di\u2026"
+  \ di leggerla, scriverci o eseguire qualsiasi operazione che richieda la sua esistenza."
 title: Verifica se una directory esiste
 weight: 20
 ---

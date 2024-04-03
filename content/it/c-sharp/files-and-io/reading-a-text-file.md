@@ -4,8 +4,8 @@ description: "Leggere un file di testo significa accedere e lavorare con il cont
   \ salvato in un file di testo semplice. I programmatori lo fanno per manipolare\u2026"
 lastmod: '2024-03-13T22:44:43.450874-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere un file di testo significa accedere e lavorare con il contenuto\
-  \ salvato in un file di testo semplice. I programmatori lo fanno per manipolare\u2026"
+summary: Leggere un file di testo significa accedere e lavorare con il contenuto salvato
+  in un file di testo semplice.
 title: Lettura di un file di testo
 weight: 22
 ---

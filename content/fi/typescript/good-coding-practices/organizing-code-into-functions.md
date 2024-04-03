@@ -6,8 +6,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa koodisi pilkkomi
 lastmod: '2024-03-13T22:44:56.320757-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa koodisi pilkkomista uudelleenk\xE4\
-  ytett\xE4viksi, modulaarisiksi lohkoiksi. T\xE4m\xE4 tehd\xE4\xE4n DRY (Don't Repeat\
-  \ Yourself)\u2026"
+  ytett\xE4viksi, modulaarisiksi lohkoiksi."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

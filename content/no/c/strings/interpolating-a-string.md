@@ -8,8 +8,7 @@ description: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen 
 lastmod: '2024-03-13T22:44:41.256182-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av strenger\
-  \ ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8rer gj\xF8\
-  r dette\u2026"
+  \ ved \xE5 bygge inn uttrykk innenfor litterale strenger."
 title: Interpolering av en streng
 weight: 8
 ---

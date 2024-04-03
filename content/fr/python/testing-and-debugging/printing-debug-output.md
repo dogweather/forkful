@@ -6,8 +6,7 @@ description: "Le \"print debugging\" consiste \xE0 afficher des infos dans la co
 lastmod: '2024-03-13T22:44:57.238902-06:00'
 model: gpt-4-1106-preview
 summary: "Le \"print debugging\" consiste \xE0 afficher des infos dans la console\
-  \ pour comprendre ce qui se passe dans le code. On l'utilise parce que c'est simple\
-  \ et\u2026"
+  \ pour comprendre ce qui se passe dans le code."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.224825-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z liczbami zespolonymi polega na wykonywaniu operacji matematycznych\
   \ na liczbach, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
-  , jak i urojon\u0105. Programi\u015Bci\u2026"
+  , jak i urojon\u0105."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -4,8 +4,8 @@ description: "Trabajar con XML implica analizar, crear y manipular documentos XM
   \ un lenguaje de marcado para el almacenamiento y la transferencia de datos. Los\u2026"
 lastmod: '2024-03-13T22:44:59.060791-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con XML implica analizar, crear y manipular documentos XML, un\
-  \ lenguaje de marcado para el almacenamiento y la transferencia de datos. Los\u2026"
+summary: Trabajar con XML implica analizar, crear y manipular documentos XML, un lenguaje
+  de marcado para el almacenamiento y la transferencia de datos.
 title: Trabajando con XML
 weight: 40
 ---

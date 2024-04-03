@@ -8,7 +8,7 @@ description: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para
 lastmod: '2024-03-13T22:44:46.275952-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o seu\
-  \ inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais. Programadores\u2026"
+  \ inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

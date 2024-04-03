@@ -8,8 +8,7 @@ description: "Testar em Ruby \xE9 verificar se o seu c\xF3digo se comporta como 
 lastmod: '2024-03-13T22:44:47.098904-06:00'
 model: gpt-4-0125-preview
 summary: "Testar em Ruby \xE9 verificar se o seu c\xF3digo se comporta como esperado\
-  \ sob v\xE1rias condi\xE7\xF5es. Os programadores escrevem testes para garantir\
-  \ corre\xE7\xE3o,\u2026"
+  \ sob v\xE1rias condi\xE7\xF5es."
 title: Escrevendo testes
 weight: 36
 ---

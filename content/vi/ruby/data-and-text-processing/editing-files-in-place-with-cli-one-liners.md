@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao di\u1EC7\
   n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho ph\xE9\
   p b\u1EA1n s\u1EEDa \u0111\u1ED5i t\u1EADp tin tr\u1EF1c ti\u1EBFp t\u1EEB terminal\
-  \ c\u1EE7a b\u1EA1n, kh\xF4ng\u2026"
+  \ c\u1EE7a b\u1EA1n, kh\xF4ng c\u1EA7n m\u1EDF ch\xFAng trong m\u1ED9t tr\xECnh\
+  \ so\u1EA1n th\u1EA3o, th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i v\xE0 l\u01B0u l\u1EA1\
+  i."
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
 weight: 32

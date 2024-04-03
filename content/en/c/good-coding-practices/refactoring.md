@@ -5,9 +5,9 @@ description: "Refactoring in programming involves restructuring existing code wi
   \ as\u2026"
 lastmod: '2024-03-13T22:45:00.518891-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in programming involves restructuring existing code without\
-  \ changing its external behavior, aiming to improve nonfunctional attributes such\
-  \ as\u2026"
+summary: Refactoring in programming involves restructuring existing code without changing
+  its external behavior, aiming to improve nonfunctional attributes such as readability,
+  reduce complexity, and enhance maintainability.
 title: Refactoring
 weight: 19
 ---

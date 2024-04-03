@@ -6,8 +6,7 @@ description: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil
 lastmod: '2024-03-13T22:44:59.204450-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
-  \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\
-  \ rastrear errores\u2026"
+  \ entender qu\xE9 est\xE1 pasando en tu programa."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

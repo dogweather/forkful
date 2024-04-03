@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.935853-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-filer (Comma-Separated Values) \xE4r ett vanligt datautbytesformat som\
   \ representerar tabul\xE4r data i ren text, genom att anv\xE4nda kommatecken f\xF6\
-  r att\u2026"
+  r att separera enskilda v\xE4rden."
 title: Arbeta med CSV
 weight: 37
 ---

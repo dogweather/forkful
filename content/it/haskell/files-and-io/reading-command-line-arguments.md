@@ -4,8 +4,8 @@ description: "Leggere gli argomenti da riga di comando significa estrarre le inf
   \ passate al tuo programma quando viene eseguito da terminale. \xC8 cruciale per\u2026"
 lastmod: '2024-03-13T22:44:43.490681-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere gli argomenti da riga di comando significa estrarre le informazioni\
-  \ passate al tuo programma quando viene eseguito da terminale. \xC8 cruciale per\u2026"
+summary: Leggere gli argomenti da riga di comando significa estrarre le informazioni
+  passate al tuo programma quando viene eseguito da terminale.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

@@ -6,8 +6,8 @@ description: "JSON (JavaScript Object Notation) wordt gebruikt om gegevens op te
   \ en te transporteren. Programmeurs gebruiken JSON omdat het lichtgewicht is,\u2026"
 lastmod: '2024-03-13T22:44:50.958450-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) wordt gebruikt om gegevens op te slaan\
-  \ en te transporteren. Programmeurs gebruiken JSON omdat het lichtgewicht is,\u2026"
+summary: JSON (JavaScript Object Notation) wordt gebruikt om gegevens op te slaan
+  en te transporteren.
 title: Werken met JSON
 weight: 38
 ---

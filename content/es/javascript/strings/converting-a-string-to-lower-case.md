@@ -5,7 +5,7 @@ description: "Convertir una cadena a min\xFAsculas es transformar todos los cara
 lastmod: '2024-03-13T22:44:59.445930-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas es transformar todos los caracteres\
-  \ alfab\xE9ticos en un texto para que no haya may\xFAsculas. Se hace para estandarizar\u2026"
+  \ alfab\xE9ticos en un texto para que no haya may\xFAsculas."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

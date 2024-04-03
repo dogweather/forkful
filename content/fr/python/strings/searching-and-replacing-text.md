@@ -6,7 +6,7 @@ description: "La recherche et le remplacement de texte permettent de localiser d
 lastmod: '2024-03-13T22:44:57.218706-06:00'
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de localiser des s\xE9\
-  quences sp\xE9cifiques dans une cha\xEEne et de les remplacer par d'autres. Les\u2026"
+  quences sp\xE9cifiques dans une cha\xEEne et de les remplacer par d'autres."
 title: Recherche et remplacement de texte
 weight: 10
 ---

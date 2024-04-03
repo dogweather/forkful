@@ -6,8 +6,8 @@ description: "Om de debugger in Xcode (de IDE voor Swift) te gebruiken, kun je b
   \ instellen, variabelen inspecteren en expressies volgen. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:51.161567-06:00'
 model: gpt-4-0125-preview
-summary: "Om de debugger in Xcode (de IDE voor Swift) te gebruiken, kun je breakpoints\
-  \ instellen, variabelen inspecteren en expressies volgen. Hier is een\u2026"
+summary: Om de debugger in Xcode (de IDE voor Swift) te gebruiken, kun je breakpoints
+  instellen, variabelen inspecteren en expressies volgen.
 title: Een debugger gebruiken
 weight: 35
 ---

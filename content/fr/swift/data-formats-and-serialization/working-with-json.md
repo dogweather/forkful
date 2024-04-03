@@ -8,8 +8,7 @@ description: "Travailler avec JSON en Swift signifie manipuler un format de donn
 lastmod: '2024-03-13T22:44:58.250564-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON en Swift signifie manipuler un format de donn\xE9es\
-  \ l\xE9ger pour l'\xE9change de donn\xE9es. Les programmeurs utilisent JSON pour\
-  \ transmettre\u2026"
+  \ l\xE9ger pour l'\xE9change de donn\xE9es."
 title: Travailler avec JSON
 weight: 38
 ---

@@ -5,8 +5,8 @@ description: "Comparing two dates means checking which one comes first or how fa
   \ and\u2026"
 lastmod: '2024-03-13T22:44:59.719048-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates means checking which one comes first or how far apart\
-  \ they are in time. Programmers do it to schedule events, measure time spans, and\u2026"
+summary: Comparing two dates means checking which one comes first or how far apart
+  they are in time.
 title: Comparing two dates
 weight: 27
 ---

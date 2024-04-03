@@ -6,8 +6,8 @@ description: "Ein neues Projekt in Go zu starten, umfasst das Einrichten eines A
   \ und dessen Initialisierung mit den notwendigen Go-Modulen. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:53.288346-06:00'
 model: gpt-4-0125-preview
-summary: "Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs\
-  \ und dessen Initialisierung mit den notwendigen Go-Modulen. Programmierer\u2026"
+summary: Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs
+  und dessen Initialisierung mit den notwendigen Go-Modulen.
 title: Ein neues Projekt starten
 weight: 1
 ---

@@ -8,7 +8,7 @@ description: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie ci\u
 lastmod: '2024-03-13T22:44:34.972571-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie ci\u0105g\xF3\
-  w sformatowanych w JSON na obiekty Pythona i odwrotnie. Jest to kluczowe dla rozwoju\u2026"
+  w sformatowanych w JSON na obiekty Pythona i odwrotnie."
 title: Praca z JSON
 weight: 38
 ---

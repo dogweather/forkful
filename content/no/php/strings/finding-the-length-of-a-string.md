@@ -5,9 +5,7 @@ description: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\x
   \ p\xE5 en output."
 lastmod: '2024-03-13T22:44:40.876783-06:00'
 model: gpt-4-1106-preview
-summary: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\xF8r dette\
-  \ for \xE5 validere inndata, bearbeide tekst, og for \xE5 limitere lengden p\xE5\
-  \ en output."
+summary: "Strenglengde handler om \xE5 telle antall tegn i en tekst."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

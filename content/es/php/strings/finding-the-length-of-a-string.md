@@ -6,8 +6,7 @@ description: "Calcular la longitud de una cadena significa saber cu\xE1ntos cara
 lastmod: '2024-03-13T22:44:59.151796-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular la longitud de una cadena significa saber cu\xE1ntos caracteres\
-  \ contiene. Los programadores lo hacen para validar entradas, manipular texto y\
-  \ por\u2026"
+  \ contiene."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

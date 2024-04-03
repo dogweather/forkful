@@ -6,8 +6,7 @@ description: "Wycinanie pod\u0142a\u0144cuch\xF3w to proces wyodr\u0119bniania f
 lastmod: '2024-03-13T22:44:35.661376-06:00'
 model: gpt-4-1106-preview
 summary: "Wycinanie pod\u0142a\u0144cuch\xF3w to proces wyodr\u0119bniania fragment\xF3\
-  w tekstu z wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to,\
-  \ aby manipulowa\u0107 i analizowa\u0107 dane\u2026"
+  w tekstu z wi\u0119kszego ci\u0105gu znak\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

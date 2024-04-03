@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.206045-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) dans les langues de programmation\
   \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un flux s\xE9\
-  par\xE9,\u2026"
+  par\xE9, distinct de la sortie standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -7,7 +7,8 @@ description: "Escribir pruebas en el entorno de Arduino se refiere al proceso de
 lastmod: '2024-03-13T22:44:59.336808-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en el entorno de Arduino se refiere al proceso de crear\
-  \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\u2026"
+  \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\
+  \ Arduino."
 title: Escribiendo pruebas
 weight: 36
 ---

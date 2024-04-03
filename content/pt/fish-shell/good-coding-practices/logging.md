@@ -6,8 +6,7 @@ description: "Registrar (logging) \xE9, essencialmente, anotar o que seu aplicat
 lastmod: '2024-03-13T22:44:47.012529-06:00'
 model: gpt-4-1106-preview
 summary: "Registrar (logging) \xE9, essencialmente, anotar o que seu aplicativo est\xE1\
-  \ fazendo \u2014 um di\xE1rio, por assim dizer, mas para o c\xF3digo. Os programadores\
-  \ fazem\u2026"
+  \ fazendo \u2014 um di\xE1rio, por assim dizer, mas para o c\xF3digo."
 title: Registro de Logs
 weight: 17
 ---

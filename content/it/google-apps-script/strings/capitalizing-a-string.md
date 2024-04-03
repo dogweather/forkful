@@ -6,8 +6,9 @@ description: "Capitalizzare una stringa comporta la modifica dell'input in modo 
   \ il primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
 lastmod: '2024-03-13T22:44:42.935676-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa comporta la modifica dell'input in modo che il\
-  \ primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
+summary: Capitalizzare una stringa comporta la modifica dell'input in modo che il
+  primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente
+  utilizzato per formattare nomi o titoli.
 title: Mettere in Maiuscolo una Stringa
 weight: 2
 ---

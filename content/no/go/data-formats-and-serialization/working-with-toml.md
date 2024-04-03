@@ -8,8 +8,7 @@ description: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilform
 lastmod: '2024-03-13T22:44:40.293509-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat som\
-  \ er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker TOML\
-  \ for \xE5\u2026"
+  \ er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks."
 title: "\xC5 jobbe med TOML"
 weight: 39
 ---

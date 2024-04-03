@@ -7,7 +7,7 @@ description: "Organizzare il codice in funzioni in C comporta la suddivisione di
 lastmod: '2024-03-13T22:44:44.004783-06:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
-  \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"
+  \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili."
 title: Organizzare il codice in funzioni
 weight: 18
 ---

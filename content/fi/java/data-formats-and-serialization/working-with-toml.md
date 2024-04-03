@@ -4,8 +4,7 @@ description: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4. Se on 
   \ serialisointiformaatti, jota k\xE4ytet\xE4\xE4n konfiguraatiotiedostoissa. Ohjelmoijat\u2026"
 lastmod: '2024-03-13T22:44:56.469081-06:00'
 model: gpt-4-0125-preview
-summary: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4. Se on datan\
-  \ serialisointiformaatti, jota k\xE4ytet\xE4\xE4n konfiguraatiotiedostoissa. Ohjelmoijat\u2026"
+summary: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

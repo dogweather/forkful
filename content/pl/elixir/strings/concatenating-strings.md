@@ -6,8 +6,7 @@ description: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch 
 lastmod: '2024-03-13T22:44:35.033511-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch lub wi\u0119\
-  cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst. Mo\u017Cesz potrzebowa\u0107\
-  \ \u0142\u0105czy\u0107 teksty, generuj\u0105c\u2026"
+  cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

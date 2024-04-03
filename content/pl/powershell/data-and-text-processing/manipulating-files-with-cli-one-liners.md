@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.624722-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulowanie plikami przy u\u017Cyciu jednolinijkowc\xF3w CLI w PowerShell\
   \ to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpo\u015B\
-  rednio z\u2026"
+  rednio z linii polece\u0144."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

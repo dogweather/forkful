@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.136353-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\" consiste\
   \ \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les d\xE9\
-  veloppeurs \xE0\u2026"
+  veloppeurs \xE0 comprendre le flux d'ex\xE9cution de leur programme ou \xE0 identifier\
+  \ les probl\xE8mes."
 title: "Impression de sortie de d\xE9bogage"
 weight: 33
 ---

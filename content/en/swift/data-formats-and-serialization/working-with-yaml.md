@@ -5,8 +5,8 @@ description: "YAML, which stands for YAML Ain't Markup Language, is a human-frie
   \ for\u2026"
 lastmod: '2024-03-13T22:45:00.414137-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, which stands for YAML Ain't Markup Language, is a human-friendly data\
-  \ serialization standard for all programming languages. Programmers use it for\u2026"
+summary: YAML, which stands for YAML Ain't Markup Language, is a human-friendly data
+  serialization standard for all programming languages.
 title: Working with YAML
 weight: 41
 ---

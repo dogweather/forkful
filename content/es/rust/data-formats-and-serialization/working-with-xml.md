@@ -5,7 +5,7 @@ description: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Ext
 lastmod: '2024-03-13T22:44:58.871024-06:00'
 model: gpt-4-0125-preview
 summary: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
-  \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
+  \ es como el primo verborr\xE1gico de JSON."
 title: Trabajando con XML
 weight: 40
 ---

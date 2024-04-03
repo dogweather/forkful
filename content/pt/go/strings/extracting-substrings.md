@@ -8,8 +8,7 @@ description: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas 
 lastmod: '2024-03-13T22:44:46.048751-06:00'
 model: gpt-4-0125-preview
 summary: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de uma\
-  \ string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\
-  \ essa opera\xE7\xE3o para\u2026"
+  \ string com base em suas posi\xE7\xF5es."
 title: Extraindo substrings
 weight: 6
 ---

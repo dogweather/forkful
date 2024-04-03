@@ -6,8 +6,7 @@ description: "Att konvertera en str\xE4ng till gemener betyder att alla stora bo
 lastmod: '2024-03-13T22:44:38.155045-06:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener betyder att alla stora bokst\xE4\
-  ver i texten omvandlas till sm\xE5 bokst\xE4ver. Programm\xF6rer g\xF6r detta f\xF6\
-  r att standardisera\u2026"
+  ver i texten omvandlas till sm\xE5 bokst\xE4ver."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

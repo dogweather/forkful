@@ -8,8 +8,7 @@ description: "Capitalizar uma string significa modific\xE1-la para que a primeir
 lastmod: '2024-03-13T22:44:46.987476-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string significa modific\xE1-la para que a primeira letra\
-  \ fique em mai\xFAscula e o restante da string em min\xFAscula. Essa \xE9 uma tarefa\
-  \ comum no\u2026"
+  \ fique em mai\xFAscula e o restante da string em min\xFAscula."
 title: Capitalizando uma string
 weight: 2
 ---

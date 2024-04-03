@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.160694-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, j\u0119zyk serializacji danych zaprojektowany by by\u0107 przyjazny\
   \ dla cz\u0142owieka, jest cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\
-  \ komunikacji\u2026"
+  \ komunikacji mi\u0119dzyprocesowej i przechowywania danych."
 title: Praca z YAML
 weight: 41
 ---

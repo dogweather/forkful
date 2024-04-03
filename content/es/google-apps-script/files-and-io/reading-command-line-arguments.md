@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.568380-06:00'
 model: gpt-4-0125-preview
 summary: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es un poco\
   \ un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xEDnea de\
-  \ comandos\u2026"
+  \ comandos tradicionales en lenguajes de programaci\xF3n como Python o Node."
 title: "Leyendo argumentos de la l\xEDnea de comandos"
 weight: 23
 ---

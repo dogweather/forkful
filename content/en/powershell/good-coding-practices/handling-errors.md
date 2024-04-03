@@ -4,8 +4,8 @@ description: "Handling errors in PowerShell means predicting the mishaps and man
   \ them smoothly. Programmers do this to prevent crashes and provide users with\u2026"
 lastmod: '2024-03-13T22:45:00.291198-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors in PowerShell means predicting the mishaps and managing\
-  \ them smoothly. Programmers do this to prevent crashes and provide users with\u2026"
+summary: Handling errors in PowerShell means predicting the mishaps and managing them
+  smoothly.
 title: Handling errors
 weight: 16
 ---

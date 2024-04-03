@@ -8,7 +8,8 @@ description: "Debug-tulosteen tulostaminen Dartissa tarkoittaa tietojen n\xE4ytt
 lastmod: '2024-03-13T22:44:56.273552-06:00'
 model: gpt-4-0125-preview
 summary: "Debug-tulosteen tulostaminen Dartissa tarkoittaa tietojen n\xE4ytt\xE4mist\xE4\
-  \ konsolissa suorituksen aikana, mik\xE4 mahdollistaa kehitt\xE4jien seurata suorituksen\u2026"
+  \ konsolissa suorituksen aikana, mik\xE4 mahdollistaa kehitt\xE4jien seurata suorituksen\
+  \ kulkua, tutkia muuttujien tilaa tai tunnistaa virheiden l\xE4hteen."
 title: Debug-tulosteen tulostaminen
 weight: 33
 ---

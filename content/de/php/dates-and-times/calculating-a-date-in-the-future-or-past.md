@@ -5,7 +5,7 @@ description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glic
 lastmod: '2024-03-13T22:44:53.985802-06:00'
 model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
-  \ Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"
+  \ Zeitintervalle zu bestimmen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

@@ -7,8 +7,8 @@ description: "Het verwijderen van quotes uit een string betekent het weglaten va
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:51.060676-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van quotes uit een string betekent het weglaten van enkele\
-  \ (`'`) of dubbele (`\"`) aanhalingstekens die de tekst omgeven. Programmeurs doen\u2026"
+summary: Het verwijderen van quotes uit een string betekent het weglaten van enkele
+  (`'`) of dubbele (`"`) aanhalingstekens die de tekst omgeven.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

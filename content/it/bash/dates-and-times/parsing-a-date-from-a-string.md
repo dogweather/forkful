@@ -7,7 +7,8 @@ description: "Analizzare una data da una stringa in Bash comporta l'estrazione e
 lastmod: '2024-03-13T22:44:43.609052-06:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa in Bash comporta l'estrazione e la conversione\
-  \ delle informazioni sulla data da dati testuali in un formato che Bash\u2026"
+  \ delle informazioni sulla data da dati testuali in un formato che Bash pu\xF2 manipolare\
+  \ o utilizzare per ulteriori processi."
 title: Analisi di una data da una stringa
 weight: 30
 ---

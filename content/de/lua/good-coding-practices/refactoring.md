@@ -5,7 +5,8 @@ description: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten,
 lastmod: '2024-03-13T22:44:54.023424-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten, dass\
-  \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\u2026"
+  \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\
+  \ \xE4u\xDFeres Verhalten \xE4ndert."
 title: Refactoring
 weight: 19
 ---

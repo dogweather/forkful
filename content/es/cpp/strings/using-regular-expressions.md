@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.365572-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares en C++ son secuencias de caracteres que definen\
   \ un patr\xF3n de b\xFAsqueda, utilizadas para el emparejamiento o manipulaci\xF3\
-  n de\u2026"
+  n de cadenas."
 title: Usando expresiones regulares
 weight: 11
 ---

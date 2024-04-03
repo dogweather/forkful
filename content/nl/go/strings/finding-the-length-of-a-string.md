@@ -6,8 +6,8 @@ description: "De lengte van een string bepalen in Go gaat over het vaststellen v
   \ het aantal karakters dat het bevat. Programmeurs voeren deze bewerking routinematig\u2026"
 lastmod: '2024-03-13T22:44:50.278003-06:00'
 model: gpt-4-0125-preview
-summary: "De lengte van een string bepalen in Go gaat over het vaststellen van het\
-  \ aantal karakters dat het bevat. Programmeurs voeren deze bewerking routinematig\u2026"
+summary: De lengte van een string bepalen in Go gaat over het vaststellen van het
+  aantal karakters dat het bevat.
 title: De lengte van een string vinden
 weight: 7
 ---

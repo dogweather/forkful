@@ -6,8 +6,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jakamista
 lastmod: '2024-03-13T22:44:56.149164-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jakamista uudelleenk\xE4\
-  ytett\xE4viin kokonaisuuksiin tietty\xE4 tarkoitusta varten. Teemme n\xE4in, jotta\
-  \ koodista\u2026"
+  ytett\xE4viin kokonaisuuksiin tietty\xE4 tarkoitusta varten."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

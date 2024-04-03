@@ -6,8 +6,9 @@ description: "L'analisi del HTML in C implica l'esaminare documenti HTML per est
   \ dati, strutture o parti specifiche in modo efficiente, spesso come precursore\u2026"
 lastmod: '2024-03-13T22:44:43.992874-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi del HTML in C implica l'esaminare documenti HTML per estrarre\
-  \ dati, strutture o parti specifiche in modo efficiente, spesso come precursore\u2026"
+summary: L'analisi del HTML in C implica l'esaminare documenti HTML per estrarre dati,
+  strutture o parti specifiche in modo efficiente, spesso come precursore dell'estrazione
+  di dati o dello scraping web.
 title: Analisi del HTML
 weight: 43
 ---

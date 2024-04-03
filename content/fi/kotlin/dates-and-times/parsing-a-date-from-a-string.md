@@ -8,8 +8,7 @@ description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoi
 lastmod: '2024-03-13T22:44:56.540333-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstist\xE4\
-  \ Date-objektiksi muuntamista. T\xE4m\xE4 toiminto on olennainen sovelluksille,\
-  \ jotka k\xE4sittelev\xE4t\u2026"
+  \ Date-objektiksi muuntamista."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

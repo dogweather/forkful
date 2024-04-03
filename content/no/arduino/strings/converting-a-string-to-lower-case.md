@@ -6,7 +6,7 @@ description: "Konvertering av en streng til sm\xE5 bokstaver betyr \xE5 endre al
 lastmod: '2024-03-13T22:44:41.045940-06:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver betyr \xE5 endre alle store\
-  \ bokstaver i teksten til sm\xE5 bokstaver. Programmerere gj\xF8r dette for enklere\u2026"
+  \ bokstaver i teksten til sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

@@ -6,8 +6,8 @@ description: "HTML parsen betekent het doorzoeken van de structuur en inhoud van
   \ HTML-bestand om informatie te extraheren. Programmeurs doen dit om data te\u2026"
 lastmod: '2024-03-13T22:44:50.980237-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parsen betekent het doorzoeken van de structuur en inhoud van een HTML-bestand\
-  \ om informatie te extraheren. Programmeurs doen dit om data te\u2026"
+summary: HTML parsen betekent het doorzoeken van de structuur en inhoud van een HTML-bestand
+  om informatie te extraheren.
 title: HTML Parsen
 weight: 43
 ---

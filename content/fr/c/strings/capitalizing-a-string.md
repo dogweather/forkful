@@ -7,7 +7,8 @@ description: "Capitaliser une cha\xEEne en C consiste \xE0 convertir le premier 
 lastmod: '2024-03-13T22:44:58.352038-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne en C consiste \xE0 convertir le premier caract\xE8\
-  re de chaque mot dans une cha\xEEne donn\xE9e en majuscule s'il s'agit d'une lettre\u2026"
+  re de chaque mot dans une cha\xEEne donn\xE9e en majuscule s'il s'agit d'une lettre\
+  \ minuscule."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

@@ -7,7 +7,8 @@ description: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzaz
 lastmod: '2024-03-13T22:44:43.704202-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione di\
-  \ dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\u2026"
+  \ dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\
+  \ comunicazione tra programmi e archiviazione di dati."
 title: Lavorare con YAML
 weight: 41
 ---

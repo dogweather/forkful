@@ -6,8 +6,7 @@ description: "Att starta ett nytt projekt inneb\xE4r att skapa en ny mapp och fi
 lastmod: '2024-03-13T22:44:38.039155-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt inneb\xE4r att skapa en ny mapp och filstruktur\
-  \ f\xF6r ett programmeringsprojekt. Programmerare g\xF6r detta f\xF6r att organisera\
-  \ kod,\u2026"
+  \ f\xF6r ett programmeringsprojekt."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

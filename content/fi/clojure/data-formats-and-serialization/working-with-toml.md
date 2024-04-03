@@ -5,7 +5,8 @@ description: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dat
 lastmod: '2024-03-13T22:44:56.207586-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa Minimaalisessa\
-  \ \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"
+  \ \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua konfiguraatiotiedostoissa\
+  \ sen helpon luettavuuden vuoksi."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

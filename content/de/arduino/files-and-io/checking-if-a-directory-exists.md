@@ -8,7 +8,8 @@ description: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob
 lastmod: '2024-03-13T22:44:54.157606-06:00'
 model: gpt-4-0125-preview
 summary: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein Verzeichnis\
-  \ auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert, wichtig, um\u2026"
+  \ auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert, wichtig, um\
+  \ Dateien ohne Fehler lesen oder schreiben zu k\xF6nnen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

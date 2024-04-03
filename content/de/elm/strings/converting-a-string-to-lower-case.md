@@ -6,7 +6,7 @@ description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Zeichen d
 lastmod: '2024-03-13T22:44:53.791467-06:00'
 model: gpt-4-1106-preview
 summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Zeichen des Strings\
-  \ in ihre Kleinbuchstaben-\xC4quivalente zu transformieren. Programmierer nutzen\u2026"
+  \ in ihre Kleinbuchstaben-\xC4quivalente zu transformieren."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

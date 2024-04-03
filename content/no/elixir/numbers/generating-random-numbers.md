@@ -5,7 +5,8 @@ description: "\xC5 generere tilfeldige tall i Elixir er en grunnleggende program
 lastmod: '2024-03-13T22:44:40.439343-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Elixir er en grunnleggende programmeringsoppgave,\
-  \ vital for applikasjoner som trenger uforutsigbare resultater som i\u2026"
+  \ vital for applikasjoner som trenger uforutsigbare resultater som i generering\
+  \ av sikre tokens, sampling av data, eller i spillalgoritmer."
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -4,8 +4,8 @@ description: "Comparar dos fechas significa verificar si una es anterior, poster
   \ o igual a la otra. Los programadores lo hacen para gestionar eventos, validar\u2026"
 lastmod: '2024-03-13T22:44:59.090144-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas significa verificar si una es anterior, posterior o\
-  \ igual a la otra. Los programadores lo hacen para gestionar eventos, validar\u2026"
+summary: Comparar dos fechas significa verificar si una es anterior, posterior o igual
+  a la otra.
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

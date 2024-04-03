@@ -7,8 +7,8 @@ description: "Quotes verwijderen uit een string in Rust gaat over het wegstrippe
   \ zijn.\u2026"
 lastmod: '2024-03-13T22:44:50.582046-06:00'
 model: gpt-4-0125-preview
-summary: "Quotes verwijderen uit een string in Rust gaat over het wegstrippen van\
-  \ onnodige extra aanhalingstekens die mogelijk om je tekstdata heen gewikkeld zijn.\u2026"
+summary: Quotes verwijderen uit een string in Rust gaat over het wegstrippen van onnodige
+  extra aanhalingstekens die mogelijk om je tekstdata heen gewikkeld zijn.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

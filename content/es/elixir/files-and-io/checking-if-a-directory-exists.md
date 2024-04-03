@@ -7,8 +7,8 @@ description: "Verificar si un directorio existe en Elixir se trata de confirmar 
   \ Los\u2026"
 lastmod: '2024-03-13T22:44:58.717151-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar si un directorio existe en Elixir se trata de confirmar la presencia\
-  \ de un directorio en una ruta especificada en el sistema de archivos. Los\u2026"
+summary: Verificar si un directorio existe en Elixir se trata de confirmar la presencia
+  de un directorio en una ruta especificada en el sistema de archivos.
 title: Comprobando si un directorio existe
 weight: 20
 ---

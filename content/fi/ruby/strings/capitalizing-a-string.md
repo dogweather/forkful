@@ -9,8 +9,7 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleens\xE4
 lastmod: '2024-03-25T19:22:43.009464-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleens\xE4 ensimm\xE4\
-  isen merkin muuttamista isoksi kirjaimeksi ja loput pieniksi kirjaimiksi. Joskus\
-  \ se\u2026"
+  isen merkin muuttamista isoksi kirjaimeksi ja loput pieniksi kirjaimiksi."
 title: Merkkijonon alkukirjaimet isoiksi
 weight: 2
 ---

@@ -7,8 +7,8 @@ description: "HTML parseren betekent het ontleden van de opmaak van een webpagin
   \ HTML om\u2026"
 lastmod: '2024-03-13T22:44:50.765434-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parseren betekent het ontleden van de opmaak van een webpagina in iets\
-  \ dat een programma kan begrijpen en manipuleren. Programmeurs parseren HTML om\u2026"
+summary: HTML parseren betekent het ontleden van de opmaak van een webpagina in iets
+  dat een programma kan begrijpen en manipuleren.
 title: HTML Parsen
 weight: 43
 ---

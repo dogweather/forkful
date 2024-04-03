@@ -6,8 +6,7 @@ description: "Gestire gli errori in Swift significa anticipare e rispondere ai p
 lastmod: '2024-03-13T22:44:43.777402-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori in Swift significa anticipare e rispondere ai problemi\
-  \ che emergono quando il codice \xE8 in esecuzione. Lo facciamo per controllare\
-  \ il\u2026"
+  \ che emergono quando il codice \xE8 in esecuzione."
 title: Gestione degli errori
 weight: 16
 ---

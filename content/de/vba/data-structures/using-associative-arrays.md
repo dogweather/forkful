@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.709679-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oft auch als W\xF6rterb\xFCcher in Visual Basic f\xFC\
   r Anwendungen (VBA) bekannt, erm\xF6glichen es Programmierern, Sammlungen von Schl\xFC\
-  ssel-Wert-\u2026"
+  ssel-Wert-Paaren zu erstellen."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

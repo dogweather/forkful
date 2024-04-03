@@ -8,9 +8,9 @@ description: "Een datum uit een string parsen gaat over het nemen van tekst, zoa
   \ en\u2026"
 lastmod: '2024-03-13T22:44:50.471621-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum uit een string parsen gaat over het nemen van tekst, zoals \"\
-  2023-04-05\", en het omzetten naar een datumformaat dat je programma kan begrijpen\
-  \ en\u2026"
+summary: Een datum uit een string parsen gaat over het nemen van tekst, zoals "2023-04-05",
+  en het omzetten naar een datumformaat dat je programma kan begrijpen en mee kan
+  werken.
 title: Een datum uit een string parsen
 weight: 30
 ---

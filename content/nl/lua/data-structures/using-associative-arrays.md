@@ -7,7 +7,8 @@ description: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\
 lastmod: '2024-03-13T22:44:50.930403-06:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\u2014\
-  \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\u2026"
+  \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\
+  \ zijn wat je maar wilt, waardoor gegevensophaling een fluitje van een cent wordt."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

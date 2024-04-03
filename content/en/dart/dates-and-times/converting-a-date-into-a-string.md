@@ -4,8 +4,9 @@ description: "Converting a date into a string in Dart is a common task when you 
   \ to display date and time information in a human-readable format, or when you intend\u2026"
 lastmod: '2024-03-13T22:44:59.830777-06:00'
 model: gpt-4-0125-preview
-summary: "Converting a date into a string in Dart is a common task when you need to\
-  \ display date and time information in a human-readable format, or when you intend\u2026"
+summary: Converting a date into a string in Dart is a common task when you need to
+  display date and time information in a human-readable format, or when you intend
+  to serialize data for storage or transmission.
 title: Converting a date into a string
 weight: 28
 ---

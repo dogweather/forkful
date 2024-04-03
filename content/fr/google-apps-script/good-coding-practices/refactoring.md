@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.196013-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring, dans le lexique de la programmation, d\xE9signe le processus\
   \ de restructuration du code informatique existant \u2013 modifier la facturation\
-  \ sans\u2026"
+  \ sans changer son comportement externe \u2013 afin d'am\xE9liorer les attributs\
+  \ non fonctionnels."
 title: Refonte
 weight: 19
 ---

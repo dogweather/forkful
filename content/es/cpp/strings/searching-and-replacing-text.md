@@ -6,8 +6,7 @@ description: "Buscar y reemplazar texto es b\xE1sicamente encontrar una cadena d
 lastmod: '2024-03-13T22:44:59.360958-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es b\xE1sicamente encontrar una cadena de caracteres\
-  \ y sustituirla por otra diferente. Programadores lo hacen para modificar c\xF3\
-  digo\u2026"
+  \ y sustituirla por otra diferente."
 title: Buscando y reemplazando texto
 weight: 10
 ---

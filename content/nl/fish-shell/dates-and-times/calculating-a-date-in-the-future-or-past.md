@@ -6,8 +6,8 @@ description: "Het berekenen van een toekomstige of verleden datum houdt in dat j
   \ met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:51.260689-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van een toekomstige of verleden datum houdt in dat je met\
-  \ datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
+summary: Het berekenen van een toekomstige of verleden datum houdt in dat je met datums
+  speelt om erachter te komen welke dag het was of zal zijn.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

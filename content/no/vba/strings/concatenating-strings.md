@@ -8,7 +8,7 @@ description: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE6rer \
 lastmod: '2024-03-13T22:44:40.609487-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 sette\
-  \ sammen to eller flere strenger til en enkelt enhet. Dette er en fundamental oppgave\u2026"
+  \ sammen to eller flere strenger til en enkelt enhet."
 title: Sammensetting av strenger
 weight: 3
 ---

@@ -6,7 +6,7 @@ description: "Interpolar una cadena significa insertar valores dentro de una str
 lastmod: '2024-03-13T22:44:58.924157-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena significa insertar valores dentro de una string de\
-  \ forma din\xE1mica para construir un mensaje. Los programadores lo hacen para hacer\u2026"
+  \ forma din\xE1mica para construir un mensaje."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

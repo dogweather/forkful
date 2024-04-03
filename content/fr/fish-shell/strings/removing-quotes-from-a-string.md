@@ -6,8 +6,7 @@ description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \
 lastmod: '2024-03-13T22:44:58.309508-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0 enlever\
-  \ ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9es textuelles.\
-  \ Les\u2026"
+  \ ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9es textuelles."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

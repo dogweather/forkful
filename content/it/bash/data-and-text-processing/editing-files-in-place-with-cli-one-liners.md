@@ -5,8 +5,8 @@ description: "Immagina di aver appena scoperto di dover fare un aggiornamento ba
   \ file,\u2026"
 lastmod: '2024-03-13T22:44:43.595352-06:00'
 model: gpt-4-0125-preview
-summary: "Immagina di aver appena scoperto di dover fare un aggiornamento batch a\
-  \ diversi file di configurazione presenti sul tuo server. Potresti aprire ogni file,\u2026"
+summary: Immagina di aver appena scoperto di dover fare un aggiornamento batch a diversi
+  file di configurazione presenti sul tuo server.
 title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---

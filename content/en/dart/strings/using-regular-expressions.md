@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in Dart offer a powerful way to search
   \ manipulate strings, enabling programmers to perform complex text processing tasks\u2026"
 lastmod: '2024-03-13T22:44:59.811370-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in Dart offer a powerful way to search and manipulate\
-  \ strings, enabling programmers to perform complex text processing tasks\u2026"
+summary: Regular expressions (regex) in Dart offer a powerful way to search and manipulate
+  strings, enabling programmers to perform complex text processing tasks efficiently.
 title: Using regular expressions
 weight: 11
 ---

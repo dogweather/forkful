@@ -7,7 +7,8 @@ description: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i w
 lastmod: '2024-03-13T22:44:35.383539-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu\
-  \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\u2026"
+  \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\
+  \ danych, logowania lub ustawie\u0144 konfiguracyjnych."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

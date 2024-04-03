@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.408683-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur la sortie standard d'erreur (stderr) en Dart consiste \xE0\
   \ envoyer des messages d'erreur et des diagnostics vers un flux s\xE9par\xE9, distinct\
-  \ de la\u2026"
+  \ de la sortie standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

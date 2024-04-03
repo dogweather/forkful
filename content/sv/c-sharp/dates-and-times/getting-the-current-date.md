@@ -8,8 +8,7 @@ description: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuel
 lastmod: '2024-03-13T22:44:37.923748-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella datum-\
-  \ och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5ng\
-  \ till denna\u2026"
+  \ och tidsuppgifter fr\xE5n systemet."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

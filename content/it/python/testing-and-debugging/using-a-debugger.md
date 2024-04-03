@@ -5,9 +5,7 @@ description: "Vediamo come utilizzare `pdb`, il debugger integrato di Python. Im
   \ =\u2026"
 lastmod: '2024-03-13T22:44:43.005613-06:00'
 model: gpt-4-0125-preview
-summary: "Vediamo come utilizzare `pdb`, il debugger integrato di Python. Immagina\
-  \ un file, `buggy.py`, con un bug subdolo: ```Python def add_one(number): result\
-  \ =\u2026"
+summary: Vediamo come utilizzare `pdb`, il debugger integrato di Python.
 title: Utilizzo di un debugger
 weight: 35
 ---

@@ -5,9 +5,8 @@ description: "La lettura degli argomenti da riga di comando consente al tuo prog
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.364677-06:00'
 model: gpt-4-1106-preview
-summary: "La lettura degli argomenti da riga di comando consente al tuo programma\
-  \ di accettare input dall'utente esterno al tuo codice. I programmatori lo usano\
-  \ per\u2026"
+summary: La lettura degli argomenti da riga di comando consente al tuo programma di
+  accettare input dall'utente esterno al tuo codice.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

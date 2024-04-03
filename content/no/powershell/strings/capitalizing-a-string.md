@@ -8,7 +8,8 @@ description: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \
 lastmod: '2024-03-13T22:44:41.000004-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5 transformere\
-  \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\u2026"
+  \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\
+  \ forblir uendret."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

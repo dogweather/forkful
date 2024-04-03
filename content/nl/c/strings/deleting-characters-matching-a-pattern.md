@@ -6,8 +6,9 @@ description: "Het verwijderen van tekens die overeenkomen met een specifiek patr
   \ uit strings in C gaat over het verwijderen van alle instanties van bepaalde tekens\u2026"
 lastmod: '2024-03-13T22:44:51.273414-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van tekens die overeenkomen met een specifiek patroon uit\
-  \ strings in C gaat over het verwijderen van alle instanties van bepaalde tekens\u2026"
+summary: Het verwijderen van tekens die overeenkomen met een specifiek patroon uit
+  strings in C gaat over het verwijderen van alle instanties van bepaalde tekens die
+  voldoen aan vooraf gedefinieerde criteria.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

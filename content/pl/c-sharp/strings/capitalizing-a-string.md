@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.390603-06:00'
 model: gpt-4-0125-preview
 summary: "Wielko\u015B\u0107 liter w ci\u0105gu znak\xF3w w C# polega na zamianie\
   \ pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli nie jest ona\
-  \ ju\u017C wielka. Ta zmiana mo\u017Ce by\u0107 kluczowa\u2026"
+  \ ju\u017C wielka."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

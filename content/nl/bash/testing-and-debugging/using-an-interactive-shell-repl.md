@@ -6,8 +6,7 @@ description: "REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve
   \ Programmeurs gebruiken het om snel code te schrijven en te\u2026"
 lastmod: '2024-03-13T22:44:50.984183-06:00'
 model: gpt-4-0125-preview
-summary: "REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.\
-  \ Programmeurs gebruiken het om snel code te schrijven en te\u2026"
+summary: REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

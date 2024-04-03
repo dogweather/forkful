@@ -6,8 +6,7 @@ description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbu
 lastmod: '2024-03-13T22:44:53.750525-06:00'
 model: gpt-4-1106-preview
 summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbuchstaben\
-  \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen. Wir tun\
-  \ dies,\u2026"
+  \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

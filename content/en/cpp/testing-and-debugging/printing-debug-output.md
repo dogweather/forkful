@@ -4,8 +4,8 @@ description: "Printing debug output is like having a conversation with your code
   \ you pepper in print statements to check on its health and what it's thinking.\u2026"
 lastmod: '2024-03-13T22:45:00.359844-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is like having a conversation with your code; you\
-  \ pepper in print statements to check on its health and what it's thinking.\u2026"
+summary: Printing debug output is like having a conversation with your code; you pepper
+  in print statements to check on its health and what it's thinking.
 title: Printing debug output
 weight: 33
 ---

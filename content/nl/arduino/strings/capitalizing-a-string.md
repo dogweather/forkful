@@ -6,8 +6,7 @@ description: "Een string kapitaliseren betekent elk karakter veranderen in een h
   \ Programmeurs doen dit voor consistentie, met name in gebruikersinterfaces of\u2026"
 lastmod: '2024-03-13T22:44:51.055689-06:00'
 model: gpt-4-0125-preview
-summary: "Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter.\
-  \ Programmeurs doen dit voor consistentie, met name in gebruikersinterfaces of\u2026"
+summary: Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter.
 title: Een string met hoofdletters maken
 weight: 2
 ---

@@ -6,8 +6,7 @@ description: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE
 lastmod: '2024-03-13T22:44:56.935923-06:00'
 model: gpt-4-1106-preview
 summary: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE4mist\xE4\
-  \ merkkijonoihin. Koodareiden arjessa t\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4,\
-  \ sill\xE4 se helpottaa\u2026"
+  \ merkkijonoihin."
 title: Merkkijonon interpolointi
 weight: 8
 ---

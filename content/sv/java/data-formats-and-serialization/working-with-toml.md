@@ -5,8 +5,7 @@ description: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r et
   \ anv\xE4nder det eftersom\u2026"
 lastmod: '2024-03-13T22:44:37.810683-06:00'
 model: gpt-4-0125-preview
-summary: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r ett data-serialiseringsformat\
-  \ som anv\xE4nds f\xF6r konfigurationsfiler. Programmerare anv\xE4nder det eftersom\u2026"
+summary: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k."
 title: Att arbeta med TOML
 weight: 39
 ---

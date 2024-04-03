@@ -4,8 +4,7 @@ description: "Complex numbers have a real part and an imaginary part (like `3 + 
   \ They're used in engineering, physics, and certain computing problems. Programmers\u2026"
 lastmod: '2024-03-13T22:44:59.777206-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers have a real part and an imaginary part (like `3 + 4i`).\
-  \ They're used in engineering, physics, and certain computing problems. Programmers\u2026"
+summary: Complex numbers have a real part and an imaginary part (like `3 + 4i`).
 title: Working with complex numbers
 weight: 14
 ---

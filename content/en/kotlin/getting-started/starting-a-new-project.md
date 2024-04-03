@@ -6,8 +6,7 @@ description: "Starting a new project means setting up the initial structure and 
 lastmod: '2024-03-13T22:45:00.049247-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project means setting up the initial structure and vital\
-  \ files you\u2019ll need for your application. Programmers initiate new projects\
-  \ to kick\u2026"
+  \ files you\u2019ll need for your application."
 title: Starting a new project
 weight: 1
 ---

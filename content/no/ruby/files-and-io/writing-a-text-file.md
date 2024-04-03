@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.351778-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Ruby er en grunnleggende operasjon som lar\
   \ deg lagre utdata og data p\xE5 en vedvarende m\xE5te, slik at data kan tilg\xE5\
-  s eller endres\u2026"
+  s eller endres senere."
 title: Skrive en tekstfil
 weight: 24
 ---

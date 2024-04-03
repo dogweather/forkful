@@ -6,8 +6,8 @@ description: "Inviare una richiesta HTTP implica creare e inviare una richiesta 
   \ un server web per recuperare o inviare dati. I programmatori lo fanno in C per\u2026"
 lastmod: '2024-03-13T22:44:43.924692-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP implica creare e inviare una richiesta a un server\
-  \ web per recuperare o inviare dati. I programmatori lo fanno in C per\u2026"
+summary: Inviare una richiesta HTTP implica creare e inviare una richiesta a un server
+  web per recuperare o inviare dati.
 title: Inviare una richiesta HTTP
 weight: 44
 ---

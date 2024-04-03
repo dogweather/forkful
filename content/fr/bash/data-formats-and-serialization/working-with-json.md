@@ -7,7 +7,7 @@ description: "Travailler avec JSON en programmation Bash implique d'analyser, d'
 lastmod: '2024-03-13T22:44:58.020727-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON en programmation Bash implique d'analyser, d'extraire\
-  \ et de manipuler des donn\xE9es JSON directement depuis la ligne de commande. Les\u2026"
+  \ et de manipuler des donn\xE9es JSON directement depuis la ligne de commande."
 title: Travailler avec JSON
 weight: 38
 ---

@@ -7,7 +7,7 @@ description: "Obter a data atual em C envolve acessar a biblioteca padr\xE3o do 
 lastmod: '2024-03-13T22:44:47.061494-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em C envolve acessar a biblioteca padr\xE3o do C para\
-  \ buscar e formatar a data e a hora atual do sistema. Os programadores frequentemente\u2026"
+  \ buscar e formatar a data e a hora atual do sistema."
 title: Obtendo a data atual
 weight: 29
 ---

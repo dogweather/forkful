@@ -8,9 +8,8 @@ description: "Organizzare il codice in funzioni significa raggruppare pezzi di s
   \ da\u2026"
 lastmod: '2024-03-13T22:44:43.864781-06:00'
 model: gpt-4-0125-preview
-summary: "Organizzare il codice in funzioni significa raggruppare pezzi di script\
-  \ per eseguire compiti specifici. Lo facciamo perch\xE9 rende il codice pi\xF9 facile\
-  \ da\u2026"
+summary: Organizzare il codice in funzioni significa raggruppare pezzi di script per
+  eseguire compiti specifici.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

@@ -8,8 +8,7 @@ description: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skr
 lastmod: '2024-03-13T22:44:37.486631-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skript f\xF6\
-  r att validera korrektheten i din kod. Programmerare g\xF6r detta f\xF6r att s\xE4\
-  kerst\xE4lla\u2026"
+  r att validera korrektheten i din kod."
 title: Skriva tester
 weight: 36
 ---

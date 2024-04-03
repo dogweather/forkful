@@ -5,9 +5,8 @@ description: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer h
   \ er\u2026"
 lastmod: '2024-03-13T22:44:41.206767-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan\
-  \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\
-  \ er\u2026"
+summary: TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan
+  man strukturerer konfigurasjonsfiler.
 title: Jobbe med TOML
 weight: 39
 ---

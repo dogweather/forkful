@@ -5,7 +5,7 @@ description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum von
 lastmod: '2024-03-13T22:44:53.899819-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum von einem\
-  \ Format, das f\xFCr die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln.\u2026"
+  \ Format, das f\xFCr die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln."
 title: Datum in einen String umwandeln
 weight: 28
 ---

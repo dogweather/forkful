@@ -7,7 +7,8 @@ description: "L'interpolazione di stringhe in Google Apps Script consente l'inco
 lastmod: '2024-03-13T22:44:42.938975-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe in Google Apps Script consente l'incorporamento\
-  \ dinamico di espressioni all'interno delle stringhe, facilitando la creazione\u2026"
+  \ dinamico di espressioni all'interno delle stringhe, facilitando la creazione di\
+  \ codice pi\xF9 leggibile e manutenibile."
 title: Interpolazione di una stringa
 weight: 8
 ---

@@ -6,8 +6,7 @@ description: "Wypisywanie debugowania to wy\u015Bwietlanie informacji o dzia\u01
 lastmod: '2024-03-13T22:44:35.187292-06:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie debugowania to wy\u015Bwietlanie informacji o dzia\u0142aniu\
-  \ programu \u2013 pomaga to programistom \u0142apa\u0107 b\u0142\u0119dy. Wykorzystujemy\
-  \ to, aby zobaczy\u0107, co si\u0119\u2026"
+  \ programu \u2013 pomaga to programistom \u0142apa\u0107 b\u0142\u0119dy."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

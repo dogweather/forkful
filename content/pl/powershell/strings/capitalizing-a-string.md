@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.610767-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w w PowerShellu polega\
   \ na przekszta\u0142ceniu pierwszego znaku danego ci\u0105gu na wielk\u0105 liter\u0119\
-  , pozostawiaj\u0105c reszt\u0119 ci\u0105gu\u2026"
+  , pozostawiaj\u0105c reszt\u0119 ci\u0105gu niezmienion\u0105."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

@@ -6,8 +6,7 @@ description: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutami
 lastmod: '2024-03-13T22:44:56.142391-06:00'
 model: gpt-4-1106-preview
 summary: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutamista internetist\xE4\
-  . Koodarit tekev\xE4t t\xE4t\xE4 datan analysointiin, sis\xE4ll\xF6n ker\xE4\xE4\
-  miseen tai\u2026"
+  ."
 title: Verkkosivun lataaminen
 weight: 42
 ---

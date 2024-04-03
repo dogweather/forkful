@@ -6,8 +6,8 @@ description: "Leer un archivo de texto en Dart implica acceder y recuperar datos
   \ archivos almacenados en el sistema de archivos. Los programadores hacen esto para\u2026"
 lastmod: '2024-03-13T22:44:58.773116-06:00'
 model: gpt-4-0125-preview
-summary: "Leer un archivo de texto en Dart implica acceder y recuperar datos de archivos\
-  \ almacenados en el sistema de archivos. Los programadores hacen esto para\u2026"
+summary: Leer un archivo de texto en Dart implica acceder y recuperar datos de archivos
+  almacenados en el sistema de archivos.
 title: Leyendo un archivo de texto
 weight: 22
 ---

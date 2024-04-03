@@ -5,9 +5,8 @@ description: "Removing quotes from a string in Go is about eliminating the leadi
   \ need\u2026"
 lastmod: '2024-03-13T22:44:59.620442-06:00'
 model: gpt-4-0125-preview
-summary: "Removing quotes from a string in Go is about eliminating the leading and\
-  \ trailing quotation marks (`\"` or `'`) from a given string. Programmers often\
-  \ need\u2026"
+summary: Removing quotes from a string in Go is about eliminating the leading and
+  trailing quotation marks (`"` or `'`) from a given string.
 title: Removing quotes from a string
 weight: 9
 ---

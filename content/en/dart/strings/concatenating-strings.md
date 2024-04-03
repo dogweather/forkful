@@ -4,8 +4,8 @@ description: "Concatenating strings in programming involves combining two or mor
   \ strings into one. Programmers do this to manipulate text data easily, construct\u2026"
 lastmod: '2024-03-13T22:44:59.813389-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenating strings in programming involves combining two or more strings\
-  \ into one. Programmers do this to manipulate text data easily, construct\u2026"
+summary: Concatenating strings in programming involves combining two or more strings
+  into one.
 title: Concatenating strings
 weight: 3
 ---

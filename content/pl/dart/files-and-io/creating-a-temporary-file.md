@@ -7,7 +7,10 @@ description: "Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku pr
 lastmod: '2024-03-13T22:44:35.113928-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku przeznaczonego\
-  \ do kr\xF3tkoterminowego u\u017Cytku, przede wszystkim w scenariuszach takich jak\u2026"
+  \ do kr\xF3tkoterminowego u\u017Cytku, przede wszystkim w scenariuszach takich jak\
+  \ przechowywanie danych w pami\u0119ci podr\u0119cznej, tymczasowe przechowanie\
+  \ danych podczas przetwarzania plik\xF3w lub przechowywanie informacji, kt\xF3re\
+  \ s\u0105 zbyt wra\u017Cliwe, aby zachowa\u0107 je na d\u0142u\u017Cej."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

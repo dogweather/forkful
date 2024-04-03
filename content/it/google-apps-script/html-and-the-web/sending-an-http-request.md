@@ -7,8 +7,8 @@ description: "L'invio di una richiesta HTTP in Google Apps Script consiste nel f
   \ fanno\u2026"
 lastmod: '2024-03-13T22:44:42.951351-06:00'
 model: gpt-4-0125-preview
-summary: "L'invio di una richiesta HTTP in Google Apps Script consiste nel fare una\
-  \ chiamata programmatica a un server web esterno o a un'API. I programmatori fanno\u2026"
+summary: L'invio di una richiesta HTTP in Google Apps Script consiste nel fare una
+  chiamata programmatica a un server web esterno o a un'API.
 title: Inviare una richiesta HTTP
 weight: 44
 ---

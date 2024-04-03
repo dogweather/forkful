@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.403988-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, frequentemente conhecidos como dicion\xE1rios no Visual\
   \ Basic para Aplica\xE7\xF5es (VBA), permitem que programadores criem cole\xE7\xF5\
-  es de pares\u2026"
+  es de pares chave-valor."
 title: Usando arrays associativos
 weight: 15
 ---

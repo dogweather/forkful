@@ -4,8 +4,8 @@ description: "Writing tests in Haskell is about ensuring your functions work as 
   \ through automated checks. Programmers do it to catch bugs early, facilitate\u2026"
 lastmod: '2024-03-13T22:45:00.131731-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Haskell is about ensuring your functions work as expected\
-  \ through automated checks. Programmers do it to catch bugs early, facilitate\u2026"
+summary: Writing tests in Haskell is about ensuring your functions work as expected
+  through automated checks.
 title: Writing tests
 weight: 36
 ---

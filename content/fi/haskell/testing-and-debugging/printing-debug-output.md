@@ -5,9 +5,7 @@ description: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE
   t\xE4 selvitt\xE4\xE4ksemme\u2026"
 lastmod: '2024-03-13T22:44:56.617685-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE4isten\
-  \ viestien tulostamista koodin suorituksen seuraamiseksi. K\xE4yt\xE4mme t\xE4t\xE4\
-  \ selvitt\xE4\xE4ksemme\u2026"
+summary: "Mik\xE4 & Miksi."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

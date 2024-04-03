@@ -8,7 +8,8 @@ description: "Verificar si un directorio existe es una operaci\xF3n fundamental 
 lastmod: '2024-03-13T22:44:59.216749-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe es una operaci\xF3n fundamental al escribir\
-  \ scripts que interact\xFAan con el sistema de archivos, asegurando que tu programa\u2026"
+  \ scripts que interact\xFAan con el sistema de archivos, asegurando que tu programa\
+  \ opere en rutas v\xE1lidas y prevenga errores relacionados con directorios inexistentes."
 title: Comprobando si un directorio existe
 weight: 20
 ---

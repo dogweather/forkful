@@ -5,7 +5,7 @@ description: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web 
 lastmod: '2024-03-13T22:44:46.622211-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
-  \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"
+  \ algo ou dar algo."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

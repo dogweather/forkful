@@ -8,8 +8,7 @@ description: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le cont
 lastmod: '2024-03-13T22:44:57.388439-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le contenu d'une\
-  \ page web via son URL pour le traitement ou le stockage. Les programmeurs font\
-  \ cela pour\u2026"
+  \ page web via son URL pour le traitement ou le stockage."
 title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---

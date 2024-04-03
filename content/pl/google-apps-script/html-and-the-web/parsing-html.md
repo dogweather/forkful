@@ -7,7 +7,8 @@ description: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z
 lastmod: '2024-03-13T22:44:34.900241-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z tre\u015B\
-  ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\u2026"
+  ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\
+  \ lub \u017Ar\xF3d\u0142ami danych opartymi na sieci."
 title: "Analiza Sk\u0142adniowa HTML"
 weight: 43
 ---

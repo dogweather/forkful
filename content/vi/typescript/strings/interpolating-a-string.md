@@ -9,9 +9,7 @@ description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng c\xE1c bi\u1
 lastmod: '2024-03-13T22:44:36.300333-06:00'
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng c\xE1c bi\u1EBFn v\xE0\
-  \ bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i. N\xF3 gi\xFAp cho code c\u1EE7a b\u1EA1\
-  n d\u1EC5 \u0111\u1ECDc v\xE0 linh ho\u1EA1t - kh\xF4ng c\u1EA7n d\u1EA5u c\u1ED9\
-  ng, kh\xF4ng r\u1EAFc r\u1ED1i,\u2026"
+  \ bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

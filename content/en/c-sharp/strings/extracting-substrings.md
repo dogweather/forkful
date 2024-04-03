@@ -6,7 +6,7 @@ description: "Extracting substrings is the action of snagging a specific part of
 lastmod: '2024-03-13T22:45:00.077723-06:00'
 model: gpt-4-1106-preview
 summary: "Extracting substrings is the action of snagging a specific part of a string\
-  \ \u2014 kinda like scooping out your favorite chunk of a cake. Programmers do this\u2026"
+  \ \u2014 kinda like scooping out your favorite chunk of a cake."
 title: Extracting substrings
 weight: 6
 ---

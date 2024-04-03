@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.645212-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat\
   \ som er lett for mennesker \xE5 lese og skrive, og for maskiner \xE5 analysere\
-  \ og\u2026"
+  \ og generere."
 title: "\xC5 Arbeide med JSON"
 weight: 38
 ---

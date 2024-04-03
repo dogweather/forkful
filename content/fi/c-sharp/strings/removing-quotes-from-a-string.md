@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.561336-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen C#:ss\xE4 tarkoittaa sit\xE4,\
   \ ett\xE4 poistat teksti\xE4si ymp\xE4r\xF6iv\xE4t \xE4rsytt\xE4v\xE4t kaksois-\
-  \ (`\"`) tai yksinkertaiset (`'`)\u2026"
+  \ (`\"`) tai yksinkertaiset (`'`) lainausmerkit."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

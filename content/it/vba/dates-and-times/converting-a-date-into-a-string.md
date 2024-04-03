@@ -8,7 +8,8 @@ description: "Convertire una data in una stringa in Visual Basic for Application
 lastmod: '2024-03-13T22:44:43.275698-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire una data in una stringa in Visual Basic for Applications (VBA)\
-  \ \xE8 un processo utilizzato per modificare il tipo di dati di una data in un\u2026"
+  \ \xE8 un processo utilizzato per modificare il tipo di dati di una data in un formato\
+  \ stringa."
 title: Convertire una data in una stringa
 weight: 28
 ---

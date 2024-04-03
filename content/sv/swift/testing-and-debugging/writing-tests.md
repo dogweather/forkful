@@ -8,8 +8,7 @@ description: "Att skriva tester i Swift inneb\xE4r att skapa och k\xF6ra kod som
 lastmod: '2024-03-13T22:44:38.254640-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Swift inneb\xE4r att skapa och k\xF6ra kod som verifierar\
-  \ riktigheten hos andra kodenheter i din applikation. Programmerare g\xF6r detta\
-  \ f\xF6r\u2026"
+  \ riktigheten hos andra kodenheter i din applikation."
 title: Skriva tester
 weight: 36
 ---

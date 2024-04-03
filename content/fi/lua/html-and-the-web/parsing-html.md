@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.695199-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys sis\xE4lt\xE4\xE4 tietojen ja datan poimimisen HTML-dokumenteista,\
   \ mik\xE4 on ratkaisevan t\xE4rke\xE4\xE4 verkkosivujen kaapauksessa, datan analysoinnissa\
-  \ ja\u2026"
+  \ ja automaatioteht\xE4viss\xE4."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

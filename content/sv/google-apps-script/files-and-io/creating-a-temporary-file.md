@@ -7,7 +7,8 @@ description: "Att skapa en tillf\xE4llig fil i Google Apps Script inneb\xE4r att
 lastmod: '2024-03-13T22:44:37.459835-06:00'
 model: gpt-4-0125-preview
 summary: "Att skapa en tillf\xE4llig fil i Google Apps Script inneb\xE4r att generera\
-  \ en fil avsedd f\xF6r kortvarigt bruk, vanligtvis f\xF6r mellanliggande databehandling,\u2026"
+  \ en fil avsedd f\xF6r kortvarigt bruk, vanligtvis f\xF6r mellanliggande databehandling,\
+  \ fels\xF6kning eller caching\xE4ndam\xE5l."
 title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---

@@ -6,8 +6,8 @@ description: "Het lezen van een tekstbestand in Dart omvat het toegang krijgen t
   \ en het ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem.\u2026"
 lastmod: '2024-03-13T22:44:50.523974-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van een tekstbestand in Dart omvat het toegang krijgen tot en\
-  \ het ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem.\u2026"
+summary: Het lezen van een tekstbestand in Dart omvat het toegang krijgen tot en het
+  ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem.
 title: Een tekstbestand lezen
 weight: 22
 ---

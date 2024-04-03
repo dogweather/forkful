@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.125132-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom de maps en Go, vous permettent\
   \ de stocker des paires cl\xE9-valeur o\xF9 chaque cl\xE9 unique est associ\xE9\
-  e \xE0 une\u2026"
+  e \xE0 une valeur."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

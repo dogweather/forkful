@@ -5,9 +5,7 @@ description: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\x
   \ tai\u2026"
 lastmod: '2024-03-13T22:44:56.560398-06:00'
 model: gpt-4-1106-preview
-summary: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4 voimme\
-  \ vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\
-  \ tai\u2026"
+summary: Muutetaan merkkijono pieniksi kirjaimiksi.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

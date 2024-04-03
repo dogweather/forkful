@@ -4,8 +4,9 @@ description: "Printing debug output in Visual Basic for Applications (VBA) invol
   \ strategically placing print statements within your code to display variable values,\u2026"
 lastmod: '2024-03-13T22:44:59.936774-06:00'
 model: gpt-4-0125-preview
-summary: "Printing debug output in Visual Basic for Applications (VBA) involves strategically\
-  \ placing print statements within your code to display variable values,\u2026"
+summary: Printing debug output in Visual Basic for Applications (VBA) involves strategically
+  placing print statements within your code to display variable values, execution
+  flow, or custom debug messages.
 title: Printing debug output
 weight: 33
 ---

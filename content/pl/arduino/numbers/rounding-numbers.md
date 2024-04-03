@@ -6,8 +6,7 @@ description: "Zaokr\u0105glanie liczb to redukcja liczby dziesi\u0119tnej do naj
 lastmod: '2024-03-13T22:44:35.667346-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to redukcja liczby dziesi\u0119tnej do najbli\u017C\
-  szej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po przecinku.\
-  \ Programi\u015Bci zaokr\u0105glaj\u0105\u2026"
+  szej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po przecinku."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

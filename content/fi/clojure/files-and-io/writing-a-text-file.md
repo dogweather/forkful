@@ -7,7 +7,9 @@ description: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedosto
 lastmod: '2024-03-13T22:44:56.202587-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen luomista\
-  \ tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle,\u2026"
+  \ tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle, mahdollistaen\
+  \ tietojen s\xE4ilymisen, konfiguraation, lokituksen tai prosessien v\xE4lisen viestinn\xE4\
+  n."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

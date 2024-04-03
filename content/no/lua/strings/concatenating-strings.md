@@ -6,8 +6,7 @@ description: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE
 lastmod: '2024-03-13T22:44:40.922143-06:00'
 model: gpt-4-1106-preview
 summary: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE5 lime\
-  \ sammen ord eller setninger for \xE5 lage nye. Vi gj\xF8r dette for \xE5 kunne\
-  \ lage dynamiske\u2026"
+  \ sammen ord eller setninger for \xE5 lage nye."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.067919-06:00'
 model: gpt-4-0125-preview
 summary: "Logging no desenvolvimento de software \xE9 o processo de registrar informa\xE7\
   \xF5es sobre a execu\xE7\xE3o de um programa, projetado para rastrear seu comportamento\
-  \ e\u2026"
+  \ e diagnosticar problemas."
 title: Registro de Logs
 weight: 17
 ---

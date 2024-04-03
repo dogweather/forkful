@@ -6,7 +6,7 @@ description: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, au
 lastmod: '2024-03-13T22:44:53.657013-06:00'
 model: gpt-4-1106-preview
 summary: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, aus einem\
-  \ Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese Operation,\u2026"
+  \ Text gezielt bestimmte Elemente zu entfernen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.821226-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les marques\
   \ de citation\u2014simples (' ') ou doubles (\" \")\u2014qui font partie des donn\xE9\
-  es de la\u2026"
+  es de la cha\xEEne."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

@@ -7,7 +7,8 @@ description: "Att starta ett nytt projekt i Google Apps Script (GAS) inneb\xE4r 
 lastmod: '2024-03-13T22:44:37.439396-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Google Apps Script (GAS) inneb\xE4r att man\
-  \ initialiserar en skriptfil inom Googles ekosystem (Google Drive, Dokument,\u2026"
+  \ initialiserar en skriptfil inom Googles ekosystem (Google Drive, Dokument, Kalkylark\
+  \ osv."
 title: Att starta ett nytt projekt
 weight: 1
 ---

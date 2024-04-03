@@ -7,7 +7,8 @@ description: "La recherche et le remplacement de texte dans Visual Basic pour Ap
 lastmod: '2024-03-13T22:44:57.534456-06:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte dans Visual Basic pour Applications\
-  \ (VBA) sont essentiels pour \xE9diter des documents, des feuilles de calcul et\u2026"
+  \ (VBA) sont essentiels pour \xE9diter des documents, des feuilles de calcul et\
+  \ des bases de donn\xE9es de mani\xE8re programmatique."
 title: Recherche et remplacement de texte
 weight: 10
 ---

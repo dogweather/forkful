@@ -8,8 +8,7 @@ description: "La concatenazione in Visual Basic for Applications (VBA) implica l
 lastmod: '2024-03-13T22:44:43.253826-06:00'
 model: gpt-4-0125-preview
 summary: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
-  \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\
-  \ nella\u2026"
+  \ di due o pi\xF9 stringhe in un'unica entit\xE0."
 title: Concatenazione di stringhe
 weight: 3
 ---

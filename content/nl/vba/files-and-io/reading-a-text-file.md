@@ -6,8 +6,9 @@ description: "Een tekstbestand lezen in Visual Basic for Applications (VBA) bete
   \ programmatisch toegang krijgen tot en het extraheren van de inhoud van een\u2026"
 lastmod: '2024-03-13T22:44:50.654883-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent programmatisch\
-  \ toegang krijgen tot en het extraheren van de inhoud van een\u2026"
+summary: Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent programmatisch
+  toegang krijgen tot en het extraheren van de inhoud van een tekstbestand vanuit
+  een Office-applicatie.
 title: Een tekstbestand lezen
 weight: 22
 ---

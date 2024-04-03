@@ -6,8 +6,7 @@ description: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu,
 lastmod: '2024-03-13T22:44:35.540670-06:00'
 model: gpt-4-1106-preview
 summary: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu, od kt\xF3\
-  rego zaczniemy budowa\u0107 nasze aplikacje. Programi\u015Bci robi\u0105 to, aby\
-  \ dopracowa\u0107 pomys\u0142 od\u2026"
+  rego zaczniemy budowa\u0107 nasze aplikacje."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

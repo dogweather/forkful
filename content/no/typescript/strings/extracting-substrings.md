@@ -5,8 +5,7 @@ description: "\xC5 hente ut understrenger betyr \xE5 ta ut en spesifisert del av
   \ simpelthen\u2026"
 lastmod: '2024-03-13T22:44:40.521188-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 hente ut understrenger betyr \xE5 ta ut en spesifisert del av en streng.\
-  \ Programmerere gj\xF8r dette for \xE5 bearbeide data, validere input eller simpelthen\u2026"
+summary: "\xC5 hente ut understrenger betyr \xE5 ta ut en spesifisert del av en streng."
 title: Uthenting av delstrenger
 weight: 6
 ---

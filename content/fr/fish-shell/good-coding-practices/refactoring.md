@@ -5,7 +5,7 @@ description: "La refactorisation est le processus de restructuration du code exi
 lastmod: '2024-03-13T22:44:58.333834-06:00'
 model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code existant\
-  \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"
+  \ sans changer son comportement externe afin d'am\xE9liorer les attributs non fonctionnels."
 title: Refactoring
 weight: 19
 ---

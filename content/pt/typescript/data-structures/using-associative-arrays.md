@@ -8,7 +8,7 @@ description: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xE
 lastmod: '2024-03-13T22:44:46.318868-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xEA utilize\
-  \ strings (ou chaves) para acessar pares de valor. Programadores os usam para\u2026"
+  \ strings (ou chaves) para acessar pares de valor."
 title: Usando arrays associativos
 weight: 15
 ---

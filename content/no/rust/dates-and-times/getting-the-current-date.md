@@ -8,8 +8,7 @@ description: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for op
 lastmod: '2024-03-13T22:44:40.584397-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for oppgaver\
-  \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen.\
-  \ I\u2026"
+  \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

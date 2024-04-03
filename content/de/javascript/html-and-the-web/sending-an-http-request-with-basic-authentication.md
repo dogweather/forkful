@@ -5,7 +5,7 @@ description: "HTTP-Requests mit Basisauthentifizierung schicken Daten sicher \xF
 lastmod: '2024-03-13T22:44:54.266020-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basisauthentifizierung schicken Daten sicher \xFCber das\
-  \ Netz. Entwickler nutzen das, um vertrauliche Daten wie Benutzernamen und\u2026"
+  \ Netz."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

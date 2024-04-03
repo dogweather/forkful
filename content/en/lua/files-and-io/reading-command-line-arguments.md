@@ -5,7 +5,7 @@ description: "Reading command line arguments means grabbing the extra bits you t
 lastmod: '2024-03-13T22:45:00.219406-06:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing the extra bits you type after\
-  \ your script\u2019s name in the console. Programmers do this to tweak a program's\u2026"
+  \ your script\u2019s name in the console."
 title: Reading command line arguments
 weight: 23
 ---

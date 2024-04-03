@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.137908-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es, ce qui le rend parfait pour le stockage de donn\xE9es ou les fichiers\
-  \ de\u2026"
+  \ de configuration dans les projets Arduino."
 title: Travailler avec JSON
 weight: 38
 ---

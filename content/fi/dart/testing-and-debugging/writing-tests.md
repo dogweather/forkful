@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.274580-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Dartissa sis\xE4lt\xE4\xE4 testitapausten luomisen,\
   \ joiden avulla automaattisesti varmistetaan, ett\xE4 ohjelman eri osat toimivat\
-  \ odotetusti.\u2026"
+  \ odotetusti."
 title: Testien kirjoittaminen
 weight: 36
 ---

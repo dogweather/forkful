@@ -6,7 +6,7 @@ description: "\xC5 lese en tekstfil betyr \xE5 hente innhold fra en fil lagret p
 lastmod: '2024-03-13T22:44:41.075563-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente innhold fra en fil lagret p\xE5 lagringsmediet,\
-  \ for eksempel et SD-kort, s\xE5 du kan bruke dataene i programmet ditt.\u2026"
+  \ for eksempel et SD-kort, s\xE5 du kan bruke dataene i programmet ditt."
 title: Lese en tekstfil
 weight: 22
 ---

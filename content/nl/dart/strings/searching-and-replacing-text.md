@@ -6,8 +6,9 @@ description: "Teksten zoeken en vervangen in Dart omvat het onderzoeken van stri
   \ om bepaalde patronen of opeenvolgingen van karakters te vinden en deze te vervangen\u2026"
 lastmod: '2024-03-13T22:44:50.489101-06:00'
 model: gpt-4-0125-preview
-summary: "Teksten zoeken en vervangen in Dart omvat het onderzoeken van strings om\
-  \ bepaalde patronen of opeenvolgingen van karakters te vinden en deze te vervangen\u2026"
+summary: Teksten zoeken en vervangen in Dart omvat het onderzoeken van strings om
+  bepaalde patronen of opeenvolgingen van karakters te vinden en deze te vervangen
+  door nieuwe inhoud.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

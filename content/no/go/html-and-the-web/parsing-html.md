@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.264298-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i Go inneb\xE6rer \xE5 analysere innholdet i HTML-filer\
   \ for \xE5 ekstrahere data, manipulere strukturen, eller for \xE5 konvertere HTML\
-  \ til andre\u2026"
+  \ til andre formater."
 title: Analysering av HTML
 weight: 43
 ---

@@ -9,7 +9,7 @@ description: "Analisar uma data de uma string trata-se de pegar um texto, como \
 lastmod: '2024-03-13T22:44:46.247419-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string trata-se de pegar um texto, como \"2023-04-05\"\
-  , e convert\xEA-lo em um formato de data que seu programa possa entender e\u2026"
+  , e convert\xEA-lo em um formato de data que seu programa possa entender e trabalhar."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

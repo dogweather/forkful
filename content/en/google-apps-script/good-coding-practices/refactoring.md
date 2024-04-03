@@ -5,7 +5,8 @@ description: "Refactoring in the programming lexicon refers to the process of re
 lastmod: '2024-03-13T22:44:59.677436-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in the programming lexicon refers to the process of restructuring\
-  \ existing computer code\u2014changing the factoring without changing its external\u2026"
+  \ existing computer code\u2014changing the factoring without changing its external\
+  \ behavior\u2014to improve non-functional attributes."
 title: Refactoring
 weight: 19
 ---

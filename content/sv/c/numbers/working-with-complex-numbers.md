@@ -8,8 +8,7 @@ description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, rep
 lastmod: '2024-03-13T22:44:38.375659-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
-  \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
-  \ komplexa\u2026"
+  \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

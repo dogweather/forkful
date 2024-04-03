@@ -5,8 +5,9 @@ description: "Checking if a directory exists is about determining the presence o
   \ or\u2026"
 lastmod: '2024-03-13T22:45:00.370486-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists is about determining the presence of a directory\
-  \ at a specified path before performing operations like reading from or\u2026"
+summary: Checking if a directory exists is about determining the presence of a directory
+  at a specified path before performing operations like reading from or writing to
+  files within it.
 title: Checking if a directory exists
 weight: 20
 ---

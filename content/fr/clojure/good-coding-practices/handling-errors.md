@@ -6,8 +6,7 @@ description: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les
 lastmod: '2024-03-13T22:44:57.289940-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les programmes\u2014\
-  comme un videur faisant face \xE0 des perturbateurs. Les programmeurs pr\xE9f\xE8\
-  rent que\u2026"
+  comme un videur faisant face \xE0 des perturbateurs."
 title: Gestion des erreurs
 weight: 16
 ---

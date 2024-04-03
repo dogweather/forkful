@@ -5,7 +5,7 @@ description: "Ler argumentos de linha de comando \xE9 pegar entrada diretamente 
 lastmod: '2024-03-13T22:44:46.211908-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando \xE9 pegar entrada diretamente de quem\
-  \ executou o programa. Fazemos isso para personalizar a execu\xE7\xE3o ou passar\u2026"
+  \ executou o programa."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

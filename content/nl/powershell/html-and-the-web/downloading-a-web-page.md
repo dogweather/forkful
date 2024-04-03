@@ -6,8 +6,8 @@ description: "Een webpagina downloaden betekent het bemachtigen van de inhoud er
   \ via het web. Programmeurs doen dit voor web scraping, offline bekijken, of het\u2026"
 lastmod: '2024-03-13T22:44:51.027837-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden betekent het bemachtigen van de inhoud ervan via\
-  \ het web. Programmeurs doen dit voor web scraping, offline bekijken, of het\u2026"
+summary: Een webpagina downloaden betekent het bemachtigen van de inhoud ervan via
+  het web.
 title: Een webpagina downloaden
 weight: 42
 ---

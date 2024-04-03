@@ -8,7 +8,8 @@ description: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamen
 lastmod: '2024-03-13T22:44:58.534008-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamente declaraciones\
-  \ de registro en su c\xF3digo para mostrar los valores de las variables, el flujo\u2026"
+  \ de registro en su c\xF3digo para mostrar los valores de las variables, el flujo\
+  \ de ejecuci\xF3n o mensajes de error durante el tiempo de ejecuci\xF3n."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

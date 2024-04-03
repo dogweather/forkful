@@ -6,7 +6,8 @@ description: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on 
 lastmod: '2024-03-13T22:44:57.081454-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse yleisten\
-  \ tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4en Ruby-\u2026"
+  \ tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4en Ruby-skriptej\xE4\
+  ."
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---

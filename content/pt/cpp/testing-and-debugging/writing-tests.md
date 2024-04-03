@@ -8,8 +8,7 @@ description: "Escrever testes em C++ envolve criar pequenos programas autossufic
 lastmod: '2024-03-13T22:44:46.883077-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em C++ envolve criar pequenos programas autossuficientes\
-  \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo.\
-  \ Os\u2026"
+  \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo."
 title: Escrevendo testes
 weight: 36
 ---

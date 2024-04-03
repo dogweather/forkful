@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.982162-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Fish Shelliss\xE4 mahdollistavat\
   \ merkkijonojen etsimisen, vastaavuuksien l\xF6yt\xE4misen ja manipuloinnin tiettyjen\
-  \ mallien\u2026"
+  \ mallien perusteella."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

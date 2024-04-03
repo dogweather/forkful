@@ -8,8 +8,7 @@ description: "Converter uma string para min\xFAsculas envolve transformar todos 
 lastmod: '2024-03-13T22:44:46.397463-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para min\xFAsculas envolve transformar todos os caracteres\
-  \ mai\xFAsculos de uma string em seus equivalentes min\xFAsculos. Esse processo\
-  \ \xE9\u2026"
+  \ mai\xFAsculos de uma string em seus equivalentes min\xFAsculos."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

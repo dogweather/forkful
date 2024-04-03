@@ -6,8 +6,7 @@ description: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent
 lastmod: '2024-03-13T22:44:56.251126-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4\
-  , luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4, koska\
-  \ se on laajalti k\xE4yt\xF6ss\xE4\u2026"
+  , luomista ja manipulointia."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

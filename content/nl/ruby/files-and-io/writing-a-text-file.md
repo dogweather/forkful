@@ -6,8 +6,8 @@ description: "Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan 
   \ een bestand op je systeem. Programmeurs doen dit voor gegevenspersistentie, loggen,\u2026"
 lastmod: '2024-03-13T22:44:51.373153-06:00'
 model: gpt-4-0125-preview
-summary: "Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in een\
-  \ bestand op je systeem. Programmeurs doen dit voor gegevenspersistentie, loggen,\u2026"
+summary: Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in een
+  bestand op je systeem.
 title: Een tekstbestand schrijven
 weight: 24
 ---

@@ -8,8 +8,7 @@ description: "\xC5 utvinne substringer inneb\xE6rer \xE5 ta en del av en streng 
 lastmod: '2024-03-13T22:44:40.302122-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 utvinne substringer inneb\xE6rer \xE5 ta en del av en streng - i hovedsak\
-  \ \xE5 skape en ny streng fra en del av en eksisterende streng. Programmerere gj\xF8\
-  r dette\u2026"
+  \ \xE5 skape en ny streng fra en del av en eksisterende streng."
 title: Uttrekking av delstrenger
 weight: 6
 ---

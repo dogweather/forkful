@@ -6,8 +6,7 @@ description: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re ak
 lastmod: '2024-03-13T22:44:40.719933-06:00'
 model: unknown
 summary: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
-  \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
-  \ nyttig for alt\u2026"
+  \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt."
 title: "Slik f\xE5r du tak i dagens dato"
 weight: 29
 ---

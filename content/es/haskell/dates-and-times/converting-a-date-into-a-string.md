@@ -5,8 +5,8 @@ description: "Convertir una fecha en un string permite representar fechas de man
   \ en\u2026"
 lastmod: '2024-03-13T22:44:59.129904-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha en un string permite representar fechas de manera legible\
-  \ para humanos. Programadores realizan esta conversi\xF3n para mostrar fechas en\u2026"
+summary: Convertir una fecha en un string permite representar fechas de manera legible
+  para humanos.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

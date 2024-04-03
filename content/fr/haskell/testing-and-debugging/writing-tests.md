@@ -8,8 +8,7 @@ description: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions 
 lastmod: '2024-03-13T22:44:57.837654-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions fonctionnent\
-  \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es. Les programmeurs\
-  \ le font\u2026"
+  \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es."
 title: "R\xE9daction de tests"
 weight: 36
 ---

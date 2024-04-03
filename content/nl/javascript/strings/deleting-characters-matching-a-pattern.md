@@ -6,8 +6,8 @@ description: "Het verwijderen van tekens op basis van een patroon maakt strings 
   \ en uniform. Programmeurs doen dit voor formattering, het verwijderen van\u2026"
 lastmod: '2024-03-13T22:44:51.184155-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van tekens op basis van een patroon maakt strings schoon\
-  \ en uniform. Programmeurs doen dit voor formattering, het verwijderen van\u2026"
+summary: Het verwijderen van tekens op basis van een patroon maakt strings schoon
+  en uniform.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

@@ -8,8 +8,7 @@ description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na
 lastmod: '2024-03-13T22:44:34.839194-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na okre\u015B\
-  leniu liczby znak\xF3w, kt\xF3re zawiera. Programi\u015Bci regularnie wykonuj\u0105\
-  \ t\u0119 operacj\u0119, aby efektywnie\u2026"
+  leniu liczby znak\xF3w, kt\xF3re zawiera."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 weight: 7
 ---

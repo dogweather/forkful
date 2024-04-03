@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.506813-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
   \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\
-  \ daty/czasu.\u2026"
+  \ daty/czasu."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

@@ -6,8 +6,7 @@ description: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanot
 lastmod: '2024-03-13T22:44:56.199640-06:00'
 model: gpt-4-1106-preview
 summary: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista\
-  \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista. Ohjelmoijat tekev\xE4\
-  t sen,\u2026"
+  \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

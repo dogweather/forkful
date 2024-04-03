@@ -6,8 +6,7 @@ description: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de ca
 lastmod: '2024-03-13T22:44:46.575309-06:00'
 model: gpt-4-1106-preview
 summary: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
-  \ que ela cont\xE9m. Programadores fazem isso para validar entradas, limitar conte\xFA\
-  do, ou\u2026"
+  \ que ela cont\xE9m."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

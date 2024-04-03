@@ -7,7 +7,7 @@ description: "Het samenvoegen van strings gaat over het aan elkaar koppelen van 
 lastmod: '2024-03-13T22:44:50.453876-06:00'
 model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings gaat over het aan elkaar koppelen van twee of\
-  \ meer strings om \xE9\xE9n enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen\u2026"
+  \ meer strings om \xE9\xE9n enkel stuk tekst te vormen."
 title: Samenvoegen van strings
 weight: 3
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.150928-06:00'
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
   ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\
-  \ kun asiat\u2026"
+  \ kun asiat menev\xE4t pieleen koodissasi."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

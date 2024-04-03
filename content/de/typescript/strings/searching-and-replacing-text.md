@@ -5,7 +5,7 @@ description: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Z
 lastmod: '2024-03-13T22:44:53.617127-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
-  \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"
+  \ in einem Text zu finden und durch andere zu ersetzen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

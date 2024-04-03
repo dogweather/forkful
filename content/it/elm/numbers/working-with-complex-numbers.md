@@ -6,7 +6,7 @@ description: "I numeri complessi sono una combinazione di numeri reali e immagin
 lastmod: '2024-03-13T22:44:43.344187-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono una combinazione di numeri reali e immaginari, come\
-  \ `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi come\u2026"
+  \ `a + bi` dove `i` \xE8 la radice quadrata di -1."
 title: Lavorare con i numeri complessi
 weight: 14
 ---

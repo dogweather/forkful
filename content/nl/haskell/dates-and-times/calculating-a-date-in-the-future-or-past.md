@@ -8,7 +8,8 @@ description: "Een toekomstige of verleden datum berekenen betekent het vinden va
 lastmod: '2024-03-13T22:44:50.865926-06:00'
 model: gpt-4-0125-preview
 summary: "Een toekomstige of verleden datum berekenen betekent het vinden van een\
-  \ datum v\xF3\xF3r of na een gegeven aantal dagen, maanden of jaren vanaf een specifiek\u2026"
+  \ datum v\xF3\xF3r of na een gegeven aantal dagen, maanden of jaren vanaf een specifiek\
+  \ startpunt."
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

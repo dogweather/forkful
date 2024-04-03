@@ -7,8 +7,9 @@ description: "Schrijven naar standaardfout in Visual Basic for Applications (VBA
   \ de\u2026"
 lastmod: '2024-03-13T22:44:50.653771-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaardfout in Visual Basic for Applications (VBA) houdt\
-  \ in dat foutmeldingen of diagnostische berichten worden omgeleid, apart van de\u2026"
+summary: Schrijven naar standaardfout in Visual Basic for Applications (VBA) houdt
+  in dat foutmeldingen of diagnostische berichten worden omgeleid, apart van de standaarduitvoer,
+  gewoonlijk naar de console of een logbestand.
 title: Schrijven naar standaardfout
 weight: 25
 ---

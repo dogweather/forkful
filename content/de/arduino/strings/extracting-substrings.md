@@ -5,8 +5,8 @@ description: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozes
   \ um\u2026"
 lastmod: '2024-03-13T22:44:54.134176-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des\
-  \ Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um\u2026"
+summary: Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des Isolierens
+  eines bestimmten Teils eines Strings.
 title: Teilstrings extrahieren
 weight: 6
 ---

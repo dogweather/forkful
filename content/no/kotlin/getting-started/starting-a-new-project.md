@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnle
 lastmod: '2024-03-13T22:44:40.750940-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnleggende\
-  \ ramme for kode du skal skrive. Programmerere gj\xF8r dette for \xE5 organisere\
-  \ og strukturere\u2026"
+  \ ramme for kode du skal skrive."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

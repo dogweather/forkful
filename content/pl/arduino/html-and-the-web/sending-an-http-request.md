@@ -5,9 +5,7 @@ description: "HTTP request, czyli \u017C\u0105danie HTTP, to pro\u015Bba o dane 
   \ lub serwer\xF3w, co jest\u2026"
 lastmod: '2024-03-13T22:44:35.669241-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP request, czyli \u017C\u0105danie HTTP, to pro\u015Bba o dane z sieci.\
-  \ Programi\u015Bci wykorzystuj\u0105 je do zdobycia danych ze stron internetowych\
-  \ lub serwer\xF3w, co jest\u2026"
+summary: "HTTP request, czyli \u017C\u0105danie HTTP, to pro\u015Bba o dane z sieci."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

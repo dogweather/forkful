@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.641426-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
   \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
-  \ oppgave\u2026"
+  \ oppgave for lagring av utdata, logging eller interaksjon med andre applikasjoner."
 title: Skrive en tekstfil
 weight: 24
 ---

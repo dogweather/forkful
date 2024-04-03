@@ -7,8 +7,8 @@ description: "REPL, oftewel Read-Eval-Print Loop, is een programmeeromgeving voo
   \ voor\u2026"
 lastmod: '2024-03-13T22:44:50.421259-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, oftewel Read-Eval-Print Loop, is een programmeeromgeving voor het\
-  \ dynamisch testen van Clojure-code stuk voor stuk. Programmeurs gebruiken het voor\u2026"
+summary: REPL, oftewel Read-Eval-Print Loop, is een programmeeromgeving voor het dynamisch
+  testen van Clojure-code stuk voor stuk.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

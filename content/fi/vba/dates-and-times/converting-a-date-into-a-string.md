@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.413165-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for Applications\
   \ (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\xE4r\xE4n datatyyppi\
-  \ muutetaan\u2026"
+  \ muutetaan merkkijonomuotoon."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

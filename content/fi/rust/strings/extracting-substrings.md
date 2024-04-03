@@ -5,9 +5,7 @@ description: "Mik\xE4 ja miksi? Substringien eli alimerkkijonojen poimiminen on 
   t\xE4 tietojen\u2026"
 lastmod: '2024-03-13T22:44:56.345736-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 ja miksi? Substringien eli alimerkkijonojen poimiminen on prosessi,\
-  \ jossa otetaan osia kiinteist\xE4 merkkijonoista. Ohjelmoijat tekev\xE4t t\xE4\
-  t\xE4 tietojen\u2026"
+summary: "Mik\xE4 ja miksi."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -8,8 +8,7 @@ description: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt
 lastmod: '2024-03-13T22:44:35.507885-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3re\
-  \ umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\
-  \ to kluczowe dla funkcji\u2026"
+  \ umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

@@ -8,8 +8,7 @@ description: "Arrays associativos, mais conhecidos como hashes no Ruby, permitem
 lastmod: '2024-03-13T22:44:47.086648-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, mais conhecidos como hashes no Ruby, permitem associar\
-  \ chaves \xFAnicas a valores. Eles s\xE3o indispens\xE1veis quando voc\xEA precisa\
-  \ rastrear\u2026"
+  \ chaves \xFAnicas a valores."
 title: Usando arrays associativos
 weight: 15
 ---

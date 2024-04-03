@@ -8,8 +8,7 @@ description: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatiz
 lastmod: '2024-03-13T22:44:46.371177-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatizadas para\
-  \ assegurar que seu c\xF3digo executa conforme o esperado. Programadores fazem isso\
-  \ para\u2026"
+  \ assegurar que seu c\xF3digo executa conforme o esperado."
 title: Escrevendo testes
 weight: 36
 ---

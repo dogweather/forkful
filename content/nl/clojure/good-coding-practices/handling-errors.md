@@ -7,9 +7,8 @@ description: "Foutafhandeling gaat over het beheren van het onverwachte in progr
   \ van\u2026"
 lastmod: '2024-03-13T22:44:50.427665-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling gaat over het beheren van het onverwachte in programma's\
-  \ - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden\
-  \ van\u2026"
+summary: Foutafhandeling gaat over het beheren van het onverwachte in programma's
+  - zoals een uitsmijter die te maken heeft met lastpakken.
 title: Fouten afhandelen
 weight: 16
 ---

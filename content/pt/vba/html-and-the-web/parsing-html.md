@@ -8,7 +8,7 @@ description: "Analisar HTML no Visual Basic for Applications (VBA) envolve extra
 lastmod: '2024-03-13T22:44:46.409505-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML no Visual Basic for Applications (VBA) envolve extrair informa\xE7\
-  \xF5es espec\xEDficas de um documento HTML. Programadores fazem isso para\u2026"
+  \xF5es espec\xEDficas de um documento HTML."
 title: Analisando HTML
 weight: 43
 ---

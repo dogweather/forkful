@@ -5,7 +5,7 @@ description: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4y
 lastmod: '2024-03-13T22:44:56.474085-06:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t sit\xE4? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden\u2026"
+  v\xE4t sit\xE4."
 title: Merkkijonon interpolointi
 weight: 8
 ---

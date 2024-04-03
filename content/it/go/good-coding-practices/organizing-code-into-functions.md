@@ -6,8 +6,8 @@ description: "Organizzare il codice in funzioni in Go implica la suddivisione de
   \ codice in blocchi riutilizzabili e modulari che eseguono compiti specifici. Questo\u2026"
 lastmod: '2024-03-13T22:44:42.914290-06:00'
 model: gpt-4-0125-preview
-summary: "Organizzare il codice in funzioni in Go implica la suddivisione del codice\
-  \ in blocchi riutilizzabili e modulari che eseguono compiti specifici. Questo\u2026"
+summary: Organizzare il codice in funzioni in Go implica la suddivisione del codice
+  in blocchi riutilizzabili e modulari che eseguono compiti specifici.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

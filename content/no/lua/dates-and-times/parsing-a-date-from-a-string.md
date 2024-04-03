@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.939435-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av en dato fra en streng inneb\xE6rer \xE5 konvertere tekstuelle\
   \ representasjoner av datoer og tider til et format som kan enkelt manipuleres,\
-  \ lagres\u2026"
+  \ lagres eller sammenlignes innenfor et Lua-program."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

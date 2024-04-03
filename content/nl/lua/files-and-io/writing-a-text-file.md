@@ -7,9 +7,8 @@ description: "Het schrijven van een tekstbestand houdt in dat er data wordt opge
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.955531-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van een tekstbestand houdt in dat er data wordt opgeslagen\
-  \ in een bestand in een leesbare vorm. Programmeurs doen dit om configuraties op\
-  \ te\u2026"
+summary: Het schrijven van een tekstbestand houdt in dat er data wordt opgeslagen
+  in een bestand in een leesbare vorm.
 title: Een tekstbestand schrijven
 weight: 24
 ---

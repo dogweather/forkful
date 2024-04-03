@@ -5,7 +5,7 @@ description: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interact
 lastmod: '2024-03-13T22:44:59.203434-06:00'
 model: gpt-4-0125-preview
 summary: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interactivo donde\
-  \ puedes probar r\xE1pidamente c\xF3digo. Los programadores lo utilizan para\u2026"
+  \ puedes probar r\xE1pidamente c\xF3digo."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

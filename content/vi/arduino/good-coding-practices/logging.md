@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.997358-06:00'
 model: gpt-4-0125-preview
 summary: "\"Ghi ch\xE9p\" l\xE0 vi\u1EC7c l\u01B0u l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7\
   n, giao d\u1ECBch, ho\u1EB7c ho\u1EA1t \u0111\u1ED9ng x\u1EA3y ra theo th\u1EDD\
-  i gian trong m\u1ED9t h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 \u0111\u1EC3 g\u1EE1 l\u1ED7i, gi\xE1m s\xE1t\u2026"
+  i gian trong m\u1ED9t h\u1EC7 th\u1ED1ng."
 title: Ghi log
 weight: 17
 ---

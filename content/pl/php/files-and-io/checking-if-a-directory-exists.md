@@ -7,7 +7,8 @@ description: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w pro
 lastmod: '2024-03-13T22:44:35.511869-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
-  \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\u2026"
+  \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\
+  \ operacji takich jak odczyt z plik\xF3w w nim zawartych lub zapis do nich."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

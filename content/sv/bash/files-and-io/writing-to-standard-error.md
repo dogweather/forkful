@@ -7,7 +7,7 @@ description: "Att skriva till standardfel (stderr) i Bash handlar om att diriger
 lastmod: '2024-03-13T22:44:38.098467-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Bash handlar om att dirigera felmeddelanden\
-  \ eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata\u2026"
+  \ eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata (stdout)."
 title: Skriva till standardfel
 weight: 25
 ---

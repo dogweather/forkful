@@ -6,8 +6,7 @@ description: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente 
 lastmod: '2024-03-13T22:44:46.823451-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente filtrar\
-  \ a nossa string, tirando tudo que n\xE3o queremos. Programadores fazem isso pra\
-  \ limpar\u2026"
+  \ a nossa string, tirando tudo que n\xE3o queremos."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

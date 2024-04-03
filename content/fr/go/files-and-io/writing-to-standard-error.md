@@ -7,7 +7,7 @@ description: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger
 lastmod: '2024-03-13T22:44:57.152687-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les messages\
-  \ d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"
+  \ d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie principal."
 title: "\xC9criture sur l'erreur standard"
 weight: 25
 ---

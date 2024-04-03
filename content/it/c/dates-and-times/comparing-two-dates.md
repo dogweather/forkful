@@ -7,9 +7,8 @@ description: "Comparare due date in C comporta la determinazione della relazione
   \u2026"
 lastmod: '2024-03-13T22:44:44.013704-06:00'
 model: gpt-4-0125-preview
-summary: "Comparare due date in C comporta la determinazione della relazione cronologica\
-  \ tra di loro - se una data precede l'altra o se sono uguali. Questa capacit\xE0\
-  \u2026"
+summary: Comparare due date in C comporta la determinazione della relazione cronologica
+  tra di loro - se una data precede l'altra o se sono uguali.
 title: Confrontare due date
 weight: 27
 ---

@@ -7,8 +7,8 @@ description: "In PowerShell betekent het vinden van de lengte van een tekenreeks
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.017431-06:00'
 model: gpt-4-0125-preview
-summary: "In PowerShell betekent het vinden van de lengte van een tekenreeks het tellen\
-  \ van het aantal karakters dat het bevat. Programmeurs doen dit om invoer te\u2026"
+summary: In PowerShell betekent het vinden van de lengte van een tekenreeks het tellen
+  van het aantal karakters dat het bevat.
 title: De lengte van een string vinden
 weight: 7
 ---

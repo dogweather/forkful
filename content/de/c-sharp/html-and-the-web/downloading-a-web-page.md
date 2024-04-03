@@ -5,7 +5,7 @@ description: "Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts 
 lastmod: '2024-03-13T22:44:53.887169-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts \xFCber\
-  \ das Internet auf deinen Computer. Programmierer tun dies, um Daten zu sammeln,\u2026"
+  \ das Internet auf deinen Computer."
 title: Webseite herunterladen
 weight: 42
 ---

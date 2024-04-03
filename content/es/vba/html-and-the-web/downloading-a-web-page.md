@@ -8,8 +8,7 @@ description: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA)
 lastmod: '2024-03-13T22:44:58.891714-06:00'
 model: gpt-4-0125-preview
 summary: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA) implica\
-  \ obtener el contenido HTML de una p\xE1gina web desde Internet. Los programadores\
-  \ a\u2026"
+  \ obtener el contenido HTML de una p\xE1gina web desde Internet."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

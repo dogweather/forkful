@@ -4,8 +4,7 @@ description: "Rounding is chopping off the noise after a certain point in a numb
   \ Programmers round to control precision, manage memory, or make output user-\u2026"
 lastmod: '2024-03-13T22:45:00.428910-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding is chopping off the noise after a certain point in a number. Programmers\
-  \ round to control precision, manage memory, or make output user-\u2026"
+summary: Rounding is chopping off the noise after a certain point in a number.
 title: Rounding numbers
 weight: 13
 ---

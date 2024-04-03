@@ -6,8 +6,7 @@ description: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind
 lastmod: '2024-03-13T22:44:53.900749-06:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind, oder\
-  \ ermittelt, welches fr\xFCher oder sp\xE4ter liegt. Entwickler ben\xF6tigen dies\
-  \ f\xFCr\u2026"
+  \ ermittelt, welches fr\xFCher oder sp\xE4ter liegt."
 title: Vergleich von zwei Daten
 weight: 27
 ---

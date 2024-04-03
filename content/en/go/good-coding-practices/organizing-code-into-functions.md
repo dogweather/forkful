@@ -4,8 +4,8 @@ description: "Organizing code into functions in Go involves breaking down code i
   \ reusable, modular blocks that perform specific tasks. This approach enhances code\u2026"
 lastmod: '2024-03-13T22:44:59.636021-06:00'
 model: gpt-4-0125-preview
-summary: "Organizing code into functions in Go involves breaking down code into reusable,\
-  \ modular blocks that perform specific tasks. This approach enhances code\u2026"
+summary: Organizing code into functions in Go involves breaking down code into reusable,
+  modular blocks that perform specific tasks.
 title: Organizing code into functions
 weight: 18
 ---

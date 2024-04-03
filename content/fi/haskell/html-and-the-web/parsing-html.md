@@ -7,7 +7,7 @@ description: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan
 lastmod: '2024-03-13T22:44:56.613479-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan, HTML-sis\xE4\
-  ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"
+  ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

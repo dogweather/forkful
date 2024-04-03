@@ -8,7 +8,9 @@ description: "YAML, ein rekursives Akronym f\xFCr \"YAML Ain't Markup Language\"
 lastmod: '2024-03-13T22:44:53.440540-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ein rekursives Akronym f\xFCr \"YAML Ain't Markup Language\", ist\
-  \ ein f\xFCr Menschen lesbares Serialisierungsformat f\xFCr Daten, das f\xFCr\u2026"
+  \ ein f\xFCr Menschen lesbares Serialisierungsformat f\xFCr Daten, das f\xFCr Konfigurationsdateien\
+  \ und den Datenaustausch zwischen Sprachen mit unterschiedlichen Datenstrukturen\
+  \ verwendet wird."
 title: Arbeiten mit YAML
 weight: 41
 ---

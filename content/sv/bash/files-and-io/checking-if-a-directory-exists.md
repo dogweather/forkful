@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.096547-06:00'
 model: gpt-4-0125-preview
 summary: "I Bash-programmering \xE4r det att kontrollera om en katalog finns en v\xE4\
   sentlig kontrollmekanism som anv\xE4nds f\xF6r att verifiera n\xE4rvaron av en katalog\
-  \ innan\u2026"
+  \ innan filoperationer utf\xF6rs."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

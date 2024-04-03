@@ -8,7 +8,8 @@ description: "Die Arbeit mit JSON (JavaScript Object Notation) in Rust dreht sic
 lastmod: '2024-03-13T22:44:53.694273-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) in Rust dreht sich um das\
-  \ Parsen von JSON-Daten in Rust-Datenstrukturen und das Serialisieren von Rust-\u2026"
+  \ Parsen von JSON-Daten in Rust-Datenstrukturen und das Serialisieren von Rust-Datenstrukturen\
+  \ zur\xFCck in JSON."
 title: Arbeiten mit JSON
 weight: 38
 ---

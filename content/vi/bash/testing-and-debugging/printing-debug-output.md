@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i ch\u1EE7 y\u1EBFu li\xEA\
   n quan \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u l\xEAn console\
   \ \u0111\u1EC3 ki\u1EC3m tra xem \u0111i\u1EC1u g\xEC \u0111ang di\u1EC5n ra trong\
-  \ script c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+  \ script c\u1EE7a b\u1EA1n."
 title: "In \u1EA5n th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

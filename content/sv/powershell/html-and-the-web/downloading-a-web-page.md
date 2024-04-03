@@ -6,7 +6,7 @@ description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll
 lastmod: '2024-03-13T22:44:38.124829-06:00'
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll, som\
-  \ HTML, CSS och bilder, till din dator. Programmerare g\xF6r det f\xF6r att automatisera\u2026"
+  \ HTML, CSS och bilder, till din dator."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

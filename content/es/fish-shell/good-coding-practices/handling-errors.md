@@ -4,8 +4,8 @@ description: "El manejo de errores permite que tu script trate lo inesperado de 
   \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"
 lastmod: '2024-03-13T22:44:59.509128-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores permite que tu script trate lo inesperado de manera\
-  \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"
+summary: El manejo de errores permite que tu script trate lo inesperado de manera
+  elegante.
 title: Manejo de errores
 weight: 16
 ---

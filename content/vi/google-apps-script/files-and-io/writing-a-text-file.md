@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Google Apps\
   \ Script gi\xFAp c\xE1c nh\xE0 ph\xE1t tri\u1EC3n c\xF3 th\u1EC3 l\u01B0u tr\u1EEF\
   \ d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch b\u1EC1n v\u1EEFng, khi\u1EBFn n\xF3 c\xF3\
-  \ th\u1EC3 truy c\u1EADp \u0111\u1EC3 s\u1EED d\u1EE5ng\u2026"
+  \ th\u1EC3 truy c\u1EADp \u0111\u1EC3 s\u1EED d\u1EE5ng ho\u1EB7c ph\xE2n t\xED\
+  ch trong t\u01B0\u01A1ng lai."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

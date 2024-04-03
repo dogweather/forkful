@@ -6,8 +6,7 @@ description: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och h
 lastmod: '2024-03-13T22:44:37.836958-06:00'
 model: gpt-4-1106-preview
 summary: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och hantera\
-  \ n\xE4r saker g\xE5r fel. Programmerare g\xF6r det f\xF6r att f\xF6rhindra krascher,\
-  \ skydda\u2026"
+  \ n\xE4r saker g\xE5r fel."
 title: Hantering av fel
 weight: 16
 ---

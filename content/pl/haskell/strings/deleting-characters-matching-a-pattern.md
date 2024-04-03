@@ -6,8 +6,7 @@ description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania
 lastmod: '2024-03-13T22:44:35.435595-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania ci\u0105\
-  gu, by pozby\u0107 si\u0119 niechcianych znak\xF3w. Programi\u015Bci robi\u0105\
-  \ to dla czysto\u015Bci danych,\u2026"
+  gu, by pozby\u0107 si\u0119 niechcianych znak\xF3w."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

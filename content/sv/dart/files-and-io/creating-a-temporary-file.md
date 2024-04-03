@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:37.633288-06:00'
 model: gpt-4-0125-preview
 summary: "Att skapa en tempor\xE4r fil i Dart inneb\xE4r att man genererar en fil\
   \ som \xE4r avsedd f\xF6r kortsiktig anv\xE4ndning, fr\xE4mst f\xF6r scenarier som\
-  \ cachning av data,\u2026"
+  \ cachning av data, tillf\xE4llig lagring f\xF6r filbearbetning eller f\xF6rvaring\
+  \ av information som \xE4r f\xF6r k\xE4nslig f\xF6r att beh\xE5lla l\xE4nge."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

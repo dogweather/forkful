@@ -7,9 +7,8 @@ description: "Estrarre sottosequenze di stringhe implica prendere una porzione d
   \ I\u2026"
 lastmod: '2024-03-13T22:44:42.942729-06:00'
 model: gpt-4-0125-preview
-summary: "Estrarre sottosequenze di stringhe implica prendere una porzione di una\
-  \ stringa - creando essenzialmente una nuova stringa a partire da una esistente.\
-  \ I\u2026"
+summary: Estrarre sottosequenze di stringhe implica prendere una porzione di una stringa
+  - creando essenzialmente una nuova stringa a partire da una esistente.
 title: Estrazione di sottostringhe
 weight: 6
 ---

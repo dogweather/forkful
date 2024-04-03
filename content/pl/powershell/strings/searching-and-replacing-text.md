@@ -6,8 +6,7 @@ description: "Szukanie i zamiana tekstu to podstawy edycji - znajdujesz ci\u0105
 lastmod: '2024-03-13T22:44:35.612758-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to podstawy edycji - znajdujesz ci\u0105gi znak\xF3\
-  w i zamieniasz je na co\u015B innego. Programi\u015Bci robi\u0105 to, aby szybko\
-  \ aktualizowa\u0107 kod,\u2026"
+  w i zamieniasz je na co\u015B innego."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

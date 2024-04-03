@@ -6,8 +6,7 @@ description: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cach
 lastmod: '2024-03-13T22:44:57.862631-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
-  \ puis redessiner ce qui \xE9tait cach\xE9. Les programmeurs le font pour mettre\
-  \ \xE0 jour des\u2026"
+  \ puis redessiner ce qui \xE9tait cach\xE9."
 title: Recherche et remplacement de texte
 weight: 10
 ---

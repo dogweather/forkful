@@ -4,8 +4,8 @@ description: "Creating a temporary file means making a short-lived file for inte
   \ processing. Programmers do it to stash data without cluttering the user's file\u2026"
 lastmod: '2024-03-13T22:44:59.913705-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file means making a short-lived file for intermediate\
-  \ processing. Programmers do it to stash data without cluttering the user's file\u2026"
+summary: Creating a temporary file means making a short-lived file for intermediate
+  processing.
 title: Creating a temporary file
 weight: 21
 ---

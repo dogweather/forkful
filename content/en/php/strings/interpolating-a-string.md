@@ -5,8 +5,7 @@ description: "String interpolation lets you inject variable values directly into
   \ and\u2026"
 lastmod: '2024-03-13T22:45:00.154024-06:00'
 model: gpt-4-1106-preview
-summary: "String interpolation lets you inject variable values directly into a string.\
-  \ Programmers use it to weave variables into text, making the code cleaner and\u2026"
+summary: String interpolation lets you inject variable values directly into a string.
 title: Interpolating a string
 weight: 8
 ---

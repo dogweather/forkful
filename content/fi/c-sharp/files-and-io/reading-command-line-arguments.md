@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.589362-06:00'
 model: gpt-4-1106-preview
 summary: "Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa sy\xF6\
   tteen\xE4 argumentteja, jotka on annettu ohjelman k\xE4ynnistyksen yhteydess\xE4\
-  . Syy miksi\u2026"
+  ."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

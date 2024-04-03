@@ -6,8 +6,8 @@ description: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettav
   \ tietojen serialisointiformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 asetustiedostoihin,\u2026"
 lastmod: '2024-03-13T22:44:56.293580-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava tietojen\
-  \ serialisointiformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 asetustiedostoihin,\u2026"
+summary: YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava tietojen
+  serialisointiformaatti.
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

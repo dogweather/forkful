@@ -6,8 +6,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w pozwala skryptowi radzi\u0107 sob
 lastmod: '2024-03-13T22:44:35.849064-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w pozwala skryptowi radzi\u0107 sobie z niespodziewanymi\
-  \ sytuacjami w elegancki spos\xF3b. Robimy to, aby zarz\u0105dza\u0107 b\u0142\u0119\
-  dami bez siwienia w\u0142os\xF3w\u2026"
+  \ sytuacjami w elegancki spos\xF3b."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

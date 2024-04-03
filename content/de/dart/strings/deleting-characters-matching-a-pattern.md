@@ -7,7 +7,8 @@ description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Strings
 lastmod: '2024-03-13T22:44:53.562644-06:00'
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Strings entsprechen,\
-  \ ist entscheidend f\xFCr die Datenvalidierung, -bereinigung oder die Vorbereitung\u2026"
+  \ ist entscheidend f\xFCr die Datenvalidierung, -bereinigung oder die Vorbereitung\
+  \ von Text f\xFCr die weitere Verarbeitung."
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
 weight: 5
 ---

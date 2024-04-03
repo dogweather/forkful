@@ -9,8 +9,7 @@ description: "Rust h\u1ED7 tr\u1EE3 nhi\u1EC1u tr\xECnh g\u1EE1 l\u1ED7i, nh\u01
 lastmod: '2024-03-13T22:44:36.382602-06:00'
 model: gpt-4-0125-preview
 summary: "Rust h\u1ED7 tr\u1EE3 nhi\u1EC1u tr\xECnh g\u1EE1 l\u1ED7i, nh\u01B0ng m\u1ED9\
-  t c\xE1i ph\u1ED5 bi\u1EBFn l\xE0 `gdb` cho GNU/Linux ho\u1EB7c `lldb` cho macOS.\
-  \ B\u1EA1n c\u0169ng c\xF3 th\u1EC3 s\u1EED d\u1EE5ng `rust-gdb` hay `rust-lldb`,\u2026"
+  t c\xE1i ph\u1ED5 bi\u1EBFn l\xE0 `gdb` cho GNU/Linux ho\u1EB7c `lldb` cho macOS."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

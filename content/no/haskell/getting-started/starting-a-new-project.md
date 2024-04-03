@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer f
 lastmod: '2024-03-13T22:44:40.842257-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for \xE5\
-  \ utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\
-  \ l\xF8se problemer,\u2026"
+  \ utvikle programvare."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

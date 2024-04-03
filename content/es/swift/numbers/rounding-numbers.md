@@ -6,7 +6,7 @@ description: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a un
 lastmod: '2024-03-13T22:44:59.411549-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una precisi\xF3\
-  n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados. Los programadores\u2026"
+  n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

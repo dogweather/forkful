@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.036177-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, \xE9galement connus sous le nom de tables de hachage\
   \ ou de dictionnaires dans PowerShell, vous permettent de stocker des donn\xE9es\
-  \ en\u2026"
+  \ en paires cl\xE9-valeur, rendant la r\xE9cup\xE9ration des donn\xE9es simple et\
+  \ efficace."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

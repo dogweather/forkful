@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.009464-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Fish Shelliss\xE4 mahdollistaa skriptien\
   \ tehd\xE4 p\xE4\xE4t\xF6ksi\xE4 perustuen hakemistorakenteiden l\xE4sn\xE4oloon\
-  \ tai puuttumiseen,\u2026"
+  \ tai puuttumiseen, mahdollistaen teht\xE4vi\xE4 kuten ehdolliset tiedosto-operaatiot,\
+  \ lokitiedot tai ymp\xE4rist\xF6n asetukset."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

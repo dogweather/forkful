@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.570454-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string incluindo\
   \ express\xF5es dentro de um literal de string, facilitando a formata\xE7\xE3o e\
-  \ a\u2026"
+  \ a concatena\xE7\xE3o de strings."
 title: Interpolando uma String
 weight: 8
 ---

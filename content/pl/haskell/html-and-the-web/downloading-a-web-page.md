@@ -5,9 +5,7 @@ description: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej
   \ bezpo\u015Brednio na\u2026"
 lastmod: '2024-03-13T22:44:35.450572-06:00'
 model: gpt-4-1106-preview
-summary: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to proces,\
-  \ w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML) bezpo\u015B\
-  rednio na\u2026"
+summary: 'Czyli po polsku: "Co i dlaczego.'
 title: Pobieranie strony internetowej
 weight: 42
 ---

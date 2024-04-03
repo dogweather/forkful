@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 chuy\u1EC3\
   n \u0111\u1ED5i ng\xE0y th\xE1ng t\u1EEB \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3\
   n sang m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y m\xE0 ch\u01B0\u01A1ng tr\xEC\
-  nh c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c \u0111\u01B0\u1EE3c.\u2026"
+  nh c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c \u0111\u01B0\u1EE3c."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

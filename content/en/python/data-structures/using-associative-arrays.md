@@ -4,8 +4,8 @@ description: "Associative arrays, known in Python as dictionaries, map keys to v
   \ making it easy to retrieve, modify, or track data by a unique identifier.\u2026"
 lastmod: '2024-03-13T22:44:59.701807-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, known in Python as dictionaries, map keys to values,\
-  \ making it easy to retrieve, modify, or track data by a unique identifier.\u2026"
+summary: Associative arrays, known in Python as dictionaries, map keys to values,
+  making it easy to retrieve, modify, or track data by a unique identifier.
 title: Using associative arrays
 weight: 15
 ---

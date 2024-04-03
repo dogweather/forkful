@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.627339-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de d\xE9\
   finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des cha\xEE\
-  nes de\u2026"
+  nes de caract\xE8res dans votre code."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

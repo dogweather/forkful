@@ -5,8 +5,8 @@ description: "Creating a temporary file is the process of making a short-lived f
   \ do\u2026"
 lastmod: '2024-03-13T22:45:00.222860-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file is the process of making a short-lived file to\
-  \ store data that's only needed during the execution of a program. Programmers do\u2026"
+summary: Creating a temporary file is the process of making a short-lived file to
+  store data that's only needed during the execution of a program.
 title: Creating a temporary file
 weight: 21
 ---

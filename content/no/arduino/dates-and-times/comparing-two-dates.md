@@ -6,8 +6,7 @@ description: "\xC5 sammenligne to datoer inneb\xE6rer \xE5 se p\xE5 om de er lik
 lastmod: '2024-03-13T22:44:41.070593-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sammenligne to datoer inneb\xE6rer \xE5 se p\xE5 om de er like, hvilken\
-  \ som kommer f\xF8r eller tiden mellom dem. Programmerere gj\xF8r dette for \xE5\
-  \ h\xE5ndtere frister,\u2026"
+  \ som kommer f\xF8r eller tiden mellom dem."
 title: Sammenlikning av to datoer
 weight: 27
 ---

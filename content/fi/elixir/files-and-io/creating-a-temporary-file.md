@@ -6,8 +6,7 @@ description: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poi
 lastmod: '2024-03-13T22:44:56.246213-06:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poistuvat\
-  \ usein itsest\xE4\xE4n. Niit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi v\xE4liaikaiseen\
-  \ datan k\xE4sittelyyn, testaukseen\u2026"
+  \ usein itsest\xE4\xE4n."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

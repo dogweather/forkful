@@ -6,8 +6,7 @@ description: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 fa
 lastmod: '2024-03-13T22:44:56.923875-06:00'
 model: gpt-4-1106-preview
 summary: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 failissa\
-  \ olevaa dataa. Se on arkip\xE4iv\xE4inen tapa saada sis\xE4lt\xF6\xE4 ohjelmaan;\
-  \ olkoon kyse\u2026"
+  \ olevaa dataa."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

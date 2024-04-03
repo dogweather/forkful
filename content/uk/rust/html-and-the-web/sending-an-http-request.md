@@ -6,8 +6,7 @@ description: "\u0429\u043E \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\u0430\u0
 lastmod: '2024-03-13T22:44:48.930998-06:00'
 model: gpt-4-1106-preview
 summary: "\u0429\u043E \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\u0430\u0432\u0456\
-  \u0449\u043E? Sending an HTTP request is how we ask the internet for data or actions.\
-  \ Programmers do it to interact with web services, fetch\u2026"
+  \u0449\u043E."
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
 weight: 44

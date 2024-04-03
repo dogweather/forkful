@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin s\u1EED d\u1EE5ng CLI\
   \ (Command Line Interface) b\u1EB1ng c\xE1ch nh\u1EADp l\u1EC7nh \u0111\u01A1n v\u1EDB\
   i Bash bao g\u1ED3m vi\u1EC7c d\xF9ng c\xE1c script Bash hay l\u1EC7nh \u0111\u1EC3\
-  \ th\u1EF1c\u2026"
+  \ th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c tr\xEAn t\u1EC7p tin, nh\u01B0 t\u1EA1\
+  o, \u0111\u1ECDc, c\u1EADp nh\u1EADt, ho\u1EB7c x\xF3a ch\xFAng, t\u1EA5t c\u1EA3\
+  \ t\u1EEB terminal."
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.904348-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\
-  \ strumienia, r\xF3\u017Cnego od\u2026"
+  \ strumienia, r\xF3\u017Cnego od g\u0142\xF3wnego wyj\u015Bcia programu."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

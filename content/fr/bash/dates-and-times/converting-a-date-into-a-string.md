@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:48.126759-07:00
 description: ("
 lastmod: '2024-03-13T22:44:58.009908-06:00'
 model: gpt-4-1106-preview
-summary: ("
+summary: (".
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

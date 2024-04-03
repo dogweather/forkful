@@ -8,8 +8,7 @@ description: "Merkkijonon pituuden selvitt\xE4minen Go:ssa tarkoittaa sen sis\xE
 lastmod: '2024-03-13T22:44:56.040705-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon pituuden selvitt\xE4minen Go:ssa tarkoittaa sen sis\xE4lt\xE4\
-  mien merkkien lukum\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4. Ohjelmoijat suorittavat\
-  \ t\xE4t\xE4 toimintoa\u2026"
+  mien merkkien lukum\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4."
 title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
 weight: 7
 ---

@@ -7,9 +7,8 @@ description: "Convertir una fecha en una cadena en C implica traducir una estruc
   \ a\u2026"
 lastmod: '2024-03-13T22:44:59.558383-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una fecha en una cadena en C implica traducir una estructura de\
-  \ fecha o marcar una fecha en un formato legible por humanos. Los programadores\
-  \ a\u2026"
+summary: Convertir una fecha en una cadena en C implica traducir una estructura de
+  fecha o marcar una fecha en un formato legible por humanos.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

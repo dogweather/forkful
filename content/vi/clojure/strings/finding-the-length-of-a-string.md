@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.140770-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
   \ Clojure tr\u1EA3 v\u1EC1 s\u1ED1 l\u01B0\u1EE3ng c\xE1c k\xFD t\u1EF1 trong chu\u1ED7\
-  i \u0111\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n th\xF4\
-  ng tin n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1c \u0111\u1EA7u v\xE0o, l\u1EB7p\u2026"
+  i \u0111\xF3."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

@@ -6,8 +6,7 @@ description: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b
 lastmod: '2024-03-13T22:44:56.137658-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b` ovat\
-  \ reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa niit\xE4\
-  \u2026"
+  \ reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`)."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

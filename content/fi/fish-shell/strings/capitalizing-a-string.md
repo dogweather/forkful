@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.975206-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista siten,\
   \ ett\xE4 ensimm\xE4inen kirjain on isolla ja loput merkkijonosta ovat pienell\xE4\
-  . T\xE4m\xE4\u2026"
+  ."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

@@ -6,7 +6,7 @@ description: "La interpolaci\xF3n de cadenas nos permite infundir variables dent
 lastmod: '2024-03-13T22:44:58.832772-06:00'
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas nos permite infundir variables dentro de\
-  \ un texto, creando as\xED una cadena personalizada en tiempo de ejecuci\xF3n. Los\u2026"
+  \ un texto, creando as\xED una cadena personalizada en tiempo de ejecuci\xF3n."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

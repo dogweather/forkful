@@ -6,7 +6,8 @@ description: "Generowanie losowych liczb w Bashu zapewnia spos\xF3b na wprowadze
 lastmod: '2024-03-13T22:44:35.578540-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Bashu zapewnia spos\xF3b na wprowadzenie nieprzewidywalno\u015B\
-  ci do skrypt\xF3w, co jest niezb\u0119dne do zada\u0144 takich jak generowanie\u2026"
+  ci do skrypt\xF3w, co jest niezb\u0119dne do zada\u0144 takich jak generowanie bezpiecznych\
+  \ hase\u0142, symulowanie danych czy programowanie gier."
 title: Generowanie liczb losowych
 weight: 12
 ---

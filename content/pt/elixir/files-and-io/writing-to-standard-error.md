@@ -8,8 +8,7 @@ description: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de
 lastmod: '2024-03-13T22:44:46.254340-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de direcionar\
-  \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout).\
-  \ Os\u2026"
+  \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout)."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

@@ -7,7 +7,8 @@ description: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomi
 lastmod: '2024-03-13T22:44:57.035202-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista, jotka\
-  \ ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"
+  \ ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\
+  \ tai normaalijakaumaa."
 title: Satunnaisten numeroiden generointi
 weight: 12
 ---

@@ -6,8 +6,7 @@ description: "\xC5 lage en midlertidig fil er prosessen med \xE5 opprette en fil
 lastmod: '2024-03-13T22:44:41.202648-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil er prosessen med \xE5 opprette en fil som kun\
-  \ skal brukes midlertidig. Programmerere gj\xF8r dette for \xE5 lagre data midlertidig\
-  \ uten \xE5\u2026"
+  \ skal brukes midlertidig."
 title: Opprette en midlertidig fil
 weight: 21
 ---

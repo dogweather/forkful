@@ -5,8 +5,7 @@ description: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten
   \ oder\u2026"
 lastmod: '2024-03-13T22:44:54.049399-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten. Programmierer\
-  \ nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren oder\u2026"
+summary: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

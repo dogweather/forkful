@@ -6,8 +6,7 @@ description: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajit
 lastmod: '2024-03-13T22:44:56.578817-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen\
-  \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa.\
-  \ T\xE4m\xE4 tehd\xE4\xE4n\u2026"
+  \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

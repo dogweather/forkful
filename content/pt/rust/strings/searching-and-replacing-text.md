@@ -5,7 +5,7 @@ description: "Substituir texto numa string \xE9 como trocar pe\xE7as de roupa; v
 lastmod: '2024-03-13T22:44:46.353419-06:00'
 model: gpt-4-1106-preview
 summary: "Substituir texto numa string \xE9 como trocar pe\xE7as de roupa; voc\xEA\
-  \ pega uma palavra ou frase e troca por outra. Programadores fazem isso para atualizar\u2026"
+  \ pega uma palavra ou frase e troca por outra."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

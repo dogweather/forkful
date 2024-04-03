@@ -6,8 +6,7 @@ description: "Comparar dos fechas permite determinar cu\xE1l es anterior o poste
 lastmod: '2024-03-13T22:44:58.949745-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas permite determinar cu\xE1l es anterior o posterior,\
-  \ o si son iguales. Los programadores lo hacen para validaciones, c\xE1lculos de\
-  \ per\xEDodos\u2026"
+  \ o si son iguales."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

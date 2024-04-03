@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:56.352637-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Rustissa vaatii kirjastojen k\xE4ytt\xF6\xE4\
   \ ennakoimattomien numeeristen arvojen tuottamiseen, mik\xE4 on v\xE4ltt\xE4m\xE4\
-  t\xF6nt\xE4 teht\xE4viss\xE4,\u2026"
+  t\xF6nt\xE4 teht\xE4viss\xE4, jotka vaihtelevat kryptografiasta ja simuloinneista\
+  \ pelaamiseen ja satunnaistettuihin algoritmeihin."
 title: Satunnaislukujen generointi
 weight: 12
 ---

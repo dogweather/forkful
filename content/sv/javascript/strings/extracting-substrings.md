@@ -6,8 +6,7 @@ description: "Att extrahera delstr\xE4ngar i JavaScript handlar om att plocka ut
 lastmod: '2024-03-13T22:44:38.282393-06:00'
 model: gpt-4-1106-preview
 summary: "Att extrahera delstr\xE4ngar i JavaScript handlar om att plocka ut specifika\
-  \ delar ur en str\xE4ng. Programmerare g\xF6r detta f\xF6r att manipulera och anv\xE4\
-  nda data\u2026"
+  \ delar ur en str\xE4ng."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

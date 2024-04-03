@@ -6,8 +6,7 @@ description: "Organizowanie kodu w funkcje polega na podziale skryptowania na mn
 lastmod: '2024-03-13T22:44:35.545574-06:00'
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje polega na podziale skryptowania na mniejsze\
-  \ kawa\u0142ki\u2014my\u015Bl o nich jak o funkcjonalnych klockach LEGO. Robimy\
-  \ to dla\u2026"
+  \ kawa\u0142ki\u2014my\u015Bl o nich jak o funkcjonalnych klockach LEGO."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.596510-06:00'
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti,\
   \ joka esitt\xE4\xE4 taulukollista tietoa puhtaana tekstin\xE4 k\xE4ytt\xE4en pilkkuja\
-  \ arvojen\u2026"
+  \ arvojen erottamiseen."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

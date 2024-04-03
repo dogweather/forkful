@@ -6,8 +6,8 @@ description: "L'analisi di una data da una stringa in Dart comporta la conversio
   \ della rappresentazione testuale di date e orari in un oggetto `DateTime`. Questa\u2026"
 lastmod: '2024-03-13T22:44:43.141374-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa in Dart comporta la conversione della\
-  \ rappresentazione testuale di date e orari in un oggetto `DateTime`. Questa\u2026"
+summary: L'analisi di una data da una stringa in Dart comporta la conversione della
+  rappresentazione testuale di date e orari in un oggetto `DateTime`.
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -7,7 +7,8 @@ description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Pythonissa on perus
 lastmod: '2024-03-13T22:44:56.153947-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Pythonissa on perustoiminto\
-  \ monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle\u2026"
+  \ monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle\
+  \ p\xE4\xE4t\xF6ksenteolle."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

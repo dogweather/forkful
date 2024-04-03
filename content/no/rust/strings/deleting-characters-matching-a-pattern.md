@@ -5,7 +5,7 @@ description: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut 
 lastmod: '2024-03-13T22:44:40.558242-06:00'
 model: gpt-4-1106-preview
 summary: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut spesifikke\
-  \ karakterer fra en streng. Programmerere gj\xF8r dette for \xE5 rense data, forberede\u2026"
+  \ karakterer fra en streng."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

@@ -9,9 +9,7 @@ lastmod: '2024-03-13T22:44:54.859321-06:00'
 model: gpt-4-0125-preview
 summary: "TypeScript\uC5D0\uC11C \uB514\uBC84\uAC70\uB97C \uC0AC\uC6A9\uD558\uAE30\
   \ \uC704\uD574\uC11C\uB294 \uC9C0\uC6D0\uB418\uB294 IDE(\uC608: Visual Studio Code)\uC640\
-  \ `launch.json` \uC124\uC815\uB9CC \uC788\uC73C\uBA74 \uB429\uB2C8\uB2E4. Node.js\
-  \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uC704\uD55C \uAC04\uB2E8\uD55C \uC608\
-  \uB97C \uB4E4\uC5B4\uBCF4\uACA0\uC2B5\uB2C8\uB2E4: ```TypeScript // app.ts\u2026"
+  \ `launch."
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 weight: 35
 ---

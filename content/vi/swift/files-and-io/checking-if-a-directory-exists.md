@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Trong Swift, vi\u1EC7c ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5\
   c t\u1ED3n t\u1EA1i gi\xFAp b\u1EA1n x\xE1c nh\u1EADn tr\u1EA1ng th\xE1i c\u1EE7\
   a h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc ho\u1EB7\
-  c ghi d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+  c ghi d\u1EEF li\u1EC7u."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

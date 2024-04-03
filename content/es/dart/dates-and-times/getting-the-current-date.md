@@ -7,8 +7,8 @@ description: "Obtener la fecha actual en Dart implica consultar al sistema sobre
   \ para\u2026"
 lastmod: '2024-03-13T22:44:58.764848-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en Dart implica consultar al sistema sobre la fecha\
-  \ y hora actuales. Esta funcionalidad se utiliza com\xFAnmente en aplicaciones para\u2026"
+summary: Obtener la fecha actual en Dart implica consultar al sistema sobre la fecha
+  y hora actuales.
 title: Obteniendo la fecha actual
 weight: 29
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.190207-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests dans Google Apps Script (GAS) consiste \xE0 cr\xE9er\
   \ des scripts automatis\xE9s pour v\xE9rifier le comportement de vos codes, en s'assurant\
-  \ qu'ils\u2026"
+  \ qu'ils fonctionnent comme pr\xE9vu sous diff\xE9rentes conditions."
 title: "R\xE9daction de tests"
 weight: 36
 ---

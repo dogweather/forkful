@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.981317-06:00'
 model: gpt-4-0125-preview
 summary: "Trong th\u1EBF gi\u1EDBi c\u1EE7a Arduino, m\u1EA3ng k\u1EBFt h\u1EE3p cho\
   \ ph\xE9p b\u1EA1n gh\xE9p c\xE1c key v\u1EDBi c\xE1c gi\xE1 tr\u1ECB, ki\u1EC3\
-  u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau. Ch\xFAng\
-  \ l\xE0 l\u1EF1a ch\u1ECDn t\u1ED1t khi b\u1EA1n\u2026"
+  u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

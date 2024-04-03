@@ -5,9 +5,8 @@ description: "Her er et stykke JavaScript-kode som ikke oppf\xF8rer seg som forv
   \ v\xE6re\u2026"
 lastmod: '2024-03-13T22:44:41.188106-06:00'
 model: gpt-4-0125-preview
-summary: "Her er et stykke JavaScript-kode som ikke oppf\xF8rer seg som forventet:\
-  \ ```javascript function buggyMultiply(a, b) { return a + b; // Oops! Dette skal\
-  \ v\xE6re\u2026"
+summary: "Her er et stykke JavaScript-kode som ikke oppf\xF8rer seg som forventet:\n\
+  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Oops."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

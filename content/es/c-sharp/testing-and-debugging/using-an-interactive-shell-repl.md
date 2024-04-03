@@ -5,7 +5,7 @@ description: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3d
 lastmod: '2024-03-13T22:44:59.079785-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3digo C#\
-  \ y ejecutarlo de manera interactiva. Los programadores lo usan para experimentos\u2026"
+  \ y ejecutarlo de manera interactiva."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

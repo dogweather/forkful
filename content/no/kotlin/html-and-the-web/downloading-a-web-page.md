@@ -5,7 +5,7 @@ description: "Nedlasting av nettsider er henting av data fra en URL for \xE5 se 
 lastmod: '2024-03-13T22:44:40.749041-06:00'
 model: gpt-4-1106-preview
 summary: "Nedlasting av nettsider er henting av data fra en URL for \xE5 se eller\
-  \ behandle informasjonen. Programmerere gj\xF8r dette for \xE5 trekke ut data, automatisere\u2026"
+  \ behandle informasjonen."
 title: Nedlasting av en nettside
 weight: 42
 ---

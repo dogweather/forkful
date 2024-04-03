@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.211882-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w na wielk\u0105\
   \ (capitalization) w Visual Basic for Applications (VBA) polega na przekszta\u0142\
-  ceniu\u2026"
+  ceniu pierwszego znaku ka\u017Cdego s\u0142owa w danej frazie na wielk\u0105 liter\u0119\
+  , przy czym reszta liter jest zamieniana na ma\u0142e."
 title: "Zamiana liter w ci\u0105gu na wielkie"
 weight: 2
 ---

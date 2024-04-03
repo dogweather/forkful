@@ -7,7 +7,8 @@ description: "Las expresiones regulares (regex) en PHP son patrones utilizados p
 lastmod: '2024-03-13T22:44:59.150749-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en PHP son patrones utilizados para coincidir\
-  \ con combinaciones de caracteres en cadenas de texto, permitiendo\u2026"
+  \ con combinaciones de caracteres en cadenas de texto, permitiendo operaciones de\
+  \ b\xFAsqueda y reemplazo sofisticadas y validaci\xF3n de datos."
 title: Usando expresiones regulares
 weight: 11
 ---

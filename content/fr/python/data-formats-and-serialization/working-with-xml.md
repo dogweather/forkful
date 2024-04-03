@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.262928-06:00'
 model: gpt-4-0125-preview
 summary: "\"Travailler avec XML\" se r\xE9f\xE8re au processus de lecture, cr\xE9\
   ation et modification de fichiers XML (eXtensible Markup Language) en utilisant\
-  \ la\u2026"
+  \ la programmation."
 title: Travailler avec XML
 weight: 40
 ---

@@ -4,8 +4,8 @@ description: "String concatenation is like making a sandwich, but instead of bre
   \ and fillings, you're stacking words together to form a sentence or a phrase.\u2026"
 lastmod: '2024-03-13T22:45:00.041245-06:00'
 model: gpt-4-1106-preview
-summary: "String concatenation is like making a sandwich, but instead of bread and\
-  \ fillings, you're stacking words together to form a sentence or a phrase.\u2026"
+summary: String concatenation is like making a sandwich, but instead of bread and
+  fillings, you're stacking words together to form a sentence or a phrase.
 title: Concatenating strings
 weight: 3
 ---

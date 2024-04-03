@@ -6,8 +6,7 @@ description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format danyc
 lastmod: '2024-03-13T22:44:35.521005-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format danych podobny\
-  \ do JSON lub YAML, ale bardziej czytelny dla ludzi. Programi\u015Bci u\u017Cywaj\u0105\
-  \ go do\u2026"
+  \ do JSON lub YAML, ale bardziej czytelny dla ludzi."
 title: Praca z TOML
 weight: 39
 ---

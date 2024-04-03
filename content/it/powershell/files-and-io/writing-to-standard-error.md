@@ -6,8 +6,9 @@ description: "Scrivere su standard error (stderr) in PowerShell implica l'invio 
   \ messaggi di errore o diagnostici direttamente allo stream stderr, distinto dallo\u2026"
 lastmod: '2024-03-13T22:44:43.658751-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in PowerShell implica l'invio di messaggi\
-  \ di errore o diagnostici direttamente allo stream stderr, distinto dallo\u2026"
+summary: Scrivere su standard error (stderr) in PowerShell implica l'invio di messaggi
+  di errore o diagnostici direttamente allo stream stderr, distinto dallo stream di
+  output standard (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

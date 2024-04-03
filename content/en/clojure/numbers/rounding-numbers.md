@@ -4,8 +4,8 @@ description: "Rounding numbers is about tweaking a number to the nearest whole, 
   \ to a certain decimal precision. We round numbers to simplify them for human\u2026"
 lastmod: '2024-03-13T22:44:59.740642-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers is about tweaking a number to the nearest whole, or to\
-  \ a certain decimal precision. We round numbers to simplify them for human\u2026"
+summary: Rounding numbers is about tweaking a number to the nearest whole, or to a
+  certain decimal precision.
 title: Rounding numbers
 weight: 13
 ---

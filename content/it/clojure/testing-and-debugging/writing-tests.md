@@ -7,7 +7,8 @@ description: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di progr
 lastmod: '2024-03-13T22:44:43.045634-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
-  \ comporta la creazione di codice dedicato per verificare che il tuo codice\u2026"
+  \ comporta la creazione di codice dedicato per verificare che il tuo codice principale\
+  \ funzioni come previsto."
 title: Scrivere test
 weight: 36
 ---

@@ -5,7 +5,7 @@ description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, e
 lastmod: '2024-03-13T22:44:40.835324-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er essensielle\
-  \ i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"
+  \ i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

@@ -5,9 +5,7 @@ description: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen ta
   \ ohjelmallisesti. Miksi? Kalenteritoiminnot\u2026"
 lastmod: '2024-03-13T22:44:56.836954-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai menneisyyteen?\
-  \ K\xE4yt\xE4nn\xF6ss\xE4 s\xE4\xE4d\xE4mme kelloja ja kalentereita ohjelmallisesti.\
-  \ Miksi? Kalenteritoiminnot\u2026"
+summary: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai menneisyyteen."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

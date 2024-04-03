@@ -7,7 +7,8 @@ description: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohj
 lastmod: '2024-03-13T22:44:56.629073-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
-  viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"
+  viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden l\xE4\
+  sn\xE4olon tai puuttumisen perusteella."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

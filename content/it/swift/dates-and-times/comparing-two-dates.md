@@ -5,7 +5,7 @@ description: "Confrontare due date significa verificare se una data \xE8 precede
 lastmod: '2024-03-13T22:44:43.782141-06:00'
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificare se una data \xE8 precedente, successiva\
-  \ o uguale a un'altra. I programmatori fanno questo per gestire eventi,\u2026"
+  \ o uguale a un'altra."
 title: Confronto tra due date
 weight: 27
 ---

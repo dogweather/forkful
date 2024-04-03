@@ -6,8 +6,7 @@ description: "Generowanie liczb losowych w programowaniu polega na tworzeniu war
 lastmod: '2024-03-13T22:44:34.990425-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w programowaniu polega na tworzeniu warto\u015B\
-  ci, kt\xF3rych nie mo\u017Cna logicznie przewidzie\u0107 z g\xF3ry. Programi\u015B\
-  ci robi\u0105 to z r\xF3\u017Cnych\u2026"
+  ci, kt\xF3rych nie mo\u017Cna logicznie przewidzie\u0107 z g\xF3ry."
 title: Generowanie liczb losowych
 weight: 12
 ---

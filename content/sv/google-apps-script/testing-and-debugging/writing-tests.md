@@ -7,7 +7,8 @@ description: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa 
 lastmod: '2024-03-13T22:44:37.442659-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
-  \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"
+  \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\
+  \ fungerar som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden."
 title: Skriva tester
 weight: 36
 ---

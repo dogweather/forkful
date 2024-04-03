@@ -6,8 +6,7 @@ description: "\xC5 sammenk\xE6de strenger (strings) betyr \xE5 sette dem sammen 
 lastmod: '2024-03-13T22:44:41.176153-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sammenk\xE6de strenger (strings) betyr \xE5 sette dem sammen i \xE9\
-  n. Vi gj\xF8r det for \xE5 bygge tekstbasert data, som meldinger eller kode, p\xE5\
-  \ en dynamisk og\u2026"
+  n."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

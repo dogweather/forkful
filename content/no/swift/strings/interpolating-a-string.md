@@ -5,8 +5,7 @@ description: "Stringinterpolasjon lar deg sette variabler rett inn i strenger. D
   \ leselig\u2026"
 lastmod: '2024-03-13T22:44:41.128413-06:00'
 model: gpt-4-1106-preview
-summary: "Stringinterpolasjon lar deg sette variabler rett inn i strenger. Det forenkler\
-  \ kombinasjonen av statisk tekst og variabler, noe som gj\xF8r koden mer leselig\u2026"
+summary: Stringinterpolasjon lar deg sette variabler rett inn i strenger.
 title: Interpolering av en streng
 weight: 8
 ---

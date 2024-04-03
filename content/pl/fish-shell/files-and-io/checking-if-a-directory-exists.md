@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.856171-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w pow\u0142oce Fish, pozwala skryptom\
   \ na podejmowanie decyzji w oparciu o obecno\u015B\u0107 lub brak struktur katalog\xF3\
-  w, umo\u017Cliwiaj\u0105c\u2026"
+  w, umo\u017Cliwiaj\u0105c zadania takie jak warunkowe operacje na plikach, logowanie\
+  \ czy konfiguracja \u015Brodowiska."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

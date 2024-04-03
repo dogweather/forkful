@@ -6,8 +6,7 @@ description: "Att hitta str\xE4ngl\xE4ngden inneb\xE4r att ta reda p\xE5 hur m\x
 lastmod: '2024-03-13T22:44:38.159276-06:00'
 model: gpt-4-1106-preview
 summary: "Att hitta str\xE4ngl\xE4ngden inneb\xE4r att ta reda p\xE5 hur m\xE5nga\
-  \ tecken som finns i en textsnutt. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ text effektivt, till\u2026"
+  \ tecken som finns i en textsnutt."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

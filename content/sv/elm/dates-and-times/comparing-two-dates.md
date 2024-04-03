@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.841831-06:00'
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras ordning och\
   \ tidsintervall \u2013 \xE4r det ena f\xF6re det andra, samtidigt, eller hur l\xE5\
-  ng tid \xE4r det emellan?\u2026"
+  ng tid \xE4r det emellan."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

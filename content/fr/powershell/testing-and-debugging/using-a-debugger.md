@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.053511-06:00'
 model: gpt-4-0125-preview
 summary: "Dans PowerShell, vous pouvez d\xE9boguer des scripts en utilisant l'Environnement\
   \ de Scripting Int\xE9gr\xE9 de PowerShell (ISE) int\xE9gr\xE9 ou Visual Studio\
-  \ Code (VS\u2026"
+  \ Code (VS Code) avec l'extension PowerShell."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

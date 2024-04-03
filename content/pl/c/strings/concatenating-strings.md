@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:35.877427-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja \u0142a\u0144cuch\xF3w znak\xF3w w C polega na \u0142\u0105\
   czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w znak\xF3w koniec-ko\u0144\
-  cem, aby utworzy\u0107 nowy \u0142a\u0144cuch. Programi\u015Bci wykonuj\u0105 t\u0119\
-  \u2026"
+  cem, aby utworzy\u0107 nowy \u0142a\u0144cuch."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

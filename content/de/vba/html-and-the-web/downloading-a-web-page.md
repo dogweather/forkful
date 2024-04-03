@@ -6,8 +6,8 @@ description: "Das Herunterladen einer Webseite in Visual Basic for Applications 
   \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
 lastmod: '2024-03-13T22:44:53.716399-06:00'
 model: gpt-4-0125-preview
-summary: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
-  \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
+summary: Das Herunterladen einer Webseite in Visual Basic for Applications (VBA) beinhaltet
+  das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.
 title: Herunterladen einer Webseite
 weight: 42
 ---

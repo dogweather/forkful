@@ -6,8 +6,8 @@ description: "XML (eXtensible Markup Language) gaat over het structureren van da
   \ in een leesbaar formaat. Programmeurs werken met XML voor configuratie,\u2026"
 lastmod: '2024-03-13T22:44:50.834483-06:00'
 model: gpt-4-0125-preview
-summary: "XML (eXtensible Markup Language) gaat over het structureren van data in\
-  \ een leesbaar formaat. Programmeurs werken met XML voor configuratie,\u2026"
+summary: XML (eXtensible Markup Language) gaat over het structureren van data in een
+  leesbaar formaat.
 title: Werken met XML
 weight: 40
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.705832-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w C++ jako `std::map` lub `std::unordered_map`,\
   \ wype\u0142niaj\u0105 luk\u0119 mi\u0119dzy indeksami tablic a danymi z realnego\
-  \ \u015Bwiata, pozwalaj\u0105c\u2026"
+  \ \u015Bwiata, pozwalaj\u0105c u\u017Cywa\u0107 znacz\u0105cych kluczy."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

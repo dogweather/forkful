@@ -4,8 +4,8 @@ description: "String interpolation is a method to construct strings that incorpo
   \ variables, enabling dynamic string creation. Programmers do this to customize\u2026"
 lastmod: '2024-03-13T22:44:59.618702-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolation is a method to construct strings that incorporate variables,\
-  \ enabling dynamic string creation. Programmers do this to customize\u2026"
+summary: String interpolation is a method to construct strings that incorporate variables,
+  enabling dynamic string creation.
 title: Interpolating a string
 weight: 8
 ---

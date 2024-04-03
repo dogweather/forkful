@@ -7,8 +7,7 @@ description: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE
   \ med webbsidor,\u2026"
 lastmod: '2024-03-13T22:44:37.564730-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE5n HTML-dokument.\
-  \ Programmerare g\xF6r detta f\xF6r att programmatiskt interagera med webbsidor,\u2026"
+summary: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE5n HTML-dokument."
 title: Tolka HTML
 weight: 43
 ---

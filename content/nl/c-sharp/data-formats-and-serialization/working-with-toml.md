@@ -6,8 +6,8 @@ description: "TOML is een acroniem voor Tom's Obvious, Minimal Language, een con
   \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
 lastmod: '2024-03-13T22:44:50.833500-06:00'
 model: gpt-4-0125-preview
-summary: "TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat\
-  \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
+summary: TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat
+  dat gemakkelijk te lezen is vanwege de duidelijke semantiek.
 title: Werken met TOML
 weight: 39
 ---

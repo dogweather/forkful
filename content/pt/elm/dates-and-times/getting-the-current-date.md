@@ -5,7 +5,7 @@ description: "Conseguir a data atual significa acessar o momento exato em que o 
 lastmod: '2024-03-13T22:44:46.510680-06:00'
 model: unknown
 summary: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
-  digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
+  digo est\xE1 sendo executado."
 title: Obtendo a data atual
 weight: 29
 ---

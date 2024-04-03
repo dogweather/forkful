@@ -5,7 +5,8 @@ description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de com
 lastmod: '2024-03-13T22:44:58.665441-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
-  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\u2026"
+  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\
+  \ no funcionales."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

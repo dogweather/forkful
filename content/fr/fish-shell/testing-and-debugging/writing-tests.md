@@ -8,7 +8,8 @@ description: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts
 lastmod: '2024-03-13T22:44:58.328436-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts qui ex\xE9\
-  cutent automatiquement votre code pour valider son comportement par rapport aux\u2026"
+  cutent automatiquement votre code pour valider son comportement par rapport aux\
+  \ r\xE9sultats attendus."
 title: "R\xE9daction de tests"
 weight: 36
 ---

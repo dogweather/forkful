@@ -8,7 +8,7 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in Bash erm\xF6glichen es Ihnen, 
 lastmod: '2024-03-13T22:44:54.047485-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Bash erm\xF6glichen es Ihnen, nach bestimmten\
-  \ Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren und zu\u2026"
+  \ Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren und zu verarbeiten."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

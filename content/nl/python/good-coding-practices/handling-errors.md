@@ -6,8 +6,9 @@ description: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat
   \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"
 lastmod: '2024-03-13T22:44:50.384121-06:00'
 model: gpt-4-0125-preview
-summary: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
-  \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"
+summary: Het afhandelen van fouten in Python (of elke programmeertaal) gaat over het
+  verwachten van het onverwachte - het is de kunst van het gracieus omgaan met situaties
+  waarin dingen misgaan in je code.
 title: Fouten afhandelen
 weight: 16
 ---

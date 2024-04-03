@@ -6,8 +6,7 @@ description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mis
 lastmod: '2024-03-13T22:44:56.351701-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tietyn tarkkuuden murto-osaan. Ohjelmoijat\
-  \ py\xF6rist\xE4v\xE4t numeroita\u2026"
+  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tietyn tarkkuuden murto-osaan."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

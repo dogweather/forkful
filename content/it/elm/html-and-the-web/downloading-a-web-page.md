@@ -4,8 +4,8 @@ description: "Scaricare una pagina web significa recuperarne i contenuti via HTT
   \ per usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"
 lastmod: '2024-03-13T22:44:43.348863-06:00'
 model: gpt-4-1106-preview
-summary: "Scaricare una pagina web significa recuperarne i contenuti via HTTP per\
-  \ usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"
+summary: Scaricare una pagina web significa recuperarne i contenuti via HTTP per usarli
+  in una app.
 title: Scaricare una pagina web
 weight: 42
 ---

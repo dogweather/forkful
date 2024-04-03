@@ -5,9 +5,7 @@ description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palv
   ivitty\xE4kseen tai\u2026"
 lastmod: '2024-03-13T22:44:56.485419-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelimelta.\
-  \ Ohjelmoijat tekev\xE4t sen, koska heid\xE4n sovelluksensa tarvitsevat tietoa p\xE4\
-  ivitty\xE4kseen tai\u2026"
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelimelta."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

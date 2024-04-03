@@ -6,8 +6,7 @@ description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att best\xE4mma
 lastmod: '2024-03-13T22:44:38.200217-06:00'
 model: gpt-4-1106-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att best\xE4mma antalet\
-  \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att manipulera text,\
-  \ validera indata eller\u2026"
+  \ tecken den inneh\xE5ller."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

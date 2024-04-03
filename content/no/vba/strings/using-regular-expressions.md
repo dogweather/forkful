@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) 
 lastmod: '2024-03-13T22:44:40.607408-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
-  \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\
-  \ bruker dem\u2026"
+  \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

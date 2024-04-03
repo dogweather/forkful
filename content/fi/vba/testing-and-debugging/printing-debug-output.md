@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.403631-06:00'
 model: gpt-4-0125-preview
 summary: "Tulosteen tulostaminen debuggausta varten Visual Basic for Applications\
   \ (VBA) -ohjelmassa sis\xE4lt\xE4\xE4 tulostuslauseiden strategisen sijoittamisen\
-  \ koodiisi\u2026"
+  \ koodiisi n\xE4ytt\xE4m\xE4\xE4n muuttujien arvot, suorituksen kulun tai mukautetut\
+  \ debug-viestit."
 title: Debug-tulosteen tulostaminen
 weight: 33
 ---

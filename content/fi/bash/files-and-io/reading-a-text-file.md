@@ -5,9 +5,7 @@ description: "Luetaan tekstifailia, koska tarvitaan dataa siit\xE4. Se on olenna
   ."
 lastmod: '2024-03-13T22:44:56.756218-06:00'
 model: gpt-4-1106-preview
-summary: "Luetaan tekstifailia, koska tarvitaan dataa siit\xE4. Se on olennaista,\
-  \ kun k\xE4sitell\xE4\xE4n asetuksia, k\xE4ytt\xE4j\xE4n sis\xE4lt\xF6\xE4 tai skriptej\xE4\
-  ."
+summary: "Luetaan tekstifailia, koska tarvitaan dataa siit\xE4."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

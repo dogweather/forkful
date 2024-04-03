@@ -5,7 +5,8 @@ description: "Il logging \xE8 il processo di registrazione di eventi, errori e a
 lastmod: '2024-03-13T22:44:43.182341-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 il processo di registrazione di eventi, errori e altre informazioni\
-  \ significative durante l'esecuzione di un programma su un supporto\u2026"
+  \ significative durante l'esecuzione di un programma su un supporto esterno, spesso\
+  \ file o database."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

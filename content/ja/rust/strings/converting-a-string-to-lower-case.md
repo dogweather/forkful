@@ -4,7 +4,7 @@ description: ''
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:41.800563-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: .
 title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"
 weight: 4
 ---

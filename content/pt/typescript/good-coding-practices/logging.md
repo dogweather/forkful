@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.332529-06:00'
 model: gpt-4-1106-preview
 summary: "Logging \xE9 o processo de registrar eventos, erros e outras informa\xE7\
   \xF5es significativas durante a execu\xE7\xE3o de um programa em um meio externo,\
-  \ frequentemente\u2026"
+  \ frequentemente arquivos ou bancos de dados."
 title: Registro de Logs
 weight: 17
 ---

@@ -7,9 +7,8 @@ description: "Het downloaden van een webpagina betekent het binnenhalen van de o
   \ dit\u2026"
 lastmod: '2024-03-13T22:44:50.893615-06:00'
 model: gpt-4-0125-preview
-summary: "Het downloaden van een webpagina betekent het binnenhalen van de online\
-  \ inhoud, zodat je deze offline kunt gebruiken of analyseren. Programmeurs doen\
-  \ dit\u2026"
+summary: Het downloaden van een webpagina betekent het binnenhalen van de online inhoud,
+  zodat je deze offline kunt gebruiken of analyseren.
 title: Een webpagina downloaden
 weight: 42
 ---

@@ -6,8 +6,7 @@ description: "Imprimir mensajes de depuraci\xF3n es un truco sencillo: mandar in
 lastmod: '2024-03-13T22:44:59.038442-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n es un truco sencillo: mandar informaci\xF3\
-  n a la consola para entender qu\xE9 est\xE1 haciendo tu programa. \xBFPor qu\xE9\
-  ? Porque\u2026"
+  n a la consola para entender qu\xE9 est\xE1 haciendo tu programa."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

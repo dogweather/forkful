@@ -7,8 +7,9 @@ description: "Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich dar
   \ sich\u2026"
 lastmod: '2024-03-13T22:44:54.416833-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich darauf, Fehlermeldungen\
-  \ oder Diagnosen auf einen separaten Ausgabestrom zu lenken, der sich\u2026"
+summary: Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich darauf, Fehlermeldungen
+  oder Diagnosen auf einen separaten Ausgabestrom zu lenken, der sich vom Standardausgang
+  (stdout) unterscheidet.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

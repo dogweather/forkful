@@ -6,8 +6,7 @@ description: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt
 lastmod: '2024-03-13T22:44:56.838880-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4misen\
-  \ ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
-  \ joustavamman, sill\xE4\u2026"
+  \ ohjelmallesi sen k\xE4ynnistyess\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

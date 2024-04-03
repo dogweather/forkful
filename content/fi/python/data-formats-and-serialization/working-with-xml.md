@@ -5,7 +5,7 @@ description: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup 
 lastmod: '2024-03-13T22:44:56.167695-06:00'
 model: gpt-4-0125-preview
 summary: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
-  \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"
+  \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.267059-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Javie pozwalaj\u0105 definiowa\u0107\
   \ specyficzne wzorce do wyszukiwania, manipulowania lub walidacji ci\u0105g\xF3\
-  w znak\xF3w w twoim kodzie.\u2026"
+  w znak\xF3w w twoim kodzie."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

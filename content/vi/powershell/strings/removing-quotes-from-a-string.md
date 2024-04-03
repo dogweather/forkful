@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y kh\u1ECFi m\u1ED9t chu\u1ED7\
   i trong PowerShell gi\xFAp lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y \u0111\u01A1n (`'`)\
   \ ho\u1EB7c d\u1EA5u nh\xE1y k\xE9p (`\"`) bao quanh v\u0103n b\u1EA3n c\u1EE7a\
-  \ b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn\u2026"
+  \ b\u1EA1n."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

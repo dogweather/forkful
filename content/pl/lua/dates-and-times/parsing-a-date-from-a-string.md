@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.549468-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czasu na format, kt\xF3ry mo\u017Cna \u0142atwo manipulowa\u0107\
-  , przechowywa\u0107 lub\u2026"
+  , przechowywa\u0107 lub por\xF3wnywa\u0107 w programie Lua."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

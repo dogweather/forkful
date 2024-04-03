@@ -8,7 +8,7 @@ description: "Verificar si un directorio existe en C implica consultar el sistem
 lastmod: '2024-03-13T22:44:59.561602-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en C implica consultar el sistema de archivos\
-  \ para verificar si una ruta espec\xEDfica conduce a un directorio. Los\u2026"
+  \ para verificar si una ruta espec\xEDfica conduce a un directorio."
 title: Verificando si un directorio existe
 weight: 20
 ---

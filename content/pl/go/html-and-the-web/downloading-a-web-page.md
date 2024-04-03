@@ -8,8 +8,7 @@ description: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML
 lastmod: '2024-03-13T22:44:34.849250-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
-  \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\
-  \ cz\u0119sto robi\u0105 to w\u2026"
+  \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS."
 title: Pobieranie strony internetowej
 weight: 42
 ---

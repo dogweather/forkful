@@ -7,7 +7,8 @@ description: "La capitalizzazione di una stringa comporta la trasformazione del 
 lastmod: '2024-03-13T22:44:43.334297-06:00'
 model: gpt-4-0125-preview
 summary: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
-  \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"
+  \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo, spesso\
+  \ a fini di formattazione standardizzata o leggibilit\xE0."
 title: Capitalizzare una stringa
 weight: 2
 ---

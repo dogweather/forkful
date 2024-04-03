@@ -6,8 +6,8 @@ description: "De huidige datum op een Arduino krijgen betekent het bevragen van 
   \ realtimeklok (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment\u2026"
 lastmod: '2024-03-13T22:44:51.082348-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum op een Arduino krijgen betekent het bevragen van een realtimeklok\
-  \ (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment\u2026"
+summary: De huidige datum op een Arduino krijgen betekent het bevragen van een realtimeklok
+  (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment te achterhalen.
 title: Het huidige datum ophalen
 weight: 29
 ---

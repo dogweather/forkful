@@ -4,8 +4,8 @@ description: "Retrieving the current date in Bash involves using built-in comman
   \ to display the date and time in various formats. Programmers use this functionality\u2026"
 lastmod: '2024-03-13T22:45:00.253962-06:00'
 model: gpt-4-0125-preview
-summary: "Retrieving the current date in Bash involves using built-in commands to\
-  \ display the date and time in various formats. Programmers use this functionality\u2026"
+summary: Retrieving the current date in Bash involves using built-in commands to display
+  the date and time in various formats.
 title: Getting the current date
 weight: 29
 ---

@@ -7,8 +7,8 @@ description: "Het kapitaliseren van een string betekent meestal het omzetten van
   \ eerste karakter van een string naar een hoofdletter en de rest naar kleine letters.\u2026"
 lastmod: '2024-03-25T19:22:02.456642-06:00'
 model: gpt-4-0125-preview
-summary: "Het kapitaliseren van een string betekent meestal het omzetten van het eerste\
-  \ karakter van een string naar een hoofdletter en de rest naar kleine letters.\u2026"
+summary: Het kapitaliseren van een string betekent meestal het omzetten van het eerste
+  karakter van een string naar een hoofdletter en de rest naar kleine letters.
 title: Een string met hoofdletters maken
 weight: 2
 ---

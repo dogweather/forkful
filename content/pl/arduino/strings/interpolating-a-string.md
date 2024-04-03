@@ -6,8 +6,7 @@ description: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmienn
 lastmod: '2024-03-13T22:44:35.658487-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmiennych bezpo\u015B\
-  rednio w tekst. U\u017Cywamy jej, by u\u0142atwi\u0107 tworzenie dynamicznych wiadomo\u015B\
-  ci i formatowa\u0107 je\u2026"
+  rednio w tekst."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

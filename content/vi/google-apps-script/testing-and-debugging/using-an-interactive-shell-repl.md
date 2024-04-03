@@ -12,7 +12,9 @@ model: gpt-4-0125-preview
 summary: "Giao di\u1EC7n l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c, hay v\xF2ng l\u1EB7\
   p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), l\xE0 m\u1ED9t m\xF4i tr\u01B0\u1EDD\
   ng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1n gi\u1EA3n, l\u1EA5y \u0111\
-  \u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDDi d\xF9ng (bi\u1EC3u\u2026"
+  \u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDDi d\xF9ng (bi\u1EC3u\
+  \ th\u1EE9c), \u0111\xE1nh gi\xE1 ch\xFAng v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 l\u1EA1\
+  i cho ng\u01B0\u1EDDi d\xF9ng."
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
 weight: 34

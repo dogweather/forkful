@@ -6,7 +6,7 @@ description: "Organizar el c\xF3digo en funciones significa descomponer la besti
 lastmod: '2024-03-13T22:44:58.942912-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones significa descomponer la bestia de un\
-  \ programa en bloques manejables, cada uno realizando una tarea distinta. Los\u2026"
+  \ programa en bloques manejables, cada uno realizando una tarea distinta."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

@@ -6,7 +6,8 @@ description: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer u
 lastmod: '2024-03-13T22:44:57.990032-06:00'
 model: gpt-4-0125-preview
 summary: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une mise\
-  \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\u2026"
+  \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\
+  \ serveur."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

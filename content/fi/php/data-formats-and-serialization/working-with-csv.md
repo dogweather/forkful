@@ -7,7 +7,8 @@ description: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\
 lastmod: '2024-03-13T22:44:56.678262-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\xE4\
-  \ datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"
+  \ datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\
+  \ v\xE4litt\xE4m\xE4\xE4n taulukkomuotoista dataa pelk\xE4ss\xE4 tekstiss\xE4."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

@@ -5,7 +5,8 @@ description: "Generar n\xFAmeros aleatorios en Bash proporciona una forma de int
 lastmod: '2024-03-13T22:44:59.240226-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Bash proporciona una forma de introducir\
-  \ imprevisibilidad en los scripts, lo cual es esencial para tareas como generar\u2026"
+  \ imprevisibilidad en los scripts, lo cual es esencial para tareas como generar\
+  \ contrase\xF1as seguras, simular datos o para la programaci\xF3n de juegos."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

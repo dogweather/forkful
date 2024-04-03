@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.562352-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
   \ de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados altamente leg\xED\
-  vel,\u2026"
+  vel, frequentemente utilizado para arquivos de configura\xE7\xE3o, armazenamento\
+  \ de dados e mensagens entre processos."
 title: Trabalhando com YAML
 weight: 41
 ---

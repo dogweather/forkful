@@ -4,8 +4,7 @@ description: "XML, short for eXtensible Markup Language, is like JSON's verbose 
   \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"
 lastmod: '2024-03-13T22:44:59.918439-06:00'
 model: gpt-4-1106-preview
-summary: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
-  \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"
+summary: XML, short for eXtensible Markup Language, is like JSON's verbose cousin.
 title: Working with XML
 weight: 40
 ---

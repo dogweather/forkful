@@ -10,8 +10,7 @@ model: gpt-4-0125-preview
 summary: "\u60F3\u50CF\u3057\u3066\u307F\u3066\u304F\u3060\u3055\u3044\u3001\u3042\
   \u306A\u305F\u306B\u306F\u6B63\u3057\u304F\u52D5\u4F5C\u3057\u3066\u3044\u306A\u3044\
   \u5C0F\u3055\u306A\u30D7\u30ED\u30B0\u30E9\u30E0\u304C\u3042\u308A\u307E\u3059\uFF1A\
-  \ ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
-  \ } static int Sum(int a, int b) {\u2026"
+  \n\n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n    Console."
 title: "\u30C7\u30D0\u30C3\u30AC\u30FC\u306E\u4F7F\u3044\u65B9"
 weight: 35
 ---

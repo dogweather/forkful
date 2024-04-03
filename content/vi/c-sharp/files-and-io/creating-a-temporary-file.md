@@ -13,7 +13,7 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u012
   a l\xE0 b\u1EA1n \u0111ang t\u1EA1o m\u1ED9t t\u1EC7p cho m\u1ED9t m\u1EE5c \u0111\
   \xEDch ng\u1EAFn h\u1EA1n, nh\u01B0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u ch\u1EC9\
   \ c\u1EA7n trong qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1\
-  ng\u2026"
+  ng tr\xECnh."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

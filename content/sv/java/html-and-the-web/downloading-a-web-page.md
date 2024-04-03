@@ -6,8 +6,7 @@ description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-koden som b
 lastmod: '2024-03-13T22:44:37.786268-06:00'
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-koden som browsern\
-  \ anv\xE4nder f\xF6r att visa sidan. Programmerare g\xF6r detta f\xF6r att skrapa\
-  \ data, automatiskt\u2026"
+  \ anv\xE4nder f\xF6r att visa sidan."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

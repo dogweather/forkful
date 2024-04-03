@@ -4,8 +4,8 @@ description: "Searching and replacing text is how you find specific strings in c
   \ and swap them out for something else. Programmers do this to update data, fix\u2026"
 lastmod: '2024-03-13T22:45:00.153085-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text is how you find specific strings in content\
-  \ and swap them out for something else. Programmers do this to update data, fix\u2026"
+summary: Searching and replacing text is how you find specific strings in content
+  and swap them out for something else.
 title: Searching and replacing text
 weight: 10
 ---

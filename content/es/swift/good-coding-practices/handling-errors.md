@@ -6,8 +6,7 @@ description: "Manejar errores en Swift significa anticipar y responder a problem
 lastmod: '2024-03-13T22:44:59.423826-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores en Swift significa anticipar y responder a problemas que\
-  \ surgen cuando tu c\xF3digo se ejecuta. Lo hacemos para controlar el caos\u2014\
-  manteniendo\u2026"
+  \ surgen cuando tu c\xF3digo se ejecuta."
 title: Manejo de errores
 weight: 16
 ---

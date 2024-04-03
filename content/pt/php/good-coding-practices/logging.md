@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:46.673817-06:00'
 model: gpt-4-1106-preview
 summary: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
   rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\
-  \ dados\u2026"
+  \ dados significativos que acontecem quando sua aplica\xE7\xE3o est\xE1 em execu\xE7\
+  \xE3o."
 title: Registro de Logs
 weight: 17
 ---

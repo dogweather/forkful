@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.389653-06:00'
 model: gpt-4-0125-preview
 summary: "Att parsa HTML i Go inneb\xE4r att analysera inneh\xE5llet i HTML-filer\
   \ f\xF6r att extrahera data, manipulera strukturen eller konvertera HTML till andra\
-  \ format.\u2026"
+  \ format."
 title: Tolka HTML
 weight: 43
 ---

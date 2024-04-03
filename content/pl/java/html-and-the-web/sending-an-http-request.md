@@ -6,8 +6,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikacja z serwerem w 
 lastmod: '2024-03-13T22:44:35.274252-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikacja z serwerem w sieci;\
-  \ mo\u017Cna prosi\u0107 o dane lub wysy\u0142a\u0107 je. Programi\u015Bci to robi\u0105\
-  , by pobiera\u0107 informacje, autoryzowa\u0107\u2026"
+  \ mo\u017Cna prosi\u0107 o dane lub wysy\u0142a\u0107 je."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

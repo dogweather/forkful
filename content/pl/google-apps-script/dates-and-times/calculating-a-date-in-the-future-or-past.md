@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.918132-06:00'
 model: gpt-4-0125-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
   \ na manipulowaniu obiektami daty, aby znale\u017A\u0107 daty poza obecn\u0105 dat\u0105\
-  \ lub przed ni\u0105, odpowiednio.\u2026"
+  \ lub przed ni\u0105, odpowiednio."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

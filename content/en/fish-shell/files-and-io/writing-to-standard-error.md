@@ -4,8 +4,8 @@ description: "Writing to standard error (stderr) in Fish Shell is about directin
   \ error messages or diagnostics separately from the standard output (stdout).\u2026"
 lastmod: '2024-03-13T22:45:00.488965-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error (stderr) in Fish Shell is about directing error\
-  \ messages or diagnostics separately from the standard output (stdout).\u2026"
+summary: Writing to standard error (stderr) in Fish Shell is about directing error
+  messages or diagnostics separately from the standard output (stdout).
 title: Writing to standard error
 weight: 25
 ---

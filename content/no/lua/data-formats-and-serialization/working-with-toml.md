@@ -5,7 +5,7 @@ description: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (
 lastmod: '2024-03-13T22:44:40.953910-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (Toms Obvious,\
-  \ Minimal Language)-data med Lua. Programmerere benytter TOML for\u2026"
+  \ Minimal Language)-data med Lua."
 title: Jobbe med TOML
 weight: 39
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.246361-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo existente\
   \ sem alterar seu comportamento externo, visando melhorar atributos n\xE3o funcionais\
-  \ como\u2026"
+  \ como legibilidade e manutenibilidade."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

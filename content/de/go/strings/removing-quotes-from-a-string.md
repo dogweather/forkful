@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.274218-06:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
   \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\
-  \ einem gegebenen\u2026"
+  \ einem gegebenen String zu entfernen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

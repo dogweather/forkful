@@ -8,7 +8,8 @@ description: "Obtener la fecha actual en Google Apps Script se trata de obtener 
 lastmod: '2024-03-13T22:44:58.547526-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Google Apps Script se trata de obtener la fecha\
-  \ y hora en vivo, una tarea com\xFAn para automatizar tareas, registrar y poner\u2026"
+  \ y hora en vivo, una tarea com\xFAn para automatizar tareas, registrar y poner\
+  \ marcas de tiempo en aplicaciones vinculadas al ecosistema de Google."
 title: Obteniendo la fecha actual
 weight: 29
 ---

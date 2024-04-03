@@ -4,8 +4,8 @@ description: "Le Refactoring est le processus de restructuration du code informa
   \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
 lastmod: '2024-03-13T22:44:58.284623-06:00'
 model: gpt-4-0125-preview
-summary: "Le Refactoring est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+summary: Le Refactoring est le processus de restructuration du code informatique existant
+  sans en changer le comportement externe.
 title: "R\xE9usinage"
 weight: 19
 ---

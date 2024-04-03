@@ -6,8 +6,7 @@ description: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha
 lastmod: '2024-03-13T22:44:57.419850-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha\xEEne\
-  \ de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments. Les programmeurs\
-  \ le font pour\u2026"
+  \ de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

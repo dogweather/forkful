@@ -4,8 +4,9 @@ description: "String interpolation in Visual Basic for Applications (VBA) refers
   \ the process of embedding variables or expressions within a string literal, allowing\u2026"
 lastmod: '2024-03-13T22:44:59.921994-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolation in Visual Basic for Applications (VBA) refers to the\
-  \ process of embedding variables or expressions within a string literal, allowing\u2026"
+summary: String interpolation in Visual Basic for Applications (VBA) refers to the
+  process of embedding variables or expressions within a string literal, allowing
+  dynamic string formation.
 title: Interpolating a string
 weight: 8
 ---

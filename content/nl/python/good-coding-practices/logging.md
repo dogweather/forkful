@@ -7,8 +7,9 @@ description: "Loggen is het proces van het vastleggen van applicatiegebeurteniss
   \ en\u2026"
 lastmod: '2024-03-13T22:44:50.383142-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen is het proces van het vastleggen van applicatiegebeurtenissen terwijl\
-  \ een programma draait, waardoor een spoor van hints voor post-mortemanalyse en\u2026"
+summary: Loggen is het proces van het vastleggen van applicatiegebeurtenissen terwijl
+  een programma draait, waardoor een spoor van hints voor post-mortemanalyse en real-time
+  monitoring wordt geboden.
 title: Logboekregistratie
 weight: 17
 ---

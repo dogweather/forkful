@@ -7,7 +7,7 @@ description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel, 
 lastmod: '2024-03-13T22:44:50.888645-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel, meestal\
-  \ geschreven als `a + bi`. Ze zijn cruciaal in geavanceerde wiskunde, natuurkunde,\u2026"
+  \ geschreven als `a + bi`."
 title: Werken met complexe getallen
 weight: 14
 ---

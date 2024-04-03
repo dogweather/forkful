@@ -6,8 +6,7 @@ description: "Criar um arquivo tempor\xE1rio \xE9 uma maneira de gerar um arquiv
 lastmod: '2024-03-13T22:44:46.257266-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 uma maneira de gerar um arquivo que\
-  \ s\xF3 precisa existir durante a execu\xE7\xE3o do seu programa. Programadores\
-  \ fazem isso para\u2026"
+  \ s\xF3 precisa existir durante a execu\xE7\xE3o do seu programa."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

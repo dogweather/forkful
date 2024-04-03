@@ -7,7 +7,9 @@ description: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu
 lastmod: '2024-03-13T22:44:35.731127-06:00'
 model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
-  \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
+  \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla aplikacji\
+  \ potrzebuj\u0105cych zachowa\u0107 dane, takie jak logi, tre\u015Bci generowane\
+  \ przez u\u017Cytkownik\xF3w lub ustawienia konfiguracyjne."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

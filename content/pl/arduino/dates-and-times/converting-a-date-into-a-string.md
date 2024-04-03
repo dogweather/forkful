@@ -6,8 +6,7 @@ description: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142at
 lastmod: '2024-03-13T22:44:35.682793-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142atwe wy\u015B\
-  wietlanie i zapisywanie dat w czytelnej formie. Programi\u015Bci wykonuj\u0105 t\u0119\
-  \ operacj\u0119, by poprawi\u0107\u2026"
+  wietlanie i zapisywanie dat w czytelnej formie."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

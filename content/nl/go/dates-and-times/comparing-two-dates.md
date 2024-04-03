@@ -7,8 +7,8 @@ description: "Het vergelijken van twee datums in programmeren is een fundamentel
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.300389-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums in programmeren is een fundamentele taak\
-  \ die ontwikkelaars in staat stelt de chronologische relatie tussen datums te\u2026"
+summary: Het vergelijken van twee datums in programmeren is een fundamentele taak
+  die ontwikkelaars in staat stelt de chronologische relatie tussen datums te evalueren.
 title: Twee datums vergelijken
 weight: 27
 ---

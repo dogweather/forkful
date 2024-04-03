@@ -4,8 +4,8 @@ description: "La generazione di numeri casuali nella programmazione riguarda la 
   \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.766317-06:00'
 model: gpt-4-0125-preview
-summary: "La generazione di numeri casuali nella programmazione riguarda la creazione\
-  \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"
+summary: La generazione di numeri casuali nella programmazione riguarda la creazione
+  di valori numerici non deterministici o imprevedibili.
 title: Generazione di numeri casuali
 weight: 12
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:34.951131-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, czyli P\u0119tla Czytaj-Wykonaj-Drukuj, to \u015Brodowisko programistyczne,\
   \ kt\xF3re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i\
-  \ zwraca wynik\u2026"
+  \ zwraca wynik u\u017Cytkownikowi."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

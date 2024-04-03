@@ -5,7 +5,8 @@ description: "Converter uma data para uma string significa transform\xE1-la de u
 lastmod: '2024-03-13T22:44:46.678678-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data para uma string significa transform\xE1-la de um formato\
-  \ de data, como UNIX Timestamp ou DateTime, para uma sequ\xEAncia de caracteres\u2026"
+  \ de data, como UNIX Timestamp ou DateTime, para uma sequ\xEAncia de caracteres\
+  \ leg\xEDveis."
 title: Convertendo uma data em uma string
 weight: 28
 ---

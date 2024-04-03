@@ -8,8 +8,7 @@ description: "Obtener la fecha actual en programaci\xF3n es una tarea fundamenta
 lastmod: '2024-03-13T22:44:59.512043-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental que\
-  \ te permite recuperar y manipular los datos de fecha y hora del sistema. En tareas\
-  \ de\u2026"
+  \ te permite recuperar y manipular los datos de fecha y hora del sistema."
 title: Obteniendo la fecha actual
 weight: 29
 ---

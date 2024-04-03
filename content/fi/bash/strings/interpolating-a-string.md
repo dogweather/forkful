@@ -6,8 +6,7 @@ description: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden sis\
 lastmod: '2024-03-13T22:44:56.724561-06:00'
 model: gpt-4-1106-preview
 summary: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden sis\xE4llytt\xE4\
-  mist\xE4 osaksi merkkijonoja. Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4, koska se tekee\
-  \ koodista\u2026"
+  mist\xE4 osaksi merkkijonoja."
 title: Merkkijonon interpolointi
 weight: 8
 ---

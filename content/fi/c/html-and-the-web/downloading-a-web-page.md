@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.038680-06:00'
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti internetsivun\
   \ sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen k\xE4sittely\xE4\
-  \ tai offline-\u2026"
+  \ tai offline-k\xE4ytt\xF6\xE4 varten."
 title: Web-sivun lataaminen
 weight: 42
 ---

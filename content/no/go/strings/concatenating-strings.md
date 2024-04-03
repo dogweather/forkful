@@ -8,8 +8,7 @@ description: "\xC5 konkatere strenger involverer \xE5 sammenf\xF8ye to eller fle
 lastmod: '2024-03-13T22:44:40.258076-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konkatere strenger involverer \xE5 sammenf\xF8ye to eller flere strenger\
-  \ ende-til-ende for \xE5 danne en ny streng. Programmerere gj\xF8r dette for \xE5\
-  \ dynamisk\u2026"
+  \ ende-til-ende for \xE5 danne en ny streng."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

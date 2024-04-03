@@ -7,8 +7,9 @@ description: "Das Parsen von HTML in der Programmierung beinhaltet die Analyse d
   \ zu\u2026"
 lastmod: '2024-03-13T22:44:53.885836-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen von HTML in der Programmierung beinhaltet die Analyse der Struktur\
-  \ eines HTML-Dokuments, was Ihnen erlaubt, dessen Inhalt programmatisch zu\u2026"
+summary: Das Parsen von HTML in der Programmierung beinhaltet die Analyse der Struktur
+  eines HTML-Dokuments, was Ihnen erlaubt, dessen Inhalt programmatisch zu extrahieren,
+  zu manipulieren und zu interagieren.
 title: HTML parsen
 weight: 43
 ---

@@ -6,8 +6,7 @@ description: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5g
 lastmod: '2024-03-13T22:44:37.522274-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar efter\
-  \ data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet. Programmerare g\xF6\
-  r detta f\xF6r att interagera\u2026"
+  \ data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

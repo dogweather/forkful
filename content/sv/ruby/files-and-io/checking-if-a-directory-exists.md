@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.446035-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
   \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\
-  \ eller skapa\u2026"
+  \ eller skapa nya kataloger."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

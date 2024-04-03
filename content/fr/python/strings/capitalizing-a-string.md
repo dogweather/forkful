@@ -8,8 +8,7 @@ description: "Mettre une cha\xEEne en capitales signifie convertir le premier ca
 lastmod: '2024-03-13T22:44:57.216520-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre une cha\xEEne en capitales signifie convertir le premier caract\xE8\
-  re d'une cha\xEEne en majuscule et le reste en minuscule. Cette op\xE9ration est\
-  \ couramment\u2026"
+  re d'une cha\xEEne en majuscule et le reste en minuscule."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

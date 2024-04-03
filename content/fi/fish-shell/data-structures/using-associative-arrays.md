@@ -8,7 +8,8 @@ description: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietoje
 lastmod: '2024-03-13T22:44:56.985021-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietojen tallentamisen\
-  \ avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4 ja hakemisesta\u2026"
+  \ avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4 ja hakemisesta\
+  \ avaimen perusteella helpompaa."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

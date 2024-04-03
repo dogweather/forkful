@@ -5,9 +5,8 @@ description: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjai
   , kun halutaan\u2026"
 lastmod: '2024-03-13T22:44:56.603018-06:00'
 model: gpt-4-1106-preview
-summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjainsarjan\
-  \ konvertoimista vastaaviin pieniin kirjaimiin. T\xE4m\xE4 on hy\xF6dyllist\xE4\
-  , kun halutaan\u2026"
+summary: Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjainsarjan
+  konvertoimista vastaaviin pieniin kirjaimiin.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

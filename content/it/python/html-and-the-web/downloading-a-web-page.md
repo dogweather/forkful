@@ -4,8 +4,7 @@ description: "Quando scarichi una pagina web, copi i suoi contenuti dalla rete a
   \ tuo computer. I programmatori lo fanno per estrarre dati, testare siti, o per\u2026"
 lastmod: '2024-03-13T22:44:42.999644-06:00'
 model: gpt-4-1106-preview
-summary: "Quando scarichi una pagina web, copi i suoi contenuti dalla rete al tuo\
-  \ computer. I programmatori lo fanno per estrarre dati, testare siti, o per\u2026"
+summary: Quando scarichi una pagina web, copi i suoi contenuti dalla rete al tuo computer.
 title: Scaricare una pagina web
 weight: 42
 ---

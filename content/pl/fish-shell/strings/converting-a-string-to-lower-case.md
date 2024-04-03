@@ -6,8 +6,7 @@ description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmian
 lastmod: '2024-03-13T22:44:35.825581-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmianie wszystkich\
-  \ wielkich liter w napisie na ich ma\u0142e odpowiedniki. Programi\u015Bci robi\u0105\
-  \ to, by ujednolici\u0107\u2026"
+  \ wielkich liter w napisie na ich ma\u0142e odpowiedniki."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

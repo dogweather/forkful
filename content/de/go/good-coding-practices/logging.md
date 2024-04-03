@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.295036-06:00'
 model: gpt-4-0125-preview
 summary: "Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufzeichnung\
   \ von Informationen \xFCber die Ausf\xFChrung eines Programms, um sein Verhalten\
-  \ zu\u2026"
+  \ zu verfolgen und Probleme zu diagnostizieren."
 title: Protokollierung
 weight: 17
 ---

@@ -5,7 +5,7 @@ description: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite e
 lastmod: '2024-03-13T22:44:46.239790-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
-  \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"
+  \ trechos de c\xF3digo em tempo real."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

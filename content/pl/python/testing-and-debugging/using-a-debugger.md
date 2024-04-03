@@ -5,9 +5,7 @@ description: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pyth
   dem: ```Python def\u2026"
 lastmod: '2024-03-13T22:44:34.954160-06:00'
 model: gpt-4-0125-preview
-summary: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pythona. Wyobra\u017A\
-  \ sobie plik, `buggy.py`, z trudnym do zauwa\u017Cenia b\u0142\u0119dem: ```Python\
-  \ def\u2026"
+summary: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pythona."
 title: Korzystanie z debugera
 weight: 35
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.402388-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollistaa\
   \ k\xE4ytt\xE4j\xE4n sy\xF6tt\xE4mien komentojen suorittamisen ja tulosten n\xE4\
-  kemisen reaaliajassa.\u2026"
+  kemisen reaaliajassa."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

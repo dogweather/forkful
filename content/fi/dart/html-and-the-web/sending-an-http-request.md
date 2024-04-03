@@ -8,7 +8,7 @@ description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoin
 lastmod: '2024-03-13T22:44:56.267351-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin aloittamista\
-  \ web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4t sen\u2026"
+  \ web-palvelimen tai API:n kanssa Dart-sovelluksesta."
 title: "L\xE4hett\xE4m\xE4ss\xE4 HTTP-pyynt\xF6"
 weight: 44
 ---

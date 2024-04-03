@@ -6,8 +6,7 @@ description: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4t
 lastmod: '2024-03-13T22:44:53.688373-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4tzliche\
-  \ Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsf\xE4\
-  higere\u2026"
+  \ Eingaben zu steuern."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

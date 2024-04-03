@@ -5,7 +5,7 @@ description: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3di
 lastmod: '2024-03-13T22:44:59.375983-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3digo desde\
-  \ donde todo crece. Programadores lo hacen para transformar ideas en software\u2026"
+  \ donde todo crece."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

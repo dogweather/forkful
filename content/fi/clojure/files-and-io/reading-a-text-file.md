@@ -5,9 +5,7 @@ description: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon 
   \ tai\u2026"
 lastmod: '2024-03-13T22:44:56.201513-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista\
-  \ levylt\xE4 ohjelmaan. Ohjelmoijat tekev\xE4t sen datan k\xE4sittelyyn, analysointiin\
-  \ tai\u2026"
+summary: "\"Mik\xE4 ja Miksi."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

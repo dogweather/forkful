@@ -8,8 +8,7 @@ description: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et t
 lastmod: '2024-03-13T22:44:40.612902-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et tall til\
-  \ n\xE6rmeste hele tall eller til et bestemt antall desimalplasser. Programmerere\
-  \ runder av\u2026"
+  \ n\xE6rmeste hele tall eller til et bestemt antall desimalplasser."
 title: Avrunding av tall
 weight: 13
 ---

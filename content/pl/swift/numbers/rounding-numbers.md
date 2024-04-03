@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.749770-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza przybli\u017Cenie warto\u015Bci numerycznej\
   \ do okre\u015Blonej precyzji, zwykle w celu usuni\u0119cia niechcianych miejsc\
-  \ po przecinku. Programi\u015Bci\u2026"
+  \ po przecinku."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

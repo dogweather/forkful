@@ -6,8 +6,8 @@ description: "Het ontleden van een datum betekent het omzetten van een datum in 
   \ naar een datumobject dat een programma kan begrijpen en manipuleren. Het is\u2026"
 lastmod: '2024-03-13T22:44:50.777343-06:00'
 model: gpt-4-0125-preview
-summary: "Het ontleden van een datum betekent het omzetten van een datum in tekstformaat\
-  \ naar een datumobject dat een programma kan begrijpen en manipuleren. Het is\u2026"
+summary: Het ontleden van een datum betekent het omzetten van een datum in tekstformaat
+  naar een datumobject dat een programma kan begrijpen en manipuleren.
 title: Een datum uit een string parsen
 weight: 30
 ---

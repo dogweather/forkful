@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.232731-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Visual Basic for Applications (VBA) wi\u0105\
   \u017Ce si\u0119 z konfiguracj\u0105 \u015Brodowiska w aplikacji hosta, takiej jak\
-  \ Excel, aby\u2026"
+  \ Excel, aby automatyzowa\u0107 zadania lub rozszerza\u0107 funkcjonalno\u015B\u0107\
+  ."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

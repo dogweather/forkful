@@ -6,8 +6,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen
 lastmod: '2024-03-13T22:44:56.912288-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
-  ytett\xE4viksi osiksi. T\xE4m\xE4 tekee koodista siistimm\xE4n, v\xE4hemm\xE4n virhealttiin\
-  \ ja\u2026"
+  ytett\xE4viksi osiksi."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

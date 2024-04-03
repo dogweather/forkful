@@ -6,7 +6,7 @@ description: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els pa
 lastmod: '2024-03-13T22:44:57.632442-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par l'ajout\
-  \ d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans des domaines\u2026"
+  \ d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`."
 title: Manipulation des nombres complexes
 weight: 14
 ---

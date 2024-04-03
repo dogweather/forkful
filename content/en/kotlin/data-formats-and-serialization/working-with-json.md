@@ -4,8 +4,8 @@ description: "Working with JSON (JavaScript Object Notation) in Kotlin involves 
   \ and generating JSON data. Programmers do this to easily exchange data between\u2026"
 lastmod: '2024-03-13T22:45:00.068438-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON (JavaScript Object Notation) in Kotlin involves parsing\
-  \ and generating JSON data. Programmers do this to easily exchange data between\u2026"
+summary: Working with JSON (JavaScript Object Notation) in Kotlin involves parsing
+  and generating JSON data.
 title: Working with JSON
 weight: 38
 ---

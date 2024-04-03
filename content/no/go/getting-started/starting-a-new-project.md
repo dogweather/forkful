@@ -8,8 +8,7 @@ description: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et a
 lastmod: '2024-03-13T22:44:40.267632-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et arbeidsomr\xE5\
-  de og initialisere det med de n\xF8dvendige Go-modulene. Programmerere gj\xF8r dette\
-  \ for \xE5\u2026"
+  de og initialisere det med de n\xF8dvendige Go-modulene."
 title: Starter et nytt prosjekt
 weight: 1
 ---

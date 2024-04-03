@@ -4,8 +4,7 @@ description: "Handling errors in coding is about expecting the unexpected. It's 
   \ art of planning for when things go sideways so you can keep your program running\u2026"
 lastmod: '2024-03-13T22:45:00.212405-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors in coding is about expecting the unexpected. It's the art\
-  \ of planning for when things go sideways so you can keep your program running\u2026"
+summary: Handling errors in coding is about expecting the unexpected.
 title: Handling errors
 weight: 16
 ---

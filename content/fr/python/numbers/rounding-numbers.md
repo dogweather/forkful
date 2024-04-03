@@ -4,8 +4,8 @@ description: "Arrondir des nombres signifie les ajuster pour les rapprocher d'un
   \ valeur plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
 lastmod: '2024-03-13T22:44:57.229658-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur\
-  \ plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
+summary: Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur
+  plus simple ou plus significative.
 title: Arrondir les nombres
 weight: 13
 ---

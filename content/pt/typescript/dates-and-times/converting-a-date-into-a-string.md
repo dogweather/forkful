@@ -5,7 +5,7 @@ description: "Converter uma data em uma string trata-se de transformar o objeto 
 lastmod: '2024-03-13T22:44:46.337405-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string trata-se de transformar o objeto Date em\
-  \ um texto leg\xEDvel. Programadores fazem isso para exibir datas de forma\u2026"
+  \ um texto leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

@@ -6,8 +6,7 @@ description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoitt
 lastmod: '2024-03-13T22:44:56.238699-06:00'
 model: gpt-4-1106-preview
 summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa p\xE4\
-  iv\xE4m\xE4\xE4r\xE4-datan esitt\xE4mist\xE4 luettavassa muodossa. Kehitt\xE4j\xE4\
-  t tekev\xE4t t\xE4t\xE4, koska ihmiset ymm\xE4rt\xE4v\xE4t\u2026"
+  iv\xE4m\xE4\xE4r\xE4-datan esitt\xE4mist\xE4 luettavassa muodossa."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

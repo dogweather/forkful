@@ -7,7 +7,8 @@ description: "Analisar uma data de uma string permite que programadores converta
 lastmod: '2024-03-13T22:44:46.971834-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string permite que programadores convertam representa\xE7\
-  \xF5es textuais de datas em objetos `Date` do JavaScript, facilitando\u2026"
+  \xF5es textuais de datas em objetos `Date` do JavaScript, facilitando manipula\xE7\
+  \xF5es, compara\xE7\xF5es e opera\xE7\xF5es de formata\xE7\xE3o de datas."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

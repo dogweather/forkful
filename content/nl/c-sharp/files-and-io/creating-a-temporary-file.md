@@ -6,8 +6,9 @@ description: "Een tijdelijk bestand aanmaken betekent dat je een bestand generee
   \ voor een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn\u2026"
 lastmod: '2024-03-13T22:44:50.829559-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand aanmaken betekent dat je een bestand genereert voor\
-  \ een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn\u2026"
+summary: Een tijdelijk bestand aanmaken betekent dat je een bestand genereert voor
+  een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn tijdens
+  de uitvoering van een programma.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

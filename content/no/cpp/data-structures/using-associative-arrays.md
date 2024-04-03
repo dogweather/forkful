@@ -7,7 +7,8 @@ description: "Assosiative tabeller, kjent som `std::map` eller `std::unordered_m
 lastmod: '2024-03-13T22:44:41.092309-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som `std::map` eller `std::unordered_map` i\
-  \ C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke\u2026"
+  \ C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke\
+  \ meningsfulle n\xF8kler."
 title: Bruke associative tabeller
 weight: 15
 ---

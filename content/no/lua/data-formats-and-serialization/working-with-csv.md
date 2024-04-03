@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.952948-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV (kommaseparerte verdier) filer inneb\xE6rer parsing\
   \ og generering av tekstdata organisert i rader og kolonner, ved bruk av komma for\
-  \ \xE5\u2026"
+  \ \xE5 separere individuelle verdier."
 title: Arbeide med CSV
 weight: 37
 ---

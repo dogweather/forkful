@@ -6,8 +6,8 @@ description: "Analizar una fecha a partir de un string en Haskell implica conver
   \ representaciones textuales de fechas en un formato estructurado que el programa\u2026"
 lastmod: '2024-03-13T22:44:59.127933-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha a partir de un string en Haskell implica convertir representaciones\
-  \ textuales de fechas en un formato estructurado que el programa\u2026"
+summary: Analizar una fecha a partir de un string en Haskell implica convertir representaciones
+  textuales de fechas en un formato estructurado que el programa pueda manipular.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

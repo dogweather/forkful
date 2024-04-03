@@ -6,8 +6,7 @@ description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4kse
 lastmod: '2024-03-13T22:44:56.627184-06:00'
 model: gpt-4-1106-preview
 summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme niiden\
-  \ j\xE4rjestyksen tai aikaeron. Ohjelmoijat tekev\xE4t t\xE4t\xE4 ajanhallinnassa,\
-  \ tapahtumien ajoituksessa ja\u2026"
+  \ j\xE4rjestyksen tai aikaeron."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

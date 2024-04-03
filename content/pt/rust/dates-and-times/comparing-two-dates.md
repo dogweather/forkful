@@ -6,8 +6,7 @@ description: "Comparar duas datas \xE9 o ato de verificar se s\xE3o iguais, se u
 lastmod: '2024-03-13T22:44:46.380183-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 o ato de verificar se s\xE3o iguais, se uma \xE9\
-  \ anterior \xE0 outra ou se \xE9 mais recente. Programadores fazem isso para manipular\
-  \ e validar\u2026"
+  \ anterior \xE0 outra ou se \xE9 mais recente."
 title: Comparando duas datas
 weight: 27
 ---

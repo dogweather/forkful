@@ -6,8 +6,7 @@ description: "Wyci\u0105ganie podci\u0105g\xF3w to pobieranie okre\u015Blonych f
 lastmod: '2024-03-13T22:44:35.485617-06:00'
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to pobieranie okre\u015Blonych fragment\xF3\
-  w z ca\u0142ego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
-  \ danymi, weryfikowa\u0107 formaty lub po\u2026"
+  w z ca\u0142ego ci\u0105gu znak\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

@@ -7,7 +7,7 @@ description: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 diri
 lastmod: '2024-03-13T22:44:40.991126-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 dirigere feilmeldinger\
-  \ eller viktig diagnostisk utdata separat fra standard utdata (stdout).\u2026"
+  \ eller viktig diagnostisk utdata separat fra standard utdata (stdout)."
 title: Skriving til standardfeil
 weight: 25
 ---

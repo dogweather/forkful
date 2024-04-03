@@ -5,7 +5,7 @@ description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, hei\xDFt
 lastmod: '2024-03-13T22:44:53.447096-06:00'
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, hei\xDFt einfach,\
-  \ bestimmte Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen.\u2026"
+  \ bestimmte Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

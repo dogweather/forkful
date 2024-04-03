@@ -4,8 +4,7 @@ description: Downloading a web page means snagging its contents via the web. Cod
   do this for web scraping, offline viewing, or automating interactions with websites.
 lastmod: '2024-03-13T22:45:00.282906-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means snagging its contents via the web. Coders do
-  this for web scraping, offline viewing, or automating interactions with websites.
+summary: Downloading a web page means snagging its contents via the web.
 title: Downloading a web page
 weight: 42
 ---

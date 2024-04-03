@@ -8,8 +8,7 @@ description: "Analisar uma data a partir de uma string envolve interpretar o for
 lastmod: '2024-03-13T22:44:46.888729-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve interpretar o formato da\
-  \ string para extrair componentes da data como dia, m\xEAs e ano. Programadores\
-  \ fazem\u2026"
+  \ string para extrair componentes da data como dia, m\xEAs e ano."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

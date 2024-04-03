@@ -6,8 +6,7 @@ description: "I Elixir anv\xE4nder vi str\xE4nginterpolering f\xF6r att effektiv
 lastmod: '2024-03-13T22:44:37.553247-06:00'
 model: gpt-4-1106-preview
 summary: "I Elixir anv\xE4nder vi str\xE4nginterpolering f\xF6r att effektivt bygga\
-  \ en str\xE4ng med variabler eller uttryck. Programmerare g\xF6r detta f\xF6r att\
-  \ spara tid, \xF6ka\u2026"
+  \ en str\xE4ng med variabler eller uttryck."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

@@ -4,8 +4,8 @@ description: "Comparing two dates in PowerShell means figuring out if one is ear
   \ the same, or later than the other. Programmers often do this to manage events,\u2026"
 lastmod: '2024-03-13T22:45:00.295696-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates in PowerShell means figuring out if one is earlier,\
-  \ the same, or later than the other. Programmers often do this to manage events,\u2026"
+summary: Comparing two dates in PowerShell means figuring out if one is earlier, the
+  same, or later than the other.
 title: Comparing two dates
 weight: 27
 ---

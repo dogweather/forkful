@@ -7,7 +7,7 @@ description: "Parsare l'HTML significa sezionare il markup di una pagina web in 
 lastmod: '2024-03-13T22:44:43.389193-06:00'
 model: gpt-4-0125-preview
 summary: "Parsare l'HTML significa sezionare il markup di una pagina web in qualcosa\
-  \ che un programma pu\xF2 capire e manipolare. I programmatori eseguono il parsing\u2026"
+  \ che un programma pu\xF2 capire e manipolare."
 title: Analisi del HTML
 weight: 43
 ---

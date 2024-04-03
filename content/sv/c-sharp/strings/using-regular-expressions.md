@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.903085-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i C# \xE4r ett kraftfullt verktyg f\xF6r m\xF6\
   nsterpassning inom str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare att\
-  \ s\xF6ka, ers\xE4tta, dela upp\u2026"
+  \ s\xF6ka, ers\xE4tta, dela upp eller extrahera data effektivt."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

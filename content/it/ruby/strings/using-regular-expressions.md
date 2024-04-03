@@ -6,8 +6,9 @@ description: "Le espressioni regolari (regex) in Ruby sono schemi utilizzati per
   \ combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di\u2026"
 lastmod: '2024-03-13T22:44:44.039665-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) in Ruby sono schemi utilizzati per identificare\
-  \ combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di\u2026"
+summary: Le espressioni regolari (regex) in Ruby sono schemi utilizzati per identificare
+  combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di cercare,
+  trovare corrispondenze e manipolare testi in modo efficiente.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

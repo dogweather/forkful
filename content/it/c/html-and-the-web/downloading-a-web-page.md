@@ -6,8 +6,9 @@ description: "Scaricare una pagina web in C comporta l'accesso programmato al co
   \ di una pagina web tramite internet e il suo salvataggio localmente per\u2026"
 lastmod: '2024-03-13T22:44:43.996652-06:00'
 model: gpt-4-0125-preview
-summary: "Scaricare una pagina web in C comporta l'accesso programmato al contenuto\
-  \ di una pagina web tramite internet e il suo salvataggio localmente per\u2026"
+summary: Scaricare una pagina web in C comporta l'accesso programmato al contenuto
+  di una pagina web tramite internet e il suo salvataggio localmente per l'elaborazione
+  o l'uso offline.
 title: Scaricare una pagina web
 weight: 42
 ---

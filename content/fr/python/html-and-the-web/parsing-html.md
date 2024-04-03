@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.233315-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique l'\xE9tude du code HTML d'une page web pour extraire\
   \ des informations ou des \xE9l\xE9ments sp\xE9cifiques, une t\xE2che commune pour\
-  \ le web\u2026"
+  \ le web scraping, le data mining, ou l'automatisation des interactions avec les\
+  \ sites web."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

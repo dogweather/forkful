@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.907584-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w j\u0119zyku C polega na generowaniu pliku,\
   \ kt\xF3ry ma by\u0107 u\u017Cywany przez kr\xF3tki czas, zazwyczaj jako przestrze\u0144\
-  \ robocza dla\u2026"
+  \ robocza dla przetwarzania danych lub ich przechowywania."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

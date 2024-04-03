@@ -8,8 +8,7 @@ description: "Capitalizar una cadena significa modificarla de modo que la primer
 lastmod: '2024-03-13T22:44:59.483696-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena significa modificarla de modo que la primera letra\
-  \ est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es una tarea\
-  \ com\xFAn\u2026"
+  \ est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

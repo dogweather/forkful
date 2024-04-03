@@ -8,8 +8,7 @@ description: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrai
 lastmod: '2024-03-13T22:44:46.279188-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrair dados\
-  \ de documentos HTML. Os programadores fazem isso para interagir com ou raspar conte\xFA\
-  do da\u2026"
+  \ de documentos HTML."
 title: Analisando HTML
 weight: 43
 ---

@@ -4,8 +4,8 @@ description: "Refactoring is the process of restructuring existing computer code
   \ changing its external behavior, aimed at improving nonfunctional attributes.\u2026"
 lastmod: '2024-03-13T22:44:59.753213-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is the process of restructuring existing computer code without\
-  \ changing its external behavior, aimed at improving nonfunctional attributes.\u2026"
+summary: Refactoring is the process of restructuring existing computer code without
+  changing its external behavior, aimed at improving nonfunctional attributes.
 title: Refactoring
 weight: 19
 ---

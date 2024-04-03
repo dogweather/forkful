@@ -4,8 +4,8 @@ description: "Complex numbers, the ones with a real part and an imaginary part (
   \ 3 + 4i), are vital in fields like engineering, physics, and data science.\u2026"
 lastmod: '2024-03-13T22:45:00.276606-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers, the ones with a real part and an imaginary part (like 3\
-  \ + 4i), are vital in fields like engineering, physics, and data science.\u2026"
+summary: Complex numbers, the ones with a real part and an imaginary part (like 3
+  + 4i), are vital in fields like engineering, physics, and data science.
 title: Working with complex numbers
 weight: 14
 ---

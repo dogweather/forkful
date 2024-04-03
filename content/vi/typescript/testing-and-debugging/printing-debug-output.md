@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c in \u1EA5n th\xF4ng tin debug gi\u1ED1ng nh\u01B0 chi\u1EBFc \u0111\
   \xE8n pin trong ng\xF5 t\u1ED1i c\u1EE7a m\xE3 l\u1EC7nh; n\xF3 gi\xFAp b\u1EA1\
   n ph\xE1t hi\u1EC7n l\u1ED7i b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1n nh\xECn th\u1EA5\
-  u nh\u1EEFng g\xEC m\xE3 l\u1EC7nh\u2026"
+  u nh\u1EEFng g\xEC m\xE3 l\u1EC7nh c\u1EE7a m\xECnh \u0111ang th\u1EF1c hi\u1EC7\
+  n t\u1EA1i th\u1EDDi gian ch\u1EA1y."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

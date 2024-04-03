@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.220924-06:00'
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i cho ph\xE9p k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n\
   \ gi\u1EA3i quy\u1EBFt nh\u1EEFng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3\
-  i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 qu\u1EA3n l\xFD s\u1EF1 c\u1ED1 m\xE0 kh\xF4ng l\xE0m\u2026"
+  i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

@@ -8,8 +8,7 @@ description: "\xC5 sammenligne to datoer i Visual Basic for Applications (VBA) i
 lastmod: '2024-03-13T22:44:40.634339-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sammenligne to datoer i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 bestemme deres kronologiske forhold til hverandre. Programmerere gj\xF8\
-  r dette for\u2026"
+  rer \xE5 bestemme deres kronologiske forhold til hverandre."
 title: Sammenligning av to datoer
 weight: 27
 ---

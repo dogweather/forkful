@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.116177-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie danych JSON\
   \ z ci\u0105g\xF3w znak\xF3w na obiekty Dart i odwrotnie, co jest powszechnym zadaniem\
-  \ w\u2026"
+  \ w rozwoju stron internetowych i aplikacji mobilnych dla wymiany danych."
 title: Praca z JSON
 weight: 38
 ---

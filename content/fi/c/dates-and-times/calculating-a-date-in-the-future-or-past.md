@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:57.055125-06:00'
 model: gpt-4-0125-preview
 summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
   \ tietyn p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 lis\xE4\xE4m\xE4ll\xE4\
-  \ tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4,\u2026"
+  \ tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4, kuukausia tai\
+  \ vuosia annetusta p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

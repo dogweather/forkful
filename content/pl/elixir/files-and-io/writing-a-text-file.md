@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.062990-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119tno\u015B\
   \u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107 danych,\
-  \ logowanie lub eksportowanie tre\u015Bci\u2026"
+  \ logowanie lub eksportowanie tre\u015Bci czytelnych dla cz\u0142owieka."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

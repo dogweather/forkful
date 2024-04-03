@@ -6,8 +6,8 @@ description: "Werken met JSON (JavaScript Object Notation) betekent het hanteren
   \ dit lichtgewicht gegevensuitwisselingsformaat binnen uw Java-applicaties.\u2026"
 lastmod: '2024-03-13T22:44:50.703834-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met JSON (JavaScript Object Notation) betekent het hanteren van dit\
-  \ lichtgewicht gegevensuitwisselingsformaat binnen uw Java-applicaties.\u2026"
+summary: Werken met JSON (JavaScript Object Notation) betekent het hanteren van dit
+  lichtgewicht gegevensuitwisselingsformaat binnen uw Java-applicaties.
 title: Werken met JSON
 weight: 38
 ---

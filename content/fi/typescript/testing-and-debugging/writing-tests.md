@@ -7,7 +7,7 @@ description: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automat
 lastmod: '2024-03-13T22:44:56.318885-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
-  \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat\u2026"
+  \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi."
 title: Testien kirjoittaminen
 weight: 36
 ---

@@ -7,7 +7,8 @@ description: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for ef
 lastmod: '2024-03-13T22:44:41.269450-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for effektivt\
-  \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\u2026"
+  \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\
+  \ datamining eller webskraping."
 title: Analysering av HTML
 weight: 43
 ---

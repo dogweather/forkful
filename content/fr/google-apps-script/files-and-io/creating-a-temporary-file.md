@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.209462-06:00'
 model: gpt-4-0125-preview
 summary: "La cr\xE9ation d'un fichier temporaire dans Google Apps Script consiste\
   \ \xE0 g\xE9n\xE9rer un fichier destin\xE9 \xE0 un usage \xE0 court terme, typiquement\
-  \ pour le traitement\u2026"
+  \ pour le traitement interm\xE9diaire des donn\xE9es, le d\xE9bogage ou des fins\
+  \ de cache."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

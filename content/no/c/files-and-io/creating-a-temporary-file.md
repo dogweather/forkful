@@ -8,7 +8,8 @@ description: "\xC5 opprette en midlertidig fil i C inneb\xE6rer \xE5 generere en
 lastmod: '2024-03-13T22:44:41.292868-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i C inneb\xE6rer \xE5 generere en fil som\
-  \ er ment \xE5 bli brukt over en kort varighet, vanligvis som rableplass for databehandling\u2026"
+  \ er ment \xE5 bli brukt over en kort varighet, vanligvis som rableplass for databehandling\
+  \ eller lagring."
 title: Oppretting av en midlertidig fil
 weight: 21
 ---

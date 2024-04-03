@@ -4,8 +4,8 @@ description: "Stampare l'output di debug significa mostrare temporaneamente i va
   \ in fase di esecuzione per capire che diavolo sta facendo il codice. Si fa per\u2026"
 lastmod: '2024-03-13T22:44:43.086025-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare l'output di debug significa mostrare temporaneamente i valori in\
-  \ fase di esecuzione per capire che diavolo sta facendo il codice. Si fa per\u2026"
+summary: Stampare l'output di debug significa mostrare temporaneamente i valori in
+  fase di esecuzione per capire che diavolo sta facendo il codice.
 title: Stampa dell'output di debug
 weight: 33
 ---

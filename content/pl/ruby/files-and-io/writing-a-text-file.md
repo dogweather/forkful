@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.950790-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
   , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\
-  liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p\u2026"
+  liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p do danych lub ich modyfikacj\u0119."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

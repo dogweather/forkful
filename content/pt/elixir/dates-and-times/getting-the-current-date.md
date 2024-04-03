@@ -10,7 +10,7 @@ lastmod: '2024-03-13T22:44:46.248521-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de data\
   \ e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o de data\
-  \ ou qualquer\u2026"
+  \ ou qualquer funcionalidade que requeira conhecimento da data atual."
 title: Obtendo a data atual
 weight: 29
 ---

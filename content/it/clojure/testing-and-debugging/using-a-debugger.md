@@ -4,8 +4,8 @@ description: "Clojure si appoggia alla Java Virtual Machine (JVM), quindi molte 
   \ di debug avvengono con strumenti Java. Uno di questi strumenti \xE8 `CIDER`, un\u2026"
 lastmod: '2024-03-13T22:44:43.046642-06:00'
 model: gpt-4-0125-preview
-summary: "Clojure si appoggia alla Java Virtual Machine (JVM), quindi molte operazioni\
-  \ di debug avvengono con strumenti Java. Uno di questi strumenti \xE8 `CIDER`, un\u2026"
+summary: Clojure si appoggia alla Java Virtual Machine (JVM), quindi molte operazioni
+  di debug avvengono con strumenti Java.
 title: Utilizzo di un debugger
 weight: 35
 ---

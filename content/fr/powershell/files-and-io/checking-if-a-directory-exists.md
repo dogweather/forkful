@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.071566-06:00'
 model: gpt-4-0125-preview
 summary: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2che\
   \ courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la structure\
-  \ du syst\xE8me\u2026"
+  \ du syst\xE8me de fichiers\u2014comme \xE9viter les erreurs en confirmant qu'un\
+  \ r\xE9pertoire cible est en place avant de tenter de lire ou d'\xE9crire dedans."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

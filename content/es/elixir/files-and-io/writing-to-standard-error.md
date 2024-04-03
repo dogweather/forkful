@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.719318-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Elixir es un m\xE9todo para\
   \ dirigir mensajes de error y diagn\xF3sticos por separado de la salida principal\
-  \ (stdout).\u2026"
+  \ (stdout)."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

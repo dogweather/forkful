@@ -6,8 +6,7 @@ description: "Travailler avec XML en Haskell implique l'analyse, la manipulation
 lastmod: '2024-03-13T22:44:57.859219-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Haskell implique l'analyse, la manipulation et la\
-  \ g\xE9n\xE9ration de structures XML. Les programmeurs manipulent XML pour interagir\
-  \ avec\u2026"
+  \ g\xE9n\xE9ration de structures XML."
 title: Travailler avec XML
 weight: 40
 ---

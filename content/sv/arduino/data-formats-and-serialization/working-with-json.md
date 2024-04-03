@@ -7,7 +7,7 @@ description: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt dat
 lastmod: '2024-03-13T22:44:38.189366-06:00'
 model: gpt-4-0125-preview
 summary: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"
+  \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-projekt."
 title: Arbeta med JSON
 weight: 38
 ---

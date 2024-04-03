@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Trong Swift, vi\u1EC7c in \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7\
   i ngh\u0129a l\xE0 hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u trong khu v\u1EF1c g\u1EE1\
   \ l\u1ED7i, th\u01B0\u1EDDng l\xE0 trong m\u1ED9t IDE ho\u1EB7c b\u1EA3ng \u0111\
-  i\u1EC1u khi\u1EC3n, \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC\u2026"
+  i\u1EC1u khi\u1EC3n, \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang x\u1EA3\
+  y ra tr\u1EF1c ti\u1EBFp trong m\xE3 c\u1EE7a b\u1EA1n."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

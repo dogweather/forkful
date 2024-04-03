@@ -5,9 +5,7 @@ description: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'a
   \ font \xE7a pour\u2026"
 lastmod: '2024-03-13T22:44:57.705209-06:00'
 model: unknown
-summary: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assurer\
-  \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
-  \ font \xE7a pour\u2026"
+summary: '"Quoi et Pourquoi .'
 title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 weight: 20
 ---

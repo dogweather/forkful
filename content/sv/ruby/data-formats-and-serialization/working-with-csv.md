@@ -8,7 +8,7 @@ description: "Att arbeta med CSV-filer i Ruby erbjuder ett rakt p\xE5 sak-s\xE4t
 lastmod: '2024-03-13T22:44:38.454584-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer i Ruby erbjuder ett rakt p\xE5 sak-s\xE4tt att\
-  \ hantera tabul\xE4r data. Programmerare \xE4gnar sig ofta \xE5t detta f\xF6r datautvinning,\u2026"
+  \ hantera tabul\xE4r data."
 title: Arbeta med CSV
 weight: 37
 ---

@@ -6,8 +6,7 @@ description: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 a
 lastmod: '2024-03-13T22:44:56.783031-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkavan\
-  \ koodiprojektin luomista. Koodarit tekev\xE4t sen aloittaakseen uuden idean kehitt\xE4\
-  misen tai\u2026"
+  \ koodiprojektin luomista."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

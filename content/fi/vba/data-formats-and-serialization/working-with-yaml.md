@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.422717-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\" (YAML ei ole merkkauskieli),\
   \ on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\xE4\
-  n\u2026"
+  n yleisesti konfiguraatiotiedostoissa."
 title: "Ty\xF6skentely YAML:n parissa"
 weight: 41
 ---

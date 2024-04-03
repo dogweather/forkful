@@ -4,8 +4,8 @@ description: "Working with XML in Google Apps Script allows programmers to parse
   \ manipulate, and generate XML data, essential for web services and configurations.\u2026"
 lastmod: '2024-03-13T22:44:59.692170-06:00'
 model: gpt-4-0125-preview
-summary: "Working with XML in Google Apps Script allows programmers to parse, manipulate,\
-  \ and generate XML data, essential for web services and configurations.\u2026"
+summary: Working with XML in Google Apps Script allows programmers to parse, manipulate,
+  and generate XML data, essential for web services and configurations.
 title: Working with XML
 weight: 40
 ---

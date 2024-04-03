@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.902499-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym polega\
   \ na zakodowaniu nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wku \u017C\u0105\
-  dania, aby uzyska\u0107 dost\u0119p do\u2026"
+  dania, aby uzyska\u0107 dost\u0119p do chronionych zasob\xF3w."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 weight: 45
 ---

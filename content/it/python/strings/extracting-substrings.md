@@ -5,8 +5,7 @@ description: "Estraendo sottostringhe si prelevano parti specifiche di una strin
   \ isolare\u2026"
 lastmod: '2024-03-13T22:44:42.990451-06:00'
 model: gpt-4-1106-preview
-summary: "Estraendo sottostringhe si prelevano parti specifiche di una stringa. Programmatori\
-  \ fanno ci\xF2 per analizzare testi, pulire dati, o semplicemente isolare\u2026"
+summary: Estraendo sottostringhe si prelevano parti specifiche di una stringa.
 title: Estrazione di sottostringhe
 weight: 6
 ---

@@ -8,8 +8,7 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4,
 lastmod: '2024-03-13T22:44:57.028413-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4, vastata\
-  \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
+  \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

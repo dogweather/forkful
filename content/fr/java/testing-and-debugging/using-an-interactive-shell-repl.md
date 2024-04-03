@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.641733-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop, boucle de lecture, \xE9valuation et impression)\
   \ est un shell interactif qui traite des entr\xE9es utilisateur uniques, ex\xE9\
-  cute du\u2026"
+  cute du code et renvoie le r\xE9sultat."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

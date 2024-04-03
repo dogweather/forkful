@@ -6,8 +6,7 @@ description: "Beregning av fremtidige eller tidligere datoer handler om \xE5 leg
 lastmod: '2024-03-13T22:44:40.943643-06:00'
 model: gpt-4-1106-preview
 summary: "Beregning av fremtidige eller tidligere datoer handler om \xE5 legge til\
-  \ eller trekke fra tid fra en spesifikk dato. Programmerere gj\xF8r dette for \xE5\
-  \ h\xE5ndtere\u2026"
+  \ eller trekke fra tid fra en spesifikk dato."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

@@ -7,8 +7,8 @@ description: "Het lezen van commandoregelargumenten laat een programma informati
   \ dit om\u2026"
 lastmod: '2024-03-13T22:44:50.435601-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten laat een programma informatie rechtstreeks\
-  \ uit de terminalopdracht van de gebruiker halen. Programmeurs doen dit om\u2026"
+summary: Het lezen van commandoregelargumenten laat een programma informatie rechtstreeks
+  uit de terminalopdracht van de gebruiker halen.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

@@ -4,8 +4,8 @@ description: "Calcolare una data nel futuro o nel passato significa semplicement
   \ aggiungere o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"
 lastmod: '2024-03-13T22:44:43.404123-06:00'
 model: gpt-4-1106-preview
-summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
-  \ o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"
+summary: Calcolare una data nel futuro o nel passato significa semplicemente aggiungere
+  o togliere giorni, mesi o anni dalla data corrente.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

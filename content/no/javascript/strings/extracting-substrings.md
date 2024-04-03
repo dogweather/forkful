@@ -6,7 +6,7 @@ description: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE
 lastmod: '2024-03-13T22:44:41.173309-06:00'
 model: gpt-4-1106-preview
 summary: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE5 hente\
-  \ spesifikke tekstbiter fra st\xF8rre strenger. Vi gj\xF8r dette for \xE5 manipulere,\u2026"
+  \ spesifikke tekstbiter fra st\xF8rre strenger."
 title: Uthenting av delstrenger
 weight: 6
 ---

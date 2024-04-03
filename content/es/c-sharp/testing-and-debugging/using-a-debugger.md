@@ -4,8 +4,8 @@ description: "Imagina que tienes un programa peque\xF1o que no est\xE1 funcionan
   \ correctamente: ```C# static void Main() { int resultado = Suma(1, 2);\u2026"
 lastmod: '2024-03-13T22:44:59.082584-06:00'
 model: gpt-4-0125-preview
-summary: "Imagina que tienes un programa peque\xF1o que no est\xE1 funcionando correctamente:\
-  \ ```C# static void Main() { int resultado = Suma(1, 2);\u2026"
+summary: "Imagina que tienes un programa peque\xF1o que no est\xE1 funcionando correctamente:\n\
+  \n```C#\nstatic void Main()\n{\n    int resultado = Suma(1, 2);\n    Console."
 title: Usando un depurador
 weight: 35
 ---

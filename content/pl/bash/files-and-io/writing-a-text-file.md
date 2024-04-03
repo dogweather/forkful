@@ -7,7 +7,7 @@ description: "Tworzenie pliku tekstowego w Bashu pozwala na automatyzacj\u0119 p
 lastmod: '2024-03-13T22:44:35.603713-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Bashu pozwala na automatyzacj\u0119 przechowywania\
-  \ danych, logowania, ustawie\u0144 konfiguracyjnych i wielu innych. Jest to podstawowa\u2026"
+  \ danych, logowania, ustawie\u0144 konfiguracyjnych i wielu innych."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

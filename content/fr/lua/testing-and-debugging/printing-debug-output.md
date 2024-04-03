@@ -6,8 +6,7 @@ description: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe
 lastmod: '2024-03-13T22:44:57.939187-06:00'
 model: gpt-4-1106-preview
 summary: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
-  \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\
-  \ comprendre le flux\u2026"
+  \ le code pendant son ex\xE9cution."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

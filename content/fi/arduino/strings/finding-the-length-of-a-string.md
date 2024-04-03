@@ -6,8 +6,7 @@ description: "\"Stringin\" pituuden selvitt\xE4minen tarkoittaa merkkijonossa ol
 lastmod: '2024-03-13T22:44:56.816039-06:00'
 model: gpt-4-1106-preview
 summary: "\"Stringin\" pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien\
-  \ merkkien lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi\
-  \ tietojen\u2026"
+  \ merkkien lukum\xE4\xE4r\xE4n laskemista."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

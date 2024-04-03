@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.038811-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by program m\xF3g\u0142\
   \ komunikowa\u0107 si\u0119 z zewn\u0119trznymi serwerami \u2013 pobiera\u0107 dane,\
-  \ wysy\u0142a\u0107 formularze czy autoryzowa\u0107\u2026"
+  \ wysy\u0142a\u0107 formularze czy autoryzowa\u0107 u\u017Cytkownik\xF3w."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

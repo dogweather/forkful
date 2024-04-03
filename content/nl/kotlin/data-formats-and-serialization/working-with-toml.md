@@ -6,8 +6,7 @@ description: "TOML staat voor Tom's Obvious, Minimal Language. Het wordt gebruik
   \ voor configuratiebestanden omdat het makkelijk te lezen en te schrijven is voor\u2026"
 lastmod: '2024-03-13T22:44:50.791085-06:00'
 model: gpt-4-0125-preview
-summary: "TOML staat voor Tom's Obvious, Minimal Language. Het wordt gebruikt voor\
-  \ configuratiebestanden omdat het makkelijk te lezen en te schrijven is voor\u2026"
+summary: TOML staat voor Tom's Obvious, Minimal Language.
 title: Werken met TOML
 weight: 39
 ---

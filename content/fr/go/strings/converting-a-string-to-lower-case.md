@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.118305-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules est une op\xE9ration fondamentale\
   \ qui permet l'uniformit\xE9 et la coh\xE9rence dans le traitement du texte, essentielle\
-  \ pour\u2026"
+  \ pour des t\xE2ches telles que les comparaisons insensibles \xE0 la casse ou la\
+  \ normalisation du texte."
 title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---

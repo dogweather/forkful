@@ -10,7 +10,7 @@ lastmod: '2024-03-13T22:44:56.236440-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
   \ kuten \"2023-04-05\", muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4muotoon, jonka ohjelmasi\
-  \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4.\u2026"
+  \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 weight: 30
 ---

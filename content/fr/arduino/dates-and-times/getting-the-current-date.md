@@ -7,7 +7,8 @@ description: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 ob
 lastmod: '2024-03-13T22:44:58.124828-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
-  \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"
+  \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\
+  \ l'horodatage ou la planification des t\xE2ches."
 title: Obtenir la date actuelle
 weight: 29
 ---

@@ -6,8 +6,7 @@ description: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para form
 lastmod: '2024-03-13T22:44:58.693807-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar un\
-  \ solo texto. Podr\xEDas necesitar fusionar texto para generar mensajes de usuario,\
-  \ crear\u2026"
+  \ solo texto."
 title: "Concatenaci\xF3n de cadenas"
 weight: 3
 ---

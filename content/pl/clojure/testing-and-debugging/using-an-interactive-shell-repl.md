@@ -6,8 +6,7 @@ description: "REPL, czyli P\u0119tla Czytaj-Ewaluuj-Drukuj, to \u015Brodowisko p
 lastmod: '2024-03-13T22:44:34.996564-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, czyli P\u0119tla Czytaj-Ewaluuj-Drukuj, to \u015Brodowisko programistyczne\
-  \ do dynamicznego testowania kodu Clojure kawa\u0142ek po kawa\u0142ku. Programi\u015B\
-  ci u\u017Cywaj\u0105 go,\u2026"
+  \ do dynamicznego testowania kodu Clojure kawa\u0142ek po kawa\u0142ku."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

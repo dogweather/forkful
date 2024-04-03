@@ -6,8 +6,9 @@ description: "Verificare se una directory esiste in Fish Shell permette agli scr
   \ di prendere decisioni basate sulla presenza o assenza di strutture di directory,\u2026"
 lastmod: '2024-03-13T22:44:43.873812-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare se una directory esiste in Fish Shell permette agli script di\
-  \ prendere decisioni basate sulla presenza o assenza di strutture di directory,\u2026"
+summary: Verificare se una directory esiste in Fish Shell permette agli script di
+  prendere decisioni basate sulla presenza o assenza di strutture di directory, consentendo
+  compiti come operazioni su file condizionali, registrazione o configurazione dell'ambiente.
 title: Verifica se una directory esiste
 weight: 20
 ---

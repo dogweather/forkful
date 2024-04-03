@@ -4,8 +4,8 @@ description: "Finding the length of a string in Clojure returns the number of ch
   \ in that string. Programmers often need this info to validate input, loop\u2026"
 lastmod: '2024-03-13T22:44:59.737267-06:00'
 model: gpt-4-1106-preview
-summary: "Finding the length of a string in Clojure returns the number of characters\
-  \ in that string. Programmers often need this info to validate input, loop\u2026"
+summary: Finding the length of a string in Clojure returns the number of characters
+  in that string.
 title: Finding the length of a string
 weight: 7
 ---

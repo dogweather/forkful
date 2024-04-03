@@ -7,7 +7,7 @@ description: "Escribir en un archivo de texto en Python es una tarea fundamental
 lastmod: '2024-03-13T22:44:58.632420-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Python es una tarea fundamental que implica\
-  \ crear o abrir un archivo y luego a\xF1adir o sobrescribir texto. Esta\u2026"
+  \ crear o abrir un archivo y luego a\xF1adir o sobrescribir texto."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

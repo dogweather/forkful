@@ -7,7 +7,7 @@ description: "HTML:n j\xE4sent\xE4minen Arduino-projekteissa koskee tietojen poi
 lastmod: '2024-03-13T22:44:56.822866-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Arduino-projekteissa koskee tietojen poimimista\
-  \ verkkosivuilta. Ohjelmoijat tekev\xE4t t\xE4m\xE4n mahdollistaakseen Arduinolaitteidensa\u2026"
+  \ verkkosivuilta."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

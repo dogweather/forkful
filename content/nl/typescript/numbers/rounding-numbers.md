@@ -6,8 +6,7 @@ description: "Rondgetallen is het bijsnijden van een getal naar een specifieke p
   \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"
 lastmod: '2024-03-13T22:44:50.545140-06:00'
 model: gpt-4-0125-preview
-summary: "Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.\
-  \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"
+summary: Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.
 title: Afronden van getallen
 weight: 13
 ---

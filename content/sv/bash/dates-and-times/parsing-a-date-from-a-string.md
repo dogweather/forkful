@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.091594-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Bash inneb\xE4r att extrahera\
   \ och konvertera datuminformation fr\xE5n textdata till ett format som Bash kan\
-  \ manipulera\u2026"
+  \ manipulera eller anv\xE4nda f\xF6r vidare processer."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

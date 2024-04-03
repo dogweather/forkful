@@ -7,7 +7,8 @@ description: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por
 lastmod: '2024-03-13T22:44:58.469249-06:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas\
-  \ en ingl\xE9s), te permite experimentar con c\xF3digo de Go en tiempo real,\u2026"
+  \ en ingl\xE9s), te permite experimentar con c\xF3digo de Go en tiempo real, ejecutando\
+  \ comandos y obteniendo retroalimentaci\xF3n inmediata."
 title: Utilizando un shell interactivo (REPL)
 weight: 34
 ---

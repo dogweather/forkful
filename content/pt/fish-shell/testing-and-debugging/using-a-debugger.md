@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:47.010484-06:00'
 model: gpt-4-0125-preview
 summary: "O Fish n\xE3o possui um depurador embutido como alguns outros shells, mas\
   \ voc\xEA pode usar ferramentas externas como `gdb` para depurar programas compilados\
-  \ ou\u2026"
+  \ ou `fish -d` para executar o fish com sa\xEDda de depura\xE7\xE3o em diferentes\
+  \ n\xEDveis."
 title: Usando um depurador
 weight: 35
 ---

@@ -4,8 +4,8 @@ description: "Utilizzare un shell interattivo, o un Loop di Lettura-Valutazione-
   \ (REPL), permette di programmare interattivamente. I programmatori lo utilizzano\u2026"
 lastmod: '2024-03-13T22:44:43.771855-06:00'
 model: gpt-4-0125-preview
-summary: "Utilizzare un shell interattivo, o un Loop di Lettura-Valutazione-Stampa\
-  \ (REPL), permette di programmare interattivamente. I programmatori lo utilizzano\u2026"
+summary: Utilizzare un shell interattivo, o un Loop di Lettura-Valutazione-Stampa
+  (REPL), permette di programmare interattivamente.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

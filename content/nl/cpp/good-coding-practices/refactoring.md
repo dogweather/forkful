@@ -7,8 +7,8 @@ description: "Refactoring is het proces van het wijzigen van de interne structuu
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:51.121255-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring is het proces van het wijzigen van de interne structuur van\
-  \ een computerprogramma zonder het externe gedrag aan te passen. Programmeurs doen\u2026"
+summary: Refactoring is het proces van het wijzigen van de interne structuur van een
+  computerprogramma zonder het externe gedrag aan te passen.
 title: Refactoring
 weight: 19
 ---

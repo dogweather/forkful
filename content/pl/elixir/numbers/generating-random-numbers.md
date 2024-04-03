@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.037773-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
   \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
-  w,\u2026"
+  w, takich jak generowanie bezpiecznych token\xF3w, pr\xF3bkowanie danych czy algorytmy\
+  \ gier."
 title: Generowanie liczb losowych
 weight: 12
 ---

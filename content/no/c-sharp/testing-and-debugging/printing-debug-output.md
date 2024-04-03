@@ -6,8 +6,7 @@ description: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som for
 lastmod: '2024-03-13T22:44:40.798322-06:00'
 model: gpt-4-1106-preview
 summary: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som foreg\xE5\
-  r under panseret av programmene sine. Vi gj\xF8r det for \xE5 fakke bugs og forst\xE5\
-  \ flyten, uten \xE5\u2026"
+  r under panseret av programmene sine."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

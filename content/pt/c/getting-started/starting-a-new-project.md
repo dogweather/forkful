@@ -7,7 +7,7 @@ description: "Iniciar um novo projeto em C envolve configurar uma estrutura de c
 lastmod: '2024-03-13T22:44:47.050760-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em C envolve configurar uma estrutura de c\xF3digo\
-  \ base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento.\u2026"
+  \ base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento."
 title: Iniciando um novo projeto
 weight: 1
 ---

@@ -6,8 +6,8 @@ description: "Het lezen van commandoregelargumenten stelt scripts in staat zich 
   \ te gedragen op basis van gebruikersinvoer. Het is hoe scripts veelzijdig kunnen\u2026"
 lastmod: '2024-03-13T22:44:50.999271-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten stelt scripts in staat zich anders\
-  \ te gedragen op basis van gebruikersinvoer. Het is hoe scripts veelzijdig kunnen\u2026"
+summary: Het lezen van commandoregelargumenten stelt scripts in staat zich anders
+  te gedragen op basis van gebruikersinvoer.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

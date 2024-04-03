@@ -6,8 +6,8 @@ description: "Zoeken en vervangen van tekst is het vinden van specifieke strings
   \ een grotere string en deze omwisselen voor iets anders. Programmeurs gebruiken\u2026"
 lastmod: '2024-03-13T22:44:51.097911-06:00'
 model: gpt-4-0125-preview
-summary: "Zoeken en vervangen van tekst is het vinden van specifieke strings binnen\
-  \ een grotere string en deze omwisselen voor iets anders. Programmeurs gebruiken\u2026"
+summary: Zoeken en vervangen van tekst is het vinden van specifieke strings binnen
+  een grotere string en deze omwisselen voor iets anders.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

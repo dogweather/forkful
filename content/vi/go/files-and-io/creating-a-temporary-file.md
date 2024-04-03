@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Go cho ph\xE9\
   p t\u1EA1o ra m\u1ED9t t\u1EC7p kh\xF4ng l\u01B0u tr\u1EEF l\xE2u d\xE0i, \u0111\
   \u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDDi\
-  \ gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m\u2026"
+  \ gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0\
+  \ l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u trung gian ho\u1EB7c h\u1ED7 tr\u1EE3 trong\
+  \ c\xE1c c\xF4ng vi\u1EC7c x\u1EED l\xFD h\xE0ng lo\u1EA1t."
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---

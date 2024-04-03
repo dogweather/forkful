@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.497022-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous \u2013\
   \ siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta sen\
-  \ ulkoista toimintaa. Ohjelmoijat\u2026"
+  \ ulkoista toimintaa."
 title: Koodin refaktorointi
 weight: 19
 ---

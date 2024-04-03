@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong TypeScript li\xEAn quan\
   \ \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
   \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3 x\xE1c \u0111\
-  \u1ECBnh. L\u1EADp tr\xECnh vi\xEAn t\u1EADn\u2026"
+  \u1ECBnh."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

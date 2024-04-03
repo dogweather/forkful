@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.068642-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5 skaffe\
   \ sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling eller\
-  \ planlegging av\u2026"
+  \ planlegging av oppgaver."
 title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---

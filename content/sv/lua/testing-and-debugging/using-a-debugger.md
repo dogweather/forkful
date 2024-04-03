@@ -6,8 +6,7 @@ description: "Lua kommer inte med en inbyggd debugger, men du kan anv\xE4nda ext
 lastmod: '2024-03-13T22:44:38.043013-06:00'
 model: gpt-4-0125-preview
 summary: "Lua kommer inte med en inbyggd debugger, men du kan anv\xE4nda externa s\xE5\
-  dana, som ZeroBrane Studio. H\xE4r \xE4r en smakprov p\xE5 hur du skulle arbeta\
-  \ med den:\u2026"
+  dana, som ZeroBrane Studio."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

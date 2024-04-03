@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.060340-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em Go\
   \ envolve adicionar um cabe\xE7alho de autoriza\xE7\xE3o \xE0 sua requisi\xE7\xE3\
-  o, que inclui um nome de usu\xE1rio e\u2026"
+  o, que inclui um nome de usu\xE1rio e senha na forma de uma string codificada em\
+  \ Base64."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

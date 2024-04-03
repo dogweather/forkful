@@ -6,8 +6,7 @@ description: "Tratar erros no PowerShell significa prever os percal\xE7os e gere
 lastmod: '2024-03-13T22:44:46.804334-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros no PowerShell significa prever os percal\xE7os e gerenci\xE1\
-  -los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer\
-  \ aos\u2026"
+  -los de maneira suave."
 title: Tratamento de erros
 weight: 16
 ---

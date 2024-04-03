@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.627698-06:00'
 model: gpt-4-0125-preview
 summary: "Logging i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 registrere\
   \ informasjon om et programs kj\xF8retidsoppf\xF8rsel til en fil, konsoll eller\
-  \ database.\u2026"
+  \ database."
 title: Logging
 weight: 17
 ---

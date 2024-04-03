@@ -7,7 +7,7 @@ description: "Analisar (parse) uma data de uma string em C# envolve converter re
 lastmod: '2024-03-13T22:44:46.593445-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar (parse) uma data de uma string em C# envolve converter representa\xE7\
-  \xF5es textuais de datas e horas em um objeto `DateTime`. Isso \xE9 essencial para\u2026"
+  \xF5es textuais de datas e horas em um objeto `DateTime`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

@@ -5,9 +5,7 @@ description: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lag
   \ eller\u2026"
 lastmod: '2024-03-13T22:44:40.817410-06:00'
 model: gpt-4-1106-preview
-summary: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager dem\
-  \ for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\
-  \ eller\u2026"
+summary: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk."
 title: Opprette en midlertidig fil
 weight: 21
 ---

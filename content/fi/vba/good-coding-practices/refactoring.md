@@ -8,7 +8,8 @@ description: "Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamis
 lastmod: '2024-03-13T22:44:56.409960-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamista muuttamatta\
-  \ sen toimintaa, jotta esimerkiksi sen luettavuus, yll\xE4pidett\xE4vyys tai\u2026"
+  \ sen toimintaa, jotta esimerkiksi sen luettavuus, yll\xE4pidett\xE4vyys tai suorituskyky\
+  \ paranisivat."
 title: Uudelleenkoodaus
 weight: 19
 ---

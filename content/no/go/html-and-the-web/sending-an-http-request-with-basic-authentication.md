@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.266361-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Go inneb\xE6\
   rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din som inkluderer\
-  \ et\u2026"
+  \ et brukernavn og passord i form av en Base64-kodet streng."
 title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

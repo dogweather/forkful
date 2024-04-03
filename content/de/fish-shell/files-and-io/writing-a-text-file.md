@@ -7,7 +7,7 @@ description: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es
 lastmod: '2024-03-13T22:44:54.327078-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
-  \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"
+  \ Daten dauerhaft zu speichern."
 title: Eine Textdatei schreiben
 weight: 24
 ---

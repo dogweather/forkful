@@ -6,8 +6,9 @@ description: "Le espressioni regolari (regex) in PHP sono modelli usati per corr
   \ combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate\u2026"
 lastmod: '2024-03-13T22:44:43.506990-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) in PHP sono modelli usati per corrispondere\
-  \ combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate\u2026"
+summary: Le espressioni regolari (regex) in PHP sono modelli usati per corrispondere
+  combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate di
+  ricerca-e-sostituzione e validazione di dati.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

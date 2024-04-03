@@ -6,8 +6,7 @@ description: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blo
 lastmod: '2024-03-13T22:44:35.791407-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym miejscu\
-  \ w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania dok\u0142\
-  adno\u015Bci, zarz\u0105dzania pami\u0119ci\u0105\u2026"
+  \ w liczbie."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

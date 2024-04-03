@@ -7,7 +7,8 @@ description: "YAML (YAML Ain't Markup Language) \xE4r en standard f\xF6r seriali
 lastmod: '2024-03-13T22:44:38.188267-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) \xE4r en standard f\xF6r serialisering\
-  \ av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och kan anv\xE4ndas f\xF6r konfigurationsfiler,\u2026"
+  \ av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och kan anv\xE4ndas f\xF6r konfigurationsfiler,\
+  \ kommunikation mellan program och datalagring."
 title: Att Arbeta med YAML
 weight: 41
 ---

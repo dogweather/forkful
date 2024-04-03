@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.383768-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en C n\xE9cessite de se connecter \xE0 la biblioth\xE8\
   que standard C pour r\xE9cup\xE9rer et formater la date et l'heure actuelles du\
-  \ syst\xE8me.\u2026"
+  \ syst\xE8me."
 title: Obtenir la date actuelle
 weight: 29
 ---

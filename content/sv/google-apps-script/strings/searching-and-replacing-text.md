@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:37.421644-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Google Apps Script inneb\xE4r att man\
   \ programmeringsm\xE4ssigt identifierar specifika str\xE4ngar i ett dokument, kalkylblad\
-  \ eller\u2026"
+  \ eller n\xE5gon annan typ av Google Apps-inneh\xE5ll och ers\xE4tter dem med andra\
+  \ textv\xE4rden."
 title: "S\xF6ka och ers\xE4tta text"
 weight: 10
 ---

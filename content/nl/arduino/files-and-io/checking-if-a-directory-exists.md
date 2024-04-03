@@ -7,7 +7,7 @@ description: "Controleren of een map bestaat gaat helemaal over het verifi\xEBre
 lastmod: '2024-03-13T22:44:51.086305-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat gaat helemaal over het verifi\xEBren van\
-  \ de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs\u2026"
+  \ de aanwezigheid van een map op je opslag voordat je er iets mee doet."
 title: Controleren of een directory bestaat
 weight: 20
 ---

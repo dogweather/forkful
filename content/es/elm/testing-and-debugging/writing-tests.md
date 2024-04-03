@@ -8,8 +8,7 @@ description: "Escribir pruebas en Elm implica crear casos de prueba para verific
 lastmod: '2024-03-13T22:44:58.996358-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Elm implica crear casos de prueba para verificar la\
-  \ correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera.\
-  \ Los\u2026"
+  \ correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera."
 title: Escribiendo pruebas
 weight: 36
 ---

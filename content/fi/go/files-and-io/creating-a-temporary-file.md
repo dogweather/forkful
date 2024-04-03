@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.071291-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE4liaikaistiedoston luominen Go:lla mahdollistaa v\xE4liaikaisen, lyhytaikaiseen\
   \ k\xE4ytt\xF6\xF6n suunnitellun tiedoston luomisen, joka on tarkoitettu p\xE4\xE4\
-  asiassa\u2026"
+  asiassa teht\xE4viin kuten v\xE4liaikaisen datan tallentamiseen tai er\xE4ajot\xF6\
+  iden avustamiseen."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

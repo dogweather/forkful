@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.515451-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre det f\xF8\
   rste tegnet av en gitt streng til stor bokstav hvis den er i sm\xE5 bokstaver, ofte\
-  \ uten \xE5 endre\u2026"
+  \ uten \xE5 endre resten av strengen."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

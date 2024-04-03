@@ -7,9 +7,8 @@ description: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien m
   \ on\u2026"
 lastmod: '2024-03-13T22:44:56.386599-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
-  \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\
-  \ on\u2026"
+summary: Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon
+  suurten kirjainten muuntamista niiden pieniksi vastineiksi.
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.230780-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4tt format f\xF6r att lagra\
   \ och transportera data, vilket g\xF6r det till ett utm\xE4rkt medium f\xF6r datatransport\
-  \ mellan\u2026"
+  \ mellan servrar och webbapplikationer."
 title: Arbeta med JSON
 weight: 38
 ---

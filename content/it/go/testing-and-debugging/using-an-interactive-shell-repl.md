@@ -6,8 +6,9 @@ description: "Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), ti perme
   \ di sperimentare con il codice Go in tempo reale, eseguendo comandi e ottenendo\u2026"
 lastmod: '2024-03-13T22:44:42.910033-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), ti permette di\
-  \ sperimentare con il codice Go in tempo reale, eseguendo comandi e ottenendo\u2026"
+summary: Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), ti permette di
+  sperimentare con il codice Go in tempo reale, eseguendo comandi e ottenendo feedback
+  immediati.
 title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---

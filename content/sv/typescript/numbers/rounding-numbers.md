@@ -5,9 +5,7 @@ description: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifi
   r l\xE4sbarhet,\u2026"
 lastmod: '2024-03-13T22:44:37.651078-06:00'
 model: gpt-4-0125-preview
-summary: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik precision.\
-  \ Programmerare g\xF6r detta f\xF6r att kontrollera numerisk utdata f\xF6r l\xE4\
-  sbarhet,\u2026"
+summary: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik precision."
 title: Avrundning av tal
 weight: 13
 ---

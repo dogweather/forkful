@@ -6,8 +6,8 @@ description: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, t
   \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:51.078367-06:00'
 model: gpt-4-0125-preview
-summary: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
-  \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"
+summary: '"Loggen" is het bijhouden van een register van gebeurtenissen, transacties
+  of activiteiten die over tijd plaatsvinden in een systeem.'
 title: Logboekregistratie
 weight: 17
 ---

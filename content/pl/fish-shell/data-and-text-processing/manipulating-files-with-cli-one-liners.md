@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.835723-06:00'
 model: gpt-4-0125-preview
 summary: "W \u015Bwiecie programowania, szczeg\xF3lnie podczas pracy z systemami Linux\
   \ lub Unix, manipulacja plikami bezpo\u015Brednio z poziomu interfejsu linii komend\
-  \ (CLI)\u2026"
+  \ (CLI) nie jest tylko kwesti\u0105 wygody - to narz\u0119dzie mocy."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

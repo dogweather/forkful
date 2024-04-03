@@ -6,8 +6,7 @@ description: "Een string interpoleren betekent variabelen of expressies in een s
   \ invoegen. Het bespaart tijd en verbetert de leesbaarheid door dynamische inhoud\u2026"
 lastmod: '2024-03-13T22:44:51.231258-06:00'
 model: gpt-4-0125-preview
-summary: "Een string interpoleren betekent variabelen of expressies in een string\
-  \ invoegen. Het bespaart tijd en verbetert de leesbaarheid door dynamische inhoud\u2026"
+summary: Een string interpoleren betekent variabelen of expressies in een string invoegen.
 title: Een string interpoleren
 weight: 8
 ---

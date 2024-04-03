@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.005563-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i PHP inneb\xE4r att konvertera\
   \ text som representerar ett datum och/eller tid till ett PHP `DateTime`-objekt\
-  \ eller andra\u2026"
+  \ eller andra datum/tid-format."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

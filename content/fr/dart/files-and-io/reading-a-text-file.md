@@ -8,8 +8,7 @@ description: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\x
 lastmod: '2024-03-13T22:44:57.409802-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\xE9ration\
-  \ de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers.\
-  \ Les programmeurs\u2026"
+  \ de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers."
 title: Lecture d'un fichier texte
 weight: 22
 ---

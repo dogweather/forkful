@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.378829-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C++ implica crear programas peque\xF1os y aut\xF3nomos\
   \ que verifican autom\xE1ticamente el comportamiento de secciones de tu base de\
-  \ c\xF3digo.\u2026"
+  \ c\xF3digo."
 title: Escribiendo pruebas
 weight: 36
 ---

@@ -4,8 +4,7 @@ description: "Combining strings, or concatenation, is like making a train of wor
   \ We do it to stitch together text values, creating phrases, sentences, or anything\u2026"
 lastmod: '2024-03-13T22:45:00.274885-06:00'
 model: gpt-4-1106-preview
-summary: "Combining strings, or concatenation, is like making a train of words. We\
-  \ do it to stitch together text values, creating phrases, sentences, or anything\u2026"
+summary: Combining strings, or concatenation, is like making a train of words.
 title: Concatenating strings
 weight: 3
 ---

@@ -8,7 +8,7 @@ description: "Concat\xE9ner des cha\xEEnes implique de combiner deux ou plusieur
 lastmod: '2024-03-13T22:44:57.175750-06:00'
 model: gpt-4-0125-preview
 summary: "Concat\xE9ner des cha\xEEnes implique de combiner deux ou plusieurs cha\xEE\
-  nes en une seule. Les programmeurs font cela pour construire dynamiquement des messages,\u2026"
+  nes en une seule."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

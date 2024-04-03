@@ -7,8 +7,8 @@ description: "Enviar una solicitud HTTP implica crear y enviar una solicitud a u
   \ para\u2026"
 lastmod: '2024-03-13T22:44:59.541783-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar una solicitud HTTP implica crear y enviar una solicitud a un servidor\
-  \ web para recuperar o enviar datos. Los programadores hacen esto en C para\u2026"
+summary: Enviar una solicitud HTTP implica crear y enviar una solicitud a un servidor
+  web para recuperar o enviar datos.
 title: Enviando una solicitud HTTP
 weight: 44
 ---

@@ -6,8 +6,7 @@ description: "Aby u\u017Cy\u0107 debugera w Xcode (IDE dla Swift), mo\u017Cesz u
 lastmod: '2024-03-13T22:44:35.759517-06:00'
 model: gpt-4-0125-preview
 summary: "Aby u\u017Cy\u0107 debugera w Xcode (IDE dla Swift), mo\u017Cesz ustawi\u0107\
-  \ punkty przerwania, inspektowa\u0107 zmienne i obserwowa\u0107 wyra\u017Cenia.\
-  \ Oto przyk\u0142ad: ```Swift func\u2026"
+  \ punkty przerwania, inspektowa\u0107 zmienne i obserwowa\u0107 wyra\u017Cenia."
 title: Korzystanie z debugera
 weight: 35
 ---

@@ -8,7 +8,7 @@ description: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre streng
 lastmod: '2024-03-13T22:44:40.386166-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen slik\
-  \ at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir uendret.\u2026"
+  \ at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir uendret."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

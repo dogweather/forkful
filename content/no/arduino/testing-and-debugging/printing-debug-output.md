@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:41.060335-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5 vise\
   \ programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk gj\xF8\
-  r. Programmerere\u2026"
+  r."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

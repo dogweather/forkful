@@ -5,7 +5,8 @@ description: "Il logging, in poche parole, \xE8 come tenere un diario per la tua
 lastmod: '2024-03-13T22:44:43.818928-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging, in poche parole, \xE8 come tenere un diario per la tua applicazione:\
-  \ registra eventi, errori e altre azioni significative che avvengono mentre il\u2026"
+  \ registra eventi, errori e altre azioni significative che avvengono mentre il software\
+  \ \xE8 in esecuzione."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

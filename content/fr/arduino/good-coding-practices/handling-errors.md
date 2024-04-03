@@ -6,8 +6,7 @@ description: "La gestion des erreurs dans vos programmes intercepte les impr\xE9
 lastmod: '2024-03-13T22:44:58.120849-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus qui\
-  \ tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\
-  viter \xE0\u2026"
+  \ tentent de vous mettre des b\xE2tons dans les roues."
 title: Gestion des erreurs
 weight: 16
 ---

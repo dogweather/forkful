@@ -7,7 +7,8 @@ description: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisen luet
 lastmod: '2024-03-13T22:44:56.247143-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
-  \ oleva datan sarjallistamisstandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"
+  \ oleva datan sarjallistamisstandardi, jota k\xE4ytet\xE4\xE4n yleisesti konfiguraatiotiedostoissa\
+  \ ja datan vaihdossa eri kielten v\xE4lill\xE4, joilla on erilaiset datarakenteet."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -4,8 +4,8 @@ description: "Aloittaa uusi projekti tarkoittaa nollasta alkamista, idean jalost
   \ toimivaksi koodiksi. Koodaajat tekev\xE4t sen oppiakseen, kokeillakseen uusia\u2026"
 lastmod: '2024-03-13T22:44:56.825564-06:00'
 model: gpt-4-1106-preview
-summary: "Aloittaa uusi projekti tarkoittaa nollasta alkamista, idean jalostamista\
-  \ toimivaksi koodiksi. Koodaajat tekev\xE4t sen oppiakseen, kokeillakseen uusia\u2026"
+summary: Aloittaa uusi projekti tarkoittaa nollasta alkamista, idean jalostamista
+  toimivaksi koodiksi.
 title: Uuden projektin aloittaminen
 weight: 1
 ---

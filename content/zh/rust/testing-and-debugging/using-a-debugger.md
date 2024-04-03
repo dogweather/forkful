@@ -11,7 +11,7 @@ summary: "Rust\u652F\u6301\u5404\u79CD\u8C03\u8BD5\u5668\uFF0C\u4F46\u5E38\u89C1
   \u6709GNU/Linux\u7684`gdb`\u6216macOS\u7684`lldb`\u3002\u4F60\u4E5F\u53EF\u4EE5\u4F7F\
   \u7528`rust-gdb`\u6216`rust-lldb`\uFF0C\u8FD9\u4E9B\u662F\u5305\u88C5\u5668\uFF0C\
   \u80FD\u7F8E\u5316\u6253\u5370Rust\u503C\u3002\u4EE5\u4E0B\u662F\u4E00\u4E2A\u4F8B\
-  \u5B50\uFF1A ```Rust fn main() { let mut counter = 0; for _ in\u2026"
+  \u5B50\uFF1A\n\n```Rust\nfn main() {\n    let mut counter = 0;\n    for _ in 0."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

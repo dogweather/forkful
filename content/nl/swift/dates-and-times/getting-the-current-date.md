@@ -7,8 +7,8 @@ description: "In Swift houdt het verkrijgen van de huidige datum in dat je toega
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:51.168188-06:00'
 model: gpt-4-0125-preview
-summary: "In Swift houdt het verkrijgen van de huidige datum in dat je toegang krijgt\
-  \ tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs doen\u2026"
+summary: In Swift houdt het verkrijgen van de huidige datum in dat je toegang krijgt
+  tot de huidige tijd- en datuminstellingen van het systeem.
 title: Het huidige datum ophalen
 weight: 29
 ---

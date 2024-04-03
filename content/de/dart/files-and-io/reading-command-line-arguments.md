@@ -7,7 +7,9 @@ description: "Das Lesen von Befehlszeilenargumenten in Dart erm\xF6glicht es Pro
 lastmod: '2024-03-13T22:44:53.598008-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen von Befehlszeilenargumenten in Dart erm\xF6glicht es Programmierern,\
-  \ Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgef\xFChrt\u2026"
+  \ Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgef\xFChrt wird,\
+  \ was dessen Interaktivit\xE4t und Flexibilit\xE4t f\xFCr verschiedene Anwendungsf\xE4\
+  lle erh\xF6ht, einschlie\xDFlich Automatisierungsskripte, CLI-Tools oder Stapelverarbeitung."
 title: Befehlszeilenargumente lesen
 weight: 23
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.452156-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en TypeScript est essentiel pour\
   \ les t\xE2ches de gestion de fichiers, telles que lire ou \xE9crire des donn\xE9\
-  es dans des\u2026"
+  es dans des fichiers, en s'assurant que les op\xE9rations sont effectu\xE9es uniquement\
+  \ sur des r\xE9pertoires valides."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

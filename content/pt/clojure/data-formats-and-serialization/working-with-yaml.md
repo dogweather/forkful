@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.216825-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, um acr\xF4nimo recursivo para \"YAML Ain't Markup Language\" (YAML\
   \ N\xE3o \xE9 uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\
-  \xE3o de dados leg\xEDvel por\u2026"
+  \xE3o de dados leg\xEDvel por humanos usado para arquivos de configura\xE7\xE3o\
+  \ e troca de dados entre linguagens com diferentes estruturas de dados."
 title: Trabalhando com YAML
 weight: 41
 ---

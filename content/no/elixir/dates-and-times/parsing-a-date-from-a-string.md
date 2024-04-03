@@ -9,7 +9,7 @@ description: "\xC5 analysere en dato fra en streng handler om \xE5 ta tekst, som
 lastmod: '2024-03-13T22:44:40.452880-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng handler om \xE5 ta tekst, som \"2023-04-05\"\
-  , og konvertere det til et datoformat programmet ditt kan forst\xE5 og jobbe med.\u2026"
+  , og konvertere det til et datoformat programmet ditt kan forst\xE5 og jobbe med."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

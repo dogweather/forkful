@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.496455-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering i Dart er prosessen med \xE5 restrukturere eksisterende kode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre dens interne\
-  \ struktur,\u2026"
+  \ struktur, lesbarhet og vedlikeholdbarhet."
 title: Refaktorering
 weight: 19
 ---

@@ -5,9 +5,8 @@ description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg te
   \ og l\xE6re\u2026"
 lastmod: '2024-03-13T22:44:41.329917-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste kode\
-  \ i sanntid. Programmerere bruker den til \xE5 eksperimentere, feils\xF8ke, og l\xE6\
-  re\u2026"
+summary: En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste kode
+  i sanntid.
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

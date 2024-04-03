@@ -7,7 +7,8 @@ description: "Travailler avec des nombres complexes en programmation implique de
 lastmod: '2024-03-13T22:44:57.126219-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des nombres complexes en programmation implique de manipuler\
-  \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"
+  \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\
+  \ typiquement exprim\xE9s sous la forme `a + bi`."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

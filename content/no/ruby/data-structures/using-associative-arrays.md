@@ -8,8 +8,7 @@ description: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mul
 lastmod: '2024-03-13T22:44:41.308771-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mulig \xE5\
-  \ pare unike n\xF8kler med verdier. De er uunnv\xE6rlige n\xE5r du trenger \xE5\
-  \ holde styr p\xE5\u2026"
+  \ pare unike n\xF8kler med verdier."
 title: Bruke associative tabeller
 weight: 15
 ---

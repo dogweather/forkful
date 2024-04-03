@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:04.696629-07:00
 description: '#'
 lastmod: '2024-03-13T22:44:58.756925-06:00'
 model: gpt-4-0125-preview
-summary: '#'
+summary: '#.'
 title: Usando un depurador
 weight: 35
 ---

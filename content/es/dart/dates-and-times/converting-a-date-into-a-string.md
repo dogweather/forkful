@@ -8,7 +8,9 @@ description: "Convertir una fecha en una cadena en Dart es una tarea com\xFAn cu
 lastmod: '2024-03-13T22:44:58.766330-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una fecha en una cadena en Dart es una tarea com\xFAn cuando necesitas\
-  \ mostrar informaci\xF3n de fecha y hora en un formato legible por humanos, o\u2026"
+  \ mostrar informaci\xF3n de fecha y hora en un formato legible por humanos, o cuando\
+  \ tienes la intenci\xF3n de serializar datos para almacenamiento o transmisi\xF3\
+  n."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

@@ -5,7 +5,7 @@ description: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \x
 lastmod: '2024-03-13T22:44:53.966460-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFCblicherweise\
-  \ geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"
+  \ geschrieben als `a + bi`."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

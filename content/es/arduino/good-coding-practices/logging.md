@@ -4,8 +4,8 @@ description: "\"Registrar\" es mantener un registro de eventos, transacciones o 
   \ que suceden con el tiempo en un sistema. Los programadores lo utilizan para\u2026"
 lastmod: '2024-03-13T22:44:59.339675-06:00'
 model: gpt-4-1106-preview
-summary: "\"Registrar\" es mantener un registro de eventos, transacciones o actividades\
-  \ que suceden con el tiempo en un sistema. Los programadores lo utilizan para\u2026"
+summary: '"Registrar" es mantener un registro de eventos, transacciones o actividades
+  que suceden con el tiempo en un sistema.'
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

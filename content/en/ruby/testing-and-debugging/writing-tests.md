@@ -4,8 +4,8 @@ description: "Testing in Ruby is about verifying that your code behaves as expec
   \ under various conditions. Programmers write tests to ensure correctness, prevent\u2026"
 lastmod: '2024-03-13T22:45:00.554182-06:00'
 model: gpt-4-0125-preview
-summary: "Testing in Ruby is about verifying that your code behaves as expected under\
-  \ various conditions. Programmers write tests to ensure correctness, prevent\u2026"
+summary: Testing in Ruby is about verifying that your code behaves as expected under
+  various conditions.
 title: Writing tests
 weight: 36
 ---

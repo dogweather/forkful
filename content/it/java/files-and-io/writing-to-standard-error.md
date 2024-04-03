@@ -6,8 +6,8 @@ description: "Scrivere su standard error (stderr) implica l'invio di messaggi di
   \ e diagnostica alla console o al terminale. I programmatori lo fanno per separare\u2026"
 lastmod: '2024-03-13T22:44:43.325509-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) implica l'invio di messaggi di errore\
-  \ e diagnostica alla console o al terminale. I programmatori lo fanno per separare\u2026"
+summary: Scrivere su standard error (stderr) implica l'invio di messaggi di errore
+  e diagnostica alla console o al terminale.
 title: Scrivere sull'errore standard
 weight: 25
 ---

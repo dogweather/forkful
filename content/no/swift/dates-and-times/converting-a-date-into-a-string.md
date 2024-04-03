@@ -5,9 +5,7 @@ description: "Konvertering av dato til streng gj\xF8r datoen menneskeleselig. Pr
   r."
 lastmod: '2024-03-13T22:44:41.153581-06:00'
 model: gpt-4-1106-preview
-summary: "Konvertering av dato til streng gj\xF8r datoen menneskeleselig. Programmerere\
-  \ trenger dette for \xE5 vise datoer i apper og logger som folk faktisk forst\xE5\
-  r."
+summary: "Konvertering av dato til streng gj\xF8r datoen menneskeleselig."
 title: Konvertere en dato til en streng
 weight: 28
 ---

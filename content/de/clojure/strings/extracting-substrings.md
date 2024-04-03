@@ -4,8 +4,7 @@ description: "\"Was & Warum?\" Das Extrahieren von Teilstrings bedeutet, Teile e
   \ Strings herauszuschneiden und zu verwenden. Programmierer machen dies, um spezifische\u2026"
 lastmod: '2024-03-13T22:44:53.409257-06:00'
 model: gpt-4-1106-preview
-summary: "\"Was & Warum?\" Das Extrahieren von Teilstrings bedeutet, Teile eines Strings\
-  \ herauszuschneiden und zu verwenden. Programmierer machen dies, um spezifische\u2026"
+summary: '"Was & Warum.'
 title: Teilstrings extrahieren
 weight: 6
 ---

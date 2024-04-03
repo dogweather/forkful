@@ -9,8 +9,7 @@ description: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen,
 lastmod: '2024-03-13T22:44:56.144296-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, yll\xE4\
-  pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen. Ohjelmoijat tekev\xE4\
-  t n\xE4in\u2026"
+  pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

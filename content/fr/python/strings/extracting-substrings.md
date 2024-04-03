@@ -6,8 +6,7 @@ description: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des morceaux s
 lastmod: '2024-03-13T22:44:57.223452-06:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des morceaux sp\xE9\
-  cifiques d'une cha\xEEne de caract\xE8res. On le fait pour analyser, manipuler ou\
-  \ transformer des\u2026"
+  cifiques d'une cha\xEEne de caract\xE8res."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

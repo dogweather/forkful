@@ -6,8 +6,7 @@ description: "Organizar el c\xF3digo en funciones consiste en envolver segmentos
 lastmod: '2024-03-13T22:44:59.297686-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones consiste en envolver segmentos de c\xF3\
-  digo que realizan tareas espec\xEDficas y asignarles un nombre. Se hace para hacer\
-  \ el\u2026"
+  digo que realizan tareas espec\xEDficas y asignarles un nombre."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

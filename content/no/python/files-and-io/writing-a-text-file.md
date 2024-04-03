@@ -8,7 +8,7 @@ description: "\xC5 skrive til en tekstfil i Python er en grunnleggende oppgave s
 lastmod: '2024-03-13T22:44:40.379381-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Python er en grunnleggende oppgave som inneb\xE6\
-  rer \xE5 opprette eller \xE5pne en fil og deretter legge til eller overskrive tekst.\u2026"
+  rer \xE5 opprette eller \xE5pne en fil og deretter legge til eller overskrive tekst."
 title: Skrive en tekstfil
 weight: 24
 ---

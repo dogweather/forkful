@@ -6,8 +6,7 @@ description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est juste les col
 lastmod: '2024-03-13T22:44:57.630302-06:00'
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est juste les coller bout\
-  \ \xE0 bout. Les devs font \xE7a tout le temps pour construire des textes, comme\
-  \ les messages\u2026"
+  \ \xE0 bout."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

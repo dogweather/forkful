@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.899997-06:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w j\u0119zyku C polega na ustaleniu, kt\xF3\
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza, lub czy s\u0105\
-  \ takie same. Mo\u017Cliwo\u015B\u0107 ta jest\u2026"
+  \ takie same."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

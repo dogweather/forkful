@@ -4,8 +4,8 @@ description: "Checking if a directory exists in Kotlin involves verifying the pr
   \ of a directory at a specified path. Programmers perform this task to prevent\u2026"
 lastmod: '2024-03-13T22:45:00.062394-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in Kotlin involves verifying the presence\
-  \ of a directory at a specified path. Programmers perform this task to prevent\u2026"
+summary: Checking if a directory exists in Kotlin involves verifying the presence
+  of a directory at a specified path.
 title: Checking if a directory exists
 weight: 20
 ---

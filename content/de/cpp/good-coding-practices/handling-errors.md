@@ -4,8 +4,7 @@ description: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas s
   \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
 lastmod: '2024-03-13T22:44:54.192209-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
-  \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
+summary: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht."
 title: Fehlerbehandlung
 weight: 16
 ---

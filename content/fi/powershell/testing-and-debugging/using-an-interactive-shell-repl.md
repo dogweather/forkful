@@ -5,7 +5,7 @@ description: "Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa
 lastmod: '2024-03-13T22:44:56.783885-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa PowerShell-komentojen\
-  \ kirjoittamisen ja v\xE4litt\xF6m\xE4n palautteen saamisen. Ohjelmoijat\u2026"
+  \ kirjoittamisen ja v\xE4litt\xF6m\xE4n palautteen saamisen."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

@@ -6,8 +6,7 @@ description: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem 
 lastmod: '2024-03-13T22:44:53.923007-06:00'
 model: gpt-4-1106-preview
 summary: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
-  ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\
-  \ zu\u2026"
+  ngeren."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

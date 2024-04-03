@@ -7,9 +7,9 @@ description: "Een interactieve shell (REPL - Read-Evaluate-Print Loop) voor Dart
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.506587-06:00'
 model: gpt-4-0125-preview
-summary: "Een interactieve shell (REPL - Read-Evaluate-Print Loop) voor Dart stelt\
-  \ programmeurs in staat om Dart code regel voor regel dynamisch te typen en uit\
-  \ te\u2026"
+summary: Een interactieve shell (REPL - Read-Evaluate-Print Loop) voor Dart stelt
+  programmeurs in staat om Dart code regel voor regel dynamisch te typen en uit te
+  voeren zonder hele scripts te hoeven compileren.
 title: Het Gebruik van een Interactieve Shell (REPL)
 weight: 34
 ---

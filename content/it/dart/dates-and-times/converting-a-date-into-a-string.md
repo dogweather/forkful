@@ -7,7 +7,9 @@ description: "Convertire una data in una stringa in Dart \xE8 un compito comune 
 lastmod: '2024-03-13T22:44:43.143788-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire una data in una stringa in Dart \xE8 un compito comune quando\
-  \ si ha la necessit\xE0 di visualizzare informazioni di data e ora in un formato\u2026"
+  \ si ha la necessit\xE0 di visualizzare informazioni di data e ora in un formato\
+  \ leggibile dall'uomo, o quando si intende serializzare i dati per la memorizzazione\
+  \ o la trasmissione."
 title: Convertire una data in una stringa
 weight: 28
 ---

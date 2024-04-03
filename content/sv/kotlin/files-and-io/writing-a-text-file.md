@@ -7,7 +7,8 @@ description: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mat
 lastmod: '2024-03-13T22:44:37.889356-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mata in textinneh\xE5\
-  ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller\u2026"
+  ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller konfigurationsinst\xE4\
+  llningar."
 title: Att skriva en textfil
 weight: 24
 ---

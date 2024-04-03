@@ -5,7 +5,7 @@ description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une
 lastmod: '2024-03-13T22:44:57.983042-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
-  \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"
+  \ imaginaire."
 title: Manipulation des nombres complexes
 weight: 14
 ---

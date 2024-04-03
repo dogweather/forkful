@@ -6,7 +6,8 @@ description: "Die Erzeugung zuf\xE4lliger Zahlen in Arduino-Projekten beinhaltet
 lastmod: '2024-03-13T22:44:54.140859-06:00'
 model: gpt-4-0125-preview
 summary: "Die Erzeugung zuf\xE4lliger Zahlen in Arduino-Projekten beinhaltet die Produktion\
-  \ von Werten, die konzeptionell unvorhersehbar sind, was f\xFCr Anwendungen wie\u2026"
+  \ von Werten, die konzeptionell unvorhersehbar sind, was f\xFCr Anwendungen wie\
+  \ Spiele, Simulationen und Sicherheitssysteme entscheidend ist."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

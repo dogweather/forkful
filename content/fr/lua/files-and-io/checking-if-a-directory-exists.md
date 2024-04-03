@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.952560-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\
-  \ en s'assurant\u2026"
+  \ en s'assurant que votre programme op\xE8re sur des chemins valides et \xE9vite\
+  \ les erreurs li\xE9es aux r\xE9pertoires inexistants."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

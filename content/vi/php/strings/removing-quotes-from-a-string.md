@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i trong\
   \ PHP c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5\
   u ngo\u1EB7c k\xE9p (`\"`) ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (`'`) c\xF3\
-  \ th\u1EC3 l\xE0m r\u1ED1i lo\u1EA1n logic code\u2026"
+  \ th\u1EC3 l\xE0m r\u1ED1i lo\u1EA1n logic code ho\u1EB7c truy v\u1EA5n c\u01A1\
+  \ s\u1EDF d\u1EEF li\u1EC7u c\u1EE7a b\u1EA1n."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

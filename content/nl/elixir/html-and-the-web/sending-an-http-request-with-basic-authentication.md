@@ -6,8 +6,9 @@ description: "Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in
   \ je een gebruikersnaam en wachtwoord toevoegt aan je verzoek om toegang te krijgen\u2026"
 lastmod: '2024-03-13T22:44:50.461798-06:00'
 model: gpt-4-0125-preview
-summary: "Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat je\
-  \ een gebruikersnaam en wachtwoord toevoegt aan je verzoek om toegang te krijgen\u2026"
+summary: Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat je
+  een gebruikersnaam en wachtwoord toevoegt aan je verzoek om toegang te krijgen tot
+  een beveiligde bron.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

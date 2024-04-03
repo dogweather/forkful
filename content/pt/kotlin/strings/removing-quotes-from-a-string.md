@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.529585-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa retirar quaisquer inst\xE2ncias de\
   \ caracteres de aspas, seja simples (' ') ou duplas (\" \"), dos dados de texto\
-  \ com os\u2026"
+  \ com os quais voc\xEA est\xE1 trabalhando."
 title: Removendo aspas de uma string
 weight: 9
 ---

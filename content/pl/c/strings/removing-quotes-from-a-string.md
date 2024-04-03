@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.872757-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w j\u0119zyku C polega\
   \ na wyodr\u0119bnieniu zawarto\u015Bci tekstowej bez otaczaj\u0105cych pojedynczych\
-  \ (' ') lub podw\xF3jnych (\" \")\u2026"
+  \ (' ') lub podw\xF3jnych (\" \") cudzys\u0142ow\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

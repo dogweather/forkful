@@ -6,8 +6,7 @@ description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relati
 lastmod: '2024-03-13T22:44:37.579985-06:00'
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relativa position\
-  \ p\xE5 tidslinjen. Programmerare g\xF6r detta f\xF6r att avg\xF6ra tidsintervaller,\
-  \ h\xE4ndelseordning,\u2026"
+  \ p\xE5 tidslinjen."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

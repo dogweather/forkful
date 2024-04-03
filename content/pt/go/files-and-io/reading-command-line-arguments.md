@@ -8,7 +8,7 @@ description: "Ler argumentos de linha de comando em Go envolve extrair os argume
 lastmod: '2024-03-13T22:44:46.077619-06:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos de linha de comando em Go envolve extrair os argumentos fornecidos\
-  \ a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt de\u2026"
+  \ a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt de comando."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

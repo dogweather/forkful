@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.768727-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado es una tarea com\xFAn para\
   \ los programadores, que se enfrentan a la programaci\xF3n de agendas, recordatorios\
-  \ o\u2026"
+  \ o cualquier caracter\xEDstica que dependa del c\xE1lculo de fechas."
 title: "C\xE1lculo de una fecha en el futuro o pasado"
 weight: 26
 ---

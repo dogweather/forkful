@@ -6,8 +6,7 @@ description: "Buscar y reemplazar texto es una tarea com\xFAn en programaci\xF3n
 lastmod: '2024-03-13T22:44:58.641851-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es una tarea com\xFAn en programaci\xF3n: consiste\
-  \ en localizar cadenas espec\xEDficas y sustituirlas por otras. Los programadores\
-  \ lo\u2026"
+  \ en localizar cadenas espec\xEDficas y sustituirlas por otras."
 title: Buscando y reemplazando texto
 weight: 10
 ---

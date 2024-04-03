@@ -5,9 +5,7 @@ description: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkk
   \ tietyn osan\u2026"
 lastmod: '2024-03-13T22:44:56.896430-06:00'
 model: gpt-4-1106-preview
-summary: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta.\
-  \ K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 vain\
-  \ tietyn osan\u2026"
+summary: Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

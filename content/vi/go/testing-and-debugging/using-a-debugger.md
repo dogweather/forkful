@@ -9,9 +9,7 @@ description: "Go cung c\u1EA5p m\u1ED9t ti\u1EC7n \xEDch t\xEDch h\u1EE3p cho vi
 lastmod: '2024-03-13T22:44:35.988288-06:00'
 model: gpt-4-0125-preview
 summary: "Go cung c\u1EA5p m\u1ED9t ti\u1EC7n \xEDch t\xEDch h\u1EE3p cho vi\u1EC7\
-  c g\u1EE1 l\u1ED7i g\u1ECDi l\xE0 `delve`. \u0110\xE2y l\xE0 m\u1ED9t c\xF4ng c\u1EE5\
-  \ g\u1EE1 l\u1ED7i \u0111\u1EA7y \u0111\u1EE7 t\xEDnh n\u0103ng cho ph\xE9p b\u1EA1\
-  n th\u1EF1c hi\u1EC7n ch\u01B0\u01A1ng tr\xECnh Go t\u1EEBng\u2026"
+  c g\u1EE1 l\u1ED7i g\u1ECDi l\xE0 `delve`."
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 weight: 35
 ---

@@ -7,7 +7,8 @@ description: "Tests in Google Apps Script (GAS) zu schreiben, bedeutet, automati
 lastmod: '2024-03-13T22:44:53.337885-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in Google Apps Script (GAS) zu schreiben, bedeutet, automatisierte\
-  \ Skripte zu erstellen, um das Verhalten Ihrer Codes zu \xFCberpr\xFCfen und\u2026"
+  \ Skripte zu erstellen, um das Verhalten Ihrer Codes zu \xFCberpr\xFCfen und sicherzustellen,\
+  \ dass sie unter verschiedenen Bedingungen wie erwartet funktionieren."
 title: Tests schreiben
 weight: 36
 ---

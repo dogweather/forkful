@@ -6,8 +6,9 @@ description: "Scrivere sull'errore standard (stderr) in Ruby significa indirizza
   \ messaggi di errore o diagnostiche a un flusso di uscita separato, distinto\u2026"
 lastmod: '2024-03-13T22:44:44.067341-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere sull'errore standard (stderr) in Ruby significa indirizzare messaggi\
-  \ di errore o diagnostiche a un flusso di uscita separato, distinto\u2026"
+summary: Scrivere sull'errore standard (stderr) in Ruby significa indirizzare messaggi
+  di errore o diagnostiche a un flusso di uscita separato, distinto dall'output standard
+  (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

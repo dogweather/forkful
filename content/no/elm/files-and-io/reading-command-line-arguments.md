@@ -6,8 +6,7 @@ description: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF
 lastmod: '2024-03-13T22:44:40.724247-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8rsel\
-  \ ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\
-  \ endre selve\u2026"
+  \ ved oppstart."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

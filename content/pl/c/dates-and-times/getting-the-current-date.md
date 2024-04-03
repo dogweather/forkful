@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.897833-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku C wi\u0105\u017Ce si\u0119\
   \ z wykorzystaniem standardowej biblioteki C do pobrania i sformatowania bie\u017C\
-  \u0105cej daty i czasu systemu.\u2026"
+  \u0105cej daty i czasu systemu."
 title: "Pobieranie bie\u017C\u0105cej daty"
 weight: 29
 ---

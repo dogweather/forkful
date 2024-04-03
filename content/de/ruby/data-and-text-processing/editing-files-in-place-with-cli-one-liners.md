@@ -6,7 +6,9 @@ description: "Dateien direkt im Terminal mit CLI (Command Line Interface)-Einzei
 lastmod: '2024-03-13T22:44:54.396387-06:00'
 model: gpt-4-0125-preview
 summary: "Dateien direkt im Terminal mit CLI (Command Line Interface)-Einzeilern in\
-  \ Ruby zu bearbeiten, erm\xF6glich es Ihnen, Dateien direkt vom Terminal aus zu\u2026"
+  \ Ruby zu bearbeiten, erm\xF6glich es Ihnen, Dateien direkt vom Terminal aus zu\
+  \ modifizieren, ohne sie in einem Editor \xF6ffnen, \xC4nderungen vornehmen und\
+  \ sie dann wieder speichern zu m\xFCssen."
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

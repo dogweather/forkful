@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.113333-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolazione delle stringhe \xE8 il processo di iniettare valori di\
   \ variabili direttamente nelle stringhe, spesso per creare messaggi significativi\
-  \ senza\u2026"
+  \ senza l'uso di concatenazioni ingombranti."
 title: Interpolazione di una stringa
 weight: 8
 ---

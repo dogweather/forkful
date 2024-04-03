@@ -6,8 +6,7 @@ description: "Converter uma data em uma string \xE9 transformar a representa\xE7
 lastmod: '2024-03-13T22:44:47.017336-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string \xE9 transformar a representa\xE7\xE3o\
-  \ de tempo (normalmente n\xFAmeros) em texto leg\xEDvel. Fazemos isso para facilitar\
-  \ a leitura,\u2026"
+  \ de tempo (normalmente n\xFAmeros) em texto leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

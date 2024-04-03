@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.695995-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja \u0142a\u0144cucha polega na zamianie pierwszego znaku ka\u017C\
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli jest ona pisana\
-  \ ma\u0142\u0105 liter\u0105, zachowuj\u0105c przy tym\u2026"
+  \ ma\u0142\u0105 liter\u0105, zachowuj\u0105c przy tym niezmienione pozosta\u0142\
+  e znaki."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

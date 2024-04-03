@@ -5,8 +5,7 @@ description: "Extraer subcadenas es sacar partes espec\xEDficas de un string. Lo
   \ o para\u2026"
 lastmod: '2024-03-13T22:44:58.690734-06:00'
 model: gpt-4-1106-preview
-summary: "Extraer subcadenas es sacar partes espec\xEDficas de un string. Los programadores\
-  \ hacemos esto para manipular y procesar datos de textos como entrada o para\u2026"
+summary: "Extraer subcadenas es sacar partes espec\xEDficas de un string."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

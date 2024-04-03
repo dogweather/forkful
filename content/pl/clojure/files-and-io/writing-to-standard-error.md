@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.013531-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
-  \ od standardowego\u2026"
+  \ od standardowego wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

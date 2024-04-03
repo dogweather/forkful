@@ -9,7 +9,7 @@ description: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts z
 lastmod: '2024-03-13T22:44:54.314990-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu b\xFC\
-  ndeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code leichter\u2026"
+  ndeln, um spezifische Aufgaben zu erledigen."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

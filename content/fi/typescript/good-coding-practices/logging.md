@@ -6,7 +6,8 @@ description: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja mu
 lastmod: '2024-03-13T22:44:56.321650-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja muita merkitt\xE4\
-  vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen, usein tiedostoon\u2026"
+  vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen, usein tiedostoon\
+  \ tai tietokantaan."
 title: Lokitus
 weight: 17
 ---

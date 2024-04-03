@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Google Apps Script l\xE0 vi\u1EC7\
   c l\u1EA5y ng\xE0y v\xE0 gi\u1EDD th\u1EF1c t\u1EBF, m\u1ED9t nhi\u1EC7m v\u1EE5\
   \ ph\u1ED5 bi\u1EBFn cho vi\u1EC7c t\u1EF1 \u0111\u1ED9ng h\xF3a c\xF4ng vi\u1EC7\
-  c, ghi nh\u1EADt k\xFD v\xE0 \u0111\xE1nh d\u1EA5u\u2026"
+  c, ghi nh\u1EADt k\xFD v\xE0 \u0111\xE1nh d\u1EA5u th\u1EDDi gian trong c\xE1c \u1EE9\
+  ng d\u1EE5ng li\xEAn k\u1EBFt v\u1EDBi h\u1EC7 sinh th\xE1i Google."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

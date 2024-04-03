@@ -6,8 +6,7 @@ description: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux t
 lastmod: '2024-03-13T22:44:58.153050-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux textes\
-  \ en un seul. Les d\xE9veloppeurs la font pour construire des messages dynamiques,\
-  \ g\xE9rer des\u2026"
+  \ en un seul."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

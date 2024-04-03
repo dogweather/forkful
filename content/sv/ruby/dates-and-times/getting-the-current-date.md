@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.441818-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
   stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\
-  \ till att generera\u2026"
+  \ till att generera rapporter med datumst\xE4mplar."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

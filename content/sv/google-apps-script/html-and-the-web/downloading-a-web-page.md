@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.437157-06:00'
 model: gpt-4-0125-preview
 summary: "Att ladda ner en webbsida i Google Apps Script inneb\xE4r att h\xE4mta inneh\xE5\
   llet p\xE5 en webbsida via HTML f\xF6r olika \xE4ndam\xE5l, s\xE5som webbskrapning,\
-  \ dataextraktion\u2026"
+  \ dataextraktion eller \xF6vervakning av f\xF6r\xE4ndringar."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

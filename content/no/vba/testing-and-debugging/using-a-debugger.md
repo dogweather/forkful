@@ -7,8 +7,7 @@ description: "I VBA er feils\xF8keren en integrert del av Visual Basic Editor (V
   \ ved siden\u2026"
 lastmod: '2024-03-13T22:44:40.625382-06:00'
 model: gpt-4-0125-preview
-summary: "I VBA er feils\xF8keren en integrert del av Visual Basic Editor (VBE). Slik\
-  \ kan du utnytte den: 1. **\xC5 sette brytepunkter**: Klikk i venstre marg ved siden\u2026"
+summary: "I VBA er feils\xF8keren en integrert del av Visual Basic Editor (VBE)."
 title: Bruker en debugger
 weight: 35
 ---

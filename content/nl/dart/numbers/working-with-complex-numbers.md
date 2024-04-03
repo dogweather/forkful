@@ -8,7 +8,8 @@ description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair dee
 lastmod: '2024-03-13T22:44:50.498323-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (gewoonlijk\
-  \ aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit\u2026"
+  \ aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit naar\
+  \ een tweedimensionale ruimte."
 title: Werken met complexe getallen
 weight: 14
 ---

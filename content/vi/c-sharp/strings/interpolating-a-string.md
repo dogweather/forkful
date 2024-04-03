@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i trong C# cho ph\xE9p b\u1EA1n t\u1EA1o m\u1ED9t\
   \ chu\u1ED7i m\u1EDBi b\u1EB1ng c\xE1ch bao g\u1ED3m c\xE1c bi\u1EC3u th\u1EE9c\
   \ b\xEAn trong m\u1ED9t chu\u1ED7i k\xFD t\u1EF1, l\xE0m cho vi\u1EC7c \u0111\u1ECB\
-  nh d\u1EA1ng v\xE0 n\u1ED1i chu\u1ED7i tr\u1EDF\u2026"
+  nh d\u1EA1ng v\xE0 n\u1ED1i chu\u1ED7i tr\u1EDF n\xEAn d\u1EC5 d\xE0ng h\u01A1n."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

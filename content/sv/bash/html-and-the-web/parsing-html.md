@@ -8,8 +8,7 @@ description: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE
 lastmod: '2024-03-13T22:44:38.080453-06:00'
 model: gpt-4-0125-preview
 summary: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE5llet\
-  \ i en HTML-fil f\xF6r att extrahera information. Programmerare g\xF6r det f\xF6\
-  r att komma \xE5t data,\u2026"
+  \ i en HTML-fil f\xF6r att extrahera information."
 title: Tolka HTML
 weight: 43
 ---

@@ -5,7 +5,7 @@ description: "I programmering er det \xE5 sette sammen strenger, kalt konkatener
 lastmod: '2024-03-13T22:44:40.394580-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering er det \xE5 sette sammen strenger, kalt konkatenering, rett\
-  \ og slett \xE5 smelte sammen tekster. Vi gj\xF8r det for \xE5 bygge opp dynamiske\u2026"
+  \ og slett \xE5 smelte sammen tekster."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

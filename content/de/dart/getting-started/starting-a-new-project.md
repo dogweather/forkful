@@ -7,7 +7,7 @@ description: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten ein
 lastmod: '2024-03-13T22:44:53.581514-06:00'
 model: gpt-4-0125-preview
 summary: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten einer Umgebung,\
-  \ die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert.\u2026"
+  \ die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert."
 title: Ein neues Projekt starten
 weight: 1
 ---

@@ -5,9 +5,8 @@ description: "L'arrotondamento consiste nel tagliare il rumore dopo un certo pun
   \ la\u2026"
 lastmod: '2024-03-13T22:44:43.806887-06:00'
 model: gpt-4-0125-preview
-summary: "L'arrotondamento consiste nel tagliare il rumore dopo un certo punto in\
-  \ un numero. I programmatori arrotondano per controllare la precisione, gestire\
-  \ la\u2026"
+summary: L'arrotondamento consiste nel tagliare il rumore dopo un certo punto in un
+  numero.
 title: Arrotondamento dei numeri
 weight: 13
 ---

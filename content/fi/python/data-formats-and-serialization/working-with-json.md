@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.164875-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
   \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\
-  \ ja\u2026"
+  \ ja p\xE4invastoin."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

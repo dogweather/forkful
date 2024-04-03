@@ -6,8 +6,7 @@ description: "Tekstin etsint\xE4 ja korvaaminen auttaa l\xF6yt\xE4m\xE4\xE4n ja 
 lastmod: '2024-03-13T22:44:56.601255-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin etsint\xE4 ja korvaaminen auttaa l\xF6yt\xE4m\xE4\xE4n ja muokkaamaan\
-  \ koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t t\xE4t\xE4 toimintoa\u2026"
+  \ koodissa tai tekstitiedostoissa olevia merkkijonoja."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

@@ -8,7 +8,8 @@ description: "YAML, un lenguaje de serializaci\xF3n de datos dise\xF1ado para se
 lastmod: '2024-03-13T22:44:58.823709-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, un lenguaje de serializaci\xF3n de datos dise\xF1ado para ser amigable\
-  \ con el humano, se usa a menudo para archivos de configuraci\xF3n, mensajes entre\u2026"
+  \ con el humano, se usa a menudo para archivos de configuraci\xF3n, mensajes entre\
+  \ procesos y almacenamiento de datos."
 title: Trabajando con YAML
 weight: 41
 ---

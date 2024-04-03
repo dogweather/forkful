@@ -6,8 +6,8 @@ description: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt
   \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"
 lastmod: '2024-03-13T22:44:50.516319-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd\
-  \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"
+summary: De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd
+  voor de huidige datum en tijd.
 title: De huidige datum krijgen
 weight: 29
 ---

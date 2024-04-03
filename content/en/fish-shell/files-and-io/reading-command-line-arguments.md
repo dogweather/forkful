@@ -4,8 +4,8 @@ description: "Reading command line arguments is grabbing the extra bits you type
   \ your script's name, like secret handshakes to customize a script's behavior.\u2026"
 lastmod: '2024-03-13T22:45:00.488139-06:00'
 model: gpt-4-1106-preview
-summary: "Reading command line arguments is grabbing the extra bits you type after\
-  \ your script's name, like secret handshakes to customize a script's behavior.\u2026"
+summary: Reading command line arguments is grabbing the extra bits you type after
+  your script's name, like secret handshakes to customize a script's behavior.
 title: Reading command line arguments
 weight: 23
 ---

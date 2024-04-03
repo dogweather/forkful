@@ -6,8 +6,7 @@ description: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai 
 lastmod: '2024-03-13T22:44:56.830178-06:00'
 model: gpt-4-1106-preview
 summary: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
-  \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t\u2026"
+  \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4."
 title: Lokitus
 weight: 17
 ---

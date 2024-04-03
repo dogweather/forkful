@@ -6,8 +6,7 @@ description: "Organiser le code en fonctions consiste \xE0 emballer des blocs de
 lastmod: '2024-03-13T22:44:57.287990-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions consiste \xE0 emballer des blocs de code\
-  \ qui accomplissent des t\xE2ches sp\xE9cifiques. Faire cela rend votre code propre,\
-  \ plus\u2026"
+  \ qui accomplissent des t\xE2ches sp\xE9cifiques."
 title: Organisation du code en fonctions
 weight: 18
 ---

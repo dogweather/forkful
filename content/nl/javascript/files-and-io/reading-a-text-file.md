@@ -6,8 +6,7 @@ description: "Een tekstbestand lezen is informatie uit een .txt-document in je p
   \ halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren:\u2026"
 lastmod: '2024-03-13T22:44:51.220091-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand lezen is informatie uit een .txt-document in je programma\
-  \ halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren:\u2026"
+summary: Een tekstbestand lezen is informatie uit een .
 title: Een tekstbestand lezen
 weight: 22
 ---

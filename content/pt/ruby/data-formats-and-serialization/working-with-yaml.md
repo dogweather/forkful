@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.115553-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
   \ de Marca\xE7\xE3o), \xE9 amplamente utilizado em Ruby para arquivos de configura\xE7\
-  \xE3o e\u2026"
+  \xE3o e serializa\xE7\xE3o de dados devido ao seu formato leg\xEDvel por humanos."
 title: Trabalhando com YAML
 weight: 41
 ---

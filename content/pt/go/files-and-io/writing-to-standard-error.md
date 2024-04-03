@@ -8,8 +8,7 @@ description: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensa
 lastmod: '2024-03-13T22:44:46.078667-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens de\
-  \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
-  \ Os\u2026"
+  \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

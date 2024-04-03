@@ -9,8 +9,7 @@ description: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\x
 lastmod: '2024-03-13T22:44:57.220379-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9rer\
-  \ des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\
-  \ l'utilisent\u2026"
+  \ des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

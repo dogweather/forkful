@@ -8,7 +8,8 @@ description: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa dat
 lastmod: '2024-03-13T22:44:57.013443-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan pysyv\xE4\
-  n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia joko samalla\u2026"
+  n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia joko samalla\
+  \ Fish-skriptill\xE4 tai muilla ohjelmilla."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

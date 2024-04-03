@@ -6,8 +6,7 @@ description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man sy
 lastmod: '2024-03-13T22:44:37.897335-06:00'
 model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
-  \ tar bort specifika tecken eller sekvenser fr\xE5n en str\xE4ng. Programmerare\
-  \ g\xF6r detta\u2026"
+  \ tar bort specifika tecken eller sekvenser fr\xE5n en str\xE4ng."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

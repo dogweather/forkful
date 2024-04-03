@@ -6,7 +6,8 @@ description: "Trabalhar com TOML significa que voc\xEA est\xE1 manipulando dados
 lastmod: '2024-03-13T22:44:46.219904-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com TOML significa que voc\xEA est\xE1 manipulando dados em um\
-  \ formato Minimal \"Tom's Obvious, Minimal Language\", popular para arquivos de\u2026"
+  \ formato Minimal \"Tom's Obvious, Minimal Language\", popular para arquivos de\
+  \ configura\xE7\xE3o devido \xE0 sua facilidade de leitura."
 title: Trabalhando com TOML
 weight: 39
 ---

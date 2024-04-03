@@ -5,8 +5,7 @@ description: "Vergleichen zwei Daten hei\xDFt, ihre chronologische Reihenfolge z
   \ zu sortieren\u2026"
 lastmod: '2024-03-13T22:44:53.685176-06:00'
 model: gpt-4-1106-preview
-summary: "Vergleichen zwei Daten hei\xDFt, ihre chronologische Reihenfolge zu bestimmen.\
-  \ Programmierer machen das, um Zeitabl\xE4ufe zu handhaben, Ereignisse zu sortieren\u2026"
+summary: "Vergleichen zwei Daten hei\xDFt, ihre chronologische Reihenfolge zu bestimmen."
 title: Vergleich von zwei Daten
 weight: 27
 ---

@@ -8,8 +8,7 @@ description: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDd
 lastmod: '2024-03-13T22:44:46.895549-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDda de mensagens\
-  \ de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal do programa.\
-  \ Os\u2026"
+  \ de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal do programa."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

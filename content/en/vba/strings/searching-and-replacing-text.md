@@ -5,8 +5,8 @@ description: "Searching and replacing text in Visual Basic for Applications (VBA
   \ This\u2026"
 lastmod: '2024-03-13T22:44:59.921132-06:00'
 model: gpt-4-0125-preview
-summary: "Searching and replacing text in Visual Basic for Applications (VBA) is essential\
-  \ for editing documents, spreadsheets, and databases programmatically. This\u2026"
+summary: Searching and replacing text in Visual Basic for Applications (VBA) is essential
+  for editing documents, spreadsheets, and databases programmatically.
 title: Searching and replacing text
 weight: 10
 ---

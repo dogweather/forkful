@@ -9,8 +9,7 @@ description: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom 
 lastmod: '2024-03-13T22:44:37.469542-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom str\xE4\
-  ngliteraler. Programmerare anv\xE4nder det f\xF6r att dynamiskt infoga v\xE4rden\
-  \ i str\xE4ngar, vilket\u2026"
+  ngliteraler."
 title: "Interpolering av en str\xE4ng"
 weight: 8
 ---

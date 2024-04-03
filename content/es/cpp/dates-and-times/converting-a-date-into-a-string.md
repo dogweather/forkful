@@ -5,8 +5,8 @@ description: "Convertir una fecha a texto permite mostrarla en diferentes format
   \ Es\u2026"
 lastmod: '2024-03-13T22:44:59.386533-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando\
-  \ la lectura para humanos o la compatibilidad con sistemas externos. Es\u2026"
+summary: Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando
+  la lectura para humanos o la compatibilidad con sistemas externos.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

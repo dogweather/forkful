@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:47.018237-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar a diferen\xE7a ou a rela\xE7\xE3\
   o temporal entre elas, como qual vem antes ou quanto tempo se passou entre uma e\
-  \ outra.\u2026"
+  \ outra."
 title: Comparando duas datas
 weight: 27
 ---

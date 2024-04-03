@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi trong Visual\
   \ Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9\
   t m\xF4i tr\u01B0\u1EDDng trong m\u1ED9t \u1EE9ng d\u1EE5ng ch\u1EE7 nh\u01B0 Excel\
-  \ \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a\u2026"
+  \ \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1c v\u1EE5 ho\u1EB7c m\u1EDF\
+  \ r\u1ED9ng ch\u1EE9c n\u0103ng."
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

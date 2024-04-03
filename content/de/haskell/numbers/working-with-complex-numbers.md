@@ -5,7 +5,8 @@ description: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rte
 lastmod: '2024-03-13T22:44:53.924968-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil, sind\
-  \ in verschiedenen Berechnungsbereichen wie Ingenieurwesen, Physik und\u2026"
+  \ in verschiedenen Berechnungsbereichen wie Ingenieurwesen, Physik und Signalverarbeitung\
+  \ unerl\xE4sslich."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

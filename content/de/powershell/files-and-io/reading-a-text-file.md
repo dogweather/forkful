@@ -5,7 +5,7 @@ description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch
 lastmod: '2024-03-13T22:44:54.120973-06:00'
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
-  nglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu\u2026"
+  nglich zu machen."
 title: Textdatei einlesen
 weight: 22
 ---

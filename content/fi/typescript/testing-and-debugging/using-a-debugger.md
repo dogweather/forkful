@@ -6,8 +6,7 @@ description: "P\xE4\xE4st\xE4ksesi alkuun debuggerin kanssa TypeScriptiss\xE4 ta
 lastmod: '2024-03-13T22:44:56.319854-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4\xE4st\xE4ksesi alkuun debuggerin kanssa TypeScriptiss\xE4 tarvitset\
-  \ vain tuetun IDE:n (kuten Visual Studio Code) ja `launch.json`-konfiguraation.\
-  \ T\xE4ss\xE4 on nopea\u2026"
+  \ vain tuetun IDE:n (kuten Visual Studio Code) ja `launch."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

@@ -7,8 +7,9 @@ description: "Een webpagina downloaden in C houdt in dat je programmatisch toega
   \ voor\u2026"
 lastmod: '2024-03-13T22:44:51.289857-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden in C houdt in dat je programmatisch toegang krijgt\
-  \ tot de inhoud van een webpagina via het internet en deze lokaal opslaat voor\u2026"
+summary: Een webpagina downloaden in C houdt in dat je programmatisch toegang krijgt
+  tot de inhoud van een webpagina via het internet en deze lokaal opslaat voor verwerking
+  of offline gebruik.
 title: Een webpagina downloaden
 weight: 42
 ---

@@ -7,9 +7,8 @@ description: "Analisar uma data a partir de uma string envolve converter texto e
   \ interagem com datas\u2026"
 lastmod: '2024-03-13T22:44:46.551644-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string envolve converter texto em um objeto\
-  \ Date. Esta opera\xE7\xE3o \xE9 fundamental para aplica\xE7\xF5es que interagem\
-  \ com datas\u2026"
+summary: Analisar uma data a partir de uma string envolve converter texto em um objeto
+  Date.
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

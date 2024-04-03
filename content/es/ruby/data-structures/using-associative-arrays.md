@@ -8,8 +8,7 @@ description: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, pe
 lastmod: '2024-03-13T22:44:59.582722-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, permiten\
-  \ emparejar claves \xFAnicas con valores. Son indispensables cuando necesitas llevar\
-  \ un\u2026"
+  \ emparejar claves \xFAnicas con valores."
 title: Uso de matrices asociativas
 weight: 15
 ---

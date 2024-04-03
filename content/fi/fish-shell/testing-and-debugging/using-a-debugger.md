@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:56.999277-06:00'
 model: gpt-4-0125-preview
 summary: "Fish ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria kuten jotkin muut\
   \ komentorivitulkki, mutta voit k\xE4ytt\xE4\xE4 ulkoisia ty\xF6kaluja kuten `gdb`\
-  \ kompiloitujen\u2026"
+  \ kompiloitujen ohjelmien debuggaamiseen tai `fish -d` ajamaan fishi\xE4 debug-tulostuksella\
+  \ eri tasoilla."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

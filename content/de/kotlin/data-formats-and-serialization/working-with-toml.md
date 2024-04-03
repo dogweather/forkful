@@ -5,9 +5,7 @@ description: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird 
   \ schreiben\u2026"
 lastmod: '2024-03-13T22:44:53.869586-06:00'
 model: gpt-4-0125-preview
-summary: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xFC\
-  r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\
-  \ schreiben\u2026"
+summary: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache."
 title: Arbeiten mit TOML
 weight: 39
 ---

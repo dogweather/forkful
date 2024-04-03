@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.198928-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle avec Google Apps Script consiste \xE0 r\xE9cup\xE9\
   rer la date et l'heure en direct, une t\xE2che courante pour l'automatisation des\
-  \ t\xE2ches,\u2026"
+  \ t\xE2ches, la journalisation et l'horodatage dans les applications li\xE9es \xE0\
+  \ l'\xE9cosyst\xE8me de Google."
 title: Obtenir la date actuelle
 weight: 29
 ---

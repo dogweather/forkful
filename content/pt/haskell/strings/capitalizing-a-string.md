@@ -7,7 +7,8 @@ description: "Capitalizar uma string envolve transformar a primeira letra de uma
 lastmod: '2024-03-13T22:44:46.609175-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve transformar a primeira letra de uma string\
-  \ dada em mai\xFAscula, enquanto garante que as restantes letras permane\xE7am em\u2026"
+  \ dada em mai\xFAscula, enquanto garante que as restantes letras permane\xE7am em\
+  \ min\xFAscula."
 title: Capitalizando uma string
 weight: 2
 ---

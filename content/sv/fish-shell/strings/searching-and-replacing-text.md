@@ -6,8 +6,7 @@ description: "Att s\xF6ka och ers\xE4tta text \xE4r grundprocessen att hitta spe
 lastmod: '2024-03-13T22:44:38.320740-06:00'
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundprocessen att hitta specifika\
-  \ str\xE4ngar i data och byta ut dem mot andra str\xE4ngar. Programmerare g\xF6\
-  r det f\xF6r att\u2026"
+  \ str\xE4ngar i data och byta ut dem mot andra str\xE4ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

@@ -7,7 +7,8 @@ description: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et 
 lastmod: '2024-03-13T22:44:40.820617-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
-  \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"
+  \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\
+  \ kommaer for \xE5 skille individuelle verdier."
 title: Arbeide med CSV
 weight: 37
 ---

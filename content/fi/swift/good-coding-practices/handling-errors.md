@@ -5,7 +5,7 @@ description: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia 
 lastmod: '2024-03-13T22:44:56.914019-06:00'
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia ja ratkaisemista,\
-  \ jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen\u2026"
+  \ jotka ilmaantuvat koodisi ajon aikana."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

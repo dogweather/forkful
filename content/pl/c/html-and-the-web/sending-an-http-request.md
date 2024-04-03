@@ -8,8 +8,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u
 lastmod: '2024-03-13T22:44:35.882977-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142aniu\
-  \ \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych. Programi\u015B\
-  ci robi\u0105 to w j\u0119zyku C, aby\u2026"
+  \ \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

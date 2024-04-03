@@ -8,8 +8,7 @@ description: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla 
 lastmod: '2024-03-13T22:44:35.810792-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
-  \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\
-  \ przed\u2026"
+  \ manipulacji plikami."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

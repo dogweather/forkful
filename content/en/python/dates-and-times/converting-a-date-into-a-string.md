@@ -5,8 +5,7 @@ description: "Converting dates into strings changes a date object to a text form
   \ for\u2026"
 lastmod: '2024-03-13T22:44:59.718202-06:00'
 model: gpt-4-1106-preview
-summary: "Converting dates into strings changes a date object to a text format. Programmers\
-  \ do this to display dates in a user-friendly way or to prepare them for\u2026"
+summary: Converting dates into strings changes a date object to a text format.
 title: Converting a date into a string
 weight: 28
 ---

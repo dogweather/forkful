@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.407346-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA) permite\
   \ que programas simulem processos com elementos de chance ou variabilidade, como\
-  \ a\u2026"
+  \ a rolagem de dados ou a amostragem de dados."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

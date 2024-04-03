@@ -6,8 +6,7 @@ description: "Supprimer des caract\xE8res selon un mod\xE8le (pattern) c'est enl
 lastmod: '2024-03-13T22:44:57.310263-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un mod\xE8le (pattern) c'est enlever des\
-  \ \xE9l\xE9ments d'une cha\xEEne qui correspondent \xE0 un crit\xE8re pr\xE9cis.\
-  \ Les d\xE9veloppeurs le font\u2026"
+  \ \xE9l\xE9ments d'une cha\xEEne qui correspondent \xE0 un crit\xE8re pr\xE9cis."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -6,8 +6,7 @@ description: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto
 lastmod: '2024-03-13T22:44:34.980006-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto\u015B\
-  ci zmiennych w tekst. Programi\u015Bci robi\u0105 to, by dynamicznie generowa\u0107\
-  \ tre\u015B\u0107 \u2013 dzi\u0119ki temu kod jest bardziej\u2026"
+  ci zmiennych w tekst."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

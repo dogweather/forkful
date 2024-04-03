@@ -8,8 +8,7 @@ description: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\x
 lastmod: '2024-03-13T22:44:57.153744-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\xE9rer\
-  \ le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser. Les\
-  \ programmeurs\u2026"
+  \ le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser."
 title: Lire un fichier texte
 weight: 22
 ---

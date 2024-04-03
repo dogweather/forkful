@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.976583-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para tarefas\
   \ de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a presen\xE7\
-  a do\u2026"
+  a do diret\xF3rio antes de ler ou escrever nele."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

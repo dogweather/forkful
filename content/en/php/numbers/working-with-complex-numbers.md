@@ -4,8 +4,8 @@ description: "Complex numbers have a real part and an imaginary part, usually wr
   \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
 lastmod: '2024-03-13T22:45:00.160875-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers have a real part and an imaginary part, usually written\
-  \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
+summary: Complex numbers have a real part and an imaginary part, usually written as
+  `a + bi`.
 title: Working with complex numbers
 weight: 14
 ---

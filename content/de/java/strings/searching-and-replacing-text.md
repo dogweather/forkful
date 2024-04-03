@@ -5,7 +5,8 @@ description: "Text suchen und ersetzen ist grundlegendes Werkzeug in der Program
 lastmod: '2024-03-13T22:44:53.748738-06:00'
 model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen ist grundlegendes Werkzeug in der Programmierung;\
-  \ es erm\xF6glicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch\u2026"
+  \ es erm\xF6glicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch\
+  \ andere zu ersetzen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

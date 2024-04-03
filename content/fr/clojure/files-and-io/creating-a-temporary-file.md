@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\x
 lastmod: '2024-03-13T22:44:57.302370-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\xE9 \xE0\
-  \ une utilisation courte et unique. Les programmeurs le font pour stocker des donn\xE9\
-  es\u2026"
+  \ une utilisation courte et unique."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

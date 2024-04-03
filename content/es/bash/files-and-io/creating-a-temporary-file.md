@@ -5,9 +5,8 @@ description: "Crear un fichero temporal es como hacer una nota adhesiva digital,
   \ lo\u2026"
 lastmod: '2024-03-13T22:44:59.266710-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
-  \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\
-  \ lo\u2026"
+summary: Crear un fichero temporal es como hacer una nota adhesiva digital, algo temporal
+  para guardar datos que no necesitas a largo plazo.
 title: Creando un archivo temporal
 weight: 21
 ---

@@ -8,8 +8,7 @@ description: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bo
 lastmod: '2024-03-13T22:44:41.167357-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
-  \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\
-  \ Denne\u2026"
+  \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

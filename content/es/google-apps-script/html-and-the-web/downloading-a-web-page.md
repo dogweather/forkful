@@ -8,7 +8,8 @@ description: "Descargar una p\xE1gina web en Google Apps Script implica obtener 
 lastmod: '2024-03-13T22:44:58.526648-06:00'
 model: gpt-4-0125-preview
 summary: "Descargar una p\xE1gina web en Google Apps Script implica obtener el contenido\
-  \ de una p\xE1gina web a trav\xE9s de HTML para diversos fines, como el web scraping,\u2026"
+  \ de una p\xE1gina web a trav\xE9s de HTML para diversos fines, como el web scraping,\
+  \ la extracci\xF3n de datos o el monitoreo de cambios."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.916802-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
   r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
-  \ f\xF6rv\xE4ntat.\u2026"
+  \ f\xF6rv\xE4ntat."
 title: Skriva tester
 weight: 36
 ---

@@ -6,8 +6,8 @@ description: "Escrever um arquivo de texto em Go envolve criar e escrever string
   \ de dados em um novo ou existente arquivo de texto. Programadores fazem isso para\u2026"
 lastmod: '2024-03-13T22:44:46.080718-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever um arquivo de texto em Go envolve criar e escrever strings de dados\
-  \ em um novo ou existente arquivo de texto. Programadores fazem isso para\u2026"
+summary: Escrever um arquivo de texto em Go envolve criar e escrever strings de dados
+  em um novo ou existente arquivo de texto.
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -6,8 +6,7 @@ description: "Arredondar \xE9 eliminar o ru\xEDdo ap\xF3s um determinado ponto e
 lastmod: '2024-03-13T22:44:46.957574-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar \xE9 eliminar o ru\xEDdo ap\xF3s um determinado ponto em um n\xFA\
-  mero. Programadores arredondam para controlar a precis\xE3o, gerenciar mem\xF3ria\
-  \ ou tornar a\u2026"
+  mero."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

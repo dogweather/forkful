@@ -6,8 +6,7 @@ description: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u014
 lastmod: '2024-03-13T22:44:35.421740-06:00'
 model: gpt-4-1106-preview
 summary: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015B\
-  ci? To po prostu wyliczanie nowej daty, dodaj\u0105c lub odejmuj\u0105c czas od\
-  \ danej daty pocz\u0105tkowej.\u2026"
+  ci."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

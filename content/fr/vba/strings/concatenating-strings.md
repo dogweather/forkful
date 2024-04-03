@@ -8,8 +8,7 @@ description: "La concat\xE9nation dans Visual Basic pour Applications (VBA) cons
 lastmod: '2024-03-13T22:44:57.547580-06:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste \xE0\
-  \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9.\
-  \ Ceci est une\u2026"
+  \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

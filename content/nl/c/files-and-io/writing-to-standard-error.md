@@ -6,8 +6,8 @@ description: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en
   \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
 lastmod: '2024-03-13T22:44:51.308072-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
-  \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
+summary: Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische
+  informatie naar een aparte stroom worden geleid dan de hoofdprogramma-uitvoer.
 title: Schrijven naar standaardfout
 weight: 25
 ---

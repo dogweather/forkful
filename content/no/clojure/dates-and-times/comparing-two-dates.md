@@ -6,8 +6,7 @@ description: "\xC5 sammenligne to datoer betyr \xE5 se forskjeller eller likhete
 lastmod: '2024-03-13T22:44:40.414237-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sammenligne to datoer betyr \xE5 se forskjeller eller likheter\u2014\
-  som hvilken som er tidligst eller om de er samme dag. Programmerere gj\xF8r dette\
-  \ for \xE5\u2026"
+  som hvilken som er tidligst eller om de er samme dag."
 title: Sammenlikning av to datoer
 weight: 27
 ---

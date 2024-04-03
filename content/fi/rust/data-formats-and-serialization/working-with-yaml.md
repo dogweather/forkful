@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.377575-06:00'
 model: gpt-4-0125-preview
 summary: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6skentely\
   \ on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\
-  . YAML\u2026"
+  ."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

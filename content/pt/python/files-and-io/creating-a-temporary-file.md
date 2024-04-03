@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.174479-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio significa fazer um arquivo que \xE9 destinado\
   \ a ser usado por um curto per\xEDodo de tempo, geralmente durante a execu\xE7\xE3\
-  o de um\u2026"
+  o de um programa."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

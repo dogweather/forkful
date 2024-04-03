@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire sur Arduino implique de stocker des
 lastmod: '2024-03-13T22:44:58.135163-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire sur Arduino implique de stocker des donn\xE9\
-  es de mani\xE8re transitoire pendant l'ex\xE9cution d'un sketch. On le fait souvent\
-  \ pour\u2026"
+  es de mani\xE8re transitoire pendant l'ex\xE9cution d'un sketch."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.334876-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
   \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
-  \ tilgjengelig\u2026"
+  \ tilgjengelig skylagring."
 title: Lese en tekstfil
 weight: 22
 ---

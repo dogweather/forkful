@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:34.974704-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
   \ danych podobny do JSON lub YAML, ale maj\u0105cy na celu prostot\u0119 i czytelno\u015B\
-  \u0107.\u2026"
+  \u0107."
 title: Praca z TOML
 weight: 39
 ---

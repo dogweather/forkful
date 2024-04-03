@@ -6,8 +6,7 @@ description: "Konwersja stringa do ma\u0142ych liter to proces zmiany wszystkich
 lastmod: '2024-03-13T22:44:35.264149-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja stringa do ma\u0142ych liter to proces zmiany wszystkich liter\
-  \ w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy to dla jednolito\u015Bci\
-  \ danych, \u0142atwiejszego\u2026"
+  \ w tek\u015Bcie na ich ma\u0142e odpowiedniki."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -4,8 +4,8 @@ description: "In the world of Arduino, associative arrays let you pair keys with
   \ kinda like how you'd match socks with their pairs. They're a go-to when you\u2026"
 lastmod: '2024-03-13T22:45:00.315820-06:00'
 model: gpt-4-0125-preview
-summary: "In the world of Arduino, associative arrays let you pair keys with values,\
-  \ kinda like how you'd match socks with their pairs. They're a go-to when you\u2026"
+summary: In the world of Arduino, associative arrays let you pair keys with values,
+  kinda like how you'd match socks with their pairs.
 title: Using associative arrays
 weight: 15
 ---

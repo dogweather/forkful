@@ -8,7 +8,8 @@ description: "Analizar HTML en Google Apps Script implica extraer datos de conte
 lastmod: '2024-03-13T22:44:58.525081-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en Google Apps Script implica extraer datos de contenido HTML,\
-  \ lo cual es especialmente \xFAtil al interactuar con p\xE1ginas web o fuentes de\u2026"
+  \ lo cual es especialmente \xFAtil al interactuar con p\xE1ginas web o fuentes de\
+  \ datos basadas en la web."
 title: Analizando HTML
 weight: 43
 ---

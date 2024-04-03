@@ -5,7 +5,7 @@ description: "La concatenazione di stringhe \xE8 il processo di unione di due o 
 lastmod: '2024-03-13T22:44:43.675313-06:00'
 model: gpt-4-1106-preview
 summary: "La concatenazione di stringhe \xE8 il processo di unione di due o pi\xF9\
-  \ stringhe di testo in una sola. I programmatori la usano per creare messaggi dinamici,\u2026"
+  \ stringhe di testo in una sola."
 title: Concatenazione di stringhe
 weight: 3
 ---

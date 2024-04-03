@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in Fish Shell allow you to search, mat
   \ and manipulate strings based on specific patterns. Programmers utilize regex for\u2026"
 lastmod: '2024-03-13T22:45:00.463271-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in Fish Shell allow you to search, match, and\
-  \ manipulate strings based on specific patterns. Programmers utilize regex for\u2026"
+summary: Regular expressions (regex) in Fish Shell allow you to search, match, and
+  manipulate strings based on specific patterns.
 title: Using regular expressions
 weight: 11
 ---

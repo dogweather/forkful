@@ -8,8 +8,7 @@ description: "\xC5 lese en tekstfil i C inneb\xE6rer \xE5 \xE5pne en fil p\xE5 s
 lastmod: '2024-03-13T22:44:41.290757-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i C inneb\xE6rer \xE5 \xE5pne en fil p\xE5 systemet\
-  \ ditt for \xE5 hente informasjon, samt manipulere eller vise den som n\xF8dvendig.\
-  \ Programmerere gj\xF8r\u2026"
+  \ ditt for \xE5 hente informasjon, samt manipulere eller vise den som n\xF8dvendig."
 title: Lese en tekstfil
 weight: 22
 ---

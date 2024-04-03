@@ -8,8 +8,7 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) JavaScriptiss\xE4 ovat ma
 lastmod: '2024-03-13T22:44:56.939977-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) JavaScriptiss\xE4 ovat malleja,\
-  \ joita k\xE4ytet\xE4\xE4n merkkijonoissa merkkiyhdistelmien etsimiseen. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
+  \ joita k\xE4ytet\xE4\xE4n merkkijonoissa merkkiyhdistelmien etsimiseen."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

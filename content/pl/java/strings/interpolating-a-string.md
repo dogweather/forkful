@@ -6,8 +6,7 @@ description: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u01
 lastmod: '2024-03-13T22:44:35.263240-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u015Bci zmiennych\
-  \ do ci\u0105gu znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 jej dla dynamizmu\
-  \ kodu i uproszczenia generowania\u2026"
+  \ do ci\u0105gu znak\xF3w."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

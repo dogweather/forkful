@@ -7,8 +7,8 @@ description: "JSON (JavaScript Object Notation) is een gegevensindeling die word
   \ JSON\u2026"
 lastmod: '2024-03-13T22:44:51.268462-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) is een gegevensindeling die wordt gebruikt\
-  \ voor het representeren van gestructureerde data. Programmeurs gebruiken JSON\u2026"
+summary: JSON (JavaScript Object Notation) is een gegevensindeling die wordt gebruikt
+  voor het representeren van gestructureerde data.
 title: Werken met JSON
 weight: 38
 ---

@@ -4,8 +4,9 @@ description: "Checking if a directory exists is a fundamental task in PHP progra
   \ as it allows you to verify the presence of a directory before performing\u2026"
 lastmod: '2024-03-13T22:45:00.180235-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists is a fundamental task in PHP programming,\
-  \ as it allows you to verify the presence of a directory before performing\u2026"
+summary: Checking if a directory exists is a fundamental task in PHP programming,
+  as it allows you to verify the presence of a directory before performing operations
+  like reading from or writing to files within it.
 title: Checking if a directory exists
 weight: 20
 ---

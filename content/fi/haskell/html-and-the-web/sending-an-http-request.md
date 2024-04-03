@@ -6,8 +6,7 @@ description: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet
 lastmod: '2024-03-13T22:44:56.612528-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\xE4\
-  n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n, koska se\u2026"
+  n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

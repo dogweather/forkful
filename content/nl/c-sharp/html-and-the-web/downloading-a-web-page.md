@@ -6,8 +6,8 @@ description: "Het downloaden van een webpagina betekent het ophalen van de ruwe 
   \ van het internet met behulp van code. Programmeurs doen dit om gegevens te\u2026"
 lastmod: '2024-03-13T22:44:50.808742-06:00'
 model: gpt-4-0125-preview
-summary: "Het downloaden van een webpagina betekent het ophalen van de ruwe HTML-inhoud\
-  \ van het internet met behulp van code. Programmeurs doen dit om gegevens te\u2026"
+summary: Het downloaden van een webpagina betekent het ophalen van de ruwe HTML-inhoud
+  van het internet met behulp van code.
 title: Een webpagina downloaden
 weight: 42
 ---

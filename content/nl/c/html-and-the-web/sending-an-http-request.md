@@ -7,7 +7,7 @@ description: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre
 lastmod: '2024-03-13T22:44:51.287533-06:00'
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEBert\
-  \ en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"
+  \ en verstuurt naar een webserver om gegevens op te halen of in te dienen."
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

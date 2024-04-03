@@ -6,8 +6,8 @@ description: "Getallen afronden is het proces van het aanpassen van een getal na
   \ het dichtstbijzijnde hele getal of naar een gespecificeerd aantal decimalen.\u2026"
 lastmod: '2024-03-13T22:44:50.499381-06:00'
 model: gpt-4-0125-preview
-summary: "Getallen afronden is het proces van het aanpassen van een getal naar het\
-  \ dichtstbijzijnde hele getal of naar een gespecificeerd aantal decimalen.\u2026"
+summary: Getallen afronden is het proces van het aanpassen van een getal naar het
+  dichtstbijzijnde hele getal of naar een gespecificeerd aantal decimalen.
 title: Afronden van getallen
 weight: 13
 ---

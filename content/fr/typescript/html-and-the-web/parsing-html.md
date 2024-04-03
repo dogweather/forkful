@@ -6,8 +6,8 @@ description: "Parser du HTML signifie fouiller dans le code HTML pour trouver, e
   \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
 lastmod: '2024-03-13T22:44:57.434518-06:00'
 model: gpt-4-0125-preview
-summary: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
-  \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
+summary: Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire
+  ou manipuler des informations.
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

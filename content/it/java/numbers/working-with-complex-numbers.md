@@ -5,7 +5,7 @@ description: "I numeri complessi estendono la linea dei numeri reali attraverso 
 lastmod: '2024-03-13T22:44:43.303130-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta\
-  \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`. Sono fondamentali in campi\u2026"
+  \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`."
 title: Lavorare con i numeri complessi
 weight: 14
 ---

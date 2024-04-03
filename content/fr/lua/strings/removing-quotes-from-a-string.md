@@ -5,7 +5,7 @@ description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie e
 lastmod: '2024-03-13T22:44:57.912516-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
-  \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"
+  \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

@@ -7,8 +7,9 @@ description: "Trabalhar com JSON (JavaScript Object Notation) em Rust consiste e
   \ dados\u2026"
 lastmod: '2024-03-13T22:44:46.389188-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com JSON (JavaScript Object Notation) em Rust consiste em analisar\
-  \ dados JSON para estruturas de dados do Rust e serializar estruturas de dados\u2026"
+summary: Trabalhar com JSON (JavaScript Object Notation) em Rust consiste em analisar
+  dados JSON para estruturas de dados do Rust e serializar estruturas de dados do
+  Rust de volta para JSON.
 title: Trabalhando com JSON
 weight: 38
 ---

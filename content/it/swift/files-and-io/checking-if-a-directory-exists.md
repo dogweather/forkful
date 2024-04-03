@@ -8,7 +8,7 @@ description: "Verificare se una directory esiste nel filesystem \xE8 essenziale 
 lastmod: '2024-03-13T22:44:43.784014-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste nel filesystem \xE8 essenziale per gestire\
-  \ le strutture dei file all'interno delle tue applicazioni Swift. Questo compito\u2026"
+  \ le strutture dei file all'interno delle tue applicazioni Swift."
 title: Verifica se una directory esiste
 weight: 20
 ---

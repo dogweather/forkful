@@ -6,8 +6,9 @@ description: "In C-programmering maakt het lezen van commandoregelargumenten het
   \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"
 lastmod: '2024-03-13T22:44:51.307065-06:00'
 model: gpt-4-0125-preview
-summary: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
-  \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"
+summary: In C-programmering maakt het lezen van commandoregelargumenten het mogelijk
+  dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de flexibiliteit
+  en bruikbaarheid verhoogt.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

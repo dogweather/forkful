@@ -6,8 +6,9 @@ description: "Het omzetten van een string naar kleine letters in Google Apps Scr
   \ een cloudgebaseerde scripttaal voor het automatiseren van taken in Google-\u2026"
 lastmod: '2024-03-13T22:44:50.317334-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een string naar kleine letters in Google Apps Script, een\
-  \ cloudgebaseerde scripttaal voor het automatiseren van taken in Google-\u2026"
+summary: Het omzetten van een string naar kleine letters in Google Apps Script, een
+  cloudgebaseerde scripttaal voor het automatiseren van taken in Google-producten,
+  is een fundamentele taak gericht op het standaardiseren van tekstgegevens.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

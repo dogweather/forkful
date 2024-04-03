@@ -6,8 +6,8 @@ description: "Escrever testes em Dart envolve criar casos de teste para verifica
   \ automaticamente que diferentes partes do seu programa funcionam como esperado.\u2026"
 lastmod: '2024-03-13T22:44:46.285543-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Dart envolve criar casos de teste para verificar automaticamente\
-  \ que diferentes partes do seu programa funcionam como esperado.\u2026"
+summary: Escrever testes em Dart envolve criar casos de teste para verificar automaticamente
+  que diferentes partes do seu programa funcionam como esperado.
 title: Escrevendo testes
 weight: 36
 ---

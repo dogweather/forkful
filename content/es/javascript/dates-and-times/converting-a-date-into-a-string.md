@@ -4,8 +4,8 @@ description: "Convertir una fecha a cadena de texto permite mostrar fechas en un
   \ legible para humanos. Esto es \xFAtil para registros, interfaces de usuario y\u2026"
 lastmod: '2024-03-13T22:44:59.469943-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha a cadena de texto permite mostrar fechas en un formato\
-  \ legible para humanos. Esto es \xFAtil para registros, interfaces de usuario y\u2026"
+summary: Convertir una fecha a cadena de texto permite mostrar fechas en un formato
+  legible para humanos.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

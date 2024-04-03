@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.110548-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente declara\xE7\
   \xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1veis, fluxo de\
-  \ execu\xE7\xE3o ou\u2026"
+  \ execu\xE7\xE3o ou mensagens de erro durante a execu\xE7\xE3o."
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

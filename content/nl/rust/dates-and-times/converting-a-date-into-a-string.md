@@ -6,8 +6,8 @@ description: "Het converteren van een datum naar een string in Rust stelt ons in
   \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"
 lastmod: '2024-03-13T22:44:50.605875-06:00'
 model: gpt-4-0125-preview
-summary: "Het converteren van een datum naar een string in Rust stelt ons in staat\
-  \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"
+summary: Het converteren van een datum naar een string in Rust stelt ons in staat
+  om data weer te geven in een voor mensen leesbaar formaat.
 title: Een datum converteren naar een string
 weight: 28
 ---

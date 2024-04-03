@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.167669-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes dans Google Apps Script permet d'incorporer\
   \ dynamiquement des expressions au sein des cha\xEEnes, facilitant ainsi la cr\xE9\
-  ation\u2026"
+  ation d'un code plus lisible et plus facile \xE0 maintenir."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

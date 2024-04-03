@@ -6,7 +6,7 @@ description: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden d
 lastmod: '2024-03-13T22:44:40.892212-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i gjenbrukbare\
-  \ blokker med definerte form\xE5l. Vi gj\xF8r dette for \xE5 holde ting ryddig,\u2026"
+  \ blokker med definerte form\xE5l."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

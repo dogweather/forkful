@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.575597-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne to jakby na\u0142adowane tablice, kt\xF3re pozwalaj\u0105\
   \ u\u017Cywa\u0107 ci\u0105g\xF3w znak\xF3w jako indeks\xF3w zamiast samych liczb\
-  \ ca\u0142kowitych. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+  \ ca\u0142kowitych."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

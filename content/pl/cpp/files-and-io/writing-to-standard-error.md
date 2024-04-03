@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.729203-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na wyprowadzaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105 oddzielone\
-  \ od g\u0142\xF3wnego wyniku\u2026"
+  \ od g\u0142\xF3wnego wyniku dzia\u0142ania programu."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

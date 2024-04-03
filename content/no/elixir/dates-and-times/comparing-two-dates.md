@@ -6,7 +6,7 @@ description: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre 
 lastmod: '2024-03-13T22:44:40.455850-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre - f\xF8\
-  r, etter, eller samme dag. Programmerere trenger dette for \xE5 h\xE5ndtere tidsavhengige\u2026"
+  r, etter, eller samme dag."
 title: Sammenlikning av to datoer
 weight: 27
 ---

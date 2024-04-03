@@ -5,8 +5,9 @@ description: "In the realm of programming, working with CSV (Comma-Separated Val
   \ where\u2026"
 lastmod: '2024-03-13T22:45:00.531023-06:00'
 model: gpt-4-0125-preview
-summary: "In the realm of programming, working with CSV (Comma-Separated Values) files\
-  \ involves reading from and writing data to text files organized by rows, where\u2026"
+summary: In the realm of programming, working with CSV (Comma-Separated Values) files
+  involves reading from and writing data to text files organized by rows, where each
+  row represents a record and each record's fields are separated by commas.
 title: Working with CSV
 weight: 37
 ---

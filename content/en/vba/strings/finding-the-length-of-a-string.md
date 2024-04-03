@@ -4,8 +4,8 @@ description: "Finding the length of a string in Visual Basic for Applications (V
   \ involves determining the number of characters it contains. Programmers frequently\u2026"
 lastmod: '2024-03-13T22:44:59.926341-06:00'
 model: gpt-4-0125-preview
-summary: "Finding the length of a string in Visual Basic for Applications (VBA) involves\
-  \ determining the number of characters it contains. Programmers frequently\u2026"
+summary: Finding the length of a string in Visual Basic for Applications (VBA) involves
+  determining the number of characters it contains.
 title: Finding the length of a string
 weight: 7
 ---

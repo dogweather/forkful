@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.486250-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Go implica dirigir mensajes\
   \ de error o diagn\xF3sticos que no est\xE1n destinados para el flujo principal\
-  \ de salida.\u2026"
+  \ de salida."
 title: "Escribiendo al error est\xE1ndar"
 weight: 25
 ---

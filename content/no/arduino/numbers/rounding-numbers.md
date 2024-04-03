@@ -6,8 +6,7 @@ description: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin 
 lastmod: '2024-03-13T22:44:41.053603-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin n\xE6\
-  rmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder\
-  \ av tall\u2026"
+  rmeste hele verdi eller til et bestemt antall desimalplasser."
 title: Avrunding av tall
 weight: 13
 ---

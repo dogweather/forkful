@@ -5,8 +5,8 @@ description: "Ler argumentos da linha de comando permite que programas Swift rec
   \ a\u2026"
 lastmod: '2024-03-13T22:44:46.936149-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando permite que programas Swift recebam inputs\
-  \ externos ao serem executados. Programadores fazem isso para personalizar a\u2026"
+summary: Ler argumentos da linha de comando permite que programas Swift recebam inputs
+  externos ao serem executados.
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

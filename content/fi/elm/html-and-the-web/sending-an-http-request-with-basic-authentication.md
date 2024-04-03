@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.488216-06:00'
 model: gpt-4-1106-preview
 summary: "Perusautentikoinnilla varustetun HTTP-pyynn\xF6n l\xE4hett\xE4minen on prosessi,\
   \ jossa k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n HTTP-otsikoissa\
-  \ palvelimelle. K\xE4yt\xE4mme\u2026"
+  \ palvelimelle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.372733-06:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en C n\xE9cessite la mise en place d'une structure\
   \ de code de base et d'un environnement pour g\xE9rer efficacement les t\xE2ches\
-  \ de\u2026"
+  \ de d\xE9veloppement."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

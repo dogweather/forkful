@@ -6,7 +6,7 @@ description: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web pe
 lastmod: '2024-03-13T22:44:43.513477-06:00'
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per prendere\
-  \ o mandare informazioni. I programmatori lo fanno per interagire con API, servizi\u2026"
+  \ o mandare informazioni."
 title: Inviare una richiesta http
 weight: 44
 ---

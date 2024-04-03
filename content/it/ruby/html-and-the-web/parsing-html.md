@@ -6,8 +6,8 @@ description: "Analizzare l'HTML significa smontare un pezzo di codice HTML per c
   \ la struttura e il contenuto. I programmatori lo fanno per estrarre dati,\u2026"
 lastmod: '2024-03-13T22:44:44.049295-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne\
-  \ la struttura e il contenuto. I programmatori lo fanno per estrarre dati,\u2026"
+summary: Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne
+  la struttura e il contenuto.
 title: Analisi del HTML
 weight: 43
 ---

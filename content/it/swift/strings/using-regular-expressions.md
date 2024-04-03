@@ -6,8 +6,9 @@ description: "Le espressioni regolari, o regex, sono sequenze di caratteri che f
   \ un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione\u2026"
 lastmod: '2024-03-13T22:44:43.760322-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari, o regex, sono sequenze di caratteri che formano\
-  \ un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione\u2026"
+summary: Le espressioni regolari, o regex, sono sequenze di caratteri che formano
+  un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione
+  di stringhe.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

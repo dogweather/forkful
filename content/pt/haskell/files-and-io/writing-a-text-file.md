@@ -8,8 +8,7 @@ description: "Escrever em um arquivo de texto em Haskell trata-se de criar ou at
 lastmod: '2024-03-13T22:44:46.643572-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Haskell trata-se de criar ou atualizar\
-  \ arquivos com conte\xFAdo textual de forma program\xE1tica. Os programadores fazem\
-  \ isso\u2026"
+  \ arquivos com conte\xFAdo textual de forma program\xE1tica."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

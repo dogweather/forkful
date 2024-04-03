@@ -4,8 +4,8 @@ description: "Organizing code into functions chunks out tasks into reusable piec
   \ making code cleaner and more maintainable. We do this to reduce redundancy, make\u2026"
 lastmod: '2024-03-13T22:45:00.438734-06:00'
 model: gpt-4-1106-preview
-summary: "Organizing code into functions chunks out tasks into reusable pieces, making\
-  \ code cleaner and more maintainable. We do this to reduce redundancy, make\u2026"
+summary: Organizing code into functions chunks out tasks into reusable pieces, making
+  code cleaner and more maintainable.
 title: Organizing code into functions
 weight: 18
 ---

@@ -8,7 +8,7 @@ description: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade cru
 lastmod: '2024-03-13T22:44:46.344440-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial para\
-  \ a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs. Programadores\u2026"
+  \ a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

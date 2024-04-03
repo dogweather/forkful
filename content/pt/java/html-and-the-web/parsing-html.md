@@ -8,8 +8,7 @@ description: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair da
 lastmod: '2024-03-13T22:44:46.453920-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados como\
-  \ texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conte\xFA\
-  do\u2026"
+  \ texto, links ou outros elementos."
 title: Analisando HTML
 weight: 43
 ---

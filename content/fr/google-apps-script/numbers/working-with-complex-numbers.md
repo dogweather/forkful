@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.178313-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, repr\xE9sent\xE9s comme une combinaison d'unit\xE9\
   s r\xE9elles et imaginaires (par exemple, 3 + 4i), sont fondamentaux dans divers\
-  \ probl\xE8mes de\u2026"
+  \ probl\xE8mes de calcul, notamment en ing\xE9nierie, en physique et en math\xE9\
+  matiques appliqu\xE9es."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

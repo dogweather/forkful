@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.498778-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
   \ Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bie\u017C\
-  \u0105co. Jest to\u2026"
+  \u0105co."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

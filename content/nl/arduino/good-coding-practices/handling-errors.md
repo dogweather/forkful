@@ -6,8 +6,8 @@ description: "Foutafhandeling in je programma's vangt de onvoorziene dingen op d
   \ je proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"
 lastmod: '2024-03-13T22:44:51.079355-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling in je programma's vangt de onvoorziene dingen op die je\
-  \ proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"
+summary: Foutafhandeling in je programma's vangt de onvoorziene dingen op die je proberen
+  te laten struikelen.
 title: Fouten afhandelen
 weight: 16
 ---

@@ -4,8 +4,8 @@ description: "Descobrir o comprimento de uma string significa contar quantos car
   \ ela tem. Programadores fazem isso para validar entradas, gerenciar formatos de\u2026"
 lastmod: '2024-03-13T22:44:46.447358-06:00'
 model: gpt-4-1106-preview
-summary: "Descobrir o comprimento de uma string significa contar quantos caracteres\
-  \ ela tem. Programadores fazem isso para validar entradas, gerenciar formatos de\u2026"
+summary: Descobrir o comprimento de uma string significa contar quantos caracteres
+  ela tem.
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

@@ -6,8 +6,7 @@ description: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes
 lastmod: '2024-03-13T22:44:41.161189-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
-  \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\
-  \ som ikke\u2026"
+  \ og s\xE5 forsvinner de."
 title: Opprette en midlertidig fil
 weight: 21
 ---

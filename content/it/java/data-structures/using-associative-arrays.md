@@ -6,8 +6,8 @@ description: "In Java, gli array associativi, o mappe, consentono di memorizzare
   \ chiave-valore per una ricerca e una manipolazione efficienti dei dati. I\u2026"
 lastmod: '2024-03-13T22:44:43.301997-06:00'
 model: gpt-4-0125-preview
-summary: "In Java, gli array associativi, o mappe, consentono di memorizzare coppie\
-  \ chiave-valore per una ricerca e una manipolazione efficienti dei dati. I\u2026"
+summary: In Java, gli array associativi, o mappe, consentono di memorizzare coppie
+  chiave-valore per una ricerca e una manipolazione efficienti dei dati.
 title: Utilizzo di array associativi
 weight: 15
 ---

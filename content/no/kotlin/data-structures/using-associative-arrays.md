@@ -8,8 +8,7 @@ description: "Assosiative tabeller, eller maps, i Kotlin er samlinger som lagrer
 lastmod: '2024-03-13T22:44:40.743049-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller maps, i Kotlin er samlinger som lagrer n\xF8\
-  kkel-verdi par. Programmerere bruker dem til effektivt \xE5 organisere og hente\
-  \ data\u2026"
+  kkel-verdi par."
 title: Bruke associative tabeller
 weight: 15
 ---

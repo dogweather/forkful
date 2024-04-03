@@ -5,7 +5,7 @@ description: "Inviare una richiesta HTTP \xE8 il modo con cui il tuo programma c
 lastmod: '2024-03-13T22:44:43.039090-06:00'
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP \xE8 il modo con cui il tuo programma chiede\
-  \ dati o invia informazioni a un server web. I programmatori lo fanno per interagire\u2026"
+  \ dati o invia informazioni a un server web."
 title: Inviare una richiesta http
 weight: 44
 ---

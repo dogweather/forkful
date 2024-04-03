@@ -7,7 +7,7 @@ description: "L'analisi di una data da una stringa riguarda la conversione di te
 lastmod: '2024-03-13T22:44:44.060496-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa riguarda la conversione di testo che\
-  \ rappresenta una data in un oggetto `Date` o `DateTime` che Ruby pu\xF2 comprendere.\u2026"
+  \ rappresenta una data in un oggetto `Date` o `DateTime` che Ruby pu\xF2 comprendere."
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -7,7 +7,8 @@ description: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den er
 lastmod: '2024-03-13T22:44:53.268346-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten Buchstaben\
-  \ eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser\u2026"
+  \ eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser klein geschrieben\
+  \ ist."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

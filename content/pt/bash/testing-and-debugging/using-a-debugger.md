@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.757158-06:00'
 model: gpt-4-0125-preview
 summary: "O Bash n\xE3o vem com um depurador integrado como algumas outras linguagens,\
   \ mas voc\xEA pode usar comandos integrados como `set -x` para rastrear o que est\xE1\
-  \u2026"
+  \ acontecendo."
 title: Usando um depurador
 weight: 35
 ---

@@ -7,9 +7,9 @@ description: "Het verkrijgen van de huidige datum in C houdt in dat je toegang k
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.301757-06:00'
 model: gpt-4-0125-preview
-summary: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt\
-  \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\
-  \ te\u2026"
+summary: Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt tot
+  de standaard C-bibliotheek om de huidige datum en tijd van het systeem op te halen
+  en te formatteren.
 title: De huidige datum krijgen
 weight: 29
 ---

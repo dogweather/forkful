@@ -6,8 +6,7 @@ description: "Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings z
 lastmod: '2024-03-13T22:44:53.459141-06:00'
 model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings zu einem\
-  \ einzigen Textst\xFCck zusammenzuf\xFChren. Du m\xF6chtest eventuell Texte zusammenf\xFC\
-  hren,\u2026"
+  \ einzigen Textst\xFCck zusammenzuf\xFChren."
 title: Zeichenketten verketten
 weight: 3
 ---

@@ -6,8 +6,7 @@ description: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des tex
 lastmod: '2024-03-13T22:44:57.680370-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des textes bout\
-  \ \xE0 bout. On le fait pour modeler des messages, combiner des valeurs ou cr\xE9\
-  er des\u2026"
+  \ \xE0 bout."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

@@ -8,7 +8,8 @@ description: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir u
 lastmod: '2024-03-13T22:44:58.392562-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un fichier\
-  \ en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de C pour\u2026"
+  \ en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de C pour\
+  \ enregistrer des donn\xE9es textuelles."
 title: "\xC9crire un fichier texte"
 weight: 24
 ---

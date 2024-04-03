@@ -6,8 +6,8 @@ description: "Het downloaden van een webpagina gaat over het ophalen van de HTML
   \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
 lastmod: '2024-03-13T22:44:50.286177-06:00'
 model: gpt-4-0125-preview
-summary: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
-  \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
+summary: Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud
+  van een webpagina via het HTTP/HTTPS-protocol.
 title: Een webpagina downloaden
 weight: 42
 ---

@@ -6,8 +6,7 @@ description: "Czytanie pliku tekstowego to \u0142adowanie jego zawarto\u015Bci d
 lastmod: '2024-03-13T22:44:35.425818-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to \u0142adowanie jego zawarto\u015Bci do pami\u0119\
-  ci programu. Programi\u015Bci robi\u0105 to, by przetworzy\u0107 dane, wczyta\u0107\
-  \ konfiguracje, lub po prostu\u2026"
+  ci programu."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

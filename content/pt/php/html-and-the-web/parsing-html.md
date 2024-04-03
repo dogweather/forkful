@@ -8,8 +8,7 @@ description: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDf
 lastmod: '2024-03-13T22:44:46.665187-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDficas de\
-  \ documentos HTML. Programadores realizam essa tarefa para automatizar a extra\xE7\
-  \xE3o de dados,\u2026"
+  \ documentos HTML."
 title: Analisando HTML
 weight: 43
 ---

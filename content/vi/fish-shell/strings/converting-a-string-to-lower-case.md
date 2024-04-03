@@ -11,8 +11,7 @@ lastmod: '2024-03-13T22:44:37.190940-06:00'
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDD\
   ng l\xE0m thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong chu\u1ED7\
-  i \u0111\xF3 th\xE0nh d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
+  i \u0111\xF3 th\xE0nh d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

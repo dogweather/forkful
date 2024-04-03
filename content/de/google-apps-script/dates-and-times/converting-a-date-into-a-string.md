@@ -7,7 +7,8 @@ description: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Au
 lastmod: '2024-03-13T22:44:53.346581-06:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
-  \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"
+  \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\
+  \ lesbaren Format zu manipulieren und anzuzeigen."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

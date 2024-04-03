@@ -4,8 +4,7 @@ description: Extracting substrings means grabbing a piece of a string. Programme
   slice and dice strings to isolate data, input some format, or tweak text for output.
 lastmod: '2024-03-13T22:45:00.423490-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means grabbing a piece of a string. Programmers slice
-  and dice strings to isolate data, input some format, or tweak text for output.
+summary: Extracting substrings means grabbing a piece of a string.
 title: Extracting substrings
 weight: 6
 ---

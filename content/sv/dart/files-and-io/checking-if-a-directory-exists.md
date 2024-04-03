@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.627753-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Dart handlar om att verifiera n\xE4\
   rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet innan man utf\xF6\
-  r operationer\u2026"
+  r operationer som att l\xE4sa eller skriva filer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

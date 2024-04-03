@@ -6,8 +6,7 @@ description: "Convertir una fecha en una cadena en Go implica transformar un obj
   \ `time.Time` en un formato de cadena legible. Los programadores a menudo realizan\u2026"
 lastmod: '2024-03-13T22:44:58.480706-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una fecha en una cadena en Go implica transformar un objeto `time.Time`\
-  \ en un formato de cadena legible. Los programadores a menudo realizan\u2026"
+summary: Convertir una fecha en una cadena en Go implica transformar un objeto `time.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

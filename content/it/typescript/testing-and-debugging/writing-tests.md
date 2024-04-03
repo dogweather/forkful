@@ -7,7 +7,7 @@ description: "Scrivere test in TypeScript comporta la creazione di script automa
 lastmod: '2024-03-13T22:44:43.179496-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in TypeScript comporta la creazione di script automatizzati\
-  \ per verificare la funzionalit\xE0 e la correttezza del proprio codice. I\u2026"
+  \ per verificare la funzionalit\xE0 e la correttezza del proprio codice."
 title: Scrivere test
 weight: 36
 ---

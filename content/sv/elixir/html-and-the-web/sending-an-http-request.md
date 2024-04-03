@@ -6,8 +6,7 @@ description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om d
 lastmod: '2024-03-13T22:44:37.563782-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data eller\
-  \ en annan resurs. Programmerare g\xF6r detta f\xF6r att integrera olika webbtj\xE4\
-  nster, h\xE4mta\u2026"
+  \ en annan resurs."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

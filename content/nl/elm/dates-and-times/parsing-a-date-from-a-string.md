@@ -6,8 +6,8 @@ description: "Het parseren van een datum uit een tekenreeks betekent het convert
   \ van tekst die een datum voorstelt naar een formaat waarmee een programma kan\u2026"
 lastmod: '2024-03-13T22:44:50.734491-06:00'
 model: gpt-4-0125-preview
-summary: "Het parseren van een datum uit een tekenreeks betekent het converteren van\
-  \ tekst die een datum voorstelt naar een formaat waarmee een programma kan\u2026"
+summary: Het parseren van een datum uit een tekenreeks betekent het converteren van
+  tekst die een datum voorstelt naar een formaat waarmee een programma kan werken.
 title: Een datum uit een string parsen
 weight: 30
 ---

@@ -5,8 +5,8 @@ description: "Writing a text file in Elm involves creating and saving textual da
   \ logs,\u2026"
 lastmod: '2024-03-13T22:45:00.027181-06:00'
 model: gpt-4-0125-preview
-summary: "Writing a text file in Elm involves creating and saving textual data to\
-  \ a file from an Elm application. Programmers often need to generate reports, logs,\u2026"
+summary: Writing a text file in Elm involves creating and saving textual data to a
+  file from an Elm application.
 title: Writing a text file
 weight: 24
 ---

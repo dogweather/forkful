@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.154058-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zada\u0144\
   \ zwi\u0105zanych z zarz\u0105dzaniem plikami, takich jak odczytywanie z plik\xF3\
-  w lub\u2026"
+  w lub zapisywanie do nich danych, zapewniaj\u0105c, \u017Ce operacje s\u0105 wykonywane\
+  \ tylko na istniej\u0105cych katalogach."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

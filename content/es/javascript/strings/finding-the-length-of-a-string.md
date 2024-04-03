@@ -5,8 +5,8 @@ description: "La longitud de una cadena en JavaScript se refiere a la cantidad d
   n\u2026"
 lastmod: '2024-03-13T22:44:59.449838-06:00'
 model: gpt-4-1106-preview
-summary: "La longitud de una cadena en JavaScript se refiere a la cantidad de caracteres\
-  \ que contiene. Los programadores frecuentemente necesitan esta informaci\xF3n\u2026"
+summary: La longitud de una cadena en JavaScript se refiere a la cantidad de caracteres
+  que contiene.
 title: Calculando la longitud de una cadena
 weight: 7
 ---

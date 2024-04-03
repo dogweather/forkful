@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.258571-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w Visual Basic for Applications (VBA) wi\u0105\u017Ce si\u0119\
   \ z parsowaniem, tworzeniem i modyfikowaniem dokument\xF3w XML w kontek\u015Bcie\
-  \ aplikacji Microsoft\u2026"
+  \ aplikacji Microsoft Office."
 title: Praca z XML
 weight: 40
 ---

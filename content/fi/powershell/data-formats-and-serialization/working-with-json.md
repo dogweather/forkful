@@ -8,7 +8,8 @@ description: "PowerShellin integraatio JSONiin (JavaScript Object Notation) liit
 lastmod: '2024-03-13T22:44:56.804168-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShellin integraatio JSONiin (JavaScript Object Notation) liittyy JSON-tietojen\
-  \ j\xE4sent\xE4miseen (lukeminen) ja tuottamiseen (kirjoittaminen), mik\xE4 on\u2026"
+  \ j\xE4sent\xE4miseen (lukeminen) ja tuottamiseen (kirjoittaminen), mik\xE4 on yleinen\
+  \ muoto tietojen vaihtoon verkossa."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

@@ -5,7 +5,7 @@ description: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidi
 lastmod: '2024-03-13T22:44:46.997982-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
-  \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"
+  \ para um plano complexo bidimensional."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

@@ -6,8 +6,7 @@ description: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnyc
 lastmod: '2024-03-13T22:44:35.833838-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych, aby\
-  \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
-  ci robi\u0105 to dla\u2026"
+  \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
   c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9\
   t ng\xE0y c\xE1ch m\u1ED9t ng\xE0y cho tr\u01B0\u1EDBc m\u1ED9t s\u1ED1 ng\xE0y,\
-  \ th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh.\u2026"
+  \ th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh."
 title: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9"
 weight: 26

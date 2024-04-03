@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.899367-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones (VBA)\
   \ implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables conocidas\
-  \ como\u2026"
+  \ como funciones."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

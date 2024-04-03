@@ -8,7 +8,8 @@ description: "Escribir pruebas en Kotlin implica elaborar fragmentos de c\xF3dig
 lastmod: '2024-03-13T22:44:59.039428-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Kotlin implica elaborar fragmentos de c\xF3digo que\
-  \ validan autom\xE1ticamente la correcci\xF3n funcional de tus m\xF3dulos de software,\u2026"
+  \ validan autom\xE1ticamente la correcci\xF3n funcional de tus m\xF3dulos de software,\
+  \ asegurando que funcionen como se espera."
 title: Escribiendo pruebas
 weight: 36
 ---

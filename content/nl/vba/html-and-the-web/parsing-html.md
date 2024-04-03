@@ -8,8 +8,7 @@ description: "HTML parsen in Visual Basic for Applications (VBA) houdt in dat sp
 lastmod: '2024-03-13T22:44:50.634416-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen in Visual Basic for Applications (VBA) houdt in dat specifieke\
-  \ informatie uit een HTML-document wordt ge\xEBxtraheerd. Programmeurs doen dit\
-  \ om\u2026"
+  \ informatie uit een HTML-document wordt ge\xEBxtraheerd."
 title: HTML Parsen
 weight: 43
 ---

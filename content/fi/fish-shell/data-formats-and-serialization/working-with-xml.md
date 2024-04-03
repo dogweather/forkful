@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.019468-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4ytetyss\xE4\
   , rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa, viestinn\xE4\
-  ss\xE4 ja muussa.\u2026"
+  ss\xE4 ja muussa."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

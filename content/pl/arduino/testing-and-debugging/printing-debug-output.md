@@ -6,8 +6,7 @@ description: "Wypisywanie informacji diagnostycznych (debug) pomaga \u015Bledzi\
 lastmod: '2024-03-13T22:44:35.673920-06:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie informacji diagnostycznych (debug) pomaga \u015Bledzi\u0107\
-  , co si\u0119 dzieje w programie. U\u017Cywamy tego, by szybko znale\u017A\u0107\
-  \ i naprawi\u0107 b\u0142\u0119dy."
+  , co si\u0119 dzieje w programie."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

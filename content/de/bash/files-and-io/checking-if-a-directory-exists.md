@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:54.073821-06:00'
 model: gpt-4-0125-preview
 summary: "In der Bash-Programmierung ist die \xDCberpr\xFCfung, ob ein Verzeichnis\
   \ existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz\
-  \ eines\u2026"
+  \ eines Verzeichnisses zu best\xE4tigen, bevor Dateioperationen durchgef\xFChrt\
+  \ werden."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

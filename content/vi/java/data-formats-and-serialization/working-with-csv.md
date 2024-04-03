@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated\
   \ Values (Gi\xE1 tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y), c\xF3 ngh\u0129\
   a l\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3\
-  n thu\u1EA7n t\xFAy, trong \u0111\xF3\u2026"
+  n thu\u1EA7n t\xFAy, trong \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi\
+  \ d\u1EEF li\u1EC7u v\u1EDBi c\xE1c tr\u01B0\u1EDDng \u0111\u01B0\u1EE3c ph\xE2\
+  n c\xE1ch b\u1EDFi d\u1EA5u ph\u1EA9y."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

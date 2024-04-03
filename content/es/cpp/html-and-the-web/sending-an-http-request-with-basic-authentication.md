@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.375070-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario y contrase\xF1a codificadas en base64 en el encabezado\
-  \ de la\u2026"
+  \ de la solicitud."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

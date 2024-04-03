@@ -7,7 +7,8 @@ description: "Werken met CSV (Comma-Separated Values) betekent het lezen en schr
 lastmod: '2024-03-13T22:44:50.832487-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) betekent het lezen en schrijven\
-  \ van gegevens in een eenvoudig, op tekst gebaseerd formaat \u2014 een formaat dat\u2026"
+  \ van gegevens in een eenvoudig, op tekst gebaseerd formaat \u2014 een formaat dat\
+  \ universeel en spreadsheet-vriendelijk is."
 title: Werken met CSV
 weight: 37
 ---

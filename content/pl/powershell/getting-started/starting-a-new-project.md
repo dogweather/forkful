@@ -6,8 +6,7 @@ description: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u
 lastmod: '2024-03-13T22:44:35.630480-06:00'
 model: gpt-4-1106-preview
 summary: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142e\
-  \ zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\
-  \ kod, \u015Brodowisko pracy\u2026"
+  \ zadania programistyczne."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

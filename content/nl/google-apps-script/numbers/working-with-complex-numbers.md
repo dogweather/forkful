@@ -7,7 +7,7 @@ description: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle
 lastmod: '2024-03-13T22:44:50.324612-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en imaginaire\
-  \ eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"
+  \ eenheden (bijv."
 title: Werken met complexe getallen
 weight: 14
 ---

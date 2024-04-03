@@ -6,8 +6,7 @@ description: "I Haskell handler sletting av tegn som matcher et m\xF8nster om \x
 lastmod: '2024-03-13T22:44:40.824902-06:00'
 model: gpt-4-1106-preview
 summary: "I Haskell handler sletting av tegn som matcher et m\xF8nster om \xE5 fjerne\
-  \ spesifikke tegn fra en tekststreng basert p\xE5 gitte kriterier. Programmerere\
-  \ gj\xF8r\u2026"
+  \ spesifikke tegn fra en tekststreng basert p\xE5 gitte kriterier."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

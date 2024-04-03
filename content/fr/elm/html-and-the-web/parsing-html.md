@@ -7,7 +7,7 @@ description: "Parser du HTML en Elm consiste \xE0 extraire des informations de d
 lastmod: '2024-03-13T22:44:57.686771-06:00'
 model: gpt-4-0125-preview
 summary: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
-  \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"
+  \ HTML."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

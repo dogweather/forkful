@@ -5,8 +5,8 @@ description: "Sending an HTTP request with basic authentication involves includi
   \ do\u2026"
 lastmod: '2024-03-13T22:45:00.433280-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request with basic authentication involves including a username\
-  \ and password encoded in base64 within the request header. Programmers do\u2026"
+summary: Sending an HTTP request with basic authentication involves including a username
+  and password encoded in base64 within the request header.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

@@ -6,7 +6,7 @@ description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a
 lastmod: '2024-03-13T22:44:59.077975-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a tu aplicaci\xF3\
-  n comunicarse con servicios web que requieren usuario y contrase\xF1a. Los\u2026"
+  n comunicarse con servicios web que requieren usuario y contrase\xF1a."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

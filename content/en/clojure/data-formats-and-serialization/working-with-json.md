@@ -4,8 +4,8 @@ description: "Working with JSON (JavaScript Object Notation) in Clojure involves
   \ JSON strings into Clojure data structures (maps, vectors) and vice versa. This\u2026"
 lastmod: '2024-03-13T22:44:59.764495-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON (JavaScript Object Notation) in Clojure involves parsing\
-  \ JSON strings into Clojure data structures (maps, vectors) and vice versa. This\u2026"
+summary: Working with JSON (JavaScript Object Notation) in Clojure involves parsing
+  JSON strings into Clojure data structures (maps, vectors) and vice versa.
 title: Working with JSON
 weight: 38
 ---

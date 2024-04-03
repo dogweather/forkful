@@ -4,8 +4,7 @@ description: "Medir o tamanho de uma string \xE9 descobrir quantos caracteres el
   \ tem. Programadores fazem isso para validar entradas, manipular textos ou simplesmente\u2026"
 lastmod: '2024-03-13T22:44:46.532491-06:00'
 model: gpt-4-1106-preview
-summary: "Medir o tamanho de uma string \xE9 descobrir quantos caracteres ela tem.\
-  \ Programadores fazem isso para validar entradas, manipular textos ou simplesmente\u2026"
+summary: "Medir o tamanho de uma string \xE9 descobrir quantos caracteres ela tem."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

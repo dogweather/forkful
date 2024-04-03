@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.867539-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\
-  \ permettant\u2026"
+  \ permettant des op\xE9rations de recherche et de remplacement sophistiqu\xE9es\
+  \ ainsi que la validation de donn\xE9es."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

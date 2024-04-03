@@ -6,7 +6,7 @@ description: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini 
 lastmod: '2024-03-13T22:44:43.439178-06:00'
 model: gpt-4-1106-preview
 summary: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini LEGO in\
-  \ contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli. Lo facciamo per evitare\u2026"
+  \ contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli."
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

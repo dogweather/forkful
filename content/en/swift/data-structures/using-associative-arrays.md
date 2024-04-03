@@ -4,8 +4,8 @@ description: "Associative arrays, known as dictionaries in Swift, let you store 
   \ manage data as key-value pairs. Programmers use them to organize data efficiently,\u2026"
 lastmod: '2024-03-13T22:45:00.389949-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, known as dictionaries in Swift, let you store and manage\
-  \ data as key-value pairs. Programmers use them to organize data efficiently,\u2026"
+summary: Associative arrays, known as dictionaries in Swift, let you store and manage
+  data as key-value pairs.
 title: Using associative arrays
 weight: 15
 ---

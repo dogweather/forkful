@@ -4,8 +4,8 @@ description: "Parsing HTML in Google Apps Script involves extracting data from H
   \ content, which is particularly useful when interacting with web pages or web-based\u2026"
 lastmod: '2024-03-13T22:44:59.668008-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in Google Apps Script involves extracting data from HTML content,\
-  \ which is particularly useful when interacting with web pages or web-based\u2026"
+summary: Parsing HTML in Google Apps Script involves extracting data from HTML content,
+  which is particularly useful when interacting with web pages or web-based data sources.
 title: Parsing HTML
 weight: 43
 ---

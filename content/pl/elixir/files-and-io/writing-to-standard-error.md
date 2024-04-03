@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.060832-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Elixirze to spos\xF3\
   b na kierowanie komunikat\xF3w o b\u0142\u0119dach i diagnostyki, oddzielnie od\
-  \ g\u0142\xF3wnego wyniku (stdout).\u2026"
+  \ g\u0142\xF3wnego wyniku (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

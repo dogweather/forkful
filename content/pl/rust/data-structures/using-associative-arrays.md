@@ -8,8 +8,7 @@ description: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapa
 lastmod: '2024-03-13T22:44:35.177166-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapami hash\"\
-  , to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107. Programi\u015B\
-  ci u\u017Cywaj\u0105 ich do\u2026"
+  , to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

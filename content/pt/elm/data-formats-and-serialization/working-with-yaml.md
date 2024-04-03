@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.519766-06:00'
 model: gpt-4-0125-preview
 summary: "Elm n\xE3o possui suporte nativo para YAML, um formato de serializa\xE7\xE3\
   o de dados frequentemente utilizado para arquivos de configura\xE7\xE3o ou compartilhamento\
-  \ de\u2026"
+  \ de dados, devido \xE0 sua forte \xEAnfase em seguran\xE7a de tipos e resultados\
+  \ previs\xEDveis."
 title: Trabalhando com YAML
 weight: 41
 ---

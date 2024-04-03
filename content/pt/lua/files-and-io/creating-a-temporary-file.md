@@ -6,8 +6,7 @@ description: "Criar um arquivo tempor\xE1rio permite armazenar dados de maneira 
 lastmod: '2024-03-13T22:44:46.728253-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio permite armazenar dados de maneira transit\xF3\
-  ria durante a execu\xE7\xE3o de um programa. Programadores usam arquivos tempor\xE1\
-  rios para\u2026"
+  ria durante a execu\xE7\xE3o de um programa."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

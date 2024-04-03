@@ -6,8 +6,7 @@ description: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o
 lastmod: '2024-03-13T22:44:46.392233-06:00'
 model: gpt-4-0125-preview
 summary: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
-  \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\
-  \ legados,\u2026"
+  \ verborr\xE1gico do JSON."
 title: Trabalhando com XML
 weight: 40
 ---

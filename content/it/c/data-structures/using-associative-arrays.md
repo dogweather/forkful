@@ -7,8 +7,8 @@ description: "Gli array associativi, noti in altri linguaggi come mappe o dizion
   \ dei\u2026"
 lastmod: '2024-03-13T22:44:43.905100-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, noti in altri linguaggi come mappe o dizionari, sono\
-  \ coppie chiave-valore utilizzate per una ricerca e manipolazione efficienti dei\u2026"
+summary: Gli array associativi, noti in altri linguaggi come mappe o dizionari, sono
+  coppie chiave-valore utilizzate per una ricerca e manipolazione efficienti dei dati.
 title: Utilizzo di array associativi
 weight: 15
 ---

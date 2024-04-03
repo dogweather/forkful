@@ -8,8 +8,7 @@ description: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obt
 lastmod: '2024-03-13T22:44:58.064587-06:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obtenir la\
-  \ date et l'heure actuelles du syst\xE8me. Cette op\xE9ration est fondamentale pour\
-  \ des t\xE2ches\u2026"
+  \ date et l'heure actuelles du syst\xE8me."
 title: Obtenir la date actuelle
 weight: 29
 ---

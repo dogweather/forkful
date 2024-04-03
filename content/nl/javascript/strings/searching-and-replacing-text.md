@@ -7,9 +7,8 @@ description: "Tekst zoeken en vervangen betekent het vinden van specifieke subst
   \ is\u2026"
 lastmod: '2024-03-13T22:44:51.185135-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen betekent het vinden van specifieke substrings\
-  \ en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het\
-  \ is\u2026"
+summary: Tekst zoeken en vervangen betekent het vinden van specifieke substrings en
+  deze omwisselen voor iets nieuws.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

@@ -8,8 +8,7 @@ description: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair infor
 lastmod: '2024-03-13T22:44:46.837206-06:00'
 model: gpt-4-0125-preview
 summary: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair informa\xE7\
-  \xF5es de p\xE1ginas web. Programadores fazem isso para permitir que seus dispositivos\
-  \ Arduino\u2026"
+  \xF5es de p\xE1ginas web."
 title: Analisando HTML
 weight: 43
 ---

@@ -7,7 +7,8 @@ description: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-D
 lastmod: '2024-03-13T22:44:54.329008-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien\
-  \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr\u2026"
+  \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr Konfigurationsdateien\
+  \ verwendet wird, in der Fish Shell."
 title: Arbeiten mit YAML
 weight: 41
 ---

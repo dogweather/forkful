@@ -8,7 +8,9 @@ description: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas 
 lastmod: '2024-03-13T22:44:58.019581-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
-  \ de balisage), est un standard de s\xE9rialisation de donn\xE9es lisible par l'homme\u2026"
+  \ de balisage), est un standard de s\xE9rialisation de donn\xE9es lisible par l'homme\
+  \ qui peut \xEAtre utilis\xE9 pour des fichiers de configuration, ainsi que dans\
+  \ des applications o\xF9 les donn\xE9es sont stock\xE9es ou transmises."
 title: Travailler avec YAML
 weight: 41
 ---

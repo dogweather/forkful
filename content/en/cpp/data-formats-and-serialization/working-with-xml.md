@@ -4,8 +4,8 @@ description: "Working with XML means parsing, creating, and manipulating XML (eX
   \ Markup Language) data. Programmers manage XML to handle structured data\u2026"
 lastmod: '2024-03-13T22:45:00.379979-06:00'
 model: gpt-4-1106-preview
-summary: "Working with XML means parsing, creating, and manipulating XML (eXtensible\
-  \ Markup Language) data. Programmers manage XML to handle structured data\u2026"
+summary: Working with XML means parsing, creating, and manipulating XML (eXtensible
+  Markup Language) data.
 title: Working with XML
 weight: 40
 ---

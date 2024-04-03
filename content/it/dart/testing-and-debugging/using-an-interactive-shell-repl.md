@@ -8,7 +8,8 @@ description: "Un interprete interattivo (REPL - Read-Evaluate-Print Loop) per Da
 lastmod: '2024-03-13T22:44:43.132045-06:00'
 model: gpt-4-0125-preview
 summary: "Un interprete interattivo (REPL - Read-Evaluate-Print Loop) per Dart consente\
-  \ ai programmatori di digitare e eseguire dinamicamente il codice Dart riga\u2026"
+  \ ai programmatori di digitare e eseguire dinamicamente il codice Dart riga per\
+  \ riga senza la necessit\xE0 di compilare interi script."
 title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---

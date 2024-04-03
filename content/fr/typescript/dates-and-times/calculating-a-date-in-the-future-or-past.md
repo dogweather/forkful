@@ -6,7 +6,7 @@ description: "Calculer une date dans le futur ou dans le pass\xE9, c'est juste d
 lastmod: '2024-03-13T22:44:57.450980-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou dans le pass\xE9, c'est juste des maths\
-  \ avec des jours, des mois, des ann\xE9es. Les devs manipulent des dates pour planifier\u2026"
+  \ avec des jours, des mois, des ann\xE9es."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

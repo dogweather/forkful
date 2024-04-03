@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.088468-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 convertir\
   \ le premier caract\xE8re de chaque mot en majuscule, tout en s'assurant que les\
-  \ autres\u2026"
+  \ autres restent en minuscule."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

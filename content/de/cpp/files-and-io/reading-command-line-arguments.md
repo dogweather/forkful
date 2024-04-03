@@ -6,7 +6,7 @@ description: "Kommandozeilenargumente erm\xF6glichen es einem Programm, beim Sta
 lastmod: '2024-03-13T22:44:54.199907-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente erm\xF6glichen es einem Programm, beim Start Eingaben\
-  \ zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun soll,\u2026"
+  \ zu empfangen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

@@ -6,7 +6,8 @@ description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4
 lastmod: '2024-03-13T22:44:56.328430-06:00'
 model: gpt-4-1106-preview
 summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 kun sovelluksemme\
-  \ tarvitsevat aikaperusteisia toimintoja, kuten er\xE4p\xE4ivien hallintaa tai aikajana-\u2026"
+  \ tarvitsevat aikaperusteisia toimintoja, kuten er\xE4p\xE4ivien hallintaa tai aikajana-analyysi\xE4\
+  ."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

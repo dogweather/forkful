@@ -7,8 +7,10 @@ description: "Het lezen van commandoregelargumenten in Dart stelt programmeurs i
   \ Dart-\u2026"
 lastmod: '2024-03-13T22:44:50.521932-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten in Dart stelt programmeurs in staat\
-  \ om direct gegevens in de console in te voeren bij het uitvoeren van een Dart-\u2026"
+summary: Het lezen van commandoregelargumenten in Dart stelt programmeurs in staat
+  om direct gegevens in de console in te voeren bij het uitvoeren van een Dart-programma,
+  waardoor de interactiviteit en flexibiliteit voor diverse gebruiksscenario's wordt
+  verbeterd, inclusief automatiseringsscripts, CLI-tools of batchverwerking.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

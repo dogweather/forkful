@@ -5,7 +5,7 @@ description: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para in
 lastmod: '2024-03-13T22:44:58.843325-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para intercambiar\
-  \ datos. Los programadores lo hacen para interactuar con servicios web, como APIs,\u2026"
+  \ datos."
 title: Enviando una solicitud http
 weight: 44
 ---

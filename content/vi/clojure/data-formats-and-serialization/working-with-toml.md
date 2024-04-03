@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang\
   \ x\u1EED l\xFD d\u1EEF li\u1EC7u theo \u0111\u1ECBnh d\u1EA1ng \"Ng\xF4n ng\u1EEF\
   \ T\u1ED1i thi\u1EC3u Hi\u1EC3n nhi\xEAn c\u1EE7a Tom\" (Tom's Obvious, Minimal\
-  \ Language), ph\u1ED5 bi\u1EBFn\u2026"
+  \ Language), ph\u1ED5 bi\u1EBFn cho c\xE1c t\u1EADp tin c\u1EA5u h\xECnh do d\u1EC5\
+  \ \u0111\u1ECDc."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

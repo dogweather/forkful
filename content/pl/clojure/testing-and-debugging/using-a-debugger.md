@@ -6,8 +6,7 @@ description: "Clojure opiera si\u0119 na Maszynie Wirtualnej Javy (JVM), wi\u011
 lastmod: '2024-03-13T22:44:35.000635-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure opiera si\u0119 na Maszynie Wirtualnej Javy (JVM), wi\u0119c wiele\
-  \ debugowania odbywa si\u0119 za pomoc\u0105 narz\u0119dzi Java. Jednym z takich\
-  \ narz\u0119dzi jest `CIDER`,\u2026"
+  \ debugowania odbywa si\u0119 za pomoc\u0105 narz\u0119dzi Java."
 title: Korzystanie z debugera
 weight: 35
 ---

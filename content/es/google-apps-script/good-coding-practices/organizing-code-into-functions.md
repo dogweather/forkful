@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.539408-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones se trata de estructurar su c\xF3digo\
   \ de Google Apps Script separando segmentos l\xF3gicos en bloques distintos, cada\
-  \ uno\u2026"
+  \ uno realizando una tarea espec\xEDfica."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

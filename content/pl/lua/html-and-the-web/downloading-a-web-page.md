@@ -6,8 +6,7 @@ description: "Pobieranie strony internetowej to proces uruchomienia kodu, kt\xF3
 lastmod: '2024-03-13T22:44:35.538798-06:00'
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej to proces uruchomienia kodu, kt\xF3ry \u015B\
-  ci\u0105ga zawarto\u015B\u0107 strony www do analizy lub przetwarzania. Programi\u015B\
-  ci robi\u0105 to, aby\u2026"
+  ci\u0105ga zawarto\u015B\u0107 strony www do analizy lub przetwarzania."
 title: Pobieranie strony internetowej
 weight: 42
 ---

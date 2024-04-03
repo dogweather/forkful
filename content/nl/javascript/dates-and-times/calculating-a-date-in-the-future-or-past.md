@@ -6,8 +6,8 @@ description: "Het berekenen van een toekomstige of verleden datum betekent het v
   \ van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt.\u2026"
 lastmod: '2024-03-13T22:44:51.215693-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van een toekomstige of verleden datum betekent het vinden\
-  \ van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt.\u2026"
+summary: Het berekenen van een toekomstige of verleden datum betekent het vinden van
+  een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

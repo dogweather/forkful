@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.286532-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en spesifikk dato ved \xE5 legge til eller trekke fra et visst antall dager, m\xE5\
-  neder eller\u2026"
+  neder eller \xE5r fra en gitt dato."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

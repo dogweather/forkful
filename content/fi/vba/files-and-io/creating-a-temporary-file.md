@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.421648-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
   \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
-  \ tuottamista,\u2026"
+  \ tuottamista, tyypillisesti datan k\xE4sittely\xE4 tai automaatioteht\xE4vien puskurina\
+  \ varten."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

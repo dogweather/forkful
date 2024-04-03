@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.211834-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger pour stocker\
   \ et transporter des donn\xE9es, id\xE9al pour la communication serveur-client et\
-  \ les\u2026"
+  \ les fichiers de configuration."
 title: Travailler avec JSON
 weight: 38
 ---

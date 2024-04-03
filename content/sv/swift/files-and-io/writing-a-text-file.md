@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.269281-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Swift g\xF6r det m\xF6jligt att permanent lagra\
   \ str\xE4ngdata p\xE5 filsystemet, vilket \xE4r avg\xF6rande f\xF6r uppgifter s\xE5\
-  som att spara\u2026"
+  som att spara konfigurationsinst\xE4llningar, anv\xE4ndardata eller loggar."
 title: Att skriva en textfil
 weight: 24
 ---

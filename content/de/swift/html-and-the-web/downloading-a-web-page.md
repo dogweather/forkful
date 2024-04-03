@@ -6,7 +6,7 @@ description: "Das Herunterladen einer Webseite l\xE4dt deren Inhalt programmatis
 lastmod: '2024-03-13T22:44:54.224257-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite l\xE4dt deren Inhalt programmatisch herunter,\
-  \ um Daten zu sammeln oder Dienste zu integrieren. Entwickler tun dies, um\u2026"
+  \ um Daten zu sammeln oder Dienste zu integrieren."
 title: Webseite herunterladen
 weight: 42
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.914838-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w Google Apps Script dotyczy uzyskania\
   \ aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zada\u0144\
-  ,\u2026"
+  , rejestrowaniu i znakowaniu czasu w aplikacjach zwi\u0105zanych z ekosystemem Google."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

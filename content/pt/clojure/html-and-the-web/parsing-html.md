@@ -7,7 +7,7 @@ description: "Analisar HTML em Clojure envolve extrair programaticamente informa
 lastmod: '2024-03-13T22:44:46.194643-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Clojure envolve extrair programaticamente informa\xE7\xF5\
-  es de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar\u2026"
+  es de documentos HTML."
 title: Analisando HTML
 weight: 43
 ---

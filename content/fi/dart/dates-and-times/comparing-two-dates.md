@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.284563-06:00'
 model: gpt-4-0125-preview
 summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen Dartissa sis\xE4lt\xE4\xE4\
   \ niiden ajallisen eron tai j\xE4rjestyksen arvioimisen, mik\xE4 on olennainen toiminnallisuus\
-  \ sovelluksissa,\u2026"
+  \ sovelluksissa, jotka hallinnoivat tapahtumia, m\xE4\xE4r\xE4aikoja tai mit\xE4\
+  \ tahansa aikaan sidottua dataa."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen"
 weight: 27
 ---

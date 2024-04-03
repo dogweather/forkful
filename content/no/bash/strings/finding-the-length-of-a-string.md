@@ -6,8 +6,7 @@ description: "\xC5 finne lengden p\xE5 en tekststreng betyr \xE5 telle antallet 
 lastmod: '2024-03-13T22:44:40.963309-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden p\xE5 en tekststreng betyr \xE5 telle antallet tegn den\
-  \ inneholder. Vi gj\xF8r dette for \xE5 validere inndata, h\xE5ndtere tekstbaserte\
-  \ protokoller,\u2026"
+  \ inneholder."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

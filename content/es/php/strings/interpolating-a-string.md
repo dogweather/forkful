@@ -5,8 +5,8 @@ description: "Interpolar una cadena es insertar variables directamente dentro de
   n,\u2026"
 lastmod: '2024-03-13T22:44:59.146956-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar una cadena es insertar variables directamente dentro de una cadena\
-  \ de texto. Los programadores lo hacen para simplificar la concatenaci\xF3n,\u2026"
+summary: Interpolar una cadena es insertar variables directamente dentro de una cadena
+  de texto.
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

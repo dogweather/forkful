@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.393815-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i C inneb\xE4r att man utnyttjar det standardiserade\
   \ C-biblioteket f\xF6r att h\xE4mta och formatera systemets nuvarande datum och\
-  \ tid.\u2026"
+  \ tid."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

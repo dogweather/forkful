@@ -9,9 +9,7 @@ description: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9
 lastmod: '2024-03-13T22:44:36.982597-06:00'
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph\u1EA7\
-  n \u1EA3o, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c vi\u1EBFt l\xE0 `a + bi`. Ch\xFA\
-  ng r\u1EA5t quan tr\u1ECDng cho m\u1ED9t s\u1ED1 d\u1EF1 \xE1n Arduino n\u1EB7ng\
-  \ v\u1EC1 to\xE1n h\u1ECDc li\xEAn quan \u0111\u1EBFn x\u1EED l\xFD\u2026"
+  n \u1EA3o, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c vi\u1EBFt l\xE0 `a + bi`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

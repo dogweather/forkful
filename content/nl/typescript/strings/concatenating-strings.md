@@ -8,7 +8,7 @@ description: "Het samenvoegen van strings is het aan elkaar plakken van twee of 
 lastmod: '2024-03-13T22:44:50.541918-06:00'
 model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings is het aan elkaar plakken van twee of meer strings\
-  \ om \xE9\xE9n geheel te vormen. Programmeurs doen dit om berichten samen te\u2026"
+  \ om \xE9\xE9n geheel te vormen."
 title: Samenvoegen van strings
 weight: 3
 ---

@@ -4,8 +4,8 @@ description: "Concatenating strings means sticking them together end-to-end to m
   \ a new string. It's handy for creating custom messages, building up text for output,\u2026"
 lastmod: '2024-03-13T22:44:59.965267-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenating strings means sticking them together end-to-end to make a\
-  \ new string. It's handy for creating custom messages, building up text for output,\u2026"
+summary: Concatenating strings means sticking them together end-to-end to make a new
+  string.
 title: Concatenating strings
 weight: 3
 ---

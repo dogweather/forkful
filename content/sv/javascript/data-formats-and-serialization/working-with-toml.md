@@ -6,8 +6,7 @@ description: "TOML, som st\xE5r f\xF6r Tom's Obvious, Minimal Language, definier
 lastmod: '2024-03-13T22:44:38.316746-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Tom's Obvious, Minimal Language, definierar hur\
-  \ konfigurationsfiler ska struktureras. Programmerare arbetar med TOML eftersom\
-  \ det \xE4r\u2026"
+  \ konfigurationsfiler ska struktureras."
 title: Att arbeta med TOML
 weight: 39
 ---

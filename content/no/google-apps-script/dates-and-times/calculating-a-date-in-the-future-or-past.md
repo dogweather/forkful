@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.330130-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 manipulere\
   \ datoomr\xE5der for \xE5 finne datoer utover eller f\xF8r den n\xE5v\xE6rende datoen,\
-  \ henholdsvis.\u2026"
+  \ henholdsvis."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

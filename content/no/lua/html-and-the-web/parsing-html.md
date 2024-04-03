@@ -7,7 +7,7 @@ description: "Parsing av HTML inneb\xE6rer \xE5 trekke ut data og informasjon fr
 lastmod: '2024-03-13T22:44:40.927924-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML inneb\xE6rer \xE5 trekke ut data og informasjon fra HTML-dokumenter,\
-  \ noe som er avgj\xF8rende for webskraping, dataanalyse og\u2026"
+  \ noe som er avgj\xF8rende for webskraping, dataanalyse og automatiseringsoppgaver."
 title: Analysering av HTML
 weight: 43
 ---

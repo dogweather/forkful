@@ -6,8 +6,9 @@ description: "Associatieve arrays, in Python bekend als woordenboeken, koppelen 
   \ aan waarden, waardoor het gemakkelijk is om data op te halen, te wijzigen of te\u2026"
 lastmod: '2024-03-13T22:44:50.369280-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, in Python bekend als woordenboeken, koppelen sleutels\
-  \ aan waarden, waardoor het gemakkelijk is om data op te halen, te wijzigen of te\u2026"
+summary: Associatieve arrays, in Python bekend als woordenboeken, koppelen sleutels
+  aan waarden, waardoor het gemakkelijk is om data op te halen, te wijzigen of te
+  volgen aan de hand van een unieke identificatie.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

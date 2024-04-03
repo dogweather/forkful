@@ -6,8 +6,7 @@ description: "Den interaktiva skalet, eller Read-Eval-Print Loopen (REPL), l\xE5
 lastmod: '2024-03-13T22:44:38.127521-06:00'
 model: gpt-4-0125-preview
 summary: "Den interaktiva skalet, eller Read-Eval-Print Loopen (REPL), l\xE5ter dig\
-  \ skriva PowerShell-kommandon och f\xE5 omedelbar \xE5terkoppling. Programmerare\
-  \ anv\xE4nder\u2026"
+  \ skriva PowerShell-kommandon och f\xE5 omedelbar \xE5terkoppling."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

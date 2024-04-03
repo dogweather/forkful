@@ -4,8 +4,8 @@ description: "YAML, or YAML Ain't Markup Language, is a human-readable data seri
   \ language. Programmers often use it for configuration files and data\u2026"
 lastmod: '2024-03-13T22:45:00.302722-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, or YAML Ain't Markup Language, is a human-readable data serialization\
-  \ language. Programmers often use it for configuration files and data\u2026"
+summary: YAML, or YAML Ain't Markup Language, is a human-readable data serialization
+  language.
 title: Working with YAML
 weight: 41
 ---

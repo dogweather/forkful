@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.286929-06:00'
 model: gpt-4-0125-preview
 summary: "Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassaolon\
   \ varmistamiseen m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4 ennen\
-  \ tiedostojen\u2026"
+  \ tiedostojen lukemista tai kirjoittamista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

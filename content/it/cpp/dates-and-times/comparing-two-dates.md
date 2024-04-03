@@ -4,8 +4,7 @@ description: "Comparare due date permette di stabilire quale avviene prima o dop
   \ \xC8 essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
 lastmod: '2024-03-13T22:44:43.739934-06:00'
 model: gpt-4-1106-preview
-summary: "Comparare due date permette di stabilire quale avviene prima o dopo. \xC8\
-  \ essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
+summary: Comparare due date permette di stabilire quale avviene prima o dopo.
 title: Confronto tra due date
 weight: 27
 ---

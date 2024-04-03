@@ -7,7 +7,7 @@ description: "Encontrar la longitud de una cadena en Visual Basic para Aplicacio
 lastmod: '2024-03-13T22:44:58.882704-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar la longitud de una cadena en Visual Basic para Aplicaciones (VBA)\
-  \ implica determinar el n\xFAmero de caracteres que contiene. Los programadores\u2026"
+  \ implica determinar el n\xFAmero de caracteres que contiene."
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

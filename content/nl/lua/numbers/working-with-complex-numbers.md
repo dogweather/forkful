@@ -6,8 +6,8 @@ description: "Complexe getallen breiden het idee van de eendimensionale getallen
   \ uit tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"
 lastmod: '2024-03-13T22:44:50.931441-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen breiden het idee van de eendimensionale getallenlijn uit\
-  \ tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"
+summary: Complexe getallen breiden het idee van de eendimensionale getallenlijn uit
+  tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.
 title: Werken met complexe getallen
 weight: 14
 ---

@@ -6,8 +6,8 @@ description: "Het lezen van commandoregelargumenten stelt je Swift-programma in 
   \ om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk\u2026"
 lastmod: '2024-03-13T22:44:51.173105-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten stelt je Swift-programma in staat\
-  \ om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk\u2026"
+summary: Het lezen van commandoregelargumenten stelt je Swift-programma in staat om
+  extra details te grijpen wanneer gebruikers het uitvoeren.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

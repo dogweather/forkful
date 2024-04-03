@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "M\u1EA3ng k\u1EBFt h\u1EE3p trong PHP gi\u1ED1ng nh\u01B0 nh\u1EEFng danh\
   \ s\xE1ch n\xE2ng cao, n\u01A1i m\u1ED7i ph\u1EA7n t\u1EED c\xF3 th\u1EC3 \u0111\
   \u01B0\u1EE3c truy c\u1EADp b\u1EB1ng m\u1ED9t kh\xF3a d\u1EC5 hi\u1EC3u thay v\xEC\
-  \ ch\u1EC9 l\xE0 s\u1ED1. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+  \ ch\u1EC9 l\xE0 s\u1ED1."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

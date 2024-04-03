@@ -6,8 +6,7 @@ description: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar ev
 lastmod: '2024-03-13T22:44:46.885967-06:00'
 model: gpt-4-1106-preview
 summary: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar eventos,\
-  \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda. Os programadores\
-  \ fazem logs\u2026"
+  \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda."
 title: Registro de Logs
 weight: 17
 ---

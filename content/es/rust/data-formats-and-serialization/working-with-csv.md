@@ -6,8 +6,8 @@ description: "Trabajar con archivos CSV (Valores Separados por Comas) se trata d
   \ leer y escribir en archivos de texto plano que almacenan datos tabulares. Los\u2026"
 lastmod: '2024-03-13T22:44:58.869214-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de leer\
-  \ y escribir en archivos de texto plano que almacenan datos tabulares. Los\u2026"
+summary: Trabajar con archivos CSV (Valores Separados por Comas) se trata de leer
+  y escribir en archivos de texto plano que almacenan datos tabulares.
 title: Trabajando con CSV
 weight: 37
 ---

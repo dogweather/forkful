@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.225897-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb w programowaniu polega na przybli\u017Ceniu liczby\
   \ do najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\
-  \ dziesi\u0119tnych.\u2026"
+  \ dziesi\u0119tnych."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

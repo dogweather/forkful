@@ -4,8 +4,8 @@ description: "Calcolare la lunghezza di una stringa significa scoprire quanti ca
   \ contiene. I programmatori fanno questo per manipolare testo, convalidare input,\u2026"
 lastmod: '2024-03-13T22:44:43.717339-06:00'
 model: gpt-4-1106-preview
-summary: "Calcolare la lunghezza di una stringa significa scoprire quanti caratteri\
-  \ contiene. I programmatori fanno questo per manipolare testo, convalidare input,\u2026"
+summary: Calcolare la lunghezza di una stringa significa scoprire quanti caratteri
+  contiene.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

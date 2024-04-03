@@ -5,7 +5,8 @@ description: "Il refactoring \xE8 il processo di ristrutturazione del codice esi
 lastmod: '2024-03-13T22:44:43.092020-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
-  \ senza modificarne il comportamento esterno, mirato a migliorare attributi non\u2026"
+  \ senza modificarne il comportamento esterno, mirato a migliorare attributi non\
+  \ funzionali come leggibilit\xE0 e manutenibilit\xE0."
 title: Rifattorizzazione
 weight: 19
 ---

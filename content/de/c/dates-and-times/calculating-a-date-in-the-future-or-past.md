@@ -8,7 +8,8 @@ description: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfass
 lastmod: '2024-03-13T22:44:54.367263-06:00'
 model: gpt-4-0125-preview
 summary: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst das\
-  \ Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten\u2026"
+  \ Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten\
+  \ oder Jahren zu einem gegebenen Datum hinzugef\xFCgt oder davon abgezogen wird."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

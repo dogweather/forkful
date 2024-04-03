@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.151553-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML envolve analisar o c\xF3digo HTML de uma p\xE1gina da web\
   \ para extrair informa\xE7\xF5es ou elementos espec\xEDficos, uma tarefa comum para\
-  \ web scraping,\u2026"
+  \ web scraping, minera\xE7\xE3o de dados ou automa\xE7\xE3o de intera\xE7\xF5es\
+  \ com sites."
 title: Analisando HTML
 weight: 43
 ---

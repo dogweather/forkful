@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.739479-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran i Visual Basic for Applications (VBA) inneb\xE4\
   r att man programmatiskt tillg\xE5r webbresurser eller webbtj\xE4nster genom att\
-  \ g\xF6ra\u2026"
+  \ g\xF6ra f\xF6rfr\xE5gningar \xF6ver HTTP."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 weight: 44
 ---

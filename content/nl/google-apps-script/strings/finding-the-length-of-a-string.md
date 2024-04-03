@@ -6,8 +6,9 @@ description: "De lengte van een string vinden in Google Apps Script, een JavaScr
   \ cloud scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten,\u2026"
 lastmod: '2024-03-13T22:44:50.321480-06:00'
 model: gpt-4-0125-preview
-summary: "De lengte van een string vinden in Google Apps Script, een JavaScript cloud\
-  \ scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten,\u2026"
+summary: De lengte van een string vinden in Google Apps Script, een JavaScript cloud
+  scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten, gaat
+  over het bepalen van het aantal karakters dat een string bevat.
 title: De lengte van een string vinden
 weight: 7
 ---

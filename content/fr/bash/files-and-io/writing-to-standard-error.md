@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.014926-06:00'
 model: gpt-4-0125-preview
 summary: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
   \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\
-  \ la sortie\u2026"
+  \ la sortie standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

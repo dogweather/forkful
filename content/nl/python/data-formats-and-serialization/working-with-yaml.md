@@ -6,8 +6,8 @@ description: "Werken met YAML betekent het parseren en genereren van YAML (Yet A
   \ Markup Language) documenten in Python. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:50.396678-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met YAML betekent het parseren en genereren van YAML (Yet Another\
-  \ Markup Language) documenten in Python. Programmeurs doen dit om\u2026"
+summary: Werken met YAML betekent het parseren en genereren van YAML (Yet Another
+  Markup Language) documenten in Python.
 title: Werken met YAML
 weight: 41
 ---

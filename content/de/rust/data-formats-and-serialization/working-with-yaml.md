@@ -7,7 +7,8 @@ description: "In der Rust-Programmierung dreht sich die Arbeit mit YAML (YAML Ai
 lastmod: '2024-03-13T22:44:53.693201-06:00'
 model: gpt-4-0125-preview
 summary: "In der Rust-Programmierung dreht sich die Arbeit mit YAML (YAML Ain't Markup\
-  \ Language) um das Parsen und Generieren von Daten im YAML-Format, einem\u2026"
+  \ Language) um das Parsen und Generieren von Daten im YAML-Format, einem menschenfreundlichen\
+  \ Standard f\xFCr die Serialisierung von Daten."
 title: Arbeiten mit YAML
 weight: 41
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.845669-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely Arduinossa k\xE4\
   sitt\xE4\xE4 lukemisen ja kirjoittamisen CSV-tiedostoihin, joita yleisesti s\xE4\
-  ilytet\xE4\xE4n SD-\u2026"
+  ilytet\xE4\xE4n SD-kortilla."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

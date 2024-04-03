@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.355028-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la premi\xE8\
   re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant le reste\
-  \ des\u2026"
+  \ des caract\xE8res tels quels."
 title: "Mettre une cha\xEEne de caract\xE8res en majuscules"
 weight: 2
 ---

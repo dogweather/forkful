@@ -6,8 +6,7 @@ description: "Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dok
 lastmod: '2024-03-13T22:44:35.303108-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dokumentami\
-  \ XML za pomoc\u0105 Javy. Programi\u015Bci robi\u0105 to dla wymiany danych, zarz\u0105\
-  dzania\u2026"
+  \ XML za pomoc\u0105 Javy."
 title: Praca z XML
 weight: 40
 ---

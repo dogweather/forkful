@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.146742-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos em Python como dicion\xE1rios, mapeiam chaves\
   \ para valores, facilitando a recupera\xE7\xE3o, modifica\xE7\xE3o ou rastreamento\
-  \ de dados\u2026"
+  \ de dados por um identificador \xFAnico."
 title: Usando arrays associativos
 weight: 15
 ---

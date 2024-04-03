@@ -8,8 +8,7 @@ description: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fa
 lastmod: '2024-03-13T22:44:40.323758-06:00'
 model: gpt-4-0125-preview
 summary: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange opp,\
-  \ og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\
-  \ Programmerere\u2026"
+  \ og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

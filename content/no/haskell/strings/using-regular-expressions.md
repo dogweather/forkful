@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk i programmering er sekvenser av tegn som defin
 lastmod: '2024-03-13T22:44:40.831004-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk i programmering er sekvenser av tegn som definerer et\
-  \ s\xF8kem\xF8nster, typisk brukt for s\xF8k i strenger og manipulering av disse.\
-  \ Haskell-\u2026"
+  \ s\xF8kem\xF8nster, typisk brukt for s\xF8k i strenger og manipulering av disse."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

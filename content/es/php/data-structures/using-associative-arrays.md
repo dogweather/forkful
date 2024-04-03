@@ -8,7 +8,8 @@ description: "Los arreglos asociativos en PHP son como listas supercargadas dond
 lastmod: '2024-03-13T22:44:59.153634-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos en PHP son como listas supercargadas donde cada\
-  \ elemento se puede acceder utilizando una clave legible por humanos en lugar de\u2026"
+  \ elemento se puede acceder utilizando una clave legible por humanos en lugar de\
+  \ solo n\xFAmeros."
 title: Uso de matrices asociativas
 weight: 15
 ---

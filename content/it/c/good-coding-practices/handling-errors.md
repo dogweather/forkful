@@ -6,8 +6,8 @@ description: "Gestire gli errori in C comporta il rilevamento e la risposta a co
   \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:44.007088-06:00'
 model: gpt-4-0125-preview
-summary: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
-  \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
+summary: Gestire gli errori in C comporta il rilevamento e la risposta a condizioni
+  anomale che si verificano durante l'esecuzione del programma.
 title: Gestione degli errori
 weight: 16
 ---

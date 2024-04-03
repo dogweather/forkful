@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.743800-06:00'
 model: gpt-4-0125-preview
 summary: "Bash ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria kuten jotkin muut\
   \ kielet, mutta voit k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettuja komentoja kuten `set\
-  \ -x` seurataksesi, mit\xE4\u2026"
+  \ -x` seurataksesi, mit\xE4 tapahtuu."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

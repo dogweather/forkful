@@ -4,8 +4,7 @@ description: "(\"Cosa & Perch\xE9?\") Rimuovere caratteri che corrispondono a un
   \ \xE8 come filtrare il testo. I programmatori lo fanno per pulire i dati, estrarre\u2026"
 lastmod: '2024-03-13T22:44:43.710234-06:00'
 model: gpt-4-1106-preview
-summary: "(\"Cosa & Perch\xE9?\") Rimuovere caratteri che corrispondono a un modello\
-  \ \xE8 come filtrare il testo. I programmatori lo fanno per pulire i dati, estrarre\u2026"
+summary: "(\"Cosa & Perch\xE9."
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

@@ -6,8 +6,8 @@ description: "Datum naar string conversie transformeert een Datum-object naar ee
   \ leesbaar tekstformaat, omdat mensen \"1 april 2023\" verkiezen boven cryptische\u2026"
 lastmod: '2024-03-13T22:44:51.213744-06:00'
 model: gpt-4-0125-preview
-summary: "Datum naar string conversie transformeert een Datum-object naar een leesbaar\
-  \ tekstformaat, omdat mensen \"1 april 2023\" verkiezen boven cryptische\u2026"
+summary: Datum naar string conversie transformeert een Datum-object naar een leesbaar
+  tekstformaat, omdat mensen "1 april 2023" verkiezen boven cryptische tijdscodes.
 title: Een datum converteren naar een string
 weight: 28
 ---

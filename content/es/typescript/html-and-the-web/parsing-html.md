@@ -5,8 +5,8 @@ description: "Parsear HTML es el proceso de convertir texto HTML en una estructu
   \ para\u2026"
 lastmod: '2024-03-13T22:44:58.798217-06:00'
 model: unknown
-summary: "Parsear HTML es el proceso de convertir texto HTML en una estructura de\
-  \ datos comprensible y manipulable por programas. Los programadores lo hacen para\u2026"
+summary: Parsear HTML es el proceso de convertir texto HTML en una estructura de datos
+  comprensible y manipulable por programas.
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

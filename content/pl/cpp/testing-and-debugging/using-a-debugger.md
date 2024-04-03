@@ -6,8 +6,7 @@ description: "C++ integruje si\u0119 z debuggerami, takimi jak GDB czy debugger 
 lastmod: '2024-03-13T22:44:35.717481-06:00'
 model: gpt-4-0125-preview
 summary: "C++ integruje si\u0119 z debuggerami, takimi jak GDB czy debugger Visual\
-  \ Studio. Oto przyk\u0142ad u\u017Cycia GDB: ```C++ #include <iostream> int main()\
-  \ { int a = 5;\u2026"
+  \ Studio."
 title: Korzystanie z debugera
 weight: 35
 ---

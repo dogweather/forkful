@@ -4,8 +4,8 @@ description: "Enviar una solicitud HTTP permite a tu script interactuar con serv
   \ web, obtener datos o invocar operaciones remotas. Los programadores hacen esto\u2026"
 lastmod: '2024-03-13T22:44:59.243307-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP permite a tu script interactuar con servicios\
-  \ web, obtener datos o invocar operaciones remotas. Los programadores hacen esto\u2026"
+summary: Enviar una solicitud HTTP permite a tu script interactuar con servicios web,
+  obtener datos o invocar operaciones remotas.
 title: Enviando una solicitud http
 weight: 44
 ---

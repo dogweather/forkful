@@ -4,8 +4,8 @@ description: "Rounding numbers is about tuning a value to the nearest integer or
   \ decimal place. Programmers round numbers to simplify data, enhance\u2026"
 lastmod: '2024-03-13T22:45:00.277465-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers is about tuning a value to the nearest integer or specified\
-  \ decimal place. Programmers round numbers to simplify data, enhance\u2026"
+summary: Rounding numbers is about tuning a value to the nearest integer or specified
+  decimal place.
 title: Rounding numbers
 weight: 13
 ---

@@ -5,7 +5,7 @@ description: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-A
 lastmod: '2024-03-13T22:44:47.097012-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
-  \ permite testar c\xF3digo em tempo real. Programadores o utilizam para\u2026"
+  \ permite testar c\xF3digo em tempo real."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

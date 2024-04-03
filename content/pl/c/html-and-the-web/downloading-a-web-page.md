@@ -8,7 +8,8 @@ description: "Pobieranie strony internetowej w C polega na programowym uzyskiwan
 lastmod: '2024-03-13T22:44:35.885113-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dost\u0119\
-  pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\u2026"
+  pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\
+  \ do przetworzenia lub u\u017Cytku offline."
 title: Pobieranie strony internetowej
 weight: 42
 ---

@@ -6,8 +6,7 @@ description: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\x
 lastmod: '2024-03-13T22:44:56.357427-06:00'
 model: gpt-4-1106-preview
 summary: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\xE4lt\xE4\
-  \xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme t\xE4\
-  m\xE4n, koska se\u2026"
+  \xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

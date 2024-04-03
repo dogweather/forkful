@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.073454-06:00'
 model: gpt-4-0125-preview
 summary: "JSON:n (JavaScript Object Notation) k\xE4sittely Go:ssa sis\xE4lt\xE4\xE4\
   \ datan koodaamisen ja purkamisen Go:n tietorakenteiden ja JSON-muodon v\xE4lill\xE4\
-  . T\xE4m\xE4 teht\xE4v\xE4\u2026"
+  ."
 title: "Ty\xF6skentely JSONin kanssa"
 weight: 38
 ---

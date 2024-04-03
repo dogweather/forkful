@@ -9,8 +9,7 @@ description: "Organiser le code en fonctions consiste \xE0 regrouper des morceau
 lastmod: '2024-03-13T22:44:58.330710-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions consiste \xE0 regrouper des morceaux de script\
-  \ pour r\xE9aliser des t\xE2ches sp\xE9cifiques. Nous le faisons parce que cela\
-  \ rend le\u2026"
+  \ pour r\xE9aliser des t\xE2ches sp\xE9cifiques."
 title: Organiser le code en fonctions
 weight: 18
 ---

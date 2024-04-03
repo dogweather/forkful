@@ -5,8 +5,8 @@ description: "Convertir fechas en cadenas de texto te permite formatear y mostra
   \ y\u2026"
 lastmod: '2024-03-13T22:44:59.512987-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir fechas en cadenas de texto te permite formatear y mostrar fechas\
-  \ de manera legible y personalizada. Los programadores lo hacen para manipular y\u2026"
+summary: Convertir fechas en cadenas de texto te permite formatear y mostrar fechas
+  de manera legible y personalizada.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

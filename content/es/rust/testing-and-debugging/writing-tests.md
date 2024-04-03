@@ -8,8 +8,7 @@ description: "Escribir pruebas en Rust implica crear comprobaciones automatizada
 lastmod: '2024-03-13T22:44:58.850145-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Rust implica crear comprobaciones automatizadas para\
-  \ asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen esto\
-  \ para\u2026"
+  \ asegurar que tu c\xF3digo funciona como se espera."
 title: Escribiendo pruebas
 weight: 36
 ---

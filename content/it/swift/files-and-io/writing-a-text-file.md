@@ -7,7 +7,8 @@ description: "Scrivere un file di testo in Swift ti permette di memorizzare in m
 lastmod: '2024-03-13T22:44:43.788217-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Swift ti permette di memorizzare in modo persistente\
-  \ dati stringa sul filesystem, il che \xE8 essenziale per compiti come\u2026"
+  \ dati stringa sul filesystem, il che \xE8 essenziale per compiti come salvare impostazioni\
+  \ di configurazione, dati utente o log."
 title: Scrivere un file di testo
 weight: 24
 ---

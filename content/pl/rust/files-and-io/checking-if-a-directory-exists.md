@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.200601-06:00'
 model: gpt-4-0125-preview
 summary: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy katalog\
   \ istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119pu, odczytu\
-  \ lub zapisu plik\xF3w. Rust,\u2026"
+  \ lub zapisu plik\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

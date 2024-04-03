@@ -7,7 +7,7 @@ description: "Verificar se um diret\xF3rio existe no Google Apps Script envolve 
 lastmod: '2024-03-13T22:44:46.124604-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
-  \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
+  \ a presen\xE7a de uma pasta dentro do Google Drive."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

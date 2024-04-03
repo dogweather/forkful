@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.052712-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi C:ss\xE4 tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4rakenteen tai aikaleiman k\xE4\xE4nt\xE4mist\xE4 ihmisen\
-  \ luettavaan muotoon. Ohjelmoijat suorittavat\u2026"
+  \ luettavaan muotoon."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 weight: 28
 ---

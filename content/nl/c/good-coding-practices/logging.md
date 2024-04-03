@@ -6,8 +6,9 @@ description: "Loggen in C houdt in dat je de stroom en opmerkelijke gebeurteniss
   \ van een programma tijdens de uitvoering registreert, waardoor een tastbare\u2026"
 lastmod: '2024-03-13T22:44:51.297813-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen van\
-  \ een programma tijdens de uitvoering registreert, waardoor een tastbare\u2026"
+summary: Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen van
+  een programma tijdens de uitvoering registreert, waardoor een tastbare beoordeling
+  van zijn gedrag en prestaties wordt geboden.
 title: Loggen
 weight: 17
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EC7c d\u1EF1 \u0111o\xE1n nh\u1EEFng \u0111\
   i\u1EC1u b\u1EA5t ng\u1EDD; \u0111\xF3 l\xE0 c\xE1ch ch\xFAng ta qu\u1EA3n l\xFD\
   \ khi c\xF3 \u0111i\u1EC1u g\xEC \u0111\xF3 kh\xF4ng \u0111\xFAng trong code c\u1EE7\
-  a m\xECnh. Ch\xFAng ta l\xE0m v\u1EADy \u0111\u1EC3 tr\xE1nh\u2026"
+  a m\xECnh."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.282316-06:00'
 model: gpt-4-0125-preview
 summary: "Analysering av en dato fra en tekststreng i C inneb\xE6rer \xE5 konvertere\
   \ tekstuelle representasjoner av datoer til et format som programmer kan manipulere\
-  \ og\u2026"
+  \ og analysere mer effektivt."
 title: Tolke en dato fra en streng
 weight: 30
 ---

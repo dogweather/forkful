@@ -6,8 +6,7 @@ description: "En REPL (Read-Eval-Print-Loop) er et enkelt, interaktivt programme
 lastmod: '2024-03-13T22:44:41.101550-06:00'
 model: gpt-4-0125-preview
 summary: "En REPL (Read-Eval-Print-Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
-  . Programm\xF8rer bruker det for \xE5 eksperimentere med et spr\xE5k i sanntid,\
-  \ for \xE5\u2026"
+  ."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

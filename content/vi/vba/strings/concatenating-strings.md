@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.421862-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c n\u1ED1i chu\u1ED7i trong Visual Basic for Applications (VBA)\
   \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c g\u1ED9p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7\
-  i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t. \u0110\xE2y l\xE0 m\u1ED9\
-  t nhi\u1EC7m v\u1EE5 c\u01A1\u2026"
+  i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

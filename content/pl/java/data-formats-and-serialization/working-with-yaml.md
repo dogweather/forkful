@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.299223-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", to standard serializacji\
   \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka i kt\xF3rego programi\u015B\
-  ci u\u017Cywaj\u0105 do plik\xF3w\u2026"
+  ci u\u017Cywaj\u0105 do plik\xF3w konfiguracyjnych, zrzut\xF3w danych oraz transmisji\
+  \ danych mi\u0119dzy j\u0119zykami."
 title: Praca z YAML
 weight: 41
 ---

@@ -7,7 +7,8 @@ description: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts
 lastmod: '2024-03-13T22:44:58.052315-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts qui valident\
-  \ automatiquement le fonctionnement de votre code PowerShell, en garantissant\u2026"
+  \ automatiquement le fonctionnement de votre code PowerShell, en garantissant qu'il\
+  \ se comporte comme pr\xE9vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

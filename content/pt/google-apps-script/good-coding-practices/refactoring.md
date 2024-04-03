@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.117513-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o, no l\xE9xico de programa\xE7\xE3o, refere-se ao processo\
   \ de reestruturar c\xF3digo de computador j\xE1 existente \u2014 mudando a fatora\xE7\
-  \xE3o sem alterar seu\u2026"
+  \xE3o sem alterar seu comportamento externo \u2014 para melhorar atributos n\xE3\
+  o funcionais."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

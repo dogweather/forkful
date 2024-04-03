@@ -5,7 +5,8 @@ description: "I PowerShell kan du fels\xF6ka skript med den inbyggda PowerShell 
 lastmod: '2024-03-13T22:44:38.130411-06:00'
 model: gpt-4-0125-preview
 summary: "I PowerShell kan du fels\xF6ka skript med den inbyggda PowerShell Integrated\
-  \ Scripting Environment (ISE) eller Visual Studio Code (VS Code) med PowerShell-\u2026"
+  \ Scripting Environment (ISE) eller Visual Studio Code (VS Code) med PowerShell-till\xE4\
+  gget."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

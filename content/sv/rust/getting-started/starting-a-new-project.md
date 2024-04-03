@@ -5,9 +5,7 @@ description: "Att b\xF6rja ett nytt projekt inneb\xE4r att skapa en grund f\xF6r
   \ och bygga en h\xE5llbar\u2026"
 lastmod: '2024-03-13T22:44:37.699050-06:00'
 model: gpt-4-1106-preview
-summary: "Att b\xF6rja ett nytt projekt inneb\xE4r att skapa en grund f\xF6r din kodstruktur.\
-  \ Programmerare tar detta steg f\xF6r att organisera sina id\xE9er och bygga en\
-  \ h\xE5llbar\u2026"
+summary: "Att b\xF6rja ett nytt projekt inneb\xE4r att skapa en grund f\xF6r din kodstruktur."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

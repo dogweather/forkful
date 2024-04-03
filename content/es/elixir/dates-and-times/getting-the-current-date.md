@@ -9,7 +9,8 @@ description: "Obtener la fecha actual en Elixir implica acceder a la informaci\x
 lastmod: '2024-03-13T22:44:58.712690-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Elixir implica acceder a la informaci\xF3n de\
-  \ fecha y hora del sistema, una tarea com\xFAn para registrar, marcar datos o cualquier\u2026"
+  \ fecha y hora del sistema, una tarea com\xFAn para registrar, marcar datos o cualquier\
+  \ funcionalidad que requiera conocimiento de la fecha actual."
 title: Obteniendo la fecha actual
 weight: 29
 ---

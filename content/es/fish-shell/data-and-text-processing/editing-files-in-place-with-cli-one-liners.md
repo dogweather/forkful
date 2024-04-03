@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.497635-06:00'
 model: gpt-4-0125-preview
 summary: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners) se\
   \ trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\
-  \ sin\u2026"
+  \ sin abrirlos en un editor de texto."
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

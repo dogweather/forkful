@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.080722-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Arduino involverer\
   \ lesing fra og skriving til CSV-filer som vanligvis lagres p\xE5 et SD-kort, noe\
-  \ som\u2026"
+  \ som muliggj\xF8r datalogging, konfigurasjonsinnstillinger og mer."
 title: Arbeide med CSV
 weight: 37
 ---

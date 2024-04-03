@@ -8,7 +8,8 @@ description: "Assoziative Arrays, bekannt als Objekte in Google Apps Script (ein
 lastmod: '2024-03-13T22:44:53.326148-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, bekannt als Objekte in Google Apps Script (eine Variante\
-  \ von JavaScript), erm\xF6glichen es Programmierern, Sammlungen von Schl\xFCssel-\u2026"
+  \ von JavaScript), erm\xF6glichen es Programmierern, Sammlungen von Schl\xFCssel-Wert-Paaren\
+  \ zu erstellen."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

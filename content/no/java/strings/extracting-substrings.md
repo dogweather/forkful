@@ -5,9 +5,7 @@ description: "\xC5 trekke ut substrings betyr simpelthen \xE5 hente deler av en 
   \ st\xF8rre\u2026"
 lastmod: '2024-03-13T22:44:40.655232-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 trekke ut substrings betyr simpelthen \xE5 hente deler av en streng.\
-  \ Programmerere gj\xF8r dette for \xE5 manipulere og behandle spesifikke data fra\
-  \ st\xF8rre\u2026"
+summary: "\xC5 trekke ut substrings betyr simpelthen \xE5 hente deler av en streng."
 title: Uthenting av delstrenger
 weight: 6
 ---

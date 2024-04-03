@@ -4,8 +4,8 @@ description: "Complex numbers, comprised of a real and an imaginary part (like 3
   \ are a staple in engineering and physics. Programmers work with them in\u2026"
 lastmod: '2024-03-13T22:45:00.543169-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
-  \ are a staple in engineering and physics. Programmers work with them in\u2026"
+summary: Complex numbers, comprised of a real and an imaginary part (like 3+4i), are
+  a staple in engineering and physics.
 title: Working with complex numbers
 weight: 14
 ---

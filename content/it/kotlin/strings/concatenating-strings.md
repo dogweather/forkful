@@ -4,8 +4,7 @@ description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno 
   \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."
 lastmod: '2024-03-13T22:44:43.383671-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
-  \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."
+summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo."
 title: Concatenazione di stringhe
 weight: 3
 ---

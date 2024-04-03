@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.046582-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
   \ que possibilita uniformidade e consist\xEAncia no processamento de texto, essencial\
-  \ para\u2026"
+  \ para tarefas como compara\xE7\xF5es sem distin\xE7\xE3o de caixa ou normaliza\xE7\
+  \xE3o de texto."
 title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---

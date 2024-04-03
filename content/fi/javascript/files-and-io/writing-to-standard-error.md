@@ -7,7 +7,9 @@ description: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tark
 lastmod: '2024-03-13T22:44:56.966241-06:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tarkoittaa\
-  \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\u2026"
+  \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\
+  \ virtaan, mik\xE4 on erityisen hy\xF6dyllist\xE4 Unix-tyyppisiss\xE4 ymp\xE4rist\xF6\
+  iss\xE4 lokiin kirjaamisen ja virheenkorjauksen kannalta."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

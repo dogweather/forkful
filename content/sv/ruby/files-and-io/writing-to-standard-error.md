@@ -8,7 +8,8 @@ description: "Att skriva till standardfel (stderr) i Ruby handlar om att diriger
 lastmod: '2024-03-13T22:44:38.448094-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden\
-  \ eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5n\u2026"
+  \ eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5n standardutmatningen\
+  \ (stdout)."
 title: Skriva till standardfel
 weight: 25
 ---

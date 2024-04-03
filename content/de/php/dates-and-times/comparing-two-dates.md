@@ -5,8 +5,9 @@ description: "(Das Was und das Warum) Datumvergleiche? Das ist einfach das Gegen
   \ Deadlines\u2026"
 lastmod: '2024-03-13T22:44:53.984929-06:00'
 model: gpt-4-1106-preview
-summary: "(Das Was und das Warum) Datumvergleiche? Das ist einfach das Gegen\xFCberstellen\
-  \ zweier Zeitpunkte. Wir nutzen das, um Zeitr\xE4ume zu \xFCberpr\xFCfen, Deadlines\u2026"
+summary: '(Das Was und das Warum)
+
+  Datumvergleiche.'
 title: Vergleich von zwei Daten
 weight: 27
 ---

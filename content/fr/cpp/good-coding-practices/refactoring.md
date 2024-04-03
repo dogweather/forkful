@@ -5,7 +5,7 @@ description: "Le refactoring est le processus de changement de la structure inte
 lastmod: '2024-03-13T22:44:58.172058-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de changement de la structure interne d'un\
-  \ programme informatique sans alt\xE9rer son comportement externe. Les programmeurs\u2026"
+  \ programme informatique sans alt\xE9rer son comportement externe."
 title: Refactoring
 weight: 19
 ---

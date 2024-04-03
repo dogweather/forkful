@@ -8,7 +8,8 @@ description: "Att tolka HTML i C inneb\xE4r att analysera HTML-dokument f\xF6r a
 lastmod: '2024-03-13T22:44:38.379969-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i C inneb\xE4r att analysera HTML-dokument f\xF6r att effektivt\
-  \ extrahera data, struktur eller specifika delar, ofta som ett f\xF6rsteg till\u2026"
+  \ extrahera data, struktur eller specifika delar, ofta som ett f\xF6rsteg till datamining\
+  \ eller webbskrapning."
 title: Tolka HTML
 weight: 43
 ---

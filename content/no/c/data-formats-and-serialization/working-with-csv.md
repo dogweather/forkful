@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.296186-06:00'
 model: gpt-4-0125-preview
 summary: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
   \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\
-  \ rad\u2026"
+  \ rad representerer en post og hvert posts felt er adskilt med kommaer."
 title: Arbeide med CSV
 weight: 37
 ---

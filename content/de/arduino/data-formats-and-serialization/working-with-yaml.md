@@ -7,7 +7,8 @@ description: "YAML (YAML Ain't Markup Language) ist ein f\xFCr Menschen lesbarer
 lastmod: '2024-03-13T22:44:54.163745-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) ist ein f\xFCr Menschen lesbarer Datenserialisierungsstandard,\
-  \ der f\xFCr Konfigurationsdateien, Kommunikation zwischen\u2026"
+  \ der f\xFCr Konfigurationsdateien, Kommunikation zwischen Programmen und Datenspeicherung\
+  \ verwendet werden kann."
 title: Arbeiten mit YAML
 weight: 41
 ---

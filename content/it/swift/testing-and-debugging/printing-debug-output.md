@@ -4,8 +4,7 @@ description: "Stampare l'output di debug aiuta a vedere cosa succede nel tuo cod
   \ Usiamo questa tecnica per controllare i valori delle variabili e capire il flusso\u2026"
 lastmod: '2024-03-13T22:44:43.772774-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice. Usiamo\
-  \ questa tecnica per controllare i valori delle variabili e capire il flusso\u2026"
+summary: Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice.
 title: Stampa dell'output di debug
 weight: 33
 ---

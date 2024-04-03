@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.693938-06:00'
 model: gpt-4-1106-preview
 summary: "In programming, deleting characters matching a pattern means finding sequences\
   \ of characters that fit a specific rule\u2014a pattern\u2014and removing them from\
-  \ a\u2026"
+  \ a string."
 title: Deleting characters matching a pattern
 weight: 5
 ---

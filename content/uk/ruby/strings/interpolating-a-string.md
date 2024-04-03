@@ -4,8 +4,7 @@ description: String interpolation lets you plug values into a string. It's handy
   avoid messy concatenation and make code more readable.
 lastmod: '2024-03-13T22:44:50.199265-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you plug values into a string. It's handy to avoid
-  messy concatenation and make code more readable.
+summary: String interpolation lets you plug values into a string.
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

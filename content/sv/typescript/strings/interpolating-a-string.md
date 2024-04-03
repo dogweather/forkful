@@ -6,8 +6,7 @@ description: "Stringinterpolering \xE4r att smidigt b\xE4dda in variabler eller 
 lastmod: '2024-03-13T22:44:37.642489-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolering \xE4r att smidigt b\xE4dda in variabler eller uttryck\
-  \ i str\xE4ngar. Vi g\xF6r det f\xF6r att bygga dynamiska texter enklare och f\xF6\
-  r att koden ska\u2026"
+  \ i str\xE4ngar."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

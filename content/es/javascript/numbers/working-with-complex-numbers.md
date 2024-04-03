@@ -6,8 +6,7 @@ description: "Los n\xFAmeros complejos son n\xFAmeros con una parte real y una p
 lastmod: '2024-03-13T22:44:59.452749-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos son n\xFAmeros con una parte real y una parte imaginaria\
-  \ (como 3 + 4i). Aparecen en varios problemas de programaci\xF3n, especialmente\
-  \ en\u2026"
+  \ (como 3 + 4i)."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

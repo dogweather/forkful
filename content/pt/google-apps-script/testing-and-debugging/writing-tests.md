@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.111622-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes no Google Apps Script (GAS) refere-se \xE0 cria\xE7\xE3\
   o de scripts automatizados para verificar o comportamento de seus c\xF3digos, garantindo\
-  \ que\u2026"
+  \ que eles funcionem como esperado sob v\xE1rias condi\xE7\xF5es."
 title: Escrevendo testes
 weight: 36
 ---

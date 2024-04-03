@@ -6,8 +6,8 @@ description: "Reguliere expressies, gewoonlijk bekend als regex, zijn patronen d
   \ gebruikt worden om combinaties van karakters in strings te matchen. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:51.190501-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies, gewoonlijk bekend als regex, zijn patronen die gebruikt\
-  \ worden om combinaties van karakters in strings te matchen. Programmeurs\u2026"
+summary: Reguliere expressies, gewoonlijk bekend als regex, zijn patronen die gebruikt
+  worden om combinaties van karakters in strings te matchen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

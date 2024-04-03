@@ -8,8 +8,7 @@ description: "Obtenir la date actuelle en Dart implique de demander au syst\xE8m
 lastmod: '2024-03-13T22:44:57.401952-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Dart implique de demander au syst\xE8me la date\
-  \ et l'heure actuelles. Cette fonctionnalit\xE9 est couramment utilis\xE9e dans\
-  \ les\u2026"
+  \ et l'heure actuelles."
 title: Obtenir la date actuelle
 weight: 29
 ---

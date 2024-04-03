@@ -6,8 +6,7 @@ description: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos carac
 lastmod: '2024-03-13T22:44:58.640901-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos caracteres\
-  \ de una cadena de texto, dejando solo los que necesitamos. Los programadores lo\
-  \ hacen\u2026"
+  \ de una cadena de texto, dejando solo los que necesitamos."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

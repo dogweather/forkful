@@ -8,7 +8,8 @@ description: "Les tableaux associatifs, ou dictionnaires, en Haskell concernent 
 lastmod: '2024-03-13T22:44:57.826204-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou dictionnaires, en Haskell concernent principalement\
-  \ la mise en correspondance de cl\xE9s et de valeurs pour une recherche rapide\u2026"
+  \ la mise en correspondance de cl\xE9s et de valeurs pour une recherche rapide et\
+  \ une gestion efficace des donn\xE9es."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

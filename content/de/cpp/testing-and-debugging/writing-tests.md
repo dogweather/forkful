@@ -6,8 +6,8 @@ description: "Tests in C++ zu schreiben bedeutet, kleine, in sich geschlossene P
   \ zu erstellen, die automatisch das Verhalten von Abschnitten Ihrer Codebasis\u2026"
 lastmod: '2024-03-13T22:44:54.188301-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in C++ zu schreiben bedeutet, kleine, in sich geschlossene Programme\
-  \ zu erstellen, die automatisch das Verhalten von Abschnitten Ihrer Codebasis\u2026"
+summary: Tests in C++ zu schreiben bedeutet, kleine, in sich geschlossene Programme
+  zu erstellen, die automatisch das Verhalten von Abschnitten Ihrer Codebasis verifizieren.
 title: Tests Schreiben
 weight: 36
 ---

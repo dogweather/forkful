@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.832432-06:00'
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
   \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
-  \ danymi i\u2026"
+  \ danymi i rozwoju oprogramowania."
 title: Wyszukiwanie i zamienianie tekstu
 weight: 10
 ---

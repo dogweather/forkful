@@ -6,8 +6,8 @@ description: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over h
   \ snel wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
 lastmod: '2024-03-13T22:44:51.023916-06:00'
 model: gpt-4-0125-preview
-summary: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel\
-  \ wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
+summary: Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel
+  wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de opdrachtregel.
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

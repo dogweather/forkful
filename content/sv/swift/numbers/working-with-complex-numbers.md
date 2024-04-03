@@ -4,8 +4,7 @@ description: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i).
   \ anv\xE4nder dem i Swift f\xF6r uppgifter som signalbehandling, att l\xF6sa vissa\u2026"
 lastmod: '2024-03-13T22:44:38.245281-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i). Programmerare\
-  \ anv\xE4nder dem i Swift f\xF6r uppgifter som signalbehandling, att l\xF6sa vissa\u2026"
+summary: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i)."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

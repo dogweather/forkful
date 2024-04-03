@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.207738-06:00'
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh gi\u1EA3i m\xE3\
   \ lingua franca c\u1EE7a web \u0111\u1EC3 l\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c thao\
-  \ t\xE1c n\u1ED9i dung. C\xE1c l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1\
-  p HTML \u0111\u1EC3 t\u1EF1\u2026"
+  \ t\xE1c n\u1ED9i dung."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

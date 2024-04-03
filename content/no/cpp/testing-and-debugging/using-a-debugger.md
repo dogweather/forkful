@@ -5,8 +5,7 @@ description: "C++ integreres med debuggere som GDB eller Visual Studio-debuggere
   \ { int\u2026"
 lastmod: '2024-03-13T22:44:41.104478-06:00'
 model: gpt-4-0125-preview
-summary: "C++ integreres med debuggere som GDB eller Visual Studio-debuggeren. Her\
-  \ er et lite eksempel med bruk av GDB: ```C++ #include <iostream> int main() { int\u2026"
+summary: C++ integreres med debuggere som GDB eller Visual Studio-debuggeren.
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

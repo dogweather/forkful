@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.139110-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ dans Arduino consiste \xE0 lire et \xE0 \xE9crire dans des fichiers CSV g\xE9\
-  n\xE9ralement stock\xE9s\u2026"
+  n\xE9ralement stock\xE9s sur une carte SD, ce qui permet la journalisation des donn\xE9\
+  es, la configuration des param\xE8tres et plus encore."
 title: Travailler avec CSV
 weight: 37
 ---

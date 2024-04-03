@@ -7,7 +7,9 @@ description: "Das Schreiben von Tests in JavaScript bezieht sich auf die Praxis,
 lastmod: '2024-03-13T22:44:54.269630-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in JavaScript bezieht sich auf die Praxis, automatisierte\
-  \ Skripte zu erstellen, die Ihren Code ausf\xFChren, um sicherzustellen, dass\u2026"
+  \ Skripte zu erstellen, die Ihren Code ausf\xFChren, um sicherzustellen, dass er\
+  \ sich wie erwartet verh\xE4lt, was die Zuverl\xE4ssigkeit und Wartbarkeit Ihrer\
+  \ Anwendungen erheblich verbessern kann."
 title: Tests Schreiben
 weight: 36
 ---

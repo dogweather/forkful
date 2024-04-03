@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.254025-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les messages\
   \ d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019erreur\
-  \ (`stderr`),\u2026"
+  \ (`stderr`), s\xE9par\xE9ment de la sortie standard (`stdout`)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -7,7 +7,9 @@ description: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) p
 lastmod: '2024-03-13T22:44:35.252181-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
-  \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"
+  \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\
+  \ podstawowym zadaniem do przechowywania wynik\xF3w, logowania lub interakcji z\
+  \ innymi aplikacjami."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

@@ -7,7 +7,8 @@ description: "Mettre en majuscule une cha\xEEne implique de modifier le premier 
 lastmod: '2024-03-13T22:44:57.860291-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
-  re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"
+  re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\
+  \ propres commencent correctement dans un ensemble de donn\xE9es."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.179613-06:00'
 model: gpt-4-0125-preview
 summary: "\"Trabalhando com XML\" refere-se ao processo de leitura, cria\xE7\xE3o\
   \ e modifica\xE7\xE3o de arquivos XML (eXtensible Markup Language) utilizando programa\xE7\
-  \xE3o. Os\u2026"
+  \xE3o."
 title: Trabalhando com XML
 weight: 40
 ---

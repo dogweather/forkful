@@ -6,8 +6,7 @@ description: "El parseo de HTML implica descomponer el c\xF3digo HTML en compone
 lastmod: '2024-03-13T22:44:59.290178-06:00'
 model: unknown
 summary: "El parseo de HTML implica descomponer el c\xF3digo HTML en componentes para\
-  \ manipularlo o extraer informaci\xF3n espec\xEDfica. Los programadores lo hacen\
-  \ para\u2026"
+  \ manipularlo o extraer informaci\xF3n espec\xEDfica."
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

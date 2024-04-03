@@ -4,8 +4,9 @@ description: "Writing to standard error (stderr) in Arduino programming involves
   \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"
 lastmod: '2024-03-13T22:45:00.335701-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error (stderr) in Arduino programming involves directing\
-  \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"
+summary: Writing to standard error (stderr) in Arduino programming involves directing
+  error messages and diagnostics to a separate channel, ensuring they don't mix with
+  standard output (stdout).
 title: Writing to standard error
 weight: 25
 ---

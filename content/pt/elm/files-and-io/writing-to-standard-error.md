@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.516061-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) \xE9 sobre redirecionar mensagens de\
   \ erro e diagn\xF3sticos separadamente da sa\xEDda principal do programa, que vai\
-  \ para a sa\xEDda\u2026"
+  \ para a sa\xEDda padr\xE3o (stdout)."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

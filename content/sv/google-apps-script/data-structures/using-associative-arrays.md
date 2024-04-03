@@ -8,8 +8,7 @@ description: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en 
 lastmod: '2024-03-13T22:44:37.430434-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en variant\
-  \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par.\
-  \ Denna\u2026"
+  \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par."
 title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---

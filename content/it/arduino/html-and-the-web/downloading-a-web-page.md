@@ -5,7 +5,7 @@ description: "Scaricare una pagina web significa far s\xEC che il tuo Arduino la
 lastmod: '2024-03-13T22:44:43.682508-06:00'
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa far s\xEC che il tuo Arduino la richieda\
-  \ e la riceva dalla rete. I programmatori lo fanno per acquisire dati da internet,\u2026"
+  \ e la riceva dalla rete."
 title: Scaricare una pagina web
 weight: 42
 ---

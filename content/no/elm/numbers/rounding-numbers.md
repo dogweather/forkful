@@ -6,7 +6,7 @@ description: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste h
 lastmod: '2024-03-13T22:44:40.703607-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele verdi\
-  \ eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5 redusere\u2026"
+  \ eller til et spesifisert antall desimaler."
 title: Avrunding av tall
 weight: 13
 ---

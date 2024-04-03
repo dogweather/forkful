@@ -5,8 +5,7 @@ description: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med 
   \ eller endre\u2026"
 lastmod: '2024-03-13T22:44:41.210474-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med noe annet.\
-  \ Programmere gj\xF8r dette for \xE5 effektivisere kodingen, fikse feil, eller endre\u2026"
+summary: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med noe annet."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

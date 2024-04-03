@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Trong Ruby, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1\
   c th\u1EF1c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn ng\u01B0\u1EDD\
   i d\xF9ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u c\u1EE7\
-  a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+  a b\u1EA1n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

@@ -8,8 +8,7 @@ description: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkze
 lastmod: '2024-03-13T22:44:53.621708-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug f\xFC\
-  r Mustererkennung und -suche in der Programmierung. Programmierer nutzen Regex f\xFC\
-  r Aufgaben\u2026"
+  r Mustererkennung und -suche in der Programmierung."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

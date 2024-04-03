@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Elixir l\xE0 m\u1ED9t nhi\u1EC7\
   m v\u1EE5 l\u1EADp tr\xECnh c\u01A1 b\u1EA3n, quan tr\u1ECDng cho c\xE1c \u1EE9\
   ng d\u1EE5ng c\u1EA7n k\u1EBFt qu\u1EA3 kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDB\
-  c nh\u01B0 trong vi\u1EC7c t\u1EA1o\u2026"
+  c nh\u01B0 trong vi\u1EC7c t\u1EA1o token b\u1EA3o m\u1EADt, l\u1EA5y m\u1EABu d\u1EEF\
+  \ li\u1EC7u ho\u1EB7c trong c\xE1c thu\u1EADt to\xE1n tr\xF2 ch\u01A1i."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

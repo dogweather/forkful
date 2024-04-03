@@ -8,8 +8,7 @@ description: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Bash inneb\x
 lastmod: '2024-03-13T22:44:40.996992-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Bash inneb\xE6rer\
-  \ \xE5 behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er essensielt\
-  \ for\u2026"
+  \ \xE5 behandle og manipulere tabelldata lagret i vanlig tekstformat."
 title: Arbeide med CSV
 weight: 37
 ---

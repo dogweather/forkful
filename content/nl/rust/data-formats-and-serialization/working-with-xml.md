@@ -6,8 +6,8 @@ description: "XML, de afkorting voor eXtensible Markup Language, is zoals de bre
   \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
 lastmod: '2024-03-13T22:44:50.618277-06:00'
 model: gpt-4-0125-preview
-summary: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
-  \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
+summary: XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige
+  neef van JSON.
 title: Werken met XML
 weight: 40
 ---

@@ -7,9 +7,7 @@ description: "No VBA, o depurador \xE9 parte integrante do Editor do Visual Basi
   \xE3o**: Clique\u2026"
 lastmod: '2024-03-13T22:44:46.417394-06:00'
 model: gpt-4-0125-preview
-summary: "No VBA, o depurador \xE9 parte integrante do Editor do Visual Basic (VBE).\
-  \ Veja como voc\xEA pode aproveit\xE1-lo: 1. **Definindo Pontos de Interrup\xE7\xE3\
-  o**: Clique\u2026"
+summary: "No VBA, o depurador \xE9 parte integrante do Editor do Visual Basic (VBE)."
 title: Usando um depurador
 weight: 35
 ---

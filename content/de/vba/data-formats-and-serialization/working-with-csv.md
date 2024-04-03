@@ -6,8 +6,9 @@ description: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas g
   \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"
 lastmod: '2024-03-13T22:44:53.743257-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte\
-  \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"
+summary: Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte
+  Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei
+  denen die Datenfelder durch Kommas getrennt sind.
 title: Arbeiten mit CSV
 weight: 37
 ---

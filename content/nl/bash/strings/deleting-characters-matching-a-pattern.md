@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:50.963398-06:00'
 model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een patroon in Bash laat je toe\
   \ om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens strippen\
-  \ of\u2026"
+  \ of input sanitizen."
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

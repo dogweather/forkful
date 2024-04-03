@@ -6,8 +6,7 @@ description: "Kommandolinjeargumenter lar deg sende informasjon til programmet d
 lastmod: '2024-03-13T22:44:40.766740-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg sende informasjon til programmet ditt ved\
-  \ oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly. Programmerere gj\xF8\
-  r dette for\u2026"
+  \ oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

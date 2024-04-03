@@ -5,7 +5,7 @@ description: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\x
 lastmod: '2024-03-13T22:44:46.375001-06:00'
 model: gpt-4-1106-preview
 summary: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\xE3o seguem\
-  \ conforme o planejado. Programadores fazem isso para lidar com o inesperado,\u2026"
+  \ conforme o planejado."
 title: Tratamento de erros
 weight: 16
 ---

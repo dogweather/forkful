@@ -4,8 +4,8 @@ description: "L'interpolazione di stringhe consente di incastrare variabili dire
   \ dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo\u2026"
 lastmod: '2024-03-13T22:44:43.503459-06:00'
 model: gpt-4-1106-preview
-summary: "L'interpolazione di stringhe consente di incastrare variabili direttamente\
-  \ dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo\u2026"
+summary: L'interpolazione di stringhe consente di incastrare variabili direttamente
+  dentro una stringa.
 title: Interpolazione di una stringa
 weight: 8
 ---

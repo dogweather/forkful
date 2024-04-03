@@ -5,8 +5,8 @@ description: "Quitar las comillas de una cadena significa despojar esos signos d
   \ a\u2026"
 lastmod: '2024-03-13T22:44:59.578127-06:00'
 model: gpt-4-0125-preview
-summary: "Quitar las comillas de una cadena significa despojar esos signos de comillas\
-  \ dobles o simples que envuelven los valores de texto. Los programadores a\u2026"
+summary: Quitar las comillas de una cadena significa despojar esos signos de comillas
+  dobles o simples que envuelven los valores de texto.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

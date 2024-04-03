@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.077773-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en PowerShell implique de cr\xE9er et de manipuler\
   \ des fichiers bas\xE9s sur du texte, ce qui est une op\xE9ration fondamentale pour\
-  \ la\u2026"
+  \ la journalisation, le stockage de donn\xE9es et le script de configuration."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

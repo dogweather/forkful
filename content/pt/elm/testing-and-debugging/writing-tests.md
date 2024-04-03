@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.503744-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para verificar\
   \ a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte conforme\
-  \ esperado.\u2026"
+  \ esperado."
 title: Escrevendo testes
 weight: 36
 ---

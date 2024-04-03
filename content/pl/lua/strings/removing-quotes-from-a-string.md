@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.528007-06:00'
 model: gpt-4-0125-preview
 summary: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
   \ si\u0119 tych podw\xF3jnych lub pojedynczych znak\xF3w cudzys\u0142owu, kt\xF3\
-  re otaczaj\u0105 tw\xF3j tekst. Programi\u015Bci robi\u0105\u2026"
+  re otaczaj\u0105 tw\xF3j tekst."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

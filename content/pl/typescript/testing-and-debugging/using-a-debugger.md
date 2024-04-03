@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.143625-06:00'
 model: gpt-4-0125-preview
 summary: "Aby zacz\u0105\u0107 prac\u0119 z debuggerem w TypeScript, wszystko, czego\
   \ potrzebujesz to obs\u0142ugiwane IDE (takie jak Visual Studio Code) i konfiguracja\
-  \ `launch.json`.\u2026"
+  \ `launch."
 title: Korzystanie z debugera
 weight: 35
 ---

@@ -5,7 +5,7 @@ description: "L'autenticazione di base HTTP \xE8 un metodo per inviare le creden
 lastmod: '2024-03-13T22:44:43.474785-06:00'
 model: gpt-4-1106-preview
 summary: "L'autenticazione di base HTTP \xE8 un metodo per inviare le credenziali\
-  \ (username e password) in un'intestazione HTTP. I programmatori la utilizzano per\u2026"
+  \ (username e password) in un'intestazione HTTP."
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

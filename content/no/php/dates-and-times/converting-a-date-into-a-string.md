@@ -6,8 +6,7 @@ description: "\xC5 konvertere en dato til en streng i PHP betyr \xE5 endre et da
 lastmod: '2024-03-13T22:44:40.898014-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng i PHP betyr \xE5 endre et datoobjekt\
-  \ til et leselig format. Programmerere gj\xF8r det for \xE5 vise datoer p\xE5 en\
-  \ forst\xE5elig m\xE5te\u2026"
+  \ til et leselig format."
 title: Konvertere en dato til en streng
 weight: 28
 ---

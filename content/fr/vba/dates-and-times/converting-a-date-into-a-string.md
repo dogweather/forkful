@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.593446-06:00'
 model: gpt-4-0125-preview
 summary: "La conversion d'une date en cha\xEEne de caract\xE8res dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 modifier le type de donn\xE9es d'une date\
-  \ pour la\u2026"
+  \ pour la transformer en format de cha\xEEne."
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

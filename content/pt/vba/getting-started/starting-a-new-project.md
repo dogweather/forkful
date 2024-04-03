@@ -8,7 +8,8 @@ description: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA
 lastmod: '2024-03-13T22:44:46.412731-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
-  \ configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar\u2026"
+  \ configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar\
+  \ tarefas ou estender funcionalidades."
 title: Iniciando um novo projeto
 weight: 1
 ---

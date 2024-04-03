@@ -6,7 +6,8 @@ description: "Manejar errores en Python (o cualquier lenguaje de programaci\xF3n
 lastmod: '2024-03-13T22:44:58.620037-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores en Python (o cualquier lenguaje de programaci\xF3n) es esperar\
-  \ lo inesperado: es el arte de manejar con gracia cuando las cosas no van bien\u2026"
+  \ lo inesperado: es el arte de manejar con gracia cuando las cosas no van bien en\
+  \ tu c\xF3digo."
 title: Manejo de errores
 weight: 16
 ---

@@ -4,8 +4,7 @@ description: "Fazer um pedido HTTP significa pedir ou enviar dados para a web. P
   \ fazem isso para que Arduinos interajam com o mundo online, como obter dados\u2026"
 lastmod: '2024-03-13T22:44:46.836245-06:00'
 model: gpt-4-1106-preview
-summary: "Fazer um pedido HTTP significa pedir ou enviar dados para a web. Programadores\
-  \ fazem isso para que Arduinos interajam com o mundo online, como obter dados\u2026"
+summary: Fazer um pedido HTTP significa pedir ou enviar dados para a web.
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

@@ -5,8 +5,8 @@ description: "Sending an HTTP request is a way to communicate with web servers t
   \ APIs\u2026"
 lastmod: '2024-03-13T22:45:00.242057-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request is a way to communicate with web servers to retrieve\
-  \ data or submit forms. Programmers do it to interact with web services, APIs\u2026"
+summary: Sending an HTTP request is a way to communicate with web servers to retrieve
+  data or submit forms.
 title: Sending an HTTP request
 weight: 44
 ---

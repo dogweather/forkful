@@ -7,7 +7,9 @@ description: "Praca z CSV (Comma-Separated Values, warto\u015Bci oddzielone prze
 lastmod: '2024-03-13T22:44:35.818706-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values, warto\u015Bci oddzielone przecinkami)\
-  \ w JavaScript obejmuje parsowanie lub generowanie plik\xF3w CSV w celu zaimportowania\u2026"
+  \ w JavaScript obejmuje parsowanie lub generowanie plik\xF3w CSV w celu zaimportowania\
+  \ danych tabelarycznych z zewn\u0119trznych \u017Ar\xF3de\u0142 lub eksportu danych\
+  \ do u\u017Cycia w innych programach."
 title: Praca z plikami CSV
 weight: 37
 ---

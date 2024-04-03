@@ -7,7 +7,8 @@ description: "Testien kirjoittaminen Google Apps Scriptill\xE4 (GAS) tarkoittaa 
 lastmod: '2024-03-13T22:44:56.101175-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Google Apps Scriptill\xE4 (GAS) tarkoittaa automatisoitujen\
-  \ skriptien luomista koodisi k\xE4ytt\xE4ytymisen varmistamiseksi, jotta ne\u2026"
+  \ skriptien luomista koodisi k\xE4ytt\xE4ytymisen varmistamiseksi, jotta ne toimivat\
+  \ odotetulla tavalla eri olosuhteissa."
 title: Testien kirjoittaminen
 weight: 36
 ---

@@ -5,8 +5,8 @@ description: "Interpolare una stringa significa inserire dinamicamente espressio
   \ lo\u2026"
 lastmod: '2024-03-13T22:44:43.461723-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolare una stringa significa inserire dinamicamente espressioni o variabili\
-  \ direttamente all'interno di una stringa di testo. I programmatori lo\u2026"
+summary: Interpolare una stringa significa inserire dinamicamente espressioni o variabili
+  direttamente all'interno di una stringa di testo.
 title: Interpolazione di una stringa
 weight: 8
 ---

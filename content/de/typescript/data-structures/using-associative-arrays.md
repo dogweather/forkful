@@ -8,8 +8,7 @@ description: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ih
 lastmod: '2024-03-13T22:44:53.624495-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ihnen, mit\
-  \ Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen. Programmierer nutzen sie\
-  \ f\xFCr\u2026"
+  \ Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

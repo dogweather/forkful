@@ -4,8 +4,8 @@ description: "Writing tests in Clojure, much like in other programming languages
   \ involves creating dedicated code to verify that your main codebase works as expected.\u2026"
 lastmod: '2024-03-13T22:44:59.748882-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Clojure, much like in other programming languages, involves\
-  \ creating dedicated code to verify that your main codebase works as expected.\u2026"
+summary: Writing tests in Clojure, much like in other programming languages, involves
+  creating dedicated code to verify that your main codebase works as expected.
 title: Writing tests
 weight: 36
 ---

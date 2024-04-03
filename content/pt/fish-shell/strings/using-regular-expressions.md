@@ -8,8 +8,7 @@ description: "Express\xF5es regulares (regex) no Fish Shell permitem buscar, com
 lastmod: '2024-03-13T22:44:46.994222-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) no Fish Shell permitem buscar, combinar\
-  \ e manipular strings com base em padr\xF5es espec\xEDficos. Programadores utilizam\
-  \ regex\u2026"
+  \ e manipular strings com base em padr\xF5es espec\xEDficos."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

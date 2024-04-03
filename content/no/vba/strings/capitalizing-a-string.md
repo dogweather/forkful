@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.599488-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng til\
-  \ stor\u2026"
+  \ stor bokstav, mens man s\xF8rger for at resten er i sm\xE5 bokstaver."
 title: "\xC5 gj\xF8re om en streng til store bokstaver"
 weight: 2
 ---

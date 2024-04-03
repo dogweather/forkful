@@ -8,9 +8,7 @@ description: "Parsowanie HTML oznacza ekstrakcj\u0119 danych z dokument\xF3w HTM
   \ sieciow\u0105 lub j\u0105 modyfikowa\u0107, automatyzowa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.794351-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML oznacza ekstrakcj\u0119 danych z dokument\xF3w HTML. Programi\u015B\
-  ci robi\u0105 to, aby oddzia\u0142ywa\u0107 na zawarto\u015B\u0107 sieciow\u0105\
-  \ lub j\u0105 modyfikowa\u0107, automatyzowa\u0107\u2026"
+summary: "Parsowanie HTML oznacza ekstrakcj\u0119 danych z dokument\xF3w HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

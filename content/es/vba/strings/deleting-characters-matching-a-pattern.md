@@ -7,7 +7,8 @@ description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico e
 lastmod: '2024-03-13T22:44:58.873078-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en Visual\
-  \ Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"
+  \ Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar caracteres\
+  \ o cadenas que cumplen con ciertos criterios."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

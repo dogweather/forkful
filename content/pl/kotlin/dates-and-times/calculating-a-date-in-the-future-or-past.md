@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.378589-06:00'
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to spos\xF3\
   b na znalezienie dat, kt\xF3re s\u0105 okre\u015Blon\u0105 liczb\u0119 dni przed\
-  \ lub po danej dacie. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+  \ lub po danej dacie."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

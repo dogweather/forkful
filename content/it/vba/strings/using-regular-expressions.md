@@ -6,8 +6,8 @@ description: "Le espressioni regolari (regex) in Visual Basic for Applications (
   \ offrono un modo potente per cercare, corrispondere e manipolare stringhe. I\u2026"
 lastmod: '2024-03-13T22:44:43.251752-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) in Visual Basic for Applications (VBA) offrono\
-  \ un modo potente per cercare, corrispondere e manipolare stringhe. I\u2026"
+summary: Le espressioni regolari (regex) in Visual Basic for Applications (VBA) offrono
+  un modo potente per cercare, corrispondere e manipolare stringhe.
 title: Utilizzo di espressioni regolari
 weight: 11
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.670930-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts que\
   \ verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\
-  \xF5es. Os\u2026"
+  \xF5es."
 title: Escrevendo testes
 weight: 36
 ---

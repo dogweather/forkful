@@ -8,8 +8,7 @@ description: "TOML, co oznacza Tom's Obvious, Minimal Language, to format serial
 lastmod: '2024-03-13T22:44:35.257508-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, co oznacza Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych g\u0142\xF3wnie stosowany w plikach konfiguracyjnych. Programi\u015Bci\
-  \ wykorzystuj\u0105\u2026"
+  \ danych g\u0142\xF3wnie stosowany w plikach konfiguracyjnych."
 title: Praca z TOML
 weight: 39
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:41.189914-06:00'
 model: gpt-4-1106-preview
 summary: "Logging, kort fortalt, er som \xE5 f\xF8re en dagbok for din applikasjon\
   \ \u2013 det registrerer hendelser, feil og andre vesentlige handlinger som finner\
-  \ sted mens\u2026"
+  \ sted mens programvaren kj\xF8rer."
 title: "Loggf\xF8ring"
 weight: 17
 ---

@@ -8,7 +8,8 @@ description: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um
 lastmod: '2024-03-13T22:44:53.808526-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die Korrektheit\
-  \ Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich wie\u2026"
+  \ Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich wie erwartet\
+  \ verh\xE4lt."
 title: Tests Schreiben
 weight: 36
 ---

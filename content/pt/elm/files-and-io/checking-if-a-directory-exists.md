@@ -6,8 +6,7 @@ description: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se u
 lastmod: '2024-03-13T22:44:46.514191-06:00'
 model: unknown
 summary: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um caminho\
-  \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
-  \ fazem isso\u2026"
+  \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

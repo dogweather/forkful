@@ -6,7 +6,8 @@ description: "Les nombres complexes, ceux ayant une partie r\xE9elle et une part
 lastmod: '2024-03-13T22:44:58.037373-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie imaginaire\
-  \ (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9nierie, la\u2026"
+  \ (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9nierie, la\
+  \ physique et la science des donn\xE9es."
 title: Manipulation des nombres complexes
 weight: 14
 ---

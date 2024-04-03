@@ -6,8 +6,7 @@ description: "Ber\xE4kning av ett datum i framtiden eller det f\xF6rflutna inneb
 lastmod: '2024-03-13T22:44:37.926782-06:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av ett datum i framtiden eller det f\xF6rflutna inneb\xE4r\
-  \ att ta ett specifikt datum och addera eller subtrahera tid fr\xE5n det. Programmerare\
-  \ g\xF6r\u2026"
+  \ att ta ett specifikt datum och addera eller subtrahera tid fr\xE5n det."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

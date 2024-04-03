@@ -4,8 +4,8 @@ description: "Interpolar una cadena consiste en insertar variables o expresiones
   \ medio de una cadena de texto. Programadores lo hacen para construir mensajes\u2026"
 lastmod: '2024-03-13T22:44:59.486503-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar una cadena consiste en insertar variables o expresiones en medio\
-  \ de una cadena de texto. Programadores lo hacen para construir mensajes\u2026"
+summary: Interpolar una cadena consiste en insertar variables o expresiones en medio
+  de una cadena de texto.
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

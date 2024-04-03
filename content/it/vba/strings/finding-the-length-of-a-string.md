@@ -6,8 +6,8 @@ description: "Trovare la lunghezza di una stringa in Visual Basic for Applicatio
   \ (VBA) implica determinare il numero di caratteri che contiene. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.252790-06:00'
 model: gpt-4-0125-preview
-summary: "Trovare la lunghezza di una stringa in Visual Basic for Applications (VBA)\
-  \ implica determinare il numero di caratteri che contiene. I programmatori\u2026"
+summary: Trovare la lunghezza di una stringa in Visual Basic for Applications (VBA)
+  implica determinare il numero di caratteri che contiene.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

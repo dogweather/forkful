@@ -4,8 +4,8 @@ description: "Determinare la lunghezza di una stringa significa scoprire quanti 
   \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"
 lastmod: '2024-03-13T22:44:43.300094-06:00'
 model: gpt-4-1106-preview
-summary: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
-  \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"
+summary: Determinare la lunghezza di una stringa significa scoprire quanti caratteri
+  contiene.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

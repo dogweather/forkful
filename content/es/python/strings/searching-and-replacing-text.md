@@ -4,8 +4,8 @@ description: "Buscar y reemplazar texto es simplemente encontrar una cadena de c
   \ en un texto y cambiarla por otra diferente. Los programadores lo hacen todo el\u2026"
 lastmod: '2024-03-13T22:44:58.595369-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto es simplemente encontrar una cadena de caracteres\
-  \ en un texto y cambiarla por otra diferente. Los programadores lo hacen todo el\u2026"
+summary: Buscar y reemplazar texto es simplemente encontrar una cadena de caracteres
+  en un texto y cambiarla por otra diferente.
 title: Buscando y reemplazando texto
 weight: 10
 ---

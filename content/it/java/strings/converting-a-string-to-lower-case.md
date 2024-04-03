@@ -4,8 +4,8 @@ description: "Convertire una stringa in minuscolo significa trasformare tutti i 
   \ al suo interno in lettere minuscole. I programmatori lo fanno per uniformare i\u2026"
 lastmod: '2024-03-13T22:44:43.296035-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ al suo interno in lettere minuscole. I programmatori lo fanno per uniformare i\u2026"
+summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
+  al suo interno in lettere minuscole.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

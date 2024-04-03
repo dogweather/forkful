@@ -5,7 +5,7 @@ description: "Retrieving the current date in PowerShell is about fetching the sy
 lastmod: '2024-03-13T22:45:00.293854-06:00'
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in PowerShell is about fetching the system\u2019\
-  s current date and time. This operation is fundamental for tasks such as logging,\u2026"
+  s current date and time."
 title: Getting the current date
 weight: 29
 ---

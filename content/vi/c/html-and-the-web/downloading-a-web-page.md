@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
   p tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web tr\xEAn internet\
   \ v\xE0 l\u01B0u n\xF3 t\u1EA1i m\xE1y c\u1EE5c b\u1ED9 \u0111\u1EC3 x\u1EED l\xFD\
-  \ ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i\u2026"
+  \ ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i tuy\u1EBFn."
 title: "T\u1EA3i trang web v\u1EC1"
 weight: 42
 ---

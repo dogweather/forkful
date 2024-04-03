@@ -6,8 +6,7 @@ description: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en f
 lastmod: '2024-03-13T22:44:40.378386-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en fil p\xE5\
-  \ disken din. Programmerere gj\xF8r dette for \xE5 manipulere data, hente innstillinger,\
-  \ eller\u2026"
+  \ disken din."
 title: Lese en tekstfil
 weight: 22
 ---

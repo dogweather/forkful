@@ -6,8 +6,8 @@ description: "Het afdrukken van debugoutput stelt je in staat om een kijkje te n
   \ in de staat van je programma zonder een volwaardige debugger. Het is snel,\u2026"
 lastmod: '2024-03-13T22:44:50.596753-06:00'
 model: gpt-4-0125-preview
-summary: "Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen in\
-  \ de staat van je programma zonder een volwaardige debugger. Het is snel,\u2026"
+summary: Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen in
+  de staat van je programma zonder een volwaardige debugger.
 title: Debug-output afdrukken
 weight: 33
 ---

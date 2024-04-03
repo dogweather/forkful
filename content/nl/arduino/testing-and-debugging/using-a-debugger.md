@@ -7,8 +7,8 @@ description: "Met de Arduino IDE kun je Serial prints gebruiken om te debuggen, 
   \ echt\u2026"
 lastmod: '2024-03-13T22:44:51.076403-06:00'
 model: gpt-4-0125-preview
-summary: "Met de Arduino IDE kun je Serial prints gebruiken om te debuggen, maar het\
-  \ is een beetje alsof je een zaklamp gebruikt om een grot te verkennen. Voor echt\u2026"
+summary: Met de Arduino IDE kun je Serial prints gebruiken om te debuggen, maar het
+  is een beetje alsof je een zaklamp gebruikt om een grot te verkennen.
 title: Een debugger gebruiken
 weight: 35
 ---

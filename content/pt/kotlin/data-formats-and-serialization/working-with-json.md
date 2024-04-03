@@ -8,7 +8,7 @@ description: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve 
 lastmod: '2024-03-13T22:44:46.563445-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a an\xE1\
-  lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar dados facilmente\u2026"
+  lise e gera\xE7\xE3o de dados JSON."
 title: Trabalhando com JSON
 weight: 38
 ---

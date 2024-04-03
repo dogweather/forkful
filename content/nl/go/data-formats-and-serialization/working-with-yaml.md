@@ -6,8 +6,9 @@ description: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't M
   \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"
 lastmod: '2024-03-13T22:44:50.308369-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup\
-  \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"
+summary: Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup Language),
+  een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert naar Go-datastructuren
+  en vice versa.
 title: Werken met YAML
 weight: 41
 ---

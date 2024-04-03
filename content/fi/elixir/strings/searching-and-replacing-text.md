@@ -5,8 +5,7 @@ description: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtami
   \ korjata\u2026"
 lastmod: '2024-03-13T22:44:56.211356-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi.\
-  \ Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa, korjata\u2026"
+summary: Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi.
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

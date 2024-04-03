@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.066256-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON polega na parsowaniu ci\u0105g\xF3w znak\xF3w w formacie JSON\
   \ na struktury danych, kt\xF3re Elixir mo\u017Ce manipulowa\u0107, oraz na serializacji\
-  \ struktur danych\u2026"
+  \ struktur danych Elixir z powrotem na ci\u0105gi znak\xF3w JSON."
 title: Praca z JSON
 weight: 38
 ---

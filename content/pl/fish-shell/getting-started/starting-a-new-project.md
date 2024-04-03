@@ -6,8 +6,7 @@ description: "Zaczynanie nowego projektu oznacza stworzenie bazowej struktury ka
 lastmod: '2024-03-13T22:44:35.842107-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalog\xF3\
-  w i plik\xF3w potrzebnych do pracy. Programi\u015Bci robi\u0105 to, by szybko i\
-  \ efektywnie\u2026"
+  w i plik\xF3w potrzebnych do pracy."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

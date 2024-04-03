@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.989201-06:00'
 model: gpt-4-0125-preview
 summary: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
   \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\
-  \ f\xF8r\u2026"
+  \ f\xF8r man utf\xF8rer filoperasjoner."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

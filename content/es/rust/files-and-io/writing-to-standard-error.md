@@ -8,7 +8,8 @@ description: "Escribir en el error est\xE1ndar (stderr) en Rust consiste en diri
 lastmod: '2024-03-13T22:44:58.862868-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Rust consiste en dirigir mensajes\
-  \ de error y diagn\xF3sticos a la consola por separado de la salida est\xE1ndar\u2026"
+  \ de error y diagn\xF3sticos a la consola por separado de la salida est\xE1ndar\
+  \ (stdout)."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

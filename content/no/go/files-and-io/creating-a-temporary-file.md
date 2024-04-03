@@ -7,7 +7,8 @@ description: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en 
 lastmod: '2024-03-13T22:44:40.288898-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en ikke-persistent\
-  \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre\u2026"
+  \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre midlertidig\
+  \ data eller assistere i batchbehandlingsjobber."
 title: Oppretting av en midlertidig fil
 weight: 21
 ---

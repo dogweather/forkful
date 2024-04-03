@@ -5,7 +5,6 @@ description: Downloading a webpage pulls its content from the web to your local 
 lastmod: '2024-03-13T22:45:00.473188-06:00'
 model: gpt-4-1106-preview
 summary: Downloading a webpage pulls its content from the web to your local machine.
-  Programmers do it for automation, data scraping, offline access, or testing.
 title: Downloading a web page
 weight: 42
 ---

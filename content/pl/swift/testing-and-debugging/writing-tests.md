@@ -8,8 +8,7 @@ description: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykony
 lastmod: '2024-03-13T22:44:35.758555-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykonywaniu\
-  \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji.\
-  \ Programi\u015Bci robi\u0105 to,\u2026"
+  \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

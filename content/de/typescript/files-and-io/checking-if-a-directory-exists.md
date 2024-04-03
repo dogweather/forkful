@@ -8,7 +8,9 @@ description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, 
 lastmod: '2024-03-13T22:44:53.644906-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist f\xFC\
-  r Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben\u2026"
+  r Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben\
+  \ von Daten in Dateien, um sicherzustellen, dass Operationen nur auf g\xFCltigen\
+  \ Verzeichnissen ausgef\xFChrt werden."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

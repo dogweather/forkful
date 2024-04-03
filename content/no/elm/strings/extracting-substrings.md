@@ -5,9 +5,7 @@ description: "\xC5 trekke ut delstrenger betyr at vi henter spesifikke deler fra
   \ p\xE5 en\u2026"
 lastmod: '2024-03-13T22:44:40.697565-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 trekke ut delstrenger betyr at vi henter spesifikke deler fra en tekststreng.\
-  \ Det gj\xF8r vi for \xE5 bearbeide, analysere eller vise frem informasjon p\xE5\
-  \ en\u2026"
+summary: "\xC5 trekke ut delstrenger betyr at vi henter spesifikke deler fra en tekststreng."
 title: Uthenting av delstrenger
 weight: 6
 ---

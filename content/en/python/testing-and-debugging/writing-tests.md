@@ -4,8 +4,8 @@ description: "Writing tests in Python involves creating automated scripts to val
   \ the correctness of your code. Programmers do this to ensure that their functions\u2026"
 lastmod: '2024-03-13T22:44:59.711376-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Python involves creating automated scripts to validate\
-  \ the correctness of your code. Programmers do this to ensure that their functions\u2026"
+summary: Writing tests in Python involves creating automated scripts to validate the
+  correctness of your code.
 title: Writing tests
 weight: 36
 ---

@@ -5,7 +5,7 @@ description: "Converter uma data em uma string transforma o objeto `DateTime` em
 lastmod: '2024-03-13T22:44:46.595474-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string transforma o objeto `DateTime` em texto\
-  \ leg\xEDvel. Fazemos isso para exibir datas de forma adequada em interfaces de\u2026"
+  \ leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

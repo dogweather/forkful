@@ -5,7 +5,8 @@ description: "Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar 
 lastmod: '2024-03-13T22:44:40.575356-06:00'
 model: gpt-4-0125-preview
 summary: "Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar deg kj\xF8\
-  re Rust-kode p\xE5 sparket, og se umiddelbare resultater, perfekt for\u2026"
+  re Rust-kode p\xE5 sparket, og se umiddelbare resultater, perfekt for eksperimentering\
+  \ eller l\xE6ring."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

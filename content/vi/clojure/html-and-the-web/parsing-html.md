@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.150135-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc HTML l\xE0 h\xE0nh \u0111\u1ED9ng bi\u1EBFn m\u1ED9t chu\u1ED7\
   i HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng\u2026"
+  ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

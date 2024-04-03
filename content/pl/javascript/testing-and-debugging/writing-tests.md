@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.800089-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w JavaScript odnosi si\u0119 do praktyki tworzenia automatycznych\
   \ skrypt\xF3w, kt\xF3re uruchamiaj\u0105 tw\xF3j kod, aby upewni\u0107 si\u0119\
-  , \u017Ce dzia\u0142a on zgodnie z\u2026"
+  , \u017Ce dzia\u0142a on zgodnie z oczekiwaniami, co mo\u017Ce znacznie poprawi\u0107\
+  \ niezawodno\u015B\u0107 i mo\u017Cliwo\u015B\u0107 utrzymania aplikacji."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

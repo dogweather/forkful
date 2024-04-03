@@ -6,8 +6,7 @@ description: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\x
 lastmod: '2024-03-13T22:44:37.517413-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4lta\
-  \ samman tv\xE5 eller fler textstycken. Vi g\xF6r det f\xF6r att skapa meningsfulla\
-  \ meddelanden, bygga\u2026"
+  \ samman tv\xE5 eller fler textstycken."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

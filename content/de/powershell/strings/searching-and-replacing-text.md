@@ -4,8 +4,8 @@ description: "Suchen und Ersetzen von Text ist die Kunst, Zeichenketten in Daten
   \ finden und sie durch andere zu ersetzen. Programmierer nutzen dies, um Daten schnell\u2026"
 lastmod: '2024-03-13T22:44:54.086994-06:00'
 model: gpt-4-1106-preview
-summary: "Suchen und Ersetzen von Text ist die Kunst, Zeichenketten in Daten zu finden\
-  \ und sie durch andere zu ersetzen. Programmierer nutzen dies, um Daten schnell\u2026"
+summary: Suchen und Ersetzen von Text ist die Kunst, Zeichenketten in Daten zu finden
+  und sie durch andere zu ersetzen.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

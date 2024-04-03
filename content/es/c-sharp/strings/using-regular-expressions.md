@@ -6,8 +6,9 @@ description: "Las expresiones regulares (regex) en C# son una herramienta podero
   \ para la coincidencia de patrones dentro de cadenas, lo que permite a los\u2026"
 lastmod: '2024-03-13T22:44:59.068561-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en C# son una herramienta poderosa para\
-  \ la coincidencia de patrones dentro de cadenas, lo que permite a los\u2026"
+summary: Las expresiones regulares (regex) en C# son una herramienta poderosa para
+  la coincidencia de patrones dentro de cadenas, lo que permite a los programadores
+  buscar, reemplazar, dividir o extraer datos de manera eficiente.
 title: Usando expresiones regulares
 weight: 11
 ---

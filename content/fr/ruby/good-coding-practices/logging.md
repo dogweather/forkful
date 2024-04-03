@@ -4,8 +4,8 @@ description: "La journalisation dans la programmation, c'est comme tenir un jour
   \ intime pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
 lastmod: '2024-03-13T22:44:58.426407-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation dans la programmation, c'est comme tenir un journal intime\
-  \ pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
+summary: La journalisation dans la programmation, c'est comme tenir un journal intime
+  pour votre application.
 title: Journalisation
 weight: 17
 ---

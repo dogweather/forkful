@@ -7,7 +7,8 @@ description: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende
 lastmod: '2024-03-13T22:44:40.251604-06:00'
 model: gpt-4-0125-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
-  \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for\u2026"
+  \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for oppgaver\
+  \ som sammenligninger uten hensyn til bokstavst\xF8rrelse eller tekstnormalisering."
 title: "Konvertering av en streng til sm\xE5 bokstaver"
 weight: 4
 ---

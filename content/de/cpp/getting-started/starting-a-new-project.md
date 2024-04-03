@@ -6,8 +6,7 @@ description: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frisc
 lastmod: '2024-03-13T22:44:54.185372-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen Code\
-  \ aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme\
-  \ zu\u2026"
+  \ aufzubauen."
 title: Einen neuen Projekt starten
 weight: 1
 ---

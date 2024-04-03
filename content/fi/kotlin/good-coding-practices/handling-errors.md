@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.538388-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia, jotka\
   \ ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6t\xF6\
-  n pudottamatta\u2026"
+  n pudottamatta sit\xE4."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

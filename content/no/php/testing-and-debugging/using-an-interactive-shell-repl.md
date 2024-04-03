@@ -6,8 +6,7 @@ description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg sk
 lastmod: '2024-03-13T22:44:40.887994-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg skrive og\
-  \ kj\xF8re PHP-kode p\xE5 stedet. Det er ideelt for eksperimentering, feils\xF8\
-  king eller\u2026"
+  \ kj\xF8re PHP-kode p\xE5 stedet."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

@@ -4,8 +4,7 @@ description: "Interpolating a string involves inserting variables into a string 
   \ Programmers do it to construct strings dynamically, making it easier to include\u2026"
 lastmod: '2024-03-13T22:45:00.383433-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolating a string involves inserting variables into a string literal.\
-  \ Programmers do it to construct strings dynamically, making it easier to include\u2026"
+summary: Interpolating a string involves inserting variables into a string literal.
 title: Interpolating a string
 weight: 8
 ---

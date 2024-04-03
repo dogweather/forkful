@@ -6,8 +6,7 @@ description: "XML est un langage de balisage pour encoder des documents d'une ma
 lastmod: '2024-03-13T22:44:57.308078-06:00'
 model: gpt-4-0125-preview
 summary: "XML est un langage de balisage pour encoder des documents d'une mani\xE8\
-  re qui est \xE0 la fois lisible par l'homme et par la machine. Il est cl\xE9 dans\
-  \ les\u2026"
+  re qui est \xE0 la fois lisible par l'homme et par la machine."
 title: Travailler avec XML
 weight: 40
 ---

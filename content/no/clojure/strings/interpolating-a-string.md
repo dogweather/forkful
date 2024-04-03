@@ -5,9 +5,8 @@ description: "Interpolering av en streng lar deg putte variabler eller uttrykk d
   \ som gj\xF8r\u2026"
 lastmod: '2024-03-13T22:44:40.389163-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolering av en streng lar deg putte variabler eller uttrykk direkte\
-  \ inn i en streng. Programmerere gj\xF8r dette for \xE5 dynamisk bygge strenger,\
-  \ som gj\xF8r\u2026"
+summary: Interpolering av en streng lar deg putte variabler eller uttrykk direkte
+  inn i en streng.
 title: Interpolering av en streng
 weight: 8
 ---

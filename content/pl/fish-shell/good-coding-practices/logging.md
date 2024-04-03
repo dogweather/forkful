@@ -6,8 +6,7 @@ description: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u
 lastmod: '2024-03-13T22:44:35.848059-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013 rodzaj\
-  \ dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015Bledzi\u0107\
-  \ detale, takie jak\u2026"
+  \ dziennika, ale dla kodu."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

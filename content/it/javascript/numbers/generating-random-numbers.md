@@ -5,7 +5,9 @@ description: "Generare numeri casuali in JavaScript \xE8 una tecnica usata per c
 lastmod: '2024-03-13T22:44:43.807788-06:00'
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali in JavaScript \xE8 una tecnica usata per creare\
-  \ imprevedibilit\xE0 nelle applicazioni, dai giochi che richiedono un comportamento\u2026"
+  \ imprevedibilit\xE0 nelle applicazioni, dai giochi che richiedono un comportamento\
+  \ casuale dei nemici fino agli algoritmi di sicurezza che necessitano di casualit\xE0\
+  \ crittografica."
 title: Generazione di numeri casuali
 weight: 12
 ---

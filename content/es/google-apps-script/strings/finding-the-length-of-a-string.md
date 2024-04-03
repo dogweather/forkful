@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.514311-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar la longitud de una cadena en Google Apps Script, un lenguaje de\
   \ scripting en la nube de JavaScript que permite automatizar tareas a trav\xE9s\
-  \ de\u2026"
+  \ de productos de Google, se trata de determinar el n\xFAmero de caracteres que\
+  \ contiene una cadena."
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

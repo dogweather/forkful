@@ -7,7 +7,8 @@ description: "JSON, oder JavaScript Object Notation, ist ein leichtgewichtiges D
 lastmod: '2024-03-13T22:44:54.164820-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, oder JavaScript Object Notation, ist ein leichtgewichtiges Daten-Austauschformat,\
-  \ was es perfekt f\xFCr die Datenspeicherung oder Konfigurationsdateien\u2026"
+  \ was es perfekt f\xFCr die Datenspeicherung oder Konfigurationsdateien in Arduino-Projekten\
+  \ macht."
 title: Arbeiten mit JSON
 weight: 38
 ---

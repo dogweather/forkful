@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.719540-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial para\
   \ uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\
-  \ marca\xE7\xE3o de\u2026"
+  \ marca\xE7\xE3o de eventos com carimbo de data/hora ou agendamento de tarefas."
 title: Obtendo a data atual
 weight: 29
 ---

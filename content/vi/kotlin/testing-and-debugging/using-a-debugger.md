@@ -8,8 +8,9 @@ description: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xE0i v\xED d\u1EE5 v\u
 lastmod: '2024-03-13T22:44:36.607628-06:00'
 model: gpt-4-0125-preview
 summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xE0i v\xED d\u1EE5 v\u1EC1 vi\u1EC7\
-  c debug trong Kotlin v\u1EDBi IntelliJ IDEA - Sherlock Holmes c\u1EE7a c\xE1c IDE:\
-  \ ```kotlin fun main() { val mysteryNumber = 42 var\u2026"
+  c debug trong Kotlin v\u1EDBi IntelliJ IDEA - Sherlock Holmes c\u1EE7a c\xE1c IDE:\n\
+  \n```kotlin\nfun main() {\n    val mysteryNumber = 42\n    var guess = 0\n\n   \
+  \ while (guess ."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

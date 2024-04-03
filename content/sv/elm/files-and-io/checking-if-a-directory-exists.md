@@ -6,8 +6,7 @@ description: "Att kontrollera om en katalog finns \xE4r processen att verifiera 
 lastmod: '2024-03-13T22:44:37.843742-06:00'
 model: unknown
 summary: "Att kontrollera om en katalog finns \xE4r processen att verifiera en s\xF6\
-  kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6rs\xE4\
-  kra sig om att\u2026"
+  kv\xE4gs existens i filsystemet."
 title: Kontrollera om en katalog finns
 weight: 20
 ---

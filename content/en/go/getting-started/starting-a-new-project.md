@@ -4,8 +4,8 @@ description: "Starting a new project in Go involves setting up a workspace and i
   \ it with the necessary Go modules. Programmers do this to organize code,\u2026"
 lastmod: '2024-03-13T22:44:59.631734-06:00'
 model: gpt-4-0125-preview
-summary: "Starting a new project in Go involves setting up a workspace and initializing\
-  \ it with the necessary Go modules. Programmers do this to organize code,\u2026"
+summary: Starting a new project in Go involves setting up a workspace and initializing
+  it with the necessary Go modules.
 title: Starting a new project
 weight: 1
 ---

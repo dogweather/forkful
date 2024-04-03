@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.091879-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen on ohjelmoinnissa perusteht\xE4v\xE4, jota\
   \ k\xE4ytet\xE4\xE4n lukuisissa sovelluksissa, kuten simulaatioissa, peleiss\xE4\
-  \ ja\u2026"
+  \ ja turvaj\xE4rjestelmiss\xE4."
 title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---

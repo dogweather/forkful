@@ -6,8 +6,7 @@ description: "Parseowanie HTML to proces przekszta\u0142cania surowego kodu HTML
 lastmod: '2024-03-13T22:44:35.319587-06:00'
 model: unknown
 summary: "Parseowanie HTML to proces przekszta\u0142cania surowego kodu HTML na struktur\u0119\
-  , z kt\xF3r\u0105 Elm mo\u017Ce pracowa\u0107 programistycznie. Robimy to, \u017C\
-  eby m\xF3c manipulowa\u0107 i\u2026"
+  , z kt\xF3r\u0105 Elm mo\u017Ce pracowa\u0107 programistycznie."
 title: Przetwarzanie HTML
 weight: 43
 ---

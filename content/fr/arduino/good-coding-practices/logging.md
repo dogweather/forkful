@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.119323-06:00'
 model: gpt-4-1106-preview
 summary: "Le \"logging\", ou journalisation, consiste \xE0 conserver un enregistrement\
   \ d\u2019\xE9v\xE9nements, de transactions ou d\u2019activit\xE9s qui se produisent\
-  \ dans un syst\xE8me au\u2026"
+  \ dans un syst\xE8me au fil du temps."
 title: Journalisation
 weight: 17
 ---

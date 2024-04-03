@@ -4,8 +4,8 @@ description: "YAML, which stands for \"YAML Ain't Markup Language\", is a human-
   \ data serialization format that is commonly used for configuration files.\u2026"
 lastmod: '2024-03-13T22:45:00.185436-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, which stands for \"YAML Ain't Markup Language\", is a human-readable\
-  \ data serialization format that is commonly used for configuration files.\u2026"
+summary: YAML, which stands for "YAML Ain't Markup Language", is a human-readable
+  data serialization format that is commonly used for configuration files.
 title: Working with YAML
 weight: 41
 ---

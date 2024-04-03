@@ -7,8 +7,9 @@ description: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go ho
   \ en\u2026"
 lastmod: '2024-03-13T22:44:50.287136-06:00'
 model: gpt-4-0125-preview
-summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in\
-  \ dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en\u2026"
+summary: Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in
+  dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en
+  wachtwoord bevat in de vorm van een Base64-gecodeerde string.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

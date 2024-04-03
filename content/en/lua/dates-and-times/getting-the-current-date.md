@@ -4,8 +4,8 @@ description: "Retrieving the current date in programming is a crucial task for a
   \ of applications, including logging, timestamping events, or scheduling tasks.\u2026"
 lastmod: '2024-03-13T22:45:00.214961-06:00'
 model: gpt-4-0125-preview
-summary: "Retrieving the current date in programming is a crucial task for a multitude\
-  \ of applications, including logging, timestamping events, or scheduling tasks.\u2026"
+summary: Retrieving the current date in programming is a crucial task for a multitude
+  of applications, including logging, timestamping events, or scheduling tasks.
 title: Getting the current date
 weight: 29
 ---

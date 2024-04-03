@@ -8,7 +8,8 @@ description: "Controllare se una directory esiste \xE8 un'operazione fondamental
 lastmod: '2024-03-13T22:44:43.571513-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale quando\
-  \ si scrivono script che interagiscono con il filesystem, garantendo che il proprio\u2026"
+  \ si scrivono script che interagiscono con il filesystem, garantendo che il proprio\
+  \ programma operi su percorsi validi e prevenga errori legati a directory inesistenti."
 title: Verifica se una directory esiste
 weight: 20
 ---

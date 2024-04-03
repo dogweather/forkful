@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:41.118558-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i C++ inneb\xE6rer \xE5 opprette eller \xE5\
   pne en fil og deretter skrive data til den, noe som er en grunnleggende oppgave\
-  \ for\u2026"
+  \ for applikasjoner som trenger \xE5 lagre data, som logger, brukergenerert innhold\
+  \ eller konfigurasjonsinnstillinger."
 title: Skrive en tekstfil
 weight: 24
 ---

@@ -7,8 +7,7 @@ description: "Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`.
   \ voor\u2026"
 lastmod: '2024-03-13T22:44:50.292283-06:00'
 model: gpt-4-0125-preview
-summary: "Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`. Het is\
-  \ een volledig uitgerust debugginggereedschap waarmee je Go-programma's stap voor\u2026"
+summary: Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`.
 title: Een debugger gebruiken
 weight: 35
 ---

@@ -4,8 +4,8 @@ description: "Organizzare il codice in funzioni significa spezzettare il tuo cod
   \ in blocchi riutilizzabili, ognuno dei quali svolge un compito specifico. I\u2026"
 lastmod: '2024-03-13T22:44:43.687966-06:00'
 model: gpt-4-1106-preview
-summary: "Organizzare il codice in funzioni significa spezzettare il tuo codice in\
-  \ blocchi riutilizzabili, ognuno dei quali svolge un compito specifico. I\u2026"
+summary: Organizzare il codice in funzioni significa spezzettare il tuo codice in
+  blocchi riutilizzabili, ognuno dei quali svolge un compito specifico.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

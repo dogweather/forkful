@@ -6,8 +6,8 @@ description: "Capitalizing a string usually means converting the first character
   \ a string to uppercase and the rest to lowercase. But sometimes it can mean just\u2026"
 lastmod: '2024-03-25'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string usually means converting the first character of a\
-  \ string to uppercase and the rest to lowercase. But sometimes it can mean just\u2026"
+summary: Capitalizing a string usually means converting the first character of a string
+  to uppercase and the rest to lowercase.
 title: Capitalizing a string
 weight: 2
 ---

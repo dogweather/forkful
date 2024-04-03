@@ -6,8 +6,7 @@ description: "Das Extrahieren von Teil-Strings erm\xF6glicht es, spezifische Seg
 lastmod: '2024-03-13T22:44:53.836320-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teil-Strings erm\xF6glicht es, spezifische Segmente\
-  \ aus einem gr\xF6\xDFeren String herauszuschneiden. Programmierer nutzen dies,\
-  \ um Daten zu\u2026"
+  \ aus einem gr\xF6\xDFeren String herauszuschneiden."
 title: Teilstrings extrahieren
 weight: 6
 ---

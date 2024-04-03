@@ -8,8 +8,7 @@ description: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kod
 lastmod: '2024-03-13T22:44:41.145465-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode som\
-  \ verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
-  \ gj\xF8r dette\u2026"
+  \ verifiserer korrektheten av andre kodeenheter i applikasjonen din."
 title: Skrive tester
 weight: 36
 ---

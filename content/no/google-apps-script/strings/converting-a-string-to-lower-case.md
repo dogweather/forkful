@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.299883-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script, et\
   \ skybasert skriptspr\xE5k for automatisering av oppgaver p\xE5 tvers av Googles\
-  \ produkter, er\u2026"
+  \ produkter, er en grunnleggende oppgave rettet mot \xE5 standardisere tekstdata."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

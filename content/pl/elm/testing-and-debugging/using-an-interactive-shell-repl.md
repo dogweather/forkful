@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.323343-06:00'
 model: gpt-4-0125-preview
 summary: "P\u0119tla Czytaj-Ewaluuj-Wypisz (REPL) to proste, interaktywne \u015Brodowisko\
   \ programistyczne, kt\xF3re pobiera pojedyncze dane wej\u015Bciowe od u\u017Cytkownika,\
-  \ ocenia je i\u2026"
+  \ ocenia je i zwraca wynik u\u017Cytkownikowi."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

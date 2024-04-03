@@ -7,8 +7,8 @@ description: "Ottenere la data corrente in Haskell comporta il recupero del temp
   \ I\u2026"
 lastmod: '2024-03-13T22:44:43.485582-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Haskell comporta il recupero del tempo corrente\
-  \ del sistema e la sua trasformazione in un formato di data leggibile. I\u2026"
+summary: Ottenere la data corrente in Haskell comporta il recupero del tempo corrente
+  del sistema e la sua trasformazione in un formato di data leggibile.
 title: Ottenere la data corrente
 weight: 29
 ---

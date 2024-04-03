@@ -8,7 +8,7 @@ description: "Comparare due date nella programmazione \xE8 un compito fondamenta
 lastmod: '2024-03-13T22:44:42.921647-06:00'
 model: gpt-4-0125-preview
 summary: "Comparare due date nella programmazione \xE8 un compito fondamentale che\
-  \ permette agli sviluppatori di valutare la relazione cronologica tra le date. Questi\u2026"
+  \ permette agli sviluppatori di valutare la relazione cronologica tra le date."
 title: Confrontare due date
 weight: 27
 ---

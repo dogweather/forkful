@@ -7,7 +7,7 @@ description: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprog
 lastmod: '2024-03-13T22:44:51.294860-06:00'
 model: gpt-4-0125-preview
 summary: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprogramma's\
-  \ of functies die automatisch de functionaliteit van je code verifi\xEBren. Programmeurs\u2026"
+  \ of functies die automatisch de functionaliteit van je code verifi\xEBren."
 title: Tests Schrijven
 weight: 36
 ---

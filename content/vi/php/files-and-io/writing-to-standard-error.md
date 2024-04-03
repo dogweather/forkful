@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.788349-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) c\xF3 ngh\u0129a l\xE0\
   \ xu\u1EA5t th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEA\
-  ng bi\u1EC7t v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (`stdout`). C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
+  ng bi\u1EC7t v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (`stdout`)."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

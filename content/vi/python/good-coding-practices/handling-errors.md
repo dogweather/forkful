@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong Python (ho\u1EB7c b\u1EA5t k\u1EF3 ng\xF4n\
   \ ng\u1EEF l\u1EADp tr\xECnh n\xE0o) l\xE0 vi\u1EC7c d\u1EF1 \u0111o\xE1n nh\u1EEF\
   ng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - \u0111\xF3 l\xE0 ngh\u1EC7 thu\u1EAD\
-  t qu\u1EA3n l\xFD m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng khi\u2026"
+  t qu\u1EA3n l\xFD m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng khi m\u1ECDi th\u1EE9 di\u1EC5\
+  n bi\u1EBFn kh\xF4ng nh\u01B0 mong mu\u1ED1n trong code c\u1EE7a b\u1EA1n."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

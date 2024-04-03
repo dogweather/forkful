@@ -6,8 +6,8 @@ description: "Ottenere la data corrente in C comporta l'accesso alla libreria st
   \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"
 lastmod: '2024-03-13T22:44:44.011407-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in C comporta l'accesso alla libreria standard\
-  \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"
+summary: Ottenere la data corrente in C comporta l'accesso alla libreria standard
+  C per recuperare e formattare la data e l'ora correnti del sistema.
 title: Ottenere la data corrente
 weight: 29
 ---

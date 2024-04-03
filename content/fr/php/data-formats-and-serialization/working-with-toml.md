@@ -6,8 +6,7 @@ description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un fo
 lastmod: '2024-03-13T22:44:57.904225-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
-  \ donn\xE9es semblable \xE0 JSON ou YAML, mais plus facile \xE0 lire pour les humains.\
-  \ Les\u2026"
+  \ donn\xE9es semblable \xE0 JSON ou YAML, mais plus facile \xE0 lire pour les humains."
 title: Travailler avec TOML
 weight: 39
 ---

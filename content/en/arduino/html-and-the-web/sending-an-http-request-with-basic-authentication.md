@@ -4,8 +4,8 @@ description: "Sending an HTTP request with basic authentication adds a layer of 
   \ by requiring a username and password. Programmers use it to access APIs or web\u2026"
 lastmod: '2024-03-13T22:45:00.321840-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request with basic authentication adds a layer of security\
-  \ by requiring a username and password. Programmers use it to access APIs or web\u2026"
+summary: Sending an HTTP request with basic authentication adds a layer of security
+  by requiring a username and password.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

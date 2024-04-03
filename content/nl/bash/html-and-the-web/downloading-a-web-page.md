@@ -6,8 +6,8 @@ description: "Het downloaden van een webpagina betekent het ophalen van de gegev
   \ van het internet en deze lokaal opslaan. Programmeurs doen dit voor webscraping,\u2026"
 lastmod: '2024-03-13T22:44:50.981188-06:00'
 model: gpt-4-0125-preview
-summary: "Het downloaden van een webpagina betekent het ophalen van de gegevens van\
-  \ het internet en deze lokaal opslaan. Programmeurs doen dit voor webscraping,\u2026"
+summary: Het downloaden van een webpagina betekent het ophalen van de gegevens van
+  het internet en deze lokaal opslaan.
 title: Een webpagina downloaden
 weight: 42
 ---

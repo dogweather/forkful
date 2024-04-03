@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:38.332559-06:00'
 model: gpt-4-0125-preview
 summary: "I programmeringsv\xE4rlden, s\xE4rskilt n\xE4r man hanterar Linux- eller\
   \ Unix-milj\xF6er, \xE4r manipulation av filer direkt fr\xE5n kommandoradsgr\xE4\
-  nssnittet (CLI) inte\u2026"
+  nssnittet (CLI) inte bara en fr\xE5ga om bekv\xE4mlighet \u2013 det \xE4r ett kraftfullt\
+  \ verktyg."
 title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---

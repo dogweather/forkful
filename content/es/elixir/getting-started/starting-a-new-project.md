@@ -5,7 +5,7 @@ description: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en bla
 lastmod: '2024-03-13T22:44:58.703193-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco para\
-  \ pintar tu obra maestra con c\xF3digo. Los programadores lo hacen para resolver\u2026"
+  \ pintar tu obra maestra con c\xF3digo."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \x
 lastmod: '2024-03-13T22:44:40.888911-06:00'
 model: gpt-4-1106-preview
 summary: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \xE5 finne\
-  \ veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs. Vi gj\xF8\
-  r det fordi det\u2026"
+  \ veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

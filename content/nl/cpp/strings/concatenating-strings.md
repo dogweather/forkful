@@ -7,8 +7,8 @@ description: "Stringconcatenatie is het aan elkaar rijgen van twee of meer strin
   ren of\u2026"
 lastmod: '2024-03-13T22:44:51.104572-06:00'
 model: gpt-4-0125-preview
-summary: "Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter\
-  \ elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te cre\xEBren of\u2026"
+summary: Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter
+  elkaar.
 title: Samenvoegen van strings
 weight: 3
 ---

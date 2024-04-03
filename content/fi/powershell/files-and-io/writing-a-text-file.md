@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.800854-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen PowerShelliss\xE4 k\xE4sitt\xE4\xE4 tekstipohjaisten\
   \ tiedostojen luomisen ja k\xE4sittelyn, mik\xE4 on perustoiminto lokitiedostojen,\
-  \ datan\u2026"
+  \ datan tallennuksen ja konfigurointiskriptien kannalta."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

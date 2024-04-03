@@ -6,8 +6,7 @@ description: "Att j\xE4mf\xF6ra tv\xE5 datum i JavaScript handlar om att se vilk
 lastmod: '2024-03-13T22:44:38.305836-06:00'
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i JavaScript handlar om att se vilket som\
-  \ \xE4r tidigast eller senast, eller om de \xE4r samma. Det \xE4r anv\xE4ndbart\
-  \ f\xF6r att hantera\u2026"
+  \ \xE4r tidigast eller senast, eller om de \xE4r samma."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

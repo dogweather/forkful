@@ -5,9 +5,7 @@ description: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proce
   \ czyli stringa. Po co\u2026"
 lastmod: '2024-03-13T22:44:35.641476-06:00'
 model: gpt-4-1106-preview
-summary: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proces zmiany\
-  \ formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej, czyli stringa.\
-  \ Po co\u2026"
+summary: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

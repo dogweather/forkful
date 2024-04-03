@@ -6,8 +6,8 @@ description: "Het parsen van een datum uit een string in Go houdt in dat de als 
   \ weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`).\u2026"
 lastmod: '2024-03-13T22:44:50.297382-06:00'
 model: gpt-4-0125-preview
-summary: "Het parsen van een datum uit een string in Go houdt in dat de als tekst\
-  \ weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`).\u2026"
+summary: Het parsen van een datum uit een string in Go houdt in dat de als tekst weergegeven
+  datum wordt omgezet naar een bruikbaarder formaat (bijv.
 title: Een datum ontleden uit een string
 weight: 30
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.555440-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 pozwala naszym skryptom Lua\
   \ na interakcj\u0119 z u\u017Cytkownikiem lub innymi programami poprzez parametry\
-  \ uruchomieniowe.\u2026"
+  \ uruchomieniowe."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

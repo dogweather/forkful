@@ -8,7 +8,8 @@ description: "Calcular una fecha en el futuro o pasado implica determinar una fe
 lastmod: '2024-03-13T22:44:59.560497-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o pasado implica determinar una fecha espec\xED\
-  fica al agregar o restar un cierto n\xFAmero de d\xEDas, meses o a\xF1os a una fecha\u2026"
+  fica al agregar o restar un cierto n\xFAmero de d\xEDas, meses o a\xF1os a una fecha\
+  \ dada."
 title: "C\xE1lculo de una fecha en el futuro o en el pasado"
 weight: 26
 ---

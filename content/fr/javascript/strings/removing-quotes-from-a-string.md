@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.262199-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie se d\xE9\
   barrasser de ces marques de citation ennuyeuses qui peuvent perturber votre code,\
-  \ surtout\u2026"
+  \ surtout lorsque vous analysez des donn\xE9es ou construisez des objets JSON."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

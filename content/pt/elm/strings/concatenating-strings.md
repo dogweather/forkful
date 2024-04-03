@@ -5,9 +5,7 @@ description: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Pr
   mica."
 lastmod: '2024-03-13T22:44:46.491931-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
-  \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\
-  mica."
+summary: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3."
 title: Concatenando strings
 weight: 3
 ---

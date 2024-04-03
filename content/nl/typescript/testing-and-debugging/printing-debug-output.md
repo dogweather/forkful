@@ -6,8 +6,8 @@ description: "Debugoutput is je zaklamp in een donker code steegje; het helpt je
   \ te spotten door je een kijkje te geven in wat je code doet tijdens de\u2026"
 lastmod: '2024-03-13T22:44:50.553444-06:00'
 model: gpt-4-0125-preview
-summary: "Debugoutput is je zaklamp in een donker code steegje; het helpt je fouten\
-  \ te spotten door je een kijkje te geven in wat je code doet tijdens de\u2026"
+summary: Debugoutput is je zaklamp in een donker code steegje; het helpt je fouten
+  te spotten door je een kijkje te geven in wat je code doet tijdens de uitvoering.
 title: Debug-output afdrukken
 weight: 33
 ---

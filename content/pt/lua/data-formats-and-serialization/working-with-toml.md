@@ -4,8 +4,8 @@ description: "Trabalhar com TOML envolve analisar e gerar dados TOML (Tom's Obvi
   \ Minimal Language) com Lua. Programadores utilizam TOML para arquivos de\u2026"
 lastmod: '2024-03-13T22:44:46.732368-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com TOML envolve analisar e gerar dados TOML (Tom's Obvious, Minimal\
-  \ Language) com Lua. Programadores utilizam TOML para arquivos de\u2026"
+summary: Trabalhar com TOML envolve analisar e gerar dados TOML (Tom's Obvious, Minimal
+  Language) com Lua.
 title: Trabalhando com TOML
 weight: 39
 ---

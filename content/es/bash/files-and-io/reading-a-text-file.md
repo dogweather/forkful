@@ -4,8 +4,7 @@ description: "Leer un archivo de texto significa acceder a su contenido usando u
   \ programa. Los programadores lo hacen para procesar o analizar los datos,\u2026"
 lastmod: '2024-03-13T22:44:59.264433-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto significa acceder a su contenido usando un programa.\
-  \ Los programadores lo hacen para procesar o analizar los datos,\u2026"
+summary: Leer un archivo de texto significa acceder a su contenido usando un programa.
 title: Lectura de un archivo de texto
 weight: 22
 ---

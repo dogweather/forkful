@@ -9,9 +9,7 @@ description: "Ch\xFAng ta l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\u1EC3 bi\u1
 lastmod: '2024-03-13T22:44:36.615471-06:00'
 model: gpt-4-0125-preview
 summary: "Ch\xFAng ta l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\u1EC3 bi\u1EBFt d\u1EEF\
-  \ li\u1EC7u c\u1EE7a ng\xE0y h\xF4m nay. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECD\
-  ng cho h\xE0ng t\u1EA5n t\xEDnh n\u0103ng \u2013 ngh\u0129 \u0111\u1EBFn nh\u1EAD\
-  t k\xFD, d\xF9ng th\u1EED, s\u1EF1 ki\u1EC7n. B\u1EA1n n\xF3i\u2026"
+  \ li\u1EC7u c\u1EE7a ng\xE0y h\xF4m nay."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

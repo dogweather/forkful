@@ -4,8 +4,9 @@ description: "Refactoring in programming involves modifying the structure of cod
   \ without changing its behavior, to improve aspects like readability, maintainability,\u2026"
 lastmod: '2024-03-13T22:44:59.941832-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in programming involves modifying the structure of code without\
-  \ changing its behavior, to improve aspects like readability, maintainability,\u2026"
+summary: Refactoring in programming involves modifying the structure of code without
+  changing its behavior, to improve aspects like readability, maintainability, or
+  performance.
 title: Refactoring
 weight: 19
 ---

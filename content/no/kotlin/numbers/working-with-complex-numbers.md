@@ -5,7 +5,7 @@ description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadr
 lastmod: '2024-03-13T22:44:40.743975-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
-  \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"
+  \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

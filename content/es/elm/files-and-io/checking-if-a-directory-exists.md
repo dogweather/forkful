@@ -8,7 +8,7 @@ description: "Comprobar si un directorio existe significa confirmar si una ruta 
 lastmod: '2024-03-13T22:44:59.008002-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe significa confirmar si una ruta de carpeta\
-  \ espec\xEDfica est\xE1 presente en el sistema de archivos. Los programadores lo\u2026"
+  \ espec\xEDfica est\xE1 presente en el sistema de archivos."
 title: Comprobando si un directorio existe
 weight: 20
 ---

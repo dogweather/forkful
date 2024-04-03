@@ -6,8 +6,8 @@ description: "Tekst zoeken en vervangen in C omvat het identificeren van specifi
   \ substrings binnen een grotere string en deze vervangen door andere substrings.\u2026"
 lastmod: '2024-03-13T22:44:51.274419-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen in C omvat het identificeren van specifieke substrings\
-  \ binnen een grotere string en deze vervangen door andere substrings.\u2026"
+summary: Tekst zoeken en vervangen in C omvat het identificeren van specifieke substrings
+  binnen een grotere string en deze vervangen door andere substrings.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

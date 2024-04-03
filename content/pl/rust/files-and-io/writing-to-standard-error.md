@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.202592-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Rust oznacza kierowanie\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 oddzielnie od\
-  \ standardowego wyj\u015Bcia\u2026"
+  \ standardowego wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

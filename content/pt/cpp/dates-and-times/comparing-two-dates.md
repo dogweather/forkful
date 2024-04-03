@@ -6,7 +6,7 @@ description: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas 
 lastmod: '2024-03-13T22:44:46.891669-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas - qual\
-  \ \xE9 mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos, validar\u2026"
+  \ \xE9 mais cedo ou mais tarde."
 title: Comparando duas datas
 weight: 27
 ---

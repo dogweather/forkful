@@ -6,8 +6,7 @@ description: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan s
 lastmod: '2024-03-13T22:44:56.499169-06:00'
 model: unknown
 summary: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan sidotun\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4. K\xE4yt\xE4mme t\xE4t\xE4\
-  \ toiminnallisuutta esimerkiksi lokeissa,\u2026"
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

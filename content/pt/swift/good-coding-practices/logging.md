@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.926728-06:00'
 model: gpt-4-1106-preview
 summary: "O registro de logs \xE9 o processo de gravar comportamentos, erros e outras\
   \ informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente, como\
-  \ um arquivo\u2026"
+  \ um arquivo ou banco de dados."
 title: Registro de Logs
 weight: 17
 ---

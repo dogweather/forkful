@@ -6,8 +6,7 @@ description: "Virheiden k\xE4sittely ohjelmoinnissa tarkoittaa odottamattomien t
 lastmod: '2024-03-13T22:44:56.622270-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely ohjelmoinnissa tarkoittaa odottamattomien tilanteiden\
-  \ hallintaa\u2014asioita, jotka voivat menn\xE4 pieleen. Ohjelmoijat tekev\xE4t\
-  \ sit\xE4\u2026"
+  \ hallintaa\u2014asioita, jotka voivat menn\xE4 pieleen."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -4,8 +4,8 @@ description: "Printing debug output is basically the programmer's way of sneakin
   \ a peek at what's going on inside their code in real-time. It's crucial for tracking\u2026"
 lastmod: '2024-03-13T22:45:00.051037-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is basically the programmer's way of sneaking a peek\
-  \ at what's going on inside their code in real-time. It's crucial for tracking\u2026"
+summary: Printing debug output is basically the programmer's way of sneaking a peek
+  at what's going on inside their code in real-time.
 title: Printing debug output
 weight: 33
 ---

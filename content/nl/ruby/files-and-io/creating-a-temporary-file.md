@@ -7,9 +7,8 @@ description: "In Ruby helpt het maken van een tijdelijk bestand om gevoelige geg
   \ het\u2026"
 lastmod: '2024-03-13T22:44:51.379678-06:00'
 model: gpt-4-0125-preview
-summary: "In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens\
-  \ te beschermen en vluchtige opslagbehoeften te beheren. Programmeurs gebruiken\
-  \ het\u2026"
+summary: In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens te
+  beschermen en vluchtige opslagbehoeften te beheren.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

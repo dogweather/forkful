@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.279905-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
   ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
-  \ Wert\u2026"
+  \ Wert verweist."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

@@ -6,8 +6,7 @@ description: "Att konkatenera str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 el
 lastmod: '2024-03-13T22:44:38.201120-06:00'
 model: gpt-4-1106-preview
 summary: "Att konkatenera str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
-  \ textbitar till en enda str\xE4ng. Programmerare g\xF6r det f\xF6r att skapa meningar,\
-  \ meddelanden\u2026"
+  \ textbitar till en enda str\xE4ng."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

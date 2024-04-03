@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.712003-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen in der Programmierung geht darum, eine Zahl auf ihre\
   \ n\xE4chstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen\
-  \ zu\u2026"
+  \ zu approximieren."
 title: Runden von Zahlen
 weight: 13
 ---

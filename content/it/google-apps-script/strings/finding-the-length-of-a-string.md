@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:42.944788-06:00'
 model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una stringa in Google Apps Script, un linguaggio\
   \ di scripting cloud JavaScript che consente di automatizzare le attivit\xE0 per\
-  \ i\u2026"
+  \ i prodotti Google, consiste nel determinare il numero di caratteri che contiene\
+  \ una stringa."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

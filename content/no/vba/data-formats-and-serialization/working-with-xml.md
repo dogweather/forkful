@@ -7,7 +7,8 @@ description: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involve
 lastmod: '2024-03-13T22:44:40.648298-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer parsing,\
-  \ oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"
+  \ oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\
+  \ Office-applikasjoner."
 title: Arbeide med XML
 weight: 40
 ---

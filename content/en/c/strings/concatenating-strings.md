@@ -4,8 +4,8 @@ description: "String concatenation in C involves joining two or more strings end
   \ to form a new string. Programmers perform this operation to dynamically\u2026"
 lastmod: '2024-03-13T22:45:00.504383-06:00'
 model: gpt-4-0125-preview
-summary: "String concatenation in C involves joining two or more strings end-to-end\
-  \ to form a new string. Programmers perform this operation to dynamically\u2026"
+summary: String concatenation in C involves joining two or more strings end-to-end
+  to form a new string.
 title: Concatenating strings
 weight: 3
 ---

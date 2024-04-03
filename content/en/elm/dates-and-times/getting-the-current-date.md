@@ -4,8 +4,8 @@ description: "Getting the current date in Elm means fetching the current calenda
   \ date from the system. We do this to timestamp events, schedule tasks, or track\u2026"
 lastmod: '2024-03-13T22:45:00.020209-06:00'
 model: unknown
-summary: "Getting the current date in Elm means fetching the current calendar date\
-  \ from the system. We do this to timestamp events, schedule tasks, or track\u2026"
+summary: Getting the current date in Elm means fetching the current calendar date
+  from the system.
 title: Getting the current date
 weight: 29
 ---

@@ -7,7 +7,7 @@ description: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant
 lastmod: '2024-03-13T22:44:57.426065-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de correspondance\
-  \ et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"
+  \ et de recherche de motifs en programmation."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

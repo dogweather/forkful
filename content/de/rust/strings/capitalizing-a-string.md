@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.655990-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in Rust involviert das Modifizieren des\
   \ Strings, sodass sein erstes Zeichen ein Gro\xDFbuchstabe ist, falls es sich um\
-  \ einen\u2026"
+  \ einen Buchstaben handelt, w\xE4hrend der Rest des Strings unver\xE4ndert bleibt."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

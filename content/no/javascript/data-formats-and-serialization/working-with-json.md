@@ -7,7 +7,7 @@ description: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsf
 lastmod: '2024-03-13T22:44:41.204593-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat,\
-  \ enkelt for mennesker \xE5 lese og skrive og for maskiner \xE5 analysere og generere.\u2026"
+  \ enkelt for mennesker \xE5 lese og skrive og for maskiner \xE5 analysere og generere."
 title: Arbeider med JSON
 weight: 38
 ---

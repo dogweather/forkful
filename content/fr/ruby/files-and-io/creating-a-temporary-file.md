@@ -6,8 +6,7 @@ description: "En programmation, cr\xE9er un fichier temporaire, c'est un peu com
 lastmod: '2024-03-13T22:44:58.441352-06:00'
 model: gpt-4-1106-preview
 summary: "En programmation, cr\xE9er un fichier temporaire, c'est un peu comme prendre\
-  \ des notes sur un bout de papier effa\xE7able. On fait \xE7a pour stocker des donn\xE9\
-  es\u2026"
+  \ des notes sur un bout de papier effa\xE7able."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

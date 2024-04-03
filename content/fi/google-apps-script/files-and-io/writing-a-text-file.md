@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.118340-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Google Apps Scriptill\xE4 mahdollistaa kehitt\xE4\
   jille datan tallentamisen pysyv\xE4sti, tehden siit\xE4 saatavilla tulevaa k\xE4\
-  ytt\xF6\xE4 tai\u2026"
+  ytt\xF6\xE4 tai analysointia varten."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

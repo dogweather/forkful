@@ -4,8 +4,7 @@ description: "HTTP-pyynn\xF6t ovat tapa kommunikoida web-palvelimien kanssa. Ohj
   \ k\xE4ytt\xE4v\xE4t niit\xE4 dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta\u2026"
 lastmod: '2024-03-13T22:44:56.991287-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynn\xF6t ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4 dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta\u2026"
+summary: "HTTP-pyynn\xF6t ovat tapa kommunikoida web-palvelimien kanssa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

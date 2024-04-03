@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.429053-06:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5es\
   \ (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
-  \xE3o. Esta\u2026"
+  \xE3o."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

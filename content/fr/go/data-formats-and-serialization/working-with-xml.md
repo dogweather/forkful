@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.162787-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Go implique d'analyser (lire) et de g\xE9n\xE9rer\
   \ (\xE9crire) des documents XML \u2013 un format standard pour l'\xE9change de donn\xE9\
-  es structur\xE9es.\u2026"
+  es structur\xE9es."
 title: Travailler avec XML
 weight: 40
 ---

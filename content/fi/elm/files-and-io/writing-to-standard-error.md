@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.504774-06:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja\
   \ diagnostiikkatietojen ohjaamista erilleen p\xE4\xE4ohjelman tulosteesta, joka\
-  \ menee\u2026"
+  \ menee vakiotulostukseen (stdout)."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

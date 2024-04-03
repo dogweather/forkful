@@ -5,8 +5,8 @@ description: "In Bash programming, checking if a directory exists is an essentia
   \ file\u2026"
 lastmod: '2024-03-13T22:45:00.257404-06:00'
 model: gpt-4-0125-preview
-summary: "In Bash programming, checking if a directory exists is an essential control\
-  \ mechanism used to verify the presence of a directory before performing file\u2026"
+summary: In Bash programming, checking if a directory exists is an essential control
+  mechanism used to verify the presence of a directory before performing file operations.
 title: Checking if a directory exists
 weight: 20
 ---

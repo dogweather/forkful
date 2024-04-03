@@ -4,8 +4,8 @@ description: "Convertir fechas en cadenas de texto nos permite mostrarlas en un 
   \ legible y estandarizado. Los programadores lo hacen para registrar eventos,\u2026"
 lastmod: '2024-03-13T22:44:58.858105-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir fechas en cadenas de texto nos permite mostrarlas en un formato\
-  \ legible y estandarizado. Los programadores lo hacen para registrar eventos,\u2026"
+summary: Convertir fechas en cadenas de texto nos permite mostrarlas en un formato
+  legible y estandarizado.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

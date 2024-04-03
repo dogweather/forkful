@@ -5,8 +5,7 @@ description: "Ever needed to find a date in the past or future? Programmatically
   \ the\u2026"
 lastmod: '2024-03-13T22:45:00.408144-06:00'
 model: gpt-4-1106-preview
-summary: "Ever needed to find a date in the past or future? Programmatically, we often\
-  \ calculate dates for deadlines, reminders, or events. Knowing how takes the\u2026"
+summary: Ever needed to find a date in the past or future.
 title: Calculating a date in the future or past
 weight: 26
 ---

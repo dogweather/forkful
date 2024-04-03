@@ -5,8 +5,8 @@ description: "Organizing code into functions means chunking your code into reusa
   \ code\u2026"
 lastmod: '2024-03-13T22:44:59.863874-06:00'
 model: gpt-4-1106-preview
-summary: "Organizing code into functions means chunking your code into reusable, modular\
-  \ blocks. We do this to keep things DRY (Don't Repeat Yourself), making code\u2026"
+summary: Organizing code into functions means chunking your code into reusable, modular
+  blocks.
 title: Organizing code into functions
 weight: 18
 ---

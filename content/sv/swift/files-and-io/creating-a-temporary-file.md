@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.270624-06:00'
 model: gpt-4-1106-preview
 summary: "I Swift inneb\xE4r att skapa en tempor\xE4r fil att du skapar en fil som\
   \ bara ska finnas d\xE4r under ett kort \xF6gonblick, ofta inom ramen f\xF6r en\
-  \ process eller\u2026"
+  \ process eller session."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

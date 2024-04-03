@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:58.329544-06:00'
 model: gpt-4-0125-preview
 summary: "Fish n'a pas de d\xE9bogueur int\xE9gr\xE9 comme certains autres shells,\
   \ mais vous pouvez utiliser des outils externes comme `gdb` pour le d\xE9bogage\
-  \ de programmes\u2026"
+  \ de programmes compil\xE9s ou `fish -d` pour ex\xE9cuter fish avec une sortie de\
+  \ d\xE9bogage \xE0 diff\xE9rents niveaux."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

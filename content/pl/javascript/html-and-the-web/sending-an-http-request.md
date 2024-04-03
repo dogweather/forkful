@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.793306-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie zapytania HTTP to spos\xF3b, w jaki nasz kod komunikuje si\u0119\
   \ z serwerami internetowymi - pobiera dane, wysy\u0142a informacje, aktualizuje\
-  \ zawarto\u015B\u0107.\u2026"
+  \ zawarto\u015B\u0107."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

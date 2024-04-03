@@ -5,9 +5,7 @@ description: "Hva er ekstrahering av delstrenger? Det er n\xE5r du plukker ut de
   \ av\u2026"
 lastmod: '2024-03-13T22:44:40.739161-06:00'
 model: gpt-4-1106-preview
-summary: "Hva er ekstrahering av delstrenger? Det er n\xE5r du plukker ut deler av\
-  \ en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke\
-  \ av\u2026"
+summary: Hva er ekstrahering av delstrenger.
 title: Uthenting av delstrenger
 weight: 6
 ---

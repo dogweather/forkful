@@ -6,8 +6,8 @@ description: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen
   \ woorden of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
 lastmod: '2024-03-13T22:44:51.011449-06:00'
 model: gpt-4-0125-preview
-summary: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden\
-  \ of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
+summary: 'Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden
+  of zinsdelen door anderen.'
 title: Tekst zoeken en vervangen
 weight: 10
 ---

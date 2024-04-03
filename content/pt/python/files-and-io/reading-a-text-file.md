@@ -6,8 +6,7 @@ description: "Ler um arquivo de texto \xE9 o processo de carregar o conte\xFAdo 
 lastmod: '2024-03-13T22:44:46.172315-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 o processo de carregar o conte\xFAdo de um\
-  \ arquivo em texto puro na mem\xF3ria do seu programa. Programadores fazem isso\
-  \ para\u2026"
+  \ arquivo em texto puro na mem\xF3ria do seu programa."
 title: Lendo um arquivo de texto
 weight: 22
 ---

@@ -6,8 +6,7 @@ description: "Vergleichen von zwei Daten bedeutet, zu pr\xFCfen, ob ein Datum vo
 lastmod: '2024-03-13T22:44:53.943513-06:00'
 model: gpt-4-1106-preview
 summary: "Vergleichen von zwei Daten bedeutet, zu pr\xFCfen, ob ein Datum vor, gleich\
-  \ oder nach einem anderen liegt. Programmierer ben\xF6tigen das, um zeitliche Abl\xE4\
-  ufe\u2026"
+  \ oder nach einem anderen liegt."
 title: Vergleich von zwei Daten
 weight: 27
 ---

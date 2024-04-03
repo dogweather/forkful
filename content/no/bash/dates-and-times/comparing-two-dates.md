@@ -5,7 +5,7 @@ description: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som er
 lastmod: '2024-03-13T22:44:40.987343-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som er tidligere,\
-  \ senere, eller om de er identiske. Programmerere gj\xF8r det for \xE5 h\xE5ndtere\u2026"
+  \ senere, eller om de er identiske."
 title: Sammenlikning av to datoer
 weight: 27
 ---

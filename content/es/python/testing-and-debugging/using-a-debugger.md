@@ -4,8 +4,7 @@ description: "Desglosemos el uso de `pdb`, el depurador integrado de Python. Ima
   \ un archivo, `buggy.py`, con un error dif\xEDcil de encontrar: ```Python def\u2026"
 lastmod: '2024-03-13T22:44:58.616981-06:00'
 model: gpt-4-0125-preview
-summary: "Desglosemos el uso de `pdb`, el depurador integrado de Python. Imagina un\
-  \ archivo, `buggy.py`, con un error dif\xEDcil de encontrar: ```Python def\u2026"
+summary: Desglosemos el uso de `pdb`, el depurador integrado de Python.
 title: Usando un depurador
 weight: 35
 ---

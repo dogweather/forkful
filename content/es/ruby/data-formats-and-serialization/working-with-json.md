@@ -8,7 +8,8 @@ description: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero d
 lastmod: '2024-03-13T22:44:59.612347-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero de intercambio\
-  \ de datos, prevalente en aplicaciones web para el intercambio de datos entre\u2026"
+  \ de datos, prevalente en aplicaciones web para el intercambio de datos entre clientes\
+  \ y servidores."
 title: Trabajando con JSON
 weight: 38
 ---

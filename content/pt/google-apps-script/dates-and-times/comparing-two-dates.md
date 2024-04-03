@@ -8,7 +8,8 @@ description: "Comparar duas datas no Google Apps Script, um derivado do JavaScri
 lastmod: '2024-03-13T22:44:46.122269-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas no Google Apps Script, um derivado do JavaScript personalizado\
-  \ para a su\xEDte de aplicativos do Google, \xE9 uma tarefa essencial para\u2026"
+  \ para a su\xEDte de aplicativos do Google, \xE9 uma tarefa essencial para desenvolvedores\
+  \ que lidam com agendamentos, cronogramas ou qualquer dado relacionado a datas."
 title: Comparando duas datas
 weight: 27
 ---

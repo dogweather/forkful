@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.039641-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
   \xE4n etsim\xE4\xE4n, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien\
-  \ perusteella. Ohjelmoijat\u2026"
+  \ perusteella."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

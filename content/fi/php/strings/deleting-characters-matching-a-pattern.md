@@ -6,8 +6,7 @@ description: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijon
 lastmod: '2024-03-13T22:44:56.640573-06:00'
 model: gpt-4-1106-preview
 summary: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen osien\
-  \ h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa. Ohjelmoijat tekev\xE4\
-  t t\xE4t\xE4\u2026"
+  \ h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.303759-06:00'
 model: gpt-4-0125-preview
 summary: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
   \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
-  \ des\u2026"
+  \ des Zugriffs oder der Modifikation von Verzeichnissen zu vermeiden."
 title: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert"
 weight: 20
 ---

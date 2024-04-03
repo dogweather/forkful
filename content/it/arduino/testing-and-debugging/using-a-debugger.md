@@ -5,7 +5,7 @@ description: "Con l'IDE di Arduino, puoi usare le stampe Seriali per fare debugg
 lastmod: '2024-03-13T22:44:43.687057-06:00'
 model: gpt-4-0125-preview
 summary: "Con l'IDE di Arduino, puoi usare le stampe Seriali per fare debugging, ma\
-  \ \xE8 un po' come usare una torcia per esplorare una caverna. Per un vero debugging,\u2026"
+  \ \xE8 un po' come usare una torcia per esplorare una caverna."
 title: Utilizzo di un debugger
 weight: 35
 ---

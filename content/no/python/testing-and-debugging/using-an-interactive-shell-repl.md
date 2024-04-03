@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.362995-06:00'
 model: gpt-4-0125-preview
 summary: "En REPL, eller Lese-Evaluer-Skriv-L\xF8kke, er et programmeringsmilj\xF8\
   \ som tar enkeltbrukerinnskrivelser, utf\xF8rer dem og returnerer resultatet til\
-  \ brukeren.\u2026"
+  \ brukeren."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

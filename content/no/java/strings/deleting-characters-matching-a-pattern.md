@@ -6,8 +6,7 @@ description: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn f
 lastmod: '2024-03-13T22:44:40.650716-06:00'
 model: gpt-4-1106-preview
 summary: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn fra en\
-  \ streng, basert p\xE5 et m\xF8nster. Programmerere gj\xF8r dette for \xE5 rense\
-  \ data, forenkle\u2026"
+  \ streng, basert p\xE5 et m\xF8nster."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

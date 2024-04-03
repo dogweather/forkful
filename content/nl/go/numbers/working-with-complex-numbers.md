@@ -7,7 +7,8 @@ description: "Werken met complexe getallen in programmeren betreft het manipuler
 lastmod: '2024-03-13T22:44:50.281067-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met complexe getallen in programmeren betreft het manipuleren van\
-  \ getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"
+  \ getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\
+  \ als `a + bi`."
 title: Werken met complexe getallen
 weight: 14
 ---

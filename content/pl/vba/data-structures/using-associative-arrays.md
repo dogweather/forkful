@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.223745-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, cz\u0119sto nazywane s\u0142ownikami w Visual Basic\
   \ dla Aplikacji (VBA), pozwalaj\u0105 programistom na tworzenie kolekcji par klucz-warto\u015B\
-  \u0107. Ta\u2026"
+  \u0107."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

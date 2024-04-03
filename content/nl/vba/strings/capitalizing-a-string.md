@@ -7,8 +7,9 @@ description: "Het kapitaliseren van een tekenreeks in Visual Basic for Applicati
   \ een\u2026"
 lastmod: '2024-03-13T22:44:50.619265-06:00'
 model: gpt-4-0125-preview
-summary: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA)\
-  \ houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een\u2026"
+summary: Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA)
+  houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een hoofdletter,
+  terwijl je ervoor zorgt dat de rest in kleine letters staat.
 title: Een string met hoofdletters maken
 weight: 2
 ---

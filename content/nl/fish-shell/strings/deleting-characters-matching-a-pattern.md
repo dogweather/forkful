@@ -7,9 +7,9 @@ description: "Karakters verwijderen die overeenkomen met een patroon is in princ
   \ op\u2026"
 lastmod: '2024-03-13T22:44:51.229006-06:00'
 model: gpt-4-0125-preview
-summary: "Karakters verwijderen die overeenkomen met een patroon is in principe het\
-  \ filteren van ongewenste karakters of sequenties uit strings of bestandsinhoud\
-  \ op\u2026"
+summary: Karakters verwijderen die overeenkomen met een patroon is in principe het
+  filteren van ongewenste karakters of sequenties uit strings of bestandsinhoud op
+  basis van regels, bekend als patronen.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

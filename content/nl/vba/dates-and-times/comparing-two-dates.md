@@ -6,8 +6,8 @@ description: "Het vergelijken van twee datums in Visual Basic for Applications (
   \ behelst het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.649503-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums in Visual Basic for Applications (VBA) behelst\
-  \ het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
+summary: Het vergelijken van twee datums in Visual Basic for Applications (VBA) behelst
+  het bepalen van hun chronologische relatie tot elkaar.
 title: Twee datums vergelijken
 weight: 27
 ---

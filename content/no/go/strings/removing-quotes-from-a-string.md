@@ -7,7 +7,7 @@ description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 el
 lastmod: '2024-03-13T22:44:40.252728-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
-  \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"
+  \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng."
 title: "Fjerner anf\xF8rselstegn fra en streng"
 weight: 9
 ---

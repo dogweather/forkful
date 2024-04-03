@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.042345-06:00'
 model: gpt-4-1106-preview
 summary: "El registro de eventos, en esencia, es la pr\xE1ctica de grabar eventos\
   \ y datos de una aplicaci\xF3n de software a una salida externa, como un archivo\
-  \ o\u2026"
+  \ o consola."
 title: Registro de Actividades
 weight: 17
 ---

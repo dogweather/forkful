@@ -6,8 +6,8 @@ description: "Het afronden van getallen betekent het afhakken van de decimalen t
   \ een eenvoudigere waarde die goed genoeg is voor een bepaalde context. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.974507-06:00'
 model: gpt-4-0125-preview
-summary: "Het afronden van getallen betekent het afhakken van de decimalen tot een\
-  \ eenvoudigere waarde die goed genoeg is voor een bepaalde context. Programmeurs\u2026"
+summary: Het afronden van getallen betekent het afhakken van de decimalen tot een
+  eenvoudigere waarde die goed genoeg is voor een bepaalde context.
 title: Afronden van getallen
 weight: 13
 ---

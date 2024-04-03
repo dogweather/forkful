@@ -5,7 +5,7 @@ description: "Leer un archivo de texto es b\xE1sicamente obtener el contenido de
 lastmod: '2024-03-13T22:44:58.863868-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es b\xE1sicamente obtener el contenido de un archivo\
-  \ almacenado en tu disco para trabajar con \xE9l en tu programa. Los programadores\u2026"
+  \ almacenado en tu disco para trabajar con \xE9l en tu programa."
 title: Lectura de un archivo de texto
 weight: 22
 ---

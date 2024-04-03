@@ -9,8 +9,7 @@ description: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u01
 lastmod: '2024-03-13T22:44:34.934628-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017Ce\u0144\
-  \ wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
-  \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
+  \ wewn\u0105trz litera\u0142\xF3w napis\xF3w."
 title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
 weight: 8
 ---

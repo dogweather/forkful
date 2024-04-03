@@ -8,8 +8,7 @@ description: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\x
 lastmod: '2024-03-13T22:44:40.788048-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\xE5ndtere\
-  \ par av n\xF8kler og verdier. De er din go-to n\xE5r du trenger \xE5 hente verdier\
-  \ raskt basert\u2026"
+  \ par av n\xF8kler og verdier."
 title: Bruke associative tabeller
 weight: 15
 ---

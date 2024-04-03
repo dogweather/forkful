@@ -6,7 +6,7 @@ description: "Handling errors in programming is about managing the unexpected\u2
 lastmod: '2024-03-13T22:45:00.135160-06:00'
 model: gpt-4-1106-preview
 summary: "Handling errors in programming is about managing the unexpected\u2014things\
-  \ that can go wrong. Programmers do it to ensure that their programs can cope with\u2026"
+  \ that can go wrong."
 title: Handling errors
 weight: 16
 ---

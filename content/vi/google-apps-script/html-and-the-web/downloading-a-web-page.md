@@ -10,7 +10,9 @@ lastmod: '2024-03-13T22:44:36.038409-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA3i m\u1ED9t trang web b\u1EB1ng Google Apps Script bao g\u1ED3\
   m vi\u1EC7c l\u1EA5y n\u1ED9i dung c\u1EE7a trang web th\xF4ng qua HTML cho c\xE1\
-  c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7u web,\u2026"
+  c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7u web, tr\xED\
+  ch xu\u1EA5t d\u1EEF li\u1EC7u, ho\u1EB7c theo d\xF5i s\u1EF1 thay \u0111\u1ED5\
+  i."
 title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
 weight: 42
 ---

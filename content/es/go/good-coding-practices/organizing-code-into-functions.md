@@ -8,8 +8,7 @@ description: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\x
 lastmod: '2024-03-13T22:44:58.473743-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3digo\
-  \ en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este enfoque\
-  \ mejora\u2026"
+  \ en bloques modulares reutilizables que realizan tareas espec\xEDficas."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

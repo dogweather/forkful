@@ -5,8 +5,9 @@ description: "La gestione degli errori in PHP riguarda la gestione e la risposta
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.524090-06:00'
 model: gpt-4-1106-preview
-summary: "La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni\
-  \ che interrompono il flusso normale di un programma, come file mancanti o\u2026"
+summary: La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni
+  che interrompono il flusso normale di un programma, come file mancanti o input di
+  dati errati.
 title: Gestione degli errori
 weight: 16
 ---

@@ -8,7 +8,7 @@ description: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finn
 lastmod: '2024-03-13T22:44:40.351068-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne kombinasjoner\
-  \ av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering eller\u2026"
+  \ av tegn i strenger."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

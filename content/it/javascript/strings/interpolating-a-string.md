@@ -6,7 +6,7 @@ description: "L\u2019interpolazione di stringhe in JavaScript consente di inseri
 lastmod: '2024-03-13T22:44:43.798260-06:00'
 model: gpt-4-1106-preview
 summary: "L\u2019interpolazione di stringhe in JavaScript consente di inserire espressioni\
-  \ all\u2019interno di una stringa, rendendone la composizione dinamica e flessibile.\u2026"
+  \ all\u2019interno di una stringa, rendendone la composizione dinamica e flessibile."
 title: Interpolazione di una stringa
 weight: 8
 ---

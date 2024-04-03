@@ -6,8 +6,8 @@ description: "Leggere un file di testo in Dart comporta l'accesso e il recupero 
   \ dati da file memorizzati sul file system. I programmatori effettuano questa\u2026"
 lastmod: '2024-03-13T22:44:43.151090-06:00'
 model: gpt-4-0125-preview
-summary: "Leggere un file di testo in Dart comporta l'accesso e il recupero di dati\
-  \ da file memorizzati sul file system. I programmatori effettuano questa\u2026"
+summary: Leggere un file di testo in Dart comporta l'accesso e il recupero di dati
+  da file memorizzati sul file system.
 title: Lettura di un file di testo
 weight: 22
 ---

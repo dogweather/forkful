@@ -6,8 +6,10 @@ description: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karak
   \ van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
 lastmod: '2024-03-13T22:44:50.269985-06:00'
 model: gpt-4-0125-preview
-summary: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van\
-  \ een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
+summary: Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van
+  een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine
+  letters staat, om ervoor te zorgen dat de string opvalt of voldoet aan specifieke
+  grammaticale normen.
 title: Een string kapitaliseren
 weight: 2
 ---

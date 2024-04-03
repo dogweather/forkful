@@ -6,8 +6,8 @@ description: "Een datum in de toekomst of het verleden berekenen houdt in dat je
   \ bekende datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.696036-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum in de toekomst of het verleden berekenen houdt in dat je een bekende\
-  \ datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"
+summary: Een datum in de toekomst of het verleden berekenen houdt in dat je een bekende
+  datum aanpast met een bepaald aantal dagen, maanden of jaren.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

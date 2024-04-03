@@ -8,7 +8,8 @@ description: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de
 lastmod: '2024-03-13T22:44:46.581890-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de um documento\
-  \ HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo de forma\u2026"
+  \ HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo de forma program\xE1\
+  tica."
 title: Analisando HTML
 weight: 43
 ---

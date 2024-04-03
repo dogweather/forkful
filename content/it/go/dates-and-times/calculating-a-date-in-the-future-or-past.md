@@ -6,8 +6,9 @@ description: "Calcolare una data nel futuro o nel passato in Go comporta la mani
   \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"
 lastmod: '2024-03-13T22:44:42.922706-06:00'
 model: gpt-4-0125-preview
-summary: "Calcolare una data nel futuro o nel passato in Go comporta la manipolazione\
-  \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"
+summary: Calcolare una data nel futuro o nel passato in Go comporta la manipolazione
+  dei valori di data e ora per determinare un punto specifico relativo a una data
+  data.
 title: Calcolo di una data nel futuro o nel passato
 weight: 26
 ---

@@ -6,8 +6,8 @@ description: "Stel je voor dat je een klein programma hebt dat zich niet goed ge
   \ ```C# static void Main() { int resultaat = Som(1, 2);\u2026"
 lastmod: '2024-03-13T22:44:50.814773-06:00'
 model: gpt-4-0125-preview
-summary: "Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:\
-  \ ```C# static void Main() { int resultaat = Som(1, 2);\u2026"
+summary: "Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:\n\
+  \n```C#\nstatic void Main()\n{\n    int resultaat = Som(1, 2);\n    Console."
 title: Een debugger gebruiken
 weight: 35
 ---

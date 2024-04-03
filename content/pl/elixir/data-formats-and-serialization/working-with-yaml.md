@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.065153-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119zykiem\
   \ znacznik\xF3w), to standard serializacji danych czytelny dla cz\u0142owieka, kt\xF3\
-  ry jest\u2026"
+  ry jest powszechnie stosowany w plikach konfiguracyjnych oraz w wymianie danych\
+  \ mi\u0119dzy j\u0119zykami o r\xF3\u017Cnych strukturach danych."
 title: Praca z YAML
 weight: 41
 ---

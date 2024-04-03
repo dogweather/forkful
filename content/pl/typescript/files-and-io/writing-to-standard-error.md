@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.156145-06:00'
 model: gpt-4-0125-preview
 summary: "W TypeScript piszemy do standardowego b\u0142\u0119du (stderr) w celu wysy\u0142\
   ania komunikat\xF3w b\u0142\u0119d\xF3w lub rejestracji bezpo\u015Brednio do strumienia\
-  \ wyj\u015Bciowego b\u0142\u0119d\xF3w\u2026"
+  \ wyj\u015Bciowego b\u0142\u0119d\xF3w \u015Brodowiska (np."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

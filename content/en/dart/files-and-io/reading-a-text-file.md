@@ -4,8 +4,8 @@ description: "Reading a text file in Dart involves accessing and retrieving data
   \ files stored on the file system. Programmers do this to handle input data,\u2026"
 lastmod: '2024-03-13T22:44:59.836166-06:00'
 model: gpt-4-0125-preview
-summary: "Reading a text file in Dart involves accessing and retrieving data from\
-  \ files stored on the file system. Programmers do this to handle input data,\u2026"
+summary: Reading a text file in Dart involves accessing and retrieving data from files
+  stored on the file system.
 title: Reading a text file
 weight: 22
 ---

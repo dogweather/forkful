@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.593982-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i str\xE4ngar \xE4\
   r avg\xF6rande f\xF6r datavalidering, sanering, eller n\xE4r text f\xF6rbereds f\xF6\
-  r vidare\u2026"
+  r vidare bearbetning."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

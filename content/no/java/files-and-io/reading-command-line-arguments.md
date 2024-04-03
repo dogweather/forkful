@@ -6,8 +6,7 @@ description: "Lesing av kommandolinjeargumenter lar deg ta imot data n\xE5r du s
 lastmod: '2024-03-13T22:44:40.681639-06:00'
 model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar deg ta imot data n\xE5r du starter\
-  \ et Java-program. Programmererne gj\xF8r dette for \xE5 gj\xF8re programmene fleksible\
-  \ og\u2026"
+  \ et Java-program."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

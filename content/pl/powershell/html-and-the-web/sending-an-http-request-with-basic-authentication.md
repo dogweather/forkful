@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.629572-06:00'
 model: gpt-4-1106-preview
 summary: "Wys\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to proces zdalnego zapytania serwera z logowaniem (nazwa u\u017Cytkownika i has\u0142\
-  o). Programi\u015Bci robi\u0105 to, by\u2026"
+  o)."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

@@ -8,8 +8,7 @@ description: "Trabajar con XML en C implica el an\xE1lisis, consulta y manipulac
 lastmod: '2024-03-13T22:44:59.572403-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en C implica el an\xE1lisis, consulta y manipulaci\xF3\
-  n de documentos XML utilizando varias bibliotecas. Los programadores trabajan con\
-  \ XML\u2026"
+  n de documentos XML utilizando varias bibliotecas."
 title: Trabajando con XML
 weight: 40
 ---

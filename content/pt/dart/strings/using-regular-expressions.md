@@ -7,7 +7,8 @@ description: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poder
 lastmod: '2024-03-13T22:44:46.270619-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poderosa de\
-  \ buscar e manipular strings, permitindo que programadores realizem tarefas complexas\u2026"
+  \ buscar e manipular strings, permitindo que programadores realizem tarefas complexas\
+  \ de processamento de texto de forma eficiente."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

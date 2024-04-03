@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.178703-06:00'
 model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh t\u1EA1\
   o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7\
-  u trung gian. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho c\xE1c m\u1EE5\
-  c \u0111\xEDch nh\u01B0 l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+  u trung gian."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

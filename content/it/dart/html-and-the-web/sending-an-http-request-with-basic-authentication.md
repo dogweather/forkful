@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.129905-06:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base comporta l'aggiunta\
   \ di un nome utente e di una password a una richiesta per verificare l'identit\xE0\
-  \u2026"
+  \ dell'utente."
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

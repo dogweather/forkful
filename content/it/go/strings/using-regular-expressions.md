@@ -7,8 +7,8 @@ description: "Le espressioni regolari (regex) nella programmazione sono utilizza
   \ I\u2026"
 lastmod: '2024-03-13T22:44:42.896964-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) nella programmazione sono utilizzate per\
-  \ cercare, corrispondere e manipolare stringhe basate su specifici modelli. I\u2026"
+summary: Le espressioni regolari (regex) nella programmazione sono utilizzate per
+  cercare, corrispondere e manipolare stringhe basate su specifici modelli.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

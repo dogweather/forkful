@@ -4,8 +4,8 @@ description: "Sending an HTTP request with basic authentication involves transmi
   \ a username and password over the web to access protected resources. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.474020-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request with basic authentication involves transmitting\
-  \ a username and password over the web to access protected resources. Programmers\u2026"
+summary: Sending an HTTP request with basic authentication involves transmitting a
+  username and password over the web to access protected resources.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

@@ -6,7 +6,9 @@ description: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywaln
 lastmod: '2024-03-13T22:44:35.492972-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych warto\u015B\
-  ci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144 takich jak tworzenie\u2026"
+  ci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144 takich jak tworzenie\
+  \ unikalnych identyfikator\xF3w u\u017Cytkownik\xF3w, generowanie hase\u0142 czy\
+  \ do u\u017Cytku w symulacjach i grach."
 title: Generowanie liczb losowych
 weight: 12
 ---

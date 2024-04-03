@@ -5,9 +5,9 @@ description: "Creare un file temporaneo significa generare un file per uso tempo
   \ un\u2026"
 lastmod: '2024-03-13T22:44:43.494702-06:00'
 model: gpt-4-1106-preview
-summary: "Creare un file temporaneo significa generare un file per uso temporaneo,\
-  \ di solito destinato a contenere dati che servono solo durante l'esecuzione di\
-  \ un\u2026"
+summary: Creare un file temporaneo significa generare un file per uso temporaneo,
+  di solito destinato a contenere dati che servono solo durante l'esecuzione di un
+  processo.
 title: Creazione di un file temporaneo
 weight: 21
 ---

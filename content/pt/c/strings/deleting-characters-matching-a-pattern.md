@@ -8,7 +8,8 @@ description: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico d
 lastmod: '2024-03-13T22:44:47.032161-06:00'
 model: gpt-4-0125-preview
 summary: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico de strings\
-  \ em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres que se encaixam\u2026"
+  \ em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres que se encaixam\
+  \ em crit\xE9rios pr\xE9-definidos."
 title: "Deletando caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

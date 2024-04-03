@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.906476-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub otwarciu\
   \ pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015Bcia/wyj\u015B\
-  cia plik\xF3w\u2026"
+  cia plik\xF3w w C do zapisania danych tekstowych."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

@@ -6,8 +6,9 @@ description: "Debug-uitvoer afdrukken in Dart gaat over het weergeven van inform
   \ in de console tijdens runtime, waardoor ontwikkelaars de uitvoeringsstroom kunnen\u2026"
 lastmod: '2024-03-13T22:44:50.507580-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-uitvoer afdrukken in Dart gaat over het weergeven van informatie in\
-  \ de console tijdens runtime, waardoor ontwikkelaars de uitvoeringsstroom kunnen\u2026"
+summary: Debug-uitvoer afdrukken in Dart gaat over het weergeven van informatie in
+  de console tijdens runtime, waardoor ontwikkelaars de uitvoeringsstroom kunnen volgen,
+  de staat van variabelen kunnen onderzoeken, of de bron van fouten kunnen identificeren.
 title: Debug-uitvoer afdrukken
 weight: 33
 ---

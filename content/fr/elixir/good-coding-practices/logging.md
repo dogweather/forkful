@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.334037-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
   \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\
-  cution d'un\u2026"
+  cution d'un programme, typiquement dans un fichier ou un syst\xE8me externe."
 title: Journalisation
 weight: 17
 ---

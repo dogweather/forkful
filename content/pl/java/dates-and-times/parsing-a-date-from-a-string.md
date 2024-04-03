@@ -7,7 +7,7 @@ description: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu teksto
 lastmod: '2024-03-13T22:44:35.286933-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu tekstowej reprezentacji\
-  \ daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`.\u2026"
+  \ daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

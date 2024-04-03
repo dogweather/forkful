@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.205451-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas de\
   \ c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes de\
-  \ tu aplicaci\xF3n\u2026"
+  \ tu aplicaci\xF3n funcionen como se espera."
 title: Escribiendo pruebas
 weight: 36
 ---

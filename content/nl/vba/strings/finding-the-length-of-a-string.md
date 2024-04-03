@@ -6,8 +6,8 @@ description: "Het vinden van de lengte van een string in Visual Basic for Applic
   \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
 lastmod: '2024-03-13T22:44:50.627286-06:00'
 model: gpt-4-0125-preview
-summary: "Het vinden van de lengte van een string in Visual Basic for Applications\
-  \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
+summary: Het vinden van de lengte van een string in Visual Basic for Applications
+  (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat.
 title: De lengte van een string vinden
 weight: 7
 ---

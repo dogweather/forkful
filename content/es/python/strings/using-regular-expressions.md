@@ -6,8 +6,8 @@ description: "Las expresiones regulares (regex) son patrones utilizados para coi
   \ combinaciones de caracteres en cadenas de texto. Los programadores las utilizan\u2026"
 lastmod: '2024-03-13T22:44:58.600509-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) son patrones utilizados para coincidir\
-  \ combinaciones de caracteres en cadenas de texto. Los programadores las utilizan\u2026"
+summary: Las expresiones regulares (regex) son patrones utilizados para coincidir
+  combinaciones de caracteres en cadenas de texto.
 title: Usando expresiones regulares
 weight: 11
 ---

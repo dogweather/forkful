@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.170491-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
   \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\
-  \ cha\xEEne,\u2026"
+  \ cha\xEEne, g\xE9n\xE9ralement issus d'objets JSON analys\xE9s, de saisies utilisateur\
+  \ ou d'extraction de donn\xE9es."
 title: "Supprimer les guillemets d'une cha\xEEne"
 weight: 9
 ---

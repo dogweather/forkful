@@ -5,7 +5,7 @@ description: "Refactorizar es el proceso de cambiar la estructura interna de un 
 lastmod: '2024-03-13T22:44:59.383506-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de cambiar la estructura interna de un programa\
-  \ inform\xE1tico sin alterar su comportamiento externo. Los programadores lo hacen\u2026"
+  \ inform\xE1tico sin alterar su comportamiento externo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

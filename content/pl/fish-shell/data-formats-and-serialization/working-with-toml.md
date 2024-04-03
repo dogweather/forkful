@@ -6,8 +6,7 @@ description: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zap
 lastmod: '2024-03-13T22:44:35.865198-06:00'
 model: gpt-4-0125-preview
 summary: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zapisu przez\
-  \ ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny. Programi\u015B\
-  ci u\u017Cywaj\u0105\u2026"
+  \ ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny."
 title: Praca z TOML
 weight: 39
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.650142-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, best\xE5ende av en reell del och en imagin\xE4r del (vanligtvis\
   \ skrivna som a + bi), m\xF6jligg\xF6r ber\xE4kningar som \xE4r opraktiska eller\
-  \ om\xF6jliga med\u2026"
+  \ om\xF6jliga med bara reella tal."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

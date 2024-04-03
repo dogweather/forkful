@@ -8,7 +8,9 @@ description: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (
 lastmod: '2024-03-13T22:44:57.603755-06:00'
 model: gpt-4-0125-preview
 summary: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court terme,\u2026"
+  \ \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court terme,\
+  \ typiquement pour le traitement de donn\xE9es ou comme tampon dans des t\xE2ches\
+  \ d'automatisation."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

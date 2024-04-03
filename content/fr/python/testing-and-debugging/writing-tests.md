@@ -7,7 +7,7 @@ description: "\xC9crire des tests en Python implique la cr\xE9ation de scripts a
 lastmod: '2024-03-13T22:44:57.239901-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Python implique la cr\xE9ation de scripts automatis\xE9\
-  s pour valider la correction de votre code. Les programmeurs font cela pour s'assurer\u2026"
+  s pour valider la correction de votre code."
 title: "R\xE9daction de tests"
 weight: 36
 ---

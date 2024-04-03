@@ -7,7 +7,8 @@ description: "Ottenere la data corrente nella programmazione \xE8 cruciale per u
 lastmod: '2024-03-13T22:44:43.052937-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nella programmazione \xE8 cruciale per una miriade\
-  \ di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione\u2026"
+  \ di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione\
+  \ delle attivit\xE0."
 title: Ottenere la data corrente
 weight: 29
 ---

@@ -5,9 +5,7 @@ description: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamist
   \ jotta voit pit\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.704358-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista. Se\
-  \ on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen, jotta\
-  \ voit pit\xE4\xE4\u2026"
+summary: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

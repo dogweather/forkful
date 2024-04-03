@@ -6,8 +6,7 @@ description: "Ladataan verkkosivu tarkoittaa sivun sis\xE4ll\xF6n noutamista int
 lastmod: '2024-03-13T22:44:57.085452-06:00'
 model: gpt-4-1106-preview
 summary: "Ladataan verkkosivu tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
-  \ ohjelmoimalla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi tiedonkeruuta, sis\xE4\
-  ll\xF6n\u2026"
+  \ ohjelmoimalla."
 title: Verkkosivun lataaminen
 weight: 42
 ---

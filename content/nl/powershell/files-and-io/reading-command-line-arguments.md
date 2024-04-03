@@ -7,8 +7,8 @@ description: "Het lezen van command line argumenten stelt scripts in staat om zi
   \ ze\u2026"
 lastmod: '2024-03-13T22:44:51.045654-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van command line argumenten stelt scripts in staat om zich anders\
-  \ te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken ze\u2026"
+summary: Het lezen van command line argumenten stelt scripts in staat om zich anders
+  te gedragen op basis van invoer van buiten de code.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

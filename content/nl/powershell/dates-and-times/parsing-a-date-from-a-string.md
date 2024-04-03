@@ -6,8 +6,8 @@ description: "Het parsen van een datum uit een string gaat over het begrijpelijk
   \ van datuminformatie die binnen een tekst is opgenomen. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:51.039323-06:00'
 model: gpt-4-0125-preview
-summary: "Het parsen van een datum uit een string gaat over het begrijpelijk maken\
-  \ van datuminformatie die binnen een tekst is opgenomen. Programmeurs doen dit om\u2026"
+summary: Het parsen van een datum uit een string gaat over het begrijpelijk maken
+  van datuminformatie die binnen een tekst is opgenomen.
 title: Een datum uit een string parsen
 weight: 30
 ---

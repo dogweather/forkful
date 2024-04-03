@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.199325-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 essencialmente escrever informa\xE7\
   \xF5es dos seus programas para ajudar a entender o que est\xE1 a acontecer enquanto\
-  \ o c\xF3digo\u2026"
+  \ o c\xF3digo corre."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

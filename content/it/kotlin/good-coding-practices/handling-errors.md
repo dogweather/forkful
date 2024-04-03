@@ -6,7 +6,8 @@ description: "La gestione degli errori \xE8 il modo in cui il tuo codice si occu
 lastmod: '2024-03-13T22:44:43.398277-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori \xE8 il modo in cui il tuo codice si occupa dei\
-  \ problemi che emergono durante l'esecuzione, come se gestisse una palla curva senza\u2026"
+  \ problemi che emergono durante l'esecuzione, come se gestisse una palla curva senza\
+  \ farla cadere."
 title: Gestione degli errori
 weight: 16
 ---

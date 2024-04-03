@@ -4,8 +4,8 @@ description: "Rounding numbers, a fundamental concept in computer programming, i
   \ adjusting a number to its closest integer or to a specified number of decimal\u2026"
 lastmod: '2024-03-13T22:44:59.665328-06:00'
 model: gpt-4-0125-preview
-summary: "Rounding numbers, a fundamental concept in computer programming, involves\
-  \ adjusting a number to its closest integer or to a specified number of decimal\u2026"
+summary: Rounding numbers, a fundamental concept in computer programming, involves
+  adjusting a number to its closest integer or to a specified number of decimal places.
 title: Rounding numbers
 weight: 13
 ---

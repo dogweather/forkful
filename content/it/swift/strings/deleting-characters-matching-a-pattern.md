@@ -4,8 +4,9 @@ description: "Rimuovere caratteri corrispondenti a un pattern significa filtrare
   \ stringa eliminando tutti i caratteri o gruppi di caratteri che rientrano in un\u2026"
 lastmod: '2024-03-13T22:44:43.754786-06:00'
 model: gpt-4-1106-preview
-summary: "Rimuovere caratteri corrispondenti a un pattern significa filtrare una stringa\
-  \ eliminando tutti i caratteri o gruppi di caratteri che rientrano in un\u2026"
+summary: Rimuovere caratteri corrispondenti a un pattern significa filtrare una stringa
+  eliminando tutti i caratteri o gruppi di caratteri che rientrano in un criterio
+  specifico.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

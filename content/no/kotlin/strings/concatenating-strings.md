@@ -6,8 +6,7 @@ description: "I programmering, \xE5 sl\xE5 sammen strenger (concatenating string
 lastmod: '2024-03-13T22:44:40.742086-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering, \xE5 sl\xE5 sammen strenger (concatenating strings) er\
-  \ rett og slett \xE5 sette dem sammen i \xE9n. Vi gj\xF8r det for \xE5 bygge setninger,\
-  \ lage meldinger\u2026"
+  \ rett og slett \xE5 sette dem sammen i \xE9n."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

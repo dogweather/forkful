@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.099751-06:00'
 model: gpt-4-0125-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Dart polega na przewidywaniu i zarz\u0105\
   dzaniu wyj\u0105tkami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania programu,\
-  \ aby zwi\u0119kszy\u0107 jego niezawodno\u015B\u0107 i\u2026"
+  \ aby zwi\u0119kszy\u0107 jego niezawodno\u015B\u0107 i u\u017Cyteczno\u015B\u0107\
+  ."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

@@ -4,8 +4,8 @@ description: "Downloading a web page means grabbing the data from the web and br
   \ it into your app. Programmers do it to fetch content, interact with online\u2026"
 lastmod: '2024-03-13T22:45:00.395370-06:00'
 model: gpt-4-1106-preview
-summary: "Downloading a web page means grabbing the data from the web and bringing\
-  \ it into your app. Programmers do it to fetch content, interact with online\u2026"
+summary: Downloading a web page means grabbing the data from the web and bringing
+  it into your app.
 title: Downloading a web page
 weight: 42
 ---

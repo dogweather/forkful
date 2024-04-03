@@ -5,9 +5,7 @@ description: "**Co i Dlaczego?** Usuwanie znak\xF3w pasuj\u0105cych do wzorca to
   \ by oczy\u015Bci\u0107 dane,\u2026"
 lastmod: '2024-03-13T22:44:34.977826-06:00'
 model: gpt-4-1106-preview
-summary: "**Co i Dlaczego?** Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces\
-  \ eliminowania okre\u015Blonych znak\xF3w z ci\u0105g\xF3w tekstowych. Robimy to,\
-  \ by oczy\u015Bci\u0107 dane,\u2026"
+summary: '**Co i Dlaczego.'
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

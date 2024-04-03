@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.398552-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9rer les erreurs en Dart consiste \xE0 anticiper et g\xE9rer les exceptions\
   \ qui surviennent pendant l'ex\xE9cution du programme pour am\xE9liorer la fiabilit\xE9\
-  \ et\u2026"
+  \ et l'utilisabilit\xE9."
 title: Gestion des erreurs
 weight: 16
 ---

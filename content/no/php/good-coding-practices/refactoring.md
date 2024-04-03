@@ -6,8 +6,7 @@ description: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende dat
 lastmod: '2024-03-13T22:44:40.894966-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende dataprogramkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere refaktorerer for \xE5\
-  \u2026"
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel."
 title: Refaktorering
 weight: 19
 ---

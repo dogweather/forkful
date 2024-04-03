@@ -8,7 +8,7 @@ description: "Een tekstbestand schrijven in programmeren betekent het cre\xEBren
 lastmod: '2024-03-13T22:44:50.786146-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in programmeren betekent het cre\xEBren en opslaan\
-  \ van gegevens in een leesbaar bestandsformaat, zoals .txt. Programmeurs doen dit\u2026"
+  \ van gegevens in een leesbaar bestandsformaat, zoals ."
 title: Een tekstbestand schrijven
 weight: 24
 ---

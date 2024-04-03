@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.620732-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane r\xF3wnie\u017C jako tablice mieszaj\u0105ce\
   \ lub s\u0142owniki w PowerShellu, pozwalaj\u0105 na przechowywanie danych w parach\
-  \ klucz-warto\u015B\u0107, co\u2026"
+  \ klucz-warto\u015B\u0107, co sprawia, \u017Ce odzyskiwanie danych jest proste i\
+  \ efektywne."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

@@ -8,8 +8,7 @@ description: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de seriali
 lastmod: '2024-03-13T22:44:46.817082-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de serializa\xE7\
-  \xE3o de dados leg\xEDvel por humanos. Programadores frequentemente a utilizam para\
-  \ arquivos\u2026"
+  \xE3o de dados leg\xEDvel por humanos."
 title: Trabalhando com YAML
 weight: 41
 ---

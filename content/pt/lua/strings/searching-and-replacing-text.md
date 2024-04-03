@@ -6,8 +6,7 @@ description: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAnci
 lastmod: '2024-03-13T22:44:46.694765-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias de\
-  \ caracteres dentro de uma string e alter\xE1-las por outras. Programadores fazem\
-  \ isso para\u2026"
+  \ caracteres dentro de uma string e alter\xE1-las por outras."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

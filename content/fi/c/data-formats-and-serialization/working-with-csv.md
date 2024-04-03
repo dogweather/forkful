@@ -8,7 +8,9 @@ description: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sitte
 lastmod: '2024-03-13T22:44:57.065178-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa\
-  \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\u2026"
+  \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\
+  \ riveitt\xE4in, miss\xE4 jokainen rivi edustaa tietuetta ja jokaisen tietueen kent\xE4\
+  t on erotettu pilkuilla."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

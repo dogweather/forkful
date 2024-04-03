@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.436490-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base signifie inclure\
   \ des informations d'identification cod\xE9es dans les en-t\xEAtes pour acc\xE9\
-  der \xE0 une\u2026"
+  der \xE0 une ressource prot\xE9g\xE9e."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

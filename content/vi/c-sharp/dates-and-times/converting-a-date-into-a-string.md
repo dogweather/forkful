@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.672591-06:00'
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7i trong C#\
   \ l\xE0 qu\xE1 tr\xECnh thay \u0111\u1ED5i \u0111\u1ECBnh d\u1EA1ng t\u1EEB \u0111\
-  \u1ED1i t\u01B0\u1EE3ng DateTime sang bi\u1EC3u di\u1EC5n v\u0103n b\u1EA3n. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+  \u1ED1i t\u01B0\u1EE3ng DateTime sang bi\u1EC3u di\u1EC5n v\u0103n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

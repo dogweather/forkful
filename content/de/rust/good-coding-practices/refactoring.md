@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.680985-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes\
   \ \u2013 also die \xC4nderung der Faktoren \u2013, ohne sein externes Verhalten\
-  \ zu ver\xE4ndern.\u2026"
+  \ zu ver\xE4ndern."
 title: Refactoring
 weight: 19
 ---

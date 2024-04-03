@@ -7,9 +7,9 @@ description: "Das Parsen eines Datums aus einem String beinhaltet das Extrahiere
   \ in\u2026"
 lastmod: '2024-03-13T22:44:54.318677-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String beinhaltet das Extrahieren von\
-  \ Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung\
-  \ in\u2026"
+summary: Das Parsen eines Datums aus einem String beinhaltet das Extrahieren von Datumsinformationen,
+  die innerhalb von Strings kodiert sind, und die Umwandlung in ein strukturiertes
+  Format, das von Programmierumgebungen erkannt und manipuliert werden kann.
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

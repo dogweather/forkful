@@ -6,8 +6,7 @@ description: "Refactoring es el proceso de ajustar c\xF3digo existente para mejo
 lastmod: '2024-03-13T22:44:59.044325-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring es el proceso de ajustar c\xF3digo existente para mejorar su\
-  \ estructura, legibilidad, y rendimiento sin cambiar su comportamiento externo.\
-  \ Los\u2026"
+  \ estructura, legibilidad, y rendimiento sin cambiar su comportamiento externo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

@@ -6,8 +6,7 @@ description: "Para usar o depurador no Xcode (o IDE para Swift), voc\xEA pode de
 lastmod: '2024-03-13T22:44:46.924905-06:00'
 model: gpt-4-0125-preview
 summary: "Para usar o depurador no Xcode (o IDE para Swift), voc\xEA pode definir\
-  \ pontos de interrup\xE7\xE3o, inspecionar vari\xE1veis e observar express\xF5es.\
-  \ Veja um exemplo:\u2026"
+  \ pontos de interrup\xE7\xE3o, inspecionar vari\xE1veis e observar express\xF5es."
 title: Usando um depurador
 weight: 35
 ---

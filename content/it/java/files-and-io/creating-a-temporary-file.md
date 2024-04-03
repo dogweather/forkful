@@ -4,8 +4,8 @@ description: "Creare un file temporaneo serve a manipolare dati che non devono s
   \ oltre la durata del programma. I programmatori li usano per test,\u2026"
 lastmod: '2024-03-13T22:44:43.328317-06:00'
 model: gpt-4-1106-preview
-summary: "Creare un file temporaneo serve a manipolare dati che non devono sopravvivere\
-  \ oltre la durata del programma. I programmatori li usano per test,\u2026"
+summary: Creare un file temporaneo serve a manipolare dati che non devono sopravvivere
+  oltre la durata del programma.
 title: Creazione di un file temporaneo
 weight: 21
 ---

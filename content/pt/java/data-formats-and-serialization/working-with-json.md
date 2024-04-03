@@ -7,7 +7,7 @@ description: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa 
 lastmod: '2024-03-13T22:44:46.478032-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa manipular\
-  \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java.\u2026"
+  \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java."
 title: Trabalhando com JSON
 weight: 38
 ---

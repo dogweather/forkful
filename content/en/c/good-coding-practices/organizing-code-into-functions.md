@@ -4,8 +4,8 @@ description: "Organizing code into functions in C involves breaking down complex
   \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"
 lastmod: '2024-03-13T22:45:00.516382-06:00'
 model: gpt-4-0125-preview
-summary: "Organizing code into functions in C involves breaking down complex tasks\
-  \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"
+summary: Organizing code into functions in C involves breaking down complex tasks
+  into smaller, reusable blocks of code.
 title: Organizing code into functions
 weight: 18
 ---

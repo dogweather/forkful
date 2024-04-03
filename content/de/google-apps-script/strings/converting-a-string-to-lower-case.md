@@ -7,8 +7,9 @@ description: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google App
   \ Google-\u2026"
 lastmod: '2024-03-13T22:44:53.319720-06:00'
 model: gpt-4-0125-preview
-summary: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script,\
-  \ einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-\u2026"
+summary: Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script,
+  einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-Produkten,
+  ist eine grundlegende Aufgabe, die darauf abzielt, Textdaten zu standardisieren.
 title: Einen String in Kleinbuchstaben umwandeln
 weight: 4
 ---

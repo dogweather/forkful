@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Ruby\
   \ cho ph\xE9p c\xE1c k\u1ECBch b\u1EA3n nh\u1EADn \u0111\u1EA7u v\xE0o ngay khi\
   \ ch\xFAng \u0111\u01B0\u1EE3c ch\u1EA1y, nh\u01B0 c\u1EA5u h\xECnh t\xF9y ch\u1ECD\
-  n ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c l\u1EADp tr\xECnh\u2026"
+  n ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

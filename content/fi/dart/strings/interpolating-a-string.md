@@ -7,7 +7,8 @@ description: "Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot li
 lastmod: '2024-03-13T22:44:56.255489-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot lis\xE4\
-  t\xE4\xE4n suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman\u2026"
+  t\xE4\xE4n suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman\
+  \ hankalia yhdistelyj\xE4."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

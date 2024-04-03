@@ -8,8 +8,7 @@ description: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE
 lastmod: '2024-03-13T22:44:41.243828-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE5 dirigere\
-  \ feilmeldinger eller diagnostikk separat fra standard utdata (stdout). Programm\xF8\
-  rer\u2026"
+  \ feilmeldinger eller diagnostikk separat fra standard utdata (stdout)."
 title: Skriving til standardfeil
 weight: 25
 ---

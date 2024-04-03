@@ -7,7 +7,7 @@ description: "Encontrar o comprimento de uma string em C envolve determinar o n\
 lastmod: '2024-03-13T22:44:47.039660-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em C envolve determinar o n\xFAmero\
-  \ de caracteres antes do terminador nulo `\\0`. Os programadores fazem isso para\u2026"
+  \ de caracteres antes do terminador nulo `\\0`."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

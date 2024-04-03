@@ -5,7 +5,7 @@ description: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku k
 lastmod: '2024-03-13T22:44:35.432639-06:00'
 model: gpt-4-0125-preview
 summary: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego,\
-  \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce.\u2026"
+  \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce."
 title: Praca z TOML
 weight: 39
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.376723-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
   r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
-  \ talet\u2026"
+  \ talet eller ett specificerat antal decimaler."
 title: Avrundning av nummer
 weight: 13
 ---

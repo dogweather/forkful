@@ -8,8 +8,7 @@ description: "YAML, som st\xE5r for YAML Ain't Markup Language, er en menneskeve
 lastmod: '2024-03-13T22:44:41.162152-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er en menneskevennlig\
-  \ standard for dataserialisering for alle programmeringsspr\xE5k. Programmerere\
-  \ bruker det\u2026"
+  \ standard for dataserialisering for alle programmeringsspr\xE5k."
 title: Arbeider med YAML
 weight: 41
 ---

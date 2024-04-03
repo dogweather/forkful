@@ -8,7 +8,8 @@ description: "Sprawdzanie, czy katalog istnieje w Pythonie, polega na weryfikacj
 lastmod: '2024-03-13T22:44:34.964756-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Pythonie, polega na weryfikacji obecno\u015B\
-  ci folderu w systemie plik\xF3w przed wykonaniem operacji takich jak czytanie czy\u2026"
+  ci folderu w systemie plik\xF3w przed wykonaniem operacji takich jak czytanie czy\
+  \ zapisywanie plik\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

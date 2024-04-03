@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.269705-06:00'
 model: gpt-4-0125-preview
 summary: "I programmering inneb\xE6rer \"skriv ut feils\xF8kingsutdata\" \xE5 produsere\
   \ detaljerte informative meldinger som hjelper utviklere med \xE5 forst\xE5 kj\xF8\
-  reflyten av\u2026"
+  reflyten av programmet deres eller identifisere problemer."
 title: "Utskrift av feils\xF8kingsdata"
 weight: 33
 ---

@@ -7,7 +7,8 @@ description: "Das Format der durch Kommas getrennten Werte (CSV) ist aufgrund se
 lastmod: '2024-03-13T22:44:53.312197-06:00'
 model: gpt-4-0125-preview
 summary: "Das Format der durch Kommas getrennten Werte (CSV) ist aufgrund seiner Einfachheit\
-  \ und der einfachen Integration in die meisten Programmiersprachen,\u2026"
+  \ und der einfachen Integration in die meisten Programmiersprachen, einschlie\xDF\
+  lich Go, allgegenw\xE4rtig f\xFCr den Datenaustausch."
 title: Arbeiten mit CSV
 weight: 37
 ---

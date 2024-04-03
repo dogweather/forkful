@@ -8,8 +8,7 @@ description: "Testien kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 automaattisten t
 lastmod: '2024-03-13T22:44:56.360155-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 automaattisten tarkistusten\
-  \ luomisen varmistamaan, ett\xE4 koodisi toimii odotetulla tavalla. Ohjelmoijat\
-  \ tekev\xE4t\u2026"
+  \ luomisen varmistamaan, ett\xE4 koodisi toimii odotetulla tavalla."
 title: Testien kirjoittaminen
 weight: 36
 ---

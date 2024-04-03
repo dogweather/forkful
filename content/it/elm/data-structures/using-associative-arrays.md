@@ -6,8 +6,9 @@ description: "Gli array associativi, o come li chiama Elm, Dizionari, mappano le
   \ ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione\u2026"
 lastmod: '2024-03-13T22:44:43.343246-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, o come li chiama Elm, Dizionari, mappano le chiavi\
-  \ ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione\u2026"
+summary: Gli array associativi, o come li chiama Elm, Dizionari, mappano le chiavi
+  ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione dei
+  valori estremamente rapidi.
 title: Utilizzo di array associativi
 weight: 15
 ---

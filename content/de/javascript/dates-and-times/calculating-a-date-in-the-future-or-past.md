@@ -6,8 +6,7 @@ description: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunfts
 lastmod: '2024-03-13T22:44:54.279530-06:00'
 model: gpt-4-1106-preview
 summary: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunftsdaten\
-  \ zu ermitteln. Programmierer nutzen dies f\xFCr Features wie Erinnerungen, Zeitabl\xE4\
-  ufe\u2026"
+  \ zu ermitteln."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

@@ -7,8 +7,9 @@ description: "Verificar si existe un directorio en Python se trata de comprobar 
   \ como\u2026"
 lastmod: '2024-03-13T22:44:58.628105-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar si existe un directorio en Python se trata de comprobar la presencia\
-  \ de una carpeta en el sistema de archivos antes de realizar operaciones como\u2026"
+summary: Verificar si existe un directorio en Python se trata de comprobar la presencia
+  de una carpeta en el sistema de archivos antes de realizar operaciones como leer
+  o escribir archivos.
 title: Comprobando si un directorio existe
 weight: 20
 ---

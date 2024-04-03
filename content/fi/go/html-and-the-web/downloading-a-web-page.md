@@ -8,8 +8,7 @@ description: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n no
 lastmod: '2024-03-13T22:44:56.048999-06:00'
 model: gpt-4-0125-preview
 summary: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
-  \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
-  \ web-scrapingin, datan\u2026"
+  \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en."
 title: Web-sivun lataaminen
 weight: 42
 ---

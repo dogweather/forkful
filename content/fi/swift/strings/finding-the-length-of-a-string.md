@@ -5,9 +5,7 @@ description: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa
   \ sy\xF6tteen, rajatakseen\u2026"
 lastmod: '2024-03-13T22:44:56.898396-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa merkkien\
-  \ m\xE4\xE4r\xE4n laskemista siin\xE4. Koodarit tekev\xE4t t\xE4m\xE4n validoidakseen\
-  \ sy\xF6tteen, rajatakseen\u2026"
+summary: "\"Mik\xE4 & Miksi."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

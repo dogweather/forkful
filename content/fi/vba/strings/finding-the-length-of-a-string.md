@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.390732-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon pituuden selvitt\xE4minen Visual Basic for Applications (VBA)\
   \ -ohjelmoinnissa tarkoittaa sen sis\xE4lt\xE4mien merkkien lukum\xE4\xE4r\xE4n\
-  \ m\xE4\xE4ritt\xE4mist\xE4.\u2026"
+  \ m\xE4\xE4ritt\xE4mist\xE4."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

@@ -7,7 +7,8 @@ description: "Das Schreiben einer Textdatei in Swift erm\xF6glicht es Ihnen, Zei
 lastmod: '2024-03-13T22:44:54.243202-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Swift erm\xF6glicht es Ihnen, Zeichenketten-Daten\
-  \ dauerhaft auf dem Dateisystem zu speichern, was f\xFCr Aufgaben wie das\u2026"
+  \ dauerhaft auf dem Dateisystem zu speichern, was f\xFCr Aufgaben wie das Speichern\
+  \ von Konfigurationseinstellungen, Benutzerdaten oder Protokollen wesentlich ist."
 title: Eine Textdatei schreiben
 weight: 24
 ---

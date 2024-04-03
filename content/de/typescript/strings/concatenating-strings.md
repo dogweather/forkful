@@ -5,7 +5,7 @@ description: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehrer
 lastmod: '2024-03-13T22:44:53.623558-06:00'
 model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren Textst\xFC\
-  cken. Das ist n\xF6tig, um dynamische Texte zu erstellen oder unterschiedliche\u2026"
+  cken."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

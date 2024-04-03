@@ -7,8 +7,8 @@ description: "Het schrijven van tests in programmeren betekent het maken van scr
   \ op te\u2026"
 lastmod: '2024-03-13T22:44:51.033188-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van tests in programmeren betekent het maken van scripts die\
-  \ controleren of je code correct werkt. Programmeurs doen dit om bugs vroeg op te\u2026"
+summary: Het schrijven van tests in programmeren betekent het maken van scripts die
+  controleren of je code correct werkt.
 title: Tests Schrijven
 weight: 36
 ---

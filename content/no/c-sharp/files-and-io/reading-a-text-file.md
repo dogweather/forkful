@@ -6,8 +6,7 @@ description: "\xC5 lese en tekstfil i C# betyr at du henter og behandler tekstda
 lastmod: '2024-03-13T22:44:40.815307-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil i C# betyr at du henter og behandler tekstdata fra\
-  \ en fil. Det er en grunnleggende kompetanse fordi filer ofte inneholder viktige\
-  \ data\u2026"
+  \ en fil."
 title: Lese en tekstfil
 weight: 22
 ---

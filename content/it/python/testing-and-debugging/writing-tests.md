@@ -6,8 +6,8 @@ description: "Scrivere test in Python comporta la creazione di script automatizz
   \ per validare la correttezza del tuo codice. I programmatori lo fanno per assicurarsi\u2026"
 lastmod: '2024-03-13T22:44:43.004567-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Python comporta la creazione di script automatizzati per\
-  \ validare la correttezza del tuo codice. I programmatori lo fanno per assicurarsi\u2026"
+summary: Scrivere test in Python comporta la creazione di script automatizzati per
+  validare la correttezza del tuo codice.
 title: Scrivere test
 weight: 36
 ---

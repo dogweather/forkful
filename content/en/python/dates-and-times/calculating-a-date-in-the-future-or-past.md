@@ -4,8 +4,8 @@ description: "Calculating a future or past date means finding a date before or a
   \ a specified time interval. Programmers do it for reminders, expiration dates,\u2026"
 lastmod: '2024-03-13T22:44:59.719881-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating a future or past date means finding a date before or after a\
-  \ specified time interval. Programmers do it for reminders, expiration dates,\u2026"
+summary: Calculating a future or past date means finding a date before or after a
+  specified time interval.
 title: Calculating a date in the future or past
 weight: 26
 ---

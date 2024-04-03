@@ -5,7 +5,7 @@ description: "Stripar aspas de uma string significa remover aquelas inc\xF4modas
 lastmod: '2024-03-13T22:44:46.867929-06:00'
 model: gpt-4-0125-preview
 summary: "Stripar aspas de uma string significa remover aquelas inc\xF4modas aspas\
-  \ duplas ou simples que envolvem nosso texto (' ou \"). Programadores frequentemente\u2026"
+  \ duplas ou simples que envolvem nosso texto (' ou \")."
 title: Removendo aspas de uma string
 weight: 9
 ---

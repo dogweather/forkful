@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.833662-06:00'
 model: gpt-4-1106-preview
 summary: "L\u2019envoi d\u2019une requ\xEAte HTTP avec authentification basique consiste\
   \ \xE0 transmettre \xE0 un serveur des identifiants (nom d\u2019utilisateur et mot\
-  \ de passe) encod\xE9s\u2026"
+  \ de passe) encod\xE9s en base64 dans les en-t\xEAtes HTTP afin de s'identifier."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

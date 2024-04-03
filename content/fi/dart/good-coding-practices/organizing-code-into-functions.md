@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.276622-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Dart-kieless\xE4 tarkoittaa uudelleenk\xE4\
   ytett\xE4vien koodilohkojen m\xE4\xE4ritt\xE4mist\xE4, jotka suorittavat tiettyj\xE4\
-  \ teht\xE4vi\xE4,\u2026"
+  \ teht\xE4vi\xE4, tyypillisesti saaden sy\xF6tteit\xE4, k\xE4sitellen tietoja ja\
+  \ mahdollisesti palauttaen tulosteita."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

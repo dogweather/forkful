@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck (regex) inom programmering \xE4r m\xF6nster s
 lastmod: '2024-03-13T22:44:37.819364-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) inom programmering \xE4r m\xF6nster som anv\xE4\
-  nds f\xF6r att matcha teckenkombinationer i str\xE4ngar. I Elm, precis som i andra\
-  \ spr\xE5k,\u2026"
+  nds f\xF6r att matcha teckenkombinationer i str\xE4ngar."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

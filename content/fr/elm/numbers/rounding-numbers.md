@@ -6,8 +6,7 @@ description: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa v
 lastmod: '2024-03-13T22:44:57.683396-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa valeur\
-  \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires.\
-  \ Les programmeurs\u2026"
+  \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires."
 title: Arrondir les nombres
 weight: 13
 ---

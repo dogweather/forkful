@@ -8,7 +8,7 @@ description: "\xC9crire des tests en Bash implique de scripter des cas de test p
 lastmod: '2024-03-13T22:44:57.999541-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Bash implique de scripter des cas de test pour valider\
-  \ la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent des tests\u2026"
+  \ la fonctionnalit\xE9 de vos scripts Bash."
 title: "R\xE9daction de tests"
 weight: 36
 ---

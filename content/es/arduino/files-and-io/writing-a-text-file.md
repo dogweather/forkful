@@ -8,7 +8,8 @@ description: "Escribir un archivo de texto en Arduino implica guardar datos en u
 lastmod: '2024-03-13T22:44:59.351892-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Arduino implica guardar datos en un archivo\
-  \ en una tarjeta SD o un m\xF3dulo de almacenamiento similar, a menudo para fines\u2026"
+  \ en una tarjeta SD o un m\xF3dulo de almacenamiento similar, a menudo para fines\
+  \ de registro de datos."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

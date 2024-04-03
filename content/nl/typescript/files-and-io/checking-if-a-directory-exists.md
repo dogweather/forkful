@@ -6,8 +6,8 @@ description: "Controleren of een directory bestaat gaat over zorgen dat een map 
   \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.565763-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk\
-  \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"
+summary: Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk
+  aanwezig is voordat je eruit leest of ernaar schrijft.
 title: Controleren of een directory bestaat
 weight: 20
 ---

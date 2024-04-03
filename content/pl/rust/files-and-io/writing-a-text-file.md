@@ -8,8 +8,7 @@ description: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywan
 lastmod: '2024-03-13T22:44:35.204525-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie\
-  \ dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015Bci wykonuj\u0105\
-  \ t\u0119\u2026"
+  \ dodawaniu danych do pliku w systemie plik\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

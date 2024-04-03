@@ -9,8 +9,7 @@ description: "Capitalizar uma string geralmente significa converter o primeiro c
 lastmod: '2024-03-25T19:22:45.846125-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string geralmente significa converter o primeiro caractere\
-  \ de uma string para mai\xFAscula e o restante para min\xFAscula. Mas \xE0s vezes\
-  \ pode\u2026"
+  \ de uma string para mai\xFAscula e o restante para min\xFAscula."
 title: Capitalizando uma string
 weight: 2
 ---

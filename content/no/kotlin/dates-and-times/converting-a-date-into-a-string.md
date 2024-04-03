@@ -6,8 +6,7 @@ description: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-obje
 lastmod: '2024-03-13T22:44:40.762295-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-objekt til\
-  \ en tekstrepresentasjon. Vi gj\xF8r dette for \xE5 gj\xF8re datoer leselige for\
-  \ mennesker eller\u2026"
+  \ en tekstrepresentasjon."
 title: Konvertere en dato til en streng
 weight: 28
 ---

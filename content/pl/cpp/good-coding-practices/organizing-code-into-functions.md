@@ -6,8 +6,7 @@ description: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod
 lastmod: '2024-03-13T22:44:35.718437-06:00'
 model: gpt-4-1106-preview
 summary: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na mniejsze,\
-  \ wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107 powt\xF3\
-  rze\u0144, uczyni\u0107 nasz kod\u2026"
+  \ wielokrotnego u\u017Cytku cz\u0119\u015Bci."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

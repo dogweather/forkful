@@ -5,8 +5,7 @@ description: "Wrzucenie ca\u0142ego twojego kodu do jednej wielkiej sterty? Z\u0
   \ Elm jest czysty,\u2026"
 lastmod: '2024-03-13T22:44:35.327224-06:00'
 model: gpt-4-1106-preview
-summary: "Wrzucenie ca\u0142ego twojego kodu do jednej wielkiej sterty? Z\u0142y pomys\u0142\
-  . Podzielenie go na funkcje? Dobry pomys\u0142. Dzi\u0119ki temu kod Elm jest czysty,\u2026"
+summary: "Wrzucenie ca\u0142ego twojego kodu do jednej wielkiej sterty."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

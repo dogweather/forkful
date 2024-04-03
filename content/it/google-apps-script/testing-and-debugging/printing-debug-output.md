@@ -7,8 +7,9 @@ description: "Stampare l'output di debug comporta il posizionamento strategico d
   \ di\u2026"
 lastmod: '2024-03-13T22:44:42.957988-06:00'
 model: gpt-4-0125-preview
-summary: "Stampare l'output di debug comporta il posizionamento strategico di istruzioni\
-  \ di log nel codice per visualizzare i valori delle variabili, il flusso di\u2026"
+summary: Stampare l'output di debug comporta il posizionamento strategico di istruzioni
+  di log nel codice per visualizzare i valori delle variabili, il flusso di esecuzione
+  o gli errori dei messaggi durante l'esecuzione.
 title: Stampa dell'output di debug
 weight: 33
 ---

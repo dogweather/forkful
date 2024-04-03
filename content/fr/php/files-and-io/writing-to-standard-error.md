@@ -8,7 +8,9 @@ description: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diri
 lastmod: '2024-03-13T22:44:57.896495-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diriger les\
-  \ messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard (stdout),\u2026"
+  \ messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard (stdout),\
+  \ permettant aux d\xE9veloppeurs de mieux g\xE9rer leurs flux de sortie pour le\
+  \ d\xE9bogage et la journalisation."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

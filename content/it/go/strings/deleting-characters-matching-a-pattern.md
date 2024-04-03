@@ -6,8 +6,9 @@ description: "Eliminare caratteri che corrispondono a un pattern specifico consi
   \ nel rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"
 lastmod: '2024-03-13T22:44:42.890579-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminare caratteri che corrispondono a un pattern specifico consiste nel\
-  \ rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"
+summary: Eliminare caratteri che corrispondono a un pattern specifico consiste nel
+  rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su regole
+  definite da un pattern (solitamente attraverso espressioni regolari).
 title: Eliminazione dei caratteri corrispondenti a un pattern
 weight: 5
 ---

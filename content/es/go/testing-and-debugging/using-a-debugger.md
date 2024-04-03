@@ -7,8 +7,7 @@ description: "Go proporciona una facilidad incorporada para la depuraci\xF3n lla
   \ programas\u2026"
 lastmod: '2024-03-13T22:44:58.472623-06:00'
 model: gpt-4-0125-preview
-summary: "Go proporciona una facilidad incorporada para la depuraci\xF3n llamada `delve`.\
-  \ Es una herramienta de depuraci\xF3n completa que te permite ejecutar programas\u2026"
+summary: "Go proporciona una facilidad incorporada para la depuraci\xF3n llamada `delve`."
 title: Utilizando un depurador
 weight: 35
 ---

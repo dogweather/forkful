@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.327006-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
   \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
-  \ tidsstempling\u2026"
+  \ tidsstempling i apper knyttet til Googles \xF8kosystem."
 title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---

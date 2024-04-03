@@ -6,8 +6,7 @@ description: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke
 lastmod: '2024-03-13T22:44:40.901812-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke parametere\
-  \ for ulike oppgaver. \xC5 bruke disse er n\xF8dvendig for \xE5 lage fleksible skript\
-  \ som\u2026"
+  \ for ulike oppgaver."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

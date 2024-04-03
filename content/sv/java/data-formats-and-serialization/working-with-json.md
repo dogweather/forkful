@@ -8,8 +8,7 @@ description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att ha
 lastmod: '2024-03-13T22:44:37.808551-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
-  \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer. Programmerare\
-  \ v\xE4ljer\u2026"
+  \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer."
 title: Arbeta med JSON
 weight: 38
 ---

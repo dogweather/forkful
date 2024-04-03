@@ -6,8 +6,7 @@ description: "String interpolation w Ruby pozwala wrzuca\u0107 zmienne lub wyra\
 lastmod: '2024-03-13T22:44:35.916975-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation w Ruby pozwala wrzuca\u0107 zmienne lub wyra\u017C\
-  enia do \u015Brodka tekstu. U\u017Cywamy tego, by \u0142atwo tworzy\u0107 dynamiczne\
-  \ stringi."
+  enia do \u015Brodka tekstu."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

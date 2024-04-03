@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.894677-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana JavaScript),\
   \ umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\u0107\
-  .\u2026"
+  ."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

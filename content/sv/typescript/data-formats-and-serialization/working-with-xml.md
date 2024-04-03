@@ -5,7 +5,7 @@ description: "Att arbeta med XML inneb\xE4r att tolka, manipulera och skriva XML
 lastmod: '2024-03-13T22:44:37.680302-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka, manipulera och skriva XML-data\
-  \ med programmering. Programmerare hanterar XML f\xF6r att utbyta data mellan olika\u2026"
+  \ med programmering."
 title: Att arbeta med XML
 weight: 40
 ---

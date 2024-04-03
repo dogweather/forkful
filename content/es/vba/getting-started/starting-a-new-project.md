@@ -7,7 +7,8 @@ description: "Iniciar un nuevo proyecto en Visual Basic para Aplicaciones (VBA) 
 lastmod: '2024-03-13T22:44:58.893942-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Visual Basic para Aplicaciones (VBA) implica\
-  \ configurar un entorno dentro de una aplicaci\xF3n anfitriona, como Excel, para\u2026"
+  \ configurar un entorno dentro de una aplicaci\xF3n anfitriona, como Excel, para\
+  \ automatizar tareas o ampliar la funcionalidad."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

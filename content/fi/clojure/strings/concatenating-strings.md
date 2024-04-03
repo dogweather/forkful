@@ -6,8 +6,7 @@ description: "Yhdist\xE4minen (\"string concatenation\") on useiden merkkijonoje
 lastmod: '2024-03-13T22:44:56.176649-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4minen (\"string concatenation\") on useiden merkkijonojen liitt\xE4\
-  mist\xE4 yhteen. Koodarit tarvitsevat t\xE4t\xE4 toimintoa muodostaakseen yksitt\xE4\
-  isist\xE4\u2026"
+  mist\xE4 yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

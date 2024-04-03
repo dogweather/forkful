@@ -5,9 +5,8 @@ description: "Printing debug output is chucking info onto your screen to see wha
   bugs."
 lastmod: '2024-03-13T22:45:00.207966-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is chucking info onto your screen to see what's up\
-  \ with your code. Programmers do it to track down gremlins in the machine\u2014\
-  bugs."
+summary: Printing debug output is chucking info onto your screen to see what's up
+  with your code.
 title: Printing debug output
 weight: 33
 ---

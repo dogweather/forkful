@@ -8,8 +8,7 @@ description: "V\xE9rifier si un r\xE9pertoire existe dans le syst\xE8me de fichi
 lastmod: '2024-03-13T22:44:58.240154-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans le syst\xE8me de fichiers est\
-  \ essentiel pour g\xE9rer les structures de fichiers depuis vos applications Swift.\
-  \ Cette\u2026"
+  \ essentiel pour g\xE9rer les structures de fichiers depuis vos applications Swift."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

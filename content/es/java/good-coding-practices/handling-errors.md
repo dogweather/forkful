@@ -6,7 +6,7 @@ description: "Manejar errores significa escribir c\xF3digo que anticipa y gestio
 lastmod: '2024-03-13T22:44:58.944713-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores significa escribir c\xF3digo que anticipa y gestiona situaciones\
-  \ cuando las cosas salen mal. Los programadores lo hacen para hacer el\u2026"
+  \ cuando las cosas salen mal."
 title: Manejo de errores
 weight: 16
 ---

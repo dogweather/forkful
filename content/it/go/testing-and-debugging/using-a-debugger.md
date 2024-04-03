@@ -6,8 +6,7 @@ description: "Go fornisce una struttura integrata per il debug chiamata `delve`.
   \ tratta di uno strumento di debug completo che consente di eseguire programmi Go\u2026"
 lastmod: '2024-03-13T22:44:42.913213-06:00'
 model: gpt-4-0125-preview
-summary: "Go fornisce una struttura integrata per il debug chiamata `delve`. Si tratta\
-  \ di uno strumento di debug completo che consente di eseguire programmi Go\u2026"
+summary: Go fornisce una struttura integrata per il debug chiamata `delve`.
 title: Utilizzare un debugger
 weight: 35
 ---

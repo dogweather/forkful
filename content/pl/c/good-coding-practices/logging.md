@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.893539-06:00'
 model: gpt-4-0125-preview
 summary: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych zdarze\u0144\
   \ programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105d jego\
-  \ zachowania i\u2026"
+  \ zachowania i wydajno\u015Bci."
 title: Logowanie
 weight: 17
 ---

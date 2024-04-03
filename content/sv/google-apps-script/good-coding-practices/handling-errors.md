@@ -8,7 +8,7 @@ description: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5
 lastmod: '2024-03-13T22:44:37.446933-06:00'
 model: gpt-4-0125-preview
 summary: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5nga och\
-  \ svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning. Programmerare\u2026"
+  \ svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning."
 title: Hantera fel
 weight: 16
 ---

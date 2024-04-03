@@ -8,7 +8,8 @@ description: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, wird in Rub
 lastmod: '2024-03-13T22:44:54.420759-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, wird in Ruby umfangreich\
-  \ f\xFCr Konfigurationsdateien und die Serialisierung von Daten verwendet, aufgrund\u2026"
+  \ f\xFCr Konfigurationsdateien und die Serialisierung von Daten verwendet, aufgrund\
+  \ seines menschenlesbaren Formats."
 title: Arbeiten mit YAML
 weight: 41
 ---

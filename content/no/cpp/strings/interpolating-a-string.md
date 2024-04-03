@@ -4,8 +4,7 @@ description: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn 
   \ en streng. Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."
 lastmod: '2024-03-13T22:44:41.085625-06:00'
 model: gpt-4-1106-preview
-summary: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i en streng.\
-  \ Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."
+summary: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i en streng."
 title: Interpolering av en streng
 weight: 8
 ---

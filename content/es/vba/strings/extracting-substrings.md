@@ -7,7 +7,7 @@ description: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica
 lastmod: '2024-03-13T22:44:58.880516-06:00'
 model: gpt-4-0125-preview
 summary: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
-  \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"
+  \ partes espec\xEDficas de una cadena basadas en criterios dados."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

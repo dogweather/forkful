@@ -8,7 +8,9 @@ description: "En PowerShell, comprobar si un directorio existe es una tarea com\
 lastmod: '2024-03-13T22:44:59.306636-06:00'
 model: gpt-4-0125-preview
 summary: "En PowerShell, comprobar si un directorio existe es una tarea com\xFAn que\
-  \ ayuda a los scripts a tomar decisiones basadas en la estructura del sistema de\u2026"
+  \ ayuda a los scripts a tomar decisiones basadas en la estructura del sistema de\
+  \ archivos, como evitar errores confirmando que un directorio objetivo est\xE1 en\
+  \ su lugar antes de intentar leerlo o escribir en \xE9l."
 title: Comprobando si un directorio existe
 weight: 20
 ---

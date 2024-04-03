@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.249771-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, das erste Zeichen des Strings\
   \ in einen Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Zeichen unver\xE4\
-  ndert\u2026"
+  ndert bleiben."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

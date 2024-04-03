@@ -7,7 +7,8 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa m
 lastmod: '2024-03-13T22:44:56.721776-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"
+  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta\
+  \ j\xE4tet\xE4\xE4n muuttumattomiksi."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

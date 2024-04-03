@@ -7,8 +7,8 @@ description: "Debug-output printen in Ruby is als broodkruimels achterlaten in j
   \ om\u2026"
 lastmod: '2024-03-13T22:44:51.340771-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-output printen in Ruby is als broodkruimels achterlaten in je code\
-  \ om variabele waarden en programmaduur bij te houden. Programmeurs doen dit om\u2026"
+summary: Debug-output printen in Ruby is als broodkruimels achterlaten in je code
+  om variabele waarden en programmaduur bij te houden.
 title: Debug-output afdrukken
 weight: 33
 ---

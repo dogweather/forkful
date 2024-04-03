@@ -9,8 +9,7 @@ description: "Capitalizacja stringa oznacza zwykle przekszta\u0142cenie pierwsze
 lastmod: '2024-03-25T19:22:10.053897-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizacja stringa oznacza zwykle przekszta\u0142cenie pierwszego znaku\
-  \ stringa na wielk\u0105 liter\u0119, a reszty na ma\u0142e litery. Ale czasami\
-  \ mo\u017Ce to oznacza\u0107 po\u2026"
+  \ stringa na wielk\u0105 liter\u0119, a reszty na ma\u0142e litery."
 title: "Zamiana ma\u0142ych liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

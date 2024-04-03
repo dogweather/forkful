@@ -6,8 +6,7 @@ description: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la t
 lastmod: '2024-03-13T22:44:43.865773-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua applicazione\
-  \ sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\
-  \ lo\u2026"
+  \ sta facendo \u2013 potremmo dire un diario, ma per il codice."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

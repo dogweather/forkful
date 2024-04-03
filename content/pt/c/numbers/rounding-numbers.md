@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.044203-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um n\xFA\
   mero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\xE3\
-  o ao n\xFAmero\u2026"
+  o ao n\xFAmero inteiro mais pr\xF3ximo ou a um n\xFAmero especificado de casas decimais."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

@@ -8,7 +8,7 @@ description: "Escrever no erro padr\xE3o (stderr) envolve emitir mensagens de er
 lastmod: '2024-03-13T22:44:46.472177-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) envolve emitir mensagens de erro e diagn\xF3\
-  sticos no console ou terminal. Os programadores fazem isso para separar as\u2026"
+  sticos no console ou terminal."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

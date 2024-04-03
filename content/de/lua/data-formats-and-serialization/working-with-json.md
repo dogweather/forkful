@@ -7,7 +7,8 @@ description: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatier
 lastmod: '2024-03-13T22:44:54.036655-06:00'
 model: gpt-4-0125-preview
 summary: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten Strings\
-  \ in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen\u2026"
+  \ in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen Lua-Anwendungen\
+  \ und Webdiensten oder externen APIs erm\xF6glicht."
 title: Arbeiten mit JSON
 weight: 38
 ---

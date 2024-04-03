@@ -5,8 +5,8 @@ description: "Printing debug output is about slapping your code's internal data 
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.169259-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is about slapping your code's internal data onto the\
-  \ screen to figure out what's going on. Programmers do it for a sanity check, to\u2026"
+summary: Printing debug output is about slapping your code's internal data onto the
+  screen to figure out what's going on.
 title: Printing debug output
 weight: 33
 ---

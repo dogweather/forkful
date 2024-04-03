@@ -4,8 +4,8 @@ description: "Checking if a directory exists means confirming whether a specific
   \ path is present in the file system. Programmers do it to avoid errors when\u2026"
 lastmod: '2024-03-13T22:45:00.023804-06:00'
 model: unknown
-summary: "Checking if a directory exists means confirming whether a specific folder\
-  \ path is present in the file system. Programmers do it to avoid errors when\u2026"
+summary: Checking if a directory exists means confirming whether a specific folder
+  path is present in the file system.
 title: Checking if a directory exists
 weight: 20
 ---

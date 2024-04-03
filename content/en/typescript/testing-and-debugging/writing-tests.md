@@ -4,8 +4,8 @@ description: "Writing tests in TypeScript involves creating automated scripts to
   \ the functionality and correctness of your code. Programmers do it to ensure\u2026"
 lastmod: '2024-03-13T22:44:59.862150-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in TypeScript involves creating automated scripts to verify\
-  \ the functionality and correctness of your code. Programmers do it to ensure\u2026"
+summary: Writing tests in TypeScript involves creating automated scripts to verify
+  the functionality and correctness of your code.
 title: Writing tests
 weight: 36
 ---

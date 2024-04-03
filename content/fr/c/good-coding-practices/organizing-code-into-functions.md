@@ -8,8 +8,7 @@ description: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer de
 lastmod: '2024-03-13T22:44:58.378279-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des t\xE2\
-  ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\
-  \ am\xE9liore la\u2026"
+  ches complexes en blocs de code plus petits et r\xE9utilisables."
 title: Organiser le code en fonctions
 weight: 18
 ---

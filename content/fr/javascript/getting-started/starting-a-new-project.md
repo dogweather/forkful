@@ -6,8 +6,7 @@ description: "D\xE9marrer un nouveau projet, c'est comme mettre une graine dans 
 lastmod: '2024-03-13T22:44:58.276283-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est comme mettre une graine dans le sol\
-  \ num\xE9rique. Les programmeurs le font pour cr\xE9er du neuf, r\xE9soudre des\
-  \ probl\xE8mes, ou\u2026"
+  \ num\xE9rique."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

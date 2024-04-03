@@ -6,8 +6,7 @@ description: "Los n\xFAmeros complejos tienen una parte real y una parte imagina
 lastmod: '2024-03-13T22:44:59.410632-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria (como\
-  \ 3 + 4i). Los programadores los usan en Swift para tareas como el procesamiento\
-  \ de\u2026"
+  \ 3 + 4i)."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

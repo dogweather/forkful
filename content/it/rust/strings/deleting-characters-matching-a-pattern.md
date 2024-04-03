@@ -4,8 +4,8 @@ description: "Eliminare caratteri corrispondenti a uno schema serve a purificare
   \ stringhe da elementi non desiderati. Programmatori lo fanno per validare input,\u2026"
 lastmod: '2024-03-13T22:44:43.202474-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminare caratteri corrispondenti a uno schema serve a purificare le stringhe\
-  \ da elementi non desiderati. Programmatori lo fanno per validare input,\u2026"
+summary: Eliminare caratteri corrispondenti a uno schema serve a purificare le stringhe
+  da elementi non desiderati.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

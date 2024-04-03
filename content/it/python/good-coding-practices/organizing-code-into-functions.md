@@ -5,9 +5,8 @@ description: "Organizzare il codice in funzioni consiste nel suddividere il codi
   \ pi\xF9\u2026"
 lastmod: '2024-03-13T22:44:43.006562-06:00'
 model: gpt-4-0125-preview
-summary: "Organizzare il codice in funzioni consiste nel suddividere il codice in\
-  \ blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\
-  \ pi\xF9\u2026"
+summary: Organizzare il codice in funzioni consiste nel suddividere il codice in blocchi
+  riutilizzabili con scopi specifici.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

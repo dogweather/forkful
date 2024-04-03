@@ -7,9 +7,8 @@ description: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare i
   \ \xE8\u2026"
 lastmod: '2024-03-13T22:44:43.472914-06:00'
 model: gpt-4-0125-preview
-summary: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare il contenuto\
-  \ HTML o interagire con le pagine web programmaticamente. Questa operazione \xE8\
-  \u2026"
+summary: Parsare HTML in Haskell ti permette di estrarre dati, manipolare il contenuto
+  HTML o interagire con le pagine web programmaticamente.
 title: Analisi del HTML
 weight: 43
 ---

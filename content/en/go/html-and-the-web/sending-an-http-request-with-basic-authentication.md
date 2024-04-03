@@ -5,9 +5,9 @@ description: "Sending an HTTP request with basic authentication in Go involves a
   \ in\u2026"
 lastmod: '2024-03-13T22:44:59.630698-06:00'
 model: gpt-4-0125-preview
-summary: "Sending an HTTP request with basic authentication in Go involves adding\
-  \ an authorization header to your request that includes a username and password\
-  \ in\u2026"
+summary: Sending an HTTP request with basic authentication in Go involves adding an
+  authorization header to your request that includes a username and password in the
+  form of a Base64-encoded string.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

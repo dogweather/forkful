@@ -8,8 +8,7 @@ description: "Convertir una cadena a min\xFAsculas en C implica transformar toda
 lastmod: '2024-03-13T22:44:59.531068-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas en C implica transformar todas las\
-  \ letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\
-  \ Los\u2026"
+  \ letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas."
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---

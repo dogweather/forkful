@@ -5,7 +5,7 @@ description: "Cercare e sostituire testo \xE8 una tecnica per identificare strin
 lastmod: '2024-03-13T22:44:43.028069-06:00'
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo \xE8 una tecnica per identificare stringhe specifiche\
-  \ e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
+  \ e cambiarle con altre."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

@@ -6,8 +6,9 @@ description: "Lavorare con CSV (Valori Separati da Virgola) in JavaScript compor
   \ l'analisi o la generazione di file CSV per ingerire dati tabellari da fonti esterne\u2026"
 lastmod: '2024-03-13T22:44:43.836023-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta l'analisi\
-  \ o la generazione di file CSV per ingerire dati tabellari da fonti esterne\u2026"
+summary: Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta l'analisi
+  o la generazione di file CSV per ingerire dati tabellari da fonti esterne oppure
+  esportare dati per l'utilizzo in altri programmi.
 title: Lavorare con i CSV
 weight: 37
 ---

@@ -6,8 +6,7 @@ description: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danym
 lastmod: '2024-03-13T22:44:35.609742-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi w formacie\
-  \ j\u0119zyka znacznik\xF3w rozszerzalnych (XML). Programi\u015Bci borykaj\u0105\
-  \ si\u0119 z XML,\u2026"
+  \ j\u0119zyka znacznik\xF3w rozszerzalnych (XML)."
 title: Praca z XML
 weight: 40
 ---

@@ -6,8 +6,7 @@ description: "Come\xE7ar um novo projeto \xE9 dar o pontap\xE9 inicial no desenv
 lastmod: '2024-03-13T22:44:46.753423-06:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 dar o pontap\xE9 inicial no desenvolvimento\
-  \ de uma ideia de software. Programadores iniciam projetos para transformar conceitos\
-  \ em\u2026"
+  \ de uma ideia de software."
 title: Iniciando um novo projeto
 weight: 1
 ---

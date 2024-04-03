@@ -8,8 +8,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i re
 lastmod: '2024-03-13T22:44:34.860260-06:00'
 model: gpt-4-0125-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i reagowaniu\
-  \ na sytuacje wyj\u0105tkowe w programie. Programi\u015Bci zajmuj\u0105 si\u0119\
-  \ obs\u0142ug\u0105 b\u0142\u0119d\xF3w, aby zapewni\u0107, \u017Ce ich\u2026"
+  \ na sytuacje wyj\u0105tkowe w programie."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

@@ -7,7 +7,7 @@ description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rt
 lastmod: '2024-03-13T22:44:54.345635-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, dargestellt\
-  \ als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"
+  \ als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist."
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

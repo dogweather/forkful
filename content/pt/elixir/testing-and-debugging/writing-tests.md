@@ -7,7 +7,7 @@ description: "Escrever testes em Elixir envolve a cria\xE7\xE3o de scripts autom
 lastmod: '2024-03-13T22:44:46.241706-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Elixir envolve a cria\xE7\xE3o de scripts automatizados\
-  \ para validar o comportamento do seu c\xF3digo. Os programadores fazem isso para\u2026"
+  \ para validar o comportamento do seu c\xF3digo."
 title: Escrevendo testes
 weight: 36
 ---

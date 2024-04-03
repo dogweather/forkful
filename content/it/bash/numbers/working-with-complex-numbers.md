@@ -4,8 +4,7 @@ description: "I numeri complessi sono costituiti da una parte reale e una immagi
   \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"
 lastmod: '2024-03-13T22:44:43.591595-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria.\
-  \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"
+summary: I numeri complessi sono costituiti da una parte reale e una immaginaria.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

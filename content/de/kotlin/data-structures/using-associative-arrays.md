@@ -7,7 +7,7 @@ description: "Assoziative Arrays, oder Maps, in Kotlin sind Sammlungen, die Schl
 lastmod: '2024-03-13T22:44:53.840023-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder Maps, in Kotlin sind Sammlungen, die Schl\xFCssel-Wert-Paare\
-  \ speichern. Programmierer nutzen sie, um Daten effizient zu organisieren\u2026"
+  \ speichern."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

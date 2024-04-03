@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.609149-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Ruby es una operaci\xF3n fundamental\
   \ que te permite almacenar salida y datos de manera persistente, permitiendo que\
-  \ los\u2026"
+  \ los datos sean accedidos o modificados m\xE1s tarde."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

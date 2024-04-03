@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.035511-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
   \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
-  \ luomisen.\u2026"
+  \ luomisen."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

@@ -7,7 +7,7 @@ description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve ler e
 lastmod: '2024-03-13T22:44:46.177634-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve ler e escrever\
-  \ dados em arquivos CSV, um formato comum para armazenamento de dados tabulares.\u2026"
+  \ dados em arquivos CSV, um formato comum para armazenamento de dados tabulares."
 title: Trabalhando com CSV
 weight: 37
 ---

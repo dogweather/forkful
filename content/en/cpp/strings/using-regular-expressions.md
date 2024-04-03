@@ -5,8 +5,8 @@ description: "Regular expressions in C++ are sequences of characters that define
   \ for\u2026"
 lastmod: '2024-03-13T22:45:00.348846-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions in C++ are sequences of characters that define a search\
-  \ pattern, used for string matching or manipulation. Programmers use them for\u2026"
+summary: Regular expressions in C++ are sequences of characters that define a search
+  pattern, used for string matching or manipulation.
 title: Using regular expressions
 weight: 11
 ---

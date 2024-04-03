@@ -5,9 +5,7 @@ description: "Arrotondare i numeri significa tagliare un numero a una precisione
   ,\u2026"
 lastmod: '2024-03-13T22:44:43.171165-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa tagliare un numero a una precisione specifica.\
-  \ I programmatori lo fanno per controllare l'output numerico per leggibilit\xE0\
-  ,\u2026"
+summary: Arrotondare i numeri significa tagliare un numero a una precisione specifica.
 title: Arrotondamento dei numeri
 weight: 13
 ---

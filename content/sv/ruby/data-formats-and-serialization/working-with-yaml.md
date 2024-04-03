@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.452156-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, anv\xE4nds flitigt\
   \ i Ruby f\xF6r konfigurationsfiler och data-serialisering p\xE5 grund av sitt l\xE4\
-  ttl\xE4sta format.\u2026"
+  ttl\xE4sta format."
 title: Att Arbeta med YAML
 weight: 41
 ---

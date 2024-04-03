@@ -7,7 +7,8 @@ description: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4n
 lastmod: '2024-03-13T22:44:37.588921-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4ngar till\
-  \ datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\u2026"
+  \ datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\
+  \ tillbaka till JSON-str\xE4ngar."
 title: Arbeta med JSON
 weight: 38
 ---

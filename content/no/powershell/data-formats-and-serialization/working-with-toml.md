@@ -5,7 +5,7 @@ description: "TOML, en forkortelse for Toms Obvious, Minimal Language, er et dat
 lastmod: '2024-03-13T22:44:41.040314-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, en forkortelse for Toms Obvious, Minimal Language, er et data serialiseringsformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikker.\u2026"
+  \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikker."
 title: Jobbe med TOML
 weight: 39
 ---

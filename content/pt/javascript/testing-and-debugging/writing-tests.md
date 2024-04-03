@@ -7,7 +7,9 @@ description: "Escrever testes em JavaScript refere-se \xE0 pr\xE1tica de criar s
 lastmod: '2024-03-13T22:44:46.966076-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em JavaScript refere-se \xE0 pr\xE1tica de criar scripts\
-  \ automatizados que executam o seu c\xF3digo para garantir que ele se comporte conforme\u2026"
+  \ automatizados que executam o seu c\xF3digo para garantir que ele se comporte conforme\
+  \ esperado, o que pode melhorar significativamente a confiabilidade e a capacidade\
+  \ de manuten\xE7\xE3o de suas aplica\xE7\xF5es."
 title: Escrevendo testes
 weight: 36
 ---

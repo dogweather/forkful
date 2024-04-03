@@ -6,8 +6,7 @@ description: "Calcolare una data futura o passata significa semplicemente scopri
 lastmod: '2024-03-13T22:44:44.064253-06:00'
 model: gpt-4-1106-preview
 summary: "Calcolare una data futura o passata significa semplicemente scoprire che\
-  \ giorno sar\xE0 o \xE8 stato dopo o prima di un certo periodo. I programmatori\
-  \ lo fanno\u2026"
+  \ giorno sar\xE0 o \xE8 stato dopo o prima di un certo periodo."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

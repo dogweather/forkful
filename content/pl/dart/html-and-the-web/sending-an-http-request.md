@@ -8,8 +8,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP w j\u0119zyku Dart to proces
 lastmod: '2024-03-13T22:44:35.087646-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP w j\u0119zyku Dart to proces inicjowania\
-  \ komunikacji z serwerem internetowym lub API z aplikacji Dart. Programi\u015Bci\
-  \ robi\u0105 to, aby\u2026"
+  \ komunikacji z serwerem internetowym lub API z aplikacji Dart."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

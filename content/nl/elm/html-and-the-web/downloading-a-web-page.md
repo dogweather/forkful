@@ -6,8 +6,8 @@ description: "Een webpagina downloaden betekent gegevens van het internet rechts
   \ in je app halen om deze weer te geven of te verwerken. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:50.723466-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden betekent gegevens van het internet rechtstreeks\
-  \ in je app halen om deze weer te geven of te verwerken. Programmeurs doen dit om\u2026"
+summary: Een webpagina downloaden betekent gegevens van het internet rechtstreeks
+  in je app halen om deze weer te geven of te verwerken.
 title: Een webpagina downloaden
 weight: 42
 ---

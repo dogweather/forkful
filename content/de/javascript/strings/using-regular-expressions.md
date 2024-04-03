@@ -7,7 +7,7 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die ve
 lastmod: '2024-03-13T22:44:54.256190-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die verwendet\
-  \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen. Programmierer nutzen\u2026"
+  \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

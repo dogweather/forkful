@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.464614-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON inneb\xE6rer \xE5 analysere JSON-formaterte strenger\
   \ til datastrukturer som Elixir kan manipulere, og serialisere Elixir-datastrukturer\
-  \ tilbake\u2026"
+  \ tilbake til JSON-strenger."
 title: Arbeider med JSON
 weight: 38
 ---

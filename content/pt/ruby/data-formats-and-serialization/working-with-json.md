@@ -7,7 +7,7 @@ description: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de
 lastmod: '2024-03-13T22:44:47.116642-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de dados,\
-  \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores.\u2026"
+  \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores."
 title: Trabalhando com JSON
 weight: 38
 ---

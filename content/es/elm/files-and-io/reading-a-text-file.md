@@ -6,7 +6,7 @@ description: "Leer un archivo de texto en programaci\xF3n es el proceso de carga
 lastmod: '2024-03-13T22:44:59.011053-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en programaci\xF3n es el proceso de cargar y procesar\
-  \ el contenido de un archivo en forma de texto. Los programadores lo hacen para\u2026"
+  \ el contenido de un archivo en forma de texto."
 title: Lectura de un archivo de texto
 weight: 22
 ---

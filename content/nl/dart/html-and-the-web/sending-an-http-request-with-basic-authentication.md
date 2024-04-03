@@ -8,7 +8,8 @@ description: "Een HTTP-verzoek versturen met basale authenticatie houdt in dat e
 lastmod: '2024-03-13T22:44:50.504528-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen met basale authenticatie houdt in dat een gebruikersnaam\
-  \ en wachtwoord aan een verzoek worden toegevoegd om de identiteit van\u2026"
+  \ en wachtwoord aan een verzoek worden toegevoegd om de identiteit van de gebruiker\
+  \ te verifi\xEBren."
 title: Een HTTP-verzoek sturen met basisauthenticatie
 weight: 45
 ---

@@ -5,8 +5,7 @@ description: "Converter datas em strings permite mostrar datas de forma leg\xEDv
   rios, armazenar\u2026"
 lastmod: '2024-03-13T22:44:46.511556-06:00'
 model: gpt-4-1106-preview
-summary: "Converter datas em strings permite mostrar datas de forma leg\xEDvel e formatada.\
-  \ Programadores fazem isso para facilitar a intera\xE7\xE3o com usu\xE1rios, armazenar\u2026"
+summary: "Converter datas em strings permite mostrar datas de forma leg\xEDvel e formatada."
 title: Convertendo uma data em uma string
 weight: 28
 ---

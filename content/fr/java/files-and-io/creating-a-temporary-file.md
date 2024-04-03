@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire en Java, c'est g\xE9n\xE9rer un fic
 lastmod: '2024-03-13T22:44:57.664358-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire en Java, c'est g\xE9n\xE9rer un fichier pour\
-  \ des donn\xE9es \xE9ph\xE9m\xE8res. Les programmeurs le font souvent pour tester\
-  \ des morceaux de\u2026"
+  \ des donn\xE9es \xE9ph\xE9m\xE8res."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

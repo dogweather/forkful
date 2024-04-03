@@ -5,7 +5,7 @@ description: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Paramet
 lastmod: '2024-03-13T22:44:53.946356-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von\
-  \ au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer\u2026"
+  \ au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

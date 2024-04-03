@@ -4,8 +4,7 @@ description: "Lesing av tekstfiler lar programmereren hente data utenfor appen. 
   \ er n\xF8dvendig for lagring, konfigurasjoner, eller for \xE5 arbeide med brukergenerert\u2026"
 lastmod: '2024-03-13T22:44:41.159297-06:00'
 model: gpt-4-1106-preview
-summary: "Lesing av tekstfiler lar programmereren hente data utenfor appen. Det er\
-  \ n\xF8dvendig for lagring, konfigurasjoner, eller for \xE5 arbeide med brukergenerert\u2026"
+summary: Lesing av tekstfiler lar programmereren hente data utenfor appen.
 title: Lese en tekstfil
 weight: 22
 ---

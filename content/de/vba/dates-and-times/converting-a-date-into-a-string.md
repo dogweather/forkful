@@ -7,7 +7,8 @@ description: "Das Umwandeln eines Datums in einen String in Visual Basic for App
 lastmod: '2024-03-13T22:44:53.730977-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Datums in einen String in Visual Basic for Applications\
-  \ (VBA) ist ein Prozess, der verwendet wird, um den Datentyp eines Datums in ein\u2026"
+  \ (VBA) ist ein Prozess, der verwendet wird, um den Datentyp eines Datums in ein\
+  \ String-Format zu \xE4ndern."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

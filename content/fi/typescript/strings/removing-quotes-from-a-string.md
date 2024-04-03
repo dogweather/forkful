@@ -6,7 +6,8 @@ description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6i
 lastmod: '2024-03-13T22:44:56.303554-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien yksitt\xE4\
-  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka\u2026"
+  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka m\xE4\
+  \xE4ritt\xE4v\xE4t merkkijono-literaaleja koodissa."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

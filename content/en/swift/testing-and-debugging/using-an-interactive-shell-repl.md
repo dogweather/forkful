@@ -5,8 +5,8 @@ description: "Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets
   \ or\u2026"
 lastmod: '2024-03-13T22:45:00.397926-06:00'
 model: gpt-4-1106-preview
-summary: "Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets you code\
-  \ interactively. Programmers use it to test Swift snippets quickly, debug, or\u2026"
+summary: Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets you code
+  interactively.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

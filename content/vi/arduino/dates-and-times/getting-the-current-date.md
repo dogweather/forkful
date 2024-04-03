@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\xEAn Arduino c\xF3 ngh\u0129a l\xE0\
   \ truy v\u1EA5n m\u1ED9t \u0111\u1ED3ng h\u1ED3 th\u1EDDi gian th\u1EF1c (RTC) ho\u1EB7\
   c d\u1ECBch v\u1EE5 th\u1EDDi gian d\u1EF1a tr\xEAn internet \u0111\u1EC3 bi\u1EBF\
-  t ng\xE0y hi\u1EC7n t\u1EA1i. T\u1EA1i\u2026"
+  t ng\xE0y hi\u1EC7n t\u1EA1i."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

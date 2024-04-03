@@ -7,7 +7,7 @@ description: "Assosiatiiviset taulukot ovat kuin tehostetut taulukot, jotka mahd
 lastmod: '2024-03-13T22:44:56.730751-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot ovat kuin tehostetut taulukot, jotka mahdollistavat\
-  \ merkkijonojen k\xE4ytt\xE4misen indeksein\xE4 pelkkien kokonaislukujen sijaan.\u2026"
+  \ merkkijonojen k\xE4ytt\xE4misen indeksein\xE4 pelkkien kokonaislukujen sijaan."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

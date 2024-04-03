@@ -6,8 +6,7 @@ description: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF
 lastmod: '2024-03-13T22:44:38.330687-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF6renkla\
-  \ dina data eller passa specifika format. Programmerare g\xF6r detta f\xF6r anv\xE4\
-  ndarv\xE4nlig\u2026"
+  \ dina data eller passa specifika format."
 title: Avrundning av tal
 weight: 13
 ---

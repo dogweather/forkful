@@ -8,8 +8,7 @@ description: "La gestion des erreurs en C consiste \xE0 d\xE9tecter et r\xE9pond
 lastmod: '2024-03-13T22:44:58.380441-06:00'
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs en C consiste \xE0 d\xE9tecter et r\xE9pondre aux\
-  \ conditions anomales qui surviennent pendant l'ex\xE9cution d'un programme. Les\
-  \ programmeurs\u2026"
+  \ conditions anomales qui surviennent pendant l'ex\xE9cution d'un programme."
 title: Gestion des erreurs
 weight: 16
 ---

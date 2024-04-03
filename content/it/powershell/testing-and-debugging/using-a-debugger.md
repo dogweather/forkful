@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:43.647082-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell, \xE8 possibile eseguire il debug degli script utilizzando\
   \ l'ambiente di scripting integrato di PowerShell (ISE) integrato o Visual Studio\
-  \ Code\u2026"
+  \ Code (VS Code) con l'estensione PowerShell."
 title: Utilizzo di un debugger
 weight: 35
 ---

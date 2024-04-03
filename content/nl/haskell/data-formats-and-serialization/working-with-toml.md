@@ -6,8 +6,8 @@ description: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvi
   \ Minimal Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"
 lastmod: '2024-03-13T22:44:50.875633-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal\
-  \ Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"
+summary: Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal
+  Language) data met Haskell.
 title: Werken met TOML
 weight: 39
 ---

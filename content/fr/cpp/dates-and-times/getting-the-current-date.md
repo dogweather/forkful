@@ -7,7 +7,8 @@ description: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che 
 lastmod: '2024-03-13T22:44:58.174757-06:00'
 model: gpt-4-0125-preview
 summary: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
-  \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
+  \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\
+  \ du syst\xE8me."
 title: Obtenir la date actuelle
 weight: 29
 ---

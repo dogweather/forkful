@@ -6,7 +6,7 @@ description: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1
 lastmod: '2024-03-13T22:44:58.974250-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s cercano\
-  \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores redondean\u2026"
+  \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

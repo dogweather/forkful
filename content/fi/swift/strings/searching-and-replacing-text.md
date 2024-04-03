@@ -5,9 +5,7 @@ description: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merk
   t\xE4 p\xE4ivitt\xE4en\u2026"
 lastmod: '2024-03-13T22:44:56.892833-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen\
-  \ hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
-  t\xE4 p\xE4ivitt\xE4en\u2026"
+summary: "Mik\xE4 ja miksi."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

@@ -6,8 +6,8 @@ description: "JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensfo
   \ voor het opslaan en transporteren van data. Programmeurs gebruiken het omdat het\u2026"
 lastmod: '2024-03-13T22:44:50.873766-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat\
-  \ voor het opslaan en transporteren van data. Programmeurs gebruiken het omdat het\u2026"
+summary: JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat voor
+  het opslaan en transporteren van data.
 title: Werken met JSON
 weight: 38
 ---

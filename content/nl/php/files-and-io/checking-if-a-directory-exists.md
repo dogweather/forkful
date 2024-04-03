@@ -6,8 +6,8 @@ description: "Controleren of een directory bestaat laat je de aanwezigheid van e
   \ map in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.\u2026"
 lastmod: '2024-03-13T22:44:50.910368-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat laat je de aanwezigheid van een map\
-  \ in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.\u2026"
+summary: Controleren of een directory bestaat laat je de aanwezigheid van een map
+  in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.
 title: Controleren of een directory bestaat
 weight: 20
 ---

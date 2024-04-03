@@ -8,7 +8,8 @@ description: "Pisanie pliku tekstowego w JavaScript cz\u0119sto odnosi si\u0119 
 lastmod: '2024-03-13T22:44:35.814652-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w JavaScript cz\u0119sto odnosi si\u0119 do tworzenia\
-  \ i zapisywania danych w prostym, czytelnym formacie dla cel\xF3w logowania, eksportowania\u2026"
+  \ i zapisywania danych w prostym, czytelnym formacie dla cel\xF3w logowania, eksportowania\
+  \ danych u\u017Cytkownika lub konfiguracji."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

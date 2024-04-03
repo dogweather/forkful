@@ -8,7 +8,7 @@ description: "Att starta ett nytt projekt i Dart inneb\xE4r att man s\xE4tter up
 lastmod: '2024-03-13T22:44:37.612675-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Dart inneb\xE4r att man s\xE4tter upp en milj\xF6\
-  \ som fr\xE4mjar en effektiv utveckling, testning och implementering. Programmerare\u2026"
+  \ som fr\xE4mjar en effektiv utveckling, testning och implementering."
 title: Att starta ett nytt projekt
 weight: 1
 ---

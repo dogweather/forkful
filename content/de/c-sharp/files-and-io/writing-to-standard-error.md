@@ -8,7 +8,9 @@ description: "Das Schreiben auf die Standardfehlerausgabe (stderr) in C# beinhal
 lastmod: '2024-03-13T22:44:53.904848-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf die Standardfehlerausgabe (stderr) in C# beinhaltet die\
-  \ Weiterleitung von Fehlermeldungen und Diagnosen, getrennt von der regul\xE4ren\u2026"
+  \ Weiterleitung von Fehlermeldungen und Diagnosen, getrennt von der regul\xE4ren\
+  \ Ausgabe (stdout), um Benutzern und Entwicklern zu helfen, zwischen normaler Programmausgabe\
+  \ und Fehlerbenachrichtigungen zu unterscheiden."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

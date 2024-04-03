@@ -8,8 +8,7 @@ description: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u01
 lastmod: '2024-03-13T22:44:35.078291-06:00'
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u015Blonych\
-  \ cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w. Programi\u015B\
-  ci robi\u0105 to w celu zada\u0144 takich jak\u2026"
+  \ cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

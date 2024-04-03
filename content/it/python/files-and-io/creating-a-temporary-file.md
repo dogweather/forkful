@@ -6,7 +6,7 @@ description: "Creare un file temporaneo significa che il tuo programma pu\xF2 te
 lastmod: '2024-03-13T22:44:43.020378-06:00'
 model: gpt-4-1106-preview
 summary: "Creare un file temporaneo significa che il tuo programma pu\xF2 tenere dei\
-  \ dati temporaneamente durante l'esecuzione. I programmatori fanno questo per non\u2026"
+  \ dati temporaneamente durante l'esecuzione."
 title: Creazione di un file temporaneo
 weight: 21
 ---

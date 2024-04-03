@@ -4,8 +4,7 @@ description: "Starting a new Elixir project means setting up a fresh Mix project
   \ Programmers do this to kick things off with organized code and automated\u2026"
 lastmod: '2024-03-13T22:44:59.783129-06:00'
 model: gpt-4-1106-preview
-summary: "Starting a new Elixir project means setting up a fresh Mix project structure.\
-  \ Programmers do this to kick things off with organized code and automated\u2026"
+summary: Starting a new Elixir project means setting up a fresh Mix project structure.
 title: Starting a new project
 weight: 1
 ---

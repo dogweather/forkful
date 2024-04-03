@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.107489-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav i PowerShell inneb\xE4r att man omvandlar det\
   \ f\xF6rsta tecknet i en given str\xE4ng till versal medan resten av str\xE4ngen\
-  \ l\xE4mnas\u2026"
+  \ l\xE4mnas of\xF6r\xE4ndrad."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

@@ -8,8 +8,7 @@ description: "Avrunding av tall handler om \xE5 justere verdien av et tall til d
 lastmod: '2024-03-13T22:44:40.261245-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall handler om \xE5 justere verdien av et tall til det n\xE6\
-  rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gj\xF8\
-  r dette\u2026"
+  rmeste hele tallet eller til et spesifikt antall desimaler."
 title: Avrunding av tall
 weight: 13
 ---

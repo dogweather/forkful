@@ -6,8 +6,7 @@ description: "Trouver la longueur d'une cha\xEEne de caract\xE8res signifie comp
 lastmod: '2024-03-13T22:44:58.151803-06:00'
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res signifie compter le\
-  \ nombre de caract\xE8res qu'elle contient. Les programmeurs font cela pour manipuler\
-  \ les\u2026"
+  \ nombre de caract\xE8res qu'elle contient."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

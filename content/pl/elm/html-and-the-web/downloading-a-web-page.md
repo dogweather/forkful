@@ -6,8 +6,7 @@ description: "Pobranie strony internetowej to proces \u015Bci\u0105gania tre\u01
 lastmod: '2024-03-13T22:44:35.320518-06:00'
 model: gpt-4-1106-preview
 summary: "Pobranie strony internetowej to proces \u015Bci\u0105gania tre\u015Bci ze\
-  \ zdalnego serwera. Programi\u015Bci robi\u0105 to, aby przetwarza\u0107 dane, pobiera\u0107\
-  \ aktualizacje lub\u2026"
+  \ zdalnego serwera."
 title: Pobieranie strony internetowej
 weight: 42
 ---

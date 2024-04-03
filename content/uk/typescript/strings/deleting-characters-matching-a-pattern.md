@@ -4,8 +4,8 @@ description: "Deleting characters matching a pattern means finding specific sets
   \ characters in a string and removing them. Programmers do this for data cleaning,\u2026"
 lastmod: '2024-03-13T22:44:48.844449-06:00'
 model: gpt-4-1106-preview
-summary: "Deleting characters matching a pattern means finding specific sets of characters\
-  \ in a string and removing them. Programmers do this for data cleaning,\u2026"
+summary: Deleting characters matching a pattern means finding specific sets of characters
+  in a string and removing them.
 title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\
   \u043E\u043B\u0456\u0432 \u0437\u0430 \u0432\u0456\u0437\u0435\u0440\u0443\u043D\
   \u043A\u043E\u043C"

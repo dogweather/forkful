@@ -7,8 +7,8 @@ description: "Karakters die een patroon matchen verwijderen in een string beteke
   \ tekst\u2026"
 lastmod: '2024-03-13T22:44:50.578039-06:00'
 model: gpt-4-0125-preview
-summary: "Karakters die een patroon matchen verwijderen in een string betekent het\
-  \ vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om tekst\u2026"
+summary: Karakters die een patroon matchen verwijderen in een string betekent het
+  vinden en weghalen van specifieke reeksen tekens.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

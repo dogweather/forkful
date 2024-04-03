@@ -6,8 +6,7 @@ description: "En HTTP-foresp\xF8rsel lar en Arduino snakke med internett - den s
 lastmod: '2024-03-13T22:44:41.055491-06:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel lar en Arduino snakke med internett - den sp\xF8\
-  r, og et server svarer. Vi gj\xF8r dette for \xE5 sl\xE5 opp data, styre ting p\xE5\
-  \ avstand, eller\u2026"
+  r, og et server svarer."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

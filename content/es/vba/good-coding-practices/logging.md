@@ -7,7 +7,8 @@ description: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar i
 lastmod: '2024-03-13T22:44:58.900424-06:00'
 model: gpt-4-0125-preview
 summary: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
-  n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"
+  n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\
+  \ consola o base de datos."
 title: "Registro de Informaci\xF3n"
 weight: 17
 ---

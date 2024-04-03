@@ -7,8 +7,8 @@ description: "Een datum omzetten naar een string in Elixir verandert de datum va
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:50.473624-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum omzetten naar een string in Elixir verandert de datum van een\
-  \ struct naar een leesbare reeks tekens voor weergave of opslag. Programmeurs doen\u2026"
+summary: Een datum omzetten naar een string in Elixir verandert de datum van een struct
+  naar een leesbare reeks tekens voor weergave of opslag.
 title: Een datum converteren naar een string
 weight: 28
 ---

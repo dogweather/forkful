@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.909040-06:00'
 model: gpt-4-0125-preview
 summary: "Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps Script\
   \ poprzez oddzielanie logicznych segment\xF3w w odr\u0119bne bloki, z kt\xF3rych\
-  \ ka\u017Cdy\u2026"
+  \ ka\u017Cdy wykonuje okre\u015Blone zadanie."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

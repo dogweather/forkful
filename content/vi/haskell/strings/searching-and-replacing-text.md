@@ -9,9 +9,7 @@ description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n g
 lastmod: '2024-03-13T22:44:36.693077-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\xFA\
-  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, tinh ch\u1EC9\
-  nh ho\u1EB7c thay \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
+  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

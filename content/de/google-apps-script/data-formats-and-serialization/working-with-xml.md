@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.360495-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Google Apps Script erm\xF6glicht es Programmierern,\
   \ XML-Daten zu parsen, zu manipulieren und zu generieren, was f\xFCr Webdienste\
-  \ und\u2026"
+  \ und Konfigurationen unerl\xE4sslich ist."
 title: Arbeiten mit XML
 weight: 40
 ---

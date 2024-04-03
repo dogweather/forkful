@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.153495-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 o\
   \ processo de acessar recursos protegidos em um servidor web, usando um nome de\
-  \ usu\xE1rio e senha\u2026"
+  \ usu\xE1rio e senha codificados em base64."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

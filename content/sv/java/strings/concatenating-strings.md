@@ -5,9 +5,7 @@ description: "Att konkateniera str\xE4ngar inneb\xE4r att du sammanfogar dem til
   nssnittstexter eller bygga\u2026"
 lastmod: '2024-03-13T22:44:37.779564-06:00'
 model: gpt-4-1106-preview
-summary: "Att konkateniera str\xE4ngar inneb\xE4r att du sammanfogar dem till en.\
-  \ Programmerare g\xF6r detta f\xF6r att skapa meddelanden, anv\xE4ndargr\xE4nssnittstexter\
-  \ eller bygga\u2026"
+summary: "Att konkateniera str\xE4ngar inneb\xE4r att du sammanfogar dem till en."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

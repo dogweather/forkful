@@ -4,8 +4,7 @@ description: "Concatenating strings means sticking two or more pieces of text to
   \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
 lastmod: '2024-03-13T22:45:00.002077-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenating strings means sticking two or more pieces of text together.\
-  \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
+summary: Concatenating strings means sticking two or more pieces of text together.
 title: Concatenating strings
 weight: 3
 ---

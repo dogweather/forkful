@@ -8,8 +8,7 @@ description: "Express\xF5es regulares em programa\xE7\xE3o permitem a correspond
 lastmod: '2024-03-13T22:44:46.699442-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares em programa\xE7\xE3o permitem a correspond\xEAncia\
-  \ e manipula\xE7\xE3o de strings baseadas em padr\xF5es espec\xEDficos. Programadores\
-  \ as usam para\u2026"
+  \ e manipula\xE7\xE3o de strings baseadas em padr\xF5es espec\xEDficos."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

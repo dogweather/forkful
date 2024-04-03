@@ -5,7 +5,7 @@ description: "Analisar HTML \xE9 o processo de converter string contendo HTML em
 lastmod: '2024-03-13T22:44:46.323757-06:00'
 model: unknown
 summary: "Analisar HTML \xE9 o processo de converter string contendo HTML em algo\
-  \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model). Programadores\u2026"
+  \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model)."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

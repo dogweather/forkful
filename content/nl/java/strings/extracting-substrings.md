@@ -7,7 +7,7 @@ description: "Het extraheren van substrings betekent het uithalen van een specif
 lastmod: '2024-03-13T22:44:50.669813-06:00'
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent het uithalen van een specifiek deel\
-  \ van een string \u2013 een reeks tekens binnen een grotere string. Programmeurs\u2026"
+  \ van een string \u2013 een reeks tekens binnen een grotere string."
 title: Substrings extraheren
 weight: 6
 ---

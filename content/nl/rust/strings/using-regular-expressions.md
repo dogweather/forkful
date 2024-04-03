@@ -7,8 +7,8 @@ description: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens di
   \ of te\u2026"
 lastmod: '2024-03-13T22:44:50.584088-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen\
-  \ vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken of te\u2026"
+summary: Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen
+  vormen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

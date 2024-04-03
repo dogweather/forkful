@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.924654-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Google Apps Script polega na generowaniu\
   \ pliku przeznaczonego do kr\xF3tkotrwa\u0142ego u\u017Cytku, zazwyczaj do przetwarzania\
-  \ danych\u2026"
+  \ danych po\u015Brednich, debugowania lub w celach cache\u2019owania."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

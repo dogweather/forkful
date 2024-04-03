@@ -5,9 +5,8 @@ description: "TOML is an acronym for Tom's Obvious, Minimal Language, a configur
   \ for\u2026"
 lastmod: '2024-03-13T22:45:00.110621-06:00'
 model: gpt-4-1106-preview
-summary: "TOML is an acronym for Tom's Obvious, Minimal Language, a configuration\
-  \ file format that's easy to read due to its clear semantics. Programmers use it\
-  \ for\u2026"
+summary: TOML is an acronym for Tom's Obvious, Minimal Language, a configuration file
+  format that's easy to read due to its clear semantics.
 title: Working with TOML
 weight: 39
 ---

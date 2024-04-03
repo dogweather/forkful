@@ -6,8 +6,7 @@ description: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos
 lastmod: '2024-03-13T22:44:46.220848-06:00'
 model: gpt-4-0125-preview
 summary: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos de forma\
-  \ que sejam leg\xEDveis por humanos e m\xE1quinas. \xC9 chave em servi\xE7os web,\
-  \ arquivos de\u2026"
+  \ que sejam leg\xEDveis por humanos e m\xE1quinas."
 title: Trabalhando com XML
 weight: 40
 ---

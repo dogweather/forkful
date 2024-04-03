@@ -5,8 +5,8 @@ description: "Starting a new project is just rolling up your sleeves and setting
   \ off\u2026"
 lastmod: '2024-03-13T22:45:00.397069-06:00'
 model: gpt-4-1106-preview
-summary: "Starting a new project is just rolling up your sleeves and setting up the\
-  \ initial environment and files for your coding adventure. Programmers kick off\u2026"
+summary: Starting a new project is just rolling up your sleeves and setting up the
+  initial environment and files for your coding adventure.
 title: Starting a new project
 weight: 1
 ---

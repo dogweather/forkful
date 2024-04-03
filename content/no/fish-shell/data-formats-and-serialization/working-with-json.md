@@ -8,7 +8,8 @@ description: "\xC5 jobbe med JSON i Fish Shell inneb\xE6rer parsing og genererin
 lastmod: '2024-03-13T22:44:41.248868-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Fish Shell inneb\xE6rer parsing og generering av JSON-data,\
-  \ en vanlig oppgave for konfigurering av applikasjoner, API-interaksjon, og\u2026"
+  \ en vanlig oppgave for konfigurering av applikasjoner, API-interaksjon, og effektivisering\
+  \ av kommandolinjeflyter."
 title: Arbeider med JSON
 weight: 38
 ---

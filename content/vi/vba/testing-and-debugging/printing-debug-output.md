@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c in ra th\xF4ng tin g\u1EE1 l\u1ED7i trong Visual Basic for Applications\
   \ (VBA) bao g\u1ED3m vi\u1EC7c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2\
   u l\u1EC7nh in trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB gi\xE1\
-  \ tr\u1ECB\u2026"
+  \ tr\u1ECB bi\u1EBFn, lu\u1ED3ng th\u1EF1c thi ho\u1EB7c c\xE1c th\xF4ng b\xE1o\
+  \ g\u1EE1 l\u1ED7i t\xF9y ch\u1EC9nh."
 title: "In ra th\xF4ng tin debug"
 weight: 33
 ---

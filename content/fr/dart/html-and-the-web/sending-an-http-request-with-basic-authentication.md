@@ -8,7 +8,8 @@ description: "Envoyer une requ\xEAte HTTP avec une authentification de base impl
 lastmod: '2024-03-13T22:44:57.389563-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base implique l'ajout\
-  \ d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9rifier\u2026"
+  \ d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9rifier\
+  \ l'identit\xE9 de l'utilisateur."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

@@ -8,8 +8,7 @@ description: "GDB (GNU Debugger) est le d\xE9bogueur le plus couramment utilis\x
 lastmod: '2024-03-13T22:44:58.377191-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) est le d\xE9bogueur le plus couramment utilis\xE9 pour\
-  \ la programmation en C. Voici un guide rapide sur l'utilisation de GDB pour d\xE9\
-  boguer un\u2026"
+  \ la programmation en C."
 title: "Utiliser un d\xE9bogueur"
 weight: 35
 ---

@@ -6,8 +6,7 @@ description: "HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren \
 lastmod: '2024-03-13T22:44:53.801857-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren \u2013\
-  \ Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen\
-  \ zu\u2026"
+  \ Daten zu holen und zu senden."
 title: Einen HTTP-Request senden
 weight: 44
 ---

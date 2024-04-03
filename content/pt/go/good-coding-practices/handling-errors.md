@@ -8,8 +8,7 @@ description: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\
 lastmod: '2024-03-13T22:44:46.069015-06:00'
 model: gpt-4-0125-preview
 summary: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\xF5es\
-  \ de erro no seu programa. Os programadores se envolvem no tratamento de erros para\
-  \ garantir\u2026"
+  \ de erro no seu programa."
 title: Gerenciando erros
 weight: 16
 ---

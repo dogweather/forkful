@@ -7,8 +7,9 @@ description: "Scrivere test in Google Apps Script (GAS) consiste nel creare scri
   \ che\u2026"
 lastmod: '2024-03-13T22:44:42.958983-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Google Apps Script (GAS) consiste nel creare script automatizzati\
-  \ per verificare il comportamento dei propri codici, assicurandosi che\u2026"
+summary: Scrivere test in Google Apps Script (GAS) consiste nel creare script automatizzati
+  per verificare il comportamento dei propri codici, assicurandosi che funzionino
+  come previsto in varie condizioni.
 title: Scrivere test
 weight: 36
 ---

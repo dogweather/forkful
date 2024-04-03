@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.624252-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage spesifikke prosedyrer\
   \ for \xE5 validere funksjonaliteten og ytelsen til kode-segmentene dine, for \xE5\
-  \ sikre at\u2026"
+  \ sikre at de fungerer som forventet under ulike forhold."
 title: Skrive tester
 weight: 36
 ---

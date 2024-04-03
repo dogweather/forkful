@@ -6,8 +6,9 @@ description: "Schrijven naar standaardfout (stderr) in programmeertalen gaat ove
   \ het richten van foutmeldingen en diagnostiek naar een aparte stroom, los van de\u2026"
 lastmod: '2024-03-13T22:44:50.349636-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaardfout (stderr) in programmeertalen gaat over het\
-  \ richten van foutmeldingen en diagnostiek naar een aparte stroom, los van de\u2026"
+summary: Schrijven naar standaardfout (stderr) in programmeertalen gaat over het richten
+  van foutmeldingen en diagnostiek naar een aparte stroom, los van de standaarduitvoer
+  (stdout).
 title: Schrijven naar standaardfout
 weight: 25
 ---

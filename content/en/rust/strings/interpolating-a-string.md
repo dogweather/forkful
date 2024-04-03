@@ -4,8 +4,7 @@ description: String interpolation inserts variables right into strings. It makes
   strings smooth and readable, avoiding clunky concatenations.
 lastmod: '2024-03-13T22:44:59.883483-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation inserts variables right into strings. It makes building
-  strings smooth and readable, avoiding clunky concatenations.
+summary: String interpolation inserts variables right into strings.
 title: Interpolating a string
 weight: 8
 ---

@@ -6,8 +6,7 @@ description: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozw
 lastmod: '2024-03-13T22:44:35.916067-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalaj\u0105\
-  cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne. Programi\u015B\
-  ci u\u017Cywaj\u0105 tego,\u2026"
+  cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

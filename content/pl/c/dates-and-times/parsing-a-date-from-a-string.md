@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.896737-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
   \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\
-  \ i\u2026"
+  \ i analizowa\u0107."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

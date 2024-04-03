@@ -8,8 +8,7 @@ description: "Enviar uma requisi\xE7\xE3o HTTP no Google Apps Script \xE9 sobre 
 lastmod: '2024-03-13T22:44:46.103762-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP no Google Apps Script \xE9 sobre fazer\
-  \ uma chamada program\xE1tica para um servidor web externo ou API. Programadores\
-  \ fazem isso para\u2026"
+  \ uma chamada program\xE1tica para um servidor web externo ou API."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

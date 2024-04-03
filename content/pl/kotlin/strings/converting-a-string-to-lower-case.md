@@ -6,8 +6,7 @@ description: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces
 lastmod: '2024-03-13T22:44:35.351382-06:00'
 model: gpt-4-1106-preview
 summary: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces, gdzie\
-  \ wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi. Programi\u015B\
-  ci u\u017Cywaj\u0105 tej zmiany dla unifikacji\u2026"
+  \ wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

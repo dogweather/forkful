@@ -7,8 +7,8 @@ description: "Het vergelijken van twee datums betekent uitzoeken welke van de tw
   \ zoals\u2026"
 lastmod: '2024-03-13T22:44:50.737762-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums betekent uitzoeken welke van de twee eerder\
-  \ is of hoeveel tijd er tussen hen in zit. Programmeurs doen dit om zaken zoals\u2026"
+summary: Het vergelijken van twee datums betekent uitzoeken welke van de twee eerder
+  is of hoeveel tijd er tussen hen in zit.
 title: Twee datums vergelijken
 weight: 27
 ---

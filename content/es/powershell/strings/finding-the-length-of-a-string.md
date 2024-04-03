@@ -4,8 +4,7 @@ description: "Medir la longitud de una cadena significa contar cu\xE1ntos caract
   \ contiene. Los programadores lo hacen para validar entradas, recortar textos, o\u2026"
 lastmod: '2024-03-13T22:44:59.281314-06:00'
 model: gpt-4-1106-preview
-summary: "Medir la longitud de una cadena significa contar cu\xE1ntos caracteres contiene.\
-  \ Los programadores lo hacen para validar entradas, recortar textos, o\u2026"
+summary: "Medir la longitud de una cadena significa contar cu\xE1ntos caracteres contiene."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

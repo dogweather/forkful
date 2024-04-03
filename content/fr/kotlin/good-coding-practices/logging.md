@@ -6,7 +6,8 @@ description: "La journalisation, dans son essence, est la pratique d'enregistrer
 lastmod: '2024-03-13T22:44:57.746757-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation, dans son essence, est la pratique d'enregistrer des \xE9\
-  v\xE9nements et des donn\xE9es provenant d'une application logicielle vers une sortie\u2026"
+  v\xE9nements et des donn\xE9es provenant d'une application logicielle vers une sortie\
+  \ externe, comme un fichier ou une console."
 title: Journalisation
 weight: 17
 ---

@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:59.587564-06:00'
 model: gpt-4-0125-preview
 summary: "Editar archivos en su lugar con l\xEDneas de comando individuales (CLI,\
   \ por sus siglas en ingl\xE9s Interface de L\xEDnea de Comando) en Ruby te permite\
-  \ modificar\u2026"
+  \ modificar archivos directamente desde tu terminal, sin la necesidad de abrirlos\
+  \ en un editor, realizar cambios y guardarlos de nuevo."
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

@@ -6,8 +6,8 @@ description: "In PowerShell kun je scripts debuggen met de ingebouwde PowerShell
   \ Scripting Environment (ISE) of Visual Studio Code (VS Code) met de\u2026"
 lastmod: '2024-03-13T22:44:51.034166-06:00'
 model: gpt-4-0125-preview
-summary: "In PowerShell kun je scripts debuggen met de ingebouwde PowerShell Integrated\
-  \ Scripting Environment (ISE) of Visual Studio Code (VS Code) met de\u2026"
+summary: In PowerShell kun je scripts debuggen met de ingebouwde PowerShell Integrated
+  Scripting Environment (ISE) of Visual Studio Code (VS Code) met de PowerShell-extensie.
 title: Een debugger gebruiken
 weight: 35
 ---

@@ -6,8 +6,8 @@ description: "Het lezen van een tekstbestand betekent het toegang krijgen tot de
   \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
 lastmod: '2024-03-13T22:44:51.370671-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
-  \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
+summary: Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud
+  van een bestand dat op de schijf is opgeslagen via code.
 title: Een tekstbestand lezen
 weight: 22
 ---

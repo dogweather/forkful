@@ -6,8 +6,7 @@ description: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4n
 lastmod: '2024-03-13T22:44:38.353687-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4ndarinput\
-  \ direkt fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att g\xF6ra sina\
-  \ skript interaktiva\u2026"
+  \ direkt fr\xE5n terminalen."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

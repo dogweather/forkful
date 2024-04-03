@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i trong\
   \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 \u0111\u1EC3 x\xE1c minh s\u1EF1\
   \ hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c trong h\u1EC7 th\u1ED1\
-  ng t\u1EADp tin tr\u01B0\u1EDBc khi\u2026"
+  ng t\u1EADp tin tr\u01B0\u1EDBc khi th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c nh\u01B0\
+  \ l\u01B0u t\u1EC7p ho\u1EB7c t\u1EA1o th\u01B0 m\u1EE5c m\u1EDBi."
 title: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i"
 weight: 20
 ---

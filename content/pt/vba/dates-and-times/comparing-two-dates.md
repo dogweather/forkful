@@ -7,7 +7,7 @@ description: "Comparar duas datas em Visual Basic for Applications (VBA) envolve
 lastmod: '2024-03-13T22:44:46.425878-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas em Visual Basic for Applications (VBA) envolve determinar\
-  \ a rela\xE7\xE3o cronol\xF3gica entre elas. Programadores fazem isso para executar\u2026"
+  \ a rela\xE7\xE3o cronol\xF3gica entre elas."
 title: Comparando duas datas
 weight: 27
 ---

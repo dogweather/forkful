@@ -6,8 +6,7 @@ description: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarko
 lastmod: '2024-03-13T22:44:56.889960-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarkoittaa\
-  \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia. Ohjelmoijat hallinnoivat\
-  \ XML-\u2026"
+  \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.915930-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3re umo\u017C\
   liwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie ich w\
-  \ formacie\u2026"
+  \ formacie czytelnym dla cz\u0142owieka."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

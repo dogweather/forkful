@@ -6,8 +6,8 @@ description: "Het extraheren van substrings in Visual Basic voor Applications (V
   \ omvat het isoleren van specifieke delen van een string op basis van gegeven\u2026"
 lastmod: '2024-03-13T22:44:50.625306-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings in Visual Basic voor Applications (VBA) omvat\
-  \ het isoleren van specifieke delen van een string op basis van gegeven\u2026"
+summary: Het extraheren van substrings in Visual Basic voor Applications (VBA) omvat
+  het isoleren van specifieke delen van een string op basis van gegeven criteria.
 title: Substrings extraheren
 weight: 6
 ---

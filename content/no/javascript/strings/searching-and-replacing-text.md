@@ -6,8 +6,7 @@ description: "S\xF8king og erstatting av tekst lar oss finne spesifikke ord elle
 lastmod: '2024-03-13T22:44:41.169412-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF8king og erstatting av tekst lar oss finne spesifikke ord eller m\xF8\
-  nstre og bytte dem ut med noe annet. Det sparer tid, unng\xE5r feil og automatiserer\
-  \ endel\u2026"
+  nstre og bytte dem ut med noe annet."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

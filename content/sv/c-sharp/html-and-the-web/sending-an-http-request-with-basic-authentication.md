@@ -6,8 +6,7 @@ description: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering
 lastmod: '2024-03-13T22:44:37.912996-06:00'
 model: gpt-4-1106-preview
 summary: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
-  r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
-  \ anv\xE4nds f\xF6r att bevisa\u2026"
+  r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

@@ -6,8 +6,8 @@ description: "Scrivere su standard error (stderr) in Rust significa indirizzare 
   \ di errore e diagnostica alla console separatamente dall'output standard\u2026"
 lastmod: '2024-03-13T22:44:43.234682-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in Rust significa indirizzare messaggi\
-  \ di errore e diagnostica alla console separatamente dall'output standard\u2026"
+summary: Scrivere su standard error (stderr) in Rust significa indirizzare messaggi
+  di errore e diagnostica alla console separatamente dall'output standard (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

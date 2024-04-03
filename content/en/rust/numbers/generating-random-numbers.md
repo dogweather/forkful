@@ -4,8 +4,9 @@ description: "Generating random numbers in Rust involves utilizing libraries to 
   \ unpredicted numerical values, which is indispensable for tasks ranging from\u2026"
 lastmod: '2024-03-13T22:44:59.891865-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in Rust involves utilizing libraries to produce\
-  \ unpredicted numerical values, which is indispensable for tasks ranging from\u2026"
+summary: Generating random numbers in Rust involves utilizing libraries to produce
+  unpredicted numerical values, which is indispensable for tasks ranging from cryptography
+  and simulations to gaming and randomized algorithms.
 title: Generating random numbers
 weight: 12
 ---

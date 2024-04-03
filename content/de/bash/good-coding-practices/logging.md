@@ -4,8 +4,8 @@ description: "Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame I
   \ von laufenden Prozessen eines Programms in eine Datei oder einen\u2026"
 lastmod: '2024-03-13T22:44:54.065969-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen\
-  \ von laufenden Prozessen eines Programms in eine Datei oder einen\u2026"
+summary: Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen
+  von laufenden Prozessen eines Programms in eine Datei oder einen Ausgabestrom aufzuzeichnen.
 title: Protokollierung
 weight: 17
 ---

@@ -5,7 +5,7 @@ description: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo d
 lastmod: '2024-03-13T22:44:46.195560-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da internet\
-  \ para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"
+  \ para o seu computador."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

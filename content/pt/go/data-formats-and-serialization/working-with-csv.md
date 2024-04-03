@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.085013-06:00'
 model: gpt-4-0125-preview
 summary: "O formato Comma-Separated Values (CSV) \xE9 onipresente para a troca de\
   \ dados devido \xE0 sua simplicidade e facilidade de integra\xE7\xE3o com a maioria\
-  \ das\u2026"
+  \ das linguagens de programa\xE7\xE3o, incluindo Go."
 title: Trabalhando com CSV
 weight: 37
 ---

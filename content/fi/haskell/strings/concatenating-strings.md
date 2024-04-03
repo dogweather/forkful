@@ -6,8 +6,7 @@ description: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE
 lastmod: '2024-03-13T22:44:56.607674-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE4ksemme\
-  \ tekstinp\xE4tki\xE4 yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit\
-  \ viestej\xE4,\u2026"
+  \ tekstinp\xE4tki\xE4 yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

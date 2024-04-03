@@ -6,8 +6,7 @@ description: "Mandare una richiesta HTTP \xE8 come bussare a una porta di un ser
 lastmod: '2024-03-13T22:44:43.214873-06:00'
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP \xE8 come bussare a una porta di un servizio\
-  \ web per ricevere dati o inviarne. I programmatori lo fanno per interagire con\
-  \ API\u2026"
+  \ web per ricevere dati o inviarne."
 title: Inviare una richiesta http
 weight: 44
 ---

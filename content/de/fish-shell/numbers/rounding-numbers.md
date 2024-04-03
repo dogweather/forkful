@@ -5,8 +5,8 @@ description: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden,
   \ tun\u2026"
 lastmod: '2024-03-13T22:44:54.302579-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre\
-  \ Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer tun\u2026"
+summary: Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre
+  Daten zu vereinfachen oder spezifischen Formaten anzupassen.
 title: Zahlen runden
 weight: 13
 ---

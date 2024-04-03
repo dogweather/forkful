@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.775943-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en C# sont un outil puissant pour\
   \ la correspondance de motifs au sein des cha\xEEnes de caract\xE8res, permettant\
-  \ aux\u2026"
+  \ aux programmeurs de rechercher, remplacer, diviser ou extraire des donn\xE9es\
+  \ de mani\xE8re efficace."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

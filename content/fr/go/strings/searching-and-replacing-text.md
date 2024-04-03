@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.116097-06:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte en programmation facilitent la\
   \ modification et la gestion des cha\xEEnes de caract\xE8res, qui constituent une\
-  \ t\xE2che\u2026"
+  \ t\xE2che fondamentale dans la manipulation des donn\xE9es et le d\xE9veloppement\
+  \ logiciel."
 title: Rechercher et remplacer du texte
 weight: 10
 ---

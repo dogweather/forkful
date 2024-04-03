@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.854264-06:00'
 model: gpt-4-0125-preview
 summary: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\" polega\
   \ na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3re\
-  \ pomagaj\u0105 programistom\u2026"
+  \ pomagaj\u0105 programistom zrozumie\u0107 przep\u0142yw wykonania ich programu\
+  \ lub zlokalizowa\u0107 problemy."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

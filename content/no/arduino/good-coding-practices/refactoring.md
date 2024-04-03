@@ -5,7 +5,7 @@ description: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 f
 lastmod: '2024-03-13T22:44:41.066218-06:00'
 model: gpt-4-0125-preview
 summary: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 forbedre\
-  \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller\u2026"
+  \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller funksjonaliteten."
 title: Refaktorering
 weight: 19
 ---

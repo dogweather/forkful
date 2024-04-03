@@ -6,8 +6,8 @@ description: "Refactoren is het proces van het herstructureren van bestaande com
   \ - het veranderen van de factoring - zonder de externe gedrag ervan te\u2026"
 lastmod: '2024-03-13T22:44:50.602842-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoren is het proces van het herstructureren van bestaande computercode\
-  \ - het veranderen van de factoring - zonder de externe gedrag ervan te\u2026"
+summary: Refactoren is het proces van het herstructureren van bestaande computercode
+  - het veranderen van de factoring - zonder de externe gedrag ervan te wijzigen.
 title: Refactoring
 weight: 19
 ---

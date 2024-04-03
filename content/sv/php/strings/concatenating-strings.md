@@ -6,8 +6,7 @@ description: "\"Sammanslagning av str\xE4ngar\" inneb\xE4r att kombinera flera t
 lastmod: '2024-03-13T22:44:37.988446-06:00'
 model: gpt-4-1106-preview
 summary: "\"Sammanslagning av str\xE4ngar\" inneb\xE4r att kombinera flera textstycken\
-  \ till ett. Programmerare g\xF6r det f\xF6r att manipulera textdata, skapa dynamiskt\
-  \ inneh\xE5ll\u2026"
+  \ till ett."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

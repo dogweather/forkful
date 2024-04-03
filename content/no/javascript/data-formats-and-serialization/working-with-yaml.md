@@ -6,8 +6,8 @@ description: "YAML, forkortelse for YAML Ain't Markup Language, er et menneskele
   \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler\u2026"
 lastmod: '2024-03-13T22:44:41.203617-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart\
-  \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler\u2026"
+summary: YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart data
+  serialiseringsformat.
 title: Arbeider med YAML
 weight: 41
 ---

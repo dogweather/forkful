@@ -9,9 +9,7 @@ description: "Elixir \u0111i k\xE8m v\u1EDBi m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i 
 lastmod: '2024-03-13T22:44:36.214327-06:00'
 model: gpt-4-0125-preview
 summary: "Elixir \u0111i k\xE8m v\u1EDBi m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i \u0111\
-  \u1ED3 h\u1ECDa t\xEDch h\u1EE3p s\u1EB5n c\xF3 t\xEAn l\xE0 `:debugger`. \u0110\
-  \u1EC3 s\u1EED d\u1EE5ng n\xF3, b\u1EA1n c\u1EA7n b\u1EAFt \u0111\u1EA7u n\xF3 v\xE0\
-  \ k\u1EBFt n\u1ED1i v\u1EDBi qu\xE1 tr\xECnh \u0111ang ch\u1EA1y c\u1EE7a\u2026"
+  \u1ED3 h\u1ECDa t\xEDch h\u1EE3p s\u1EB5n c\xF3 t\xEAn l\xE0 `:debugger`."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

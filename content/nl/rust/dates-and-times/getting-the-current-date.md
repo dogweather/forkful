@@ -6,8 +6,8 @@ description: "In programmeren helpt het verkrijgen van de huidige datum bij het 
   \ van gebeurtenissen of het loggen van gegevens. Het is praktisch voor zaken zoals\u2026"
 lastmod: '2024-03-13T22:44:50.604904-06:00'
 model: gpt-4-0125-preview
-summary: "In programmeren helpt het verkrijgen van de huidige datum bij het volgen\
-  \ van gebeurtenissen of het loggen van gegevens. Het is praktisch voor zaken zoals\u2026"
+summary: In programmeren helpt het verkrijgen van de huidige datum bij het volgen
+  van gebeurtenissen of het loggen van gegevens.
 title: Het huidige datum ophalen
 weight: 29
 ---

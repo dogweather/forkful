@@ -8,8 +8,7 @@ description: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour 
 lastmod: '2024-03-13T22:44:58.417566-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en saisir\
-  \ la structure et le contenu. Les programmeurs le font pour extraire des donn\xE9\
-  es,\u2026"
+  \ la structure et le contenu."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

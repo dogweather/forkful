@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:43.310315-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) \xE8 una shell\
   \ interattiva che elabora input singoli degli utenti, esegue codice e restituisce\
-  \ il\u2026"
+  \ il risultato."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

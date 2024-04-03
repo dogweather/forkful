@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.934079-06:00'
 model: gpt-4-1106-preview
 summary: "JavaScriptissa merkkien poistaminen tietyll\xE4 kaavalla tarkoittaa ei-toivottujen\
   \ merkkien tai merkkijonojen karsimista tekstist\xE4 k\xE4ytt\xE4m\xE4ll\xE4 s\xE4\
-  \xE4nn\xF6llisi\xE4\u2026"
+  \xE4nn\xF6llisi\xE4 lausekkeita tai metodeja."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

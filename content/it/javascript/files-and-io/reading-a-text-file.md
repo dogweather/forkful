@@ -4,8 +4,8 @@ description: "Leggere un file di testo significa estrarre dati da un documento s
   \ sul tuo dispositivo o server. Programmatore lo fanno per manipolare,\u2026"
 lastmod: '2024-03-13T22:44:43.830999-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere un file di testo significa estrarre dati da un documento salvato\
-  \ sul tuo dispositivo o server. Programmatore lo fanno per manipolare,\u2026"
+summary: Leggere un file di testo significa estrarre dati da un documento salvato
+  sul tuo dispositivo o server.
 title: Lettura di un file di testo
 weight: 22
 ---

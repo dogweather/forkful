@@ -8,7 +8,8 @@ description: "Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung 
 lastmod: '2024-03-13T22:44:53.717423-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung in Visual\
-  \ Basic for Applications (VBA) dient dazu, auf Webressourcen zuzugreifen, die\u2026"
+  \ Basic for Applications (VBA) dient dazu, auf Webressourcen zuzugreifen, die durch\
+  \ Benutzernamen und Passwort gesch\xFCtzt sind."
 title: Eine HTTP-Anfrage mit einfacher Authentifizierung senden
 weight: 45
 ---

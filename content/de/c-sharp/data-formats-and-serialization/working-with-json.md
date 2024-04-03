@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.910008-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen, Generieren\
   \ und Abfragen von JSON-Daten und ist somit eine entscheidende F\xE4higkeit f\xFC\
-  r\u2026"
+  r die moderne Programmierung."
 title: Arbeiten mit JSON
 weight: 38
 ---

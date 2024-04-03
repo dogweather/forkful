@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.179340-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe consiste \xE0 d\xE9terminer la pr\xE9\
   sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 avant de r\xE9aliser des\
-  \ op\xE9rations telles que lire\u2026"
+  \ op\xE9rations telles que lire ou \xE9crire dans des fichiers \xE0 l'int\xE9rieur\
+  \ de celui-ci."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.869937-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares em C++ s\xE3o sequ\xEAncias de caracteres que definem\
   \ um padr\xE3o de busca, usados para a correspond\xEAncia ou manipula\xE7\xE3o de\
-  \ strings.\u2026"
+  \ strings."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

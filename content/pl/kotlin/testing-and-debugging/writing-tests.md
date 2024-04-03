@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.368457-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Kotlinie polega na tworzeniu fragment\xF3w kodu, kt\xF3\
   re automatycznie weryfikuj\u0105 poprawno\u015B\u0107 funkcjonaln\u0105 modu\u0142\
-  \xF3w oprogramowania, upewniaj\u0105c\u2026"
+  \xF3w oprogramowania, upewniaj\u0105c si\u0119, \u017Ce dzia\u0142aj\u0105 one zgodnie\
+  \ z oczekiwaniami."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

@@ -6,8 +6,7 @@ description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmi
 lastmod: '2024-03-13T22:44:34.980966-06:00'
 model: gpt-4-1106-preview
 summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
-  \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. W programowaniu\
-  \ robimy to dla jednolito\u015Bci\u2026"
+  \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

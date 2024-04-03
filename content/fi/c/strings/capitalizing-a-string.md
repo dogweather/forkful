@@ -7,7 +7,8 @@ description: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoit
 lastmod: '2024-03-13T22:44:57.020729-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoittaa annetun\
-  \ merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\u2026"
+  \ merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\
+  \ jos se on pienaakkonen."
 title: Merkkijonon suuraakkostaminen
 weight: 2
 ---

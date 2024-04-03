@@ -6,7 +6,7 @@ description: "Ler argumentos da linha de comando significa acessar os dados que 
 lastmod: '2024-03-13T22:44:46.557394-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando significa acessar os dados que os usu\xE1\
-  rios inserem ao executar seu programa. Programadores fazem isso para tornar os\u2026"
+  rios inserem ao executar seu programa."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

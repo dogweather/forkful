@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.096730-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla sis\xE4lt\xE4\xE4\
   \ k\xE4ytt\xE4j\xE4nimen ja salasanan koodaamisen pyynn\xF6n otsikkoon suojattujen\
-  \ resurssien k\xE4ytt\xF6\xF6n.\u2026"
+  \ resurssien k\xE4ytt\xF6\xF6n."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

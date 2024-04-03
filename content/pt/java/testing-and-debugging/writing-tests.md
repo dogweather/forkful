@@ -8,8 +8,7 @@ description: "Escrever testes em Java \xE9 sobre verificar se o seu c\xF3digo se
 lastmod: '2024-03-13T22:44:46.459649-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Java \xE9 sobre verificar se o seu c\xF3digo se comporta\
-  \ conforme esperado sob v\xE1rias condi\xE7\xF5es. Programadores escrevem testes\
-  \ para prevenir\u2026"
+  \ conforme esperado sob v\xE1rias condi\xE7\xF5es."
 title: Escrevendo testes
 weight: 36
 ---

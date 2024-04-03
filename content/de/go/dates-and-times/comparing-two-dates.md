@@ -7,7 +7,8 @@ description: "Das Vergleichen von zwei Daten in der Programmierung ist eine grun
 lastmod: '2024-03-13T22:44:53.301418-06:00'
 model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
-  \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"
+  \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\
+  \ Daten zu bewerten."
 title: Zwei Daten vergleichen
 weight: 27
 ---

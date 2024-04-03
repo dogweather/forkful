@@ -6,8 +6,7 @@ description: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4
 lastmod: '2024-03-13T22:44:56.342231-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4\xE4n\
-  \ tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
-  t\xE4 automatisoidakseen\u2026"
+  \ tekstikatkelmia ja korvataan ne toisilla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

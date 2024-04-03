@@ -6,8 +6,9 @@ description: "De huidige datum krijgen in Google Apps Script gaat over het ophal
   \ van de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,\u2026"
 lastmod: '2024-03-13T22:44:50.342989-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum krijgen in Google Apps Script gaat over het ophalen van\
-  \ de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,\u2026"
+summary: De huidige datum krijgen in Google Apps Script gaat over het ophalen van
+  de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,
+  loggen, en timestamping in apps die verbonden zijn met Google's ecosysteem.
 title: Het verkrijgen van de huidige datum
 weight: 29
 ---

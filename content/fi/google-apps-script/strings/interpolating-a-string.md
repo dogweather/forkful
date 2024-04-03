@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.081409-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen v\xE4liint\xE4ytt\xF6 Google Apps Scriptiss\xE4 mahdollistaa\
   \ lausekkeiden dynaamisen upottamisen merkkijonoihin, mik\xE4 helpottaa luettavamman\
-  \ ja\u2026"
+  \ ja yll\xE4pidett\xE4v\xE4mm\xE4n koodin luomista."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

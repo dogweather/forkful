@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:50.846148-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel, zijn\
   \ essentieel in verschillende computationele velden zoals engineering, natuurkunde\
-  \ en\u2026"
+  \ en signaalverwerking."
 title: Werken met complexe getallen
 weight: 14
 ---

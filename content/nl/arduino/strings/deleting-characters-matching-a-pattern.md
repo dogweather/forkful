@@ -7,7 +7,8 @@ description: "Het verwijderen van karakters die overeenkomen met een patroon bet
 lastmod: '2024-03-13T22:44:51.056702-06:00'
 model: gpt-4-0125-preview
 summary: "Het verwijderen van karakters die overeenkomen met een patroon betekent\
-  \ het wegdoen van specifieke volgordes van karakters uit strings\u2014denk aan het\u2026"
+  \ het wegdoen van specifieke volgordes van karakters uit strings\u2014denk aan het\
+  \ opschonen van data of invoer."
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

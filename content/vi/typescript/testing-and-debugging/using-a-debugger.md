@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDBi tr\xECnh g\u1EE1 l\u1ED7i trong\
   \ TypeScript, t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC b\u1EA1n c\u1EA7n l\xE0 m\u1ED9\
   t IDE \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (nh\u01B0 Visual Studio Code) v\xE0 m\u1ED9\
-  t c\u1EA5u h\xECnh `launch.json`. D\u01B0\u1EDBi\u2026"
+  t c\u1EA5u h\xECnh `launch."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.619390-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
   ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\
-  sica e\u2026"
+  sica e processamento de sinais."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

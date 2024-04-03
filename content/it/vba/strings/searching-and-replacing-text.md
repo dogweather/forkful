@@ -7,7 +7,7 @@ description: "Cercare e sostituire testo in Visual Basic for Applications (VBA) 
 lastmod: '2024-03-13T22:44:43.246190-06:00'
 model: gpt-4-0125-preview
 summary: "Cercare e sostituire testo in Visual Basic for Applications (VBA) \xE8 essenziale\
-  \ per la modifica di documenti, fogli di calcolo e database in modo\u2026"
+  \ per la modifica di documenti, fogli di calcolo e database in modo programmato."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

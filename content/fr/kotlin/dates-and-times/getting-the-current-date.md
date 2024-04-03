@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.751101-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation, obtenir la date actuelle est une t\xE2che fondamentale\
   \ qui permet aux d\xE9veloppeurs d'acc\xE9der, d'afficher ou de manipuler la date\
-  \ actuelle\u2026"
+  \ actuelle au sein de leurs applications."
 title: Obtenir la date actuelle
 weight: 29
 ---

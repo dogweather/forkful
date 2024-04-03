@@ -5,9 +5,7 @@ description: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-ser
   \ se on\u2026"
 lastmod: '2024-03-13T22:44:56.512412-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-serialisointikieli.\
-  \ Elm-ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 konfiguraatiotiedon hallintaan, koska\
-  \ se on\u2026"
+summary: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-serialisointikieli."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

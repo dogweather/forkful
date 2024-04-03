@@ -6,8 +6,7 @@ description: "Commencer un nouveau projet, c'est cr\xE9er une structure de base 
 lastmod: '2024-03-13T22:44:57.282950-06:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour d\xE9\
-  velopper une application. Les programmeurs font \xE7a pour organiser le code, g\xE9\
-  rer les\u2026"
+  velopper une application."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

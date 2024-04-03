@@ -5,8 +5,8 @@ description: "Searching and replacing text is finding specific strings and swapp
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.458659-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text is finding specific strings and swapping them\
-  \ with something else. Programmers do it to update code, correct errors, or to\u2026"
+summary: Searching and replacing text is finding specific strings and swapping them
+  with something else.
 title: Searching and replacing text
 weight: 10
 ---

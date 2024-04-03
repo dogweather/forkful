@@ -6,8 +6,7 @@ description: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informatione
   \ aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
 lastmod: '2024-03-13T22:44:53.509680-06:00'
 model: gpt-4-0125-preview
-summary: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus\
-  \ HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
+summary: HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus HTML-Dokumenten.
 title: HTML parsen
 weight: 43
 ---

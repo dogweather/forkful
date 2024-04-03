@@ -7,9 +7,8 @@ description: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazi
   \ si\u2026"
 lastmod: '2024-03-13T22:44:44.031637-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione e\
-  \ la manipolazione di documenti XML utilizzando varie librerie. I programmatori\
-  \ si\u2026"
+summary: Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione e la
+  manipolazione di documenti XML utilizzando varie librerie.
 title: Lavorare con XML
 weight: 40
 ---

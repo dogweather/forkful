@@ -4,8 +4,8 @@ description: "O tratamento de erros permite que seu script lide com o inesperado
   \ forma elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos\u2026"
 lastmod: '2024-03-13T22:44:47.013439-06:00'
 model: gpt-4-1106-preview
-summary: "O tratamento de erros permite que seu script lide com o inesperado de forma\
-  \ elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos\u2026"
+summary: O tratamento de erros permite que seu script lide com o inesperado de forma
+  elegante.
 title: Tratamento de erros
 weight: 16
 ---

@@ -4,8 +4,8 @@ description: "Trabajar con XML implica manipular y acceder a datos estructurados
   \ el lenguaje de marcado eXtensible. Los programadores trabajan con XML para permitir\u2026"
 lastmod: '2024-03-13T22:44:59.316928-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con XML implica manipular y acceder a datos estructurados en el\
-  \ lenguaje de marcado eXtensible. Los programadores trabajan con XML para permitir\u2026"
+summary: Trabajar con XML implica manipular y acceder a datos estructurados en el
+  lenguaje de marcado eXtensible.
 title: Trabajando con XML
 weight: 40
 ---

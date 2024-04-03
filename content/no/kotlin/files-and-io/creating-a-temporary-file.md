@@ -6,8 +6,7 @@ description: "Midlertidige filer er kortvarige datalagringselementer som skapes 
 lastmod: '2024-03-13T22:44:40.771297-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er kortvarige datalagringselementer som skapes under\
-  \ kj\xF8ring av programmer. Programmerere lager dem for \xE5 h\xE5ndtere store datastr\xF8\
-  mmer,\u2026"
+  \ kj\xF8ring av programmer."
 title: Opprette en midlertidig fil
 weight: 21
 ---

@@ -8,8 +8,7 @@ description: "Att arbeta med JSON (JavaScript Object Notation) i Kotlin inneb\xE
 lastmod: '2024-03-13T22:44:37.892333-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) i Kotlin inneb\xE4r att\
-  \ tolka och generera JSON-data. Programmerare g\xF6r detta f\xF6r att enkelt utbyta\
-  \ data\u2026"
+  \ tolka och generera JSON-data."
 title: Arbeta med JSON
 weight: 38
 ---

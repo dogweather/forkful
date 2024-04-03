@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.429721-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir un texte repr\xE9sentant une date en un objet `Date` ou `DateTime`\
-  \ que Ruby\u2026"
+  \ que Ruby comprend."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

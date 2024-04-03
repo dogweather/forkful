@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.636346-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie polega po prostu na pozostawianiu \u015Bladu w kodzie \u2013 to\
   \ spos\xF3b na \u015Bledzenie tego, co si\u0119 dzieje, gdy skrypt jest uruchamiany\
-  \ \"na \u017Cywo\".\u2026"
+  \ \"na \u017Cywo\"."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

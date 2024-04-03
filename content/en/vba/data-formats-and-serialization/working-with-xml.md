@@ -4,8 +4,8 @@ description: "Working with XML in Visual Basic for Applications (VBA) involves p
   \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
 lastmod: '2024-03-13T22:44:59.956483-06:00'
 model: gpt-4-0125-preview
-summary: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
-  \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
+summary: Working with XML in Visual Basic for Applications (VBA) involves parsing,
+  creating, and modifying XML documents within the context of Microsoft Office applications.
 title: Working with XML
 weight: 40
 ---

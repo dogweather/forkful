@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.420557-06:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros no Visual Basic for Applications (VBA) refere-se ao\
   \ processo de antecipar, detectar e resolver erros de programa\xE7\xE3o, aplicativos\
-  \ ou\u2026"
+  \ ou comunica\xE7\xE3o."
 title: Gerenciando erros
 weight: 16
 ---

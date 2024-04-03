@@ -6,8 +6,7 @@ description: "Opprettelse av en midlertidig fil er lagring av data p\xE5 en flyk
 lastmod: '2024-03-13T22:44:41.077544-06:00'
 model: gpt-4-1106-preview
 summary: "Opprettelse av en midlertidig fil er lagring av data p\xE5 en flyktig m\xE5\
-  te, som standard slettes n\xE5r programmet avsluttes. Programmerere bruker dette\
-  \ for\u2026"
+  te, som standard slettes n\xE5r programmet avsluttes."
 title: Opprette en midlertidig fil
 weight: 21
 ---

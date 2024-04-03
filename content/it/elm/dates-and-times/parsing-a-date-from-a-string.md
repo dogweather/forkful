@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.359038-06:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa in Elm comporta la trasformazione delle\
   \ informazioni testuali che rappresentano date e orari in un formato che Elm pu\xF2\
-  \u2026"
+  \ capire e manipolare, specificamente nel tipo `Date`."
 title: Analisi di una data da una stringa
 weight: 30
 ---

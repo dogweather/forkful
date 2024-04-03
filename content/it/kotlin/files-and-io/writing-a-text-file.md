@@ -6,8 +6,9 @@ description: "Scrivere un file di testo in Kotlin comporta la creazione di un fi
   \ e l'inserimento di contenuto testuale in esso, un compito comune per l'archiviazione\u2026"
 lastmod: '2024-03-13T22:44:43.409045-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere un file di testo in Kotlin comporta la creazione di un file e l'inserimento\
-  \ di contenuto testuale in esso, un compito comune per l'archiviazione\u2026"
+summary: Scrivere un file di testo in Kotlin comporta la creazione di un file e l'inserimento
+  di contenuto testuale in esso, un compito comune per l'archiviazione dei dati, la
+  registrazione o le impostazioni di configurazione.
 title: Scrivere un file di testo
 weight: 24
 ---

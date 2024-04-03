@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.777604-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objeto de JavaScript) implica analizar\
   \ datos JSON desde cadenas hacia objetos Dart y viceversa, una tarea com\xFAn en\
-  \ el\u2026"
+  \ el desarrollo web y de aplicaciones para el intercambio de datos."
 title: Trabajando con JSON
 weight: 38
 ---

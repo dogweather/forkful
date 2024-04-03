@@ -6,8 +6,7 @@ description: "Komennon rivin argumentit ovat sy\xF6tteit\xE4, joita ohjelmat saa
 lastmod: '2024-03-13T22:44:56.754377-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumentit ovat sy\xF6tteit\xE4, joita ohjelmat saavat k\xE4\
-  ynnistyess\xE4\xE4n komentorivilt\xE4. Ne mahdollistavat ohjelmalle eri tilanteisiin\
-  \ mukautumisen\u2026"
+  ynnistyess\xE4\xE4n komentorivilt\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

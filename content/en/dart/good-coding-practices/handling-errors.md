@@ -4,8 +4,8 @@ description: "Handling errors in Dart is about anticipating and managing excepti
   \ that arise during program execution to enhance reliability and usability.\u2026"
 lastmod: '2024-03-13T22:44:59.827352-06:00'
 model: gpt-4-0125-preview
-summary: "Handling errors in Dart is about anticipating and managing exceptions that\
-  \ arise during program execution to enhance reliability and usability.\u2026"
+summary: Handling errors in Dart is about anticipating and managing exceptions that
+  arise during program execution to enhance reliability and usability.
 title: Handling errors
 weight: 16
 ---

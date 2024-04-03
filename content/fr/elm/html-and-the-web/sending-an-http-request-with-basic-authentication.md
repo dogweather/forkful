@@ -6,7 +6,8 @@ description: "En Elm, envoyer une requ\xEAte HTTP avec une authentification de b
 lastmod: '2024-03-13T22:44:57.688903-06:00'
 model: gpt-4-1106-preview
 summary: "En Elm, envoyer une requ\xEAte HTTP avec une authentification de base consiste\
-  \ \xE0 transmettre des identifiants (nom d'utilisateur et mot de passe) pour\u2026"
+  \ \xE0 transmettre des identifiants (nom d'utilisateur et mot de passe) pour acc\xE9\
+  der \xE0 des ressources prot\xE9g\xE9es."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

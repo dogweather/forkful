@@ -7,7 +7,7 @@ description: "Scrivere test in C# comporta la creazione di script automatizzati 
 lastmod: '2024-03-13T22:44:43.437295-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in C# comporta la creazione di script automatizzati per validare\
-  \ la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"
+  \ la funzionalit\xE0 del proprio codice, assicurando che si comporti come previsto."
 title: Scrivere test
 weight: 36
 ---

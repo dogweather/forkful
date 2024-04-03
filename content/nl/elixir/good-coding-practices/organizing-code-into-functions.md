@@ -6,8 +6,8 @@ description: "Code organiseren in functies betekent dat gerelateerde operaties w
   \ gegroepeerd in herbruikbare blokken. We doen dit om de leesbaarheid en het\u2026"
 lastmod: '2024-03-13T22:44:50.467605-06:00'
 model: gpt-4-0125-preview
-summary: "Code organiseren in functies betekent dat gerelateerde operaties worden\
-  \ gegroepeerd in herbruikbare blokken. We doen dit om de leesbaarheid en het\u2026"
+summary: Code organiseren in functies betekent dat gerelateerde operaties worden gegroepeerd
+  in herbruikbare blokken.
 title: Code organiseren in functies
 weight: 18
 ---

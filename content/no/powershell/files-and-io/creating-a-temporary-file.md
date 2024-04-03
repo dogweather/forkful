@@ -6,7 +6,7 @@ description: "Opprettelse av en midlertidig fil er \xE5 lage en fil som er ment 
 lastmod: '2024-03-13T22:44:41.036346-06:00'
 model: gpt-4-1106-preview
 summary: "Opprettelse av en midlertidig fil er \xE5 lage en fil som er ment for kortvarig\
-  \ bruk. Programmere bruker dem for \xE5 lagre data under kj\xF8ring av et program\u2026"
+  \ bruk."
 title: Opprette en midlertidig fil
 weight: 21
 ---

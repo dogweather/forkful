@@ -4,8 +4,7 @@ description: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista p
   \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
 lastmod: '2024-03-13T22:44:56.183391-06:00'
 model: gpt-4-1106-preview
-summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
-  \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
+summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti."
 title: Verkkosivun lataaminen
 weight: 42
 ---

@@ -4,8 +4,9 @@ description: "Working with CSV (Comma-Separated Values) files in Arduino involve
   \ reading from and writing to CSV files usually stored on an SD card, enabling data\u2026"
 lastmod: '2024-03-13T22:45:00.340950-06:00'
 model: gpt-4-0125-preview
-summary: "Working with CSV (Comma-Separated Values) files in Arduino involves reading\
-  \ from and writing to CSV files usually stored on an SD card, enabling data\u2026"
+summary: Working with CSV (Comma-Separated Values) files in Arduino involves reading
+  from and writing to CSV files usually stored on an SD card, enabling data logging,
+  configuration settings, and more.
 title: Working with CSV
 weight: 37
 ---

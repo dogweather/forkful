@@ -6,8 +6,7 @@ description: "Avrunding av tall handler om \xE5 justere et tall til n\xE6rmeste 
 lastmod: '2024-03-13T22:44:40.397520-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall handler om \xE5 justere et tall til n\xE6rmeste hele,\
-  \ eller til en bestemt desimalpresisjon. Vi avrunder tall for \xE5 forenkle dem\
-  \ for\u2026"
+  \ eller til en bestemt desimalpresisjon."
 title: Avrunding av tall
 weight: 13
 ---

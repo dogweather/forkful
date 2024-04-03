@@ -6,8 +6,7 @@ description: "Py\xF6rist\xE4minen on desimaalin s\xE4\xE4t\xE4mist\xE4 l\xE4himp
 lastmod: '2024-03-13T22:44:56.483401-06:00'
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen on desimaalin s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4\
-  n kokonaisarvoon tai tiettyyn m\xE4\xE4r\xE4\xE4n desimaalilukuja. Ohjelmoijat py\xF6\
-  rist\xE4v\xE4t v\xE4hent\xE4\xE4kseen\u2026"
+  n kokonaisarvoon tai tiettyyn m\xE4\xE4r\xE4\xE4n desimaalilukuja."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

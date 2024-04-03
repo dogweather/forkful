@@ -6,8 +6,8 @@ description: "Een tekstbestand schrijven in PHP gaat over het opslaan van gegeve
   \ naar een bestand op de server. Programmeurs doen dit vaak voor datalogging,\u2026"
 lastmod: '2024-03-13T22:44:50.914164-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens naar\
-  \ een bestand op de server. Programmeurs doen dit vaak voor datalogging,\u2026"
+summary: Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens naar
+  een bestand op de server.
 title: Een tekstbestand schrijven
 weight: 24
 ---

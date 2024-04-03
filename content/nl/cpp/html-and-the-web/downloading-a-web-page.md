@@ -6,8 +6,8 @@ description: "Een webpagina downloaden betekent simpelweg de inhoud ervan ophale
   \ gewoonlijk in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:51.111421-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk\
-  \ in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs\u2026"
+summary: Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk
+  in HTML-formaat, om lokaal te bekijken of te verwerken.
 title: Een webpagina downloaden
 weight: 42
 ---

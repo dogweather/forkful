@@ -6,7 +6,7 @@ description: "Leer un archivo de texto implica cargar su contenido en un program
 lastmod: '2024-03-13T22:44:58.820177-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto implica cargar su contenido en un programa para\
-  \ procesar esa informaci\xF3n. Los programadores hacen esto para manipular datos,\u2026"
+  \ procesar esa informaci\xF3n."
 title: Lectura de un archivo de texto
 weight: 22
 ---

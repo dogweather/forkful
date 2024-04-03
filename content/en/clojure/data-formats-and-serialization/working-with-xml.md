@@ -5,8 +5,8 @@ description: "XML is a markup language for encoding documents in a way that is b
   \ data\u2026"
 lastmod: '2024-03-13T22:44:59.767074-06:00'
 model: gpt-4-1106-preview
-summary: "XML is a markup language for encoding documents in a way that is both human-\
-  \ and machine-readable. It's key in web services, configuration files, and data\u2026"
+summary: XML is a markup language for encoding documents in a way that is both human-
+  and machine-readable.
 title: Working with XML
 weight: 40
 ---

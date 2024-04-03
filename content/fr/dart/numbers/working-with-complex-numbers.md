@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.382679-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une partie\
   \ imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent le\
-  \ concept des\u2026"
+  \ concept des nombres sans dimension \xE0 un espace bidimensionnel."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

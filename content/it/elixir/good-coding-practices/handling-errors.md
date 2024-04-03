@@ -5,7 +5,7 @@ description: "Gestire gli errori significa scrivere codice che pu\xF2 affrontare
 lastmod: '2024-03-13T22:44:43.091149-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori significa scrivere codice che pu\xF2 affrontare situazioni\
-  \ impreviste. I programmatori lo fanno per prevenire crash e per assicurarsi che\u2026"
+  \ impreviste."
 title: Gestione degli errori
 weight: 16
 ---

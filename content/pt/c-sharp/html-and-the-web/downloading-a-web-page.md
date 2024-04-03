@@ -5,9 +5,7 @@ description: "Baixar uma p\xE1gina da web \xE9 pegar o seu conte\xFAdo usando c\
   \ para turbinar\u2026"
 lastmod: '2024-03-13T22:44:46.582914-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web \xE9 pegar o seu conte\xFAdo usando c\xF3digo.\
-  \ Programadores fazem isso para an\xE1lise de dados, testes automatizados ou para\
-  \ turbinar\u2026"
+summary: "Baixar uma p\xE1gina da web \xE9 pegar o seu conte\xFAdo usando c\xF3digo."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

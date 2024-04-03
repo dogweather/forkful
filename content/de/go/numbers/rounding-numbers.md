@@ -7,7 +7,7 @@ description: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE
 lastmod: '2024-03-13T22:44:53.282053-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4chste\
-  \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"
+  \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen."
 title: Zahlen runden
 weight: 13
 ---

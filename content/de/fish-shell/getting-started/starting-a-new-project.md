@@ -5,9 +5,8 @@ description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzu
   \ zu\u2026"
 lastmod: '2024-03-13T22:44:54.310234-06:00'
 model: gpt-4-1106-preview
-summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
-  \ um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Probleml\xF6sungen\
-  \ zu\u2026"
+summary: Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,
+  um eine Idee zum Leben zu erwecken.
 title: Einen neuen Projekt starten
 weight: 1
 ---

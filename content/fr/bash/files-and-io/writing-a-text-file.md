@@ -8,8 +8,7 @@ description: "\xC9crire un fichier texte en Bash vous permet d'automatiser le st
 lastmod: '2024-03-13T22:44:58.017065-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Bash vous permet d'automatiser le stockage\
-  \ de donn\xE9es, les logs, les param\xE8tres de configuration, et plus encore. C'est\
-  \ une\u2026"
+  \ de donn\xE9es, les logs, les param\xE8tres de configuration, et plus encore."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

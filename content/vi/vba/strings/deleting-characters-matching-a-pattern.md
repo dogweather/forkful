@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "X\xF3a k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu c\u1EE5\
   \ th\u1EC3 trong Visual Basic cho Applications (VBA) bao g\u1ED3m vi\u1EC7c x\xE1\
   c \u0111\u1ECBnh v\xE0 sau \u0111\xF3 lo\u1EA1i b\u1ECF c\xE1c k\xFD t\u1EF1 ho\u1EB7\
-  c chu\u1ED7i ph\xF9 h\u1EE3p v\u1EDBi\u2026"
+  c chu\u1ED7i ph\xF9 h\u1EE3p v\u1EDBi ti\xEAu ch\xED nh\u1EA5t \u0111\u1ECBnh."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

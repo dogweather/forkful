@@ -5,9 +5,7 @@ description: "Dumpa all din kod i en stor h\xF6g? D\xE5lig id\xE9. Bryt upp den 
   \ l\xE4ttare att testa. Genom att\u2026"
 lastmod: '2024-03-13T22:44:37.835010-06:00'
 model: gpt-4-1106-preview
-summary: "Dumpa all din kod i en stor h\xF6g? D\xE5lig id\xE9. Bryt upp den i funktioner?\
-  \ Bra id\xE9. Det h\xE5ller din Elm-kod ren, \xE5teranv\xE4ndbar och l\xE4ttare\
-  \ att testa. Genom att\u2026"
+summary: "Dumpa all din kod i en stor h\xF6g."
 title: Att organisera kod i funktioner
 weight: 18
 ---

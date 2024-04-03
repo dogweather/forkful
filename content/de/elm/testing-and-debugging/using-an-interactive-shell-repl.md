@@ -5,7 +5,8 @@ description: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive
 lastmod: '2024-03-13T22:44:53.806681-06:00'
 model: gpt-4-0125-preview
 summary: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung,\
-  \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis\u2026"
+  \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis an den Benutzer\
+  \ zur\xFCckgibt."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

@@ -5,8 +5,8 @@ description: "Reading command line arguments in Java is snagging input provided 
   \ their\u2026"
 lastmod: '2024-03-13T22:44:59.985827-06:00'
 model: gpt-4-1106-preview
-summary: "Reading command line arguments in Java is snagging input provided by users\
-  \ when they launch your program from a console. Programmers do it to make their\u2026"
+summary: Reading command line arguments in Java is snagging input provided by users
+  when they launch your program from a console.
 title: Reading command line arguments
 weight: 23
 ---

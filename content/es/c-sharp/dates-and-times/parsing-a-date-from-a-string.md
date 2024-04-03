@@ -6,8 +6,8 @@ description: "Analizar una fecha de una cadena en C# implica convertir las repre
   \ textuales de fechas y horas en un objeto `DateTime`. Esto es esencial para\u2026"
 lastmod: '2024-03-13T22:44:59.087206-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena en C# implica convertir las representaciones\
-  \ textuales de fechas y horas en un objeto `DateTime`. Esto es esencial para\u2026"
+summary: Analizar una fecha de una cadena en C# implica convertir las representaciones
+  textuales de fechas y horas en un objeto `DateTime`.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

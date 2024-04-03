@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.714370-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec du CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
   \ d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9es tabulaires\
-  \ dans un\u2026"
+  \ dans un format texte simple."
 title: Travailler avec CSV
 weight: 37
 ---

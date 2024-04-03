@@ -6,7 +6,8 @@ description: "El registro de eventos (logging) es esencialmente el equivalente e
 lastmod: '2024-03-13T22:44:58.663249-06:00'
 model: gpt-4-1106-preview
 summary: "El registro de eventos (logging) es esencialmente el equivalente en software\
-  \ de un diario de navegaci\xF3n; es una forma de registrar eventos que ocurren\u2026"
+  \ de un diario de navegaci\xF3n; es una forma de registrar eventos que ocurren mientras\
+  \ una aplicaci\xF3n se est\xE1 ejecutando."
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

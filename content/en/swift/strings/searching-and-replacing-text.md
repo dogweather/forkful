@@ -4,8 +4,8 @@ description: "Searching and replacing text in programming is exactly what it sou
   \ like: scanning strings for certain patterns and swapping those out for something\u2026"
 lastmod: '2024-03-13T22:45:00.382591-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text in programming is exactly what it sounds like:\
-  \ scanning strings for certain patterns and swapping those out for something\u2026"
+summary: 'Searching and replacing text in programming is exactly what it sounds like:
+  scanning strings for certain patterns and swapping those out for something else.'
 title: Searching and replacing text
 weight: 10
 ---

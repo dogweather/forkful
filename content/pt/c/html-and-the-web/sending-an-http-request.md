@@ -8,8 +8,7 @@ description: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma so
 lastmod: '2024-03-13T22:44:47.046414-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
-  \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\
-  \ isso em C\u2026"
+  \xE3o para um servidor web para recuperar ou submeter dados."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

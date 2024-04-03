@@ -5,9 +5,7 @@ description: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av e
   \ tekst p\xE5 et mer\u2026"
 lastmod: '2024-03-13T22:44:40.919183-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av en streng.\
-  \ Programmerere gj\xF8r dette for \xE5 bearbeide, sjekke eller manipulere tekst\
-  \ p\xE5 et mer\u2026"
+summary: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av en streng."
 title: Uthenting av delstrenger
 weight: 6
 ---

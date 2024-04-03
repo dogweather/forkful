@@ -6,8 +6,7 @@ description: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious,
 lastmod: '2024-03-13T22:44:56.250197-06:00'
 model: gpt-4-0125-preview
 summary: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
-  \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t\u2026"
+  \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

@@ -7,8 +7,7 @@ description: "Stringinterpolatie gaat over het invoegen van variabelen in string
   \ of\u2026"
 lastmod: '2024-03-13T22:44:51.098868-06:00'
 model: gpt-4-0125-preview
-summary: "Stringinterpolatie gaat over het invoegen van variabelen in strings. We\
-  \ doen dit om ter plekke berichten samen te stellen, output te personaliseren of\u2026"
+summary: Stringinterpolatie gaat over het invoegen van variabelen in strings.
 title: Een string interpoleren
 weight: 8
 ---

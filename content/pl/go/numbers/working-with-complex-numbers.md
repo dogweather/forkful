@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.842788-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu liczbami,\
   \ kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105, jak i urojon\u0105\
-  , zwykle wyra\u017Cane jako\u2026"
+  , zwykle wyra\u017Cane jako `a + bi`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

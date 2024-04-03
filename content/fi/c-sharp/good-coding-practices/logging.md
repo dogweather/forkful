@@ -4,8 +4,7 @@ description: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentam
   \ suoritusaikana. Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"
 lastmod: '2024-03-13T22:44:56.579808-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana.\
-  \ Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"
+summary: Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana.
 title: Lokitus
 weight: 17
 ---

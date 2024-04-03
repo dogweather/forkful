@@ -8,7 +8,8 @@ description: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegend
 lastmod: '2024-03-13T22:44:54.276554-06:00'
 model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe,\
-  \ die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums und der\u2026"
+  \ die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums und der\
+  \ Uhrzeit umfasst."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

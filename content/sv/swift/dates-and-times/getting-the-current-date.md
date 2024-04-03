@@ -8,8 +8,7 @@ description: "Att f\xE5 det aktuella datumet i Swift inneb\xE4r att anv\xE4nda `
 lastmod: '2024-03-13T22:44:38.261382-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Swift inneb\xE4r att anv\xE4nda `Date`-klassen\
-  \ f\xF6r att f\xE5 tillg\xE5ng till datum och tid n\xE4r appen k\xF6rs. Programmerare\
-  \ beh\xF6ver h\xE4mta\u2026"
+  \ f\xF6r att f\xE5 tillg\xE5ng till datum och tid n\xE4r appen k\xF6rs."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

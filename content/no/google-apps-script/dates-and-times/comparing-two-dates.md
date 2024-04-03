@@ -7,7 +7,8 @@ description: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av J
 lastmod: '2024-03-13T22:44:40.329058-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
-  \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"
+  \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som h\xE5\
+  ndterer planlegging, tidslinjer eller andre datorelaterte data."
 title: Sammenligning av to datoer
 weight: 27
 ---

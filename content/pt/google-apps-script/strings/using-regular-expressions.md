@@ -8,8 +8,7 @@ description: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para 
 lastmod: '2024-03-13T22:44:46.096305-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
-  \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\
-  \ editar ou\u2026"
+  \ sequ\xEAncias de caracteres em strings."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

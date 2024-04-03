@@ -5,7 +5,7 @@ description: "La creazione di un file temporaneo \xE8 il processo di generazione
 lastmod: '2024-03-13T22:44:43.237817-06:00'
 model: gpt-4-1106-preview
 summary: "La creazione di un file temporaneo \xE8 il processo di generazione di un\
-  \ file che si intende utilizzare per un breve periodo di tempo. In Rust, i\u2026"
+  \ file che si intende utilizzare per un breve periodo di tempo."
 title: Creazione di un file temporaneo
 weight: 21
 ---

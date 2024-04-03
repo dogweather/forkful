@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.203139-06:00'
 model: gpt-4-1106-preview
 summary: "O log \xE9 essencialmente o equivalente de software ao di\xE1rio de bordo\
   \ de um navio; \xE9 uma maneira de registrar eventos que acontecem enquanto uma\
-  \ aplica\xE7\xE3o\u2026"
+  \ aplica\xE7\xE3o est\xE1 em execu\xE7\xE3o."
 title: Registro de Logs
 weight: 17
 ---

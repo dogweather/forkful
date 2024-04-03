@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.147741-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos s\xE3o um conjunto de n\xFAmeros do tipo `a + bi`,\
   \ onde `a` e `b` s\xE3o n\xFAmeros reais, e `i` \xE9 a unidade imagin\xE1ria (`i^2\
-  \ = -1`). Na\u2026"
+  \ = -1`)."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

@@ -8,8 +8,7 @@ description: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppg
 lastmod: '2024-03-13T22:44:37.403589-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift f\xF6\
-  r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det \xE4\
-  r avg\xF6rande f\xF6r\u2026"
+  r programmerare, lika vanlig som \"Hello, World."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

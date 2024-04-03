@@ -8,8 +8,7 @@ description: "Tablice asocjacyjne w Dart, znane r\xF3wnie\u017C jako Mapy, to st
 lastmod: '2024-03-13T22:44:35.083265-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne w Dart, znane r\xF3wnie\u017C jako Mapy, to struktury\
-  \ danych, kt\xF3re przechowuj\u0105 dane w parach klucz-warto\u015B\u0107. Umo\u017C\
-  liwiaj\u0105 programistom dost\u0119p\u2026"
+  \ danych, kt\xF3re przechowuj\u0105 dane w parach klucz-warto\u015B\u0107."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

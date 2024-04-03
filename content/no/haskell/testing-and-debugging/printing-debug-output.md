@@ -6,8 +6,7 @@ description: "\"Printing debug output\" betyr \xE5 vise mellomliggende data fra 
 lastmod: '2024-03-13T22:44:40.844251-06:00'
 model: gpt-4-1106-preview
 summary: "\"Printing debug output\" betyr \xE5 vise mellomliggende data fra et program\
-  \ for \xE5 forst\xE5 hva som skjer under kj\xF8ring. Programmerere gj\xF8r dette\
-  \ for \xE5 feils\xF8ke\u2026"
+  \ for \xE5 forst\xE5 hva som skjer under kj\xF8ring."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.251709-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Python consiste \xE0 confirmer\
   \ la pr\xE9sence d'un dossier dans le syst\xE8me de fichiers avant d'effectuer des\
-  \ op\xE9rations\u2026"
+  \ op\xE9rations telles que la lecture ou l'\xE9criture de fichiers."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

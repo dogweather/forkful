@@ -7,9 +7,8 @@ description: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens va
   \ het\u2026"
 lastmod: '2024-03-13T22:44:50.547289-06:00'
 model: gpt-4-0125-preview
-summary: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens van een\
-  \ server vraagt of gegevens naar een server stuurt. Programmeurs doen dit omdat\
-  \ het\u2026"
+summary: Het verzenden van een HTTP-verzoek is hoe je programma gegevens van een server
+  vraagt of gegevens naar een server stuurt.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

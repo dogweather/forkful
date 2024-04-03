@@ -8,8 +8,7 @@ description: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux 
 lastmod: '2024-03-13T22:44:58.362565-06:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux cha\xEE\
-  nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs\
-  \ effectuent cette\u2026"
+  nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

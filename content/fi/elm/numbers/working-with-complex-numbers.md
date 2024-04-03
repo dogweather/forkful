@@ -6,7 +6,7 @@ description: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\
 lastmod: '2024-03-13T22:44:56.482440-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4, kuten\
-  \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla kuten\u2026"
+  \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

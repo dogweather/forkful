@@ -6,7 +6,7 @@ description: "Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-l\xF8k
 lastmod: '2024-03-13T22:44:41.143428-06:00'
 model: gpt-4-0125-preview
 summary: "Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-l\xF8kke (REPL),\
-  \ lar deg kode interaktivt. Programmerere bruker det til raskt \xE5 teste Swift-\u2026"
+  \ lar deg kode interaktivt."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

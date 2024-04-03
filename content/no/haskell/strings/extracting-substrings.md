@@ -5,9 +5,7 @@ description: "\xC5 hente ut delstrenger betyr \xE5 plukke ut spesifikke deler av
   \ transformere data\u2026"
 lastmod: '2024-03-13T22:44:40.829861-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 hente ut delstrenger betyr \xE5 plukke ut spesifikke deler av en tekststreng.\
-  \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller transformere\
-  \ data\u2026"
+summary: "\xC5 hente ut delstrenger betyr \xE5 plukke ut spesifikke deler av en tekststreng."
 title: Uthenting av delstrenger
 weight: 6
 ---

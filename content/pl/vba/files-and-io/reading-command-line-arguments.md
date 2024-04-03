@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.248838-06:00'
 model: gpt-4-0125-preview
 summary: "Odczytywanie argument\xF3w linii komend w Visual Basic for Applications\
   \ (VBA) polega na dost\u0119pie do parametr\xF3w przekazanych do programu podczas\
-  \ jego\u2026"
+  \ jego wykonania."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

@@ -6,7 +6,8 @@ description: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenatio
 lastmod: '2024-03-13T22:44:53.880242-06:00'
 model: gpt-4-1106-preview
 summary: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\" genannt,\
-  \ ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem\u2026"
+  \ ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem einzigen\
+  \ zu kombinieren."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

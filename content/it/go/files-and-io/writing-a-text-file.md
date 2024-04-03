@@ -7,9 +7,8 @@ description: "Scrivere un file di testo in Go comporta la creazione e la scrittu
   \ ci\xF2\u2026"
 lastmod: '2024-03-13T22:44:42.927906-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere un file di testo in Go comporta la creazione e la scrittura di\
-  \ stringhe di dati in un file di testo nuovo o esistente. I programmatori fanno\
-  \ ci\xF2\u2026"
+summary: Scrivere un file di testo in Go comporta la creazione e la scrittura di stringhe
+  di dati in un file di testo nuovo o esistente.
 title: Scrivere un file di testo
 weight: 24
 ---

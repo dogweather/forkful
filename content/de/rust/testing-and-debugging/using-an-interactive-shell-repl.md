@@ -6,7 +6,8 @@ description: "Eine interaktive Shell f\xFCr Rust, oder REPL (Read-Eval-Print Loo
 lastmod: '2024-03-13T22:44:53.674431-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell f\xFCr Rust, oder REPL (Read-Eval-Print Loop), erm\xF6\
-  glicht es Ihnen, Rust-Code sofort auszuf\xFChren und sofortige Ergebnisse zu sehen,\u2026"
+  glicht es Ihnen, Rust-Code sofort auszuf\xFChren und sofortige Ergebnisse zu sehen,\
+  \ ideal f\xFCr Experimente oder zum Lernen."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

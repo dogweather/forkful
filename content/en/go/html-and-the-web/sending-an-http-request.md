@@ -4,8 +4,8 @@ description: "Sending an HTTP request involves initiating a call from your Go ap
   \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"
 lastmod: '2024-03-13T22:44:59.628153-06:00'
 model: gpt-4-0125-preview
-summary: "Sending an HTTP request involves initiating a call from your Go application\
-  \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"
+summary: Sending an HTTP request involves initiating a call from your Go application
+  to a web server, API, or any other HTTP-based service.
 title: Sending an HTTP request
 weight: 44
 ---

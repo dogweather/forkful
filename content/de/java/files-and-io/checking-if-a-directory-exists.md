@@ -8,7 +8,9 @@ description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Java existiert, ist ei
 lastmod: '2024-03-13T22:44:53.776677-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Java existiert, ist eine grundlegende\
-  \ Aufgabe, die das Verifizieren der Pr\xE4senz eines Dateisystemverzeichnisses vor\u2026"
+  \ Aufgabe, die das Verifizieren der Pr\xE4senz eines Dateisystemverzeichnisses vor\
+  \ dem Lesen, Schreiben oder Ausf\xFChren jeglicher Operationen, die seine Existenz\
+  \ erfordern, beinhaltet."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

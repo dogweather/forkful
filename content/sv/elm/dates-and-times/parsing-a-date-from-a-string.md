@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.838889-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Elm inneb\xE4r att konvertera\
   \ textuell information som representerar datum och tider till ett format som Elm\
-  \ kan f\xF6rst\xE5\u2026"
+  \ kan f\xF6rst\xE5 och manipulera, specifikt till `Date`-typen."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

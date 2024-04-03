@@ -7,7 +7,8 @@ description: "Mit JSON (JavaScript Object Notation) in Haskell zu arbeiten, umfa
 lastmod: '2024-03-13T22:44:53.952133-06:00'
 model: gpt-4-0125-preview
 summary: "Mit JSON (JavaScript Object Notation) in Haskell zu arbeiten, umfasst das\
-  \ Parsen von JSON-Daten in Haskell-Typen und das Umwandeln von Haskell-Typen\u2026"
+  \ Parsen von JSON-Daten in Haskell-Typen und das Umwandeln von Haskell-Typen zur\xFC\
+  ck in JSON."
 title: Arbeiten mit JSON
 weight: 38
 ---

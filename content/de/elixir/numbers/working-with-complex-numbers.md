@@ -5,7 +5,7 @@ description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rt
 lastmod: '2024-03-13T22:44:53.461662-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil (wie\
-  \ `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten\u2026"
+  \ `3 + 4i`)."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

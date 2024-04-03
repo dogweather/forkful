@@ -7,8 +7,8 @@ description: "Debugoutput afdrukken is in wezen de manier waarop een programmeur
   \ het\u2026"
 lastmod: '2024-03-13T22:44:50.770498-06:00'
 model: gpt-4-0125-preview
-summary: "Debugoutput afdrukken is in wezen de manier waarop een programmeur een kijkje\
-  \ neemt naar wat er in real-time in hun code gebeurt. Het is cruciaal voor het\u2026"
+summary: Debugoutput afdrukken is in wezen de manier waarop een programmeur een kijkje
+  neemt naar wat er in real-time in hun code gebeurt.
 title: Debug-output afdrukken
 weight: 33
 ---

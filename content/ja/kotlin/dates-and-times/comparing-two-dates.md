@@ -5,8 +5,8 @@ description: "Comparing two dates in Kotlin means to check if one date comes bef
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:42.083934-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates in Kotlin means to check if one date comes before or\
-  \ after another or if they're the same. Programmers do this to handle events,\u2026"
+summary: Comparing two dates in Kotlin means to check if one date comes before or
+  after another or if they're the same.
 title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---

@@ -7,7 +7,7 @@ description: "Een nieuw project starten betekent het opzetten van de initi\xEBle
 lastmod: '2024-03-13T22:44:50.768299-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van de initi\xEBle structuur\
-  \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie. Programmeurs\u2026"
+  \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie."
 title: Een nieuw project starten
 weight: 1
 ---

@@ -7,8 +7,8 @@ description: "Analizar una fecha de una cadena en PHP implica convertir texto qu
   \ de\u2026"
 lastmod: '2024-03-13T22:44:59.170108-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena en PHP implica convertir texto que representa\
-  \ una fecha y/o hora en un objeto `DateTime` de PHP u otros formatos de\u2026"
+summary: Analizar una fecha de una cadena en PHP implica convertir texto que representa
+  una fecha y/o hora en un objeto `DateTime` de PHP u otros formatos de fecha/hora.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

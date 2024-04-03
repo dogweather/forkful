@@ -6,8 +6,9 @@ description: "La scrittura su standard error (stderr) nei linguaggi di programma
   \ riguarda l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso\u2026"
 lastmod: '2024-03-13T22:44:42.974202-06:00'
 model: gpt-4-0125-preview
-summary: "La scrittura su standard error (stderr) nei linguaggi di programmazione\
-  \ riguarda l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso\u2026"
+summary: La scrittura su standard error (stderr) nei linguaggi di programmazione riguarda
+  l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso separato,
+  diverso dall'output standard (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

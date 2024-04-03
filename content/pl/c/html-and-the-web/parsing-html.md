@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.884059-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu efektywnego\
   \ wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119sto jako\
-  \ preludium do\u2026"
+  \ preludium do wydobywania danych (data mining) lub web scrapingu."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

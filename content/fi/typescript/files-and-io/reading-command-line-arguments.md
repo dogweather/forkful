@@ -6,8 +6,7 @@ description: "Komennoriviargumenttien lukeminen tarkoittaa k\xE4ytt\xE4j\xE4n an
 lastmod: '2024-03-13T22:44:56.330323-06:00'
 model: gpt-4-1106-preview
 summary: "Komennoriviargumenttien lukeminen tarkoittaa k\xE4ytt\xE4j\xE4n antamien\
-  \ sy\xF6tteiden noutamista komentorivilt\xE4 ohjelman suorituksen aikana. Ohjelmoijat\
-  \ tekev\xE4t\u2026"
+  \ sy\xF6tteiden noutamista komentorivilt\xE4 ohjelman suorituksen aikana."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

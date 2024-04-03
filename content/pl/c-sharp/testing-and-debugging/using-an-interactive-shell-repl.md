@@ -6,8 +6,7 @@ description: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u010
 lastmod: '2024-03-13T22:44:35.410026-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u0107 i interaktywnie\
-  \ uruchamia\u0107 kod w C#. Programi\u015Bci u\u017Cywaj\u0105 go do szybkich eksperyment\xF3\
-  w,\u2026"
+  \ uruchamia\u0107 kod w C#."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

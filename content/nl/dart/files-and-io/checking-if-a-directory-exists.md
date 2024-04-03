@@ -7,7 +7,8 @@ description: "Controleren of een map bestaat in Dart gaat over het verifi\xEBren
 lastmod: '2024-03-13T22:44:50.520872-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Dart gaat over het verifi\xEBren van de\
-  \ aanwezigheid van een map op een gespecificeerd pad op het bestandssysteem voordat\u2026"
+  \ aanwezigheid van een map op een gespecificeerd pad op het bestandssysteem voordat\
+  \ operaties zoals het lezen of schrijven van bestanden worden uitgevoerd."
 title: Controleren of een map bestaat
 weight: 20
 ---

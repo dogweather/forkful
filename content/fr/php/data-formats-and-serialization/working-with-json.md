@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.902039-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es qui est facile \xE0 lire et \xE0 \xE9crire pour les humains, et\
-  \ facile \xE0 analyser et\u2026"
+  \ facile \xE0 analyser et \xE0 g\xE9n\xE9rer pour les machines."
 title: Travailler avec JSON
 weight: 38
 ---

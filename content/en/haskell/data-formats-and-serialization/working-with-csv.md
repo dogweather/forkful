@@ -4,8 +4,8 @@ description: "Working with CSVs (Comma-Separated Values) involves parsing and ge
   \ files that store tabular data in a simple, text-based format. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.148510-06:00'
 model: gpt-4-0125-preview
-summary: "Working with CSVs (Comma-Separated Values) involves parsing and generating\
-  \ files that store tabular data in a simple, text-based format. Programmers\u2026"
+summary: Working with CSVs (Comma-Separated Values) involves parsing and generating
+  files that store tabular data in a simple, text-based format.
 title: Working with CSV
 weight: 37
 ---

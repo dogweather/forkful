@@ -4,8 +4,8 @@ description: "Writing to standard error in C involves directing error messages a
   \ diagnostic information to a separate stream from the main program output. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.525786-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error in C involves directing error messages and diagnostic\
-  \ information to a separate stream from the main program output. Programmers\u2026"
+summary: Writing to standard error in C involves directing error messages and diagnostic
+  information to a separate stream from the main program output.
 title: Writing to standard error
 weight: 25
 ---

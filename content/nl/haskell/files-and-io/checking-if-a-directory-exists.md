@@ -7,8 +7,8 @@ description: "Controleren of een directory bestaat betekent bevestigen of een ma
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:50.866948-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat betekent bevestigen of een map daadwerkelijk\
-  \ is waar je denkt dat deze is in het bestandssysteem. Programmeurs doen\u2026"
+summary: Controleren of een directory bestaat betekent bevestigen of een map daadwerkelijk
+  is waar je denkt dat deze is in het bestandssysteem.
 title: Controleren of een directory bestaat
 weight: 20
 ---

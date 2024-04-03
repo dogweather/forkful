@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:34.956265-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji, podczas dzia\u0142\
   ania programu, dostarczaj\u0105c \u015Blad okruszk\xF3w do analizy post mortem oraz\
-  \ monitorowania w\u2026"
+  \ monitorowania w czasie rzeczywistym."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

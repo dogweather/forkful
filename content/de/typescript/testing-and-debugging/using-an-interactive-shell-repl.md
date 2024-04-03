@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.632763-06:00'
 model: gpt-4-0125-preview
 summary: "Ein Read-Eval-Print-Loop (REPL) ist eine Programmierumgebung, die einzelne\
   \ Benutzereingaben annimmt, ausf\xFChrt und das Ergebnis an den Benutzer zur\xFC\
-  ckgibt.\u2026"
+  ckgibt."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

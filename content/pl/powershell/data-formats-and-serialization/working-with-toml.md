@@ -6,8 +6,7 @@ description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format seria
 lastmod: '2024-03-13T22:44:35.653356-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych, kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce.\
-  \ Programi\u015Bci\u2026"
+  \ danych, kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce."
 title: Praca z TOML
 weight: 39
 ---

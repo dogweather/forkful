@@ -4,8 +4,9 @@ description: "Generating random numbers in Arduino projects involves producing v
   \ that are unpredictable by design, crucial for applications like games,\u2026"
 lastmod: '2024-03-13T22:45:00.318378-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in Arduino projects involves producing values\
-  \ that are unpredictable by design, crucial for applications like games,\u2026"
+summary: Generating random numbers in Arduino projects involves producing values that
+  are unpredictable by design, crucial for applications like games, simulations, and
+  security systems.
 title: Generating random numbers
 weight: 12
 ---

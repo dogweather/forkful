@@ -6,8 +6,9 @@ description: "Het verwijderen van aanhalingstekens uit een tekenreeks in C# bete
   \ dat je die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens die je tekst\u2026"
 lastmod: '2024-03-13T22:44:50.797977-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een tekenreeks in C# betekent dat\
-  \ je die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens die je tekst\u2026"
+summary: Het verwijderen van aanhalingstekens uit een tekenreeks in C# betekent dat
+  je die vervelende dubbele (`"`) of enkele (`'`) aanhalingstekens die je tekst omhullen
+  weg haalt.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

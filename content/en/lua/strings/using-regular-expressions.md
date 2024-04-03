@@ -4,8 +4,8 @@ description: "Regular expressions in programming allow for pattern matching and 
   \ of strings based on specific patterns. Programmers use them for tasks like\u2026"
 lastmod: '2024-03-13T22:45:00.196217-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions in programming allow for pattern matching and manipulation\
-  \ of strings based on specific patterns. Programmers use them for tasks like\u2026"
+summary: Regular expressions in programming allow for pattern matching and manipulation
+  of strings based on specific patterns.
 title: Using regular expressions
 weight: 11
 ---

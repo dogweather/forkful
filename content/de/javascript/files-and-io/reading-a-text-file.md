@@ -5,9 +5,8 @@ description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwen
   \ zu\u2026"
 lastmod: '2024-03-13T22:44:54.283835-06:00'
 model: gpt-4-1106-preview
-summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung zu\
-  \ importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\
-  \ zu\u2026"
+summary: Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung zu
+  importieren.
 title: Textdatei einlesen
 weight: 22
 ---

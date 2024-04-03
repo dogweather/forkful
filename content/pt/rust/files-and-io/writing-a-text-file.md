@@ -6,8 +6,8 @@ description: "Escrever um arquivo de texto em Rust envolve criar, escrever e, po
   \ acrescentar dados a um arquivo no sistema de arquivos. Os programadores\u2026"
 lastmod: '2024-03-13T22:44:46.385990-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever um arquivo de texto em Rust envolve criar, escrever e, potencialmente,\
-  \ acrescentar dados a um arquivo no sistema de arquivos. Os programadores\u2026"
+summary: Escrever um arquivo de texto em Rust envolve criar, escrever e, potencialmente,
+  acrescentar dados a um arquivo no sistema de arquivos.
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

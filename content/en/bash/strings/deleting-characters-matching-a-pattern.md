@@ -6,8 +6,7 @@ description: "Deleting characters matching a pattern in Bash lets you manipulate
 lastmod: '2024-03-13T22:45:00.228963-06:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in Bash lets you manipulate strings\
-  \ to fit your needs\u2014like stripping unwanted chars or sanitizing input. It's\
-  \ the\u2026"
+  \ to fit your needs\u2014like stripping unwanted chars or sanitizing input."
 title: Deleting characters matching a pattern
 weight: 5
 ---

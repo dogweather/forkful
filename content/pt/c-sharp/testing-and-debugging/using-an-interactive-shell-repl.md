@@ -5,7 +5,7 @@ description: "Um REPL, ou Ciclo Ler-Avaliar-Imprimir, permite que voc\xEA digite
 lastmod: '2024-03-13T22:44:46.585710-06:00'
 model: gpt-4-0125-preview
 summary: "Um REPL, ou Ciclo Ler-Avaliar-Imprimir, permite que voc\xEA digite c\xF3\
-  digo C# e o execute interativamente. Programadores utilizam isso para experimentos\u2026"
+  digo C# e o execute interativamente."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

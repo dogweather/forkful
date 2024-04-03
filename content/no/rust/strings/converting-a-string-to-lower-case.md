@@ -6,8 +6,7 @@ description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre al
 lastmod: '2024-03-13T22:44:40.560941-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle bokstavene\
-  \ til sine minuskul\xE6re motstykker. Programmere gj\xF8r dette for \xE5 f\xE5 konsistente\
-  \ data,\u2026"
+  \ til sine minuskul\xE6re motstykker."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

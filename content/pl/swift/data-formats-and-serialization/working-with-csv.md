@@ -8,7 +8,9 @@ description: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega 
 lastmod: '2024-03-13T22:44:35.776917-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega na parsowaniu\
-  \ i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"
+  \ i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017Cda linia\
+  \ reprezentuje rekord, a ka\u017Cdy rekord sk\u0142ada si\u0119 z p\xF3l rozdzielonych\
+  \ przecinkami."
 title: Praca z plikami CSV
 weight: 37
 ---

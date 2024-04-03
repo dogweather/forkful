@@ -7,7 +7,7 @@ description: "Het afhandelen van fouten in C# gaat over het beheren van het onve
 lastmod: '2024-03-13T22:44:50.817636-06:00'
 model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten in C# gaat over het beheren van het onverwachte\u2014\
-  zoals struikelen over je veters. Programma's kunnen struikelen over slechte\u2026"
+  zoals struikelen over je veters."
 title: Fouten afhandelen
 weight: 16
 ---

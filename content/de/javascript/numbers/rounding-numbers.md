@@ -6,7 +6,7 @@ description: "Runden ist das Abschneiden von \u201ERauschen\u201C an einer Zahl 
 lastmod: '2024-03-13T22:44:54.261207-06:00'
 model: gpt-4-0125-preview
 summary: "Runden ist das Abschneiden von \u201ERauschen\u201C an einer Zahl nach einem\
-  \ bestimmten Punkt. Programmierer runden, um die Genauigkeit zu kontrollieren, Speicher\u2026"
+  \ bestimmten Punkt."
 title: Zahlen runden
 weight: 13
 ---

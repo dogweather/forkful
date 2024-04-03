@@ -7,8 +7,8 @@ description: "Code in functies opdelen gaat over het inpakken van codeblokken di
   \ en\u2026"
 lastmod: '2024-03-13T22:44:50.425522-06:00'
 model: gpt-4-0125-preview
-summary: "Code in functies opdelen gaat over het inpakken van codeblokken die specifieke\
-  \ taken uitvoeren. Dit maakt je code schoon, makkelijker te onderhouden, en\u2026"
+summary: Code in functies opdelen gaat over het inpakken van codeblokken die specifieke
+  taken uitvoeren.
 title: Code organiseren in functies
 weight: 18
 ---

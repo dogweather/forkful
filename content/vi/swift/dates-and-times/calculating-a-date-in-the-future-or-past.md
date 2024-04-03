@@ -9,9 +9,7 @@ description: "B\u1EA1n \u0111\xE3 bao gi\u1EDD c\u1EA7n t\xECm m\u1ED9t ng\xE0y 
 lastmod: '2024-03-13T22:44:37.115441-06:00'
 model: gpt-4-0125-preview
 summary: "B\u1EA1n \u0111\xE3 bao gi\u1EDD c\u1EA7n t\xECm m\u1ED9t ng\xE0y trong\
-  \ qu\xE1 kh\u1EE9 ho\u1EB7c t\u01B0\u01A1ng lai ch\u01B0a? V\u1EC1 m\u1EB7t l\u1EAD\
-  p tr\xECnh, ch\xFAng ta th\u01B0\u1EDDng t\xEDnh to\xE1n ng\xE0y cho c\xE1c h\u1EA1\
-  n ch\xF3t, nh\u1EAFc nh\u1EDF, ho\u1EB7c s\u1EF1\u2026"
+  \ qu\xE1 kh\u1EE9 ho\u1EB7c t\u01B0\u01A1ng lai ch\u01B0a."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

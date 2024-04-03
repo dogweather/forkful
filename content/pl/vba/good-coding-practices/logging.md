@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.239177-06:00'
 model: gpt-4-0125-preview
 summary: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
   \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
-  \ lub\u2026"
+  \ lub bazy danych."
 title: Rejestrowanie
 weight: 17
 ---

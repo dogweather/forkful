@@ -5,9 +5,7 @@ description: "La oss bryte ned bruken av `pdb`, Pythons innebygde feils\xF8ker. 
   \ =\u2026"
 lastmod: '2024-03-13T22:44:40.365877-06:00'
 model: gpt-4-0125-preview
-summary: "La oss bryte ned bruken av `pdb`, Pythons innebygde feils\xF8ker. Forestill\
-  \ deg en fil, `buggy.py`, med en lur feil: ```Python def add_one(number): result\
-  \ =\u2026"
+summary: "La oss bryte ned bruken av `pdb`, Pythons innebygde feils\xF8ker."
 title: "\xC5 bruke en debugger"
 weight: 35
 ---

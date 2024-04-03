@@ -4,8 +4,7 @@ description: "String-Konkatenation ist das Verkn\xFCpfen zweier oder mehrerer Ze
   \ Programmierer nutzen diese Technik, um dynamische Texte zu erzeugen, Daten zu\u2026"
 lastmod: '2024-03-13T22:44:54.176542-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation ist das Verkn\xFCpfen zweier oder mehrerer Zeichenketten.\
-  \ Programmierer nutzen diese Technik, um dynamische Texte zu erzeugen, Daten zu\u2026"
+summary: "String-Konkatenation ist das Verkn\xFCpfen zweier oder mehrerer Zeichenketten."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

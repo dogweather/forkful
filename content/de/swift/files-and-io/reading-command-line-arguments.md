@@ -5,7 +5,7 @@ description: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swi
 lastmod: '2024-03-13T22:44:54.240361-06:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swift-Programmen,\
-  \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und\u2026"
+  \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und Automatisierung."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

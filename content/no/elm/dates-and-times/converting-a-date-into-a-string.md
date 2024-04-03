@@ -6,8 +6,7 @@ description: "Konvertering av en dato til en streng betyr \xE5 endre datotypen `
 lastmod: '2024-03-13T22:44:40.720857-06:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av en dato til en streng betyr \xE5 endre datotypen `Date`\
-  \ til lesbar tekst. Programmerere gj\xF8r dette for \xE5 vise datoer p\xE5 brukervennlige\
-  \ m\xE5ter\u2026"
+  \ til lesbar tekst."
 title: Konvertere en dato til en streng
 weight: 28
 ---

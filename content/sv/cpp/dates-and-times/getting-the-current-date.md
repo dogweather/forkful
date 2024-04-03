@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.219701-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
   \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
-  \ klocka. Det \xE4r\u2026"
+  \ klocka."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -6,8 +6,7 @@ description: "Att skapa en tempor\xE4r fil \xE4r processen att g\xF6ra en tillf\
 lastmod: '2024-03-13T22:44:38.187264-06:00'
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil \xE4r processen att g\xF6ra en tillf\xE4llig\
-  \ dataf\xF6rvaring som typiskt anv\xE4nds och raderas under programmets exekvering.\
-  \ Programmerare\u2026"
+  \ dataf\xF6rvaring som typiskt anv\xE4nds och raderas under programmets exekvering."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

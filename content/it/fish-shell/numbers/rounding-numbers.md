@@ -4,8 +4,8 @@ description: "Arrotondare i numeri consiste nel tagliare le cifre decimali per s
   \ i dati o adattarli a formati specifici. I programmatori lo fanno per\u2026"
 lastmod: '2024-03-13T22:44:43.851265-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare\
-  \ i dati o adattarli a formati specifici. I programmatori lo fanno per\u2026"
+summary: Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare
+  i dati o adattarli a formati specifici.
 title: Arrotondamento dei numeri
 weight: 13
 ---

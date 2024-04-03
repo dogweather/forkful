@@ -6,8 +6,8 @@ description: "Het concatenen van strings betekent het aan elkaar plakken van twe
   \ of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
 lastmod: '2024-03-13T22:44:50.716486-06:00'
 model: gpt-4-0125-preview
-summary: "Het concatenen van strings betekent het aan elkaar plakken van twee of meer\
-  \ stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
+summary: Het concatenen van strings betekent het aan elkaar plakken van twee of meer
+  stukken tekst.
 title: Samenvoegen van strings
 weight: 3
 ---

@@ -12,8 +12,7 @@ model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Java d\u1EC5 nh\u01B0 \u0103n\
   \ b\xE1nh - ch\u1EC9 l\xE0 vi\u1EC7c s\u1EED d\u1EE5ng \u0111\xFAng l\u1EDBp \u0111\
   \u1EC3 l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i t\u1EEB \u0111\u1ED3ng h\u1ED3 h\u1EC7\
-  \ th\u1ED1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3\u2026"
+  \ th\u1ED1ng."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

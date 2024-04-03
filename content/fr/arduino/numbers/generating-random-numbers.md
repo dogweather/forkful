@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:58.104765-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires dans les projets Arduino consiste\
   \ \xE0 produire des valeurs con\xE7ues pour \xEAtre impr\xE9visibles, ce qui est\
-  \ crucial pour des\u2026"
+  \ crucial pour des applications telles que les jeux, les simulations et les syst\xE8\
+  mes de s\xE9curit\xE9."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

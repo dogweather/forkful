@@ -7,7 +7,7 @@ description: "Regul\xE4re Ausdr\xFCcke in C++ sind Zeichenfolgen, die ein Suchmu
 lastmod: '2024-03-13T22:44:54.174619-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke in C++ sind Zeichenfolgen, die ein Suchmuster definieren,\
-  \ genutzt f\xFCr Zeichenkettenabgleiche oder -manipulation. Programmierer\u2026"
+  \ genutzt f\xFCr Zeichenkettenabgleiche oder -manipulation."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

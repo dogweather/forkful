@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:57.477719-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Rust implique l'utilisation de\
   \ biblioth\xE8ques pour produire des valeurs num\xE9riques impr\xE9vues, ce qui\
-  \ est indispensable\u2026"
+  \ est indispensable pour des t\xE2ches allant de la cryptographie et des simulations\
+  \ aux jeux et algorithmes al\xE9atoires."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

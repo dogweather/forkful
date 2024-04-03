@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk (regex) i Bash lar deg s\xF8ke, manipulere, og
 lastmod: '2024-03-13T22:44:40.962323-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Bash lar deg s\xF8ke, manipulere, og h\xE5\
-  ndtere strenger og filer basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker\
-  \ regex for\u2026"
+  ndtere strenger og filer basert p\xE5 spesifikke m\xF8nstre."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

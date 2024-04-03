@@ -4,8 +4,9 @@ description: "Writing tests in Kotlin involves crafting code snippets that autom
   \ validate the functional correctness of your software modules, ensuring they\u2026"
 lastmod: '2024-03-13T22:45:00.051865-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Kotlin involves crafting code snippets that automatically\
-  \ validate the functional correctness of your software modules, ensuring they\u2026"
+summary: Writing tests in Kotlin involves crafting code snippets that automatically
+  validate the functional correctness of your software modules, ensuring they work
+  as expected.
 title: Writing tests
 weight: 36
 ---

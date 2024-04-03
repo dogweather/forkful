@@ -6,8 +6,7 @@ description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, j
 lastmod: '2024-03-13T22:44:35.819745-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, jak strukturowa\u0107\
-  \ pliki konfiguracyjne. Programi\u015Bci korzystaj\u0105 z TOML, poniewa\u017C jest\
-  \ \u0142atwy do\u2026"
+  \ pliki konfiguracyjne."
 title: Praca z TOML
 weight: 39
 ---

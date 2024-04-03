@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2\
   n t\xEDch n\u1ED9i dung c\u1EE7a c\xE1c t\u1EADp tin HTML \u0111\u1EC3 tr\xEDch\
   \ xu\u1EA5t d\u1EEF li\u1EC7u, thao t\xE1c c\u1EA5u tr\xFAc, ho\u1EB7c chuy\u1EC3\
-  n \u0111\u1ED5i HTML sang\u2026"
+  n \u0111\u1ED5i HTML sang c\xE1c \u0111\u1ECBnh d\u1EA1ng kh\xE1c."
 title: "Ph\xE2n T\xEDch HTML"
 weight: 43
 ---

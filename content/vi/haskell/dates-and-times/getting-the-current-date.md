@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.725850-06:00'
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
   n gi\xFAp b\u1EA1n ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n ngay khi ch\xFAng x\u1EA3\
-  y ra. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho vi\u1EC7c ghi nh\u1EAD\
-  t k\xFD, theo d\xF5i d\u1EEF li\u1EC7u\u2026"
+  y ra."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

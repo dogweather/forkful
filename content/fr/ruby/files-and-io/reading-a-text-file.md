@@ -4,8 +4,8 @@ description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser 
   \ nos programmes. On le fait pour traiter des donn\xE9es, pour configurer nos\u2026"
 lastmod: '2024-03-13T22:44:58.439359-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans nos\
-  \ programmes. On le fait pour traiter des donn\xE9es, pour configurer nos\u2026"
+summary: Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans nos
+  programmes.
 title: Lecture d'un fichier texte
 weight: 22
 ---

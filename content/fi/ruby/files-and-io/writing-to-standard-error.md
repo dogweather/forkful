@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.103728-06:00'
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\
-  n\u2026"
+  n standardiulostulosta (stdout)."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

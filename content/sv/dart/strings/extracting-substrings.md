@@ -8,8 +8,7 @@ description: "Att extrahera delstr\xE4ngar handlar om att h\xE4mta specifika del
 lastmod: '2024-03-13T22:44:37.599640-06:00'
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar handlar om att h\xE4mta specifika delar av\
-  \ en str\xE4ng baserat p\xE5 deras positioner eller m\xF6nster. Programmerare g\xF6\
-  r detta f\xF6r\u2026"
+  \ en str\xE4ng baserat p\xE5 deras positioner eller m\xF6nster."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

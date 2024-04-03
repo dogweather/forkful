@@ -7,9 +7,8 @@ description: "Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer p
   \ data\u2026"
 lastmod: '2024-03-13T22:44:40.773659-06:00'
 model: gpt-4-0125-preview
-summary: "Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsing\
-  \ og generering av JSON-data. Programmerere gj\xF8r dette for \xE5 enkelt utveksle\
-  \ data\u2026"
+summary: Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsing
+  og generering av JSON-data.
 title: Arbeider med JSON
 weight: 38
 ---

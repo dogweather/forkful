@@ -6,8 +6,7 @@ description: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\x
 lastmod: '2024-03-13T22:44:56.906790-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4ytt\xE4\
-  j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
-  t\xE4 tapaa, kun heid\xE4n t\xE4ytyy\u2026"
+  j\xE4nimi ja salasana verkon yli turvallisesti."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

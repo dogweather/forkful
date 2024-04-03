@@ -6,8 +6,7 @@ description: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenb
 lastmod: '2024-03-13T22:44:41.147535-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenbrukbare\
-  \ deler. Det gj\xF8r koden ren, mindre utsatt for feil, og enklere \xE5 feils\xF8\
-  ke eller\u2026"
+  \ deler."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

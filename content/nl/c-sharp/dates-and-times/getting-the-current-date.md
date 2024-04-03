@@ -7,8 +7,8 @@ description: "De huidige datum in C# krijgen betekent het hier-en-nu van de klok
   \ een\u2026"
 lastmod: '2024-03-13T22:44:50.820544-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in C# krijgen betekent het hier-en-nu van de klok van je\
-  \ systeem plukken. Het is handig voor tijdstempels, logs, of elke functie die een\u2026"
+summary: De huidige datum in C# krijgen betekent het hier-en-nu van de klok van je
+  systeem plukken.
 title: Het huidige datum ophalen
 weight: 29
 ---

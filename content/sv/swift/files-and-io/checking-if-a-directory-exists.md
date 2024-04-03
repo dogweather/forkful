@@ -8,8 +8,7 @@ description: "Att kontrollera om en katalog finns i filsystemet \xE4r avg\xF6ran
 lastmod: '2024-03-13T22:44:38.265216-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i filsystemet \xE4r avg\xF6rande f\xF6\
-  r att hantera filstrukturer fr\xE5n dina Swift-applikationer. Denna uppgift m\xF6\
-  jligg\xF6r f\xF6r\u2026"
+  r att hantera filstrukturer fr\xE5n dina Swift-applikationer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

@@ -6,8 +6,7 @@ description: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. P
   \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
 lastmod: '2024-03-13T22:44:50.601704-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
-  \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
+summary: Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan.
 title: Fouten afhandelen
 weight: 16
 ---

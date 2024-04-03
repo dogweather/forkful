@@ -8,7 +8,8 @@ description: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere 
 lastmod: '2024-03-13T22:44:40.311516-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data fra\
-  \ HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider eller\u2026"
+  \ HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider eller\
+  \ webbaserte datakilder."
 title: Analysering av HTML
 weight: 43
 ---

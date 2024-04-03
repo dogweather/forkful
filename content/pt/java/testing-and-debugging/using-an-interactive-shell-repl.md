@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.457691-06:00'
 model: gpt-4-0125-preview
 summary: "Um REPL (Read-Eval-Print Loop, ou La\xE7o de Leitura-Avalia\xE7\xE3o-Impress\xE3\
   o) \xE9 um shell interativo que processa entradas individuais do usu\xE1rio, executa\
-  \ c\xF3digo\u2026"
+  \ c\xF3digo e retorna o resultado."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

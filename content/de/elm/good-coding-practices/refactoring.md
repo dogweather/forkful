@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.813720-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist im Grunde genommen wie ein Fr\xFChjahrsputz f\xFCr Ihre\
   \ Codebasis \u2013 es geht darum, bestehenden Code umzustrukturieren, ohne sein\
-  \ externes\u2026"
+  \ externes Verhalten zu \xE4ndern."
 title: Refactoring
 weight: 19
 ---

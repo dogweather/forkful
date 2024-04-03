@@ -5,9 +5,7 @@ description: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel 
   \ del\u2026"
 lastmod: '2024-03-13T22:44:43.519083-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice.\
-  \ Lo facciamo per trovare gli errori pi\xF9 velocemente e capire meglio il flusso\
-  \ del\u2026"
+summary: Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice.
 title: Stampa dell'output di debug
 weight: 33
 ---

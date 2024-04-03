@@ -6,8 +6,7 @@ description: "\xC5 strippe anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 fjer
 lastmod: '2024-03-13T22:44:40.431593-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 strippe anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 fjerne de\
-  \ ekstra innpakningene for \xE5 f\xE5 tak i den rene teksten inni. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+  \ ekstra innpakningene for \xE5 f\xE5 tak i den rene teksten inni."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

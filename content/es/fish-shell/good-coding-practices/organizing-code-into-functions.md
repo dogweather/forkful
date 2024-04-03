@@ -9,8 +9,7 @@ description: "Organizar el c\xF3digo en funciones trata de agrupar trozos de scr
 lastmod: '2024-03-13T22:44:59.507179-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script para\
-  \ realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea m\xE1\
-  s f\xE1cil de\u2026"
+  \ realizar tareas espec\xEDficas."
 title: "Organizando el c\xF3digo en funciones"
 weight: 18
 ---

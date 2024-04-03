@@ -7,7 +7,8 @@ description: "Los archivos CSV (Valores Separados por Comas) son un formato com\
 lastmod: '2024-03-13T22:44:59.100020-06:00'
 model: gpt-4-0125-preview
 summary: "Los archivos CSV (Valores Separados por Comas) son un formato com\xFAn de\
-  \ intercambio de datos que representa datos tabulares en texto plano, utilizando\u2026"
+  \ intercambio de datos que representa datos tabulares en texto plano, utilizando\
+  \ comas para separar los valores individuales."
 title: Trabajando con CSV
 weight: 37
 ---

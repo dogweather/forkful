@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.342908-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans Elixir consiste \xE0 confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 dans le syst\xE8\
-  me de fichiers. Les\u2026"
+  me de fichiers."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

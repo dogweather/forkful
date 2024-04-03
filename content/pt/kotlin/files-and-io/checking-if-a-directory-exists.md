@@ -7,7 +7,7 @@ description: "Verificar se um diret\xF3rio existe em Kotlin envolve verificar a 
 lastmod: '2024-03-13T22:44:46.556424-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Kotlin envolve verificar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado. Programadores realizam essa tarefa\u2026"
+  a de um diret\xF3rio em um caminho especificado."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

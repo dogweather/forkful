@@ -5,9 +5,7 @@ description: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\x
   \ tai haluamme muodostaa\u2026"
 lastmod: '2024-03-13T22:44:56.772296-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4. T\xE4\
-  m\xE4 on tarpeen, kun ker\xE4\xE4mme eri l\xE4hteist\xE4 tulevia tietoja tai haluamme\
-  \ muodostaa\u2026"
+summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

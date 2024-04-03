@@ -8,7 +8,7 @@ description: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer
 lastmod: '2024-03-13T22:44:41.331866-06:00'
 model: gpt-4-0125-preview
 summary: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg som\
-  \ forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre korrekthet,\u2026"
+  \ forventet under ulike forhold."
 title: Skrive tester
 weight: 36
 ---

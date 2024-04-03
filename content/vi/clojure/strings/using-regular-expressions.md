@@ -9,9 +9,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm, kh\u1ED
 lastmod: '2024-03-13T22:44:36.139544-06:00'
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm, kh\u1EDBp v\xE0\
-  \ thao t\xE1c chu\u1ED7i. Ch\xFAng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng v\xEC t\xED\
-  nh linh ho\u1EA1t v\xE0 hi\u1EC7u qu\u1EA3 trong nhi\u1EC7m v\u1EE5 x\u1EED l\xFD\
-  \ v\u0103n b\u1EA3n."
+  \ thao t\xE1c chu\u1ED7i."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

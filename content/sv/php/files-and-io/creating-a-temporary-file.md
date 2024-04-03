@@ -6,8 +6,7 @@ description: "Att skapa en tillf\xE4llig fil \xE4r att skapa en fil som existens
 lastmod: '2024-03-13T22:44:38.015467-06:00'
 model: gpt-4-1106-preview
 summary: "Att skapa en tillf\xE4llig fil \xE4r att skapa en fil som existenserar under\
-  \ en kort period, ofta under en programs k\xF6rning. Programmerare g\xF6r detta\
-  \ f\xF6r att\u2026"
+  \ en kort period, ofta under en programs k\xF6rning."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

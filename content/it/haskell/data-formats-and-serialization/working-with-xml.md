@@ -5,9 +5,8 @@ description: "Lavorare con XML in Haskell coinvolge il parsing, la manipolazione
   \ con\u2026"
 lastmod: '2024-03-13T22:44:43.499738-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML in Haskell coinvolge il parsing, la manipolazione e la\
-  \ generazione di strutture XML. I programmatori gestiscono l'XML per interagire\
-  \ con\u2026"
+summary: Lavorare con XML in Haskell coinvolge il parsing, la manipolazione e la generazione
+  di strutture XML.
 title: Lavorare con XML
 weight: 40
 ---

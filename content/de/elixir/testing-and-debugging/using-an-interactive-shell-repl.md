@@ -6,8 +6,7 @@ description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6gli
 lastmod: '2024-03-13T22:44:53.534738-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es\
-  \ Ihnen, Code-Schnipsel in Echtzeit auszuprobieren. Elixir-Programmierer nutzen\
-  \ die\u2026"
+  \ Ihnen, Code-Schnipsel in Echtzeit auszuprobieren."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

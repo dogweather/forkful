@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.132708-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe es una operaci\xF3n fundamental en muchas\
   \ tareas de programaci\xF3n, lo que permite realizar acciones condicionales basadas\
-  \ en\u2026"
+  \ en la presencia o ausencia de estructuras de directorios."
 title: Comprobando si un directorio existe
 weight: 20
 ---

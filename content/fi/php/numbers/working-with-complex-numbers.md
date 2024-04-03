@@ -5,7 +5,7 @@ description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 
 lastmod: '2024-03-13T22:44:56.649739-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
-  \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"
+  \ muodossa `a + bi`."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

@@ -8,8 +8,7 @@ description: "Envoyer une requ\xEAte HTTP consiste \xE0 cr\xE9er et envoyer une 
 lastmod: '2024-03-13T22:44:58.368273-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP consiste \xE0 cr\xE9er et envoyer une requ\xEA\
-  te \xE0 un serveur web pour r\xE9cup\xE9rer ou soumettre des donn\xE9es. Les programmeurs\
-  \ font cela en C\u2026"
+  te \xE0 un serveur web pour r\xE9cup\xE9rer ou soumettre des donn\xE9es."
 title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---

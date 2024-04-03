@@ -6,8 +6,7 @@ description: "Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3ra z nich je
 lastmod: '2024-03-13T22:44:35.464981-06:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3ra z nich jest wcze\u015B\
-  niejsza, p\xF3\u017Aniejsza, czy mo\u017Ce identyczna. Programi\u015Bci robi\u0105\
-  \ to, \u017Ceby obs\u0142ugiwa\u0107 wydarzenia\u2026"
+  niejsza, p\xF3\u017Aniejsza, czy mo\u017Ce identyczna."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

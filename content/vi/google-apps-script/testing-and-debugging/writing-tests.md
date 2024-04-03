@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1\
   o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0nh vi c\u1EE7\
   a m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFAng ho\u1EA1t \u0111\
-  \u1ED9ng nh\u01B0 mong\u2026"
+  \u1ED9ng nh\u01B0 mong \u0111\u1EE3i d\u01B0\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7\
+  n kh\xE1c nhau."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

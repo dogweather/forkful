@@ -4,8 +4,7 @@ description: "Entasser tout votre code dans un grand tas ? Mauvaise id\xE9e. Le 
   couper en fonctions ? Bonne id\xE9e. Cela permet de garder votre code Elm propre,\u2026"
 lastmod: '2024-03-13T22:44:57.694953-06:00'
 model: gpt-4-1106-preview
-summary: "Entasser tout votre code dans un grand tas ? Mauvaise id\xE9e. Le d\xE9\
-  couper en fonctions ? Bonne id\xE9e. Cela permet de garder votre code Elm propre,\u2026"
+summary: Entasser tout votre code dans un grand tas .
 title: Organisation du code en fonctions
 weight: 18
 ---

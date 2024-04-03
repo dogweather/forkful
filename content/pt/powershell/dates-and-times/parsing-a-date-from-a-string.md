@@ -8,7 +8,8 @@ description: "A an\xE1lise de uma data a partir de uma string consiste em reconh
 lastmod: '2024-03-13T22:44:46.806270-06:00'
 model: gpt-4-0125-preview
 summary: "A an\xE1lise de uma data a partir de uma string consiste em reconhecer e\
-  \ converter datas escritas em forma de texto para um tipo de dado de data que o\u2026"
+  \ converter datas escritas em forma de texto para um tipo de dado de data que o\
+  \ PowerShell pode entender e manipular."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

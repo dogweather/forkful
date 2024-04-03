@@ -8,8 +8,7 @@ description: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kaw
 lastmod: '2024-03-13T22:44:35.930661-06:00'
 model: gpt-4-0125-preview
 summary: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
-  ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\
-  ci robi\u0105 to w celu wydobycia\u2026"
+  ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

@@ -8,7 +8,8 @@ description: "Verificare se una directory esiste in JavaScript \xE8 fondamentale
 lastmod: '2024-03-13T22:44:43.827292-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in JavaScript \xE8 fondamentale per le\
-  \ operazioni di manipolazione dei file, permettendo agli script di verificare la\u2026"
+  \ operazioni di manipolazione dei file, permettendo agli script di verificare la\
+  \ presenza della directory prima di leggere o scrivere su di essa."
 title: Verifica se una directory esiste
 weight: 20
 ---

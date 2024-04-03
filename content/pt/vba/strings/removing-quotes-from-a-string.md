@@ -8,7 +8,7 @@ description: "Remover aspas de uma string em VBA envolve eliminar inst\xE2ncias 
 lastmod: '2024-03-13T22:44:46.398511-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em VBA envolve eliminar inst\xE2ncias de aspas\
-  \ simples (`'`) ou duplas (`\"`) que possam encapsular ou estar embutidas na string.\u2026"
+  \ simples (`'`) ou duplas (`\"`) que possam encapsular ou estar embutidas na string."
 title: Removendo aspas de uma string
 weight: 9
 ---

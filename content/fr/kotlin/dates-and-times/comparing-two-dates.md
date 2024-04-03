@@ -6,8 +6,7 @@ description: "Comparer deux dates, c'est v\xE9rifier laquelle est plus t\xF4t ou
 lastmod: '2024-03-13T22:44:57.753414-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est v\xE9rifier laquelle est plus t\xF4t ou plus\
-  \ tard, ou si elles sont les m\xEAmes. Les programmeurs le font pour trier les \xE9\
-  v\xE9nements,\u2026"
+  \ tard, ou si elles sont les m\xEAmes."
 title: Comparer deux dates
 weight: 27
 ---

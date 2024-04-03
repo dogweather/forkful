@@ -4,8 +4,7 @@ description: "Rounding numbers means adjusting them to a specified degree of pre
   \ Programmers do it to simplify numbers for readability, to meet certain\u2026"
 lastmod: '2024-03-13T22:44:59.967955-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers means adjusting them to a specified degree of precision.\
-  \ Programmers do it to simplify numbers for readability, to meet certain\u2026"
+summary: Rounding numbers means adjusting them to a specified degree of precision.
 title: Rounding numbers
 weight: 13
 ---

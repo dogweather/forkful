@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.711972-06:00'
 model: gpt-4-0125-preview
 summary: "Elm n'int\xE8gre pas de support natif pour YAML, un format de s\xE9rialisation\
   \ de donn\xE9es souvent utilis\xE9 pour les fichiers de configuration ou le partage\
-  \ de\u2026"
+  \ de donn\xE9es, en raison de son fort accent sur la s\xE9curit\xE9 de type et les\
+  \ r\xE9sultats pr\xE9visibles."
 title: Travailler avec YAML
 weight: 41
 ---

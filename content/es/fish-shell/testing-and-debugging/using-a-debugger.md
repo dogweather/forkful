@@ -6,7 +6,8 @@ description: "Fish no tiene un depurador integrado como otras shells, pero puede
 lastmod: '2024-03-13T22:44:59.506121-06:00'
 model: gpt-4-0125-preview
 summary: "Fish no tiene un depurador integrado como otras shells, pero puedes usar\
-  \ herramientas externas como `gdb` para depurar programas compilados o `fish -d`\u2026"
+  \ herramientas externas como `gdb` para depurar programas compilados o `fish -d`\
+  \ para ejecutar fish con salida de depuraci\xF3n en diferentes niveles."
 title: Usando un depurador
 weight: 35
 ---

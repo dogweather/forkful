@@ -5,7 +5,7 @@ description: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e tras
 lastmod: '2024-03-13T22:44:43.541492-06:00'
 model: gpt-4-0125-preview
 summary: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e trasportare\
-  \ dati. I programmatori lavorano con XML per consentire l'interoperabilit\xE0 tra\u2026"
+  \ dati."
 title: Lavorare con XML
 weight: 40
 ---

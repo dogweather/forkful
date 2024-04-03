@@ -5,9 +5,8 @@ description: "Parsing a date from a string is about converting text representing
   \ this to\u2026"
 lastmod: '2024-03-13T22:45:00.559725-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string is about converting text representing a date\
-  \ into a `Date` or `DateTime` object that Ruby understands. Programmers do this\
-  \ to\u2026"
+summary: Parsing a date from a string is about converting text representing a date
+  into a `Date` or `DateTime` object that Ruby understands.
 title: Parsing a date from a string
 weight: 30
 ---

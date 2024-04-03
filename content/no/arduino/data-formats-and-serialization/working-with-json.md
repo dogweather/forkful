@@ -7,7 +7,7 @@ description: "JSON, eller JavaScript Object Notation, er et lettvektig datautvek
 lastmod: '2024-03-13T22:44:41.079546-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, eller JavaScript Object Notation, er et lettvektig datautvekslingsformat,\
-  \ noe som gj\xF8r det perfekt for datalagring eller konfigurasjonsfiler i\u2026"
+  \ noe som gj\xF8r det perfekt for datalagring eller konfigurasjonsfiler i Arduino-prosjekter."
 title: Arbeider med JSON
 weight: 38
 ---

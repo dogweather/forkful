@@ -8,8 +8,7 @@ description: "Konkatenacja \u0142a\u0144cuch\xF3w w programowaniu polega na po\u
 lastmod: '2024-03-13T22:44:35.082199-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja \u0142a\u0144cuch\xF3w w programowaniu polega na po\u0142\u0105\
-  czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden. Programi\u015Bci\
-  \ robi\u0105 to, aby \u0142atwiej manipulowa\u0107 danymi\u2026"
+  czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

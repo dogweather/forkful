@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.161640-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Arduino beinhaltet das Speichern von Daten\
   \ auf einer Datei auf einer SD-Karte oder einem \xE4hnlichen Speichermodul, oft\
-  \ zu\u2026"
+  \ zu Zwecken der Datenerfassung."
 title: Eine Textdatei schreiben
 weight: 24
 ---

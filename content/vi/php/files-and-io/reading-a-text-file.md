@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.789614-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP c\xF3 ngh\u0129\
   a l\xE0 k\xE9o n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p v\xE0o script c\u1EE7a b\u1EA1\
-  n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD\
-  \ vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u, c\u1EA5u h\xECnh,\u2026"
+  n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

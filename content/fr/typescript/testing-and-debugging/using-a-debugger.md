@@ -5,7 +5,8 @@ description: "Pour commencer avec un d\xE9bogueur en TypeScript, tout ce dont vo
 lastmod: '2024-03-13T22:44:57.441720-06:00'
 model: gpt-4-0125-preview
 summary: "Pour commencer avec un d\xE9bogueur en TypeScript, tout ce dont vous avez\
-  \ besoin est un IDE pris en charge (comme Visual Studio Code) et une configuration\u2026"
+  \ besoin est un IDE pris en charge (comme Visual Studio Code) et une configuration\
+  \ `launch."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

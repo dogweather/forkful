@@ -6,8 +6,8 @@ description: "Scrivere su un file di testo in Haskell consiste nella creazione o
   \ programmato di file contenenti testo. I programmatori eseguono questa\u2026"
 lastmod: '2024-03-13T22:44:43.493763-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su un file di testo in Haskell consiste nella creazione o aggiornamento\
-  \ programmato di file contenenti testo. I programmatori eseguono questa\u2026"
+summary: Scrivere su un file di testo in Haskell consiste nella creazione o aggiornamento
+  programmato di file contenenti testo.
 title: Scrivere un file di testo
 weight: 24
 ---

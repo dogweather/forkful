@@ -4,8 +4,8 @@ description: "Concatenating strings is about joining two or more strings togethe
   \ to form a single piece of text. You might need to merge text for generating user\u2026"
 lastmod: '2024-03-13T22:44:59.775423-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenating strings is about joining two or more strings together to form\
-  \ a single piece of text. You might need to merge text for generating user\u2026"
+summary: Concatenating strings is about joining two or more strings together to form
+  a single piece of text.
 title: Concatenating strings
 weight: 3
 ---

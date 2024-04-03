@@ -8,8 +8,7 @@ description: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendi
 lastmod: '2024-03-13T22:44:41.103478-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendige programmer\
-  \ som automatisk verifiserer oppf\xF8rselen til deler av koden. Programmerere gj\xF8\
-  r dette\u2026"
+  \ som automatisk verifiserer oppf\xF8rselen til deler av koden."
 title: Skrive tester
 weight: 36
 ---

@@ -7,7 +7,7 @@ description: "Een datum uit een string halen betekent het extraheren van de datu
 lastmod: '2024-03-13T22:44:50.992695-06:00'
 model: gpt-4-0125-preview
 summary: "Een datum uit een string halen betekent het extraheren van de datumcomponenten\u2014\
-  zoals dag, maand en jaar\u2014uit tekst. Programmeurs doen dit om datums in\u2026"
+  zoals dag, maand en jaar\u2014uit tekst."
 title: Een datum uit een string parsen
 weight: 30
 ---

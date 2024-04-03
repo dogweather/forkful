@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.371416-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
   \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\
-  \ jak plik lub\u2026"
+  \ jak plik lub konsola."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

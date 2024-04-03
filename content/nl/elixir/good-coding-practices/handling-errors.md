@@ -6,8 +6,8 @@ description: "Fouten afhandelen betekent code schrijven die kan omgaan met situa
   \ die fout lopen. Programmeurs doen dit om crashes te voorkomen en om ervoor te\u2026"
 lastmod: '2024-03-13T22:44:50.469576-06:00'
 model: gpt-4-0125-preview
-summary: "Fouten afhandelen betekent code schrijven die kan omgaan met situaties die\
-  \ fout lopen. Programmeurs doen dit om crashes te voorkomen en om ervoor te\u2026"
+summary: Fouten afhandelen betekent code schrijven die kan omgaan met situaties die
+  fout lopen.
 title: Fouten afhandelen
 weight: 16
 ---

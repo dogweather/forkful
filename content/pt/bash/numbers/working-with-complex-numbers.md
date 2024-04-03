@@ -5,8 +5,7 @@ description: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1r
   ntica, e\u2026"
 lastmod: '2024-03-13T22:44:46.744814-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria. Programadores\
-  \ os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2ntica, e\u2026"
+summary: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

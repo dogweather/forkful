@@ -8,7 +8,8 @@ description: "HTML:n j\xE4sent\xE4minen Go-kieless\xE4 tarkoittaa HTML-tiedostoj
 lastmod: '2024-03-13T22:44:56.047919-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Go-kieless\xE4 tarkoittaa HTML-tiedostojen sis\xE4\
-  ll\xF6n analysointia datan poimimiseksi, rakenteen muokkaamiseksi tai HTML:n muuntamiseksi\u2026"
+  ll\xF6n analysointia datan poimimiseksi, rakenteen muokkaamiseksi tai HTML:n muuntamiseksi\
+  \ muihin formaatteihin."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

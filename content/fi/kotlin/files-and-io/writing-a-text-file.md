@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.549658-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Kotlinilla sis\xE4lt\xE4\xE4 tiedoston luomisen\
   \ ja tekstisis\xE4ll\xF6n sy\xF6tt\xE4misen siihen, mik\xE4 on yleinen teht\xE4\
-  v\xE4 datan tallentamiseksi,\u2026"
+  v\xE4 datan tallentamiseksi, lokitiedostojen kirjaamiseksi tai asetusten m\xE4\xE4\
+  ritt\xE4miseksi."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.881377-06:00'
 model: gpt-4-1106-preview
 summary: "L'impression des informations de d\xE9bogage est un moyen pour les d\xE9\
   veloppeurs de suivre ce qui se passe dans un script PHP en affichant des variables,\
-  \ des\u2026"
+  \ des \xE9tats ou des erreurs."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

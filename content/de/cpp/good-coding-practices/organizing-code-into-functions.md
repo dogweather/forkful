@@ -5,7 +5,7 @@ description: "Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere,
 lastmod: '2024-03-13T22:44:54.190224-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere, wiederverwendbare\
-  \ St\xFCcke zu zerlegen. Wir tun dies, um Wiederholungen zu vermeiden,\u2026"
+  \ St\xFCcke zu zerlegen."
 title: Code in Funktionen organisieren
 weight: 18
 ---

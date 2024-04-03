@@ -8,8 +8,7 @@ description: "Odczytywanie pliku tekstowego w Dart polega na dost\u0119pie i pob
 lastmod: '2024-03-13T22:44:35.111352-06:00'
 model: gpt-4-0125-preview
 summary: "Odczytywanie pliku tekstowego w Dart polega na dost\u0119pie i pobieraniu\
-  \ danych z plik\xF3w zapisanych w systemie plik\xF3w. Programi\u015Bci robi\u0105\
-  \ to, aby obs\u0142ugiwa\u0107\u2026"
+  \ danych z plik\xF3w zapisanych w systemie plik\xF3w."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

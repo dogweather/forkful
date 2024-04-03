@@ -8,8 +8,7 @@ description: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na 
 lastmod: '2024-03-13T22:44:34.919188-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
-  \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\
-  \ to\u2026"
+  \ obecno\u015Bci folderu w Google Drive."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

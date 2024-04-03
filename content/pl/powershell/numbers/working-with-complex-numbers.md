@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.621936-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, czyli te posiadaj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i), s\u0105 niezb\u0119dne w takich dziedzinach jak in\u017C\
-  ynieria, fizyka i data science.\u2026"
+  ynieria, fizyka i data science."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

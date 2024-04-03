@@ -5,7 +5,7 @@ description: "In Haskell, confrontare due date significa verificare se una \xE8 
 lastmod: '2024-03-13T22:44:43.487695-06:00'
 model: gpt-4-1106-preview
 summary: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
-  \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"
+  \ dopo o allo stesso momento dell'altra."
 title: Confronto tra due date
 weight: 27
 ---

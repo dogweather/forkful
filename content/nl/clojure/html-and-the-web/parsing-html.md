@@ -7,8 +7,8 @@ description: "HTML-parseren is het proces van het omzetten van een HTML-string n
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:50.417126-06:00'
 model: gpt-4-0125-preview
-summary: "HTML-parseren is het proces van het omzetten van een HTML-string naar een\
-  \ datastructuur die je programma kan begrijpen en manipuleren. Programmeurs doen\u2026"
+summary: HTML-parseren is het proces van het omzetten van een HTML-string naar een
+  datastructuur die je programma kan begrijpen en manipuleren.
 title: HTML Parsen
 weight: 43
 ---

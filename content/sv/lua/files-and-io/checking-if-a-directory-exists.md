@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.053302-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
   \ n\xE4r man skriver skript som interagerar med filsystemet, f\xF6r att s\xE4kerst\xE4\
-  lla att ditt\u2026"
+  lla att ditt program arbetar med giltiga s\xF6kv\xE4gar och f\xF6rhindrar fel relaterade\
+  \ till icke-existerande kataloger."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

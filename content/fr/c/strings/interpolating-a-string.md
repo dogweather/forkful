@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.355707-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes, en programmation, implique la construction\
   \ de cha\xEEnes de caract\xE8res en int\xE9grant des expressions \xE0 l'int\xE9\
-  rieur de cha\xEEnes\u2026"
+  rieur de cha\xEEnes litt\xE9rales."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

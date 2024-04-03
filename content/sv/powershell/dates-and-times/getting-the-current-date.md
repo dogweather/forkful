@@ -8,8 +8,7 @@ description: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE
 lastmod: '2024-03-13T22:44:38.136261-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE4mta systemets\
-  \ aktuella datum och tid. Denna operation \xE4r grundl\xE4ggande f\xF6r uppgifter\
-  \ som\u2026"
+  \ aktuella datum och tid."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -4,8 +4,8 @@ description: "Working with complex numbers in programming involves manipulating 
   \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"
 lastmod: '2024-03-13T22:44:59.625553-06:00'
 model: gpt-4-0125-preview
-summary: "Working with complex numbers in programming involves manipulating numbers\
-  \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"
+summary: Working with complex numbers in programming involves manipulating numbers
+  that have both a real and an imaginary part, typically expressed as `a + bi`.
 title: Working with complex numbers
 weight: 14
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.331418-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Google Apps Script beinhaltet das Extrahieren von\
   \ Daten aus HTML-Inhalten, was besonders n\xFCtzlich ist, wenn man mit Webseiten\
-  \ oder\u2026"
+  \ oder webbasierten Datenquellen interagiert."
 title: HTML analysieren
 weight: 43
 ---

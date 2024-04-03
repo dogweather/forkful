@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohj
 lastmod: '2024-03-13T22:44:56.398051-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
-  t\u2026"
+  \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

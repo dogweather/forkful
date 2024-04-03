@@ -8,8 +8,7 @@ description: "\xC5 jobbe med CSV-filer (Comma-Separated Values) er en vanlig opp
 lastmod: '2024-03-13T22:44:41.039341-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) er en vanlig oppgave for\
-  \ \xE5 h\xE5ndtere og manipulere data i en strukturert, tabellform. Programmerere\
-  \ utf\xF8rer\u2026"
+  \ \xE5 h\xE5ndtere og manipulere data i en strukturert, tabellform."
 title: Arbeide med CSV
 weight: 37
 ---

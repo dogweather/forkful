@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.143188-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring en programmation implique de restructurer le code informatique\
   \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
-  \ externe.\u2026"
+  \ externe."
 title: Refonte de Code
 weight: 19
 ---

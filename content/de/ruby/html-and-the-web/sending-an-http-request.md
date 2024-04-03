@@ -6,8 +6,7 @@ description: "Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des We
 lastmod: '2024-03-13T22:44:54.397430-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des Web, bei\
-  \ dem Daten von oder zu einem Server \xFCbertragen werden. Programmierer nutzen\
-  \ das,\u2026"
+  \ dem Daten von oder zu einem Server \xFCbertragen werden."
 title: Einen HTTP-Request senden
 weight: 44
 ---

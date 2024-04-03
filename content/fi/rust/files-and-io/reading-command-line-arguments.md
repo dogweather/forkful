@@ -6,8 +6,7 @@ description: "Komennon rivilt\xE4 argumenttien lukeminen mahdollistaa k\xE4ytt\x
 lastmod: '2024-03-13T22:44:56.372670-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivilt\xE4 argumenttien lukeminen mahdollistaa k\xE4ytt\xE4j\xE4\
-  n sy\xF6tt\xE4m\xE4n tiedon hakemisen ohjelmallesi. K\xE4yt\xE4mme sit\xE4, koska\
-  \ haluamme ohjelman toimivan\u2026"
+  n sy\xF6tt\xE4m\xE4n tiedon hakemisen ohjelmallesi."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

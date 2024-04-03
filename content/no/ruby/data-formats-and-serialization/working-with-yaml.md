@@ -7,7 +7,7 @@ description: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i R
 lastmod: '2024-03-13T22:44:41.353946-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i Ruby for\
-  \ konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format.\u2026"
+  \ konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format."
 title: Arbeider med YAML
 weight: 41
 ---

@@ -4,8 +4,8 @@ description: "Working with CSV (Comma-Separated Values) files in Bash is about p
   \ and manipulating tabular data stored in plain text format. This is essential\u2026"
 lastmod: '2024-03-13T22:45:00.264166-06:00'
 model: gpt-4-0125-preview
-summary: "Working with CSV (Comma-Separated Values) files in Bash is about processing\
-  \ and manipulating tabular data stored in plain text format. This is essential\u2026"
+summary: Working with CSV (Comma-Separated Values) files in Bash is about processing
+  and manipulating tabular data stored in plain text format.
 title: Working with CSV
 weight: 37
 ---

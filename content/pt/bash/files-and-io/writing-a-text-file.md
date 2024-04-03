@@ -8,8 +8,7 @@ description: "Escrever um arquivo de texto em Bash permite automatizar o armazen
 lastmod: '2024-03-13T22:44:46.771462-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
-  \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\
-  \ para\u2026"
+  \ de dados, registro, configura\xE7\xF5es e muito mais."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

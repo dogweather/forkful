@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
   \u1EDDng trong Google Apps Script, m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh d\u1EF1\
   a tr\xEAn \u0111\xE1m m\xE2y \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1\
-  c v\u1EE5 tr\xEAn c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7a\u2026"
+  c v\u1EE5 tr\xEAn c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7\
+  m v\u1EE5 c\u01A1 b\u1EA3n nh\u1EB1m chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u v\u0103\
+  n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

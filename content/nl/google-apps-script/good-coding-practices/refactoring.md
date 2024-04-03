@@ -7,7 +7,8 @@ description: "Refactoring in de programmeertaal verwijst naar het proces van het
 lastmod: '2024-03-13T22:44:50.340740-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
-  \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"
+  \ van bestaande computercode\u2014het veranderen van de factoring zonder het externe\
+  \ gedrag te wijzigen\u2014om niet-functionele attributen te verbeteren."
 title: Refactoring
 weight: 19
 ---

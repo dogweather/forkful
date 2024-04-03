@@ -5,8 +5,9 @@ description: "Capitalizing a string involves transforming the first character of
   \ out or\u2026"
 lastmod: '2024-03-13T22:44:59.616122-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string involves transforming the first character of a given\
-  \ string to uppercase if it is in lowercase, making sure the string stands out or\u2026"
+summary: Capitalizing a string involves transforming the first character of a given
+  string to uppercase if it is in lowercase, making sure the string stands out or
+  adheres to specific grammatical norms.
 title: Capitalizing a string
 weight: 2
 ---

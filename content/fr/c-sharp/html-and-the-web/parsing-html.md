@@ -6,8 +6,9 @@ description: "L'analyse syntaxique du HTML en programmation implique l'analyse d
   \ la structure d'un document HTML, ce qui vous permet d'extraire, de manipuler et\u2026"
 lastmod: '2024-03-13T22:44:57.784630-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse syntaxique du HTML en programmation implique l'analyse de la structure\
-  \ d'un document HTML, ce qui vous permet d'extraire, de manipuler et\u2026"
+summary: L'analyse syntaxique du HTML en programmation implique l'analyse de la structure
+  d'un document HTML, ce qui vous permet d'extraire, de manipuler et d'interagir programmatiquement
+  avec son contenu.
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

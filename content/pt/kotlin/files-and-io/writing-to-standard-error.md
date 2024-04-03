@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.558378-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) trata de enviar mensagens de erro e\
   \ diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3o (stdout),\
-  \ o que permite\u2026"
+  \ o que permite um melhor manejo de erros e an\xE1lise de logs."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

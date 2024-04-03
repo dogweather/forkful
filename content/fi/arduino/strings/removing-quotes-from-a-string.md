@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.813152-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten (`'`)\
   \ tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4rilt\xE4\
-  .\u2026"
+  ."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

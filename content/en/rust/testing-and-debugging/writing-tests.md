@@ -4,8 +4,8 @@ description: "Writing tests in Rust involves creating automated checks to ensure
   \ code performs as expected. Programmers do this to catch bugs early, facilitate\u2026"
 lastmod: '2024-03-13T22:44:59.899134-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Rust involves creating automated checks to ensure your\
-  \ code performs as expected. Programmers do this to catch bugs early, facilitate\u2026"
+summary: Writing tests in Rust involves creating automated checks to ensure your code
+  performs as expected.
 title: Writing tests
 weight: 36
 ---

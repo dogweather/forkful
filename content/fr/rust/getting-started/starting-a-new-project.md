@@ -6,8 +6,7 @@ description: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge 
 lastmod: '2024-03-13T22:44:57.482602-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge : vous\
-  \ avez une toile in\xE9dite pour \xE9crire votre code. Les programmeurs lancent\
-  \ de nouveaux\u2026"
+  \ avez une toile in\xE9dite pour \xE9crire votre code."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

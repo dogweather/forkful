@@ -7,7 +7,8 @@ description: "Associatieve arrays, vaak bekend als woordenboeken in Visual Basic
 lastmod: '2024-03-13T22:44:50.629310-06:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, vaak bekend als woordenboeken in Visual Basic for Applications\
-  \ (VBA), stellen programmeurs in staat om collecties van sleutel-\u2026"
+  \ (VBA), stellen programmeurs in staat om collecties van sleutel-waardeparen te\
+  \ cre\xEBren."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

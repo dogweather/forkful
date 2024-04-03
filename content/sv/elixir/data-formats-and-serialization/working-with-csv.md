@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.589978-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4sa\
   \ fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
-  r uppgifter som\u2026"
+  r uppgifter som kr\xE4ver dataimport/export eller enkla lagringsl\xF6sningar."
 title: Arbeta med CSV
 weight: 37
 ---

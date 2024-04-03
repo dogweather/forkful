@@ -10,7 +10,7 @@ lastmod: '2024-03-25T19:21:58.553462-06:00'
 model: gpt-4-0125-preview
 summary: "Att versalisera en str\xE4ng betyder vanligtvis att omvandla det f\xF6rsta\
   \ tecknet i en str\xE4ng till versal (stort bokstav) och resten till gemener (sm\xE5\
-  \u2026"
+  \ bokst\xE4ver)."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

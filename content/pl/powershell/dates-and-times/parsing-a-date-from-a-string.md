@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.639378-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
   \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
-  e\u2026"
+  e zrozumie\u0107 i z kt\xF3rym mo\u017Ce pracowa\u0107."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

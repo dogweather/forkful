@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.834132-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
   \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
-  \ lokitiedostojen\u2026"
+  \ lokitiedostojen kirjaamisessa, aikaleimojen lis\xE4\xE4misess\xE4 tai teht\xE4\
+  vien ajoittamisessa."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

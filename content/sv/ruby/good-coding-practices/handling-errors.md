@@ -6,8 +6,7 @@ description: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i k
 lastmod: '2024-03-13T22:44:38.438442-06:00'
 model: gpt-4-1106-preview
 summary: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i kod \u2014\
-  \ att hantera misstag och problem smidigt utan att krascha. Programmerare g\xF6\
-  r det f\xF6r att\u2026"
+  \ att hantera misstag och problem smidigt utan att krascha."
 title: Hantering av fel
 weight: 16
 ---

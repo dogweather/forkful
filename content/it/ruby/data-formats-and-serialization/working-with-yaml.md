@@ -7,7 +7,8 @@ description: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente util
 lastmod: '2024-03-13T22:44:44.071436-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente utilizzato\
-  \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\u2026"
+  \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\
+  \ facilmente leggibile."
 title: Lavorare con YAML
 weight: 41
 ---

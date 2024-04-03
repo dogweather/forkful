@@ -7,7 +7,8 @@ description: "Reguliere expressies (regex) in Dart bieden een krachtige manier o
 lastmod: '2024-03-13T22:44:50.494162-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) in Dart bieden een krachtige manier om te zoeken\
-  \ en te manipuleren met strings, waardoor programmeurs complexe\u2026"
+  \ en te manipuleren met strings, waardoor programmeurs complexe tekstverwerkingsopdrachten\
+  \ effici\xEBnt kunnen uitvoeren."
 title: Reguliere expressies gebruiken
 weight: 11
 ---

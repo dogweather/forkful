@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.407828-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
   \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\
-  ker komma \xE5t\u2026"
+  ker komma \xE5t eller modifiera kataloger."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

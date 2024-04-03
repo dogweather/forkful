@@ -6,8 +6,7 @@ description: "\xC5 generere tilfeldige tall i programmering handler om \xE5 skap
 lastmod: '2024-03-13T22:44:40.398416-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i programmering handler om \xE5 skape verdier\
-  \ som ikke kan forutses logisk p\xE5 forh\xE5nd. Programmerere gj\xF8r dette av\
-  \ en rekke\u2026"
+  \ som ikke kan forutses logisk p\xE5 forh\xE5nd."
 title: Generering av tilfeldige tall
 weight: 12
 ---

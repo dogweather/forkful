@@ -7,8 +7,8 @@ description: "Gli array associativi, o oggetti in TypeScript, ti permettono di u
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.168971-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, o oggetti in TypeScript, ti permettono di usare stringhe\
-  \ (o chiavi) per accedere a coppie di valori. I programmatori li usano per\u2026"
+summary: Gli array associativi, o oggetti in TypeScript, ti permettono di usare stringhe
+  (o chiavi) per accedere a coppie di valori.
 title: Utilizzo di array associativi
 weight: 15
 ---

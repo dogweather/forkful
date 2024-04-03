@@ -6,8 +6,7 @@ description: "Comparer deux dates, c'est mesurer la diff\xE9rence entre elles ; 
 lastmod: '2024-03-13T22:44:58.127021-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est mesurer la diff\xE9rence entre elles ; on le\
-  \ fait pour suivre des \xE9v\xE9nements, des d\xE9lais ou pour de la synchronisation.\
-  \ C'est\u2026"
+  \ fait pour suivre des \xE9v\xE9nements, des d\xE9lais ou pour de la synchronisation."
 title: Comparer deux dates
 weight: 27
 ---

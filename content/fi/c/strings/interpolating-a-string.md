@@ -8,7 +8,8 @@ description: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnis
 lastmod: '2024-03-13T22:44:57.023915-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnissa tarkoittaa\
-  \ merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita kirjaimellisiin\u2026"
+  \ merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita kirjaimellisiin\
+  \ merkkijonoihin."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

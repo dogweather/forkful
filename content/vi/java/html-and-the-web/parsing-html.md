@@ -12,7 +12,7 @@ model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML ngh\u0129a l\xE0 \u0111\xE0o s\xE2u v\xE0\
   o \u0111\xE1nh d\u1EA5u \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u nh\u01B0\
   \ v\u0103n b\u1EA3n, li\xEAn k\u1EBFt ho\u1EB7c c\xE1c ph\u1EA7n t\u1EED kh\xE1\
-  c. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c\u2026"
+  c."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

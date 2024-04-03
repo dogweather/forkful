@@ -7,7 +7,8 @@ description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico n
 lastmod: '2024-03-13T22:44:46.394263-06:00'
 model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico no Visual\
-  \ Basic for Applications (VBA) envolve identificar e, subsequentemente, remover\u2026"
+  \ Basic for Applications (VBA) envolve identificar e, subsequentemente, remover\
+  \ caracteres ou strings que atendam a certos crit\xE9rios."
 title: "Excluindo caracteres correspondentes a um padr\xE3o"
 weight: 5
 ---

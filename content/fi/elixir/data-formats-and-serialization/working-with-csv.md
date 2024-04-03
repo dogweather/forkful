@@ -8,7 +8,8 @@ description: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuu
 lastmod: '2024-03-13T22:44:56.249192-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuuluu tietojen\
-  \ lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen tarve\u2026"
+  \ lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen tarve teht\xE4\
+  viss\xE4, jotka vaativat datan tuontia/vienti\xE4 tai yksinkertaisia tallennusratkaisuja."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

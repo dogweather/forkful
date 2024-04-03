@@ -6,8 +6,7 @@ description: "\xC5 laste ned en nettside betyr \xE5 hente dens data for \xE5 kun
 lastmod: '2024-03-13T22:44:40.530920-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside betyr \xE5 hente dens data for \xE5 kunne vises\
-  \ eller behandles lokalt. Programmerere gj\xF8r dette for \xE5 analysere innhold,\
-  \ sjekke\u2026"
+  \ eller behandles lokalt."
 title: Nedlasting av en nettside
 weight: 42
 ---

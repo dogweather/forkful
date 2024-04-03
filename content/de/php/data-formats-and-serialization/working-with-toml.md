@@ -5,7 +5,7 @@ description: "TOML, die Abk\xFCrzung f\xFCr Tom's Obvious, Minimal Language, ist
 lastmod: '2024-03-13T22:44:53.996501-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, die Abk\xFCrzung f\xFCr Tom's Obvious, Minimal Language, ist ein Datenformat\
-  \ \xE4hnlich zu JSON oder YAML, jedoch leichter f\xFCr Menschen zu lesen.\u2026"
+  \ \xE4hnlich zu JSON oder YAML, jedoch leichter f\xFCr Menschen zu lesen."
 title: Arbeiten mit TOML
 weight: 39
 ---

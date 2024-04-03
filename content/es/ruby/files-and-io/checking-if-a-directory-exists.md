@@ -6,8 +6,9 @@ description: "Comprobar si un directorio existe en Ruby permite a los programado
   \ verificar la presencia de un directorio antes de realizar operaciones como leer\u2026"
 lastmod: '2024-03-13T22:44:59.605299-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe en Ruby permite a los programadores verificar\
-  \ la presencia de un directorio antes de realizar operaciones como leer\u2026"
+summary: Comprobar si un directorio existe en Ruby permite a los programadores verificar
+  la presencia de un directorio antes de realizar operaciones como leer archivos o
+  crear nuevos directorios.
 title: Comprobando si un directorio existe
 weight: 20
 ---

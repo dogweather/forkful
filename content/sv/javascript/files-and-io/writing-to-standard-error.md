@@ -7,7 +7,9 @@ description: "Att skriva till standardfel (stderr) i JavaScript handlar om att d
 lastmod: '2024-03-13T22:44:38.309712-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera\
-  \ felmeddelanden eller kritisk information till en specifik, separat str\xF6m, vilket\u2026"
+  \ felmeddelanden eller kritisk information till en specifik, separat str\xF6m, vilket\
+  \ \xE4r s\xE4rskilt anv\xE4ndbart i Unix-lika milj\xF6er f\xF6r loggning och fels\xF6\
+  kning."
 title: Skriva till standardfel
 weight: 25
 ---

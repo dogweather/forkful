@@ -7,8 +7,8 @@ description: "L'analisi di HTML nella programmazione implica l'estrazione di dat
   \ web\u2026"
 lastmod: '2024-03-13T22:44:43.127404-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di HTML nella programmazione implica l'estrazione di dati da documenti\
-  \ HTML. I programmatori fanno ci\xF2 per interagire o raschiare contenuti web\u2026"
+summary: L'analisi di HTML nella programmazione implica l'estrazione di dati da documenti
+  HTML.
 title: Analisi del HTML
 weight: 43
 ---

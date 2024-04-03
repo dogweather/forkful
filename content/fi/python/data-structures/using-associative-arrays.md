@@ -7,7 +7,8 @@ description: "Associatiiviset taulukot, Pythonissa tunnettu nimell\xE4 sanakirja
 lastmod: '2024-03-13T22:44:56.136548-06:00'
 model: gpt-4-0125-preview
 summary: "Associatiiviset taulukot, Pythonissa tunnettu nimell\xE4 sanakirjat, map-paavat\
-  \ avaimet arvoihin, mik\xE4 tekee datan hakemisesta, muokkaamisesta tai\u2026"
+  \ avaimet arvoihin, mik\xE4 tekee datan hakemisesta, muokkaamisesta tai seuraamisesta\
+  \ uniikin tunnisteen avulla helppoa."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

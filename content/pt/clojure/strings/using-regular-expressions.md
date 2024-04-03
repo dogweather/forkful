@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.187152-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares, uma ferramenta poderosa para correspond\xEAncia\
   \ de padr\xF5es e manipula\xE7\xE3o de dados, s\xE3o essenciais em tarefas de processamento\
-  \ de texto\u2026"
+  \ de texto como validar entrada, pesquisar e substituir texto."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

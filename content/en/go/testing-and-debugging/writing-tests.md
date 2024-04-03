@@ -5,8 +5,8 @@ description: "Writing tests in Go involves creating small, manageable pieces of 
   \ write\u2026"
 lastmod: '2024-03-13T22:44:59.634291-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Go involves creating small, manageable pieces of code that\
-  \ validate the functionality and behavior of your application. Programmers write\u2026"
+summary: Writing tests in Go involves creating small, manageable pieces of code that
+  validate the functionality and behavior of your application.
 title: Writing tests
 weight: 36
 ---

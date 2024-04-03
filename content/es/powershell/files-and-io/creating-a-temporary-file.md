@@ -4,8 +4,8 @@ description: "Crear un archivo temporal implica generar un archivo destinado a u
   \ uso a corto plazo. Los programadores lo hacen para manejar datos de manera transitoria\u2026"
 lastmod: '2024-03-13T22:44:59.311606-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal implica generar un archivo destinado a un uso\
-  \ a corto plazo. Los programadores lo hacen para manejar datos de manera transitoria\u2026"
+summary: Crear un archivo temporal implica generar un archivo destinado a un uso a
+  corto plazo.
 title: Creando un archivo temporal
 weight: 21
 ---

@@ -6,8 +6,8 @@ description: "Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van
   \ en diagnostiek los van de standaarduitvoer (`stdout`). Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.912268-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van foutmeldingen\
-  \ en diagnostiek los van de standaarduitvoer (`stdout`). Programmeurs doen\u2026"
+summary: Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van foutmeldingen
+  en diagnostiek los van de standaarduitvoer (`stdout`).
 title: Schrijven naar standaardfout
 weight: 25
 ---

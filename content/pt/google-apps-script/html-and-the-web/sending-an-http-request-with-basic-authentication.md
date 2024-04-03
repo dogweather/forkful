@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.107148-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
   \ codificar um nome de usu\xE1rio e senha em um cabe\xE7alho de solicita\xE7\xE3\
-  o para acessar recursos\u2026"
+  o para acessar recursos protegidos."
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

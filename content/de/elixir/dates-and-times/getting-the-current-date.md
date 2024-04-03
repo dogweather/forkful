@@ -9,7 +9,9 @@ description: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf
 lastmod: '2024-03-13T22:44:53.545535-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums-\
-  \ und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das Logging,\u2026"
+  \ und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das Logging,\
+  \ Datumsstempel oder jede Funktionalit\xE4t, die Kenntnisse \xFCber das aktuelle\
+  \ Datum erfordert."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

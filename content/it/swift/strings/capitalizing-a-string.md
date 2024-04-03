@@ -6,8 +6,8 @@ description: "Capitalizzare una stringa in Swift modifica la stringa data in mod
   \ che il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I\u2026"
 lastmod: '2024-03-13T22:44:43.753707-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa in Swift modifica la stringa data in modo che\
-  \ il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I\u2026"
+summary: Capitalizzare una stringa in Swift modifica la stringa data in modo che il
+  suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli.
 title: Capitalizzare una stringa
 weight: 2
 ---

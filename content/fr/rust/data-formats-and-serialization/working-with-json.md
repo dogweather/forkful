@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.518018-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) en Rust consiste \xE0\
   \ analyser les donn\xE9es JSON pour les transformer en structures de donn\xE9es\
-  \ Rust et \xE0\u2026"
+  \ Rust et \xE0 s\xE9rialiser les structures de donn\xE9es Rust pour les reconvertir\
+  \ en JSON."
 title: Travailler avec JSON
 weight: 38
 ---

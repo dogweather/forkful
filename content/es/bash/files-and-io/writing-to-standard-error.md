@@ -8,7 +8,8 @@ description: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de diri
 lastmod: '2024-03-13T22:44:59.263457-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir mensajes\
-  \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\u2026"
+  \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\
+  \ salida est\xE1ndar (stdout)."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

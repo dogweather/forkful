@@ -6,8 +6,7 @@ description: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cd
 lastmod: '2024-03-13T22:44:35.614810-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cdej wielkiej\
-  \ litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105. Programi\u015Bci robi\u0105\
-  \ to, by ujednolici\u0107 dane \u2013 na\u2026"
+  \ litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

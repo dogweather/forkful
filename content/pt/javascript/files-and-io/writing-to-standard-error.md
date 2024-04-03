@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.978538-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) em JavaScript trata de direcionar\
   \ mensagens de erro ou qualquer informa\xE7\xE3o cr\xEDtica para um fluxo espec\xED\
-  fico e\u2026"
+  fico e separado, o que \xE9 especialmente \xFAtil em ambientes semelhantes ao Unix\
+  \ para fins de registro e depura\xE7\xE3o."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

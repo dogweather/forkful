@@ -8,8 +8,7 @@ description: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till
 lastmod: '2024-03-13T22:44:37.386530-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till det n\xE4\
-  rmaste hela talet eller till ett specifikt antal decimaler. Programmerare g\xF6\
-  r detta\u2026"
+  rmaste hela talet eller till ett specifikt antal decimaler."
 title: Avrundning av nummer
 weight: 13
 ---

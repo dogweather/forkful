@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.868291-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca ze string\xF3\
   w w j\u0119zyku C polega na usuni\u0119ciu wszystkich instancji pewnych znak\xF3\
-  w, kt\xF3re spe\u0142niaj\u0105\u2026"
+  w, kt\xF3re spe\u0142niaj\u0105 predefiniowane kryteria."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

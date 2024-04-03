@@ -6,8 +6,7 @@ description: "Lese kommandolinjeargumenter betyr \xE5 hente inn data som brukere
 lastmod: '2024-03-13T22:44:40.858466-06:00'
 model: gpt-4-1106-preview
 summary: "Lese kommandolinjeargumenter betyr \xE5 hente inn data som brukeren gir\
-  \ n\xE5r de kj\xF8rer programmet ditt. Det gj\xF8r vi for \xE5 gi fleksibilitet\
-  \ og tilpasse\u2026"
+  \ n\xE5r de kj\xF8rer programmet ditt."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

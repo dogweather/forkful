@@ -6,7 +6,7 @@ description: "Skriving til standard feil (stderr) lar deg rapportere feil uten \
 lastmod: '2024-03-13T22:44:40.725097-06:00'
 model: unknown
 summary: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5 blande\
-  \ det med hovedutdata. Programmerere bruker det til \xE5 skille normal output fra\u2026"
+  \ det med hovedutdata."
 title: Skrive til standardfeil
 weight: 25
 ---

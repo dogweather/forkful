@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:59.342548-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en Arduino implica extraer y convertir\
   \ los componentes de la fecha (a\xF1o, mes, d\xEDa) de una representaci\xF3n textual\
-  \ a un\u2026"
+  \ a un formato que se pueda utilizar para el mantenimiento del tiempo, comparaciones\
+  \ o manipulaciones dentro de los bocetos."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

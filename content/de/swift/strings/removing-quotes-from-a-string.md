@@ -6,8 +6,7 @@ description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, 
 lastmod: '2024-03-13T22:44:54.214029-06:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, jegliche\
-  \ Anf\xFChrungszeichen, die den Inhalt umschlie\xDFen, zu beseitigen. Wir tun dies,\
-  \ um\u2026"
+  \ Anf\xFChrungszeichen, die den Inhalt umschlie\xDFen, zu beseitigen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

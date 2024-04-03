@@ -5,8 +5,8 @@ description: "Leggere gli argomenti della linea di comando significa prendere in
   \ lo\u2026"
 lastmod: '2024-03-13T22:44:43.448963-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere gli argomenti della linea di comando significa prendere input dall'utente\
-  \ quando eseguono il tuo programma da un terminale. I programmatori lo\u2026"
+summary: Leggere gli argomenti della linea di comando significa prendere input dall'utente
+  quando eseguono il tuo programma da un terminale.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

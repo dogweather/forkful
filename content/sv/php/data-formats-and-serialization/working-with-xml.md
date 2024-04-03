@@ -6,8 +6,7 @@ description: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och 
 lastmod: '2024-03-13T22:44:38.020731-06:00'
 model: gpt-4-0125-preview
 summary: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och transportera\
-  \ data. Programmerare arbetar med XML f\xF6r att m\xF6jligg\xF6ra interoperabilitet\
-  \ mellan\u2026"
+  \ data."
 title: Att arbeta med XML
 weight: 40
 ---

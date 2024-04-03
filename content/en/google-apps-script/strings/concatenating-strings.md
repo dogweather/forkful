@@ -5,8 +5,8 @@ description: "Concatenating strings involves combining two or more strings into 
   \ any\u2026"
 lastmod: '2024-03-13T22:44:59.662725-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenating strings involves combining two or more strings into a single\
-  \ string. Programmers do this to dynamically construct messages, URLs, or any\u2026"
+summary: Concatenating strings involves combining two or more strings into a single
+  string.
 title: Concatenating strings
 weight: 3
 ---

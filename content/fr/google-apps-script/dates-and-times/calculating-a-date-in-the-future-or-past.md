@@ -7,7 +7,7 @@ description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manip
 lastmod: '2024-03-13T22:44:57.202335-06:00'
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler des\
-  \ objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"
+  \ objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

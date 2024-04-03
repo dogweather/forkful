@@ -8,8 +8,7 @@ description: "Manejar errores en C involucra detectar y responder a condiciones 
 lastmod: '2024-03-13T22:44:59.553726-06:00'
 model: gpt-4-0125-preview
 summary: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
-  malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\
-  \ para\u2026"
+  malas que surgen durante la ejecuci\xF3n del programa."
 title: Manejando errores
 weight: 16
 ---

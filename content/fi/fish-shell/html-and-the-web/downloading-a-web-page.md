@@ -5,7 +5,7 @@ description: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n neti
 lastmod: '2024-03-13T22:44:56.993222-06:00'
 model: gpt-4-1106-preview
 summary: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
-  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."
+  ."
 title: Verkkosivun lataaminen
 weight: 42
 ---

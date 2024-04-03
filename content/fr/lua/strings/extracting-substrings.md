@@ -6,7 +6,7 @@ description: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de te
 lastmod: '2024-03-13T22:44:57.913504-06:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de texte d'une\
-  \ cha\xEEne plus grande. On fait \xE7a pour manipuler, chercher ou analyser uniquement\u2026"
+  \ cha\xEEne plus grande."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

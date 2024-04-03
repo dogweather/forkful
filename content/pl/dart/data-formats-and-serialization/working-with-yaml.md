@@ -8,8 +8,7 @@ description: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializac
 lastmod: '2024-03-13T22:44:35.115115-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializacji danych,\
-  \ kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105\
-  \ go do plik\xF3w\u2026"
+  \ kt\xF3ry jest czytelny dla cz\u0142owieka."
 title: Praca z YAML
 weight: 41
 ---

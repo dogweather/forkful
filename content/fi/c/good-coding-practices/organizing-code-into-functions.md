@@ -8,8 +8,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa mo
 lastmod: '2024-03-13T22:44:57.046276-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
-  \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
-  \ T\xE4m\xE4\u2026"
+  \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

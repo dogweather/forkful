@@ -6,8 +6,7 @@ description: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall 
 lastmod: '2024-03-13T22:44:40.836227-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller\
-  \ angitt desimalplass. Programmerere runder av tall for \xE5 kontrollere presisjon,\
-  \ tilpasse\u2026"
+  \ angitt desimalplass."
 title: Avrunding av tall
 weight: 13
 ---

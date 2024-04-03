@@ -6,8 +6,7 @@ description: "Il refactoring \xE8 il processo di ritocco del codice senza cambia
 lastmod: '2024-03-13T22:44:43.483538-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne il\
-  \ comportamento esterno. Si tratta tutto di pulire e organizzare il proprio lavoro\
-  \ per\u2026"
+  \ comportamento esterno."
 title: Rifattorizzazione
 weight: 19
 ---

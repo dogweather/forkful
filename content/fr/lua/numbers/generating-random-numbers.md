@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:57.922819-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0 produire\
   \ des valeurs num\xE9riques impr\xE9visibles pouvant \xEAtre utilis\xE9es \xE0 diverses\
-  \ fins telles que\u2026"
+  \ fins telles que les simulations, les jeux ou les applications de s\xE9curit\xE9\
+  ."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

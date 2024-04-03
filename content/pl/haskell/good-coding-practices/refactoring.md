@@ -6,8 +6,7 @@ description: "Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewn\u
 lastmod: '2024-03-13T22:44:35.460675-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewn\u0119trznego\
-  \ zachowania. Chodzi o uporz\u0105dkowanie i oczyszczenie kodu, aby sta\u0142 si\u0119\
-  \ \u0142atwiejszy\u2026"
+  \ zachowania."
 title: Refaktoryzacja
 weight: 19
 ---

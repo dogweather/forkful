@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.692884-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Elm consiste \xE0 cr\xE9er des cas de test pour v\xE9\
   rifier la justesse de votre code Elm, en s'assurant qu'il se comporte comme pr\xE9\
-  vu. Les\u2026"
+  vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

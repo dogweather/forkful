@@ -6,8 +6,9 @@ description: "Loggen in programmeren is in wezen een spoor van broodkruimels ach
   \ in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen\u2026"
 lastmod: '2024-03-13T22:44:50.858784-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten\
-  \ in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen\u2026"
+summary: Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten
+  in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen worden
+  om bij te houden wat je applicatie op elk gegeven moment doet.
 title: Logboekregistratie
 weight: 17
 ---

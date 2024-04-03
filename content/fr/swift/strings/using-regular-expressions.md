@@ -8,7 +8,8 @@ description: "Les expressions r\xE9guli\xE8res, ou regex, sont des s\xE9quences 
 lastmod: '2024-03-13T22:44:58.206110-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, sont des s\xE9quences de caract\xE8\
-  res qui forment un motif de recherche, souvent utilis\xE9 pour des t\xE2ches de\u2026"
+  res qui forment un motif de recherche, souvent utilis\xE9 pour des t\xE2ches de\
+  \ correspondance ou de manipulation de cha\xEEnes."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

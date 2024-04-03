@@ -6,8 +6,7 @@ description: "Regrouper le code en fonctions, c'est d\xE9composer les t\xE2ches 
 lastmod: '2024-03-13T22:44:58.228552-06:00'
 model: gpt-4-1106-preview
 summary: "Regrouper le code en fonctions, c'est d\xE9composer les t\xE2ches en morceaux\
-  \ r\xE9utilisables. Cela rend le code propre, moins sujet aux erreurs et plus facile\
-  \ \xE0\u2026"
+  \ r\xE9utilisables."
 title: Organisation du code en fonctions
 weight: 18
 ---

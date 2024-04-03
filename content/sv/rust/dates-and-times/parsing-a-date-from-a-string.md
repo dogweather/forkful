@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:37.708354-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng \xE4r en vanlig uppgift n\xE4r\
   \ man hanterar anv\xE4ndarinput eller l\xE4ser data fr\xE5n filer, vilket inneb\xE4\
-  r att konvertera\u2026"
+  r att konvertera str\xE4ngdata till ett datumformat som programmeringsspr\xE5ket\
+  \ k\xE4nner igen."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

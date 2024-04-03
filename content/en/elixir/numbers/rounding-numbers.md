@@ -4,8 +4,8 @@ description: "Rounding numbers means adjusting them to a nearby value for simpli
   \ or to match a certain precision. It's useful for improving readability, reducing\u2026"
 lastmod: '2024-03-13T22:44:59.778050-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers means adjusting them to a nearby value for simplicity or\
-  \ to match a certain precision. It's useful for improving readability, reducing\u2026"
+summary: Rounding numbers means adjusting them to a nearby value for simplicity or
+  to match a certain precision.
 title: Rounding numbers
 weight: 13
 ---

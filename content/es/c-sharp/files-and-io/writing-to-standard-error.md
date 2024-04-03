@@ -8,7 +8,9 @@ description: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir lo
 lastmod: '2024-03-13T22:44:59.093930-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir los mensajes\
-  \ de error y los diagn\xF3sticos de forma separada del salida regular (stdout) para\u2026"
+  \ de error y los diagn\xF3sticos de forma separada del salida regular (stdout) para\
+  \ ayudar a los usuarios y desarrolladores a distinguir entre la salida normal del\
+  \ programa y las notificaciones de error."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

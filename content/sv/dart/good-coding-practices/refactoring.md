@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.621266-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering i Dart \xE4r processen att omstrukturera befintlig kod utan\
   \ att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra dess interna\
-  \ struktur,\u2026"
+  \ struktur, l\xE4sbarhet och underh\xE5llbarhet."
 title: Refaktorering
 weight: 19
 ---

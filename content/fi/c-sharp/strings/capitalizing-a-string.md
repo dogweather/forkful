@@ -8,8 +8,7 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa mer
 lastmod: '2024-03-13T22:44:56.556626-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. T\xE4\
-  m\xE4\u2026"
+  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

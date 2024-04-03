@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.248949-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen av\
   \ HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera detta\
-  \ inneh\xE5ll\u2026"
+  \ inneh\xE5ll programmatiskt."
 title: Tolka HTML
 weight: 43
 ---

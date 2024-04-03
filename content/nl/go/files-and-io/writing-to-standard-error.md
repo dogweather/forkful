@@ -6,8 +6,8 @@ description: "Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldi
   \ of diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.\u2026"
 lastmod: '2024-03-13T22:44:50.304337-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen of\
-  \ diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.\u2026"
+summary: Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen of
+  diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.
 title: Schrijven naar standaardfout
 weight: 25
 ---

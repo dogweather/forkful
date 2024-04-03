@@ -6,8 +6,7 @@ description: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\x
 lastmod: '2024-03-13T22:44:46.925845-06:00'
 model: gpt-4-0125-preview
 summary: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\xE7os reutiliz\xE1\
-  veis. Isso torna o c\xF3digo limpo, menos propenso a erros e mais f\xE1cil de depurar\
-  \ ou\u2026"
+  veis."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

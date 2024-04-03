@@ -5,9 +5,7 @@ description: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll vi
   \ med data eller\u2026"
 lastmod: '2024-03-13T22:44:37.828020-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll via internet.\
-  \ Programmerare g\xF6r detta f\xF6r att bearbeta information, fylla appar med data\
-  \ eller\u2026"
+summary: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll via internet."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

@@ -7,8 +7,8 @@ description: "Substringen extraheren gaat over het uithalen van specifieke stukk
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.323757-06:00'
 model: gpt-4-0125-preview
-summary: "Substringen extraheren gaat over het uithalen van specifieke stukken tekst\
-  \ uit een string. Programmeurs doen dit om delen van data te manipuleren en te\u2026"
+summary: Substringen extraheren gaat over het uithalen van specifieke stukken tekst
+  uit een string.
 title: Substrings extraheren
 weight: 6
 ---

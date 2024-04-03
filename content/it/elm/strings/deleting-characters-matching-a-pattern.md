@@ -5,8 +5,8 @@ description: "Eliminare i caratteri che corrispondono a un pattern significa sco
   \ i\u2026"
 lastmod: '2024-03-13T22:44:43.335309-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminare i caratteri che corrispondono a un pattern significa scovare sequenze\
-  \ specifiche di testo e rimuoverle. I programmatori lo fanno per pulire i\u2026"
+summary: Eliminare i caratteri che corrispondono a un pattern significa scovare sequenze
+  specifiche di testo e rimuoverle.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

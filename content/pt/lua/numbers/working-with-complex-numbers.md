@@ -5,7 +5,7 @@ description: "N\xFAmeros complexos estendem a ideia da linha num\xE9rica unidime
 lastmod: '2024-03-13T22:44:46.703206-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos estendem a ideia da linha num\xE9rica unidimensional\
-  \ para o plano bidimensional, incluindo um eixo imagin\xE1rio perpendicular. Programadores\u2026"
+  \ para o plano bidimensional, incluindo um eixo imagin\xE1rio perpendicular."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

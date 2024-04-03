@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:36.663563-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n c\xF3 m\u1ED9t ch\u01B0\u01A1\
   ng tr\xECnh nh\u1ECF kh\xF4ng ho\u1EA1t \u0111\u1ED9ng \u0111\xFAng nh\u01B0 mong\
-  \ \u0111\u1EE3i: ```C# static void Main() { int result = Sum(1, 2);\u2026"
+  \ \u0111\u1EE3i:\n\n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n\
+  \    Console."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

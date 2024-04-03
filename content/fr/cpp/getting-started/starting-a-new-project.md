@@ -6,8 +6,7 @@ description: "D\xE9marrer un nouveau projet en C++, c'est cr\xE9er un monde de p
 lastmod: '2024-03-13T22:44:58.162468-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet en C++, c'est cr\xE9er un monde de possibilit\xE9\
-  s. Les programmeurs se lancent dans cette aventure pour r\xE9soudre des probl\xE8\
-  mes,\u2026"
+  s."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

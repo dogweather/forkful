@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.106037-06:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
   do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
-  \ extra\xE7\xE3o de\u2026"
+  \ extra\xE7\xE3o de dados ou monitoramento de mudan\xE7as."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

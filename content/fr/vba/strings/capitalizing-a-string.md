@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.531564-06:00'
 model: gpt-4-0125-preview
 summary: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic pour\
   \ Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque mot\
-  \ en\u2026"
+  \ en majuscule tout en s'assurant que le reste des lettres soit en minuscule."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

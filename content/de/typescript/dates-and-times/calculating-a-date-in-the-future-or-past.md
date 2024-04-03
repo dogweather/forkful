@@ -5,7 +5,7 @@ description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeu
 lastmod: '2024-03-13T22:44:53.643943-06:00'
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, von\
-  \ einem bestimmten Datum ausgehend Zeit hinzuzuf\xFCgen oder abzuziehen.\u2026"
+  \ einem bestimmten Datum ausgehend Zeit hinzuzuf\xFCgen oder abzuziehen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

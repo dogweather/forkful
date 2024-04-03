@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.465609-06:00'
 model: gpt-4-1106-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif, c\u2019est\
   \ l\u2019acte d\u2019enlever des caract\xE8res d\u2019une cha\xEEne de caract\xE8\
-  res (string) qui matchent un certain\u2026"
+  res (string) qui matchent un certain pattern."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

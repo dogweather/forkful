@@ -6,8 +6,7 @@ description: "O tratamento de erros em seus programas captura as coisas imprevis
 lastmod: '2024-03-13T22:44:46.846161-06:00'
 model: gpt-4-1106-preview
 summary: "O tratamento de erros em seus programas captura as coisas imprevistas que\
-  \ tentar\xE3o te atrapalhar. Voc\xEA faz isso para evitar que seu Arduino entre\
-  \ em\u2026"
+  \ tentar\xE3o te atrapalhar."
 title: Tratamento de Erros
 weight: 16
 ---

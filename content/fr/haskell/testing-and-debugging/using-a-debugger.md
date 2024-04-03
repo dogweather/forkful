@@ -6,8 +6,7 @@ description: "Prenons une promenade avec GHCi, l'environnement interactif de Has
 lastmod: '2024-03-13T22:44:57.838664-06:00'
 model: gpt-4-0125-preview
 summary: "Prenons une promenade avec GHCi, l'environnement interactif de Haskell qui\
-  \ peut agir comme un d\xE9bogueur de base. Vous le lancez avec votre code Haskell\
-  \ et\u2026"
+  \ peut agir comme un d\xE9bogueur de base."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

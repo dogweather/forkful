@@ -5,7 +5,7 @@ description: "En REPL (Read-Eval-Print Loop) \xE4r ett interaktivt skal som proc
 lastmod: '2024-03-13T22:44:37.788989-06:00'
 model: gpt-4-0125-preview
 summary: "En REPL (Read-Eval-Print Loop) \xE4r ett interaktivt skal som processar\
-  \ enskilda anv\xE4ndarinmatningar, exekverar kod och returnerar resultatet. Programmerare\u2026"
+  \ enskilda anv\xE4ndarinmatningar, exekverar kod och returnerar resultatet."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

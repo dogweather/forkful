@@ -8,7 +8,8 @@ description: "Capitalizar uma string envolve converter o primeiro caractere de c
 lastmod: '2024-03-13T22:44:46.822448-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve converter o primeiro caractere de cada palavra\
-  \ em uma string para mai\xFAscula enquanto garante que o restante permane\xE7a em\u2026"
+  \ em uma string para mai\xFAscula enquanto garante que o restante permane\xE7a em\
+  \ min\xFAsculas."
 title: Capitalizando uma string
 weight: 2
 ---

@@ -6,8 +6,7 @@ description: "Het aaneenschakelen van strings betekent dat je ze achter elkaar p
   \ Programmeurs doen dit wanneer ze stukjes tekst aan elkaar moeten naaien om een\u2026"
 lastmod: '2024-03-13T22:44:50.844106-06:00'
 model: gpt-4-0125-preview
-summary: "Het aaneenschakelen van strings betekent dat je ze achter elkaar plakt.\
-  \ Programmeurs doen dit wanneer ze stukjes tekst aan elkaar moeten naaien om een\u2026"
+summary: Het aaneenschakelen van strings betekent dat je ze achter elkaar plakt.
 title: Samenvoegen van strings
 weight: 3
 ---

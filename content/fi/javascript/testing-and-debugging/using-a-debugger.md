@@ -5,9 +5,8 @@ description: "T\xE4ss\xE4 on hieman JavaScript-koodia, joka ei toimi odotetulla 
   n pit\xE4isi olla\u2026"
 lastmod: '2024-03-13T22:44:56.954279-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE4ss\xE4 on hieman JavaScript-koodia, joka ei toimi odotetulla tavalla:\
-  \ ```javascript function buggyMultiply(a, b) { return a + b; // Oho! T\xE4m\xE4\
-  n pit\xE4isi olla\u2026"
+summary: "T\xE4ss\xE4 on hieman JavaScript-koodia, joka ei toimi odotetulla tavalla:\n\
+  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Oho."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

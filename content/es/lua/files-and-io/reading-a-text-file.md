@@ -6,7 +6,7 @@ description: "Leer un archivo de texto es b\xE1sicamente acceder a la informaci\
 lastmod: '2024-03-13T22:44:59.219890-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es b\xE1sicamente acceder a la informaci\xF3n almacenada\
-  \ en un archivo .txt desde tu programa. Los programadores hacen esto para\u2026"
+  \ en un archivo ."
 title: Lectura de un archivo de texto
 weight: 22
 ---

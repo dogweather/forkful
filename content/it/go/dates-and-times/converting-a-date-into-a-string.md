@@ -7,8 +7,8 @@ description: "Convertire una data in una stringa in Go comporta la trasformazion
   \ spesso\u2026"
 lastmod: '2024-03-13T22:44:42.920673-06:00'
 model: gpt-4-0125-preview
-summary: "Convertire una data in una stringa in Go comporta la trasformazione di un\
-  \ oggetto `time.Time` in un formato di stringa leggibile. I programmatori spesso\u2026"
+summary: Convertire una data in una stringa in Go comporta la trasformazione di un
+  oggetto `time.
 title: Convertire una data in una stringa
 weight: 28
 ---

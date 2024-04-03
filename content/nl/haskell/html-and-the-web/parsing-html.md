@@ -7,8 +7,8 @@ description: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTM
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.850080-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML is tenslotte\
-  \ de steiger van het web. Programmeurs parsen HTML om gegevensschrapen te\u2026"
+summary: HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML is tenslotte
+  de steiger van het web.
 title: HTML Parsen
 weight: 43
 ---

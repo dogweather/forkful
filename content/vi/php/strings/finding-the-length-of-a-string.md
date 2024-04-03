@@ -9,9 +9,7 @@ description: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a
 lastmod: '2024-03-13T22:44:36.754171-06:00'
 model: gpt-4-0125-preview
 summary: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0\
-  \ x\xE1c \u0111\u1ECBnh xem n\xF3 bao g\u1ED3m bao nhi\xEAu k\xFD t\u1EF1. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n th\xF4ng tin n\xE0y cho c\xE1\
-  c nhi\u1EC7m v\u1EE5 nh\u01B0 x\xE1c th\u1EF1c nh\u1EADp\u2026"
+  \ x\xE1c \u0111\u1ECBnh xem n\xF3 bao g\u1ED3m bao nhi\xEAu k\xFD t\u1EF1."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

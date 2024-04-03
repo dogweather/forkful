@@ -6,8 +6,7 @@ description: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlert
 lastmod: '2024-03-13T22:44:40.551024-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlertidig under\
-  \ kj\xF8ring av et program. Programmerere gj\xF8r dette for \xE5 behandle data uten\
-  \ \xE5 p\xE5virke\u2026"
+  \ kj\xF8ring av et program."
 title: Opprette en midlertidig fil
 weight: 21
 ---

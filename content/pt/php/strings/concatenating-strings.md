@@ -5,8 +5,7 @@ description: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma n
   \ SQL,\u2026"
 lastmod: '2024-03-13T22:44:46.659420-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova. Programadores\
-  \ fazem isso para montar mensagens, caminhos de arquivos, consultas SQL,\u2026"
+summary: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova."
 title: Concatenando strings
 weight: 3
 ---

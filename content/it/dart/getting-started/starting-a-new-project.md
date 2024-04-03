@@ -6,8 +6,8 @@ description: "Avviare un nuovo progetto in Dart comporta l'impostazione di un am
   \ favorevole allo sviluppo efficiente, al testing e al deployment. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.131014-06:00'
 model: gpt-4-0125-preview
-summary: "Avviare un nuovo progetto in Dart comporta l'impostazione di un ambiente\
-  \ favorevole allo sviluppo efficiente, al testing e al deployment. I programmatori\u2026"
+summary: Avviare un nuovo progetto in Dart comporta l'impostazione di un ambiente
+  favorevole allo sviluppo efficiente, al testing e al deployment.
 title: Iniziare un nuovo progetto
 weight: 1
 ---

@@ -7,7 +7,8 @@ description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfo
 lastmod: '2024-03-13T22:44:54.352080-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
-  \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
+  \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\
+  \ kodierten Benutzerdaten enth\xE4lt."
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---

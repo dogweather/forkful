@@ -6,8 +6,7 @@ description: "Virheenk\xE4sittelyss\xE4 on kyse odottamattoman odottamisesta koo
 lastmod: '2024-03-13T22:44:57.094408-06:00'
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittelyss\xE4 on kyse odottamattoman odottamisesta koodissa\
-  \ \u2013 hallitaan virheet ja ongelmat sulavasti ilman, ett\xE4 ohjelma kaatuu.\
-  \ Ohjelmoijat\u2026"
+  \ \u2013 hallitaan virheet ja ongelmat sulavasti ilman, ett\xE4 ohjelma kaatuu."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

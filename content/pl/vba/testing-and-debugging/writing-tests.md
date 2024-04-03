@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.235914-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
   \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\
-  c ich\u2026"
+  c ich prawid\u0142owe dzia\u0142anie w r\xF3\u017Cnych warunkach."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

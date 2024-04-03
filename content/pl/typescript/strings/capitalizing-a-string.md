@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.120983-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na zmodyfikowaniu pierwszego\
   \ znaku danego ci\u0105gu na du\u017C\u0105 liter\u0119, je\u015Bli jest on w ma\u0142\
-  ej literze, cz\u0119sto pozostawiaj\u0105c\u2026"
+  ej literze, cz\u0119sto pozostawiaj\u0105c reszt\u0119 ci\u0105gu bez zmian."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

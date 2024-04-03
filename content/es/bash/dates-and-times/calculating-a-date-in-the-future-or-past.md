@@ -5,7 +5,7 @@ description: "Calcular una fecha en el futuro o pasado en Bash es el proceso de 
 lastmod: '2024-03-13T22:44:59.260296-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado en Bash es el proceso de a\xF1\
-  adir o sustraer d\xEDas a una fecha actual. Los programadores hacen esto para automatizar\u2026"
+  adir o sustraer d\xEDas a una fecha actual."
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---

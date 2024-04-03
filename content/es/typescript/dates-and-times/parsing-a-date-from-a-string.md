@@ -7,8 +7,8 @@ description: "Analizar una fecha desde una cadena implica convertir representaci
   \ por\u2026"
 lastmod: '2024-03-13T22:44:58.811319-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha desde una cadena implica convertir representaciones textuales\
-  \ de fechas y horas en un formato que pueda ser manipulado y analizado por\u2026"
+summary: Analizar una fecha desde una cadena implica convertir representaciones textuales
+  de fechas y horas en un formato que pueda ser manipulado y analizado por el programa.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

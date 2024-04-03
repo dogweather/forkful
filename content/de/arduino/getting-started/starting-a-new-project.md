@@ -5,7 +5,7 @@ description: "Ein neues Projekt zu starten bedeutet, eine leere Leinwand in der 
 lastmod: '2024-03-13T22:44:54.145390-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine leere Leinwand in der Arduino-IDE\
-  \ zu \xF6ffnen und mit einer originellen Idee zu f\xFCllen. Programmierer tun dies\u2026"
+  \ zu \xF6ffnen und mit einer originellen Idee zu f\xFCllen."
 title: Einen neuen Projekt starten
 weight: 1
 ---

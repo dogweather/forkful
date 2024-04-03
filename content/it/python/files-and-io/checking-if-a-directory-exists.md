@@ -7,8 +7,9 @@ description: "Controllare se una directory esiste in Python significa verificare
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.015569-06:00'
 model: gpt-4-0125-preview
-summary: "Controllare se una directory esiste in Python significa verificare la presenza\
-  \ di una cartella nel filesystem prima di eseguire operazioni come leggere o\u2026"
+summary: Controllare se una directory esiste in Python significa verificare la presenza
+  di una cartella nel filesystem prima di eseguire operazioni come leggere o scrivere
+  file.
 title: Verifica se una directory esiste
 weight: 20
 ---

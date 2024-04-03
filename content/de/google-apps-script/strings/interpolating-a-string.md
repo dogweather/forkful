@@ -7,7 +7,8 @@ description: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht
 lastmod: '2024-03-13T22:44:53.318651-06:00'
 model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das dynamische\
-  \ Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"
+  \ Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung von\
+  \ lesbarem und wartbarem Code."
 title: Interpolation einer Zeichenkette
 weight: 8
 ---

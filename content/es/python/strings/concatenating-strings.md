@@ -5,7 +5,7 @@ description: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s 
 lastmod: '2024-03-13T22:44:58.602475-06:00'
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
-  \ de texto en una sola. Los programadores concatenan cadenas para formar mensajes,\u2026"
+  \ de texto en una sola."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

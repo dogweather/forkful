@@ -5,7 +5,7 @@ description: "HTTP-Anfragen mit Basisauthentifizierung senden bedeutet, Benutzer
 lastmod: '2024-03-13T22:44:53.377935-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung senden bedeutet, Benutzername und\
-  \ Passwort sicher mitzuschicken, um Zugang zu gesch\xFCtzten Ressourcen zu bekommen.\u2026"
+  \ Passwort sicher mitzuschicken, um Zugang zu gesch\xFCtzten Ressourcen zu bekommen."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

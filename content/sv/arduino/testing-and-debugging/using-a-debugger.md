@@ -6,8 +6,7 @@ description: "Med Arduino IDE kan du anv\xE4nda Serial-utskrifter f\xF6r att deb
 lastmod: '2024-03-13T22:44:38.171689-06:00'
 model: gpt-4-0125-preview
 summary: "Med Arduino IDE kan du anv\xE4nda Serial-utskrifter f\xF6r att debugga,\
-  \ men det \xE4r lite som att anv\xE4nda en ficklampa f\xF6r att utforska en grotta.\
-  \ F\xF6r riktig\u2026"
+  \ men det \xE4r lite som att anv\xE4nda en ficklampa f\xF6r att utforska en grotta."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

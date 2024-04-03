@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.948700-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\
-  \ strumienia\u2026"
+  \ strumienia wyj\u015Bciowego, r\xF3\u017Cnego od standardowego wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

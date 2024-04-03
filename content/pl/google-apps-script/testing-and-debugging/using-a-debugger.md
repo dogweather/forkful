@@ -8,8 +8,7 @@ description: "Google Apps Script zapewnia wbudowany debugger w Edytorze Apps Scr
 lastmod: '2024-03-13T22:44:34.907981-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script zapewnia wbudowany debugger w Edytorze Apps Script, pomagaj\u0105\
-  c w rozwi\u0105zywaniu problem\xF3w ze skryptami. Oto, jak zainicjowa\u0107 i u\u017C\
-  ywa\u0107\u2026"
+  c w rozwi\u0105zywaniu problem\xF3w ze skryptami."
 title: Korzystanie z debuggera
 weight: 35
 ---

@@ -6,8 +6,7 @@ description: "Agrupar c\xF3digo en funciones consiste en descomponer tareas en b
 lastmod: '2024-03-13T22:44:59.421969-06:00'
 model: gpt-4-1106-preview
 summary: "Agrupar c\xF3digo en funciones consiste en descomponer tareas en bloques\
-  \ reutilizables. Esto hace que el c\xF3digo sea limpio, menos propenso a errores\
-  \ y m\xE1s\u2026"
+  \ reutilizables."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

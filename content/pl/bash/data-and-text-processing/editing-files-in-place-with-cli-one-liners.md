@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.580635-06:00'
 model: gpt-4-0125-preview
 summary: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B si\u0119\
   , \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku plik\xF3\
-  w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze.\u2026"
+  w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze."
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---

@@ -6,8 +6,8 @@ description: "TOML (Tom's Obvious, Minimal Language) ist ein Konfigurationsdatei
   \ das aufgrund seiner einfachen Syntax leicht zu lesen ist. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:53.313279-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) ist ein Konfigurationsdateiformat,\
-  \ das aufgrund seiner einfachen Syntax leicht zu lesen ist. Programmierer\u2026"
+summary: TOML (Tom's Obvious, Minimal Language) ist ein Konfigurationsdateiformat,
+  das aufgrund seiner einfachen Syntax leicht zu lesen ist.
 title: Arbeiten mit TOML
 weight: 39
 ---

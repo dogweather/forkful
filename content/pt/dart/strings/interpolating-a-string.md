@@ -8,7 +8,8 @@ description: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores
 lastmod: '2024-03-13T22:44:46.266375-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores de vari\xE1\
-  veis diretamente em strings, muitas vezes para criar mensagens significativas sem\u2026"
+  veis diretamente em strings, muitas vezes para criar mensagens significativas sem\
+  \ concatena\xE7\xF5es complicadas."
 title: Interpolando uma string
 weight: 8
 ---

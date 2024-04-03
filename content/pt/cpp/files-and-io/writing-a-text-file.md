@@ -7,7 +7,9 @@ description: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um a
 lastmod: '2024-03-13T22:44:46.897490-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
-  \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para\u2026"
+  \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para aplica\xE7\
+  \xF5es que precisam persistir dados, como logs, conte\xFAdo gerado por usu\xE1rios\
+  \ ou configura\xE7\xF5es."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -5,8 +5,7 @@ description: "String concatenation is sticking one string to another. We do this
   \ put\u2026"
 lastmod: '2024-03-13T22:44:48.923269-06:00'
 model: gpt-4-1106-preview
-summary: "String concatenation is sticking one string to another. We do this to build\
-  \ up messages, create paths, combine user-generated content, or to simply put\u2026"
+summary: String concatenation is sticking one string to another.
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
 weight: 3

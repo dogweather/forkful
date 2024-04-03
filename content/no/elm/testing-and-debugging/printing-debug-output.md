@@ -6,8 +6,7 @@ description: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore 
 lastmod: '2024-03-13T22:44:40.711540-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva programmet\
-  \ ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og forbedre\
-  \ kodeflyten."
+  \ ditt gj\xF8r."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

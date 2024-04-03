@@ -8,7 +8,8 @@ description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standar
 lastmod: '2024-03-13T22:44:43.495665-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard di serializzazione\
-  \ di dati amichevole per l'utente che pu\xF2 essere utilizzato per tutti i\u2026"
+  \ di dati amichevole per l'utente che pu\xF2 essere utilizzato per tutti i linguaggi\
+  \ di programmazione."
 title: Lavorare con YAML
 weight: 41
 ---

@@ -7,7 +7,9 @@ description: "Mit CSV (Comma-Separated Values, durch Kommata getrennte Werte) in
 lastmod: '2024-03-13T22:44:54.288733-06:00'
 model: gpt-4-0125-preview
 summary: "Mit CSV (Comma-Separated Values, durch Kommata getrennte Werte) in JavaScript\
-  \ zu arbeiten, bedeutet, CSV-Dateien zu parsen oder zu generieren, um\u2026"
+  \ zu arbeiten, bedeutet, CSV-Dateien zu parsen oder zu generieren, um Tabellendaten\
+  \ aus externen Quellen zu importieren oder Daten f\xFCr die Verwendung in anderen\
+  \ Programmen zu exportieren."
 title: Arbeiten mit CSV
 weight: 37
 ---

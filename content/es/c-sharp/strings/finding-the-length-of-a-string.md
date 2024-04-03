@@ -4,8 +4,7 @@ description: "Encontrar la longitud de una cadena es medir cu\xE1ntos caracteres
   \ Los programadores lo hacen para validar entradas, gestionar bucles, o\u2026"
 lastmod: '2024-03-13T22:44:59.069597-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar la longitud de una cadena es medir cu\xE1ntos caracteres contiene.\
-  \ Los programadores lo hacen para validar entradas, gestionar bucles, o\u2026"
+summary: "Encontrar la longitud de una cadena es medir cu\xE1ntos caracteres contiene."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

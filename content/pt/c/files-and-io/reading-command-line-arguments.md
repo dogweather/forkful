@@ -8,7 +8,8 @@ description: "Na programa\xE7\xE3o em C, a leitura de argumentos da linha de com
 lastmod: '2024-03-13T22:44:47.066727-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o em C, a leitura de argumentos da linha de comando permite\
-  \ que os programas aceitem entradas diretamente do terminal, aumentando a\u2026"
+  \ que os programas aceitem entradas diretamente do terminal, aumentando a flexibilidade\
+  \ e a usabilidade."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

@@ -6,8 +6,8 @@ description: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan e
   \ tasojen tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
 lastmod: '2024-03-13T22:44:56.277687-06:00'
 model: gpt-4-0125-preview
-summary: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen\
-  \ tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
+summary: Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen
+  tiedon tallentamiseen.
 title: "Lokitiedostojen k\xE4sittely"
 weight: 17
 ---

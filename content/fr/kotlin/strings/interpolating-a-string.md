@@ -5,8 +5,7 @@ description: "L'interpolation de cha\xEEnes, c'est injecter des variables dans d
   \ du\u2026"
 lastmod: '2024-03-13T22:44:57.721602-06:00'
 model: gpt-4-1106-preview
-summary: "L'interpolation de cha\xEEnes, c'est injecter des variables dans du texte.\
-  \ On le fait pour faciliter la formation de messages dynamiques et la lecture du\u2026"
+summary: "L'interpolation de cha\xEEnes, c'est injecter des variables dans du texte."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

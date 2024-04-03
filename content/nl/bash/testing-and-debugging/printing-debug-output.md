@@ -7,7 +7,7 @@ description: "Debug output afdrukken gaat allemaal om het naar de console echo\x
 lastmod: '2024-03-13T22:44:50.985210-06:00'
 model: gpt-4-0125-preview
 summary: "Debug output afdrukken gaat allemaal om het naar de console echo\xEBn van\
-  \ data om te checken wat er gaande is in je script. Programmeurs doen dit om\u2026"
+  \ data om te checken wat er gaande is in je script."
 title: Debug-output afdrukken
 weight: 33
 ---

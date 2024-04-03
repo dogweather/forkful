@@ -6,8 +6,8 @@ description: "Het controleren van het bestaan van een map in C# stelt je in staa
   \ om te bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"
 lastmod: '2024-03-13T22:44:50.824473-06:00'
 model: gpt-4-0125-preview
-summary: "Het controleren van het bestaan van een map in C# stelt je in staat om te\
-  \ bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"
+summary: Het controleren van het bestaan van een map in C# stelt je in staat om te
+  bevestigen of een specifieke map beschikbaar is in het bestandssysteem.
 title: Controleren of een directory bestaat
 weight: 20
 ---

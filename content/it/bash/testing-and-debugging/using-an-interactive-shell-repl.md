@@ -4,8 +4,8 @@ description: "REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-St
   \ un ambiente di programmazione computerizzato semplice e interattivo. I\u2026"
 lastmod: '2024-03-13T22:44:43.601319-06:00'
 model: gpt-4-0125-preview
-summary: "REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa),\
-  \ un ambiente di programmazione computerizzato semplice e interattivo. I\u2026"
+summary: REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa),
+  un ambiente di programmazione computerizzato semplice e interattivo.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

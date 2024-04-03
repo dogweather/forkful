@@ -7,7 +7,7 @@ description: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et konf
 lastmod: '2024-03-13T22:44:40.341473-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"
+  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk."
 title: Arbeider med TOML
 weight: 39
 ---

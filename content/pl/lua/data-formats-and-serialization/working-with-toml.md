@@ -6,7 +6,7 @@ description: "Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom
 lastmod: '2024-03-13T22:44:35.563568-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom's Obvious,\
-  \ Minimal Language - Oczywisty, Minimalny J\u0119zyk Toma) za pomoc\u0105 Lua.\u2026"
+  \ Minimal Language - Oczywisty, Minimalny J\u0119zyk Toma) za pomoc\u0105 Lua."
 title: Praca z TOML
 weight: 39
 ---

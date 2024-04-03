@@ -6,7 +6,7 @@ description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (s
 lastmod: '2024-03-13T22:44:41.309740-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (som 3+4i),\
-  \ er en grunnpilar i ingeni\xF8rfag og fysikk. Programmerere jobber med dem i\u2026"
+  \ er en grunnpilar i ingeni\xF8rfag og fysikk."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

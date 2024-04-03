@@ -8,8 +8,7 @@ description: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie
 lastmod: '2024-03-13T22:44:34.866263-06:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie, pozwalaj\u0105\
-  ce programistom na ocen\u0119 chronologicznych relacji mi\u0119dzy datami. Takie\
-  \ por\xF3wnania\u2026"
+  ce programistom na ocen\u0119 chronologicznych relacji mi\u0119dzy datami."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

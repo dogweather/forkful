@@ -6,8 +6,7 @@ description: "Interpola\xE7\xE3o de strings \xE9 a substitui\xE7\xE3o de vari\xE
 lastmod: '2024-03-13T22:44:46.527805-06:00'
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de strings \xE9 a substitui\xE7\xE3o de vari\xE1veis\
-  \ ou express\xF5es dentro de uma string por seus valores. Programadores fazem isso\
-  \ para montar strings\u2026"
+  \ ou express\xF5es dentro de uma string por seus valores."
 title: Interpolando uma string
 weight: 8
 ---

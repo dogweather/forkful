@@ -6,7 +6,8 @@ description: "Il refactoring \xE8 il processo di rielaborazione del tuo codice p
 lastmod: '2024-03-13T22:44:43.690734-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di rielaborazione del tuo codice per migliorarne\
-  \ la struttura e la leggibilit\xE0 senza alterare il comportamento esterno o la\u2026"
+  \ la struttura e la leggibilit\xE0 senza alterare il comportamento esterno o la\
+  \ funzionalit\xE0."
 title: Rifattorizzazione
 weight: 19
 ---

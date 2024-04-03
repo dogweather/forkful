@@ -5,7 +5,8 @@ description: "Ecco un assaggio del debugging in Kotlin con IntelliJ IDEA - lo Sh
 lastmod: '2024-03-13T22:44:43.395356-06:00'
 model: gpt-4-0125-preview
 summary: "Ecco un assaggio del debugging in Kotlin con IntelliJ IDEA - lo Sherlock\
-  \ Holmes degli IDE: ```kotlin fun main() { val mysteryNumber = 42 var guess = 0\u2026"
+  \ Holmes degli IDE:\n\n```kotlin\nfun main() {\n    val mysteryNumber = 42\n   \
+  \ var guess = 0\n\n    while (guess ."
 title: Utilizzo di un debugger
 weight: 35
 ---

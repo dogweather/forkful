@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6
 lastmod: '2024-03-13T22:44:37.427336-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r att\
-  \ matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\
-  r att s\xF6ka, redigera eller\u2026"
+  \ matcha teckenkombinationer i str\xE4ngar."
 title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

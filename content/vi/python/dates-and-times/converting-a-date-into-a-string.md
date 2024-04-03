@@ -11,9 +11,7 @@ lastmod: '2024-03-13T22:44:36.112485-06:00'
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh x\xE2u k\xFD t\u1EF1\
   \ bi\u1EBFn \u0111\u1ED5i m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE1\
-  ng th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3n th\u1ECB ng\xE0\
-  y th\xE1ng\u2026"
+  ng th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

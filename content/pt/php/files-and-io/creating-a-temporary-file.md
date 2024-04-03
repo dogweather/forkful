@@ -6,8 +6,7 @@ description: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um pap
 lastmod: '2024-03-13T22:44:46.686434-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um papel de\
-  \ rascunho. Programadores fazem isso quando querem guardar dados rapidamente sem\
-  \ precisar\u2026"
+  \ rascunho."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

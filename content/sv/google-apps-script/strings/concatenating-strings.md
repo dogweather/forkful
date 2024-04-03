@@ -8,8 +8,7 @@ description: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller 
 lastmod: '2024-03-13T22:44:37.429434-06:00'
 model: gpt-4-0125-preview
 summary: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller flera\
-  \ str\xE4ngar till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att dynamiskt\
-  \ konstruera\u2026"
+  \ str\xE4ngar till en enda str\xE4ng."
 title: "Konkatenering av str\xE4ngar"
 weight: 3
 ---

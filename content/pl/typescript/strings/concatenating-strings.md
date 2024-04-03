@@ -6,8 +6,7 @@ description: "\u0141\u0105czymy napisy (stringi), \u017Ceby uformowa\u0107 nowy,
 lastmod: '2024-03-13T22:44:35.130585-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czymy napisy (stringi), \u017Ceby uformowa\u0107 nowy, wi\u0119\
-  kszy tekst. Robimy to, by wy\u015Bwietli\u0107 komunikaty, zbudowa\u0107 zapytania\
-  \ do bazy danych, albo po prostu\u2026"
+  kszy tekst."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

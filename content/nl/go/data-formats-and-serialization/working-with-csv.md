@@ -6,8 +6,9 @@ description: "Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor 
   \ vanwege zijn eenvoud en gemak van integratie met de meeste\u2026"
 lastmod: '2024-03-13T22:44:50.310299-06:00'
 model: gpt-4-0125-preview
-summary: "Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling\
-  \ vanwege zijn eenvoud en gemak van integratie met de meeste\u2026"
+summary: Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling
+  vanwege zijn eenvoud en gemak van integratie met de meeste programmeertalen, inclusief
+  Go.
 title: Werken met CSV
 weight: 37
 ---

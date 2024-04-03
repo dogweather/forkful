@@ -7,7 +7,7 @@ description: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re bru
 lastmod: '2024-03-13T22:44:40.551966-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re brukervennlig,\
-  \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring.\u2026"
+  \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring."
 title: Arbeider med YAML
 weight: 41
 ---

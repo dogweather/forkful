@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.662356-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w definiuj\u0105ce\
   \ wzorce wyszukiwania, g\u0142\xF3wnie u\u017Cywane do dopasowywania i manipulacji\
-  \ ci\u0105gami znak\xF3w.\u2026"
+  \ ci\u0105gami znak\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

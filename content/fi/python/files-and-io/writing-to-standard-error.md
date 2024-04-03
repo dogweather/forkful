@@ -6,8 +6,9 @@ description: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi
   \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"
 lastmod: '2024-03-13T22:44:56.159988-06:00'
 model: gpt-4-0125-preview
-summary: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
-  \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"
+summary: Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten
+  tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen tavallisesta
+  tulosteesta (`stdout`).
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

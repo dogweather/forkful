@@ -5,9 +5,8 @@ description: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa k
   t\u2026"
 lastmod: '2024-03-13T22:44:56.190608-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata\
-  \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\
-  t\u2026"
+summary: Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata
+  tapahtumia, jotka sattuvat sovelluksen suorituksen aikana.
 title: Lokitus
 weight: 17
 ---

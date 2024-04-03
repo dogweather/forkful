@@ -4,8 +4,8 @@ description: "Calcular una fecha en el futuro o en el pasado es simplemente ajus
   \ la fecha actual para obtener otra. Los programadores lo hacen para manejar reservas,\u2026"
 lastmod: '2024-03-13T22:44:59.471704-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o en el pasado es simplemente ajustar la\
-  \ fecha actual para obtener otra. Los programadores lo hacen para manejar reservas,\u2026"
+summary: Calcular una fecha en el futuro o en el pasado es simplemente ajustar la
+  fecha actual para obtener otra.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

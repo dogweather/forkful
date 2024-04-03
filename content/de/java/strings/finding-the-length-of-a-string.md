@@ -6,7 +6,7 @@ description: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wi
 lastmod: '2024-03-13T22:44:53.754403-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie viele\
-  \ Zeichen er enth\xE4lt. Entwickler brauchen diese Information, um Eingaben zu validieren,\u2026"
+  \ Zeichen er enth\xE4lt."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

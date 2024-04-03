@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.595381-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Rust handler om \xE5\
   \ parse JSON-data til Rusts datastrukturer og serialisere Rusts datastrukturer tilbake\
-  \ til\u2026"
+  \ til JSON."
 title: Arbeider med JSON
 weight: 38
 ---

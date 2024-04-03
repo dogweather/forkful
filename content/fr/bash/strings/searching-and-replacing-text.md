@@ -6,7 +6,7 @@ description: "Rechercher et remplacer du texte, c'est modifier une cha\xEEne par
 lastmod: '2024-03-13T22:44:57.972746-06:00'
 model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est modifier une cha\xEEne par une autre\
-  \ dans un fichier ou une s\xE9rie de fichiers. Les programmeurs le font pour corriger\u2026"
+  \ dans un fichier ou une s\xE9rie de fichiers."
 title: Recherche et remplacement de texte
 weight: 10
 ---

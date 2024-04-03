@@ -7,7 +7,7 @@ description: "Encontrar o comprimento de uma string em Visual Basic para Aplica\
 lastmod: '2024-03-13T22:44:46.401624-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em Visual Basic para Aplica\xE7\xF5\
-  es (VBA) envolve determinar o n\xFAmero de caracteres que ela cont\xE9m. Programadores\u2026"
+  es (VBA) envolve determinar o n\xFAmero de caracteres que ela cont\xE9m."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

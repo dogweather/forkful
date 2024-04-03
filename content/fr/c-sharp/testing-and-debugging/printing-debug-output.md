@@ -6,8 +6,7 @@ description: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petit
 lastmod: '2024-03-13T22:44:57.790081-06:00'
 model: gpt-4-1106-preview
 summary: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites notes\
-  \ dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font \xE7\
-  a pour\u2026"
+  \ dans votre code pour vous dire ce qui se passe."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

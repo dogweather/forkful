@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.507617-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas en Google Apps Script, un lenguaje\
   \ de scripting basado en la nube para automatizar tareas a trav\xE9s de productos\
-  \ de\u2026"
+  \ de Google, es una tarea fundamental dirigida a estandarizar los datos de texto."
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---

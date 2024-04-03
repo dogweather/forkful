@@ -6,8 +6,7 @@ description: "TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea
 lastmod: '2024-03-13T22:44:57.018521-06:00'
 model: gpt-4-0125-preview
 summary: "TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea ja kirjoittaa,\
-  \ sek\xE4 helposti koneiden j\xE4sent\xE4m\xE4\xE4 ja luotavaa. Ohjelmoijat k\xE4\
-  ytt\xE4v\xE4t\u2026"
+  \ sek\xE4 helposti koneiden j\xE4sent\xE4m\xE4\xE4 ja luotavaa."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

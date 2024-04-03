@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.384496-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha a partir de una cadena implica interpretar el formato\
   \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
-  \ a\xF1o.\u2026"
+  \ a\xF1o."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

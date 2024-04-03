@@ -6,7 +6,7 @@ description: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 o process
 lastmod: '2024-03-13T22:44:46.610123-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 o processo de remover\
-  \ seletivamente certos caracteres de uma string com base em crit\xE9rios definidos.\u2026"
+  \ seletivamente certos caracteres de uma string com base em crit\xE9rios definidos."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

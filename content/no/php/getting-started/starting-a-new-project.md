@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativitet
 lastmod: '2024-03-13T22:44:40.887108-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativiteten din\
-  \ med kode som lerret. Programmerere gj\xF8r det for \xE5 l\xF8se problemer, utforske\
-  \ nye ideer,\u2026"
+  \ med kode som lerret."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

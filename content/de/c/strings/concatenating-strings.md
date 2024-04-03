@@ -7,7 +7,7 @@ description: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFCh
 lastmod: '2024-03-13T22:44:54.343534-06:00'
 model: gpt-4-0125-preview
 summary: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFChren von\
-  \ zwei oder mehr Strings hintereinander, um einen neuen String zu bilden.\u2026"
+  \ zwei oder mehr Strings hintereinander, um einen neuen String zu bilden."
 title: Strings verketten
 weight: 3
 ---

@@ -6,8 +6,9 @@ description: "Het organiseren van code in functies in Visual Basic for Applicati
   \ (VBA) houdt in dat een programma opgedeeld wordt in kleinere, beheersbare stukjes,\u2026"
 lastmod: '2024-03-13T22:44:50.642497-06:00'
 model: gpt-4-0125-preview
-summary: "Het organiseren van code in functies in Visual Basic for Applications (VBA)\
-  \ houdt in dat een programma opgedeeld wordt in kleinere, beheersbare stukjes,\u2026"
+summary: Het organiseren van code in functies in Visual Basic for Applications (VBA)
+  houdt in dat een programma opgedeeld wordt in kleinere, beheersbare stukjes, bekend
+  als functies.
 title: Code organiseren in functies
 weight: 18
 ---

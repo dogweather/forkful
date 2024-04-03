@@ -4,8 +4,9 @@ description: "Obtaining the current date in Java is a fundamental operation that
   \ programmers to manipulate date objects for operations such as logging, date\u2026"
 lastmod: '2024-03-13T22:44:59.981524-06:00'
 model: gpt-4-0125-preview
-summary: "Obtaining the current date in Java is a fundamental operation that allows\
-  \ programmers to manipulate date objects for operations such as logging, date\u2026"
+summary: Obtaining the current date in Java is a fundamental operation that allows
+  programmers to manipulate date objects for operations such as logging, date calculations,
+  and time-based conditions.
 title: Getting the current date
 weight: 29
 ---

@@ -8,8 +8,7 @@ description: "Baixar uma p\xE1gina web envolve buscar o conte\xFAdo de uma p\xE1
 lastmod: '2024-03-13T22:44:46.280219-06:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina web envolve buscar o conte\xFAdo de uma p\xE1gina web\
-  \ atrav\xE9s de sua URL para processamento ou armazenamento. Programadores fazem\
-  \ isso para\u2026"
+  \ atrav\xE9s de sua URL para processamento ou armazenamento."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

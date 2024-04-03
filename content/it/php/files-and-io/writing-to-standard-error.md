@@ -6,8 +6,10 @@ description: "Scrivere su standard error (stderr) in PHP riguarda l'indirizzare 
   \ di errore o diagnostica separatamente dall'output standard (stdout),\u2026"
 lastmod: '2024-03-13T22:44:43.533017-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in PHP riguarda l'indirizzare messaggi\
-  \ di errore o diagnostica separatamente dall'output standard (stdout),\u2026"
+summary: Scrivere su standard error (stderr) in PHP riguarda l'indirizzare messaggi
+  di errore o diagnostica separatamente dall'output standard (stdout), consentendo
+  agli sviluppatori di gestire meglio i propri flussi di output per il debugging e
+  il logging.
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -6,8 +6,7 @@ description: "Endre tekststrenger til sm\xE5 bokstaver, fordi det sikrer konsist
 lastmod: '2024-03-13T22:44:40.959553-06:00'
 model: gpt-4-1106-preview
 summary: "Endre tekststrenger til sm\xE5 bokstaver, fordi det sikrer konsistent datah\xE5\
-  ndtering. Enten for \xE5 sammenligne tekster eller for estetikkens skyld, kommer\
-  \ du\u2026"
+  ndtering."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

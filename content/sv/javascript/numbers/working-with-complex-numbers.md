@@ -4,8 +4,7 @@ description: "Komplexa tal \xE4r tal med en reell och en imagin\xE4r del (som 3 
   \ 4i). De dyker upp i olika programmeringsproblem, s\xE4rskilt inom signalbehandling,\u2026"
 lastmod: '2024-03-13T22:44:38.287437-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal \xE4r tal med en reell och en imagin\xE4r del (som 3 + 4i).\
-  \ De dyker upp i olika programmeringsproblem, s\xE4rskilt inom signalbehandling,\u2026"
+summary: "Komplexa tal \xE4r tal med en reell och en imagin\xE4r del (som 3 + 4i)."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

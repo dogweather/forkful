@@ -6,8 +6,7 @@ description: "Los n\xFAmeros complejos son una combinaci\xF3n de n\xFAmeros real
 lastmod: '2024-03-13T22:44:58.973321-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos son una combinaci\xF3n de n\xFAmeros reales y n\xFA\
-  meros imaginarios, como `a + bi` donde `i` es la ra\xEDz cuadrada de -1. Son clave\
-  \ en campos\u2026"
+  meros imaginarios, como `a + bi` donde `i` es la ra\xEDz cuadrada de -1."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

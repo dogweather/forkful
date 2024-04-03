@@ -4,8 +4,8 @@ description: "La stampa dei messaggi di debug serve per monitorare cosa sta succ
   \ nel tuo script. Programmatori lo fanno per trovare e risolvere i bug pi\xF9\u2026"
 lastmod: '2024-03-13T22:44:43.602205-06:00'
 model: gpt-4-1106-preview
-summary: "La stampa dei messaggi di debug serve per monitorare cosa sta succedendo\
-  \ nel tuo script. Programmatori lo fanno per trovare e risolvere i bug pi\xF9\u2026"
+summary: La stampa dei messaggi di debug serve per monitorare cosa sta succedendo
+  nel tuo script.
 title: Stampa dell'output di debug
 weight: 33
 ---

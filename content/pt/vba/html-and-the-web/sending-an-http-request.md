@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.408420-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP em Visual Basic for Applications (VBA)\
   \ envolve acessar programaticamente recursos ou servi\xE7os web fazendo solicita\xE7\
-  \xF5es via\u2026"
+  \xF5es via HTTP."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

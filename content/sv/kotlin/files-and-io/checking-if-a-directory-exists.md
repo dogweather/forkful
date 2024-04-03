@@ -8,8 +8,7 @@ description: "Att kontrollera om en katalog finns i Kotlin inneb\xE4r att verifi
 lastmod: '2024-03-13T22:44:37.885486-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Kotlin inneb\xE4r att verifiera n\xE4\
-  rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g. Programmerare utf\xF6r denna\
-  \ uppgift f\xF6r att\u2026"
+  rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

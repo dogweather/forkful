@@ -8,8 +8,7 @@ description: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme 
 lastmod: '2024-03-13T22:44:41.261479-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
-  \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\
-  \ manipulere strenger\u2026"
+  \ tegn f\xF8r nullterminatoren `\\0`."
 title: "\xC5 finne lengden p\xE5 en streng"
 weight: 7
 ---

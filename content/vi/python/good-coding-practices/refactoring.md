@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.108570-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc code m\xE1y t\xED\
   nh hi\u1EC7n c\xF3\u2014thay \u0111\u1ED5i c\xE1ch t\u1ED5 ch\u1EE9c\u2014m\xE0\
-  \ kh\xF4ng l\xE0m thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3.\
-  \ C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+  \ kh\xF4ng l\xE0m thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

@@ -9,8 +9,7 @@ description: "Att organisera kod i funktioner handlar om att bunta ihop bitar av
 lastmod: '2024-03-13T22:44:38.343903-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
-  \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\
-  \ enklare att\u2026"
+  \ f\xF6r att g\xF6ra specifika uppgifter."
 title: Organisera kod i funktioner
 weight: 18
 ---

@@ -5,7 +5,7 @@ description: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto
 lastmod: '2024-03-13T22:44:46.709667-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
-  \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"
+  \ ser preenchido com c\xF3digo."
 title: Iniciando um novo projeto
 weight: 1
 ---

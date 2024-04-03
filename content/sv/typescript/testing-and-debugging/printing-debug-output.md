@@ -6,8 +6,7 @@ description: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver 
 lastmod: '2024-03-13T22:44:37.658676-06:00'
 model: gpt-4-1106-preview
 summary: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver ut data\
-  \ till konsolen f\xF6r att se vad som h\xE4nder i din kod. Programmerare g\xF6r\
-  \ det f\xF6r att snabbt\u2026"
+  \ till konsolen f\xF6r att se vad som h\xE4nder i din kod."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

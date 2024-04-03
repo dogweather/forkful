@@ -4,8 +4,8 @@ description: "Complex numbers extend the idea of the one-dimensional number line
   \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.200080-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers extend the idea of the one-dimensional number line into\
-  \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"
+summary: Complex numbers extend the idea of the one-dimensional number line into the
+  two-dimensional plane by including a perpendicular imaginary axis.
 title: Working with complex numbers
 weight: 14
 ---

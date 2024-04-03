@@ -7,7 +7,9 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) sind ein m\xE4chtiges Werkzeug zu
 lastmod: '2024-03-13T22:44:53.837237-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind ein m\xE4chtiges Werkzeug zur Textverarbeitung,\
-  \ das es Programmierern erm\xF6glicht, mit fortgeschrittenen\u2026"
+  \ das es Programmierern erm\xF6glicht, mit fortgeschrittenen Musterabgleichtechniken\
+  \ nach Zeichenfolgen zu suchen, \xDCbereinstimmungen zu finden und Zeichenfolgen\
+  \ zu manipulieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

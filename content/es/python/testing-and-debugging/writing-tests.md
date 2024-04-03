@@ -8,8 +8,7 @@ description: "Escribir pruebas en Python implica crear scripts automatizados par
 lastmod: '2024-03-13T22:44:58.615922-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Python implica crear scripts automatizados para validar\
-  \ la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\
-  \ de\u2026"
+  \ la correcci\xF3n de tu c\xF3digo."
 title: Escribiendo pruebas
 weight: 36
 ---

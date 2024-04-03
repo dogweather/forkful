@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.424419-06:00'
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga nummer i Ruby inneb\xE4r att skapa nummer som\
   \ inte kan f\xF6ruts\xE4gas logiskt, vilket \xE4r avg\xF6rande f\xF6r scenarier\
-  \ som simuleringar,\u2026"
+  \ som simuleringar, kryptografi och spel."
 title: Generera slumptal
 weight: 12
 ---

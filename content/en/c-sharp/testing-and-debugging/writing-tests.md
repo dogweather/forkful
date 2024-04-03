@@ -5,9 +5,8 @@ description: "Writing tests in C# involves creating automated scripts to validat
   \ it to\u2026"
 lastmod: '2024-03-13T22:45:00.092470-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in C# involves creating automated scripts to validate the\
-  \ functionality of your code, ensuring it behaves as expected. Programmers do it\
-  \ to\u2026"
+summary: Writing tests in C# involves creating automated scripts to validate the functionality
+  of your code, ensuring it behaves as expected.
 title: Writing tests
 weight: 36
 ---

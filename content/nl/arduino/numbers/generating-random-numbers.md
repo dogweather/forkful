@@ -6,8 +6,9 @@ description: "Het genereren van willekeurige getallen in Arduino-projecten houdt
   \ dat waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn,\u2026"
 lastmod: '2024-03-13T22:44:51.068546-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Arduino-projecten houdt in dat\
-  \ waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn,\u2026"
+summary: Het genereren van willekeurige getallen in Arduino-projecten houdt in dat
+  waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn, cruciaal
+  voor toepassingen zoals games, simulaties en beveiligingssystemen.
 title: Willekeurige getallen genereren
 weight: 12
 ---

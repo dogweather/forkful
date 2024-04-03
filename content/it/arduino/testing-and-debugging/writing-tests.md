@@ -7,7 +7,8 @@ description: "Scrivere test nell'ambiente Arduino si riferisce al processo di cr
 lastmod: '2024-03-13T22:44:43.686056-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test nell'ambiente Arduino si riferisce al processo di creazione\
-  \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\u2026"
+  \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\
+  \ Arduino."
 title: Scrivere test
 weight: 36
 ---

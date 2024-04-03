@@ -4,8 +4,8 @@ description: "Working with XML means wrangling data in a pervasive, structured f
   \ used in configurations, messaging, and more. Programmers manipulate XML to read,\u2026"
 lastmod: '2024-03-13T22:45:00.495754-06:00'
 model: gpt-4-1106-preview
-summary: "Working with XML means wrangling data in a pervasive, structured format\
-  \ used in configurations, messaging, and more. Programmers manipulate XML to read,\u2026"
+summary: Working with XML means wrangling data in a pervasive, structured format used
+  in configurations, messaging, and more.
 title: Working with XML
 weight: 40
 ---

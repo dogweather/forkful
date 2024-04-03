@@ -6,8 +6,7 @@ description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i
 lastmod: '2024-03-13T22:44:35.491091-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`. S\u0105 kluczowe\
-  \ w zaawansowanej matematyce, fizyce, in\u017Cynierii\u2026"
+  \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -8,7 +8,7 @@ description: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de su
 lastmod: '2024-03-13T22:44:46.057169-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua aplica\xE7\
-  \xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado em HTTP.\u2026"
+  \xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado em HTTP."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

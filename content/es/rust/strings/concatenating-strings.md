@@ -4,8 +4,7 @@ description: "Concatenar cadenas es simplemente unir dos o m\xE1s strings en uno
   \ Los programadores lo hacen para manipular texto - combinar mensajes, insertar\u2026"
 lastmod: '2024-03-13T22:44:58.838516-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar cadenas es simplemente unir dos o m\xE1s strings en uno solo.\
-  \ Los programadores lo hacen para manipular texto - combinar mensajes, insertar\u2026"
+summary: "Concatenar cadenas es simplemente unir dos o m\xE1s strings en uno solo."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

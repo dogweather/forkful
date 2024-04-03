@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.611630-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
   r att bifoga ett anv\xE4ndarnamn och l\xF6senord till en f\xF6rfr\xE5gan f\xF6r\
-  \ att verifiera\u2026"
+  \ att verifiera anv\xE4ndarens identitet."
 title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---

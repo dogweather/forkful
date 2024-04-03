@@ -6,8 +6,8 @@ description: "Debug output afdrukken is alsof je een gesprek met je code voert; 
   \ strooit printopdrachten in om te controleren hoe het gaat en wat het 'denkt'.\u2026"
 lastmod: '2024-03-13T22:44:51.115424-06:00'
 model: gpt-4-0125-preview
-summary: "Debug output afdrukken is alsof je een gesprek met je code voert; je strooit\
-  \ printopdrachten in om te controleren hoe het gaat en wat het 'denkt'.\u2026"
+summary: Debug output afdrukken is alsof je een gesprek met je code voert; je strooit
+  printopdrachten in om te controleren hoe het gaat en wat het 'denkt'.
 title: Debug-output afdrukken
 weight: 33
 ---

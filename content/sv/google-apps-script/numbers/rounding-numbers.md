@@ -8,7 +8,8 @@ description: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammeri
 lastmod: '2024-03-13T22:44:37.432578-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering, inneb\xE4\
-  r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet antal\u2026"
+  r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet antal\
+  \ decimaler."
 title: Avrundning av nummer
 weight: 13
 ---

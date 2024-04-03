@@ -7,9 +7,8 @@ description: "Het berekenen van een datum in de toekomst of het verleden beteken
   \ doen dit\u2026"
 lastmod: '2024-03-13T22:44:51.085323-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van een datum in de toekomst of het verleden betekent het\
-  \ bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs doen\
-  \ dit\u2026"
+summary: Het berekenen van een datum in de toekomst of het verleden betekent het bepalen
+  van een specifieke dag voor of na een gegeven datum.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

@@ -6,8 +6,7 @@ description: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokume
 lastmod: '2024-03-13T22:44:35.956525-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentami\
-  \ XML (eXtensible Markup Language) za pomoc\u0105 kodu. Programi\u015Bci robi\u0105\
-  \ to, aby\u2026"
+  \ XML (eXtensible Markup Language) za pomoc\u0105 kodu."
 title: Praca z XML
 weight: 40
 ---

@@ -8,7 +8,8 @@ description: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per l
 lastmod: '2024-03-13T22:44:42.932426-06:00'
 model: gpt-4-0125-preview
 summary: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo scambio\
-  \ di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione con la maggior\u2026"
+  \ di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione con la maggior\
+  \ parte dei linguaggi di programmazione, inclusi Go."
 title: Lavorare con CSV
 weight: 37
 ---

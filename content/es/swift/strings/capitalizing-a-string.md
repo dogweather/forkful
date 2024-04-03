@@ -8,7 +8,7 @@ description: "Capitalizar una cadena en Swift modifica la cadena dada de modo qu
 lastmod: '2024-03-13T22:44:59.400313-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Swift modifica la cadena dada de modo que su primer\
-  \ car\xE1cter sea may\xFAscula y los caracteres restantes sean min\xFAsculas. Los\u2026"
+  \ car\xE1cter sea may\xFAscula y los caracteres restantes sean min\xFAsculas."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

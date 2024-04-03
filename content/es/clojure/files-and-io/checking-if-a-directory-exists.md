@@ -7,7 +7,7 @@ description: "Verificar si un directorio existe en Clojure implica comprobar la 
 lastmod: '2024-03-13T22:44:58.672163-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
-  \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"
+  \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n Clojure."
 title: Comprobando si un directorio existe
 weight: 20
 ---

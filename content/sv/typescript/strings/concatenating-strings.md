@@ -6,8 +6,7 @@ description: "Konkatenering av str\xE4ngar i programmering inneb\xE4r att du sm\
 lastmod: '2024-03-13T22:44:37.648131-06:00'
 model: gpt-4-1106-preview
 summary: "Konkatenering av str\xE4ngar i programmering inneb\xE4r att du sm\xE4lter\
-  \ samman tv\xE5 eller flera textv\xE4rden till ett enda str\xE4ngv\xE4rde. Vi g\xF6\
-  r detta f\xF6r att bygga\u2026"
+  \ samman tv\xE5 eller flera textv\xE4rden till ett enda str\xE4ngv\xE4rde."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

@@ -7,9 +7,8 @@ description: "Scaricare una pagina web consiste nel recuperare il contenuto HTML
   \ ci\xF2\u2026"
 lastmod: '2024-03-13T22:44:42.906755-06:00'
 model: gpt-4-0125-preview
-summary: "Scaricare una pagina web consiste nel recuperare il contenuto HTML di una\
-  \ pagina web tramite il protocollo HTTP/HTTPS. I programmatori spesso fanno ci\xF2\
-  \u2026"
+summary: Scaricare una pagina web consiste nel recuperare il contenuto HTML di una
+  pagina web tramite il protocollo HTTP/HTTPS.
 title: Scaricare una pagina web
 weight: 42
 ---

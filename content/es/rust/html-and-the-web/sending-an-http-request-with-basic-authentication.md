@@ -5,7 +5,8 @@ description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el pro
 lastmod: '2024-03-13T22:44:58.846192-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso de\
-  \ comunicarse con un servidor web usando credenciales codificadas en Base64\u2026"
+  \ comunicarse con un servidor web usando credenciales codificadas en Base64 (usuario:contrase\xF1\
+  a)."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

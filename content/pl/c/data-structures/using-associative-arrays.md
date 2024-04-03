@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.878565-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
   owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
-  \ i manipulowania danymi.\u2026"
+  \ i manipulowania danymi."
 title: "U\u017Cywanie tablic asocjacyjnych"
 weight: 15
 ---

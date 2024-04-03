@@ -5,7 +5,7 @@ description: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette 
 lastmod: '2024-03-13T22:44:40.467583-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette og manipulere\
-  \ XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester,\u2026"
+  \ XML-data."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

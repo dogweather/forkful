@@ -5,9 +5,7 @@ description: "Mittaa merkkijonon pituus, selvitt\xE4\xE4 sen merkkien m\xE4\xE4r
   \ tehokkaampaa tai\u2026"
 lastmod: '2024-03-13T22:44:56.646922-06:00'
 model: gpt-4-1106-preview
-summary: "Mittaa merkkijonon pituus, selvitt\xE4\xE4 sen merkkien m\xE4\xE4r\xE4n.\
-  \ Miksi? Kontrolloidaksesi sy\xF6tett\xE4, tehd\xE4ksesi tietojenk\xE4sittelyst\xE4\
-  \ tehokkaampaa tai\u2026"
+summary: "Mittaa merkkijonon pituus, selvitt\xE4\xE4 sen merkkien m\xE4\xE4r\xE4n."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

@@ -6,8 +6,8 @@ description: "Het extraheren van substrings betekent het uithalen van specifieke
   \ uit een tekenreeks. Programmeurs doen dit om tekstgegevens te manipuleren en\u2026"
 lastmod: '2024-03-13T22:44:50.451016-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings betekent het uithalen van specifieke delen\
-  \ uit een tekenreeks. Programmeurs doen dit om tekstgegevens te manipuleren en\u2026"
+summary: Het extraheren van substrings betekent het uithalen van specifieke delen
+  uit een tekenreeks.
 title: Substrings extraheren
 weight: 6
 ---

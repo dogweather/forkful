@@ -7,7 +7,7 @@ description: "Las expresiones regulares, o regex, permiten a los desarrolladores
 lastmod: '2024-03-13T22:44:58.836597-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, permiten a los desarrolladores buscar,\
-  \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de\u2026"
+  \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de patrones."
 title: Usando expresiones regulares
 weight: 11
 ---

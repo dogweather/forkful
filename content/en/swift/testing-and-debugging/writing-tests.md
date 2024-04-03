@@ -4,8 +4,8 @@ description: "Writing tests in Swift involves creating and executing code that v
   \ the correctness of other code units in your application. Programmers do it to\u2026"
 lastmod: '2024-03-13T22:45:00.399683-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Swift involves creating and executing code that verifies\
-  \ the correctness of other code units in your application. Programmers do it to\u2026"
+summary: Writing tests in Swift involves creating and executing code that verifies
+  the correctness of other code units in your application.
 title: Writing tests
 weight: 36
 ---

@@ -6,8 +6,7 @@ description: "Att hitta str\xE4ngl\xE4ngden inneb\xE4r att r\xE4kna antalet teck
 lastmod: '2024-03-13T22:44:37.516353-06:00'
 model: gpt-4-1106-preview
 summary: "Att hitta str\xE4ngl\xE4ngden inneb\xE4r att r\xE4kna antalet tecken i en\
-  \ str\xE4ng. Programmerare g\xF6r detta f\xF6r att validera indata, begr\xE4nsa\
-  \ l\xE4ngden, eller f\xF6r att\u2026"
+  \ str\xE4ng."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

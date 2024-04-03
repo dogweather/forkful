@@ -6,8 +6,7 @@ description: "Czytanie argument\xF3w linii polece\u0144 to po prostu odbieranie 
 lastmod: '2024-03-13T22:44:35.380599-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to po prostu odbieranie danych,\
-  \ kt\xF3re u\u017Cytkownik wpisuje razem z nazw\u0105 uruchamianego programu. Programi\u015B\
-  ci korzystaj\u0105 z\u2026"
+  \ kt\xF3re u\u017Cytkownik wpisuje razem z nazw\u0105 uruchamianego programu."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

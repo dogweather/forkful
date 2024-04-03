@@ -6,8 +6,7 @@ description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u
 lastmod: '2024-03-13T22:44:35.742909-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u0119cie\
-  \ wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107.\
-  \ Robimy to, aby oczy\u015Bci\u0107 dane wej\u015Bciowe,\u2026"
+  \ wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

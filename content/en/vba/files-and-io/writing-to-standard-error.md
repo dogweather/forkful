@@ -4,8 +4,9 @@ description: "Writing to standard error in Visual Basic for Applications (VBA) i
   \ directing error messages or diagnostics apart from standard output, usually to\u2026"
 lastmod: '2024-03-13T22:44:59.949160-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error in Visual Basic for Applications (VBA) involves\
-  \ directing error messages or diagnostics apart from standard output, usually to\u2026"
+summary: Writing to standard error in Visual Basic for Applications (VBA) involves
+  directing error messages or diagnostics apart from standard output, usually to the
+  console or a log file.
 title: Writing to standard error
 weight: 25
 ---

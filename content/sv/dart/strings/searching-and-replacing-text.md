@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.595056-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Dart inneb\xE4r att unders\xF6ka str\xE4\
   ngar f\xF6r att hitta vissa m\xF6nster eller teckenf\xF6ljder och substituera dem\
-  \ med nytt inneh\xE5ll.\u2026"
+  \ med nytt inneh\xE5ll."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

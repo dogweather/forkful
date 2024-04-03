@@ -7,7 +7,7 @@ description: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w c
 lastmod: '2024-03-13T22:44:35.275198-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu wydobycia\
-  \ danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"
+  \ danych takich jak tekst, linki czy inne elementy."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

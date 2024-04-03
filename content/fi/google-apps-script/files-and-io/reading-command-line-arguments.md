@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.115122-06:00'
 model: gpt-4-0125-preview
 summary: "Komennon rivin argumenttien lukeminen Google Apps Scriptiss\xE4 on hieman\
   \ harhaanjohtavaa, sill\xE4 toisin kuin perinteisiss\xE4 komentorivik\xE4ytt\xF6\
-  liittymiss\xE4\u2026"
+  liittymiss\xE4 ohjelmointikieliss\xE4 kuten Pythonissa tai Node."
 title: Komentoriviparametrien lukeminen
 weight: 23
 ---

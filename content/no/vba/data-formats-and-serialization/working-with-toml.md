@@ -7,7 +7,7 @@ description: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data
 lastmod: '2024-03-13T22:44:40.647269-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data-serieliseringsformat\
-  \ som hovedsakelig brukes for konfigurasjonsfiler. Programmerere benytter\u2026"
+  \ som hovedsakelig brukes for konfigurasjonsfiler."
 title: Arbeider med TOML
 weight: 39
 ---

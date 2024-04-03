@@ -6,7 +6,7 @@ description: "HTTP-Requests mit Basic Authentication senden Daten an einen Serve
 lastmod: '2024-03-13T22:44:54.144511-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basic Authentication senden Daten an einen Server, gesch\xFC\
-  tzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr sichere\u2026"
+  tzt durch Benutzername und Passwort."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

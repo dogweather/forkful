@@ -6,8 +6,8 @@ description: "Gli array associativi, noti come dizionari in Swift, consentono di
   \ e gestire dati sotto forma di coppie chiave-valore. I programmatori li\u2026"
 lastmod: '2024-03-13T22:44:43.763471-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, noti come dizionari in Swift, consentono di memorizzare\
-  \ e gestire dati sotto forma di coppie chiave-valore. I programmatori li\u2026"
+summary: Gli array associativi, noti come dizionari in Swift, consentono di memorizzare
+  e gestire dati sotto forma di coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

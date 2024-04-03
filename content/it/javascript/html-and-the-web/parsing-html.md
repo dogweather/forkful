@@ -7,8 +7,7 @@ description: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti
   \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"
 lastmod: '2024-03-13T22:44:43.809881-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.\
-  \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"
+summary: L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.
 title: Analisi sintattica HTML
 weight: 43
 ---

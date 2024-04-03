@@ -6,8 +6,7 @@ description: "Organiser le code en fonctions signifie diviser votre programme en
 lastmod: '2024-03-13T22:44:57.745606-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions signifie diviser votre programme en morceaux\
-  \ r\xE9utilisables, chacun g\xE9rant une t\xE2che sp\xE9cifique. Nous faisons cela\
-  \ pour\u2026"
+  \ r\xE9utilisables, chacun g\xE9rant une t\xE2che sp\xE9cifique."
 title: Organisation du code en fonctions
 weight: 18
 ---

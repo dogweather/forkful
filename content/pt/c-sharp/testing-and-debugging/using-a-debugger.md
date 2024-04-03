@@ -5,9 +5,8 @@ description: "Imagine que voc\xEA tem um programinha que n\xE3o est\xE1 agindo c
   \ }\u2026"
 lastmod: '2024-03-13T22:44:46.588526-06:00'
 model: gpt-4-0125-preview
-summary: "Imagine que voc\xEA tem um programinha que n\xE3o est\xE1 agindo corretamente:\
-  \ ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
-  \ }\u2026"
+summary: "Imagine que voc\xEA tem um programinha que n\xE3o est\xE1 agindo corretamente:\n\
+  \n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n    Console."
 title: Usando um depurador
 weight: 35
 ---

@@ -6,8 +6,8 @@ description: "Scrivere test in Elixir comporta la creazione di script automatizz
   \ per convalidare il comportamento del tuo codice. I programmatori lo fanno per\u2026"
 lastmod: '2024-03-13T22:44:43.086948-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Elixir comporta la creazione di script automatizzati per\
-  \ convalidare il comportamento del tuo codice. I programmatori lo fanno per\u2026"
+summary: Scrivere test in Elixir comporta la creazione di script automatizzati per
+  convalidare il comportamento del tuo codice.
 title: Scrivere test
 weight: 36
 ---

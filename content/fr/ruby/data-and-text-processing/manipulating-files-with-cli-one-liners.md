@@ -5,7 +5,8 @@ description: "Manipuler des fichiers avec des lignes de commande (CLI) one-liner
 lastmod: '2024-03-13T22:44:58.414399-06:00'
 model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners en Ruby\
-  \ consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"
+  \ consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\
+  \ depuis votre terminal en utilisant des scripts Ruby."
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

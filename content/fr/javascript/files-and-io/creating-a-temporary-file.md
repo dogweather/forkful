@@ -6,7 +6,8 @@ description: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note su
 lastmod: '2024-03-13T22:44:58.298035-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note sur un bout\
-  \ de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur\u2026"
+  \ de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur\
+  \ l'ordinateur."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

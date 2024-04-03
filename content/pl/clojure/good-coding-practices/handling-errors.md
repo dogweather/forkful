@@ -6,8 +6,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczek
 lastmod: '2024-03-13T22:44:35.003837-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczekiwanymi\
-  \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami.\
-  \ Programi\u015Bci lubi\u0105 gdy wszystko\u2026"
+  \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

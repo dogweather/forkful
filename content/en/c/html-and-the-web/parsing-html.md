@@ -5,8 +5,8 @@ description: "Parsing HTML in C involves analyzing HTML documents to extract dat
   \ or web\u2026"
 lastmod: '2024-03-13T22:45:00.509564-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in C involves analyzing HTML documents to extract data, structure,\
-  \ or specific parts efficiently, often as a precursor to data mining or web\u2026"
+summary: Parsing HTML in C involves analyzing HTML documents to extract data, structure,
+  or specific parts efficiently, often as a precursor to data mining or web scraping.
 title: Parsing HTML
 weight: 43
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:50.296285-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
   \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\
-  \ gedrag\u2026"
+  \ gedrag verandert."
 title: Refactoring
 weight: 19
 ---

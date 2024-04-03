@@ -5,8 +5,8 @@ description: "Rounding numbers means adjusting them to the nearest whole number 
   \ reduce\u2026"
 lastmod: '2024-03-13T22:45:00.044000-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers means adjusting them to the nearest whole number or to\
-  \ a specified degree of precision. Programmers do it to improve readability, reduce\u2026"
+summary: Rounding numbers means adjusting them to the nearest whole number or to a
+  specified degree of precision.
 title: Rounding numbers
 weight: 13
 ---

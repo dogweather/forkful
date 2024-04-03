@@ -6,7 +6,8 @@ description: "Aqui vai uma pequena amostra de depura\xE7\xE3o em Kotlin com Inte
 lastmod: '2024-03-13T22:44:46.546545-06:00'
 model: gpt-4-0125-preview
 summary: "Aqui vai uma pequena amostra de depura\xE7\xE3o em Kotlin com IntelliJ IDEA\
-  \ - o Sherlock Holmes dos IDEs: ```kotlin fun main() { val mysteryNumber = 42 var\u2026"
+  \ - o Sherlock Holmes dos IDEs:\n\n```kotlin\nfun main() {\n    val mysteryNumber\
+  \ = 42\n    var guess = 0\n\n    while (guess ."
 title: Usando um depurador
 weight: 35
 ---

@@ -4,8 +4,9 @@ description: "Parsing a date from a string involves extracting date information 
   \ within strings and converting it into a structured format that programming\u2026"
 lastmod: '2024-03-13T22:45:00.482992-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string involves extracting date information encoded\
-  \ within strings and converting it into a structured format that programming\u2026"
+summary: Parsing a date from a string involves extracting date information encoded
+  within strings and converting it into a structured format that programming environments
+  can recognize and manipulate.
 title: Parsing a date from a string
 weight: 30
 ---

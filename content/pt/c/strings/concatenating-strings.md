@@ -8,8 +8,7 @@ description: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de dua
 lastmod: '2024-03-13T22:44:47.040843-06:00'
 model: gpt-4-0125-preview
 summary: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas ou mais\
-  \ strings de ponta a ponta para formar uma nova string. Os programadores realizam\
-  \ essa\u2026"
+  \ strings de ponta a ponta para formar uma nova string."
 title: Concatenando strings
 weight: 3
 ---

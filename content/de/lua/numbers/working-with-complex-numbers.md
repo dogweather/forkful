@@ -5,7 +5,8 @@ description: "Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengera
 lastmod: '2024-03-13T22:44:54.009046-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengerade in\
-  \ die zweidimensionale Ebene, indem eine senkrechte imagin\xE4re Achse miteinbezogen\u2026"
+  \ die zweidimensionale Ebene, indem eine senkrechte imagin\xE4re Achse miteinbezogen\
+  \ wird."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

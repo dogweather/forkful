@@ -8,7 +8,8 @@ description: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ai
 lastmod: '2024-03-13T22:44:40.289929-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't Markup\
-  \ Language) filer, en menneskevennlig standard for dataserielisering, inn i Go\u2026"
+  \ Language) filer, en menneskevennlig standard for dataserielisering, inn i Go datastrukturer\
+  \ og omvendt."
 title: "\xC5 Arbeide med YAML"
 weight: 41
 ---

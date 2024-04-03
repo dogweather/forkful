@@ -5,8 +5,8 @@ description: "Sending an HTTP request with basic authentication involves adding 
   \ use it\u2026"
 lastmod: '2024-03-13T22:44:59.972195-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request with basic authentication involves adding a header\
-  \ with a username and password to access a protected resource. Programmers use it\u2026"
+summary: Sending an HTTP request with basic authentication involves adding a header
+  with a username and password to access a protected resource.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

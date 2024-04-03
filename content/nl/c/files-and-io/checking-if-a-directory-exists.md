@@ -8,7 +8,7 @@ description: "Controleren of een directory bestaat in C betekent het opvragen va
 lastmod: '2024-03-13T22:44:51.306033-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat in C betekent het opvragen van het\
-  \ bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory leidt.\u2026"
+  \ bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory leidt."
 title: Controleren of een directory bestaat
 weight: 20
 ---

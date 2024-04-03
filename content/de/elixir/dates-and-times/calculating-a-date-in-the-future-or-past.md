@@ -5,7 +5,8 @@ description: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein 
 lastmod: '2024-03-13T22:44:53.548833-06:00'
 model: gpt-4-1106-preview
 summary: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes\
-  \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre\u2026"
+  \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre hinzugef\xFC\
+  gt oder abgezogen werden."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

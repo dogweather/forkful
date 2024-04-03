@@ -6,8 +6,7 @@ description: "Dividir el c\xF3digo en funciones significa trocear tu c\xF3digo e
 lastmod: '2024-03-13T22:44:59.380763-06:00'
 model: gpt-4-1106-preview
 summary: "Dividir el c\xF3digo en funciones significa trocear tu c\xF3digo en fragmentos\
-  \ m\xE1s peque\xF1os y reutilizables. Lo hacemos para evitar la repetici\xF3n, hacer\
-  \ nuestro\u2026"
+  \ m\xE1s peque\xF1os y reutilizables."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

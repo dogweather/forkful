@@ -6,8 +6,8 @@ description: "Leggere gli argomenti della riga di comando in Visual Basic for Ap
   \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
 lastmod: '2024-03-13T22:44:43.280436-06:00'
 model: gpt-4-0125-preview
-summary: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
-  \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
+summary: Leggere gli argomenti della riga di comando in Visual Basic for Applications
+  (VBA) comporta l'accesso ai parametri passati al tuo programma all'esecuzione.
 title: Leggere gli argomenti della riga di comando
 weight: 23
 ---

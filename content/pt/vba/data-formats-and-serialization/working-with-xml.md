@@ -7,7 +7,8 @@ description: "Trabalhar com XML em Visual Basic for Applications (VBA) envolve a
 lastmod: '2024-03-13T22:44:46.438819-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML em Visual Basic for Applications (VBA) envolve analisar,\
-  \ criar e modificar documentos XML dentro do contexto das aplica\xE7\xF5es do Microsoft\u2026"
+  \ criar e modificar documentos XML dentro do contexto das aplica\xE7\xF5es do Microsoft\
+  \ Office."
 title: Trabalhando com XML
 weight: 40
 ---

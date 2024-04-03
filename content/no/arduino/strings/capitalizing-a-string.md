@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.042241-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 konvertere det f\xF8\
   rste tegnet i hvert ord i en streng til stor bokstav mens resten forblir sm\xE5\
-  \ bokstaver.\u2026"
+  \ bokstaver."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

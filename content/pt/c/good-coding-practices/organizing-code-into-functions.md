@@ -8,7 +8,7 @@ description: "Organizar o c\xF3digo em fun\xE7\xF5es em C envolve dividir tarefa
 lastmod: '2024-03-13T22:44:47.056242-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es em C envolve dividir tarefas complexas\
-  \ em blocos menores e reutiliz\xE1veis de c\xF3digo. Essa pr\xE1tica melhora a legibilidade,\u2026"
+  \ em blocos menores e reutiliz\xE1veis de c\xF3digo."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

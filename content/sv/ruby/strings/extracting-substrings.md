@@ -6,8 +6,7 @@ description: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka s
 lastmod: '2024-03-13T22:44:38.417650-06:00'
 model: gpt-4-1106-preview
 summary: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
-  \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\
-  \ validera indata\u2026"
+  \ delar fr\xE5n en str\xE4ng."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

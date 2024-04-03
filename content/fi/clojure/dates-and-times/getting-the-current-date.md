@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.194639-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on ratkaisevan\
   \ t\xE4rke\xE4\xE4 monista syist\xE4, mukaan lukien lokitiedot, tapahtumien aikaleimat\
-  \ ja teht\xE4vien\u2026"
+  \ ja teht\xE4vien ajoittaminen."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

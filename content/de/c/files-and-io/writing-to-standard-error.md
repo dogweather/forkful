@@ -6,8 +6,8 @@ description: "Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung
   \ Fehlermeldungen und diagnostischen Informationen an einen separaten Stream vom\u2026"
 lastmod: '2024-03-13T22:44:54.370621-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von Fehlermeldungen\
-  \ und diagnostischen Informationen an einen separaten Stream vom\u2026"
+summary: Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von Fehlermeldungen
+  und diagnostischen Informationen an einen separaten Stream vom Hauptprogrammausgang.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

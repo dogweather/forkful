@@ -5,8 +5,8 @@ description: "Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette 
   \ debug o\u2026"
 lastmod: '2024-03-13T22:44:43.518155-06:00'
 model: gpt-4-0125-preview
-summary: "Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di scrivere\
-  \ ed eseguire codice PHP al volo. \xC8 ideale per la sperimentazione, il debug o\u2026"
+summary: Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di scrivere
+  ed eseguire codice PHP al volo.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

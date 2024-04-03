@@ -7,7 +7,7 @@ description: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et mennes
 lastmod: '2024-03-13T22:44:40.906533-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
-  \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler.\u2026"
+  \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler."
 title: Arbeider med YAML
 weight: 41
 ---

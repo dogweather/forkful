@@ -4,8 +4,7 @@ description: "String-interpolointi tarkoittaa muuttujien yhdist\xE4mist\xE4 merk
   \ Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon\u2026"
 lastmod: '2024-03-13T22:44:56.343087-06:00'
 model: gpt-4-1106-preview
-summary: "String-interpolointi tarkoittaa muuttujien yhdist\xE4mist\xE4 merkkijonoon.\
-  \ Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon\u2026"
+summary: "String-interpolointi tarkoittaa muuttujien yhdist\xE4mist\xE4 merkkijonoon."
 title: Merkkijonon interpolointi
 weight: 8
 ---

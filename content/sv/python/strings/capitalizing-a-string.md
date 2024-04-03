@@ -8,8 +8,7 @@ description: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att
 lastmod: '2024-03-13T22:44:37.466527-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att konvertera\
-  \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener. Denna\
-  \ operation\u2026"
+  \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

@@ -7,7 +7,8 @@ description: "Les tableaux associatifs, connus sous le nom d'objets dans Google 
 lastmod: '2024-03-13T22:44:57.176983-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom d'objets dans Google Apps Script\
-  \ (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des\u2026"
+  \ (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des collections\
+  \ de paires cl\xE9-valeur."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

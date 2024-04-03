@@ -6,7 +6,8 @@ description: "\xC5 generere tilfeldige tall i Ruby inneb\xE6rer \xE5 skape tall 
 lastmod: '2024-03-13T22:44:41.311757-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Ruby inneb\xE6rer \xE5 skape tall som ikke\
-  \ kan forutsies logisk, noe som er essensielt for scenarioer som simuleringer, kryptografi\u2026"
+  \ kan forutsies logisk, noe som er essensielt for scenarioer som simuleringer, kryptografi\
+  \ og spill."
 title: Generering av tilfeldige tall
 weight: 12
 ---

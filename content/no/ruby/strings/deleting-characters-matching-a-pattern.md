@@ -5,8 +5,7 @@ description: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8n
   \ data.\u2026"
 lastmod: '2024-03-13T22:44:41.300370-06:00'
 model: gpt-4-1106-preview
-summary: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster for\
-  \ \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere data.\u2026"
+summary: Hva er det og hvorfor.
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

@@ -6,8 +6,7 @@ description: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie
 lastmod: '2024-03-13T22:44:35.706861-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
-  \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\
-  \ ich do\u2026"
+  \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

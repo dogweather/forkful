@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.779321-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkon yli olevien\
   \ palvelimien kanssa, esimerkiksi noutaaksesi dataa tai l\xE4hetett\xE4ess\xE4si\
-  \ sit\xE4.\u2026"
+  \ sit\xE4."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

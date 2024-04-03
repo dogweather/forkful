@@ -12,7 +12,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3m vi\u1EC7\
   c s\u1EED d\u1EE5ng module `Random` \u0111\u1EC3 s\u1EA3n xu\u1EA5t s\u1ED1 gi\u1EA3\
   \ ng\u1EABu nhi\xEAn, r\u1EA5t h\u1EEFu \xEDch cho nhi\u1EC1u t\xE1c v\u1EE5 nh\u01B0\
-  \ tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng,\u2026"
+  \ tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng, v\xE0 th\u1EADm ch\xED l\xE0 m\u1ED9t ph\u1EA7\
+  n c\u1EE7a c\xE1c thu\u1EADt to\xE1n y\xEAu c\u1EA7u qu\xE1 tr\xECnh ng\u1EABu nhi\xEA\
+  n h\u1ECDc."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

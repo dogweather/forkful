@@ -5,7 +5,8 @@ description: "Logging, in a nutshell, is like keeping a diary for your applicati
 lastmod: '2024-03-13T22:45:00.439653-06:00'
 model: gpt-4-1106-preview
 summary: "Logging, in a nutshell, is like keeping a diary for your application\u2014\
-  it records events, errors, and other significant actions that occur while the\u2026"
+  it records events, errors, and other significant actions that occur while the software\
+  \ runs."
 title: Logging
 weight: 17
 ---

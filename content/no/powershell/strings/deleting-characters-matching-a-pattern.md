@@ -6,8 +6,7 @@ description: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finre
 lastmod: '2024-03-13T22:44:41.001011-06:00'
 model: gpt-4-1106-preview
 summary: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finrense tekst\
-  \ ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode. Programmerere gj\xF8\
-  r dette\u2026"
+  \ ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

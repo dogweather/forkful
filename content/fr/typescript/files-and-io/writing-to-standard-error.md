@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.454621-06:00'
 model: gpt-4-0125-preview
 summary: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
   \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
-  \ le flux\u2026"
+  \ le flux de sortie d'erreur de l'environnement (par exemple, la console dans node."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

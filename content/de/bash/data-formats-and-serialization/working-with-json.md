@@ -6,8 +6,8 @@ description: "Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten d
   \ von der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.\u2026"
 lastmod: '2024-03-13T22:44:54.080999-06:00'
 model: gpt-4-0125-preview
-summary: "Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten direkt\
-  \ von der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.\u2026"
+summary: Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten direkt von
+  der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.
 title: Arbeiten mit JSON
 weight: 38
 ---

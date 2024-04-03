@@ -6,7 +6,7 @@ description: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings
 lastmod: '2024-03-13T22:44:53.411995-06:00'
 model: gpt-4-1106-preview
 summary: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings, dass\
-  \ wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden. Das ist\u2026"
+  \ wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

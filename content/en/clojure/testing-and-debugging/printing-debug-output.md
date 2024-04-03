@@ -4,8 +4,8 @@ description: "Printing debug output is like leaving breadcrumbs in your code: it
   \ the trail of data and logic flow during execution. Programmers use it to track\u2026"
 lastmod: '2024-03-13T22:44:59.748025-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is like leaving breadcrumbs in your code: it shows\
-  \ the trail of data and logic flow during execution. Programmers use it to track\u2026"
+summary: 'Printing debug output is like leaving breadcrumbs in your code: it shows
+  the trail of data and logic flow during execution.'
 title: Printing debug output
 weight: 33
 ---

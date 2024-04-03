@@ -8,8 +8,7 @@ description: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE4r att
 lastmod: '2024-03-13T22:44:37.734281-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE4r att sammanfoga\
-  \ tv\xE5 eller flera str\xE4ngar till en enda enhet. Detta \xE4r en grundl\xE4ggande\
-  \ uppgift\u2026"
+  \ tv\xE5 eller flera str\xE4ngar till en enda enhet."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

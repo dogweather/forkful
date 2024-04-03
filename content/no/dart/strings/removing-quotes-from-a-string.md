@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.473915-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Dart involverer \xE5 stripe\
   \ bort doble (\") eller enkle (') anf\xF8rselstegn fra starten og slutten av en\
-  \ streng, nyttig\u2026"
+  \ streng, nyttig for rensing av data eller forberedelse av strenger for videre behandling."
 title: "Fjerning av anf\xF8rselstegn fra en streng"
 weight: 9
 ---

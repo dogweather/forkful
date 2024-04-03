@@ -7,8 +7,8 @@ description: "Lavorare con JSON in Swift significa occuparsi di un formato di da
   \ tra\u2026"
 lastmod: '2024-03-13T22:44:43.791275-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON in Swift significa occuparsi di un formato di dati leggero\
-  \ per lo scambio di dati. I programmatori usano JSON per trasmettere dati tra\u2026"
+summary: Lavorare con JSON in Swift significa occuparsi di un formato di dati leggero
+  per lo scambio di dati.
 title: Lavorare con JSON
 weight: 38
 ---

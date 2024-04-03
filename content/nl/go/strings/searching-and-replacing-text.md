@@ -6,8 +6,9 @@ description: "Zoeken en vervangen van tekst in programmeren vergemakkelijkt het 
   \ en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en\u2026"
 lastmod: '2024-03-13T22:44:50.272024-06:00'
 model: gpt-4-0125-preview
-summary: "Zoeken en vervangen van tekst in programmeren vergemakkelijkt het wijzigen\
-  \ en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en\u2026"
+summary: Zoeken en vervangen van tekst in programmeren vergemakkelijkt het wijzigen
+  en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en
+  softwareontwikkeling.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

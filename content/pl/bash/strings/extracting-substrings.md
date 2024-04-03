@@ -6,8 +6,7 @@ description: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie konkretnych fragm
 lastmod: '2024-03-13T22:44:35.571606-06:00'
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie konkretnych fragment\xF3\
-  w tekstu z wi\u0119kszych ci\u0105g\xF3w znak\xF3w. Programi\u015Bci robi\u0105\
-  \ to, by manipulowa\u0107 danymi, weryfikowa\u0107\u2026"
+  w tekstu z wi\u0119kszych ci\u0105g\xF3w znak\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

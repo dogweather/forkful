@@ -6,8 +6,7 @@ description: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente data som b
 lastmod: '2024-03-13T22:44:40.458886-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente data som brukeren\
-  \ gir n\xE5r de kj\xF8rer programmet ditt. Vi gj\xF8r det for \xE5 gj\xF8re programmer\
-  \ fleksible \u2013 slik\u2026"
+  \ gir n\xE5r de kj\xF8rer programmet ditt."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

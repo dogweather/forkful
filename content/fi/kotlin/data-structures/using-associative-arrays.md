@@ -7,8 +7,8 @@ description: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotk
   \ tehokkaasti\u2026"
 lastmod: '2024-03-13T22:44:56.523701-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka tallentavat\
-  \ avain-arvo -pareja. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 dataan tehokkaasti\u2026"
+summary: Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka tallentavat
+  avain-arvo -pareja.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

@@ -8,7 +8,8 @@ description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), \xE4r en en
 lastmod: '2024-03-13T22:44:37.440518-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), \xE4r en enkel, interaktiv\
-  \ programmeringsmilj\xF6 som tar emot enskilda anv\xE4ndarinmatningar (uttryck),\u2026"
+  \ programmeringsmilj\xF6 som tar emot enskilda anv\xE4ndarinmatningar (uttryck),\
+  \ utv\xE4rderar dem och returnerar resultatet till anv\xE4ndaren."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

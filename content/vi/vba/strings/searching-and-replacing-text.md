@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Visual\
   \ Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 thi\u1EBFt y\u1EBFu \u0111\u1EC3 ch\u1EC9\
   nh s\u1EEDa c\xE1c t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh v\xE0 c\u01A1 s\u1EDF d\u1EEF\
-  \ li\u1EC7u m\u1ED9t c\xE1ch l\u1EADp\u2026"
+  \ li\u1EC7u m\u1ED9t c\xE1ch l\u1EADp tr\xECnh."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

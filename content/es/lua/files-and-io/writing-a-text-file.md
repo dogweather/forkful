@@ -6,8 +6,8 @@ description: "Escribir en un archivo de texto en Lua implica crear o abrir un ar
   \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
 lastmod: '2024-03-13T22:44:59.220872-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
-  \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
+summary: Escribir en un archivo de texto en Lua implica crear o abrir un archivo en
+  modo de escritura, utilizando operaciones de archivo para insertar texto.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

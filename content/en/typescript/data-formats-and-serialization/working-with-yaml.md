@@ -4,8 +4,8 @@ description: "YAML, a data serialization language designed to be human-friendly,
   \ often used for configuration files, inter-process messaging, and data storage.\u2026"
 lastmod: '2024-03-13T22:44:59.876697-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, a data serialization language designed to be human-friendly, is often\
-  \ used for configuration files, inter-process messaging, and data storage.\u2026"
+summary: YAML, a data serialization language designed to be human-friendly, is often
+  used for configuration files, inter-process messaging, and data storage.
 title: Working with YAML
 weight: 41
 ---

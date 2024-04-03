@@ -6,8 +6,7 @@ description: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o con
 lastmod: '2024-03-13T22:44:47.094255-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o conte\xFA\
-  do HTML dessa p\xE1gina para seu uso local. Programadores fazem isso para an\xE1\
-  lise de dados,\u2026"
+  do HTML dessa p\xE1gina para seu uso local."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

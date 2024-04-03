@@ -6,8 +6,7 @@ description: "Zamiana tekstu na ma\u0142e litery to proces przekszta\u0142cania 
 lastmod: '2024-03-13T22:44:35.483610-06:00'
 model: gpt-4-1106-preview
 summary: "Zamiana tekstu na ma\u0142e litery to proces przekszta\u0142cania wszystkich\
-  \ znak\xF3w w \u0142a\u0144cuchu na ich odpowiedniki w dolnym rejestrowie. Programi\u015B\
-  ci robi\u0105 to dla\u2026"
+  \ znak\xF3w w \u0142a\u0144cuchu na ich odpowiedniki w dolnym rejestrowie."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

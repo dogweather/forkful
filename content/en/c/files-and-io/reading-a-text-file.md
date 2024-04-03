@@ -4,8 +4,8 @@ description: "Reading a text file in C involves opening a file on your system to
   \ information and manipulate or display it as needed. Programmers often do this\u2026"
 lastmod: '2024-03-13T22:45:00.526661-06:00'
 model: gpt-4-0125-preview
-summary: "Reading a text file in C involves opening a file on your system to extract\
-  \ information and manipulate or display it as needed. Programmers often do this\u2026"
+summary: Reading a text file in C involves opening a file on your system to extract
+  information and manipulate or display it as needed.
 title: Reading a text file
 weight: 22
 ---

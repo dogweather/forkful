@@ -6,8 +6,7 @@ description: "K\xE4vell\xE4\xE4n l\xE4pi GHCi:n kanssa, Haskellin interaktiivise
 lastmod: '2024-03-13T22:44:56.619545-06:00'
 model: gpt-4-0125-preview
 summary: "K\xE4vell\xE4\xE4n l\xE4pi GHCi:n kanssa, Haskellin interaktiivisen ymp\xE4\
-  rist\xF6n, joka voi toimia perusdebuggerina. K\xE4ynnist\xE4t sen Haskell-koodisi\
-  \ kanssa ja alat tutkia\u2026"
+  rist\xF6n, joka voi toimia perusdebuggerina."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

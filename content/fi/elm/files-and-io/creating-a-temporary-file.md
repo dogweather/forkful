@@ -6,8 +6,7 @@ description: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytysp
 lastmod: '2024-03-13T22:44:56.508186-06:00'
 model: gpt-4-1106-preview
 summary: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytyspaikka\
-  \ datalle. K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tietoa, jota ei\
-  \ tarvitse s\xE4ilytt\xE4\xE4\u2026"
+  \ datalle."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

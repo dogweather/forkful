@@ -7,8 +7,8 @@ description: "Het omzetten van een datum naar een tekstreeks in C++ verandert ee
   \ van\u2026"
 lastmod: '2024-03-13T22:44:51.124135-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject\
-  \ in een leesbaar tekstformaat. Het is essentieel voor het weergeven van\u2026"
+summary: Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject
+  in een leesbaar tekstformaat.
 title: Een datum converteren naar een string
 weight: 28
 ---

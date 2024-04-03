@@ -4,8 +4,8 @@ description: "Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu se
   \ um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln,\u2026"
 lastmod: '2024-03-13T22:44:53.803981-06:00'
 model: gpt-4-1106-preview
-summary: "Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden,\
-  \ um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln,\u2026"
+summary: Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden, um
+  eine HTML-Seite zu erhalten.
 title: Webseite herunterladen
 weight: 42
 ---

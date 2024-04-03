@@ -6,8 +6,8 @@ description: "Afronden van getallen gaat over het afsnijden van decimalen om je 
   \ te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit\u2026"
 lastmod: '2024-03-13T22:44:51.239973-06:00'
 model: gpt-4-0125-preview
-summary: "Afronden van getallen gaat over het afsnijden van decimalen om je gegevens\
-  \ te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit\u2026"
+summary: Afronden van getallen gaat over het afsnijden van decimalen om je gegevens
+  te vereenvoudigen of aan specifieke formaten te voldoen.
 title: Afronden van getallen
 weight: 13
 ---

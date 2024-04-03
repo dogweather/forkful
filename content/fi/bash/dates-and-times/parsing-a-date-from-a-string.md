@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.748433-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Bashissa tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon poimimista ja muuntamista tekstiaineistosta muotoon,\
-  \ jota Bash voi k\xE4sitell\xE4\u2026"
+  \ jota Bash voi k\xE4sitell\xE4 tai k\xE4ytt\xE4\xE4 jatkoprosesseissa."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

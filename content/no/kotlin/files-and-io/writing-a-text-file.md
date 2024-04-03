@@ -7,7 +7,8 @@ description: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og 
 lastmod: '2024-03-13T22:44:40.770236-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og legge\
-  \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\u2026"
+  \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\
+  \ for konfigurasjon."
 title: Skrive en tekstfil
 weight: 24
 ---

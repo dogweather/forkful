@@ -5,7 +5,8 @@ description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa Lo
 lastmod: '2024-03-13T22:44:56.542787-06:00'
 model: gpt-4-1106-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
-  \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"
+  \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista merkkijonoformaatissa\
+  \ esitt\xE4mist\xE4."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

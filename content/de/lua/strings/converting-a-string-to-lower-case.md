@@ -4,8 +4,8 @@ description: "In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, je
   \ Buchstaben des Strings in seine entsprechende kleine Form zu konvertieren. Diese\u2026"
 lastmod: '2024-03-13T22:44:54.002218-06:00'
 model: gpt-4-1106-preview
-summary: "In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden Buchstaben\
-  \ des Strings in seine entsprechende kleine Form zu konvertieren. Diese\u2026"
+summary: In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden Buchstaben
+  des Strings in seine entsprechende kleine Form zu konvertieren.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

@@ -4,8 +4,9 @@ description: "Downloading a web page in C involves programmatically accessing th
   \ content of a web page over the internet and saving it locally for processing or\u2026"
 lastmod: '2024-03-13T22:45:00.510411-06:00'
 model: gpt-4-0125-preview
-summary: "Downloading a web page in C involves programmatically accessing the content\
-  \ of a web page over the internet and saving it locally for processing or\u2026"
+summary: Downloading a web page in C involves programmatically accessing the content
+  of a web page over the internet and saving it locally for processing or offline
+  use.
 title: Downloading a web page
 weight: 42
 ---

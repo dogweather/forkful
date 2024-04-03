@@ -7,8 +7,8 @@ description: "De huidige datum in PHP verkrijgen draait allemaal om het plukken 
   \ de\u2026"
 lastmod: '2024-03-13T22:44:50.906249-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in PHP verkrijgen draait allemaal om het plukken van de\
-  \ datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om de\u2026"
+summary: De huidige datum in PHP verkrijgen draait allemaal om het plukken van de
+  datum en tijd van vandaag direct vanaf de server.
 title: Het huidige datum ophalen
 weight: 29
 ---

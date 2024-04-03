@@ -8,7 +8,9 @@ description: "YAML, eine Abk\xFCrzung f\xFCr \"YAML Ain't Markup Language\", ist
 lastmod: '2024-03-13T22:44:53.556296-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, eine Abk\xFCrzung f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFC\
-  r Menschen lesbarer Standard zur Serialisierung von Daten, der h\xE4ufig f\xFCr\u2026"
+  r Menschen lesbarer Standard zur Serialisierung von Daten, der h\xE4ufig f\xFCr\
+  \ Konfigurationsdateien und den Datenaustausch zwischen Sprachen mit unterschiedlichen\
+  \ Datenstrukturen verwendet wird."
 title: Arbeiten mit YAML
 weight: 41
 ---

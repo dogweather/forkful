@@ -5,9 +5,7 @@ description: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado. \x
   \ possa manter seu\u2026"
 lastmod: '2024-03-13T22:44:46.716547-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado. \xC9 a arte\
-  \ de se planejar para quando as coisas sa\xEDrem do controle, para que voc\xEA possa\
-  \ manter seu\u2026"
+summary: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado."
 title: Tratamento de erros
 weight: 16
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.699661-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en Elm\
   \ consiste \xE0 convertir des informations textuelles repr\xE9sentant des dates\
-  \ et des heures en\u2026"
+  \ et des heures en un format qu'Elm peut comprendre et manipuler, sp\xE9cifiquement\
+  \ en le type `Date`."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

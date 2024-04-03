@@ -4,8 +4,8 @@ description: "Buscar y reemplazar texto se refiere a localizar ciertos caractere
   \ o palabras y cambiarlos por otros. Programadores hacen esto para actualizar datos,\u2026"
 lastmod: '2024-03-13T22:44:59.575403-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto se refiere a localizar ciertos caracteres o palabras\
-  \ y cambiarlos por otros. Programadores hacen esto para actualizar datos,\u2026"
+summary: Buscar y reemplazar texto se refiere a localizar ciertos caracteres o palabras
+  y cambiarlos por otros.
 title: Buscando y reemplazando texto
 weight: 10
 ---

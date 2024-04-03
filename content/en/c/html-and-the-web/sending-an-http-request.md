@@ -5,8 +5,8 @@ description: "Sending an HTTP request involves creating and dispatching a reques
   \ with\u2026"
 lastmod: '2024-03-13T22:45:00.508708-06:00'
 model: gpt-4-0125-preview
-summary: "Sending an HTTP request involves creating and dispatching a request to a\
-  \ web server to retrieve or submit data. Programmers do this in C to interact with\u2026"
+summary: Sending an HTTP request involves creating and dispatching a request to a
+  web server to retrieve or submit data.
 title: Sending an HTTP request
 weight: 44
 ---

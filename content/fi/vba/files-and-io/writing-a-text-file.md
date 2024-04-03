@@ -7,7 +7,9 @@ description: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA)
 lastmod: '2024-03-13T22:44:56.420593-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla\
-  \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai\u2026"
+  \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai liitt\xE4miseen,\
+  \ mik\xE4 on perusteht\xE4v\xE4 tulosten tallentamisessa, lokitiedostojen k\xE4\
+  sittelyss\xE4 tai muiden sovellusten kanssa vuorovaikutuksessa."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

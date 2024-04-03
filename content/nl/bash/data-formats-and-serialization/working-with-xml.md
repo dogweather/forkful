@@ -6,8 +6,8 @@ description: "Werken met XML houdt in: het parsen, extraheren en manipuleren van
   \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
 lastmod: '2024-03-13T22:44:51.008263-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
-  \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
+summary: 'Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens
+  in het Extensible Markup Language-formaat.'
 title: Werken met XML
 weight: 40
 ---

@@ -7,7 +7,7 @@ description: "Dans Elixir, les tableaux associatifs, appel\xE9s Maps, sont des c
 lastmod: '2024-03-13T22:44:57.319453-06:00'
 model: gpt-4-0125-preview
 summary: "Dans Elixir, les tableaux associatifs, appel\xE9s Maps, sont des collections\
-  \ de paires cl\xE9-valeur o\xF9 une cl\xE9 unique pointe vers une valeur. Ils sont\u2026"
+  \ de paires cl\xE9-valeur o\xF9 une cl\xE9 unique pointe vers une valeur."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

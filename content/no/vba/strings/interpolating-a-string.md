@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.602802-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolering i Visual Basic for Applications (VBA) refererer til\
   \ prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral, noe\
-  \ som\u2026"
+  \ som gj\xF8r det mulig \xE5 danne dynamiske strenger."
 title: Interpolering av en streng
 weight: 8
 ---

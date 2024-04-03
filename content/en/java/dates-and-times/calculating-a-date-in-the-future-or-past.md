@@ -4,8 +4,8 @@ description: "Calculating a date in the future or past involves adjusting a know
   \ date by a certain number of days, months, or years. Programmers do this for features\u2026"
 lastmod: '2024-03-13T22:44:59.984095-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating a date in the future or past involves adjusting a known date\
-  \ by a certain number of days, months, or years. Programmers do this for features\u2026"
+summary: Calculating a date in the future or past involves adjusting a known date
+  by a certain number of days, months, or years.
 title: Calculating a date in the future or past
 weight: 26
 ---

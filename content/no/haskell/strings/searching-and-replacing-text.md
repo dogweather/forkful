@@ -5,7 +5,7 @@ description: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt 
 lastmod: '2024-03-13T22:44:40.825803-06:00'
 model: gpt-4-1106-preview
 summary: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
-  \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"
+  \ i strenger."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

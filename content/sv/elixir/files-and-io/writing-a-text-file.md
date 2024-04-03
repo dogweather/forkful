@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.585889-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6r\
   \ utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\
-  \ m\xE4nniskol\xE4sbar\u2026"
+  \ m\xE4nniskol\xE4sbar inneh\xE5ll."
 title: Att skriva en textfil
 weight: 24
 ---

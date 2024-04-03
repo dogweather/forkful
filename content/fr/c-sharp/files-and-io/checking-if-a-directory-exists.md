@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.803356-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier l'existence d'un r\xE9pertoire en C# consiste \xE0 confirmer\
   \ la pr\xE9sence d'un dossier \xE0 un chemin sp\xE9cifique dans le syst\xE8me de\
-  \ fichiers. Les\u2026"
+  \ fichiers."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

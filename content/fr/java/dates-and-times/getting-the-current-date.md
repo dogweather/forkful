@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.652405-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Java est une op\xE9ration fondamentale qui permet\
   \ aux programmeurs de manipuler des objets de date pour des op\xE9rations telles\
-  \ que\u2026"
+  \ que la journalisation, les calculs de dates et les conditions bas\xE9es sur le\
+  \ temps."
 title: Obtenir la date actuelle
 weight: 29
 ---

@@ -5,7 +5,7 @@ description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering 
 lastmod: '2024-03-13T22:44:40.443299-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
-  \ \xE5 inkludere brukernavn og passord i en foresp\xF8rsels header for \xE5 tilgangskontrollere.\u2026"
+  \ \xE5 inkludere brukernavn og passord i en foresp\xF8rsels header for \xE5 tilgangskontrollere."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

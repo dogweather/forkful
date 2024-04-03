@@ -4,8 +4,8 @@ description: "Printing debug output is about spitting out data from your program
   \ see what's going on under the hood. Programmers do it to track variables, understand\u2026"
 lastmod: '2024-03-13T22:45:00.130906-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is about spitting out data from your program to see\
-  \ what's going on under the hood. Programmers do it to track variables, understand\u2026"
+summary: Printing debug output is about spitting out data from your program to see
+  what's going on under the hood.
 title: Printing debug output
 weight: 33
 ---

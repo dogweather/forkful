@@ -6,8 +6,7 @@ description: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tw
 lastmod: '2024-03-13T22:44:35.205533-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tworzy plik,\
-  \ kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas. Programi\u015Bci robi\u0105\
-  \ to, by zarz\u0105dza\u0107 danymi\u2026"
+  \ kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

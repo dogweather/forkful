@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.989259-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ymp\xE4rist\xF6iss\xE4\
   , tiedostojen suora manipulointi komentorivilt\xE4 (CLI) ei ole pelk\xE4st\xE4\xE4\
-  n mukavuuskysymys\u2026"
+  n mukavuuskysymys \u2013 se on voimakas ty\xF6kalu."
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---

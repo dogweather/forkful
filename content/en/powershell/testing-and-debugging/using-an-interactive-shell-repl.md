@@ -4,8 +4,8 @@ description: "The interactive shell, or Read-Eval-Print Loop (REPL), lets you ty
   \ PowerShell commands and get immediate feedback. Programmers use it to test code\u2026"
 lastmod: '2024-03-13T22:45:00.285560-06:00'
 model: gpt-4-1106-preview
-summary: "The interactive shell, or Read-Eval-Print Loop (REPL), lets you type PowerShell\
-  \ commands and get immediate feedback. Programmers use it to test code\u2026"
+summary: The interactive shell, or Read-Eval-Print Loop (REPL), lets you type PowerShell
+  commands and get immediate feedback.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

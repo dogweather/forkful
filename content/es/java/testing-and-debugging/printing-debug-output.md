@@ -6,8 +6,7 @@ description: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci
 lastmod: '2024-03-13T22:44:58.940095-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3n\
-  \ temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo.\
-  \ Los\u2026"
+  \ temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

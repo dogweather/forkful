@@ -8,7 +8,8 @@ description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzie
 lastmod: '2024-03-13T22:44:35.117262-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
-  \ polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"
+  \ polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie ka\u017Cda linia\
+  \ zawiera warto\u015Bci oddzielone przecinkami."
 title: Praca z CSV
 weight: 37
 ---

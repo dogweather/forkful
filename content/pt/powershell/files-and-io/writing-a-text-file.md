@@ -7,7 +7,8 @@ description: "Escrever um arquivo de texto no PowerShell envolve criar e manipul
 lastmod: '2024-03-13T22:44:46.815109-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto no PowerShell envolve criar e manipular arquivos\
-  \ baseados em texto, o que \xE9 uma opera\xE7\xE3o fundamental para registro,\u2026"
+  \ baseados em texto, o que \xE9 uma opera\xE7\xE3o fundamental para registro, armazenamento\
+  \ de dados e scripts de configura\xE7\xE3o."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

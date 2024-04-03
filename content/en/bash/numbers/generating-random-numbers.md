@@ -4,8 +4,9 @@ description: "Generating random numbers in Bash provides a way to introduce unpr
   \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
 lastmod: '2024-03-13T22:45:00.239183-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in Bash provides a way to introduce unpredictability\
-  \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
+summary: Generating random numbers in Bash provides a way to introduce unpredictability
+  in scripts, which is essential for tasks like generating secure passwords, simulating
+  data, or for programming games.
 title: Generating random numbers
 weight: 12
 ---

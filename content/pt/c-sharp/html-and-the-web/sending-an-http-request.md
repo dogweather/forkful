@@ -6,8 +6,7 @@ description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 basicamente pedir para um se
 lastmod: '2024-03-13T22:44:46.580926-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 basicamente pedir para um servidor\
-  \ web enviar dados para a sua aplica\xE7\xE3o. Fazemos isso para interagir com APIs,\
-  \ acessar\u2026"
+  \ web enviar dados para a sua aplica\xE7\xE3o."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

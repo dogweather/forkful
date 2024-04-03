@@ -6,8 +6,8 @@ description: "Loggen in programmeren houdt in dat gebeurtenissen, fouten of opme
   \ gebeurtenissen tijdens de uitvoering worden geregistreerd. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.338572-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen in programmeren houdt in dat gebeurtenissen, fouten of opmerkelijke\
-  \ gebeurtenissen tijdens de uitvoering worden geregistreerd. Programmeurs doen\u2026"
+summary: Loggen in programmeren houdt in dat gebeurtenissen, fouten of opmerkelijke
+  gebeurtenissen tijdens de uitvoering worden geregistreerd.
 title: Logboekregistratie
 weight: 17
 ---

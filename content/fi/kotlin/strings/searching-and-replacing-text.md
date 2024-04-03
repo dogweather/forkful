@@ -5,9 +5,8 @@ description: "Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon v
   \ virheiden\u2026"
 lastmod: '2024-03-13T22:44:56.516352-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista\
-  \ toiseen. Koodareille t\xE4m\xE4 on t\xE4rke\xE4\xE4, koska koodin muokkaaminen,\
-  \ virheiden\u2026"
+summary: Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista
+  toiseen.
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

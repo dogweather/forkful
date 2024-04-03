@@ -8,7 +8,7 @@ description: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \x
 lastmod: '2024-03-13T22:44:41.356142-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \xE5 h\xE5\
-  ndtere tabelldata. Programmerere engasjerer seg ofte i denne praksisen for dataparsing,\u2026"
+  ndtere tabelldata."
 title: Arbeide med CSV
 weight: 37
 ---

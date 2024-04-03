@@ -6,7 +6,7 @@ description: "Criar um arquivo tempor\xE1rio \xE9 fazer um arquivo que s\xF3 pre
 lastmod: '2024-03-13T22:44:46.215794-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 fazer um arquivo que s\xF3 precisa existir\
-  \ por um curto per\xEDodo, geralmente durante a execu\xE7\xE3o de um programa. Programadores\u2026"
+  \ por um curto per\xEDodo, geralmente durante a execu\xE7\xE3o de um programa."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

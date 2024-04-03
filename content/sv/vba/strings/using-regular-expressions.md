@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.732180-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regulj\xE4ra uttryck) i Visual Basic for Applications\
   \ (VBA) erbjuder ett kraftfullt s\xE4tt att s\xF6ka, matcha och manipulera str\xE4\
-  ngar.\u2026"
+  ngar."
 title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

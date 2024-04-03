@@ -7,7 +7,7 @@ description: "Comparer deux dates en programmation est une t\xE2che fondamentale
 lastmod: '2024-03-13T22:44:57.147884-06:00'
 model: gpt-4-0125-preview
 summary: "Comparer deux dates en programmation est une t\xE2che fondamentale permettant\
-  \ aux d\xE9veloppeurs d'\xE9valuer la relation chronologique entre les dates. Ces\u2026"
+  \ aux d\xE9veloppeurs d'\xE9valuer la relation chronologique entre les dates."
 title: Comparer deux dates
 weight: 27
 ---

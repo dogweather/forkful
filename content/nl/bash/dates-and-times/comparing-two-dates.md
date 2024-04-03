@@ -6,8 +6,8 @@ description: "Het vergelijken van twee datums stelt je in staat om uit te zoeken
   \ earlier, later is, of als ze op hetzelfde moment plaatsvinden. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.995936-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums stelt je in staat om uit te zoeken welke\
-  \ earlier, later is, of als ze op hetzelfde moment plaatsvinden. Programmeurs doen\u2026"
+summary: Het vergelijken van twee datums stelt je in staat om uit te zoeken welke
+  earlier, later is, of als ze op hetzelfde moment plaatsvinden.
 title: Twee datums vergelijken
 weight: 27
 ---

@@ -10,7 +10,7 @@ lastmod: '2024-03-13T22:44:34.950070-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpoczynaj\u0105c nowy projekt w Pythonie chodzi o to, aby od samego pocz\u0105\
   tku ustawi\u0107 zorganizowan\u0105 i \u0142atw\u0105 w utrzymaniu struktur\u0119\
-  . Programi\u015Bci robi\u0105 to, aby\u2026"
+  ."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Comparar duas datas significa verificar a sua igualdade, anteced\x
 lastmod: '2024-03-13T22:44:46.554578-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar a sua igualdade, anteced\xEAncia\
-  \ ou posterioridade em rela\xE7\xE3o uma \xE0 outra. Programadores fazem isso para\
-  \ controle de\u2026"
+  \ ou posterioridade em rela\xE7\xE3o uma \xE0 outra."
 title: Comparando duas datas
 weight: 27
 ---

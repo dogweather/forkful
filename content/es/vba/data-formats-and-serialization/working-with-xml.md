@@ -6,8 +6,9 @@ description: "Trabajar con XML en Visual Basic para Aplicaciones (VBA) implica a
   \ crear y modificar documentos XML dentro del contexto de aplicaciones de\u2026"
 lastmod: '2024-03-13T22:44:58.920262-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con XML en Visual Basic para Aplicaciones (VBA) implica analizar,\
-  \ crear y modificar documentos XML dentro del contexto de aplicaciones de\u2026"
+summary: Trabajar con XML en Visual Basic para Aplicaciones (VBA) implica analizar,
+  crear y modificar documentos XML dentro del contexto de aplicaciones de Microsoft
+  Office.
 title: Trabajando con XML
 weight: 40
 ---

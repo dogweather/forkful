@@ -6,8 +6,7 @@ description: "TOML, kr\xF3tkie od Tom's Obvious, Minimal Language, to format ser
 lastmod: '2024-03-13T22:44:35.164015-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, kr\xF3tkie od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych podobny do JSON lub YAML. Programi\u015Bci u\u017Cywaj\u0105 go ze wzgl\u0119\
-  du na jego\u2026"
+  \ danych podobny do JSON lub YAML."
 title: Praca z TOML
 weight: 39
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
   \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\
   \ c\xE1c ngu\u1ED3n web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EDFi t\xEAn ng\u01B0\
-  \u1EDDi d\xF9ng v\xE0 m\u1EADt\u2026"
+  \u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n"
 weight: 45
 ---

@@ -6,8 +6,7 @@ description: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de c
 lastmod: '2024-03-13T22:44:57.874774-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
-  \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\
-  cup\xE9rer du\u2026"
+  \ avec d'autres services web."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

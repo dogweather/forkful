@@ -7,7 +7,9 @@ description: "Criar um arquivo tempor\xE1rio em Dart envolve gerar um arquivo de
 lastmod: '2024-03-13T22:44:46.302446-06:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Dart envolve gerar um arquivo destinado\
-  \ ao uso de curto prazo, principalmente para cen\xE1rios como cache de dados,\u2026"
+  \ ao uso de curto prazo, principalmente para cen\xE1rios como cache de dados, armazenamento\
+  \ tempor\xE1rio para processamento de arquivos ou reten\xE7\xE3o de informa\xE7\xF5\
+  es que s\xE3o sens\xEDveis demais para serem mantidas por muito tempo."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

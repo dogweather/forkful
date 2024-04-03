@@ -5,9 +5,7 @@ description: "Czytanie pliku tekstowego to proces pozyskiwania danych z zapisane
   \ \u2013 konfigurowa\u0107 aplikacje,\u2026"
 lastmod: '2024-03-13T22:44:35.295616-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego tekstu.\
-  \ Programi\u015Bci robi\u0105 to, by obs\u0142u\u017Cy\u0107 informacje \u2013 konfigurowa\u0107\
-  \ aplikacje,\u2026"
+summary: Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego tekstu.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

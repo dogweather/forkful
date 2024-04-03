@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.941771-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu, kt\xF3\
   ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest zrozumia\u0142\
-  y dla Ruby.\u2026"
+  y dla Ruby."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

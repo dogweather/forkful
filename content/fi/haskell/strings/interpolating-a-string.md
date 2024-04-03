@@ -6,8 +6,7 @@ description: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden s
 lastmod: '2024-03-13T22:44:56.602139-06:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
-  llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\
-  \ sis\xE4ll\xF6n\u2026"
+  llytt\xE4mist\xE4 osaksi merkkijonoa."
 title: Merkkijonon interpolointi
 weight: 8
 ---

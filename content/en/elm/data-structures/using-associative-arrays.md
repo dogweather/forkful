@@ -4,8 +4,8 @@ description: "Associative arrays, or as Elm calls them, Dictionaries, map keys t
   \ values in a way that makes lookup, insertion, and deletion of values super snappy.\u2026"
 lastmod: '2024-03-13T22:45:00.002922-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, or as Elm calls them, Dictionaries, map keys to values\
-  \ in a way that makes lookup, insertion, and deletion of values super snappy.\u2026"
+summary: Associative arrays, or as Elm calls them, Dictionaries, map keys to values
+  in a way that makes lookup, insertion, and deletion of values super snappy.
 title: Using associative arrays
 weight: 15
 ---

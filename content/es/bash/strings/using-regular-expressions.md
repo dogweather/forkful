@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.234411-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Bash te permiten buscar, manipular\
   \ y manejar cadenas de caracteres y archivos bas\xE1ndote en patrones espec\xED\
-  ficos. Los\u2026"
+  ficos."
 title: Usando expresiones regulares
 weight: 11
 ---

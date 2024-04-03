@@ -8,8 +8,7 @@ description: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rst
 lastmod: '2024-03-13T22:44:38.151395-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rsta tecknet\
-  \ i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls som gemener.\
-  \ Denna\u2026"
+  \ i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls som gemener."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.045342-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em C envolve a cria\xE7\xE3o de valores que\
   \ s\xE3o imprevis\xEDveis e seguem uma distribui\xE7\xE3o espec\xEDfica, como uniforme\
-  \ ou normal. Essa\u2026"
+  \ ou normal."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

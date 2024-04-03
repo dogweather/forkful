@@ -8,8 +8,7 @@ description: "Komennoriviparametrien lukeminen Visual Basic for Applications (VB
 lastmod: '2024-03-13T22:44:56.417536-06:00'
 model: gpt-4-0125-preview
 summary: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
-  \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\
-  t\xE4 tekniikkaa\u2026"
+  \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4."
 title: Komentoriviparametrien lukeminen
 weight: 23
 ---

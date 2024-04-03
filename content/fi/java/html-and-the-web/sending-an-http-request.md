@@ -6,8 +6,7 @@ description: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4
 lastmod: '2024-03-13T22:44:56.441830-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4\xE4 tietoa\
-  \ tai l\xE4hett\xE4\xE4 dataa web-palvelimelle. Ohjelmoijat tekev\xE4t sen, koska\
-  \ se on netin kanssak\xE4ymisen\u2026"
+  \ tai l\xE4hett\xE4\xE4 dataa web-palvelimelle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

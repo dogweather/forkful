@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:57.987642-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Bash offre un moyen d\u2019introduire\
   \ de l\u2019impr\xE9visibilit\xE9 dans les scripts, ce qui est essentiel pour des\
-  \ t\xE2ches telles que\u2026"
+  \ t\xE2ches telles que g\xE9n\xE9rer des mots de passe s\xE9curis\xE9s, simuler\
+  \ des donn\xE9es ou pour la programmation de jeux."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

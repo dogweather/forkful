@@ -6,8 +6,7 @@ description: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 w
 lastmod: '2024-03-13T22:44:35.757580-06:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 wysy\u0142\
-  asz mu pytanie i czekasz na odpowied\u017A. Programi\u015Bci to robi\u0105, aby\
-  \ zrozumie\u0107, co dzieje si\u0119\u2026"
+  asz mu pytanie i czekasz na odpowied\u017A."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

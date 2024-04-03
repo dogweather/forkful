@@ -6,8 +6,8 @@ description: "Le espressioni regolari (regex) offrono un modo per cercare, corri
   \ e manipolare stringhe utilizzando schemi definiti. I programmatori le usano\u2026"
 lastmod: '2024-03-13T22:44:43.895613-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) offrono un modo per cercare, corrispondere\
-  \ e manipolare stringhe utilizzando schemi definiti. I programmatori le usano\u2026"
+summary: Le espressioni regolari (regex) offrono un modo per cercare, corrispondere
+  e manipolare stringhe utilizzando schemi definiti.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

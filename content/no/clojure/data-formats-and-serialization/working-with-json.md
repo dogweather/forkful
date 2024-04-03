@@ -8,8 +8,7 @@ description: "\xC5 jobbe med JSON (JavaScript Object Notation) i Clojure inneb\x
 lastmod: '2024-03-13T22:44:40.423097-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Clojure inneb\xE6rer\
-  \ \xE5 analysere JSON-strenger til Clojure-datastrukturer (maps, vektorer) og omvendt.\
-  \ Denne\u2026"
+  \ \xE5 analysere JSON-strenger til Clojure-datastrukturer (maps, vektorer) og omvendt."
 title: Arbeider med JSON
 weight: 38
 ---

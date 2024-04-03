@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.930086-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w Google Apps Script pozwala programistom na parsowanie, manipulowanie\
   \ i generowanie danych XML, kt\xF3re s\u0105 niezb\u0119dne dla us\u0142ug sieciowych\
-  \ i\u2026"
+  \ i konfiguracji."
 title: Praca z XML
 weight: 40
 ---

@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek versturen is het proces waarbij een programma om 
   \ van een server vraagt. Programmeurs doen dit om te interageren met webservices,\u2026"
 lastmod: '2024-03-13T22:44:50.891721-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek versturen is het proces waarbij een programma om gegevens\
-  \ van een server vraagt. Programmeurs doen dit om te interageren met webservices,\u2026"
+summary: Een HTTP-verzoek versturen is het proces waarbij een programma om gegevens
+  van een server vraagt.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

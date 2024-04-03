@@ -6,8 +6,7 @@ description: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour
 lastmod: '2024-03-13T22:44:58.223279-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
-  \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\
-  \ concepts,\u2026"
+  \ des id\xE9es en code."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

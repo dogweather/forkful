@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:57.322600-06:00'
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2che\
   \ de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
-  \ des r\xE9sultats\u2026"
+  \ des r\xE9sultats impr\xE9visibles tels que la g\xE9n\xE9ration de jetons s\xE9\
+  curis\xE9s, l'\xE9chantillonnage de donn\xE9es ou dans les algorithmes de jeux."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

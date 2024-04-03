@@ -6,8 +6,8 @@ description: "Een tekstbestand lezen betekent de inhoud ervan ophalen in een vor
   \ waar je programma mee kan werken. Programmeurs doen dit voor gegevensverwerking,\u2026"
 lastmod: '2024-03-13T22:44:51.047541-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm waar\
-  \ je programma mee kan werken. Programmeurs doen dit voor gegevensverwerking,\u2026"
+summary: Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm waar
+  je programma mee kan werken.
 title: Een tekstbestand lezen
 weight: 22
 ---

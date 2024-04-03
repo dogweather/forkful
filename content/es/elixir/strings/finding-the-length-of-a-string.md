@@ -5,7 +5,7 @@ description: "Encontrar la longitud de una cadena es simplemente determinar cu\x
 lastmod: '2024-03-13T22:44:58.692766-06:00'
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena es simplemente determinar cu\xE1ntos\
-  \ caracteres contiene. Lo hacemos para validar entradas, manipular texto o simplemente\u2026"
+  \ caracteres contiene."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

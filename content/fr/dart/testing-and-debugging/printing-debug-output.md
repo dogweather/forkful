@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.392844-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimer le d\xE9bogage dans Dart consiste \xE0 afficher des informations\
   \ dans la console pendant l'ex\xE9cution, permettant aux d\xE9veloppeurs de suivre\
-  \ le flux\u2026"
+  \ le flux d'ex\xE9cution, d'investiguer l'\xE9tat des variables ou d'identifier\
+  \ la source des erreurs."
 title: "Imprimer la sortie de d\xE9bogage"
 weight: 33
 ---

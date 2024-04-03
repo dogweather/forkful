@@ -6,8 +6,7 @@ description: "Att printa debug-output inneb\xE4r att skriva ut information till 
 lastmod: '2024-03-13T22:44:37.789917-06:00'
 model: gpt-4-1106-preview
 summary: "Att printa debug-output inneb\xE4r att skriva ut information till konsolen\
-  \ f\xF6r att f\xF6rst\xE5 vad som h\xE4nder i koden. Programmerare g\xF6r det f\xF6\
-  r att sp\xE5ra buggar\u2026"
+  \ f\xF6r att f\xF6rst\xE5 vad som h\xE4nder i koden."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

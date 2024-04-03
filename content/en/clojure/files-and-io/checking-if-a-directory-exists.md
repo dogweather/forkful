@@ -4,8 +4,8 @@ description: "Checking if a directory exists in Clojure involves verifying the p
   \ of a file system directory from within your Clojure application. This task is\u2026"
 lastmod: '2024-03-13T22:44:59.758531-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in Clojure involves verifying the presence\
-  \ of a file system directory from within your Clojure application. This task is\u2026"
+summary: Checking if a directory exists in Clojure involves verifying the presence
+  of a file system directory from within your Clojure application.
 title: Checking if a directory exists
 weight: 20
 ---

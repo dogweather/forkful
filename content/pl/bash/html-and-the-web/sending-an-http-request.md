@@ -5,9 +5,7 @@ description: "(Co i dlaczego?) Wysy\u0142anie zapytania HTTP to komunikacja mi\u
   \ wys\u0142a\u0142 list z pro\u015Bb\u0105 do\u2026"
 lastmod: '2024-03-13T22:44:35.581770-06:00'
 model: gpt-4-1106-preview
-summary: "(Co i dlaczego?) Wysy\u0142anie zapytania HTTP to komunikacja mi\u0119dzy\
-  \ twoim komputerem a serwerem; m\xF3wi\u0105c pro\u015Bciej, to tak, jakby\u015B\
-  \ wys\u0142a\u0142 list z pro\u015Bb\u0105 do\u2026"
+summary: (Co i dlaczego.
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

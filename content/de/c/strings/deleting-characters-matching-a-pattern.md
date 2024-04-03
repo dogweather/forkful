@@ -7,7 +7,8 @@ description: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strin
 lastmod: '2024-03-13T22:44:54.335075-06:00'
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strings in\
-  \ C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die\u2026"
+  \ C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die vordefinierte\
+  \ Kriterien erf\xFCllen."
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---

@@ -4,8 +4,8 @@ description: "La ricerca e la sostituzione di testo consentono di trovare specif
   \ stringhe e modificarle con altre. I programmatori lo fanno per aggiornare dati,\u2026"
 lastmod: '2024-03-13T22:44:43.755723-06:00'
 model: gpt-4-1106-preview
-summary: "La ricerca e la sostituzione di testo consentono di trovare specifiche stringhe\
-  \ e modificarle con altre. I programmatori lo fanno per aggiornare dati,\u2026"
+summary: La ricerca e la sostituzione di testo consentono di trovare specifiche stringhe
+  e modificarle con altre.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

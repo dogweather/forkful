@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.207160-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual na programa\xE7\xE3o \xE9 crucial por uma mir\xEDade\
   \ de raz\xF5es, incluindo o registro em log, marca\xE7\xE3o de tempo em eventos\
-  \ e agendamento de tarefas.\u2026"
+  \ e agendamento de tarefas."
 title: Obtendo a data atual
 weight: 29
 ---

@@ -8,7 +8,8 @@ description: "Ler argumentos da linha de comando no Google Apps Script \xE9 um p
 lastmod: '2024-03-13T22:44:46.125662-06:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos da linha de comando no Google Apps Script \xE9 um pouco inadequado\
-  \ porque, ao contr\xE1rio de interfaces de linha de comando tradicionais em\u2026"
+  \ porque, ao contr\xE1rio de interfaces de linha de comando tradicionais em linguagens\
+  \ de programa\xE7\xE3o como Python ou Node."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

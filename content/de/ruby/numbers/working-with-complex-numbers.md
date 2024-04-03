@@ -5,7 +5,7 @@ description: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4re
 lastmod: '2024-03-13T22:44:54.392133-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren Teil\
-  \ (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"
+  \ (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

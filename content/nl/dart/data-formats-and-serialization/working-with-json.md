@@ -6,8 +6,9 @@ description: "Werken met JSON (JavaScript Object Notation) houdt in dat JSON-geg
   \ worden omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende\u2026"
 lastmod: '2024-03-13T22:44:50.528007-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens\
-  \ worden omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende\u2026"
+summary: Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens worden
+  omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende taak bij
+  web- en app-ontwikkeling voor gegevensuitwisseling.
 title: Werken met JSON
 weight: 38
 ---

@@ -6,8 +6,7 @@ description: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor int
 lastmod: '2024-03-13T22:44:46.494898-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor inteiro mais\
-  \ pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Os programadores\
-  \ arredondam\u2026"
+  \ pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

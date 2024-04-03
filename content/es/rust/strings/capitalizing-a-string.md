@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.829655-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Rust implica modificar la cadena para que su primer\
   \ car\xE1cter est\xE9 en may\xFAscula si es una letra, mientras que el resto de\
-  \ la\u2026"
+  \ la cadena permanece sin cambios."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

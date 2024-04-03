@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.228204-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA) polega\
   \ na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142ug sieciowych\
-  \ poprzez\u2026"
+  \ poprzez wysy\u0142anie zapyta\u0144 za pomoc\u0105 HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

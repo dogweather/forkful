@@ -6,8 +6,7 @@ description: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo 
 lastmod: '2024-03-13T22:44:58.935526-06:00'
 model: unknown
 summary: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que tu\
-  \ programa pueda entender y manipular. Los programadores lo hacen para interactuar\
-  \ con\u2026"
+  \ programa pueda entender y manipular."
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

@@ -7,8 +7,8 @@ description: "Rimuovere le virgolette da una stringa in Go significa eliminare l
   \ spesso\u2026"
 lastmod: '2024-03-13T22:44:42.894727-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa in Go significa eliminare le virgolette\
-  \ iniziali e finali (`\"` o `'`) da una stringa data. I programmatori spesso\u2026"
+summary: Rimuovere le virgolette da una stringa in Go significa eliminare le virgolette
+  iniziali e finali (`"` o `'`) da una stringa data.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

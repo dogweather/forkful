@@ -6,7 +6,7 @@ description: "Iniciar un nuevo proyecto es simplemente comenzar desde cero con u
 lastmod: '2024-03-13T22:44:59.334965-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es simplemente comenzar desde cero con una idea\
-  \ nueva o una soluci\xF3n. Los programadores lo hacen para convertir ideas en\u2026"
+  \ nueva o una soluci\xF3n."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

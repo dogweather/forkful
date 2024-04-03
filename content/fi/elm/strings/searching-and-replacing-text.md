@@ -5,7 +5,7 @@ description: "Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan et
 lastmod: '2024-03-13T22:44:56.473191-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimist\xE4\
-  \ ja sen vaihtamista toiseen tekstiin. Ohjelmoijat tekev\xE4t sit\xE4 tiedon\u2026"
+  \ ja sen vaihtamista toiseen tekstiin."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.916995-06:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
   \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\
-  w\u2026"
+  w zajmuj\u0105cych si\u0119 planowaniem, harmonogramami lub jakimikolwiek danymi\
+  \ zwi\u0105zanymi z datami."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

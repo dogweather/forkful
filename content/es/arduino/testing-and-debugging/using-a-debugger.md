@@ -5,9 +5,8 @@ description: "Con el IDE de Arduino, puedes usar impresiones Serial para depurar
   n\u2026"
 lastmod: '2024-03-13T22:44:59.337804-06:00'
 model: gpt-4-0125-preview
-summary: "Con el IDE de Arduino, puedes usar impresiones Serial para depurar, pero\
-  \ es un poco como usar una linterna para explorar una cueva. Para una depuraci\xF3\
-  n\u2026"
+summary: Con el IDE de Arduino, puedes usar impresiones Serial para depurar, pero
+  es un poco como usar una linterna para explorar una cueva.
 title: Usando un depurador
 weight: 35
 ---

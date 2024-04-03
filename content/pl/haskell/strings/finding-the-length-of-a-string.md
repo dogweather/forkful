@@ -6,8 +6,7 @@ description: "Liczenie d\u0142ugo\u015Bci \u0142a\u0144cucha to ustalenie, ile z
 lastmod: '2024-03-13T22:44:35.442222-06:00'
 model: gpt-4-1106-preview
 summary: "Liczenie d\u0142ugo\u015Bci \u0142a\u0144cucha to ustalenie, ile znak\xF3\
-  w zawiera tekst. Programi\u015Bci robi\u0105 to, \u017Ceby wiedzie\u0107, jak du\u017C\
-  o danych przetwarzaj\u0105 i by zarz\u0105dza\u0107 nimi\u2026"
+  w zawiera tekst."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

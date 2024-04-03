@@ -7,8 +7,9 @@ description: "Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens u
   \ Daten\u2026"
 lastmod: '2024-03-13T22:44:54.223269-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens\
-  \ der Struktur von HTML-Inhalten, typischerweise um spezifische Daten\u2026"
+summary: Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens
+  der Struktur von HTML-Inhalten, typischerweise um spezifische Daten zu extrahieren
+  oder diesen Inhalt programmatisch zu manipulieren.
 title: HTML parsen
 weight: 43
 ---

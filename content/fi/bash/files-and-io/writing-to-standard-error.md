@@ -7,7 +7,8 @@ description: "Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virhev
 lastmod: '2024-03-13T22:44:56.755266-06:00'
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien\
-  \ tai muiden t\xE4rkeiden diagnostisten tulosteiden ohjaamista erilleen\u2026"
+  \ tai muiden t\xE4rkeiden diagnostisten tulosteiden ohjaamista erilleen vakiotulosteesta\
+  \ (stdout)."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

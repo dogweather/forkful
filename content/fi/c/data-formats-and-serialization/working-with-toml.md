@@ -7,9 +7,8 @@ description: "TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostomuo
   ytt\xE4v\xE4t\u2026"
 lastmod: '2024-03-13T22:44:57.066267-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostomuoto, joka\
-  \ on helppolukuinen selkeiden semantiikkojensa ansiosta. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t\u2026"
+summary: TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostomuoto, joka
+  on helppolukuinen selkeiden semantiikkojensa ansiosta.
 title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---

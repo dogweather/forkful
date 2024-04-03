@@ -8,7 +8,7 @@ description: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour 
 lastmod: '2024-03-13T22:44:57.145724-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les programmeurs,\
-  \ au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9sence. C'est\u2026"
+  \ au m\xEAme titre que \"Hello, World."
 title: Obtenir la date actuelle
 weight: 29
 ---

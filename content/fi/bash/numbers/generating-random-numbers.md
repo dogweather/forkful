@@ -5,7 +5,8 @@ description: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4v
 lastmod: '2024-03-13T22:44:56.733493-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4varmuutta\
-  \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\u2026"
+  \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\
+  \ generointi, datan simulointi tai pelien ohjelmointi."
 title: Satunnaislukujen generointi
 weight: 12
 ---

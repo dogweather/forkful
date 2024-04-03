@@ -6,8 +6,7 @@ description: "Refactoring is essentially spring cleaning your code base\u2014it'
 lastmod: '2024-03-13T22:45:00.018257-06:00'
 model: gpt-4-1106-preview
 summary: "Refactoring is essentially spring cleaning your code base\u2014it's about\
-  \ restructuring existing code without changing its external behavior. Programmers\
-  \ do it\u2026"
+  \ restructuring existing code without changing its external behavior."
 title: Refactoring
 weight: 19
 ---

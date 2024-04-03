@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.255620-06:00'
 model: gpt-4-0125-preview
 summary: "F\xF6r att anv\xE4nda fels\xF6karen i Xcode (den integrerade utvecklingsmilj\xF6\
   n f\xF6r Swift), kan du s\xE4tta brytpunkter, inspektera variabler och se \xF6ver\
-  \ uttryck. H\xE4r\u2026"
+  \ uttryck."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

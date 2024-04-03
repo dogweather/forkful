@@ -6,8 +6,7 @@ description: "Yhdist\xE4\xE4 tekstej\xE4 (stringej\xE4) tarkoittaa niiden liitt\
 lastmod: '2024-03-13T22:44:56.480503-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4\xE4 tekstej\xE4 (stringej\xE4) tarkoittaa niiden liitt\xE4mist\xE4\
-  \ per\xE4kk\xE4in. Koodarit yhdist\xE4v\xE4t tekstej\xE4, koska tarvitsevat luoda\
-  \ dynaamisia viestej\xE4, rakentaa\u2026"
+  \ per\xE4kk\xE4in."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

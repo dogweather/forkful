@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.557273-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng i Rust inneb\xE6rer \xE5 endre strengen slik\
   \ at dens f\xF8rste bokstav er stor hvis det er en bokstav, mens resten av strengen\
-  \ forblir\u2026"
+  \ forblir uendret."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

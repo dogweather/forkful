@@ -6,8 +6,7 @@ description: "Calcular uma data no futuro ou no passado \xE9 basicamente ajustar
 lastmod: '2024-03-13T22:44:46.722355-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 basicamente ajustar o calend\xE1\
-  rio para ver quando ser\xE1 ou foi um certo dia, m\xEAs e ano. Programadores fazem\
-  \ isso\u2026"
+  rio para ver quando ser\xE1 ou foi um certo dia, m\xEAs e ano."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

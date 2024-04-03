@@ -7,7 +7,8 @@ description: "Escrever um arquivo de texto no Google Apps Script permite que os 
 lastmod: '2024-03-13T22:44:46.129061-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto no Google Apps Script permite que os desenvolvedores\
-  \ armazenem dados de maneira persistente, tornando-os acess\xEDveis para uso\u2026"
+  \ armazenem dados de maneira persistente, tornando-os acess\xEDveis para uso futuro\
+  \ ou an\xE1lise."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

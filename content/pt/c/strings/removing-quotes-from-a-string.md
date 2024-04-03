@@ -8,7 +8,7 @@ description: "Remover aspas de uma string em C envolve extrair o conte\xFAdo tex
 lastmod: '2024-03-13T22:44:47.036438-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em C envolve extrair o conte\xFAdo textual sem\
-  \ as aspas simples (' ') ou duplas (\" \") encapsulando. Esse processo \xE9 essencial\u2026"
+  \ as aspas simples (' ') ou duplas (\" \") encapsulando."
 title: Removendo aspas de uma string
 weight: 9
 ---

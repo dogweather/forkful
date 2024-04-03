@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermat
 lastmod: '2024-03-13T22:44:38.028315-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermatchning\
-  \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
-  \ anv\xE4nder dem f\xF6r\u2026"
+  \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

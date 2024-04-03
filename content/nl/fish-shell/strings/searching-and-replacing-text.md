@@ -7,8 +7,8 @@ description: "Tekst zoeken en vervangen is het vinden van specifieke reeksen en 
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.230069-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen\
-  \ met iets anders. Programmeurs doen dit om code bij te werken, fouten te\u2026"
+summary: Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen
+  met iets anders.
 title: Zoeken en vervangen van tekst
 weight: 10
 ---

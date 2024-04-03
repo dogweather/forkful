@@ -4,8 +4,8 @@ description: "Printing debug output is tossing little bread crumbs of informatio
   \ into the console to track down bugs. It's quick, dirty, and effective for\u2026"
 lastmod: '2024-03-13T22:44:59.974755-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is tossing little bread crumbs of information into\
-  \ the console to track down bugs. It's quick, dirty, and effective for\u2026"
+summary: Printing debug output is tossing little bread crumbs of information into
+  the console to track down bugs.
 title: Printing debug output
 weight: 33
 ---

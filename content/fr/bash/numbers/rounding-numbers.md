@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.986081-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres signifie \xE9liminer les d\xE9cimales pour arriver\
   \ \xE0 une valeur plus simple qui est suffisamment bonne pour un contexte donn\xE9\
-  . Les\u2026"
+  ."
 title: Arrondir les nombres
 weight: 13
 ---

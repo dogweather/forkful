@@ -5,8 +5,7 @@ description: "Le espressioni regolari (regex) sono modelli per cercare e manipol
   \ di\u2026"
 lastmod: '2024-03-13T22:44:43.032403-06:00'
 model: unknown
-summary: "Le espressioni regolari (regex) sono modelli per cercare e manipolare testo.\
-  \ Sono usate dai programmatori per validare, estrarre o sostituire parti di\u2026"
+summary: Le espressioni regolari (regex) sono modelli per cercare e manipolare testo.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

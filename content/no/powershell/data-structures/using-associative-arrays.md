@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.009142-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, ogs\xE5 kjent som hashtabeller eller ordb\xF8ker i\
   \ PowerShell, lar deg lagre data i n\xF8kkel-verdipar, noe som gj\xF8r datahenting\
-  \ enkel og\u2026"
+  \ enkel og effektiv."
 title: Bruke associative tabeller
 weight: 15
 ---

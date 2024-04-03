@@ -8,7 +8,8 @@ description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Google 
 lastmod: '2024-03-13T22:44:53.320845-06:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Google Apps Script\
-  \ dreht sich darum, unn\xF6tige Anf\xFChrungszeichen, die Ihre String-Daten umgeben\u2026"
+  \ dreht sich darum, unn\xF6tige Anf\xFChrungszeichen, die Ihre String-Daten umgeben\
+  \ k\xF6nnten, zu eliminieren."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

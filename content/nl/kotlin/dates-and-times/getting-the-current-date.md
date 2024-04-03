@@ -7,9 +7,7 @@ description: "We halen de huidige datum op om de gegevens van vandaag te kennen.
   \ Wat\u2026"
 lastmod: '2024-03-13T22:44:50.778330-06:00'
 model: gpt-4-0125-preview
-summary: "We halen de huidige datum op om de gegevens van vandaag te kennen. Het is\
-  \ cruciaal voor tal van functies \u2013 denk aan logs, proefversies, evenementen.\
-  \ Wat\u2026"
+summary: We halen de huidige datum op om de gegevens van vandaag te kennen.
 title: Het huidige datum ophalen
 weight: 29
 ---

@@ -6,8 +6,7 @@ description: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de 
 lastmod: '2024-03-13T22:44:46.152558-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de uma p\xE1\
-  gina em um arquivo local. Programadores fazem isso para analisar o conte\xFAdo,\
-  \ obter\u2026"
+  gina em um arquivo local."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

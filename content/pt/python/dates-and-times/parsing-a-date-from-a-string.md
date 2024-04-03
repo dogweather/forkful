@@ -8,8 +8,7 @@ description: "Analisar uma data de uma string envolve converter informa\xE7\xF5e
 lastmod: '2024-03-13T22:44:46.163726-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string envolve converter informa\xE7\xF5es textuais\
-  \ de data e hora em um objeto datetime ou formato estruturado equivalente. Isso\
-  \ \xE9\u2026"
+  \ de data e hora em um objeto datetime ou formato estruturado equivalente."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

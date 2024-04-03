@@ -8,7 +8,8 @@ description: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve grav
 lastmod: '2024-03-13T22:44:46.419539-06:00'
 model: gpt-4-0125-preview
 summary: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve gravar informa\xE7\
-  \xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa em um arquivo,\u2026"
+  \xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa em um arquivo,\
+  \ console ou banco de dados."
 title: Registro
 weight: 17
 ---

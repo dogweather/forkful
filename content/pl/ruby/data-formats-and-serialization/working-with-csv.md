@@ -8,8 +8,7 @@ description: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do
 lastmod: '2024-03-13T22:44:35.954651-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do obs\u0142\
-  ugi danych tabelarycznych. Programi\u015Bci cz\u0119sto anga\u017Cuj\u0105 si\u0119\
-  \ w t\u0119 praktyk\u0119 do parsowania,\u2026"
+  ugi danych tabelarycznych."
 title: Praca z plikami CSV
 weight: 37
 ---

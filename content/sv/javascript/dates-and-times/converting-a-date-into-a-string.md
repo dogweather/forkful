@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.304742-06:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
   \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\
-  \ f\xF6r m\xE4nniskor.\u2026"
+  \ f\xF6r m\xE4nniskor."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

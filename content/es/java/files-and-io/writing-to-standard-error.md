@@ -8,8 +8,7 @@ description: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes 
 lastmod: '2024-03-13T22:44:58.953704-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes de error\
-  \ y diagn\xF3sticos a la consola o terminal. Los programadores lo hacen para separar\
-  \ la\u2026"
+  \ y diagn\xF3sticos a la consola o terminal."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

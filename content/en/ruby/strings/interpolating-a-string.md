@@ -4,8 +4,7 @@ description: "String interpolation lets you embed variables or expressions insid
   \ a string. We do this for cleaner, more readable code that glues together dynamic\u2026"
 lastmod: '2024-03-13T22:45:00.536135-06:00'
 model: gpt-4-1106-preview
-summary: "String interpolation lets you embed variables or expressions inside a string.\
-  \ We do this for cleaner, more readable code that glues together dynamic\u2026"
+summary: String interpolation lets you embed variables or expressions inside a string.
 title: Interpolating a string
 weight: 8
 ---

@@ -6,8 +6,8 @@ description: "Gli array associativi, o mappe, in Kotlin sono collezioni che memo
   \ coppie chiave-valore. I programmatori li utilizzano per organizzare e recuperare\u2026"
 lastmod: '2024-03-13T22:44:43.384583-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, o mappe, in Kotlin sono collezioni che memorizzano\
-  \ coppie chiave-valore. I programmatori li utilizzano per organizzare e recuperare\u2026"
+summary: Gli array associativi, o mappe, in Kotlin sono collezioni che memorizzano
+  coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

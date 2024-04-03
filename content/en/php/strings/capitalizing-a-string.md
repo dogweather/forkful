@@ -5,8 +5,8 @@ description: "Capitalizing a string involves modifying the first character of gi
   \ in a\u2026"
 lastmod: '2024-03-13T22:45:00.151054-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string involves modifying the first character of given text\
-  \ to uppercase, ensuring sentences, titles, or proper names start correctly in a\u2026"
+summary: Capitalizing a string involves modifying the first character of given text
+  to uppercase, ensuring sentences, titles, or proper names start correctly in a dataset.
 title: Capitalizing a string
 weight: 2
 ---

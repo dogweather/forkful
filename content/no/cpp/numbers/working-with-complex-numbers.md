@@ -5,7 +5,7 @@ description: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en ima
 lastmod: '2024-03-13T22:44:41.093275-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en imagin\xE6\
-  r enhet, representert som 'i', hvor i^2 = -1. Programm\xF8rer bruker dem for simuleringer,\u2026"
+  r enhet, representert som 'i', hvor i^2 = -1."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

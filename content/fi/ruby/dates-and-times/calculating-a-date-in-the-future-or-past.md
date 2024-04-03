@@ -5,9 +5,7 @@ description: "\"Mik\xE4 & Miksi?\" Ajan laskeminen tulevaisuuteen tai menneisyyt
   \ tai vuotta ennen tai\u2026"
 lastmod: '2024-03-13T22:44:57.100648-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi?\" Ajan laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n laskemista n p\xE4iv\xE4\xE4, viikkoa, kuukautta tai\
-  \ vuotta ennen tai\u2026"
+summary: "\"Mik\xE4 & Miksi."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

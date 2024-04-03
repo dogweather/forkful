@@ -6,8 +6,7 @@ description: "Koodin refaktorointi on prosessi, jossa koodia muokataan siten, et
 lastmod: '2024-03-13T22:44:56.623173-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin refaktorointi on prosessi, jossa koodia muokataan siten, ett\xE4\
-  \ sen ulkoinen toiminta ei muutu. Kyse on koodin siistimisest\xE4 ja j\xE4rjest\xE4\
-  misest\xE4,\u2026"
+  \ sen ulkoinen toiminta ei muutu."
 title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---

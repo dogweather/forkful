@@ -5,8 +5,8 @@ description: "Lavorare con XML significa analizzare, creare e manipolare dati XM
   \ di\u2026"
 lastmod: '2024-03-13T22:44:43.752409-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML significa analizzare, creare e manipolare dati XML (eXtensible\
-  \ Markup Language). I programmatori gestiscono XML per gestire lo scambio di\u2026"
+summary: Lavorare con XML significa analizzare, creare e manipolare dati XML (eXtensible
+  Markup Language).
 title: Lavorare con XML
 weight: 40
 ---

@@ -8,7 +8,8 @@ description: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift
 lastmod: '2024-03-13T22:44:38.010599-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift i PHP-programmering\
-  \ eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan du utf\xF6r\u2026"
+  \ eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan du utf\xF6r operationer\
+  \ som att l\xE4sa fr\xE5n eller skriva till filer inuti den."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

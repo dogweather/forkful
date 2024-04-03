@@ -6,8 +6,8 @@ description: "Een nieuw C# project starten betekent het opzetten van een nieuwe 
   \ en projectbestanden die je code structureren. Programmeurs beginnen nieuwe\u2026"
 lastmod: '2024-03-13T22:44:50.810661-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing\
-  \ en projectbestanden die je code structureren. Programmeurs beginnen nieuwe\u2026"
+summary: Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing
+  en projectbestanden die je code structureren.
 title: Een nieuw project starten
 weight: 1
 ---

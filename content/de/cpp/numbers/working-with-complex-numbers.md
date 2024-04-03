@@ -6,7 +6,7 @@ description: "Komplexe Zahlen erweitern die reellen Zahlen durch Hinzuf\xFCgen e
 lastmod: '2024-03-13T22:44:54.178827-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reellen Zahlen durch Hinzuf\xFCgen einer imagin\xE4\
-  ren Einheit, dargestellt als 'i', wobei i^2 = -1. Programmierer verwenden sie\u2026"
+  ren Einheit, dargestellt als 'i', wobei i^2 = -1."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

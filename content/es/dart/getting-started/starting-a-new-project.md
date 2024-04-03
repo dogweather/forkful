@@ -7,7 +7,7 @@ description: "Iniciar un nuevo proyecto en Dart implica configurar un ambiente p
 lastmod: '2024-03-13T22:44:58.751851-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Dart implica configurar un ambiente propicio\
-  \ para el desarrollo, pruebas e implementaci\xF3n eficientes. Los programadores\u2026"
+  \ para el desarrollo, pruebas e implementaci\xF3n eficientes."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

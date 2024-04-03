@@ -7,7 +7,7 @@ description: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att 
 lastmod: '2024-03-13T22:44:37.534530-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att konvertera\
-  \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t.ex.\u2026"
+  \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

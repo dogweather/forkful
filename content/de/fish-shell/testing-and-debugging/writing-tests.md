@@ -7,7 +7,8 @@ description: "Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von
 lastmod: '2024-03-13T22:44:54.312993-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten,\
-  \ die automatisch Ihren Code ausf\xFChren, um sein Verhalten gegen\xFCber erwarteten\u2026"
+  \ die automatisch Ihren Code ausf\xFChren, um sein Verhalten gegen\xFCber erwarteten\
+  \ Ergebnissen zu validieren."
 title: Tests Schreiben
 weight: 36
 ---

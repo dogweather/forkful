@@ -6,8 +6,9 @@ description: "Het omzetten van een datum naar een string in Visual Basic for App
   \ (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een\u2026"
 lastmod: '2024-03-13T22:44:50.648507-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een datum naar een string in Visual Basic for Applications\
-  \ (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een\u2026"
+summary: Het omzetten van een datum naar een string in Visual Basic for Applications
+  (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een stringformaat
+  te veranderen.
 title: Een datum omzetten naar een string
 weight: 28
 ---

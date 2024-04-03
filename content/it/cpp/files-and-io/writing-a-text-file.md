@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:43.746583-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere in un file di testo in C++ comporta la creazione o l'apertura di\
   \ un file e poi la scrittura di dati in esso, che \xE8 un compito fondamentale per\
-  \ le\u2026"
+  \ le applicazioni che hanno bisogno di mantenere dati, come log, contenuti generati\
+  \ dall'utente o impostazioni di configurazione."
 title: Scrivere un file di testo
 weight: 24
 ---

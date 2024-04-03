@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Trong TypeScript, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDB\
   i x\xE1c th\u1EF1c c\u01A1 b\u1EA3n c\xF3 ngh\u0129a l\xE0 truy\u1EC1n d\u1EEF li\u1EC7\
   u qua m\u1EA1ng v\u1EDBi m\u1ED9t combo \u0111\u01A1n gi\u1EA3n l\xE0 t\xEAn ng\u01B0\
-  \u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u \u0111\u1EC3\u2026"
+  \u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u \u0111\u1EC3 truy c\u1EADp."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

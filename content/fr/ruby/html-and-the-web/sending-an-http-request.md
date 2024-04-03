@@ -6,8 +6,7 @@ description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un
 lastmod: '2024-03-13T22:44:58.416563-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
-  \ web. Les d\xE9veloppeurs s'en servent pour interagir avec des services web, r\xE9\
-  cup\xE9rer des\u2026"
+  \ web."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

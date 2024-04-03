@@ -6,7 +6,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelman jakamis
 lastmod: '2024-03-13T22:44:56.450572-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelman jakamista hallittaviin\
-  \ palasiin, joista kukin suorittaa oman, erillisen teht\xE4v\xE4ns\xE4. Ohjelmoijat\u2026"
+  \ palasiin, joista kukin suorittaa oman, erillisen teht\xE4v\xE4ns\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

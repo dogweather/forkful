@@ -5,7 +5,7 @@ description: "La concatenazione di stringhe \xE8 la pratica di unire due o pi\xF
 lastmod: '2024-03-13T22:44:43.803681-06:00'
 model: gpt-4-1106-preview
 summary: "La concatenazione di stringhe \xE8 la pratica di unire due o pi\xF9 stringhe\
-  \ di testo in una sola. I programmatori la utilizzano per costruire messaggi,\u2026"
+  \ di testo in una sola."
 title: Concatenazione di stringhe
 weight: 3
 ---

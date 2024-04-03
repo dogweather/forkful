@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.025942-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com YAML envolve analisar e manipular arquivos YAML (YAML Ain't\
   \ Markup Language), um formato de serializa\xE7\xE3o de dados usado para arquivos\
-  \ de\u2026"
+  \ de configura\xE7\xE3o, no Fish Shell."
 title: Trabalhando com YAML
 weight: 41
 ---

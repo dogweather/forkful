@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.413060-06:00'
 model: gpt-4-0125-preview
 summary: "Att skapa en tempor\xE4r fil i Go m\xF6jligg\xF6r skapandet av en icke-persistent\
   \ fil avsedd f\xF6r kortvarig anv\xE4ndning, fr\xE4mst f\xF6r uppgifter s\xE5som\
-  \ att lagra\u2026"
+  \ att lagra mellanliggande data eller bist\xE5 i batchbearbetningsjobb."
 title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---

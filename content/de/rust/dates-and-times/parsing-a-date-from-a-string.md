@@ -8,7 +8,8 @@ description: "Das Parsen eines Datums aus einem String ist eine g\xE4ngige Aufga
 lastmod: '2024-03-13T22:44:53.682043-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String ist eine g\xE4ngige Aufgabe, wenn\
-  \ es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus Dateien\u2026"
+  \ es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus Dateien\
+  \ geht."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

@@ -8,8 +8,7 @@ description: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb
 lastmod: '2024-03-13T22:44:35.769117-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb\u0119\
-  dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift. To zadanie umo\u017C\
-  liwia\u2026"
+  dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

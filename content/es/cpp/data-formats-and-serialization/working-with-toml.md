@@ -6,8 +6,7 @@ description: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializ
 lastmod: '2024-03-13T22:44:59.398408-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
-  n de datos f\xE1cil de leer debido a su sem\xE1ntica clara. Los programadores utilizan\
-  \ TOML\u2026"
+  n de datos f\xE1cil de leer debido a su sem\xE1ntica clara."
 title: Trabajando con TOML
 weight: 39
 ---

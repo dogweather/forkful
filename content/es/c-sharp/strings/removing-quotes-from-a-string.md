@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.066661-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena en C# significa que est\xE1s sacando\
   \ esos molestos caracteres de comillas dobles (`\"`) o simples (`'`) que envuelven\
-  \ tu\u2026"
+  \ tu texto."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

@@ -6,8 +6,9 @@ description: "Refactoring is in wezen het grote schoonmaak houden van je codebas
   \ - het gaat over het herstructureren van bestaande code zonder het externe gedrag\u2026"
 lastmod: '2024-03-13T22:44:50.733526-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring is in wezen het grote schoonmaak houden van je codebasis - het\
-  \ gaat over het herstructureren van bestaande code zonder het externe gedrag\u2026"
+summary: Refactoring is in wezen het grote schoonmaak houden van je codebasis - het
+  gaat over het herstructureren van bestaande code zonder het externe gedrag ervan
+  te veranderen.
 title: Refactoring
 weight: 19
 ---

@@ -7,8 +7,8 @@ description: "String interpolatie stelt je in staat om variabelen en expressies 
   \ geen\u2026"
 lastmod: '2024-03-13T22:44:50.535460-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolatie stelt je in staat om variabelen en expressies in strings\
-  \ in te voegen. Dit houdt je code leesbaar en flexibel - geen plus tekens, geen\u2026"
+summary: String interpolatie stelt je in staat om variabelen en expressies in strings
+  in te voegen.
 title: Een string interpoleren
 weight: 8
 ---

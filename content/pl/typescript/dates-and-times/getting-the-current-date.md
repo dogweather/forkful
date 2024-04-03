@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.150173-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w TypeScript, j\u0119zyku opartym na\
   \ JavaScript, pozwala na dost\u0119p i manipulacj\u0119 bie\u017C\u0105cymi informacjami\
-  \ o dacie i czasie. Programi\u015Bci\u2026"
+  \ o dacie i czasie."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

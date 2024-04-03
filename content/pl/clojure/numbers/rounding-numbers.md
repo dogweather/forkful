@@ -6,8 +6,7 @@ description: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u0
 lastmod: '2024-03-13T22:44:34.989457-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u017Cszej\
-  \ liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej. Liczby zaokr\u0105\
-  glamy w celu ich\u2026"
+  \ liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

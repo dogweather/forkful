@@ -7,7 +7,8 @@ description: "Czytanie pliku tekstowego w Visual Basic for Applications (VBA) po
 lastmod: '2024-03-13T22:44:35.250996-06:00'
 model: gpt-4-0125-preview
 summary: "Czytanie pliku tekstowego w Visual Basic for Applications (VBA) polega na\
-  \ programowym dost\u0119pie i ekstrakcji zawarto\u015Bci pliku tekstowego z poziomu\u2026"
+  \ programowym dost\u0119pie i ekstrakcji zawarto\u015Bci pliku tekstowego z poziomu\
+  \ aplikacji Office."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

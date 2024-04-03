@@ -9,8 +9,7 @@ description: "Iniciar um novo projeto em Python \xE9 sobre configurar uma estrut
 lastmod: '2024-03-13T22:44:46.154552-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Python \xE9 sobre configurar uma estrutura organizada\
-  \ e sustent\xE1vel desde o in\xEDcio. Os programadores fazem isso para garantir\
-  \ que\u2026"
+  \ e sustent\xE1vel desde o in\xEDcio."
 title: Iniciando um novo projeto
 weight: 1
 ---

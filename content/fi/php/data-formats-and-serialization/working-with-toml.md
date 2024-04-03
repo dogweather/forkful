@@ -5,7 +5,7 @@ description: "TOML, lyhenteen\xE4 Tom's Obvious, Minimal Language, on datamuoto,
 lastmod: '2024-03-13T22:44:56.679371-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, lyhenteen\xE4 Tom's Obvious, Minimal Language, on datamuoto, joka\
-  \ muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi. Ohjelmoijat\u2026"
+  \ muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

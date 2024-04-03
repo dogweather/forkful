@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.264256-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que correspondam a um padr\xE3o espec\xEDfico em strings\
   \ \xE9 crucial para a valida\xE7\xE3o de dados, saneamento ou quando se prepara\
-  \ o texto para\u2026"
+  \ o texto para um processamento adicional."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

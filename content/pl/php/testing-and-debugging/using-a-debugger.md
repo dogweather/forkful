@@ -5,9 +5,7 @@ description: "PHP jest wyposa\u017Cony w interaktywny debugger zwany Xdebug. Oto
   \ i skonfigurowany Xdebug w\u2026"
 lastmod: '2024-03-13T22:44:35.501948-06:00'
 model: gpt-4-0125-preview
-summary: "PHP jest wyposa\u017Cony w interaktywny debugger zwany Xdebug. Oto jak go\
-  \ u\u017Cywa\u0107. Po pierwsze, upewnij si\u0119, \u017Ce masz zainstalowany i\
-  \ skonfigurowany Xdebug w\u2026"
+summary: "PHP jest wyposa\u017Cony w interaktywny debugger zwany Xdebug."
 title: Korzystanie z debugera
 weight: 35
 ---

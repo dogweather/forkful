@@ -6,8 +6,8 @@ description: "Lavorare con i numeri complessi implica eseguire operazioni matema
   \ su numeri che hanno sia una parte reale che una immaginaria. I programmatori si\u2026"
 lastmod: '2024-03-13T22:44:43.255918-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con i numeri complessi implica eseguire operazioni matematiche\
-  \ su numeri che hanno sia una parte reale che una immaginaria. I programmatori si\u2026"
+summary: Lavorare con i numeri complessi implica eseguire operazioni matematiche su
+  numeri che hanno sia una parte reale che una immaginaria.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

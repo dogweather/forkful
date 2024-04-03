@@ -6,8 +6,7 @@ description: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rz
 lastmod: '2024-03-13T22:44:35.576612-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i cz\u0119\u015Bci urojonej. Programi\u015Bci u\u017Cywaj\u0105 ich w dziedzinach\
-  \ takich jak przetwarzanie sygna\u0142\xF3w, mechanika\u2026"
+  \ i cz\u0119\u015Bci urojonej."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

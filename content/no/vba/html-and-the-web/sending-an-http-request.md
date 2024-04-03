@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.615740-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
-  \ gj\xF8re\u2026"
+  \ gj\xF8re foresp\xF8rsler over HTTP."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.099034-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertainen\
   \ interaktiivinen ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4\
-  \ k\xE4ytt\xE4j\xE4n\u2026"
+  \ k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4 (lausekkeita), arvioi ne ja palauttaa tuloksen\
+  \ k\xE4ytt\xE4j\xE4lle."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

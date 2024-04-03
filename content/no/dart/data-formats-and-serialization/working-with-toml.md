@@ -8,8 +8,7 @@ description: "TOML, eller Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjons
 lastmod: '2024-03-13T22:44:40.513327-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, eller Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\
-  \ det til\u2026"
+  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk."
 title: "\xC5 Arbeide med TOML"
 weight: 39
 ---

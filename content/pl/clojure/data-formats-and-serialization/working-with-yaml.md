@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.017521-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, rekurencyjny akronim od \"YAML Ain't Markup Language\" (YAML nie jest\
   \ j\u0119zykiem znacznik\xF3w), to format serializacji danych czytelny dla cz\u0142\
-  owieka,\u2026"
+  owieka, u\u017Cywany do plik\xF3w konfiguracyjnych oraz wymiany danych mi\u0119\
+  dzy j\u0119zykami o r\xF3\u017Cnych strukturach danych."
 title: Praca z YAML
 weight: 41
 ---

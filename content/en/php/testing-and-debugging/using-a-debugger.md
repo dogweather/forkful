@@ -5,8 +5,7 @@ description: "PHP comes with an interactive debugger called Xdebug. Here's how t
   \ file:\u2026"
 lastmod: '2024-03-13T22:45:00.171033-06:00'
 model: gpt-4-1106-preview
-summary: "PHP comes with an interactive debugger called Xdebug. Here's how to use\
-  \ it. First, ensure you have Xdebug installed and configured in your `php.ini` file:\u2026"
+summary: PHP comes with an interactive debugger called Xdebug.
 title: Using a debugger
 weight: 35
 ---

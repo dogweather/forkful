@@ -8,7 +8,7 @@ description: "Het organiseren van code in functies gaat over het opsplitsen van 
 lastmod: '2024-03-13T22:44:50.942911-06:00'
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het opsplitsen van je scriptwerk\
-  \ in hapklare brokken\u2014denk aan functionele LEGO-blokken. We doen dit voor\u2026"
+  \ in hapklare brokken\u2014denk aan functionele LEGO-blokken."
 title: Code organiseren in functies
 weight: 18
 ---

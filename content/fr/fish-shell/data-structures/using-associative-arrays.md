@@ -7,7 +7,8 @@ description: "Les tableaux associatifs, ou maps, vous permettent de stocker des 
 lastmod: '2024-03-13T22:44:58.314477-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou maps, vous permettent de stocker des donn\xE9\
-  es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la\u2026"
+  es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la r\xE9\
+  cup\xE9ration des informations par cl\xE9."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

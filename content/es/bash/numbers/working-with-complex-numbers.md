@@ -4,8 +4,7 @@ description: "Los n\xFAmeros complejos consisten en una parte real y una parte i
   \ Los programadores los usan en campos como el procesamiento de se\xF1ales, la\u2026"
 lastmod: '2024-03-13T22:44:59.238383-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos consisten en una parte real y una parte imaginaria.\
-  \ Los programadores los usan en campos como el procesamiento de se\xF1ales, la\u2026"
+summary: "Los n\xFAmeros complejos consisten en una parte real y una parte imaginaria."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

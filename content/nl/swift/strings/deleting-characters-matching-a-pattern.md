@@ -6,8 +6,9 @@ description: "Het verwijderen van tekens die overeenkomen met een patroon beteke
   \ specifieke reeksen tekens uit een tekenreeks halen op basis van een gedefinieerd\u2026"
 lastmod: '2024-03-13T22:44:51.139929-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van tekens die overeenkomen met een patroon betekent specifieke\
-  \ reeksen tekens uit een tekenreeks halen op basis van een gedefinieerd\u2026"
+summary: Het verwijderen van tekens die overeenkomen met een patroon betekent specifieke
+  reeksen tekens uit een tekenreeks halen op basis van een gedefinieerd patroon, zoals
+  cijfers of interpunctie.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

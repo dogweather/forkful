@@ -6,8 +6,7 @@ description: "Creating a temporary file is making a short-lived file for storing
 lastmod: '2024-03-13T22:45:00.413252-06:00'
 model: gpt-4-1106-preview
 summary: "Creating a temporary file is making a short-lived file for storing data\
-  \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\
-  s only\u2026"
+  \ that\u2019s not needed long-term."
 title: Creating a temporary file
 weight: 21
 ---

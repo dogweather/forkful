@@ -4,8 +4,8 @@ description: "Logging is the practice of recording events, errors, and other sig
   \ information from the running processes of a program to a file or an output\u2026"
 lastmod: '2024-03-13T22:45:00.250559-06:00'
 model: gpt-4-1106-preview
-summary: "Logging is the practice of recording events, errors, and other significant\
-  \ information from the running processes of a program to a file or an output\u2026"
+summary: Logging is the practice of recording events, errors, and other significant
+  information from the running processes of a program to a file or an output stream.
 title: Logging
 weight: 17
 ---

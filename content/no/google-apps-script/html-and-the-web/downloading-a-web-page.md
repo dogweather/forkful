@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.312588-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i Google Apps Script inneb\xE6rer \xE5 hente\
   \ innholdet p\xE5 en nettside via HTML for ulike form\xE5l, som nettskraping, datautvinning\
-  \ eller\u2026"
+  \ eller overv\xE5kning av endringer."
 title: Nedlasting av en nettside
 weight: 42
 ---

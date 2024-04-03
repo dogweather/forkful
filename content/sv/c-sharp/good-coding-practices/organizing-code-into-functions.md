@@ -6,8 +6,7 @@ description: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l
 lastmod: '2024-03-13T22:44:37.918936-06:00'
 model: gpt-4-1106-preview
 summary: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5dor\
-  \ \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\
-  \ f\xF6r att undvika\u2026"
+  \ \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem."
 title: Att organisera kod i funktioner
 weight: 18
 ---

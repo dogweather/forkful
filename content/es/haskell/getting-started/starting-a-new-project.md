@@ -5,7 +5,7 @@ description: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo
 lastmod: '2024-03-13T22:44:59.119593-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programaci\xF3\
-  n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"
+  n funcional pura."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

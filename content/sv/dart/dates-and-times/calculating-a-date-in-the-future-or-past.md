@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.626647-06:00'
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet \xE4r en vanlig\
   \ uppgift f\xF6r programmerare som hanterar schemal\xE4ggning, p\xE5minnelser eller\
-  \ n\xE5gon funktion som\u2026"
+  \ n\xE5gon funktion som beror p\xE5 datumber\xE4kningar."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutna"
 weight: 26
 ---

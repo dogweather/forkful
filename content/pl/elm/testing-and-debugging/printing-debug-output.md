@@ -6,8 +6,7 @@ description: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d
 lastmod: '2024-03-13T22:44:35.324282-06:00'
 model: gpt-4-1106-preview
 summary: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d\xF3w,\
-  \ cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych. W Elm\
-  \ robimy to, by szybciej\u2026"
+  \ cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

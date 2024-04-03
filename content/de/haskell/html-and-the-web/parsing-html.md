@@ -7,7 +7,7 @@ description: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrah
 lastmod: '2024-03-13T22:44:53.929360-06:00'
 model: gpt-4-0125-preview
 summary: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrahieren,\
-  \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren.\u2026"
+  \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren."
 title: HTML parsen
 weight: 43
 ---

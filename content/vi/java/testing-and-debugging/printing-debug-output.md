@@ -11,8 +11,7 @@ lastmod: '2024-03-13T22:44:36.492872-06:00'
 model: gpt-4-0125-preview
 summary: "In ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c n\xE9\
   m nh\u1EEFng m\u1EA9u th\xF4ng tin nh\u1ECF v\xE0o b\u1EA3ng \u0111i\u1EC1u khi\u1EC3\
-  n \u0111\u1EC3 t\xECm v\xE0 x\u1EED l\xFD l\u1ED7i. N\xF3 nhanh, kh\xF4ng c\u1EA7\
-  n s\u1EA1ch s\u1EBD, v\xE0 hi\u1EC7u qu\u1EA3 \u0111\u1EC3 hi\u1EC3u nh\u1EEFng\u2026"
+  n \u0111\u1EC3 t\xECm v\xE0 x\u1EED l\xFD l\u1ED7i."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

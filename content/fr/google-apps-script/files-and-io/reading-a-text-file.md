@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.207206-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte avec Google Apps Script (GAS) implique d'acc\xE9der\
   \ et d'extraire des donn\xE9es textuelles \xE0 partir de fichiers stock\xE9s dans\
-  \ Google Drive\u2026"
+  \ Google Drive ou d'autres stockages bas\xE9s sur le cloud accessibles."
 title: Lecture d'un fichier texte
 weight: 22
 ---

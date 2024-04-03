@@ -5,7 +5,7 @@ description: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmerin
 lastmod: '2024-03-13T22:44:38.339680-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
-  \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"
+  \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

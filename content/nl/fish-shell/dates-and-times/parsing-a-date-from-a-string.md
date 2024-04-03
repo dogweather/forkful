@@ -6,8 +6,9 @@ description: "Het parsen van een datum uit een string houdt in het lezen van dat
   \ die zijn opgemaakt als tekst en het omzetten ervan naar een\u2026"
 lastmod: '2024-03-13T22:44:51.256765-06:00'
 model: gpt-4-0125-preview
-summary: "Het parsen van een datum uit een string houdt in het lezen van datumgegevens\
-  \ die zijn opgemaakt als tekst en het omzetten ervan naar een\u2026"
+summary: Het parsen van een datum uit een string houdt in het lezen van datumgegevens
+  die zijn opgemaakt als tekst en het omzetten ervan naar een datumdatastructuur die
+  het programma kan begrijpen.
 title: Een datum uit een string parsen
 weight: 30
 ---

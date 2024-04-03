@@ -7,8 +7,9 @@ description: "Il logging in C comporta la registrazione del flusso e degli event
   \ del\u2026"
 lastmod: '2024-03-13T22:44:44.005952-06:00'
 model: gpt-4-0125-preview
-summary: "Il logging in C comporta la registrazione del flusso e degli eventi notevoli\
-  \ di un programma durante il suo runtime, fornendo una revisione tangibile del\u2026"
+summary: Il logging in C comporta la registrazione del flusso e degli eventi notevoli
+  di un programma durante il suo runtime, fornendo una revisione tangibile del suo
+  comportamento e delle sue prestazioni.
 title: Registro degli Eventi
 weight: 17
 ---

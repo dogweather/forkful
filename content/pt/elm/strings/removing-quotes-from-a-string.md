@@ -6,7 +6,7 @@ description: "Remover aspas de uma string significa eliminar aquelas aspas dupla
 lastmod: '2024-03-13T22:44:46.487869-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa eliminar aquelas aspas duplas ou simples\
-  \ extras que voc\xEA n\xE3o precisa no texto processado. Programadores fazem isso\u2026"
+  \ extras que voc\xEA n\xE3o precisa no texto processado."
 title: Removendo aspas de uma string
 weight: 9
 ---

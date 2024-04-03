@@ -6,8 +6,7 @@ description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller \xE5
 lastmod: '2024-03-13T22:44:41.223805-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller \xE5 utl\xF8\
-  se en handling p\xE5 en webserver. Programmerere gj\xF8r dette for \xE5 hente innhold,\
-  \ oppdatere data,\u2026"
+  se en handling p\xE5 en webserver."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

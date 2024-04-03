@@ -5,8 +5,7 @@ description: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Web
   \ oder\u2026"
 lastmod: '2024-03-13T22:44:54.056437-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer\
-  \ nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen oder\u2026"
+summary: HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs.
 title: Einen HTTP-Request senden
 weight: 44
 ---

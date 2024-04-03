@@ -7,7 +7,7 @@ description: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som b
 lastmod: '2024-03-13T22:44:38.241391-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som bildar\
-  \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter.\u2026"
+  \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

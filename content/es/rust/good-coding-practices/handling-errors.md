@@ -5,8 +5,7 @@ description: "El manejo de errores es lidiar con las cosas cuando se tuercen. Lo
   \ en\u2026"
 lastmod: '2024-03-13T22:44:58.854035-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores es lidiar con las cosas cuando se tuercen. Los programadores\
-  \ lo hacen para manejar lo inesperado, asegurando que sus programas en\u2026"
+summary: El manejo de errores es lidiar con las cosas cuando se tuercen.
 title: Manejo de errores
 weight: 16
 ---

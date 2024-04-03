@@ -7,8 +7,9 @@ description: "Scrivere su standard error (stderr) riguarda il reindirizzamento d
   \ che va\u2026"
 lastmod: '2024-03-13T22:44:43.365728-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) riguarda il reindirizzamento di messaggi\
-  \ di errore e diagnostica separati dall'output principale del programma, che va\u2026"
+summary: Scrivere su standard error (stderr) riguarda il reindirizzamento di messaggi
+  di errore e diagnostica separati dall'output principale del programma, che va allo
+  standard output (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

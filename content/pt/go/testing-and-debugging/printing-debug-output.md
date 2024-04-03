@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.063562-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o de computadores, \"Imprimir sa\xEDda de depura\xE7\xE3\
   o\" envolve produzir mensagens detalhadas de informa\xE7\xE3o que ajudam os desenvolvedores\
-  \ a entender\u2026"
+  \ a entender o fluxo de execu\xE7\xE3o de seu programa ou identificar problemas."
 title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

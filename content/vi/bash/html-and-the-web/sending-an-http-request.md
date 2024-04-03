@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.875084-06:00'
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch \u0111\u1EC3 giao ti\u1EBF\
   p v\u1EDBi c\xE1c m\xE1y ch\u1EE7 web nh\u1EB1m truy xu\u1EA5t d\u1EEF li\u1EC7\
-  u ho\u1EB7c g\u1EEDi bi\u1EC3u m\u1EABu. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n vi\u1EC7c n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi\u2026"
+  u ho\u1EB7c g\u1EEDi bi\u1EC3u m\u1EABu."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

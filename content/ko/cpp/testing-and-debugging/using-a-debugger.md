@@ -9,9 +9,7 @@ lastmod: '2024-03-13T22:44:55.674956-06:00'
 model: gpt-4-0125-preview
 summary: "C++\uC740 GDB\uB098 \uBE44\uC8FC\uC5BC \uC2A4\uD29C\uB514\uC624 \uB514\uBC84\
   \uAC70\uC640 \uAC19\uC740 \uB514\uBC84\uAC70\uC640 \uD1B5\uD569\uB429\uB2C8\uB2E4\
-  . \uC5EC\uAE30 GDB\uB97C \uC0AC\uC6A9\uD55C \uAC04\uB2E8\uD55C \uC608\uAC00 \uC788\
-  \uC2B5\uB2C8\uB2E4: ```C++ #include <iostream> int main() { int a = 5; int b = 0;\
-  \ int c = a / b; // \uC774\uB7F0, 0\uC73C\uB85C\u2026"
+  ."
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 weight: 35
 ---

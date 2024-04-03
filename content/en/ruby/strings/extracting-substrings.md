@@ -4,8 +4,7 @@ description: "Extracting substrings is about pulling out specific bits of text f
   \ a string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"
 lastmod: '2024-03-13T22:45:00.538680-06:00'
 model: gpt-4-1106-preview
-summary: "Extracting substrings is about pulling out specific bits of text from a\
-  \ string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"
+summary: Extracting substrings is about pulling out specific bits of text from a string.
 title: Extracting substrings
 weight: 6
 ---

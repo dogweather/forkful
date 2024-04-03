@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:35.054609-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w Elixirze wi\u0105\u017Ce si\u0119 z\
   \ dost\u0119pem do informacji o dacie i czasie systemu, co jest cz\u0119stym zadaniem\
-  \ przy logowaniu, znakowaniu\u2026"
+  \ przy logowaniu, znakowaniu danych lub w dowolnej funkcji, kt\xF3ra wymaga wiedzy\
+  \ o bie\u017C\u0105cej dacie."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

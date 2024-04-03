@@ -4,8 +4,8 @@ description: "In programming, getting the current date is a fundamental task tha
   \ enables developers to access, display, or manipulate the current date within their\u2026"
 lastmod: '2024-03-13T22:45:00.058554-06:00'
 model: gpt-4-0125-preview
-summary: "In programming, getting the current date is a fundamental task that enables\
-  \ developers to access, display, or manipulate the current date within their\u2026"
+summary: In programming, getting the current date is a fundamental task that enables
+  developers to access, display, or manipulate the current date within their applications.
 title: Getting the current date
 weight: 29
 ---

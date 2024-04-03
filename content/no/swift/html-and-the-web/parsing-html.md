@@ -5,9 +5,7 @@ description: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML
   \ kunne\u2026"
 lastmod: '2024-03-13T22:44:41.139688-06:00'
 model: unknown
-summary: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr\
-  \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
-  \ kunne\u2026"
+summary: Hva er HTML-parsing, og hvorfor driver vi med det.
 title: Analyse av HTML
 weight: 43
 ---

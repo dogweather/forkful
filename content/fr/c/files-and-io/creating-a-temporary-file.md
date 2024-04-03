@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.393749-06:00'
 model: gpt-4-0125-preview
 summary: "Cr\xE9er un fichier temporaire en C consiste \xE0 g\xE9n\xE9rer un fichier\
   \ destin\xE9 \xE0 \xEAtre utilis\xE9 pendant une courte dur\xE9e, g\xE9n\xE9ralement\
-  \ comme espace de travail\u2026"
+  \ comme espace de travail temporaire pour le traitement ou le stockage de donn\xE9\
+  es."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

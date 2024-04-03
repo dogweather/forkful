@@ -6,8 +6,7 @@ description: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho
 lastmod: '2024-03-13T22:44:46.880290-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
-  \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\
-  \ melhor\u2026"
+  \ para desenvolver c\xF3digo desde o come\xE7o."
 title: Iniciando um novo projeto
 weight: 1
 ---

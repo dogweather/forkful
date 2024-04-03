@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.484602-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w w PHP oznacza\
   \ pozbywanie si\u0119 tych irytuj\u0105cych podw\xF3jnych (`\"`) lub pojedynczych\
-  \ (`'`) znak\xF3w cudzys\u0142owu, kt\xF3re\u2026"
+  \ (`'`) znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 zak\u0142\xF3ca\u0107 logik\u0119\
+  \ twojego kodu lub zapytania do bazy danych."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

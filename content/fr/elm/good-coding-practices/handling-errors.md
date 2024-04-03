@@ -6,8 +6,7 @@ description: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper
 lastmod: '2024-03-13T22:44:57.697126-06:00'
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper et traiter\
-  \ les probl\xE8mes qui surviennent. Les programmeurs le font pour \xE9viter les\
-  \ plantages,\u2026"
+  \ les probl\xE8mes qui surviennent."
 title: Gestion des erreurs
 weight: 16
 ---

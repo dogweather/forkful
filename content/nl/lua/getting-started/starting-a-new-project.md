@@ -6,8 +6,8 @@ description: "Een nieuw project starten betekent dat je de basis legt voor jouw 
   \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"
 lastmod: '2024-03-13T22:44:50.938115-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten betekent dat je de basis legt voor jouw briljante\
-  \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"
+summary: Een nieuw project starten betekent dat je de basis legt voor jouw briljante
+  idee.
 title: Een nieuw project starten
 weight: 1
 ---

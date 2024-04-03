@@ -8,7 +8,8 @@ description: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w cel
 lastmod: '2024-03-13T22:44:35.880739-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia\
-  \ jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017Cszej liczby\u2026"
+  \ jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017Cszej liczby\
+  \ ca\u0142kowitej, albo okre\u015Blonej liczby miejsc dziesi\u0119tnych."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

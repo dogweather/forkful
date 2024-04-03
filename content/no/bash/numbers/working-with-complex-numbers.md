@@ -4,8 +4,7 @@ description: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del. Pr
   \ bruker dem innen felter som signalbehandling, kvantemekanikk, og n\xE5r som helst\u2026"
 lastmod: '2024-03-13T22:44:40.966274-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del. Programmerere\
-  \ bruker dem innen felter som signalbehandling, kvantemekanikk, og n\xE5r som helst\u2026"
+summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

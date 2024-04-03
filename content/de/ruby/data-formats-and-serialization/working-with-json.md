@@ -7,7 +7,8 @@ description: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-
 lastmod: '2024-03-13T22:44:54.421815-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
-  \ das vor allem in Webanwendungen f\xFCr den Datenaustausch zwischen Clients\u2026"
+  \ das vor allem in Webanwendungen f\xFCr den Datenaustausch zwischen Clients und\
+  \ Servern verbreitet ist."
 title: Arbeiten mit JSON
 weight: 38
 ---

@@ -6,8 +6,7 @@ description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na przekaza
 lastmod: '2024-03-13T22:44:35.012519-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na przekazanie parametr\xF3\
-  w do aplikacji. Programi\u015Bci robi\u0105 to, by obs\u0142ugiwa\u0107 r\xF3\u017C\
-  ne scenariusze dzia\u0142ania\u2026"
+  w do aplikacji."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

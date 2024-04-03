@@ -8,8 +8,7 @@ description: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z
 lastmod: '2024-03-13T22:44:35.892513-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
-  o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\
-  \ ta poprawia\u2026"
+  o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

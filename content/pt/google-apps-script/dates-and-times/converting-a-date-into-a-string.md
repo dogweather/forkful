@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.121078-06:00'
 model: gpt-4-0125-preview
 summary: "Converter datas em strings \xE9 uma tarefa fundamental que possibilita aos\
   \ programadores manipular e apresentar informa\xE7\xF5es de data em um formato leg\xED\
-  vel por\u2026"
+  vel por humanos."
 title: Convertendo uma data em uma string
 weight: 28
 ---

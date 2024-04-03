@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.277105-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie zapytania HTTP z podstawow\u0105 autentykacj\u0105 to proces\
   \ uwierzytelniania u\u017Cytkownika przez serwer przy u\u017Cyciu loginu i has\u0142\
-  a zakodowanych w base64.\u2026"
+  a zakodowanych w base64."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

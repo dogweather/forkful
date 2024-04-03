@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.186273-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka Rust, czyli REPL (Read-Eval-Print Loop - P\u0119\
   tla Czytaj-Wykonaj-Wydrukuj), pozwala na uruchamianie kodu Rust na bie\u017C\u0105\
-  co, widz\u0105c\u2026"
+  co, widz\u0105c natychmiastowe rezultaty, idealnie nadaje si\u0119 do eksperymentowania\
+  \ lub nauki."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

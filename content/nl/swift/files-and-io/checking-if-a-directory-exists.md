@@ -6,8 +6,8 @@ description: "In Swift helpt het controleren of een directory bestaat om de stat
   \ van een bestandssysteem te bevestigen voordat je gegevens leest of schrijft.\u2026"
 lastmod: '2024-03-13T22:44:51.172123-06:00'
 model: gpt-4-0125-preview
-summary: "In Swift helpt het controleren of een directory bestaat om de status van\
-  \ een bestandssysteem te bevestigen voordat je gegevens leest of schrijft.\u2026"
+summary: In Swift helpt het controleren of een directory bestaat om de status van
+  een bestandssysteem te bevestigen voordat je gegevens leest of schrijft.
 title: Controleren of een directory bestaat
 weight: 20
 ---

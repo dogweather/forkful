@@ -7,9 +7,9 @@ description: "Le espressioni regolari nella programmazione sono sequenze di cara
   \ la\u2026"
 lastmod: '2024-03-13T22:44:43.465400-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari nella programmazione sono sequenze di caratteri\
-  \ che definiscono un modello di ricerca, tipicamente impiegate per la ricerca e\
-  \ la\u2026"
+summary: Le espressioni regolari nella programmazione sono sequenze di caratteri che
+  definiscono un modello di ricerca, tipicamente impiegate per la ricerca e la manipolazione
+  di stringhe.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

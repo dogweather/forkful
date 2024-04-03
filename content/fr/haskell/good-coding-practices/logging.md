@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:57.840616-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation en programmation consiste essentiellement \xE0 laisser\
   \ une trace de miettes de pain sous forme d'\xE9v\xE9nements ou de messages enregistr\xE9\
-  s, qui\u2026"
+  s, qui peuvent \xEAtre utilis\xE9s pour suivre ce que fait votre application \xE0\
+  \ tout moment."
 title: Journalisation
 weight: 17
 ---

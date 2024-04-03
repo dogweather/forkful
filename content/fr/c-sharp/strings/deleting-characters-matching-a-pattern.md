@@ -6,8 +6,7 @@ description: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est fil
 lastmod: '2024-03-13T22:44:57.769890-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer votre\
-  \ texte pour ne garder que l'essentiel. Les programmeurs font \xE7a pour nettoyer\
-  \ des\u2026"
+  \ texte pour ne garder que l'essentiel."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

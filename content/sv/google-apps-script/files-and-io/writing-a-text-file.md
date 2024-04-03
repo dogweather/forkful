@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.458810-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Google Apps Script m\xF6jligg\xF6r f\xF6r utvecklare\
   \ att lagra data best\xE4ndigt, vilket g\xF6r det \xE5tkomligt f\xF6r framtida anv\xE4\
-  ndning eller\u2026"
+  ndning eller analys."
 title: Skriva en textfil
 weight: 24
 ---

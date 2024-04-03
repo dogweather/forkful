@@ -5,8 +5,9 @@ description: "Parsing HTML refers to the process of breaking down and interpreti
   \ this\u2026"
 lastmod: '2024-03-13T22:45:00.394441-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML refers to the process of breaking down and interpreting the\
-  \ structure of HTML content, typically to extract specific data or manipulate this\u2026"
+summary: Parsing HTML refers to the process of breaking down and interpreting the
+  structure of HTML content, typically to extract specific data or manipulate this
+  content programmatically.
 title: Parsing HTML
 weight: 43
 ---

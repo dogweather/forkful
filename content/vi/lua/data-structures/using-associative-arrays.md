@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "C\xE1c m\u1EA3ng li\xEAn k\u1EBFt trong Lua gi\u1ED1ng nh\u01B0 nh\u1EEF\
   ng c\xE1i b\u1EAFt tay b\xED m\u1EADt v\u1EDBi d\u1EEF li\u1EC7u\u2014kh\xF4ng ch\u1EC9\
   \ l\xE0 nh\u1EEFng con s\u1ED1 x\u1EBFp h\xE0ng ng\u0103n n\u1EAFp theo ch\u1EC9\
-  \ s\u1ED1, kh\xF3a c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 l\xE0\u2026"
+  \ s\u1ED1, kh\xF3a c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 l\xE0 b\u1EA5t c\u1EE9 th\u1EE9\
+  \ g\xEC b\u1EA1n mu\u1ED1n, l\xE0m cho vi\u1EC7c truy c\u1EADp d\u1EEF li\u1EC7\
+  u tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

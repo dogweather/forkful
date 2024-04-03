@@ -7,7 +7,8 @@ description: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent h
 lastmod: '2024-03-13T22:44:50.537556-06:00'
 model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent het weghalen\
-  \ van de omringende enkele (`'`) of dubbele (`\"`) aanhalingstekens die\u2026"
+  \ van de omringende enkele (`'`) of dubbele (`\"`) aanhalingstekens die tekenreeksliteralen\
+  \ in code defini\xEBren."
 title: Quotes verwijderen uit een string
 weight: 9
 ---

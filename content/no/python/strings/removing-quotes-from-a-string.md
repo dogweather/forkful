@@ -6,8 +6,7 @@ description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr vanligvis \xE5 st
 lastmod: '2024-03-13T22:44:40.349095-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr vanligvis \xE5 strippe\
-  \ bort overfl\xF8dige doble (\") eller enkle (') anf\xF8rselstegn. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+  \ bort overfl\xF8dige doble (\") eller enkle (') anf\xF8rselstegn."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

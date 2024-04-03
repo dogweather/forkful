@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.796293-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z autoryzacj\u0105 podstawow\u0105\
   \ to proces, w kt\xF3rym przesy\u0142amy nasze dane uwierzytelniaj\u0105ce (login\
-  \ i has\u0142o) w nag\u0142\xF3wku \u017C\u0105dania HTTP, aby\u2026"
+  \ i has\u0142o) w nag\u0142\xF3wku \u017C\u0105dania HTTP, aby uzyska\u0107 dost\u0119\
+  p do zasob\xF3w wymagaj\u0105cych autoryzacji."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

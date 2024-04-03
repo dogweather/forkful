@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.130125-06:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Google Apps Script envolve gerar um arquivo\
   \ destinado ao uso de curto prazo, tipicamente para processamento intermedi\xE1\
-  rio\u2026"
+  rio de dados, depura\xE7\xE3o ou prop\xF3sitos de cache."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

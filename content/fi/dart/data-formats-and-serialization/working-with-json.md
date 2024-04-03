@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.294774-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa sis\xE4lt\xE4\xE4\
   \ JSON-tietojen j\xE4sent\xE4misen merkkijonoista Dart-olioihin ja p\xE4invastoin,\
-  \ mik\xE4 on yleinen\u2026"
+  \ mik\xE4 on yleinen teht\xE4v\xE4 web- ja sovelluskehityksess\xE4 tiedonvaihtoon."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

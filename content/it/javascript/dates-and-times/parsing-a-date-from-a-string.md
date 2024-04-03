@@ -6,8 +6,9 @@ description: "Analizzare una data da una stringa permette ai programmatori di co
   \ rappresentazioni testuali di date in oggetti `Date` di JavaScript, facilitando\u2026"
 lastmod: '2024-03-13T22:44:43.822145-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa permette ai programmatori di convertire\
-  \ rappresentazioni testuali di date in oggetti `Date` di JavaScript, facilitando\u2026"
+summary: Analizzare una data da una stringa permette ai programmatori di convertire
+  rappresentazioni testuali di date in oggetti `Date` di JavaScript, facilitando operazioni
+  di manipolazione, confronto e formattazione delle date.
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -7,7 +7,8 @@ description: "Das Suchen und Ersetzen von Text in Visual Basic f\xFCr Applikatio
 lastmod: '2024-03-13T22:44:53.701155-06:00'
 model: gpt-4-0125-preview
 summary: "Das Suchen und Ersetzen von Text in Visual Basic f\xFCr Applikationen (VBA)\
-  \ ist unerl\xE4sslich f\xFCr die programmatische Bearbeitung von Dokumenten,\u2026"
+  \ ist unerl\xE4sslich f\xFCr die programmatische Bearbeitung von Dokumenten, Tabellenkalkulationen\
+  \ und Datenbanken."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

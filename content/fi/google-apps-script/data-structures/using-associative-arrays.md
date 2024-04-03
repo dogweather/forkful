@@ -7,7 +7,8 @@ description: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE
 lastmod: '2024-03-13T22:44:56.088733-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE4 (JavaScriptin\
-  \ muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien\u2026"
+  \ muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien kokoelmien\
+  \ luomisen."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

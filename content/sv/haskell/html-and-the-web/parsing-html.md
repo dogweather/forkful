@@ -6,7 +6,7 @@ description: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till 
 lastmod: '2024-03-13T22:44:37.952895-06:00'
 model: unknown
 summary: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en datastruktur\
-  \ som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt kunna\u2026"
+  \ som datorn kan jobba med."
 title: Tolka HTML
 weight: 43
 ---

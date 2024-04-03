@@ -6,8 +6,7 @@ description: "Luodaan v\xE4liaikainen tiedosto \u2013 se on tiedosto, joka poist
 lastmod: '2024-03-13T22:44:56.464982-06:00'
 model: gpt-4-1106-preview
 summary: "Luodaan v\xE4liaikainen tiedosto \u2013 se on tiedosto, joka poistuu automaattisesti,\
-  \ kun sit\xE4 ei en\xE4\xE4 tarvita. Ohjelmoijat tekev\xE4t n\xE4in tilap\xE4isen\
-  \ tallennustilan\u2026"
+  \ kun sit\xE4 ei en\xE4\xE4 tarvita."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

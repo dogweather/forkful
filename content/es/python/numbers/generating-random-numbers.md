@@ -5,7 +5,8 @@ description: "Generar n\xFAmeros aleatorios implica crear n\xFAmeros que no pued
 lastmod: '2024-03-13T22:44:58.606563-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios implica crear n\xFAmeros que no pueden ser\
-  \ predecidos razonablemente mejor que por casualidad, lo cual es esencial para\u2026"
+  \ predecidos razonablemente mejor que por casualidad, lo cual es esencial para desarrollar\
+  \ simulaciones, juegos y algoritmos de seguridad."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

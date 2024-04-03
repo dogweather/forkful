@@ -6,8 +6,7 @@ description: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014s
 lastmod: '2024-03-13T22:44:37.920770-06:00'
 model: gpt-4-1106-preview
 summary: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som att\
-  \ snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga data\
-  \ eller ostadiga\u2026"
+  \ snubbla p\xE5 sina egna skosn\xF6ren."
 title: Hantering av fel
 weight: 16
 ---

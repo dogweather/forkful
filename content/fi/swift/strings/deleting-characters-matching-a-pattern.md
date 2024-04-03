@@ -5,7 +5,7 @@ description: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tark
 lastmod: '2024-03-13T22:44:56.891912-06:00'
 model: gpt-4-1106-preview
 summary: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
-  \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"
+  \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

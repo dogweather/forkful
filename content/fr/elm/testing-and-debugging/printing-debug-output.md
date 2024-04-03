@@ -5,9 +5,7 @@ description: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u20
   \ code. Pourquoi\u2026"
 lastmod: '2024-03-13T22:44:57.691821-06:00'
 model: gpt-4-1106-preview
-summary: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u2019art\
-  \ de balancer des infos dans la console pour comprendre ce qui se passe dans ton\
-  \ code. Pourquoi\u2026"
+summary: "Qu'est-ce que c'est l'impression de d\xE9bogage ."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

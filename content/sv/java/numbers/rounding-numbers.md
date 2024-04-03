@@ -5,9 +5,7 @@ description: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av no
   r att uppfylla vissa\u2026"
 lastmod: '2024-03-13T22:44:37.782465-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av noggrannhet.\
-  \ Programmerare g\xF6r det f\xF6r att f\xF6renkla tal f\xF6r l\xE4sbarhet, f\xF6\
-  r att uppfylla vissa\u2026"
+summary: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av noggrannhet."
 title: Avrundning av tal
 weight: 13
 ---

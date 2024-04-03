@@ -7,8 +7,8 @@ description: "Twee datums vergelijken betekent uitzoeken welke eerder is, later,
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.084348-06:00'
 model: gpt-4-0125-preview
-summary: "Twee datums vergelijken betekent uitzoeken welke eerder is, later, of als\
-  \ ze hetzelfde zijn. Programmeurs doen dit om tijdgebaseerde evenementen bij te\u2026"
+summary: Twee datums vergelijken betekent uitzoeken welke eerder is, later, of als
+  ze hetzelfde zijn.
 title: Twee data vergelijken
 weight: 27
 ---

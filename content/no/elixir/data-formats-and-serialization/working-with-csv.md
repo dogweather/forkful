@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.465682-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer \xE5 lese\
   \ fra og skrive data til disse filene, noe som er en vanlig n\xF8dvendighet for\
-  \ oppgaver som\u2026"
+  \ oppgaver som krever dataimport/eksport eller enkle lagringsl\xF8sninger."
 title: Arbeide med CSV
 weight: 37
 ---

@@ -6,8 +6,7 @@ description: "Feilh\xE5ndtering g\xE5r ut p\xE5 \xE5 forvente det uventede i kod
 lastmod: '2024-03-13T22:44:41.335845-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering g\xE5r ut p\xE5 \xE5 forvente det uventede i koden - \xE5\
-  \ h\xE5ndtere feil og problemer p\xE5 en smidig m\xE5te uten \xE5 krasje. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+  \ h\xE5ndtere feil og problemer p\xE5 en smidig m\xE5te uten \xE5 krasje."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

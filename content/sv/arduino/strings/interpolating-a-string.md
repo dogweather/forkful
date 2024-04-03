@@ -4,8 +4,7 @@ description: "Interpolera en str\xE4ng betyder att du mixar variabler med text. 
   \ g\xF6r det f\xF6r att skapa dynamiska meddelanden."
 lastmod: '2024-03-13T22:44:38.154190-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolera en str\xE4ng betyder att du mixar variabler med text. Programmerare\
-  \ g\xF6r det f\xF6r att skapa dynamiska meddelanden."
+summary: "Interpolera en str\xE4ng betyder att du mixar variabler med text."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

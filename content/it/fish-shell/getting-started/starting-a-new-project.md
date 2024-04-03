@@ -5,7 +5,7 @@ description: "Iniziare un nuovo progetto \xE8 come piazzare la prima pietra di u
 lastmod: '2024-03-13T22:44:43.859447-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto \xE8 come piazzare la prima pietra di un edificio:\
-  \ definisce le fondamenta. I programmatori lo fanno per organizzare idee,\u2026"
+  \ definisce le fondamenta."
 title: Avvio di un nuovo progetto
 weight: 1
 ---

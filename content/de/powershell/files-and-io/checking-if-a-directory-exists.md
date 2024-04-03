@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:54.118036-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert, eine\
   \ h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\
-  \ auf der\u2026"
+  \ auf der Dateisystemstruktur zu treffen \u2013 wie zum Beispiel Fehler zu vermeiden,\
+  \ indem best\xE4tigt wird, dass ein Zielverzeichnis vorhanden ist, bevor versucht\
+  \ wird, daraus zu lesen oder darin zu schreiben."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

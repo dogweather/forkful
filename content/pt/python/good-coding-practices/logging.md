@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.160678-06:00'
 model: gpt-4-1106-preview
 summary: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
   \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
-  lise post-mortem\u2026"
+  lise post-mortem e monitoramento em tempo real."
 title: Registro de Logs
 weight: 17
 ---

@@ -6,8 +6,7 @@ description: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE
 lastmod: '2024-03-13T22:44:46.458662-06:00'
 model: gpt-4-1106-preview
 summary: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3o \xE9\
-  \ o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9 extremamente\
-  \ \xFAtil: ajuda a\u2026"
+  \ o equivalente a uma l\xE2mpada que piscar quando algo errado acontece."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

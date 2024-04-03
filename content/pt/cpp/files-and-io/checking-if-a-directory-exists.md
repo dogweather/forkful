@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.893565-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 sobre determinar a presen\xE7a\
   \ de um diret\xF3rio em um caminho especificado antes de realizar opera\xE7\xF5\
-  es como ler ou escrever\u2026"
+  es como ler ou escrever arquivos dentro dele."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

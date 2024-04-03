@@ -4,8 +4,8 @@ description: "Stripping quotes from a string means peeling away those double or 
   \ quote marks that wrap around text values. Programmers often do this to clean up\u2026"
 lastmod: '2024-03-13T22:45:00.537820-06:00'
 model: gpt-4-1106-preview
-summary: "Stripping quotes from a string means peeling away those double or single\
-  \ quote marks that wrap around text values. Programmers often do this to clean up\u2026"
+summary: Stripping quotes from a string means peeling away those double or single
+  quote marks that wrap around text values.
 title: Removing quotes from a string
 weight: 9
 ---

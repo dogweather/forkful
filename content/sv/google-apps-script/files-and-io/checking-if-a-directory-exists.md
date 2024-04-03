@@ -8,7 +8,7 @@ description: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r a
 lastmod: '2024-03-13T22:44:37.454509-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r att verifiera\
-  \ n\xE4rvaron av en mapp inom Google Drive. Programmerare utf\xF6r ofta denna kontroll\u2026"
+  \ n\xE4rvaron av en mapp inom Google Drive."
 title: Kontroll om en katalog existerar
 weight: 20
 ---

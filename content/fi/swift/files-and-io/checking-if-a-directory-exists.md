@@ -8,8 +8,7 @@ description: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\
 lastmod: '2024-03-13T22:44:56.921024-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4 on\
-  \ oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\
-  \ T\xE4m\xE4 teht\xE4v\xE4\u2026"
+  \ oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

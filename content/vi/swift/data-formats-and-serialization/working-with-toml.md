@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.128411-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
   ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc do ng\u1EEF\
-  \ ngh\u0129a r\xF5 r\xE0ng c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng TOML cho c\xE1c t\u1EC7p\u2026"
+  \ ngh\u0129a r\xF5 r\xE0ng c\u1EE7a n\xF3."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

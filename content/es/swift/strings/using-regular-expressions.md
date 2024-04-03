@@ -8,7 +8,8 @@ description: "Las expresiones regulares, o regex, son secuencias de caracteres q
 lastmod: '2024-03-13T22:44:59.406856-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, son secuencias de caracteres que forman\
-  \ un patr\xF3n de b\xFAsqueda, a menudo utilizadas para tareas de coincidencia o\u2026"
+  \ un patr\xF3n de b\xFAsqueda, a menudo utilizadas para tareas de coincidencia o\
+  \ manipulaci\xF3n de cadenas."
 title: Usando expresiones regulares
 weight: 11
 ---

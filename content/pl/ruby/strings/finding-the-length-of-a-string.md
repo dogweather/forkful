@@ -6,8 +6,7 @@ description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to po 
 lastmod: '2024-03-13T22:44:35.921848-06:00'
 model: gpt-4-1106-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to po prostu\
-  \ okre\u015Blenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, aby weryfikowa\u0107\
-  \ dane wej\u015Bciowe, ogranicza\u0107 tekst,\u2026"
+  \ okre\u015Blenie, ile znak\xF3w zawiera."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.894073-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering i PHP dreier seg om \xE5 h\xE5ndtere og respondere p\xE5\
   \ tilstander som forstyrrer det normale programflytet, som manglende filer eller\
-  \ d\xE5rlig\u2026"
+  \ d\xE5rlig datainnskriving."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

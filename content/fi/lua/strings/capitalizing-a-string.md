@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.681264-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
   \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\
-  \ ett\xE4\u2026"
+  \ ett\xE4 loput merkit ovat pieni\xE4 kirjaimia."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

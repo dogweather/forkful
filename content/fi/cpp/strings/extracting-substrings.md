@@ -6,8 +6,7 @@ description: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist
 lastmod: '2024-03-13T22:44:56.854111-06:00'
 model: gpt-4-1106-preview
 summary: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist\xE4 tietoa\
-  \ merkkijonosta. Ohjelmoijat tekev\xE4t niin, jotta voivat k\xE4sitell\xE4, verrata\
-  \ tai\u2026"
+  \ merkkijonosta."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

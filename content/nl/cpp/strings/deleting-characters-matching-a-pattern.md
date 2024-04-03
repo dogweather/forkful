@@ -7,8 +7,8 @@ description: "Het verwijderen van tekens die overeenkomen met een patroon beteke
   \ voor\u2026"
 lastmod: '2024-03-13T22:44:51.096964-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van tekens die overeenkomen met een patroon betekent het\
-  \ uitsluiten van specifieke sequenties uit een string. Programmeurs doen dit voor\u2026"
+summary: Het verwijderen van tekens die overeenkomen met een patroon betekent het
+  uitsluiten van specifieke sequenties uit een string.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

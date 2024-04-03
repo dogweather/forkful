@@ -5,9 +5,7 @@ description: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien 
   \ hy\xF6dynt\xE4miseen."
 lastmod: '2024-03-13T22:44:56.353564-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kanssa.\
-  \ Sit\xE4 k\xE4ytet\xE4\xE4n datan hakemiseen, l\xE4hett\xE4miseen ja web-palveluiden\
-  \ hy\xF6dynt\xE4miseen."
+summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kanssa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

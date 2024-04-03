@@ -6,7 +6,7 @@ description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erlaubt
 lastmod: '2024-03-13T22:44:53.775718-06:00'
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erlaubt es uns,\
-  \ Zeitabst\xE4nde zu handhaben. Programmierer nutzen diese Funktion f\xFCr Erinnerungen,\u2026"
+  \ Zeitabst\xE4nde zu handhaben."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

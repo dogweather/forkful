@@ -6,8 +6,8 @@ description: "Das Parsen eines Datums aus einem String in C# beinhaltet das Umwa
   \ von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies\u2026"
 lastmod: '2024-03-13T22:44:53.897736-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln\
-  \ von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies\u2026"
+summary: Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln von
+  textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt.
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

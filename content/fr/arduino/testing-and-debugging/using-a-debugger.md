@@ -6,7 +6,7 @@ description: "Avec l'IDE Arduino, vous pouvez utiliser des impressions s\xE9rie 
 lastmod: '2024-03-13T22:44:58.115979-06:00'
 model: gpt-4-0125-preview
 summary: "Avec l'IDE Arduino, vous pouvez utiliser des impressions s\xE9rie pour d\xE9\
-  boguer, mais c'est un peu comme utiliser une lampe de poche pour explorer une\u2026"
+  boguer, mais c'est un peu comme utiliser une lampe de poche pour explorer une grotte."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

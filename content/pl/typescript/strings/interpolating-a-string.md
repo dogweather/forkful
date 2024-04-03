@@ -6,8 +6,7 @@ description: "Interpolacja to wplecenie zmiennej w ci\u0105g tekstowy, co u\u014
 lastmod: '2024-03-13T22:44:35.124318-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja to wplecenie zmiennej w ci\u0105g tekstowy, co u\u0142atwia\
-  \ tworzenie dynamicznego tekstu. Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\
-  \ aby \u0142atwo \u0142\u0105czy\u0107 sta\u0142e\u2026"
+  \ tworzenie dynamicznego tekstu."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

@@ -7,7 +7,8 @@ description: "Regul\xE4re Ausdr\xFCcke, ein m\xE4chtiges Werkzeug zur Musterverg
 lastmod: '2024-03-13T22:44:53.410165-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, ein m\xE4chtiges Werkzeug zur Mustervergleichung\
-  \ und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung\u2026"
+  \ und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung\
+  \ der Eingabe, Suche und Ersetzung von Text."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

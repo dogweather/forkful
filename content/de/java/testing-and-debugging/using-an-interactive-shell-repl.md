@@ -5,7 +5,7 @@ description: "Ein REPL (Read-Eval-Print Loop) ist eine interaktive Shell, die ei
 lastmod: '2024-03-13T22:44:53.764634-06:00'
 model: gpt-4-0125-preview
 summary: "Ein REPL (Read-Eval-Print Loop) ist eine interaktive Shell, die einzelne\
-  \ Benutzereingaben verarbeitet, Code ausf\xFChrt und das Ergebnis zur\xFCckgibt.\u2026"
+  \ Benutzereingaben verarbeitet, Code ausf\xFChrt und das Ergebnis zur\xFCckgibt."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

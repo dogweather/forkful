@@ -6,8 +6,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na radzeniu sobie z sytuac
 lastmod: '2024-03-13T22:44:35.192643-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na radzeniu sobie z sytuacjami,\
-  \ kiedy co\u015B p\xF3jdzie nie tak. Programi\u015Bci robi\u0105 to, aby radzi\u0107\
-  \ sobie z niespodziewanym, zapewniaj\u0105c, \u017Ce\u2026"
+  \ kiedy co\u015B p\xF3jdzie nie tak."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

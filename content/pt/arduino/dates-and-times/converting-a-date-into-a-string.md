@@ -5,7 +5,7 @@ description: "Converter datas em strings permite que voc\xEA exiba ou armazene d
 lastmod: '2024-03-13T22:44:46.850256-06:00'
 model: gpt-4-1106-preview
 summary: "Converter datas em strings permite que voc\xEA exiba ou armazene datas de\
-  \ forma leg\xEDvel. Programadores fazem isso para facilitar a leitura e o processamento\u2026"
+  \ forma leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

@@ -6,8 +6,7 @@ description: "Interpolacja string\xF3w to wstawianie warto\u015Bci zmiennych do 
 lastmod: '2024-03-13T22:44:35.568671-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w to wstawianie warto\u015Bci zmiennych do \u0142\
-  a\u0144cucha tekstowego. Programi\u015Bci robi\u0105 to, \u017Ceby dynamicznie tworzy\u0107\
-  \ tekst, na przyk\u0142ad\u2026"
+  a\u0144cucha tekstowego."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

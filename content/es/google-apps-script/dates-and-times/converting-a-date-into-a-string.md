@@ -8,7 +8,7 @@ description: "Convertir fechas en cadenas es una tarea fundamental que permite a
 lastmod: '2024-03-13T22:44:58.548902-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir fechas en cadenas es una tarea fundamental que permite a los programadores\
-  \ manipular y mostrar informaci\xF3n de fechas en un formato legible por\u2026"
+  \ manipular y mostrar informaci\xF3n de fechas en un formato legible por humanos."
 title: Convirtiendo una fecha en una cadena de caracteres
 weight: 28
 ---

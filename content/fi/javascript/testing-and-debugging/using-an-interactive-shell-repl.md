@@ -4,8 +4,9 @@ description: "Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Ev
   \ mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien\u2026"
 lastmod: '2024-03-13T22:44:56.951430-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka)\
-  \ mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien\u2026"
+summary: Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka)
+  mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien testaamisen tai
+  ideoiden kokeilun.
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

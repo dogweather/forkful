@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.150419-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier l'existence d'un r\xE9pertoire en Go est crucial pour les applications\
   \ qui interagissent avec le syst\xE8me de fichiers, afin d'\xE9viter les erreurs\
-  \ lors\u2026"
+  \ lors de la tentative d'acc\xE8s ou de modification des r\xE9pertoires."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

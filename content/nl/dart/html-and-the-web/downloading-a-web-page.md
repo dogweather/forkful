@@ -6,8 +6,8 @@ description: "Een webpagina downloaden houdt in dat de inhoud van een webpagina 
   \ de URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:50.503550-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via de\
-  \ URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
+summary: Een webpagina downloaden houdt in dat de inhoud van een webpagina via de
+  URL wordt opgehaald voor verwerking of opslag.
 title: Een webpagina downloaden
 weight: 42
 ---

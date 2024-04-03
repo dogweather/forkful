@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qu
 lastmod: '2024-03-13T22:44:57.761435-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qui ne sont\
-  \ n\xE9cessaires que bri\xE8vement. Les programmeurs le font pour g\xE9rer l'espace\
-  \ de stockage\u2026"
+  \ n\xE9cessaires que bri\xE8vement."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

@@ -6,8 +6,8 @@ description: "Eliminar las comillas de una cadena en C implica extraer el conten
   \ textual sin las comillas simples (' ') o dobles (\" \") que la encapsulan. Este\u2026"
 lastmod: '2024-03-13T22:44:59.532112-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar las comillas de una cadena en C implica extraer el contenido textual\
-  \ sin las comillas simples (' ') o dobles (\" \") que la encapsulan. Este\u2026"
+summary: Eliminar las comillas de una cadena en C implica extraer el contenido textual
+  sin las comillas simples (' ') o dobles (" ") que la encapsulan.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

@@ -12,8 +12,7 @@ model: gpt-4-0125-preview
 summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 ch\u1EC9\
   \ l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i\u2014gi\u1ED1ng nh\u01B0 c\u1EAF\
   t m\u1ED9t d\u1EA3i ruy b\u0103ng v\u1EDBi \u0111\u1ED9 d\xE0i b\u1EA1n c\u1EA7\
-  n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\xE1\
-  ch\u2026"
+  n."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

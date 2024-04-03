@@ -6,8 +6,8 @@ description: "Lavorare con XML in Go comporta l'analisi (lettura) e la generazio
   \ (scrittura) di documenti XML, un formato standard per lo scambio di dati strutturati.\u2026"
 lastmod: '2024-03-13T22:44:42.934591-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML in Go comporta l'analisi (lettura) e la generazione (scrittura)\
-  \ di documenti XML, un formato standard per lo scambio di dati strutturati.\u2026"
+summary: Lavorare con XML in Go comporta l'analisi (lettura) e la generazione (scrittura)
+  di documenti XML, un formato standard per lo scambio di dati strutturati.
 title: Lavorare con XML
 weight: 40
 ---

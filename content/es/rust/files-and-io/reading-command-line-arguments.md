@@ -6,8 +6,7 @@ description: "Leer argumentos de la l\xEDnea de comandos es capturar los datos q
 lastmod: '2024-03-13T22:44:58.861869-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos es capturar los datos que un\
-  \ usuario introduce al ejecutar un programa desde la terminal. Los programadores\
-  \ usan\u2026"
+  \ usuario introduce al ejecutar un programa desde la terminal."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

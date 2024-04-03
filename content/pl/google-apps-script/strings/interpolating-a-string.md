@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.886130-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w w Google Apps Script umo\u017Cliwia dynamiczne\
   \ osadzanie wyra\u017Ce\u0144 w ci\u0105gach, u\u0142atwiaj\u0105c tworzenie bardziej\
-  \ czytelnego i \u0142atwiejszego do\u2026"
+  \ czytelnego i \u0142atwiejszego do utrzymania kodu."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

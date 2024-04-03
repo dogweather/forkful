@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.420605-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong Visual\
   \ Basic for Applications (VBA) li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\
-  \u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn\u2026"
+  \u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a."
 title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 weight: 7
 ---

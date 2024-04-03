@@ -5,7 +5,7 @@ description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient da
 lastmod: '2024-03-13T22:44:53.872504-06:00'
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient dazu, Strings\
-  \ von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen. Programmierer\u2026"
+  \ von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

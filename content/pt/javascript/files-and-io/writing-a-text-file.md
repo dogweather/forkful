@@ -7,7 +7,8 @@ description: "Escrever um arquivo de texto em JavaScript geralmente est\xE1 rela
 lastmod: '2024-03-13T22:44:46.980495-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em JavaScript geralmente est\xE1 relacionado\
-  \ a criar e salvar dados em um formato simples e leg\xEDvel para fins de registro\u2026"
+  \ a criar e salvar dados em um formato simples e leg\xEDvel para fins de registro\
+  \ (logging), exporta\xE7\xE3o de entrada de usu\xE1rio ou configura\xE7\xF5es."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -7,8 +7,8 @@ description: "Een nieuw project starten in Python gaat over het opzetten van een
   \ onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te\u2026"
 lastmod: '2024-03-13T22:44:50.377378-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,\
-  \ onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te\u2026"
+summary: Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,
+  onderhoudbaar kader vanaf het begin.
 title: Een nieuw project starten
 weight: 1
 ---

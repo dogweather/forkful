@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.300993-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
   \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\
-  \ vanligvis\u2026"
+  \ vanligvis stammende fra analyserte JSON-objekter, brukerinndata, eller datautvinning."
 title: "Fjerner anf\xF8rselstegn fra en streng"
 weight: 9
 ---

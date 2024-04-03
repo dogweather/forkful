@@ -5,9 +5,7 @@ description: "Co to jest i dlaczego? Rozpoczynanie nowego projektu to stworzenie
   \ czyst\u0105 kart\u0105, z\u2026"
 lastmod: '2024-03-13T22:44:35.755729-06:00'
 model: gpt-4-1106-preview
-summary: "Co to jest i dlaczego? Rozpoczynanie nowego projektu to stworzenie podstaw\
-  \ dla Twojego kodu \u015Awift. Programi\u015Bci robi\u0105 to, aby zacz\u0105\u0107\
-  \ czyst\u0105 kart\u0105, z\u2026"
+summary: Co to jest i dlaczego.
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

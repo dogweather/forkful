@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
   i c\xF3 ngh\u0129a l\xE0 g\u1EE1 b\u1ECF b\u1EA5t k\u1EF3 d\u1EA5u ngo\u1EB7c \u0111\
   \u01A1n (' ') hay d\u1EA5u ngo\u1EB7c k\xE9p (\" \") n\xE0o ra kh\u1ECFi d\u1EEF\
-  \ li\u1EC7u v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn\u2026"
+  \ li\u1EC7u v\u0103n b\u1EA3n."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

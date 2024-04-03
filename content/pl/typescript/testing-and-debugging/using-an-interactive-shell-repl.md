@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.140492-06:00'
 model: gpt-4-0125-preview
 summary: "Read-Eval-Print-Loop (REPL) to \u015Brodowisko programistyczne, kt\xF3re\
   \ przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i zwraca wynik\
-  \ u\u017Cytkownikowi.\u2026"
+  \ u\u017Cytkownikowi."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

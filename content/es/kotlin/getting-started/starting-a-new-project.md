@@ -5,7 +5,7 @@ description: "Iniciar un nuevo proyecto es como poner la primera piedra de tu co
 lastmod: '2024-03-13T22:44:59.036569-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como poner la primera piedra de tu construcci\xF3\
-  n digital; es el punto de partida para cualquier aplicaci\xF3n que planees\u2026"
+  n digital; es el punto de partida para cualquier aplicaci\xF3n que planees desarrollar."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

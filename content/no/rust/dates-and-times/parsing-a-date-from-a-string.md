@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.583331-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng er en vanlig oppgave n\xE5r man h\xE5\
   ndterer brukerinndata eller leser data fra filer, som inneb\xE6rer \xE5 konvertere\
-  \ strengdata\u2026"
+  \ strengdata til et datofomat anerkjent av programmeringsspr\xE5ket."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.023314-06:00'
 model: gpt-4-0125-preview
 summary: "Zwi\u0119kszanie wielko\u015Bci pierwszej litery ci\u0105gu polega na zamianie\
   \ pierwszej litery ci\u0105gu na wielk\u0105, przy jednoczesnym zapewnieniu, \u017C\
-  e reszta liter jest\u2026"
+  e reszta liter jest ma\u0142a."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

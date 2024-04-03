@@ -8,8 +8,7 @@ description: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir
 lastmod: '2024-03-13T22:44:57.898816-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir un fichier\
-  \ et d'y ins\xE9rer du contenu. Les programmeurs font cela pour persister des donn\xE9\
-  es,\u2026"
+  \ et d'y ins\xE9rer du contenu."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

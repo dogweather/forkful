@@ -8,8 +8,7 @@ description: "Att h\xE4mta det aktuella datumet i Haskell inneb\xE4r att f\xE5 s
 lastmod: '2024-03-13T22:44:37.965194-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i Haskell inneb\xE4r att f\xE5 systemets\
-  \ nuvarande tid och omvandla den till ett l\xE4sbart datumformat. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+  \ nuvarande tid och omvandla den till ett l\xE4sbart datumformat."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

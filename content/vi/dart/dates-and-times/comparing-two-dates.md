@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y trong Dart bao g\u1ED3m vi\u1EC7c \u0111\xE1nh gi\xE1\
   \ s\u1EF1 kh\xE1c bi\u1EC7t v\u1EC1 th\u1EDDi gian ho\u1EB7c th\u1EE9 t\u1EF1 gi\u1EEF\
   a ch\xFAng, l\xE0 m\u1ED9t ch\u1EE9c n\u0103ng thi\u1EBFt y\u1EBFu trong c\xE1c\
-  \ \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD\u2026"
+  \ \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD s\u1EF1 ki\u1EC7n, h\u1EA1n ch\xF3t ho\u1EB7\
+  c b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\u1EDBi th\u1EDDi gian\
+  \ n\xE0o."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

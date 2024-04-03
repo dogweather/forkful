@@ -8,8 +8,7 @@ description: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcio
 lastmod: '2024-03-13T22:44:46.384028-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcionar mensagens\
-  \ de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3o (stdout).\
-  \ Os\u2026"
+  \ de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3o (stdout)."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.169166-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation, dans le contexte de la programmation, est le processus\
   \ d'enregistrement des \xE9v\xE9nements, des \xE9tats et des informations dans un\
-  \ fichier\u2026"
+  \ fichier ou un autre support de sortie."
 title: Journalisation
 weight: 17
 ---

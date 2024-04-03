@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.166530-06:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 w j\u0119zyku\
   \ Rust polega na modyfikacji ci\u0105gu tak, aby jego pierwszy znak by\u0142 du\u017C\
-  \u0105 liter\u0105, je\u015Bli jest liter\u0105,\u2026"
+  \u0105 liter\u0105, je\u015Bli jest liter\u0105, pozostawiaj\u0105c reszt\u0119\
+  \ ci\u0105gu bez zmian."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

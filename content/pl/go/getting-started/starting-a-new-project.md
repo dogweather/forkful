@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.851711-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
   \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\
-  w Go. Programi\u015Bci robi\u0105 to\u2026"
+  w Go."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

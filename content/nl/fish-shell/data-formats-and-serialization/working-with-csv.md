@@ -6,8 +6,9 @@ description: "Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) 
   \ het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en\u2026"
 lastmod: '2024-03-13T22:44:51.269404-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat\
-  \ het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en\u2026"
+summary: Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat het
+  parseren en manipuleren van gegevens die gestructureerd zijn als rijen en kolommen
+  in tekstformaat.
 title: Werken met CSV
 weight: 37
 ---

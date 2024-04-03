@@ -6,8 +6,7 @@ description: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1r
 lastmod: '2024-03-13T22:44:47.101767-06:00'
 model: gpt-4-1106-preview
 summary: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1rio para\
-  \ a sua aplica\xE7\xE3o. \xC9 o registro sistem\xE1tico de eventos, mensagens e\
-  \ pontos de dados que lhe\u2026"
+  \ a sua aplica\xE7\xE3o."
 title: Registro de Logs
 weight: 17
 ---

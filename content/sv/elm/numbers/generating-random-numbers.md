@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:37.825133-06:00'
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att anv\xE4nda `Random`-modulen\
   \ f\xF6r att producera pseudo-slumpm\xE4ssiga nummer, vilket \xE4r anv\xE4ndbart\
-  \ f\xF6r en\u2026"
+  \ f\xF6r en m\xE4ngd uppgifter s\xE5som spel, simuleringar och \xE4ven som en del\
+  \ av algoritmer som kr\xE4ver stokastiska processer."
 title: "Generera slumpm\xE4ssiga tal"
 weight: 12
 ---

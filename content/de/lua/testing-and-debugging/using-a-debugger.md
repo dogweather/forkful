@@ -5,7 +5,7 @@ description: "Lua kommt nicht mit einem eingebauten Debugger, aber Sie k\xF6nnen
 lastmod: '2024-03-13T22:44:54.019667-06:00'
 model: gpt-4-0125-preview
 summary: "Lua kommt nicht mit einem eingebauten Debugger, aber Sie k\xF6nnen externe\
-  \ Debugger verwenden, wie zum Beispiel ZeroBrane Studio. Hier ist ein Vorgeschmack\u2026"
+  \ Debugger verwenden, wie zum Beispiel ZeroBrane Studio."
 title: Einsatz eines Debuggers
 weight: 35
 ---

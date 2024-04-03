@@ -7,7 +7,8 @@ description: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inic
 lastmod: '2024-03-13T22:44:46.108259-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inicializa\xE7\
-  \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\u2026"
+  \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\
+  \ Sheets, etc."
 title: Iniciando um novo projeto
 weight: 1
 ---

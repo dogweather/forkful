@@ -4,8 +4,8 @@ description: "Associative arrays, known as objects in Google Apps Script (a vari
   \ of JavaScript), allow programmers to create collections of key-value pairs. This\u2026"
 lastmod: '2024-03-13T22:44:59.663580-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, known as objects in Google Apps Script (a variant of\
-  \ JavaScript), allow programmers to create collections of key-value pairs. This\u2026"
+summary: Associative arrays, known as objects in Google Apps Script (a variant of
+  JavaScript), allow programmers to create collections of key-value pairs.
 title: Using associative arrays
 weight: 15
 ---

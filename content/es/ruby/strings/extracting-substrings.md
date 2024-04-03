@@ -4,8 +4,7 @@ description: "Extraer substrings significa sacar partes espec\xEDficas de un str
   \ Lo hacemos para manipular, analizar o modificar datos de manera m\xE1s precisa."
 lastmod: '2024-03-13T22:44:59.579028-06:00'
 model: gpt-4-1106-preview
-summary: "Extraer substrings significa sacar partes espec\xEDficas de un string. Lo\
-  \ hacemos para manipular, analizar o modificar datos de manera m\xE1s precisa."
+summary: "Extraer substrings significa sacar partes espec\xEDficas de un string."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

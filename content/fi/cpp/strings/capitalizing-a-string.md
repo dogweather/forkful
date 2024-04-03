@@ -7,7 +7,8 @@ description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jok
 lastmod: '2024-03-13T22:44:56.848336-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jokaisen\
-  \ sanan ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena,\u2026"
+  \ sanan ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena,\
+  \ samalla kun kaikki muut merkit j\xE4tet\xE4\xE4n muuttumattomiksi."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

@@ -7,7 +7,8 @@ description: "Nella programmazione Bash, verificare se una directory esiste \xE8
 lastmod: '2024-03-13T22:44:43.613889-06:00'
 model: gpt-4-0125-preview
 summary: "Nella programmazione Bash, verificare se una directory esiste \xE8 un meccanismo\
-  \ di controllo essenziale usato per verificare la presenza di una directory\u2026"
+  \ di controllo essenziale usato per verificare la presenza di una directory prima\
+  \ di eseguire operazioni sui file."
 title: Verifica se una directory esiste
 weight: 20
 ---

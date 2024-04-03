@@ -6,7 +6,8 @@ description: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomist
 lastmod: '2024-03-13T22:44:56.139515-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista, joita\
-  \ ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4 on\u2026"
+  \ ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4 on oleellista\
+  \ simulaatioiden, pelien ja turva-algoritmien kehitt\xE4misess\xE4."
 title: Satunnaislukujen generointi
 weight: 12
 ---

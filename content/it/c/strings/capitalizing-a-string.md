@@ -7,7 +7,8 @@ description: "Capitalizzare una stringa in C implica convertire il primo caratte
 lastmod: '2024-03-13T22:44:43.886614-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in C implica convertire il primo carattere di\
-  \ ogni parola in una determinata stringa in maiuscolo, se questo \xE8 una lettera\u2026"
+  \ ogni parola in una determinata stringa in maiuscolo, se questo \xE8 una lettera\
+  \ minuscola."
 title: Capitalizzare una stringa
 weight: 2
 ---

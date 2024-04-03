@@ -8,8 +8,7 @@ description: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spe
 lastmod: '2024-03-13T22:44:40.723284-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spesifikk\
-  \ mappebane er til stede i filsystemet. Programmerere gj\xF8r dette for \xE5 unng\xE5\
-  \ feil n\xE5r de\u2026"
+  \ mappebane er til stede i filsystemet."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

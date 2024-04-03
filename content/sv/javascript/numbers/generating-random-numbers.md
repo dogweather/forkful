@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:38.289304-06:00'
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga tal i JavaScript \xE4r en teknik som anv\xE4\
   nds f\xF6r att skapa of\xF6ruts\xE4gbarhet i applikationer, fr\xE5n spel som beh\xF6\
-  ver slumpm\xE4ssigt\u2026"
+  ver slumpm\xE4ssigt fiendebeteende till s\xE4kerhetsalgoritmer som kr\xE4ver kryptografisk\
+  \ slumpm\xE4ssighet."
 title: Generera slumptal
 weight: 12
 ---

@@ -5,7 +5,8 @@ description: "Un REPL, o Bucle de Leer-Evaluar-Imprimir, es un entorno de progra
 lastmod: '2024-03-13T22:44:58.613552-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL, o Bucle de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
-  n que toma entradas individuales del usuario, las ejecuta y devuelve el resultado\u2026"
+  n que toma entradas individuales del usuario, las ejecuta y devuelve el resultado\
+  \ al usuario."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

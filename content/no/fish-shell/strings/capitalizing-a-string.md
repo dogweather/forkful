@@ -8,8 +8,7 @@ description: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik a
 lastmod: '2024-03-13T22:44:41.208643-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at den\
-  \ f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver. Dette\
-  \ er en vanlig\u2026"
+  \ f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

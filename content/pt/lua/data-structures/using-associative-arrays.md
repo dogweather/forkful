@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.702207-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados em\
   \ Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\
-  \ suas chaves podem\u2026"
+  \ suas chaves podem ser o que voc\xEA quiser, tornando a recupera\xE7\xE3o de dados\
+  \ uma brisa."
 title: Usando arrays associativos
 weight: 15
 ---

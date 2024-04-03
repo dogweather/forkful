@@ -7,7 +7,8 @@ description: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirig
 lastmod: '2024-03-13T22:44:41.349646-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere feilmeldinger\
-  \ eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\u2026"
+  \ eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\
+  \ (stdout)."
 title: Skriving til standardfeil
 weight: 25
 ---

@@ -5,7 +5,7 @@ description: "Verkkosivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista i
 lastmod: '2024-03-13T22:44:56.529397-06:00'
 model: gpt-4-1106-preview
 summary: "Verkkosivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista internetist\xE4\
-  \ omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sis\xE4ll\xF6n\u2026"
+  \ omalle laitteelle."
 title: Verkkosivun lataaminen
 weight: 42
 ---

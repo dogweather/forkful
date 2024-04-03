@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt betyr \xE5 lage et nytt skript eller 
 lastmod: '2024-03-13T22:44:41.059282-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 lage et nytt skript eller program\
-  \ fra bunnen av. Programmerere gj\xF8r dette for \xE5 skape tilpassede l\xF8sninger,\
-  \ l\xE6re nye\u2026"
+  \ fra bunnen av."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

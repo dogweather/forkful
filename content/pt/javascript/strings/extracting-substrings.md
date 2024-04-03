@@ -6,8 +6,7 @@ description: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string,
 lastmod: '2024-03-13T22:44:46.951919-06:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
-  \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\
-  \ usar informa\xE7\xF5es\u2026"
+  \ cortar s\xF3 um peda\xE7o do texto."
 title: Extraindo substrings
 weight: 6
 ---

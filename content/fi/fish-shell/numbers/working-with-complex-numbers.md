@@ -5,8 +5,8 @@ description: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivois
   \ kuten\u2026"
 lastmod: '2024-03-13T22:44:56.986141-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen\
-  \ kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten\u2026"
+summary: Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen
+  kompleksitasoon.
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

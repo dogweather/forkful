@@ -5,7 +5,8 @@ description: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de 
 lastmod: '2024-03-13T22:44:59.241192-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
-  \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"
+  \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\
+  \ como crearlos, leerlos, actualizarlos o eliminarlos, todo desde el terminal."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.346464-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, uma linguagem de serializa\xE7\xE3o de dados projetada para ser amig\xE1\
   vel para humanos, \xE9 frequentemente usada para arquivos de configura\xE7\xE3o,\
-  \ mensagens\u2026"
+  \ mensagens entre processos e armazenamento de dados."
 title: Trabalhando com YAML
 weight: 41
 ---

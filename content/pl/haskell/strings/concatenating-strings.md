@@ -5,9 +5,7 @@ description: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c
   \ \u015Bcie\u017Cki do plik\xF3w, wiadomo\u015Bci, dynamiczne teksty\u2026"
 lastmod: '2024-03-13T22:44:35.443258-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c\xF3w.\
-  \ Programi\u015Bci robi\u0105 to, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w \u2013\
-  \ \u015Bcie\u017Cki do plik\xF3w, wiadomo\u015Bci, dynamiczne teksty\u2026"
+summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

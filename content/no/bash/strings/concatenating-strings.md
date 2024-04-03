@@ -6,8 +6,7 @@ description: "Sammenkjede av strenger betyr \xE5 lime sammen to eller flere teks
 lastmod: '2024-03-13T22:44:40.964182-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenkjede av strenger betyr \xE5 lime sammen to eller flere tekstbitene\
-  \ ende til ende. Programmerere gj\xF8r dette for \xE5 bygge opp komplekse strenger\
-  \ fra\u2026"
+  \ ende til ende."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

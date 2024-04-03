@@ -7,7 +7,8 @@ description: "Analizar una fecha de una cadena en Elm implica convertir informac
 lastmod: '2024-03-13T22:44:59.002436-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
-  n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"
+  n textual que representa fechas y horas en un formato que Elm pueda entender y manipular,\
+  \ espec\xEDficamente en el tipo `Date`."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

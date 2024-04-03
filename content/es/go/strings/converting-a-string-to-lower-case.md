@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.452498-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental que\
   \ permite uniformidad y consistencia en el procesamiento de texto, esencial para\
-  \ tareas\u2026"
+  \ tareas como comparaciones insensibles a may\xFAsculas o normalizaci\xF3n de texto."
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---

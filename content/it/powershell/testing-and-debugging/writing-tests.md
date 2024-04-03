@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.646129-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in PowerShell comporta la creazione di script che validano\
   \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
-  \ si\u2026"
+  \ si comporti come previsto."
 title: Scrivere test
 weight: 36
 ---

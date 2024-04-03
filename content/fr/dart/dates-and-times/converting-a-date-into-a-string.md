@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.403108-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res dans Dart est une t\xE2\
   che courante lorsque vous avez besoin d'afficher des informations de date et d'heure\
-  \ dans\u2026"
+  \ dans un format lisible par l'homme, ou lorsque vous avez l'intention de s\xE9\
+  rialiser des donn\xE9es pour le stockage ou la transmission."
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

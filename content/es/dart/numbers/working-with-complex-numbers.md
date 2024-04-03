@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.742692-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, compuestos por una parte real y una parte imaginaria\
   \ (generalmente denotados como a + bi), extienden el concepto de los n\xFAmeros\
-  \ sin\u2026"
+  \ sin dimensi\xF3n a un espacio bidimensional."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

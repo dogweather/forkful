@@ -7,7 +7,8 @@ description: "\xC9crire sur l'erreur standard en C implique de diriger les messa
 lastmod: '2024-03-13T22:44:58.390373-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en C implique de diriger les messages d'erreur\
-  \ et les informations de diagnostic vers un flux distinct de la sortie\u2026"
+  \ et les informations de diagnostic vers un flux distinct de la sortie principale\
+  \ du programme."
 title: "\xC9criture sur l'erreur standard"
 weight: 25
 ---

@@ -5,7 +5,7 @@ description: "Comparar duas datas significa verificar se s\xE3o iguais, qual vem
 lastmod: '2024-03-13T22:44:46.512425-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar se s\xE3o iguais, qual vem antes\
-  \ ou depois da outra. Programadores fazem isso para organizar eventos, filtrar prazos,\u2026"
+  \ ou depois da outra."
 title: Comparando duas datas
 weight: 27
 ---

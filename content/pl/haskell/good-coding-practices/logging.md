@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.458676-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie w programowaniu polega zasadniczo na pozostawianiu \u015Bladu\
   \ w postaci zarejestrowanych zdarze\u0144 lub wiadomo\u015Bci, kt\xF3re mog\u0105\
-  \ by\u0107 wykorzystane do\u2026"
+  \ by\u0107 wykorzystane do \u015Bledzenia, co aplikacja robi w danym momencie."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

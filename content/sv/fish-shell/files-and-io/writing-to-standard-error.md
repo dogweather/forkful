@@ -7,7 +7,7 @@ description: "Att skriva till standardfel (stderr) i Fish Shell handlar om att r
 lastmod: '2024-03-13T22:44:38.354602-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Fish Shell handlar om att rikta felmeddelanden\
-  \ eller diagnostik separat fr\xE5n standardutdata (stdout). Programmerare\u2026"
+  \ eller diagnostik separat fr\xE5n standardutdata (stdout)."
 title: Skriva till standardfel
 weight: 25
 ---

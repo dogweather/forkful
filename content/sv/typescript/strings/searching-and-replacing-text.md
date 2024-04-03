@@ -6,8 +6,7 @@ description: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: vi letar e
 lastmod: '2024-03-13T22:44:37.641576-06:00'
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: vi letar efter en\
-  \ textstr\xE4ng och byter ut den mot en annan. Programmerare g\xF6r detta f\xF6\
-  r att uppdatera data,\u2026"
+  \ textstr\xE4ng och byter ut den mot en annan."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

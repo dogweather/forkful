@@ -9,8 +9,7 @@ description: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w sk
 lastmod: '2024-03-13T22:44:35.847047-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
-  \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\
-  e kod jest\u2026"
+  \ do realizacji konkretnych zada\u0144."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

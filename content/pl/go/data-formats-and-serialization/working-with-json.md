@@ -8,7 +8,7 @@ description: "Praca z JSON (JavaScript Object Notation) w Go polega na kodowaniu
 lastmod: '2024-03-13T22:44:34.876739-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) w Go polega na kodowaniu i dekodowaniu\
-  \ danych mi\u0119dzy strukturami danych Go a formatem JSON. To zadanie jest\u2026"
+  \ danych mi\u0119dzy strukturami danych Go a formatem JSON."
 title: Praca z JSON
 weight: 38
 ---

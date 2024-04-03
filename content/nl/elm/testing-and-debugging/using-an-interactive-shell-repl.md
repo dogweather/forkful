@@ -6,8 +6,9 @@ description: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve pro
   \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"
 lastmod: '2024-03-13T22:44:50.726373-06:00'
 model: gpt-4-0125-preview
-summary: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving\
-  \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"
+summary: De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving
+  die individuele gebruikersinvoer neemt, deze evalueert en het resultaat aan de gebruiker
+  teruggeeft.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

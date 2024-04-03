@@ -6,9 +6,7 @@ description: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w \u2013 to ile znak\xF3
   ci."
 lastmod: '2024-03-13T22:44:35.312281-06:00'
 model: gpt-4-1106-preview
-summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w \u2013 to ile znak\xF3w zawiera.\
-  \ Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107 dane wej\u015B\
-  ciowe czy obs\u0142ugiwa\u0107 teksty o zmiennej d\u0142ugo\u015Bci."
+summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w \u2013 to ile znak\xF3w zawiera."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

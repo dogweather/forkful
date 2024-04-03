@@ -8,7 +8,8 @@ description: "Refaktorering i programmering inneb\xE6rer \xE5 endre strukturen p
 lastmod: '2024-03-13T22:44:40.629769-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering i programmering inneb\xE6rer \xE5 endre strukturen p\xE5 koden\
-  \ uten \xE5 endre dens oppf\xF8rsel, for \xE5 forbedre aspekter som lesbarhet, vedlikeholdbarhet\u2026"
+  \ uten \xE5 endre dens oppf\xF8rsel, for \xE5 forbedre aspekter som lesbarhet, vedlikeholdbarhet\
+  \ eller ytelse."
 title: Refaktorering
 weight: 19
 ---

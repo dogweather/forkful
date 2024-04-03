@@ -7,7 +7,8 @@ description: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \
 lastmod: '2024-03-13T22:44:40.359035-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \xE5 trekke\
-  \ ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\u2026"
+  \ ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\
+  \ data mining eller automatisering av interaksjoner med nettsteder."
 title: Analysering av HTML
 weight: 43
 ---

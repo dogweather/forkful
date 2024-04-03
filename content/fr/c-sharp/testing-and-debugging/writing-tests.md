@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.791124-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
   s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\
-  \ comme pr\xE9vu.\u2026"
+  \ comme pr\xE9vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

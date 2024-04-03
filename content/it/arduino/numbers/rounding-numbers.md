@@ -5,7 +5,7 @@ description: "Arrotondare i numeri significa tagliare un decimale al suo valore 
 lastmod: '2024-03-13T22:44:43.678345-06:00'
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa tagliare un decimale al suo valore intero\
-  \ pi\xF9 vicino o a un numero impostato di cifre decimali. I programmatori arrotondano\u2026"
+  \ pi\xF9 vicino o a un numero impostato di cifre decimali."
 title: Arrotondamento dei numeri
 weight: 13
 ---

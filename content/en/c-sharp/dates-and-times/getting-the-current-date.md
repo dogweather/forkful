@@ -5,8 +5,8 @@ description: "Getting the current date in C# involves fetching the current date 
   \ for\u2026"
 lastmod: '2024-03-13T22:45:00.098691-06:00'
 model: gpt-4-0125-preview
-summary: "Getting the current date in C# involves fetching the current date and time\
-  \ details from the system. Programmers often need to access this information for\u2026"
+summary: Getting the current date in C# involves fetching the current date and time
+  details from the system.
 title: Getting the current date
 weight: 29
 ---

@@ -7,7 +7,8 @@ description: "Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfa
 lastmod: '2024-03-13T22:44:54.167891-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfangsbuchstabens\
-  \ jedes Wortes im String in Gro\xDFbuchstaben, falls dieser in Kleinbuchstaben\u2026"
+  \ jedes Wortes im String in Gro\xDFbuchstaben, falls dieser in Kleinbuchstaben ist,\
+  \ w\xE4hrend die restlichen Zeichen unver\xE4ndert bleiben."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

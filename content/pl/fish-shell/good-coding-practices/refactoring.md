@@ -5,7 +5,7 @@ description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu b
 lastmod: '2024-03-13T22:44:35.849979-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez zmieniania\
-  \ jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych.\u2026"
+  \ jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych."
 title: Refaktoryzacja
 weight: 19
 ---

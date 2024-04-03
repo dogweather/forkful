@@ -5,7 +5,7 @@ description: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm 
 lastmod: '2024-03-13T22:44:53.550986-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start\
-  \ \xFCbergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch\u2026"
+  \ \xFCbergibst."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

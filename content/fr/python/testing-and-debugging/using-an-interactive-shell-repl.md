@@ -5,7 +5,8 @@ description: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher (Read-Eval-Print Loop)
 lastmod: '2024-03-13T22:44:57.237909-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher (Read-Eval-Print Loop), est\
-  \ un environnement de programmation qui prend des entr\xE9es utilisateur individuelles,\u2026"
+  \ un environnement de programmation qui prend des entr\xE9es utilisateur individuelles,\
+  \ les ex\xE9cute et retourne le r\xE9sultat \xE0 l'utilisateur."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

@@ -7,7 +7,8 @@ description: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkial
 lastmod: '2024-03-13T22:44:56.074658-06:00'
 model: gpt-4-0125-preview
 summary: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla k\xE4\
-  ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\u2026"
+  ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\
+  \ kuten Go:n, integraation ansiosta."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

@@ -7,7 +7,7 @@ description: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Tran
 lastmod: '2024-03-13T22:44:53.703253-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
-  \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"
+  \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente."
 title: Einen String in Kleinbuchstaben umwandeln
 weight: 4
 ---

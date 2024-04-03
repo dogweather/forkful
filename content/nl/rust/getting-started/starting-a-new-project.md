@@ -6,8 +6,8 @@ description: "Een nieuw project starten in Rust betekent het opzetten van een ba
   \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"
 lastmod: '2024-03-13T22:44:50.594818-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten in Rust betekent het opzetten van een basisstructuur\
-  \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"
+summary: Een nieuw project starten in Rust betekent het opzetten van een basisstructuur
+  zodat je code een plek heeft om te leven.
 title: Een nieuw project starten
 weight: 1
 ---

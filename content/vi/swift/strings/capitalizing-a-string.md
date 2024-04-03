@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt hoa c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i ch\u1EEF\
   \ c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a t\u1EEB th\xE0nh ch\u1EEF in hoa; trong\
   \ chu\u1ED7i k\xFD t\u1EF1, th\u01B0\u1EDDng li\xEAn quan \u0111\u1EBFn vi\u1EC7\
-  c \u0111\u1ECBnh d\u1EA1ng ho\u1EB7c l\xE0m cho v\u0103n b\u1EA3n\u2026"
+  c \u0111\u1ECBnh d\u1EA1ng ho\u1EB7c l\xE0m cho v\u0103n b\u1EA3n th\xE2n thi\u1EC7\
+  n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng h\u01A1n."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

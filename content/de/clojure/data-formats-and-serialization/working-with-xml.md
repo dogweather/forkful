@@ -6,7 +6,7 @@ description: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf 
 lastmod: '2024-03-13T22:44:53.444581-06:00'
 model: gpt-4-0125-preview
 summary: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine Weise,\
-  \ die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist ein\u2026"
+  \ die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist."
 title: Arbeiten mit XML
 weight: 40
 ---

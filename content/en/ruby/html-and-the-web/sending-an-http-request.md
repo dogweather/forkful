@@ -5,7 +5,6 @@ description: Sending an HTTP request means requesting data from a resource on th
 lastmod: '2024-03-13T22:45:00.547810-06:00'
 model: gpt-4-1106-preview
 summary: Sending an HTTP request means requesting data from a resource on the web.
-  Programmers do it to interact with APIs, scrape web content, or talk to servers.
 title: Sending an HTTP request
 weight: 44
 ---

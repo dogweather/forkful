@@ -7,7 +7,7 @@ description: "Regul\xE4re Ausdr\xFCcke in der Programmierung erm\xF6glichen das 
 lastmod: '2024-03-13T22:44:54.005278-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke in der Programmierung erm\xF6glichen das Mustervergleichen\
-  \ und die Manipulation von Zeichenketten basierend auf spezifischen Mustern.\u2026"
+  \ und die Manipulation von Zeichenketten basierend auf spezifischen Mustern."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

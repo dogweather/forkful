@@ -5,7 +5,7 @@ description: "Leggere gli argomenti della riga di comando permette al tuo progra
 lastmod: '2024-03-13T22:44:43.743379-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando permette al tuo programma C++\
-  \ di accettare input quando \xE8 avviato dal terminale o da una shell. I\u2026"
+  \ di accettare input quando \xE8 avviato dal terminale o da una shell."
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

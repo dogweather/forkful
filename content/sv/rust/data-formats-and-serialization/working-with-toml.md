@@ -6,8 +6,7 @@ description: "TOML \xE4r ett m\xE4nniskol\xE4sbart data-serialiseringsspr\xE5k s
 lastmod: '2024-03-13T22:44:37.722832-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE4r ett m\xE4nniskol\xE4sbart data-serialiseringsspr\xE5k som ofta\
-  \ anv\xE4nds f\xF6r konfigurationsfiler. Programmerare anv\xE4nder TOML f\xF6r dess\
-  \ enkelhet och klarhet,\u2026"
+  \ anv\xE4nds f\xF6r konfigurationsfiler."
 title: Att arbeta med TOML
 weight: 39
 ---

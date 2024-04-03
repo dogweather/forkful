@@ -6,7 +6,7 @@ description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in PowerSh
 lastmod: '2024-03-13T22:44:54.089695-06:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in PowerShell entfernt\
-  \ einzelne (`'`) oder doppelte (`\"`) Anf\xFChrungszeichen, die Ihren Text umgeben.\u2026"
+  \ einzelne (`'`) oder doppelte (`\"`) Anf\xFChrungszeichen, die Ihren Text umgeben."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

@@ -6,8 +6,8 @@ description: "Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses
   \ Datenaustauschformat in Ihren Java-Anwendungen zu handhaben. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:53.783664-06:00'
 model: gpt-4-0125-preview
-summary: "Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses leichte\
-  \ Datenaustauschformat in Ihren Java-Anwendungen zu handhaben. Programmierer\u2026"
+summary: Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses leichte
+  Datenaustauschformat in Ihren Java-Anwendungen zu handhaben.
 title: Arbeiten mit JSON
 weight: 38
 ---

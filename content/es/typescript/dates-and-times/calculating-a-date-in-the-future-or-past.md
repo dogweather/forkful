@@ -6,8 +6,7 @@ description: "Calcular fechas futuras o pasadas significa determinar un d\xEDa y
 lastmod: '2024-03-13T22:44:58.815447-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular fechas futuras o pasadas significa determinar un d\xEDa y hora\
-  \ espec\xEDficos antes o despu\xE9s de una fecha dada. Los programadores lo hacen\
-  \ para\u2026"
+  \ espec\xEDficos antes o despu\xE9s de una fecha dada."
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

@@ -4,8 +4,8 @@ description: "Concatenation in Visual Basic for Applications (VBA) involves join
   \ two or more strings into a single entity. This is a fundamental task in programming,\u2026"
 lastmod: '2024-03-13T22:44:59.927222-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenation in Visual Basic for Applications (VBA) involves joining two\
-  \ or more strings into a single entity. This is a fundamental task in programming,\u2026"
+summary: Concatenation in Visual Basic for Applications (VBA) involves joining two
+  or more strings into a single entity.
 title: Concatenating strings
 weight: 3
 ---

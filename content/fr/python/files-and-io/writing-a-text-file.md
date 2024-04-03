@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.256234-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Python est une t\xE2che fondamentale\
   \ qui implique de cr\xE9er ou d'ouvrir un fichier, puis d'y ajouter du texte ou\
-  \ de le\u2026"
+  \ de le remplacer."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

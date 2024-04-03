@@ -6,8 +6,7 @@ description: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\x
 lastmod: '2024-03-13T22:44:56.656657-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\xF6yd\xE4\
-  lt\xE4 aloittamista; uutta luovaa prosessia. Koodarit tekev\xE4t sen paketoidakseen\
-  \ ideoita ja\u2026"
+  lt\xE4 aloittamista; uutta luovaa prosessia."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

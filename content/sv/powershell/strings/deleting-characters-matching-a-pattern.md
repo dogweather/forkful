@@ -6,8 +6,7 @@ description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt at
 lastmod: '2024-03-13T22:44:38.108497-06:00'
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att filtrera\
-  \ text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\
-  \ g\xF6r detta\u2026"
+  \ text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

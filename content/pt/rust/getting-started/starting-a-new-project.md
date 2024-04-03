@@ -6,8 +6,7 @@ description: "Iniciar um novo projeto em Rust \xE9 como desenhar o molde para um
 lastmod: '2024-03-13T22:44:46.368358-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em Rust \xE9 como desenhar o molde para uma nova\
-  \ inven\xE7\xE3o. Programadores fazem isso para transformar ideias em c\xF3digo,\
-  \ criando a base\u2026"
+  \ inven\xE7\xE3o."
 title: Iniciando um novo projeto
 weight: 1
 ---

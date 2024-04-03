@@ -7,8 +7,8 @@ description: "Gli array associativi sono come degli array super-potenziati che t
   \ li\u2026"
 lastmod: '2024-03-13T22:44:43.590646-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi sono come degli array super-potenziati che ti permettono\
-  \ di usare stringhe come indici invece di semplici interi. I programmatori li\u2026"
+summary: Gli array associativi sono come degli array super-potenziati che ti permettono
+  di usare stringhe come indici invece di semplici interi.
 title: Utilizzo di array associativi
 weight: 15
 ---

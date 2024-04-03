@@ -6,7 +6,7 @@ description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa \xE4rsytt\xE4
 lastmod: '2024-03-13T22:44:56.853194-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa \xE4rsytt\xE4vien kaksin-\
-  \ tai yksinkertaisten merkkien (\u2018 tai \u201D) kuorimista tekstist\xE4mme. Ohjelmoijat\u2026"
+  \ tai yksinkertaisten merkkien (\u2018 tai \u201D) kuorimista tekstist\xE4mme."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

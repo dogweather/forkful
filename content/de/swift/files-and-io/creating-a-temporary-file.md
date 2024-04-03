@@ -4,8 +4,7 @@ description: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter. Entwickler 
   \ sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen."
 lastmod: '2024-03-13T22:44:54.244199-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter. Entwickler nutzen\
-  \ sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen."
+summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

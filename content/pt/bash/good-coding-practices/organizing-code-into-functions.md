@@ -6,8 +6,7 @@ description: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em b
 lastmod: '2024-03-13T22:44:46.758109-06:00'
 model: gpt-4-1106-preview
 summary: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em blocos\
-  \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas. Isso torna o c\xF3\
-  digo mais limpo,\u2026"
+  \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

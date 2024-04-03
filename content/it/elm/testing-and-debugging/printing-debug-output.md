@@ -6,7 +6,7 @@ description: "La stampa del debug output \xE8 mostrare i valori delle variabili 
 lastmod: '2024-03-13T22:44:43.352347-06:00'
 model: gpt-4-1106-preview
 summary: "La stampa del debug output \xE8 mostrare i valori delle variabili o messaggi\
-  \ su console per capire meglio cosa sta facendo il codice. I programmatori lo\u2026"
+  \ su console per capire meglio cosa sta facendo il codice."
 title: Stampa dell'output di debug
 weight: 33
 ---

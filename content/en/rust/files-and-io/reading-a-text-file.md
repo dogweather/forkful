@@ -4,8 +4,7 @@ description: "Reading a text file is grabbing text content from a .txt file on y
   \ disk. Programmers do it to handle data like configuration, user input, or to process\u2026"
 lastmod: '2024-03-13T22:44:59.911985-06:00'
 model: gpt-4-1106-preview
-summary: "Reading a text file is grabbing text content from a .txt file on your disk.\
-  \ Programmers do it to handle data like configuration, user input, or to process\u2026"
+summary: Reading a text file is grabbing text content from a .
 title: Reading a text file
 weight: 22
 ---

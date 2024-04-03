@@ -7,9 +7,7 @@ description: "GDB (GNU Debugger) on yleisimmin k\xE4ytetty debuggeri C-ohjelmoin
   \ Ensin,\u2026"
 lastmod: '2024-03-13T22:44:57.045259-06:00'
 model: gpt-4-0125-preview
-summary: "GDB (GNU Debugger) on yleisimmin k\xE4ytetty debuggeri C-ohjelmoinnissa.\
-  \ T\xE4ss\xE4 on lyhyt opas GDB:n k\xE4ytt\xF6\xF6n yksinkertaisen C-ohjelman debuggaamiseen.\
-  \ Ensin,\u2026"
+summary: "GDB (GNU Debugger) on yleisimmin k\xE4ytetty debuggeri C-ohjelmoinnissa."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

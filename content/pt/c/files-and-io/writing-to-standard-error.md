@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.067779-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em C envolve direcionar mensagens de erro\
   \ e informa\xE7\xF5es de diagn\xF3stico para um fluxo separado da sa\xEDda principal\
-  \ do programa.\u2026"
+  \ do programa."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

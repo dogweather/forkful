@@ -4,8 +4,9 @@ description: "Regular expressions (regex) are a powerful tool for text processin
   \ allowing programmers to search, match, and manipulate strings with advanced pattern-\u2026"
 lastmod: '2024-03-13T22:45:00.039553-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) are a powerful tool for text processing, allowing\
-  \ programmers to search, match, and manipulate strings with advanced pattern-\u2026"
+summary: Regular expressions (regex) are a powerful tool for text processing, allowing
+  programmers to search, match, and manipulate strings with advanced pattern-matching
+  techniques.
 title: Using regular expressions
 weight: 11
 ---

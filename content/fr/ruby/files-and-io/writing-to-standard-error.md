@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.438326-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Ruby, c'est diriger les messages\
   \ d'erreur ou les diagnostics vers un flux de sortie s\xE9par\xE9, distinct de la\
-  \ sortie\u2026"
+  \ sortie standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

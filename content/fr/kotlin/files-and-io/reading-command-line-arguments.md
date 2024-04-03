@@ -6,8 +6,7 @@ description: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des
 lastmod: '2024-03-13T22:44:57.757034-06:00'
 model: gpt-4-1106-preview
 summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
-  es fournies lorsque vous lancez votre programme. C'est crucial car \xE7a permet\
-  \ aux\u2026"
+  es fournies lorsque vous lancez votre programme."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

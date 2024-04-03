@@ -6,8 +6,7 @@ description: "Rust wspiera r\xF3\u017Cne debugery, ale popularnym jest `gdb` dla
 lastmod: '2024-03-13T22:44:35.189496-06:00'
 model: gpt-4-0125-preview
 summary: "Rust wspiera r\xF3\u017Cne debugery, ale popularnym jest `gdb` dla GNU/Linuxa\
-  \ lub `lldb` dla macOS. Mo\u017Cna tak\u017Ce u\u017Cy\u0107 `rust-gdb` lub `rust-lldb`,\
-  \ kt\xF3re s\u0105\u2026"
+  \ lub `lldb` dla macOS."
 title: Korzystanie z debugera
 weight: 35
 ---

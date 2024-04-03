@@ -6,8 +6,8 @@ description: "Hier is een stukje JavaScript-code dat zich niet gedraagt zoals ve
   \ ```javascript function buggyMultiply(a, b) { return a + b; // Oeps! Dit zou een\u2026"
 lastmod: '2024-03-13T22:44:51.206348-06:00'
 model: gpt-4-0125-preview
-summary: "Hier is een stukje JavaScript-code dat zich niet gedraagt zoals verwacht:\
-  \ ```javascript function buggyMultiply(a, b) { return a + b; // Oeps! Dit zou een\u2026"
+summary: "Hier is een stukje JavaScript-code dat zich niet gedraagt zoals verwacht:\n\
+  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Oeps."
 title: Een debugger gebruiken
 weight: 35
 ---

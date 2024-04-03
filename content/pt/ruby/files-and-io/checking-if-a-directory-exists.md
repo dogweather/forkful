@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.109469-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Ruby permite que programadores verifiquem\
   \ a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es como ler arquivos\
-  \ ou\u2026"
+  \ ou criar novos diret\xF3rios."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

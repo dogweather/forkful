@@ -12,8 +12,7 @@ model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u1EA5y n\u1ED9\
   i dung t\u1EEB m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc d\u01B0\u1EDB\
   i d\u1EA1ng v\u0103n b\u1EA3n \u0111\u1ECDc \u0111\u01B0\u1EE3c, thay v\xEC d\u1EEF\
-  \ li\u1EC7u nh\u1ECB ph\xE2n. C\xE1c l\u1EADp tr\xECnh vi\xEAn \u0111\u1ECDc t\u1EC7\
-  p v\u0103n b\u1EA3n \u0111\u1EC3\u2026"
+  \ li\u1EC7u nh\u1ECB ph\xE2n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

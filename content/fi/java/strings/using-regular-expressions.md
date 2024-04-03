@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.434617-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Javassa mahdollistavat tiettyjen\
   \ mallien m\xE4\xE4ritt\xE4misen haettavaksi, manipuloitavaksi tai merkkijonojen\
-  \ validointiin\u2026"
+  \ validointiin koodissasi."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

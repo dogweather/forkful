@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.770436-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka muodostavat\
   \ hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa merkkijonojen haussa\
-  \ ja k\xE4sittelyss\xE4.\u2026"
+  \ ja k\xE4sittelyss\xE4."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

@@ -5,9 +5,7 @@ description: "Lire un fichier texte, c'est quoi ? C\u2019est parcourir un fichie
   \ ? Parce qu'on a\u2026"
 lastmod: '2024-03-13T22:44:57.661257-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte, c'est quoi ? C\u2019est parcourir un fichier et en\
-  \ extraire des donn\xE9es pour les utiliser dans votre programme. Pourquoi ? Parce\
-  \ qu'on a\u2026"
+summary: Lire un fichier texte, c'est quoi .
 title: Lecture d'un fichier texte
 weight: 22
 ---

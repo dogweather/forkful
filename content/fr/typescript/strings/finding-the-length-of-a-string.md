@@ -6,8 +6,7 @@ description: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est d\xE9c
 lastmod: '2024-03-13T22:44:57.427068-06:00'
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est d\xE9couvrir\
-  \ combien de caract\xE8res elle contient. Les programmeurs le font pour valider\
-  \ des saisies\u2026"
+  \ combien de caract\xE8res elle contient."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

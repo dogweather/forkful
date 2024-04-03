@@ -7,7 +7,7 @@ description: "Express\xF5es regulares (regex) no Visual Basic for Applications (
 lastmod: '2024-03-13T22:44:46.400586-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) no Visual Basic for Applications (VBA) oferecem\
-  \ uma maneira poderosa de pesquisar, combinar e manipular strings.\u2026"
+  \ uma maneira poderosa de pesquisar, combinar e manipular strings."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

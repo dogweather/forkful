@@ -6,8 +6,7 @@ description: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skri
 lastmod: '2024-03-13T22:44:37.990405-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna som\
-  \ `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6rsvetenskap\
-  \ och\u2026"
+  \ `a + bi`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

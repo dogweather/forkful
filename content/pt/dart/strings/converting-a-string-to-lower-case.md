@@ -8,7 +8,8 @@ description: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\
 lastmod: '2024-03-13T22:44:46.267421-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
-  \ que envolve transformar todos os caracteres de uma string dada em seus equivalentes\u2026"
+  \ que envolve transformar todos os caracteres de uma string dada em seus equivalentes\
+  \ em min\xFAscula."
 title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---

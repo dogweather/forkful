@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.276684-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i str\xE4ngen till versal, samtidigt som resten av tecknen\
-  \ beh\xE5lls som\u2026"
+  \ beh\xE5lls som de \xE4r."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

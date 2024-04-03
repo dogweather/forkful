@@ -6,8 +6,8 @@ description: "Code organiseren in functies gaat over het verpakken van codeblokk
   \ die specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"
 lastmod: '2024-03-13T22:44:51.035169-06:00'
 model: gpt-4-0125-preview
-summary: "Code organiseren in functies gaat over het verpakken van codeblokken die\
-  \ specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"
+summary: Code organiseren in functies gaat over het verpakken van codeblokken die
+  specifieke taken uitvoeren en deze een naam geven.
 title: Code organiseren in functies
 weight: 18
 ---

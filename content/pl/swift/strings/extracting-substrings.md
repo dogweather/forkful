@@ -5,9 +5,7 @@ description: "(Ekstrakcja podci\u0105g\xF3w - o co chodzi i dlaczego to robimy?)
   w. Programi\u015Bci\u2026"
 lastmod: '2024-03-13T22:44:35.743850-06:00'
 model: gpt-4-1106-preview
-summary: "(Ekstrakcja podci\u0105g\xF3w - o co chodzi i dlaczego to robimy?) Szukasz\
-  \ fragmentu tekstu w szerszym ci\u0105gu znak\xF3w? To ekstrakcja podci\u0105g\xF3\
-  w. Programi\u015Bci\u2026"
+summary: "(Ekstrakcja podci\u0105g\xF3w - o co chodzi i dlaczego to robimy."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

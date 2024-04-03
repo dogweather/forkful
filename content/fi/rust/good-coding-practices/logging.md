@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.363181-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi; se on\
   \ tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen\
-  \ aikana.\u2026"
+  \ aikana."
 title: Lokitus
 weight: 17
 ---

@@ -4,8 +4,7 @@ description: "Concatenating strings is sticking two or more strings together to 
   \ one. Programmers do it to construct messages, create dynamic content, or anything\u2026"
 lastmod: '2024-03-13T22:44:59.851142-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenating strings is sticking two or more strings together to form one.\
-  \ Programmers do it to construct messages, create dynamic content, or anything\u2026"
+summary: Concatenating strings is sticking two or more strings together to form one.
 title: Concatenating strings
 weight: 3
 ---

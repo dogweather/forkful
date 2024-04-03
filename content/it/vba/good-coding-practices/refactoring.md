@@ -7,7 +7,8 @@ description: "Il refactoring nella programmazione implica la modifica della stru
 lastmod: '2024-03-13T22:44:43.272491-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring nella programmazione implica la modifica della struttura\
-  \ del codice senza cambiarne il comportamento, per migliorare aspetti come la\u2026"
+  \ del codice senza cambiarne il comportamento, per migliorare aspetti come la leggibilit\xE0\
+  , la manutenibilit\xE0 o le prestazioni."
 title: Rifattorizzazione
 weight: 19
 ---

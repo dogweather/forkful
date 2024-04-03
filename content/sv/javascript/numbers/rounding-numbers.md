@@ -6,8 +6,7 @@ description: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss pun
 lastmod: '2024-03-13T22:44:38.288377-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt i ett\
-  \ tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne eller\
-  \ g\xF6ra\u2026"
+  \ tal."
 title: Avrundning av tal
 weight: 13
 ---

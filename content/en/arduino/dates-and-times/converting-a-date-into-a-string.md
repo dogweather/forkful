@@ -5,8 +5,9 @@ description: "Converting a date to a string means changing a date's representati
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.331381-06:00'
 model: gpt-4-1106-preview
-summary: "Converting a date to a string means changing a date's representation from\
-  \ a format that programming understands, like day, month, and year integers, to\u2026"
+summary: Converting a date to a string means changing a date's representation from
+  a format that programming understands, like day, month, and year integers, to plain
+  text.
 title: Converting a date into a string
 weight: 28
 ---

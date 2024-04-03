@@ -5,9 +5,8 @@ description: "Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten
   \ vertailua,\u2026"
 lastmod: '2024-03-13T22:44:56.643191-06:00'
 model: gpt-4-1106-preview
-summary: "Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista\
-  \ pienaakkosiksi. T\xE4m\xE4 helpottaa esimerkiksi k\xE4ytt\xE4j\xE4n sy\xF6tteen\
-  \ vertailua,\u2026"
+summary: Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista
+  pienaakkosiksi.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

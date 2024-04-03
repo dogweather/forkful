@@ -6,8 +6,7 @@ description: "V\xE4liaikaistiedoston luominen on prosessi, jossa tehd\xE4\xE4n t
 lastmod: '2024-03-13T22:44:56.969194-06:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedoston luominen on prosessi, jossa tehd\xE4\xE4n tilap\xE4\
-  inen tiedosto datan v\xE4liaikaista s\xE4ilytyst\xE4 tai k\xE4sittely\xE4 varten.\
-  \ Ohjelmoijat tekev\xE4t sen,\u2026"
+  inen tiedosto datan v\xE4liaikaista s\xE4ilytyst\xE4 tai k\xE4sittely\xE4 varten."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

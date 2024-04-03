@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.761165-06:00'
 model: gpt-4-0125-preview
 summary: "I programmering er det \xE5 f\xE5 tak i dagens dato en grunnleggende oppgave\
   \ som gj\xF8r det mulig for utviklere \xE5 f\xE5 tilgang til, vise eller manipulere\
-  \ dagens\u2026"
+  \ dagens dato innenfor applikasjonene deres."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

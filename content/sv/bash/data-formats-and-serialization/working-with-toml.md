@@ -6,8 +6,7 @@ description: "TOML, en kortform f\xF6r Toms Obvious, Minimal Language, \xE4r ett
 lastmod: '2024-03-13T22:44:38.105598-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, en kortform f\xF6r Toms Obvious, Minimal Language, \xE4r ett format\
-  \ f\xF6r data-serialisering. Programmerare gillar det f\xF6r dess enkelhet och l\xE4\
-  sbarhet; det\u2026"
+  \ f\xF6r data-serialisering."
 title: Att arbeta med TOML
 weight: 39
 ---

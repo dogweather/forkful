@@ -5,7 +5,7 @@ description: "Um mit einem Debugger in TypeScript durchzustarten, ben\xF6tigen S
 lastmod: '2024-03-13T22:44:53.635670-06:00'
 model: gpt-4-0125-preview
 summary: "Um mit einem Debugger in TypeScript durchzustarten, ben\xF6tigen Sie lediglich\
-  \ eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine\u2026"
+  \ eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine `launch."
 title: Einsatz eines Debuggers
 weight: 35
 ---

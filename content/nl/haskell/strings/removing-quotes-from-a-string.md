@@ -7,8 +7,9 @@ description: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent h
   \ deel\u2026"
 lastmod: '2024-03-13T22:44:50.840304-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent het wegstrepen\
-  \ van eventuele enkele (' ') of dubbele (\" \") aanhalingstekens die deel\u2026"
+summary: Het verwijderen van aanhalingstekens uit een tekenreeks betekent het wegstrepen
+  van eventuele enkele (' ') of dubbele (" ") aanhalingstekens die deel uitmaken van
+  de stringgegevens.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

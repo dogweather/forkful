@@ -6,8 +6,8 @@ description: "Naar de standaardfout (`stderr`) schrijven is een manier om foutme
   \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"
 lastmod: '2024-03-13T22:44:50.436553-06:00'
 model: gpt-4-0125-preview
-summary: "Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen\
-  \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"
+summary: Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen
+  en diagnostiek uit te sturen.
 title: Schrijven naar standaardfout
 weight: 25
 ---

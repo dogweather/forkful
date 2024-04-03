@@ -6,8 +6,9 @@ description: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applica
   \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
 lastmod: '2024-03-13T22:44:50.656919-06:00'
 model: gpt-4-0125-preview
-summary: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
-  \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
+summary: Het aanmaken van een tijdelijk bestand in Visual Basic for Applications (VBA)
+  houdt in dat je programmatisch een bestand genereert voor kortstondig gebruik, typisch
+  voor gegevensverwerking of als buffer in automatiseringstaken.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

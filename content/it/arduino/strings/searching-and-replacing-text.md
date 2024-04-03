@@ -5,8 +5,8 @@ description: "In programmazione, cercare e sostituire del testo significa scovar
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.669266-06:00'
 model: gpt-4-1106-preview
-summary: "In programmazione, cercare e sostituire del testo significa scovare una\
-  \ stringa specifica e rimpiazzarla con un'altra. Programmatori fanno questo per\u2026"
+summary: In programmazione, cercare e sostituire del testo significa scovare una stringa
+  specifica e rimpiazzarla con un'altra.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

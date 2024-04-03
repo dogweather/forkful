@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:41.144514-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut debug-informasjon inneb\xE6rer \xE5 vise verdier og meldinger\
   \ under kj\xF8ring av programmet, for \xE5 forst\xE5 hva som skjer \"under hetta\"\
-  . Vi gj\xF8r dette\u2026"
+  ."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

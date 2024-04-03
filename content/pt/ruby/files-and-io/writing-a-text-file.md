@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.113386-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
   \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\
-  \ acesso ou a\u2026"
+  \ acesso ou a modifica\xE7\xE3o desses dados posteriormente."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

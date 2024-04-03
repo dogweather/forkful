@@ -5,9 +5,7 @@ description: "Wysy\u0142amy zapytanie HTTP, by porozumie\u0107 si\u0119 z serwis
   a\u0107 informacje, autoryzowa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.626670-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142amy zapytanie HTTP, by porozumie\u0107 si\u0119 z serwisami internetowymi.\
-  \ Programi\u015Bci robi\u0105 to, aby pobiera\u0107 dane, wysy\u0142a\u0107 informacje,\
-  \ autoryzowa\u0107\u2026"
+summary: "Wysy\u0142amy zapytanie HTTP, by porozumie\u0107 si\u0119 z serwisami internetowymi."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

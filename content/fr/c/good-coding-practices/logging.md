@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.379342-06:00'
 model: gpt-4-0125-preview
 summary: "La journalisation en C consiste \xE0 enregistrer le flux et les \xE9v\xE9\
   nements notables d'un programme pendant son ex\xE9cution, fournissant un examen\
-  \ tangible de\u2026"
+  \ tangible de son comportement et de sa performance."
 title: Journalisation
 weight: 17
 ---

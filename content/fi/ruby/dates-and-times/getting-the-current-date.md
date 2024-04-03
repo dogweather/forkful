@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.097697-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4v\xE4\
   \ l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\
-  \ lokituksesta sovelluksessa\u2026"
+  \ lokituksesta sovelluksessa tai p\xE4iv\xE4leimoilla varustettujen raporttien tuottamisesta."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

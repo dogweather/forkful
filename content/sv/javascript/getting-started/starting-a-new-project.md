@@ -6,8 +6,7 @@ description: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att 
 lastmod: '2024-03-13T22:44:38.294107-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att koda n\xE5\
-  got fr\xE5n grunden. Programmerare g\xF6r detta f\xF6r att oms\xE4tta id\xE9er i\
-  \ verklighet, l\xF6sa\u2026"
+  got fr\xE5n grunden."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

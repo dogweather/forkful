@@ -6,8 +6,8 @@ description: "Gli array associativi in Dart, comunemente noti come Mappe, sono s
   \ di dati che memorizzano i dati in coppie chiave-valore. Consentono ai\u2026"
 lastmod: '2024-03-13T22:44:43.121557-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi in Dart, comunemente noti come Mappe, sono strutture\
-  \ di dati che memorizzano i dati in coppie chiave-valore. Consentono ai\u2026"
+summary: Gli array associativi in Dart, comunemente noti come Mappe, sono strutture
+  di dati che memorizzano i dati in coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

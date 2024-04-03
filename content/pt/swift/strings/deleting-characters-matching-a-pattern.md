@@ -6,8 +6,7 @@ description: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o q
 lastmod: '2024-03-13T22:44:46.905625-06:00'
 model: gpt-4-1106-preview
 summary: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o que n\xE3\
-  o queremos em uma string. Programadores fazem isso para limpar dados, validar entradas\
-  \ ou\u2026"
+  o queremos em uma string."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

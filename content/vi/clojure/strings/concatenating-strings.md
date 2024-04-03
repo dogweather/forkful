@@ -9,9 +9,7 @@ description: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA
 lastmod: '2024-03-13T22:44:36.142133-06:00'
 model: gpt-4-0125-preview
 summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v\u1EDB\
-  i nhau - \"hello\" + \"world\" tr\u1EDF th\xE0nh \"helloworld\". L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng v\u0103n b\u1EA3\
-  n, nh\u01B0 l\xE0 URL,\u2026"
+  i nhau - \"hello\" + \"world\" tr\u1EDF th\xE0nh \"helloworld\"."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

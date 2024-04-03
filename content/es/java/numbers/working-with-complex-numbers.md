@@ -6,8 +6,7 @@ description: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales
 lastmod: '2024-03-13T22:44:58.931794-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales a trav\xE9\
-  s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`. Son cruciales\
-  \ en campos\u2026"
+  s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

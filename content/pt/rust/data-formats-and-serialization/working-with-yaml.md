@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.388022-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o com Rust, trabalhar com YAML (YAML Ain't Markup Language)\
   \ refere-se a analisar e gerar dados no formato YAML, um padr\xE3o de serializa\xE7\
-  \xE3o de\u2026"
+  \xE3o de dados amig\xE1vel para humanos."
 title: Trabalhando com YAML
 weight: 41
 ---

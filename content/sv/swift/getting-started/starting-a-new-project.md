@@ -6,8 +6,7 @@ description: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunde
 lastmod: '2024-03-13T22:44:38.251825-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunden f\xF6\
-  r en ny app eller funktion. Programmerare g\xF6r det f\xF6r att oms\xE4tta id\xE9\
-  er till verklig kod\u2026"
+  r en ny app eller funktion."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

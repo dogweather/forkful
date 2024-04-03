@@ -6,8 +6,9 @@ description: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) 
   \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
 lastmod: '2024-03-13T22:44:50.633378-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
-  \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
+summary: Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt in
+  dat je programmatisch toegang krijgt tot webbronnen of webservices door verzoeken
+  over HTTP te doen.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

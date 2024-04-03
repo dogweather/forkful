@@ -5,9 +5,7 @@ description: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoitt
   \ tekev\xE4t t\xE4m\xE4n jakamiseen,\u2026"
 lastmod: '2024-03-13T22:44:56.195716-06:00'
 model: gpt-4-1106-preview
-summary: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa `java.util.Date`\
-  \ objektin esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n jakamiseen,\u2026"
+summary: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa `java."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

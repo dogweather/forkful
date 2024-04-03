@@ -4,8 +4,8 @@ description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt auf deinen
   \ zu ziehen. Programmierer machen das, um Daten zu analysieren, Backups zu\u2026"
 lastmod: '2024-03-13T22:44:54.058406-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt auf deinen Rechner\
-  \ zu ziehen. Programmierer machen das, um Daten zu analysieren, Backups zu\u2026"
+summary: Das Herunterladen einer Webseite bedeutet, ihren Inhalt auf deinen Rechner
+  zu ziehen.
 title: Webseite herunterladen
 weight: 42
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:44.058589-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori consiste nel prevedere l'inaspettato nel codice\
   \ \u2014 gestire gli errori e i problemi con grazia senza che il programma vada\
-  \ in\u2026"
+  \ in crash."
 title: Gestione degli errori
 weight: 16
 ---

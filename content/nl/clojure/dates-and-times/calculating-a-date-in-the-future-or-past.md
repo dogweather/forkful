@@ -7,9 +7,9 @@ description: "Het berekenen van toekomstige of verleden datums betreft het manip
   \ wat\u2026"
 lastmod: '2024-03-13T22:44:50.433663-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van toekomstige of verleden datums betreft het manipuleren\
-  \ van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of\
-  \ wat\u2026"
+summary: Het berekenen van toekomstige of verleden datums betreft het manipuleren
+  van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of wat
+  ze waren.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

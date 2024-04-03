@@ -6,8 +6,8 @@ description: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uit
   \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"
 lastmod: '2024-03-13T22:44:51.332530-06:00'
 model: gpt-4-0125-preview
-summary: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
-  \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"
+summary: Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren
+  van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van Ruby-scripts.
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

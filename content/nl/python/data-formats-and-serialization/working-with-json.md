@@ -6,8 +6,8 @@ description: "JSON (JavaScript Object Notation) is een alomtegenwoordig data-uit
   \ op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen\u2026"
 lastmod: '2024-03-13T22:44:50.397597-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat\
-  \ op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen\u2026"
+summary: JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat
+  op het web.
 title: Werken met JSON
 weight: 38
 ---

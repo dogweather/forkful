@@ -6,8 +6,7 @@ description: "Lire un fichier texte en programmation, c'est r\xE9colter le conte
 lastmod: '2024-03-13T22:44:57.346410-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu d'un\
-  \ fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait \xE7\
-  a pour\u2026"
+  \ fichier pour l'utiliser ou le modifier."
 title: Lecture d'un fichier texte
 weight: 22
 ---

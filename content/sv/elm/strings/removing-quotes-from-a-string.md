@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.817396-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man rensar bort\
   \ de extra dubbla eller enkla citattecken som du faktiskt inte beh\xF6ver i den\
-  \ bearbetade\u2026"
+  \ bearbetade texten."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

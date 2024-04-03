@@ -6,8 +6,7 @@ description: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et f
 lastmod: '2024-03-13T22:44:40.997952-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
-  \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\
-  \ det er\u2026"
+  \ for dataserialisering."
 title: Jobbe med TOML
 weight: 39
 ---

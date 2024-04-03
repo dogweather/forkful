@@ -8,7 +8,8 @@ description: "Das Lesen von Befehlszeilenargumenten in Go beinhaltet das Extrahi
 lastmod: '2024-03-13T22:44:53.304827-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen von Befehlszeilenargumenten in Go beinhaltet das Extrahieren der\
-  \ Argumente, die einem Programm w\xE4hrend seiner Aufrufung aus dem Terminal oder\u2026"
+  \ Argumente, die einem Programm w\xE4hrend seiner Aufrufung aus dem Terminal oder\
+  \ der Befehlsaufforderung bereitgestellt wurden."
 title: Kommandozeilenargumente lesen
 weight: 23
 ---

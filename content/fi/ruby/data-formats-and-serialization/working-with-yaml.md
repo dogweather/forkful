@@ -7,7 +7,8 @@ description: "YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti k\xE
 lastmod: '2024-03-13T22:44:57.108207-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti k\xE4yt\xF6\
-  ss\xE4 Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan\u2026"
+  ss\xE4 Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan\
+  \ muodon vuoksi."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

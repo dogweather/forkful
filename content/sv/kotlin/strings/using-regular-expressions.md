@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.861504-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) \xE4r ett kraftfullt verktyg f\xF6r textbearbetning,\
   \ som m\xF6jligg\xF6r f\xF6r programmerare att s\xF6ka, matcha och manipulera textstr\xE4\
-  ngar med\u2026"
+  ngar med avancerade m\xF6nsters\xF6kningsmetoder."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

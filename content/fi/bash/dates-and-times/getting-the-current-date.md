@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.749580-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\xE4\
   \ sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4r\xE4\
-  n ja ajan n\xE4ytt\xE4miseen eri muodoissa. Ohjelmoijat\u2026"
+  n ja ajan n\xE4ytt\xE4miseen eri muodoissa."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

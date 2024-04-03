@@ -6,8 +6,8 @@ description: "Scaricare una pagina web in Visual Basic for Applications (VBA) co
   \ il recupero del contenuto HTML di una pagina web da Internet. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.261098-06:00'
 model: gpt-4-0125-preview
-summary: "Scaricare una pagina web in Visual Basic for Applications (VBA) comporta\
-  \ il recupero del contenuto HTML di una pagina web da Internet. I programmatori\u2026"
+summary: Scaricare una pagina web in Visual Basic for Applications (VBA) comporta
+  il recupero del contenuto HTML di una pagina web da Internet.
 title: Scaricare una pagina web
 weight: 42
 ---

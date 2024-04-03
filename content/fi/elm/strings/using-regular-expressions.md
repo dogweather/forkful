@@ -8,8 +8,7 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ohjelmoinnissa ovat malle
 lastmod: '2024-03-13T22:44:56.478497-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ohjelmoinnissa ovat malleja, joita\
-  \ k\xE4ytet\xE4\xE4n merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa.\
-  \ Elm:ss\xE4, kuten\u2026"
+  \ k\xE4ytet\xE4\xE4n merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

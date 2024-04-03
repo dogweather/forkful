@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.348579-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura e\
   \ escrita de arquivos CSV, um formato comum de troca de dados usado devido \xE0\
-  \ sua\u2026"
+  \ sua simplicidade e ampla compatibilidade entre diversas plataformas e linguagens."
 title: Trabalhando com CSV
 weight: 37
 ---

@@ -5,7 +5,8 @@ description: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucle
 lastmod: '2024-03-13T22:44:59.460333-06:00'
 model: gpt-4-0125-preview
 summary: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles de Leer-Evaluar-Imprimir),\
-  \ te permiten ejecutar c\xF3digo sobre la marcha, probando\u2026"
+  \ te permiten ejecutar c\xF3digo sobre la marcha, probando funciones, algoritmos\
+  \ o jugueteando con ideas."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

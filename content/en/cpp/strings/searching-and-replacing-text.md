@@ -4,8 +4,8 @@ description: "Searching and replacing text is finding specific strings within a 
   \ string and swapping them out for something else. Programmers use it for tasks\u2026"
 lastmod: '2024-03-13T22:45:00.344445-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text is finding specific strings within a larger\
-  \ string and swapping them out for something else. Programmers use it for tasks\u2026"
+summary: Searching and replacing text is finding specific strings within a larger
+  string and swapping them out for something else.
 title: Searching and replacing text
 weight: 10
 ---

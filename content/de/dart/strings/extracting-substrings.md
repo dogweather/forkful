@@ -6,8 +6,8 @@ description: "Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen
   \ Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.\u2026"
 lastmod: '2024-03-13T22:44:53.568195-06:00'
 model: gpt-4-0125-preview
-summary: "Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer\
-  \ Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.\u2026"
+summary: Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer
+  Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.
 title: Teilstrings extrahieren
 weight: 6
 ---

@@ -6,8 +6,7 @@ description: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att du represe
 lastmod: '2024-03-13T22:44:37.536606-06:00'
 model: gpt-4-1106-preview
 summary: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att du representerar\
-  \ datumet i ett textformat. Programmerare g\xF6r detta f\xF6r att enklare kunna\
-  \ visa, spara\u2026"
+  \ datumet i ett textformat."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

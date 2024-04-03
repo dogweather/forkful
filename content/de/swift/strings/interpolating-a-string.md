@@ -5,7 +5,7 @@ description: "String-Interpolation erm\xF6glicht es, Variablen, Konstanten und A
 lastmod: '2024-03-13T22:44:54.212222-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen, Konstanten und Ausdr\xFC\
-  cke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet.\u2026"
+  cke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet."
 title: Zeichenketten interpolieren
 weight: 8
 ---

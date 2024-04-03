@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos, compostos por uma parte real e uma imagin\xE
 lastmod: '2024-03-13T22:44:47.087634-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, compostos por uma parte real e uma imagin\xE1ria (como\
-  \ 3+4i), s\xE3o fundamentais na engenharia e na f\xEDsica. Programadores trabalham\
-  \ com eles\u2026"
+  \ 3+4i), s\xE3o fundamentais na engenharia e na f\xEDsica."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

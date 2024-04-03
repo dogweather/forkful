@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.270521-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
   \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\
-  \ eller\u2026"
+  \ eller offline bruk."
 title: Laste ned en nettside
 weight: 42
 ---

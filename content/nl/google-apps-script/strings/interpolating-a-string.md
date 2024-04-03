@@ -7,7 +7,8 @@ description: "String interpolatie in Google Apps Script maakt het mogelijk om dy
 lastmod: '2024-03-13T22:44:50.316311-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolatie in Google Apps Script maakt het mogelijk om dynamisch\
-  \ expressies in te voegen binnen strings, wat helpt om meer leesbare en\u2026"
+  \ expressies in te voegen binnen strings, wat helpt om meer leesbare en onderhoudbare\
+  \ code te cre\xEBren."
 title: Een string interpoleren
 weight: 8
 ---

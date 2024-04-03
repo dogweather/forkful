@@ -5,7 +5,7 @@ description: "Leer argumentos de la l\xEDnea de comandos en Ruby significa captu
 lastmod: '2024-03-13T22:44:59.606227-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos en Ruby significa capturar datos\
-  \ que los usuarios o scripts externos pasan a tu programa al ejecutarlo. Los\u2026"
+  \ que los usuarios o scripts externos pasan a tu programa al ejecutarlo."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

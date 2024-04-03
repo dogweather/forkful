@@ -6,8 +6,7 @@ description: "Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelma
 lastmod: '2024-03-13T22:44:56.880926-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle sen\
-  \ k\xE4ynnistyess\xE4. Ne mahdollistavat joustavan ohjelman k\xE4yt\xF6n, koska\
-  \ k\xE4ytt\xE4j\xE4 voi\u2026"
+  \ k\xE4ynnistyess\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

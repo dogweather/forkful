@@ -7,7 +7,7 @@ description: "Twee datums vergelijken betekent uitzoeken of de ene datum v\xF3\x
 lastmod: '2024-03-13T22:44:50.695046-06:00'
 model: gpt-4-0125-preview
 summary: "Twee datums vergelijken betekent uitzoeken of de ene datum v\xF3\xF3r, na,\
-  \ of hetzelfde is als een andere. Programmeurs doen dit om planning, deadlines,\u2026"
+  \ of hetzelfde is als een andere."
 title: Twee datums vergelijken
 weight: 27
 ---

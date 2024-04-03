@@ -5,7 +5,7 @@ description: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet t
 lastmod: '2024-03-13T22:44:40.707507-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til en\
-  \ nettside via internett, slik at du kan se eller bearbeide det i et program.\u2026"
+  \ nettside via internett, slik at du kan se eller bearbeide det i et program."
 title: Nedlasting av en nettside
 weight: 42
 ---

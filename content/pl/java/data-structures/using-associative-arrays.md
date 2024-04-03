@@ -8,8 +8,7 @@ description: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowyw
 lastmod: '2024-03-13T22:44:35.270253-06:00'
 model: gpt-4-0125-preview
 summary: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowywa\u0107\
-  \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi.\
-  \ Programi\u015Bci u\u017Cywaj\u0105\u2026"
+  \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

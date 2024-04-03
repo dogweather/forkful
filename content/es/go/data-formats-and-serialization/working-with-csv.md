@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.494651-06:00'
 model: gpt-4-0125-preview
 summary: "El formato de Valores Separados por Comas (CSV) es omnipresente para el\
   \ intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n con\
-  \ la\u2026"
+  \ la mayor\xEDa de los lenguajes de programaci\xF3n, incluido Go."
 title: Trabajando con CSV
 weight: 37
 ---

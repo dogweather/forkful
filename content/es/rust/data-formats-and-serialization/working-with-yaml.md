@@ -8,7 +8,8 @@ description: "En la programaci\xF3n con Rust, trabajar con YAML (YAML Ain't Mark
 lastmod: '2024-03-13T22:44:58.867071-06:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n con Rust, trabajar con YAML (YAML Ain't Markup Language)\
-  \ consiste en analizar y generar datos en formato YAML, un est\xE1ndar de\u2026"
+  \ consiste en analizar y generar datos en formato YAML, un est\xE1ndar de serializaci\xF3\
+  n de datos amigable para el ser humano."
 title: Trabajando con YAML
 weight: 41
 ---

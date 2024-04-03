@@ -6,8 +6,7 @@ description: "Czytanie argument\xF3w z linii polece\u0144 pozwala skryptom Bash 
 lastmod: '2024-03-13T22:44:35.600721-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 pozwala skryptom Bash przyjmowa\u0107\
-  \ dane wej\u015Bciowe podczas uruchamiania. U\u017Cywamy tego, bo to elastyczny\
-  \ spos\xF3b na\u2026"
+  \ dane wej\u015Bciowe podczas uruchamiania."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

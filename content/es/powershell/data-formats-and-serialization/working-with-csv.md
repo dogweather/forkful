@@ -8,7 +8,7 @@ description: "Trabajar con archivos CSV (Valores Separados por Comas) es una tar
 lastmod: '2024-03-13T22:44:59.314960-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) es una tarea com\xFA\
-  n para administrar y manipular datos de una forma estructurada y tabulada. Los\u2026"
+  n para administrar y manipular datos de una forma estructurada y tabulada."
 title: Trabajando con CSV
 weight: 37
 ---

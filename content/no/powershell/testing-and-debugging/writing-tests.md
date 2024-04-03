@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.020972-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
   \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\
-  rer seg\u2026"
+  rer seg som forventet."
 title: Skrive tester
 weight: 36
 ---

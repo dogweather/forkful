@@ -8,8 +8,7 @@ description: "W VBA debugger jest integraln\u0105 cz\u0119\u015Bci\u0105 Edytora
 lastmod: '2024-03-13T22:44:35.236950-06:00'
 model: gpt-4-0125-preview
 summary: "W VBA debugger jest integraln\u0105 cz\u0119\u015Bci\u0105 Edytora Visual\
-  \ Basic (VBE). Oto jak mo\u017Cesz z niego korzysta\u0107: 1. **Ustawianie punkt\xF3\
-  w przerwania**: Kliknij w lewym\u2026"
+  \ Basic (VBE)."
 title: Korzystanie z debuggera
 weight: 35
 ---

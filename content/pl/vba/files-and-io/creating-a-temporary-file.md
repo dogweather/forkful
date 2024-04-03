@@ -7,7 +7,8 @@ description: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA)
 lastmod: '2024-03-13T22:44:35.253231-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
-  \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\u2026"
+  \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\
+  \ przetwarzania danych lub jako bufor w zadaniach automatyzacji."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

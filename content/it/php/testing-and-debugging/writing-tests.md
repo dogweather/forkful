@@ -6,8 +6,8 @@ description: "Scrivere test nella programmazione implica la creazione e l'esecuz
   \ di script che verificano il comportamento del codice come previsto in varie\u2026"
 lastmod: '2024-03-13T22:44:43.520164-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test nella programmazione implica la creazione e l'esecuzione di\
-  \ script che verificano il comportamento del codice come previsto in varie\u2026"
+summary: Scrivere test nella programmazione implica la creazione e l'esecuzione di
+  script che verificano il comportamento del codice come previsto in varie condizioni.
 title: Scrivere test
 weight: 36
 ---

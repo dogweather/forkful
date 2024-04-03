@@ -6,8 +6,7 @@ description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro
 lastmod: '2024-03-13T22:44:54.385041-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDFbuchstaben\
-  \ in seiner kleinen Form darzustellen. Programmierer nutzen das, um die Gro\xDF\
-  -\u2026"
+  \ in seiner kleinen Form darzustellen."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

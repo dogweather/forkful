@@ -6,8 +6,9 @@ description: "Het aanmaken van een tijdelijk bestand in Go maakt de creatie van 
   \ niet-persistent bestand mogelijk dat ontworpen is voor kortetermijngebruik,\u2026"
 lastmod: '2024-03-13T22:44:50.307296-06:00'
 model: gpt-4-0125-preview
-summary: "Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een niet-persistent\
-  \ bestand mogelijk dat ontworpen is voor kortetermijngebruik,\u2026"
+summary: Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een niet-persistent
+  bestand mogelijk dat ontworpen is voor kortetermijngebruik, voornamelijk voor taken
+  zoals het opslaan van tussenliggende data of het assisteren bij batchverwerkingsjobs.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

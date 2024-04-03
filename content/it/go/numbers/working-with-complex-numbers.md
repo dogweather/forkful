@@ -6,8 +6,9 @@ description: "Lavorare con numeri complessi nella programmazione implica la mani
   \ di numeri che hanno sia una parte reale che una immaginaria, tipicamente\u2026"
 lastmod: '2024-03-13T22:44:42.901299-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con numeri complessi nella programmazione implica la manipolazione\
-  \ di numeri che hanno sia una parte reale che una immaginaria, tipicamente\u2026"
+summary: Lavorare con numeri complessi nella programmazione implica la manipolazione
+  di numeri che hanno sia una parte reale che una immaginaria, tipicamente espressi
+  come `a + bi`.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

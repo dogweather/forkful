@@ -6,8 +6,7 @@ description: "Een tekstbestand schrijven is gegevens opslaan als platte tekst op
   \ Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van\u2026"
 lastmod: '2024-03-13T22:44:51.048537-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.\
-  \ Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van\u2026"
+summary: Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.
 title: Een tekstbestand schrijven
 weight: 24
 ---

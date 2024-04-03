@@ -6,8 +6,9 @@ description: "Trabajar con JSON implica analizar cadenas con formato JSON en est
   \ de datos que Elixir puede manipular y serializar estructuras de datos de Elixir\u2026"
 lastmod: '2024-03-13T22:44:58.724697-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con JSON implica analizar cadenas con formato JSON en estructuras\
-  \ de datos que Elixir puede manipular y serializar estructuras de datos de Elixir\u2026"
+summary: Trabajar con JSON implica analizar cadenas con formato JSON en estructuras
+  de datos que Elixir puede manipular y serializar estructuras de datos de Elixir
+  de nuevo en cadenas JSON.
 title: Trabajando con JSON
 weight: 38
 ---

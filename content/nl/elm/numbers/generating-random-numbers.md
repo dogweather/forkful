@@ -8,8 +8,10 @@ description: "Het genereren van willekeurige getallen in Elm houdt het gebruik v
   \ zijn\u2026"
 lastmod: '2024-03-13T22:44:50.720443-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Elm houdt het gebruik van de\
-  \ `Random` module in om pseudo-willekeurige getallen te produceren, die handig zijn\u2026"
+summary: Het genereren van willekeurige getallen in Elm houdt het gebruik van de `Random`
+  module in om pseudo-willekeurige getallen te produceren, die handig zijn voor een
+  verscheidenheid aan taken zoals spellen, simulaties, en zelfs als onderdeel van
+  algoritmen die stochastische processen vereisen.
 title: Genereren van willekeurige getallen
 weight: 12
 ---

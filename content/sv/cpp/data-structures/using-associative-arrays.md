@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.202066-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
   \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
-  ter dig\u2026"
+  ter dig anv\xE4nda meningsfulla nycklar."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

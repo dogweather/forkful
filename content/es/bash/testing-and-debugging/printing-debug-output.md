@@ -6,8 +6,7 @@ description: "Imprimir mensajes de depuraci\xF3n significa mostrar informaci\xF3
 lastmod: '2024-03-13T22:44:59.249185-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n significa mostrar informaci\xF3n interna\
-  \ de tu script mientras se ejecuta. Los programadores lo hacen para rastrear errores\
-  \ y\u2026"
+  \ de tu script mientras se ejecuta."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

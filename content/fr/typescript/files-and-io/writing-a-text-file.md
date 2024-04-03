@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.456676-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en TypeScript est une comp\xE9tence essentielle\
   \ pour la persistance des donn\xE9es, la configuration ou la g\xE9n\xE9ration de\
-  \ journaux. Les\u2026"
+  \ journaux."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

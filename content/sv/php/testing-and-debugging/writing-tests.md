@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.999744-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i programmering involverar att skapa och k\xF6ra skript\
   \ som verifierar att koden beter sig som f\xF6rv\xE4ntat under olika f\xF6rh\xE5\
-  llanden.\u2026"
+  llanden."
 title: Skriva tester
 weight: 36
 ---

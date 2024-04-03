@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck (regex) i JavaScript \xE4r m\xF6nster som anv
 lastmod: '2024-03-13T22:44:38.283394-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i JavaScript \xE4r m\xF6nster som anv\xE4nds\
-  \ f\xF6r att matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder\
-  \ dem f\xF6r att s\xF6ka,\u2026"
+  \ f\xF6r att matcha teckenkombinationer i str\xE4ngar."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

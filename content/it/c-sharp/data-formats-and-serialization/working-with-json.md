@@ -6,8 +6,9 @@ description: "Lavorare con JSON (JavaScript Object Notation) implica l'analisi, 
   \ generazione e l'interrogazione di dati JSON, rendendolo una competenza fondamentale\u2026"
 lastmod: '2024-03-13T22:44:43.454654-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON (JavaScript Object Notation) implica l'analisi, la generazione\
-  \ e l'interrogazione di dati JSON, rendendolo una competenza fondamentale\u2026"
+summary: Lavorare con JSON (JavaScript Object Notation) implica l'analisi, la generazione
+  e l'interrogazione di dati JSON, rendendolo una competenza fondamentale per la programmazione
+  moderna.
 title: Lavorare con JSON
 weight: 38
 ---

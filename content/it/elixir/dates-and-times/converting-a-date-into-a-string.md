@@ -5,9 +5,8 @@ description: "Convertire una data in una stringa significa trasformare un oggett
   \ I\u2026"
 lastmod: '2024-03-13T22:44:43.095452-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una data in una stringa significa trasformare un oggetto che\
-  \ rappresenta una data e/ora in una sequenza di caratteri leggibile da un umano.\
-  \ I\u2026"
+summary: Convertire una data in una stringa significa trasformare un oggetto che rappresenta
+  una data e/ora in una sequenza di caratteri leggibile da un umano.
 title: Conversione di una data in una stringa
 weight: 28
 ---

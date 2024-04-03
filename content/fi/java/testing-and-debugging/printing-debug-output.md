@@ -5,9 +5,7 @@ description: "Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelma
   \ sovelluksessa\u2026"
 lastmod: '2024-03-13T22:44:56.447758-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia.\
-  \ Koodarit tekev\xE4t t\xE4t\xE4 koska se on simppeli tapa n\xE4hd\xE4, mit\xE4\
-  \ sovelluksessa\u2026"
+summary: Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia.
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

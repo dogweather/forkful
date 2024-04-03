@@ -6,8 +6,8 @@ description: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Datei
   \ mit textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
 lastmod: '2024-03-13T22:44:53.949204-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit\
-  \ textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
+summary: Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit
+  textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.
 title: Eine Textdatei schreiben
 weight: 24
 ---

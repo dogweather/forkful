@@ -6,8 +6,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwer
 lastmod: '2024-03-13T22:44:35.709673-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwera o dane\
-  \ lub zasoby. Programi\u015Bci robi\u0105 to, aby komunikowa\u0107 si\u0119 z aplikacjami\
-  \ internetowymi, pobiera\u0107\u2026"
+  \ lub zasoby."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

@@ -5,9 +5,8 @@ description: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapis
   \ korzystanie z\u2026"
 lastmod: '2024-03-13T22:44:35.730186-06:00'
 model: gpt-4-1106-preview
-summary: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych\
-  \ w pliku na dysku. Programi\u015Bci robi\u0105 to, by umo\u017Cliwi\u0107 aplikacjom\
-  \ korzystanie z\u2026"
+summary: Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych w
+  pliku na dysku.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

@@ -6,7 +6,7 @@ description: "Interpola\xE7\xE3o de string permite injetar valores em uma cadeia
 lastmod: '2024-03-13T22:44:46.781641-06:00'
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de string permite injetar valores em uma cadeia de caracteres,\
-  \ tornando seu c\xF3digo mais limpo e leg\xEDvel. Programadores fazem isso para\u2026"
+  \ tornando seu c\xF3digo mais limpo e leg\xEDvel."
 title: Interpolando uma string
 weight: 8
 ---

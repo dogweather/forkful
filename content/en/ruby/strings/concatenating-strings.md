@@ -4,8 +4,8 @@ description: "Concatenating strings is just a fancy way of saying 'sticking them
   \ end-to-end'. Programmers do it to combine words and sentences, to build\u2026"
 lastmod: '2024-03-13T22:45:00.541442-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenating strings is just a fancy way of saying 'sticking them together\
-  \ end-to-end'. Programmers do it to combine words and sentences, to build\u2026"
+summary: Concatenating strings is just a fancy way of saying 'sticking them together
+  end-to-end'.
 title: Concatenating strings
 weight: 3
 ---

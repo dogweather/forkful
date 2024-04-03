@@ -4,8 +4,8 @@ description: "Writing a text file in Bash allows you to automate data storage, l
   \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
 lastmod: '2024-03-13T22:45:00.260750-06:00'
 model: gpt-4-0125-preview
-summary: "Writing a text file in Bash allows you to automate data storage, logging,\
-  \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
+summary: Writing a text file in Bash allows you to automate data storage, logging,
+  configuration settings, and more.
 title: Writing a text file
 weight: 24
 ---

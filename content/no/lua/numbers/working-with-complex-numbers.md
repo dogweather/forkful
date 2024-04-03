@@ -5,7 +5,7 @@ description: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen ti
 lastmod: '2024-03-13T22:44:40.924097-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til det\
-  \ todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"
+  \ todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

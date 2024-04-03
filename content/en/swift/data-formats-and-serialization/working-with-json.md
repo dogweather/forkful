@@ -5,9 +5,8 @@ description: "Working with JSON in Swift means dealing with a lightweight data f
   \ a\u2026"
 lastmod: '2024-03-13T22:45:00.414999-06:00'
 model: unknown
-summary: "Working with JSON in Swift means dealing with a lightweight data format\
-  \ for data interchange. Programmers use JSON to transmit data between a server and\
-  \ a\u2026"
+summary: Working with JSON in Swift means dealing with a lightweight data format for
+  data interchange.
 title: Working with JSON
 weight: 38
 ---

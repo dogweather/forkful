@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.174455-06:00'
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res dans Google Apps Script,\
   \ un langage de script cloud JavaScript qui vous permet d'automatiser des t\xE2\
-  ches \xE0\u2026"
+  ches \xE0 travers les produits Google, consiste \xE0 d\xE9terminer le nombre de\
+  \ caract\xE8res qu'une cha\xEEne contient."
 title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---

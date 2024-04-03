@@ -6,8 +6,7 @@ description: "W Ruby, czytanie argument\xF3w linii polece\u0144 pozwala twojemu 
 lastmod: '2024-03-13T22:44:35.947671-06:00'
 model: gpt-4-1106-preview
 summary: "W Ruby, czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
-  \ przyjmowa\u0107 dane wej\u015Bciowe z konsoli. Programi\u015Bci u\u017Cywaj\u0105\
-  \ tej techniki, by uczyni\u0107\u2026"
+  \ przyjmowa\u0107 dane wej\u015Bciowe z konsoli."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

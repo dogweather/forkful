@@ -8,8 +8,7 @@ description: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) implica p
 lastmod: '2024-03-13T22:44:58.635687-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) implica parsear\
-  \ cadenas formateadas en JSON a objetos de Python y viceversa. Esto es crucial para\
-  \ el\u2026"
+  \ cadenas formateadas en JSON a objetos de Python y viceversa."
 title: Trabajando con JSON
 weight: 38
 ---

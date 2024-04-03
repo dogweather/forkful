@@ -4,8 +4,7 @@ description: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstab
   \ klein. Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
 lastmod: '2024-03-13T22:44:53.875344-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein.\
-  \ Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
+summary: Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

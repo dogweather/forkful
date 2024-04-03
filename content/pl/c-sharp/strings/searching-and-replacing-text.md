@@ -5,9 +5,7 @@ description: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy t
   \ ci\u0105gi znak\xF3w pod\u2026"
 lastmod: '2024-03-13T22:44:35.392561-06:00'
 model: gpt-4-1106-preview
-summary: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, aby\
-  \ modyfikowa\u0107 dane, poprawia\u0107 b\u0142\u0119dy, czy te\u017C dostosowywa\u0107\
-  \ ci\u0105gi znak\xF3w pod\u2026"
+summary: Szukanie i zamiana tekstu to codzienny chleb programisty.
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

@@ -5,8 +5,8 @@ description: "Das Herunterladen einer Webseite bedeutet, die Inhalte einer URL z
   \ um\u2026"
 lastmod: '2024-03-13T22:44:53.671698-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet, die Inhalte einer URL zu fetchen,\
-  \ um sie lokal zu verarbeiten oder anzusehen. Programmierer machen das, um\u2026"
+summary: Das Herunterladen einer Webseite bedeutet, die Inhalte einer URL zu fetchen,
+  um sie lokal zu verarbeiten oder anzusehen.
 title: Webseite herunterladen
 weight: 42
 ---

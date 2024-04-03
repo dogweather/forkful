@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.431195-06:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ acessar e extrair programaticamente o conte\xFAdo de um arquivo de texto de dentro\
-  \ de\u2026"
+  \ de uma aplica\xE7\xE3o do Office."
 title: Lendo um arquivo de texto
 weight: 22
 ---

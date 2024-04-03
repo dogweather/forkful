@@ -6,7 +6,7 @@ description: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para se
 lastmod: '2024-03-13T22:44:46.197413-06:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para seu c\xF3\
-  digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa. Programadores\u2026"
+  digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa."
 title: Iniciando um novo projeto
 weight: 1
 ---

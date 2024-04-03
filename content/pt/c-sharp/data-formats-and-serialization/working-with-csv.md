@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.606215-06:00'
 model: gpt-4-0125-preview
 summary: "CSV (Valores Separados por V\xEDrgula) s\xE3o arquivos de um formato comum\
   \ de troca de dados que representam dados tabulares em texto simples, usando v\xED\
-  rgulas\u2026"
+  rgulas para separar os valores individuais."
 title: Trabalhando com CSV
 weight: 37
 ---

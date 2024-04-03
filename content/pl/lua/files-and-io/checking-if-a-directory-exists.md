@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.554435-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisania\
   \ skrypt\xF3w wchodz\u0105cych w interakcj\u0119 z systemem plik\xF3w, zapewniaj\u0105\
-  ca, \u017Ce program\u2026"
+  ca, \u017Ce program dzia\u0142a na prawid\u0142owych \u015Bcie\u017Ckach i zapobiegaj\u0105\
+  ca b\u0142\u0119dom zwi\u0105zanym z nieistniej\u0105cymi katalogami."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

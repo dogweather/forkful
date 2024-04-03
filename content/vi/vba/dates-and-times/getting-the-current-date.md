@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7\
   n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFAp c\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y m\u1ED9t c\xE1\
-  ch linh\u2026"
+  ch linh ho\u1EA1t trong c\xE1c macro ho\u1EB7c \u1EE9ng d\u1EE5ng c\u1EE7a h\u1ECD\
+  ."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

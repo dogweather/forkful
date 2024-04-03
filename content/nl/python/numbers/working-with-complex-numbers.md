@@ -8,7 +8,7 @@ description: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, w
 lastmod: '2024-03-13T22:44:50.370366-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a`\
-  \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In\u2026"
+  \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`)."
 title: Werken met complexe getallen
 weight: 14
 ---

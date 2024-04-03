@@ -7,8 +7,9 @@ description: "Het lezen van command-line argumenten in Ruby stelt scripts in sta
   \ of\u2026"
 lastmod: '2024-03-13T22:44:51.361217-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van command-line argumenten in Ruby stelt scripts in staat om\
-  \ direct bij het uitvoeren input te krijgen, zoals het configureren van opties of\u2026"
+summary: Het lezen van command-line argumenten in Ruby stelt scripts in staat om direct
+  bij het uitvoeren input te krijgen, zoals het configureren van opties of het doorgeven
+  van gegevens.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

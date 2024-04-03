@@ -7,7 +7,9 @@ description: "Encontrar o comprimento de uma string no Google Apps Script, uma l
 lastmod: '2024-03-13T22:44:46.097337-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string no Google Apps Script, uma linguagem\
-  \ de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do\u2026"
+  \ de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do\
+  \ Google, trata-se de determinar o n\xFAmero de caracteres que uma string cont\xE9\
+  m."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

@@ -13,7 +13,7 @@ summary: "Logging trong l\u1EADp tr\xECnh ch\xEDnh l\xE0 \u0111\u1EC3 l\u1EA1i m
   t d\u1EA5u v\u1EBFt g\u1ED3m nh\u1EEFng s\u1EF1 ki\u1EC7n ho\u1EB7c th\xF4ng \u0111\
   i\u1EC7p \u0111\u01B0\u1EE3c ghi l\u1EA1i, c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED\
   \ d\u1EE5ng \u0111\u1EC3 theo d\xF5i \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n \u0111\
-  ang\u2026"
+  ang l\xE0m g\xEC v\xE0o b\u1EA5t k\u1EF3 th\u1EDDi \u0111i\u1EC3m n\xE0o."
 title: Ghi log
 weight: 17
 ---

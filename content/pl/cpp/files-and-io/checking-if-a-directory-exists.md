@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.727214-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, polega na okre\u015Bleniu obecno\u015B\
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 przed wykonaniem operacji\
-  \ takich jak czytanie z plik\xF3w\u2026"
+  \ takich jak czytanie z plik\xF3w lub zapisywanie do nich."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

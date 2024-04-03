@@ -7,7 +7,7 @@ description: "Werken met XML in Go omvat het parsen (lezen) en genereren (schrij
 lastmod: '2024-03-13T22:44:50.312241-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in Go omvat het parsen (lezen) en genereren (schrijven) van\
-  \ XML-documenten \u2014 een standaardformaat voor gestructureerde\u2026"
+  \ XML-documenten \u2014 een standaardformaat voor gestructureerde gegevensuitwisseling."
 title: Werken met XML
 weight: 40
 ---

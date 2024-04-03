@@ -5,7 +5,8 @@ description: "La journalisation est le processus d'enregistrement des comporteme
 lastmod: '2024-03-13T22:44:58.229491-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation est le processus d'enregistrement des comportements, des\
-  \ erreurs et d'autres informations importantes d'une application dans un support\u2026"
+  \ erreurs et d'autres informations importantes d'une application dans un support\
+  \ persistant, comme un fichier ou une base de donn\xE9es."
 title: Journalisation
 weight: 17
 ---

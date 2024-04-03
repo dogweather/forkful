@@ -4,8 +4,7 @@ description: String interpolation is mixing variables with text. Programmers do 
   to build strings on-the-fly, making output dynamic and readable.
 lastmod: '2024-03-13T22:45:00.309739-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation is mixing variables with text. Programmers do it to
-  build strings on-the-fly, making output dynamic and readable.
+summary: String interpolation is mixing variables with text.
 title: Interpolating a string
 weight: 8
 ---

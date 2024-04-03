@@ -5,7 +5,7 @@ description: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er
 lastmod: '2024-03-13T22:44:54.216882-06:00'
 model: gpt-4-1106-preview
 summary: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
-  lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"
+  lt."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

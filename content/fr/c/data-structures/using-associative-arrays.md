@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.363684-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus dans d'autres langues sous le nom de cartes\
   \ ou dictionnaires, sont des paires cl\xE9-valeur utilis\xE9es pour la recherche\
-  \ et\u2026"
+  \ et la manipulation efficaces des donn\xE9es."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

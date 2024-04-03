@@ -11,7 +11,10 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
   \ Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn nh\u1EADp d\u1EEF li\u1EC7u tr\u1EF1\
   c ti\u1EBFp v\xE0o console khi th\u1EF1c thi m\u1ED9t ch\u01B0\u01A1ng tr\xECnh\
-  \ Dart, n\xE2ng cao t\xEDnh\u2026"
+  \ Dart, n\xE2ng cao t\xEDnh t\u01B0\u01A1ng t\xE1c v\xE0 linh ho\u1EA1t cho nhi\u1EC1\
+  u tr\u01B0\u1EDDng h\u1EE3p s\u1EED d\u1EE5ng, bao g\u1ED3m c\xE1c k\u1ECBch b\u1EA3\
+  n t\u1EF1 \u0111\u1ED9ng h\xF3a, c\xF4ng c\u1EE5 CLI, ho\u1EB7c x\u1EED l\xFD lo\u1EA1\
+  t."
 title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

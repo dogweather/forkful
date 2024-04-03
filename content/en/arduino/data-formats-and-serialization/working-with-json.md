@@ -4,8 +4,8 @@ description: "JSON, or JavaScript Object Notation, is a lightweight data interch
   \ format, making it perfect for data storage or configuration files in Arduino\u2026"
 lastmod: '2024-03-13T22:45:00.340100-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, or JavaScript Object Notation, is a lightweight data interchange format,\
-  \ making it perfect for data storage or configuration files in Arduino\u2026"
+summary: JSON, or JavaScript Object Notation, is a lightweight data interchange format,
+  making it perfect for data storage or configuration files in Arduino projects.
 title: Working with JSON
 weight: 38
 ---

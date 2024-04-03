@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.387606-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksitt\xE4\
   isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka voivat\
-  \ olla\u2026"
+  \ olla merkkijonon ymp\xE4rill\xE4 tai sis\xE4ll\xE4."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

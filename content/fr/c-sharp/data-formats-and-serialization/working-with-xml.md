@@ -5,7 +5,7 @@ description: "XML (eXtensible Markup Language) concerne la structuration des don
 lastmod: '2024-03-13T22:44:57.814729-06:00'
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) concerne la structuration des donn\xE9\
-  es dans un format lisible. Les programmeurs manipulent du XML pour la configuration,\u2026"
+  es dans un format lisible."
 title: Travailler avec XML
 weight: 40
 ---

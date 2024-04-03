@@ -6,8 +6,9 @@ description: "Verificare l'esistenza di una directory significa determinare la p
   \ di una directory in un percorso specificato prima di eseguire operazioni come\u2026"
 lastmod: '2024-03-13T22:44:43.742110-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare l'esistenza di una directory significa determinare la presenza\
-  \ di una directory in un percorso specificato prima di eseguire operazioni come\u2026"
+summary: Verificare l'esistenza di una directory significa determinare la presenza
+  di una directory in un percorso specificato prima di eseguire operazioni come leggere
+  o scrivere file al suo interno.
 title: Verifica se una directory esiste
 weight: 20
 ---

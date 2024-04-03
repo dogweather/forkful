@@ -8,7 +8,8 @@ description: "Das Kapitalisieren eines Strings in Swift ver\xE4ndert den gegeben
 lastmod: '2024-03-13T22:44:54.209456-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Swift ver\xE4ndert den gegebenen String\
-  \ so, dass sein erstes Zeichen gro\xDFgeschrieben wird und die verbleibenden Zeichen\u2026"
+  \ so, dass sein erstes Zeichen gro\xDFgeschrieben wird und die verbleibenden Zeichen\
+  \ klein."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

@@ -6,7 +6,7 @@ description: "L\xE4sa en textfil i Haskell \xE4r att inh\xE4mta data fr\xE5n en 
 lastmod: '2024-03-13T22:44:37.972168-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil i Haskell \xE4r att inh\xE4mta data fr\xE5n en fil p\xE5\
-  \ din enhet. Vi g\xF6r det f\xF6r att tillgodose program med information som konfigurationer,\u2026"
+  \ din enhet."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

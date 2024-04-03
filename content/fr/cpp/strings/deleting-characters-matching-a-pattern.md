@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.142841-06:00'
 model: gpt-4-1106-preview
 summary: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif s\u2019\
   av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour tout traitement\
-  \ de\u2026"
+  \ de texte personnalis\xE9."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

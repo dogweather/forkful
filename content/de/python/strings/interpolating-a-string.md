@@ -9,8 +9,7 @@ description: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Liter
   gen, was\u2026"
 lastmod: '2024-03-13T22:44:53.364403-06:00'
 model: gpt-4-0125-preview
-summary: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale einzubetten.\
-  \ Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFCgen, was\u2026"
+summary: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale einzubetten."
 title: Interpolation eines Strings
 weight: 8
 ---

@@ -6,8 +6,7 @@ description: "O Elm n\xE3o possui um depurador integrado no sentido tradicional,
 lastmod: '2024-03-13T22:44:46.504724-06:00'
 model: gpt-4-0125-preview
 summary: "O Elm n\xE3o possui um depurador integrado no sentido tradicional, como,\
-  \ por exemplo, o JavaScript tem com as ferramentas de desenvolvedor do navegador.\
-  \ No\u2026"
+  \ por exemplo, o JavaScript tem com as ferramentas de desenvolvedor do navegador."
 title: Usando um depurador
 weight: 35
 ---

@@ -8,7 +8,7 @@ description: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis vot
 lastmod: '2024-03-13T22:44:57.129814-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre application\
-  \ Go vers un serveur web, une API ou tout autre service bas\xE9 sur HTTP. Les\u2026"
+  \ Go vers un serveur web, une API ou tout autre service bas\xE9 sur HTTP."
 title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---

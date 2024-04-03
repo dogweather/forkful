@@ -8,8 +8,7 @@ description: "Assosiatiiviset taulukot, tunnetaan Swiftiss\xE4 sanakirjoina, ant
 lastmod: '2024-03-13T22:44:56.900319-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan Swiftiss\xE4 sanakirjoina, antavat sinun\
-  \ tallentaa ja hallita tietoja avain-arvo -pareina. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t niit\xE4\u2026"
+  \ tallentaa ja hallita tietoja avain-arvo -pareina."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7u XML - m\u1ED9\
   t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u d\xF9ng cho vi\u1EC7c l\u01B0u tr\u1EEF\
-  \ v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c\u2026"
+  \ v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

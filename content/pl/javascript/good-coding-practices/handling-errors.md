@@ -6,8 +6,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b zarz\u0105dzania syt
 lastmod: '2024-03-13T22:44:35.803981-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b zarz\u0105dzania sytuacjami,\
-  \ gdy w kodzie pojawiaj\u0105 si\u0119 problemy. Jest kluczowa, poniewa\u017C pozwala\
-  \ programom na \u0142agodne awarie i\u2026"
+  \ gdy w kodzie pojawiaj\u0105 si\u0119 problemy."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

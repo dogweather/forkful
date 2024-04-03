@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.887342-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps Script,\
   \ chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach Google,\
-  \ jest podstawowym\u2026"
+  \ jest podstawowym zadaniem maj\u0105cym na celu standaryzacj\u0119 danych tekstowych."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

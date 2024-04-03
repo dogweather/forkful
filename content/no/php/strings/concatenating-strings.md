@@ -5,8 +5,7 @@ description: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det la
   \ fra \xE5 lage\u2026"
 lastmod: '2024-03-13T22:44:40.877719-06:00'
 model: gpt-4-1106-preview
-summary: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar programmerere\
-  \ sette sammen ord og setninger dynamisk, noe som er viktig i alt fra \xE5 lage\u2026"
+summary: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

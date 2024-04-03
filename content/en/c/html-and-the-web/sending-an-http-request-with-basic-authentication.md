@@ -4,8 +4,9 @@ description: "Sending an HTTP request with basic authentication in C involves cr
   \ an HTTP request that includes an Authorization header with user credentials\u2026"
 lastmod: '2024-03-13T22:45:00.511284-06:00'
 model: gpt-4-0125-preview
-summary: "Sending an HTTP request with basic authentication in C involves crafting\
-  \ an HTTP request that includes an Authorization header with user credentials\u2026"
+summary: Sending an HTTP request with basic authentication in C involves crafting
+  an HTTP request that includes an Authorization header with user credentials encoded
+  in Base64.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

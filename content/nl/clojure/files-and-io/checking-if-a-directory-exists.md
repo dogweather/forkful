@@ -7,8 +7,8 @@ description: "Controleren of een directory bestaat betekent bevestigen of een pa
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.434639-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat betekent bevestigen of een pad naar\
-  \ een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten te\u2026"
+summary: Controleren of een directory bestaat betekent bevestigen of een pad naar
+  een directory op je bestandssysteem wijst.
 title: Controleren of een directory bestaat
 weight: 20
 ---

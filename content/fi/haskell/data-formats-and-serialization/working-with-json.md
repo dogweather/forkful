@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.635731-06:00'
 model: gpt-4-0125-preview
 summary: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4lt\xE4\
   \xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\
-  \ takaisin\u2026"
+  \ takaisin JSONiksi."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

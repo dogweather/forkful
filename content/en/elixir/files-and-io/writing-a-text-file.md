@@ -4,8 +4,8 @@ description: "Writing to a text file in Elixir is an essential skill for develop
   \ allowing for data persistence, logging, or exporting human-readable content.\u2026"
 lastmod: '2024-03-13T22:44:59.798867-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to a text file in Elixir is an essential skill for developers, allowing\
-  \ for data persistence, logging, or exporting human-readable content.\u2026"
+summary: Writing to a text file in Elixir is an essential skill for developers, allowing
+  for data persistence, logging, or exporting human-readable content.
 title: Writing a text file
 weight: 24
 ---

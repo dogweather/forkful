@@ -4,8 +4,9 @@ description: "Working with YAML in Go involves parsing YAML (YAML Ain't Markup L
   \ files, a human-friendly data serialization standard, into Go data structures\u2026"
 lastmod: '2024-03-13T22:44:59.649309-06:00'
 model: gpt-4-0125-preview
-summary: "Working with YAML in Go involves parsing YAML (YAML Ain't Markup Language)\
-  \ files, a human-friendly data serialization standard, into Go data structures\u2026"
+summary: Working with YAML in Go involves parsing YAML (YAML Ain't Markup Language)
+  files, a human-friendly data serialization standard, into Go data structures and
+  vice versa.
 title: Working with YAML
 weight: 41
 ---

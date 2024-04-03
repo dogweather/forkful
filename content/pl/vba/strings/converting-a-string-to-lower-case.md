@@ -8,8 +8,7 @@ description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na p
 lastmod: '2024-03-13T22:44:35.216696-06:00'
 model: gpt-4-0125-preview
 summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
-  ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\
-  \ ten jest niezb\u0119dny\u2026"
+  ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

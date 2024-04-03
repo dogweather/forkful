@@ -6,8 +6,7 @@ description: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvi
 lastmod: '2024-03-13T22:44:56.735472-06:00'
 model: gpt-4-0125-preview
 summary: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee tehd\xE4\
-  \ er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi. Voisit\
-  \ avata\u2026"
+  \ er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi."
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 weight: 32
 ---

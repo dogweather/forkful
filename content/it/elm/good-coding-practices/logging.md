@@ -6,7 +6,8 @@ description: "Il logging \xE8 essenzialmente il processo di registrazione di eve
 lastmod: '2024-03-13T22:44:43.356177-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 essenzialmente il processo di registrazione di eventi e\
-  \ output di dati da un software durante il suo funzionamento, pensalo come il diario\u2026"
+  \ output di dati da un software durante il suo funzionamento, pensalo come il diario\
+  \ del software."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

@@ -6,8 +6,7 @@ description: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz
 lastmod: '2024-03-13T22:44:35.064193-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz\u0105\
-  \ trwa\u0107 d\u0142ugo. Programi\u015Bci robi\u0105 to, by testowa\u0107 kod, przechowywa\u0107\
-  \ dane sekwencyjnie, lub\u2026"
+  \ trwa\u0107 d\u0142ugo."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

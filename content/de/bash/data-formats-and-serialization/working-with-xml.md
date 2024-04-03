@@ -5,8 +5,8 @@ description: "Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipuliere
   \ da es\u2026"
 lastmod: '2024-03-13T22:44:54.083921-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von\
-  \ Daten im Extensible Markup Language-Format. Programmierer ringen mit XML, da es\u2026"
+summary: Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von Daten
+  im Extensible Markup Language-Format.
 title: Arbeiten mit XML
 weight: 40
 ---

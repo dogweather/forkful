@@ -6,8 +6,7 @@ description: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertra
 lastmod: '2024-03-13T22:44:53.825912-06:00'
 model: unknown
 summary: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen von\
-  \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
-  \ es\u2026"
+  \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer."
 title: Arbeiten mit YAML
 weight: 41
 ---

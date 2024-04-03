@@ -7,7 +7,7 @@ description: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a 
 lastmod: '2024-03-13T22:44:58.458227-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
-  \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
+  \ para formar una nueva cadena."
 title: Concatenando cadenas de texto
 weight: 3
 ---

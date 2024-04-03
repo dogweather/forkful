@@ -6,8 +6,7 @@ description: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesi
 lastmod: '2024-03-13T22:44:40.790192-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesifiserte\
-  \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form. Programmerere\
-  \ runder av for \xE5\u2026"
+  \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form."
 title: Avrunding av tall
 weight: 13
 ---

@@ -5,7 +5,8 @@ description: "En PowerShell, puedes depurar scripts utilizando el Entorno de Scr
 lastmod: '2024-03-13T22:44:59.296751-06:00'
 model: gpt-4-0125-preview
 summary: "En PowerShell, puedes depurar scripts utilizando el Entorno de Scripting\
-  \ Integrado de PowerShell (ISE) incorporado o Visual Studio Code (VS Code) con la\u2026"
+  \ Integrado de PowerShell (ISE) incorporado o Visual Studio Code (VS Code) con la\
+  \ extensi\xF3n de PowerShell."
 title: Usando un depurador
 weight: 35
 ---

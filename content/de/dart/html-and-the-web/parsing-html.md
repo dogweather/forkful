@@ -6,8 +6,8 @@ description: "Das Parsen von HTML in der Programmierung beinhaltet das Extrahier
   \ von Daten aus HTML-Dokumenten. Programmierer tun dies, um mit Webinhalten zu\u2026"
 lastmod: '2024-03-13T22:44:53.578144-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen von HTML in der Programmierung beinhaltet das Extrahieren von\
-  \ Daten aus HTML-Dokumenten. Programmierer tun dies, um mit Webinhalten zu\u2026"
+summary: Das Parsen von HTML in der Programmierung beinhaltet das Extrahieren von
+  Daten aus HTML-Dokumenten.
 title: HTML Parsen
 weight: 43
 ---

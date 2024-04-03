@@ -5,7 +5,8 @@ description: "Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung,
 lastmod: '2024-03-13T22:44:53.379978-06:00'
 model: gpt-4-0125-preview
 summary: "Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung, die einzelne\
-  \ Benutzereingaben nimmt, sie ausf\xFChrt und das Ergebnis an den Benutzer\u2026"
+  \ Benutzereingaben nimmt, sie ausf\xFChrt und das Ergebnis an den Benutzer zur\xFC\
+  ckgibt."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

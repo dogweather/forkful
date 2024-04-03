@@ -7,7 +7,7 @@ description: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci 
 lastmod: '2024-03-13T22:44:35.090018-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci strony\
-  \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania.\u2026"
+  \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania."
 title: Pobieranie strony internetowej
 weight: 42
 ---

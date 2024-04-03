@@ -5,7 +5,7 @@ description: "Converter uma data em uma string \xE9 o processo de transformar um
 lastmod: '2024-03-13T22:44:46.553658-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string \xE9 o processo de transformar um objeto\
-  \ de data num texto leg\xEDvel. Programadores fazem isso para exibir datas em interfaces\u2026"
+  \ de data num texto leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

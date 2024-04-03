@@ -6,8 +6,7 @@ description: "Les nombres complexes ont une partie r\xE9elle et une partie imagi
 lastmod: '2024-03-13T22:44:58.213270-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
-  \ (comme 3 + 4i). Les programmeurs les utilisent en Swift pour des t\xE2ches telles\
-  \ que le\u2026"
+  \ (comme 3 + 4i)."
 title: Manipulation des nombres complexes
 weight: 14
 ---

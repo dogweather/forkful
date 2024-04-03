@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:41.067292-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke ut\
   \ og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\
-  \ til et\u2026"
+  \ til et format som kan brukes for tidsf\xF8ring, sammenligninger eller manipulasjoner\
+  \ innen skisser."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

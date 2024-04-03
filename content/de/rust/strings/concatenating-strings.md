@@ -6,7 +6,7 @@ description: "Stringverkettung bedeutet, zwei oder mehr Strings zu einem einzige
 lastmod: '2024-03-13T22:44:53.664931-06:00'
 model: gpt-4-1106-preview
 summary: "Stringverkettung bedeutet, zwei oder mehr Strings zu einem einzigen zusammenzuf\xFC\
-  gen. Programmierer machen das, um dynamische Texte zu erzeugen oder Daten\u2026"
+  gen."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

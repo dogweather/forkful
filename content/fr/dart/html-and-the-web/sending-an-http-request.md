@@ -7,7 +7,7 @@ description: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la
 lastmod: '2024-03-13T22:44:57.386180-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la communication\
-  \ avec un serveur web ou une API depuis une application Dart. Les programmeurs\u2026"
+  \ avec un serveur web ou une API depuis une application Dart."
 title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---

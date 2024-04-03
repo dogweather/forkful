@@ -6,8 +6,8 @@ description: "Loggen in de context van programmeren is het proces van het vastle
   \ van gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
 lastmod: '2024-03-13T22:44:51.119385-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen in de context van programmeren is het proces van het vastleggen van\
-  \ gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
+summary: Loggen in de context van programmeren is het proces van het vastleggen van
+  gebeurtenissen, toestanden en informatie in een bestand of een ander uitvoermedium.
 title: Logboekregistratie
 weight: 17
 ---

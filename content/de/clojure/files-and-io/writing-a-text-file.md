@@ -8,7 +8,8 @@ description: "Das Schreiben einer Textdatei in Clojure umfasst das Erstellen ode
 lastmod: '2024-03-13T22:44:53.438551-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Clojure umfasst das Erstellen oder Modifizieren\
-  \ von Dateien, um Daten au\xDFerhalb Ihrer Anwendung zu speichern, was\u2026"
+  \ von Dateien, um Daten au\xDFerhalb Ihrer Anwendung zu speichern, was Persistenz,\
+  \ Konfiguration, Protokollierung oder interprozessuale Kommunikation erm\xF6glicht."
 title: Eine Textdatei schreiben
 weight: 24
 ---

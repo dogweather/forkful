@@ -5,9 +5,8 @@ description: "Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki 
   \ Jednak\u017Ce\u2026"
 lastmod: '2024-03-13T22:44:35.326244-06:00'
 model: gpt-4-0125-preview
-summary: "Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma to\
-  \ miejsce np. w JavaScript z narz\u0119dziami deweloperskimi przegl\u0105darki.\
-  \ Jednak\u017Ce\u2026"
+summary: Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma to miejsce
+  np.
 title: Korzystanie z debugera
 weight: 35
 ---

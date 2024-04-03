@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.317584-06:00'
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
   \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
-  \ au d\xE9veloppement de\u2026"
+  \ au d\xE9veloppement de jeux."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

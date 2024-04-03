@@ -4,8 +4,8 @@ description: "Writing tests in Elixir involves creating automated scripts to val
   \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
 lastmod: '2024-03-13T22:44:59.785638-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Elixir involves creating automated scripts to validate\
-  \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
+summary: Writing tests in Elixir involves creating automated scripts to validate the
+  behavior of your code.
 title: Writing tests
 weight: 36
 ---

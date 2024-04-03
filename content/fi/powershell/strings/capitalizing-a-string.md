@@ -7,7 +7,8 @@ description: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShel
 lastmod: '2024-03-13T22:44:56.763990-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
-  \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"
+  \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\
+  \ samalla kun loput merkkijonosta j\xE4tet\xE4\xE4n muuttumattomiksi."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

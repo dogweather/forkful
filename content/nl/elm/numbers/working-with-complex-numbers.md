@@ -7,7 +7,7 @@ description: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire g
 lastmod: '2024-03-13T22:44:50.718462-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
-  \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
+  \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is."
 title: Werken met complexe getallen
 weight: 14
 ---

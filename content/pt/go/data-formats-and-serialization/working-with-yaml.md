@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.082871-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com YAML em Go envolve analisar arquivos YAML (YAML Ain't Markup\
   \ Language), um padr\xE3o de serializa\xE7\xE3o de dados amig\xE1vel para humanos,\
-  \ em\u2026"
+  \ em estruturas de dados Go e vice-versa."
 title: Trabalhando com YAML
 weight: 41
 ---

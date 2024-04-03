@@ -5,8 +5,8 @@ description: "Calcolare una data nel futuro o nel passato significa semplicement
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.655918-06:00'
 model: gpt-4-1106-preview
-summary: "Calcolare una data nel futuro o nel passato significa semplicemente trovare\
-  \ una data specifica a partire da un punto noto. I programmatori lo fanno per\u2026"
+summary: Calcolare una data nel futuro o nel passato significa semplicemente trovare
+  una data specifica a partire da un punto noto.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

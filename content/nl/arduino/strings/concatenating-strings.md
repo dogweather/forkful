@@ -6,8 +6,8 @@ description: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind s
   \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"
 lastmod: '2024-03-13T22:44:51.064573-06:00'
 model: gpt-4-0125-preview
-summary: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt\
-  \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"
+summary: Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt
+  om een nieuwe te maken.
 title: Samenvoegen van strings
 weight: 3
 ---

@@ -6,7 +6,7 @@ description: "Converter uma string para min\xFAsculas \xE9 o processo de transfo
 lastmod: '2024-03-13T22:44:46.738131-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar todas\
-  \ as letras de uma string para a forma min\xFAscula. Programadores fazem isso para\u2026"
+  \ as letras de uma string para a forma min\xFAscula."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

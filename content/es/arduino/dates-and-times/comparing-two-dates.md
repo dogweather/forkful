@@ -4,8 +4,8 @@ description: "Comparar dos fechas es verificar si una es anterior, posterior o i
   \ a la otra. Programadores lo hacen para eventos, registros temporales o para medir\u2026"
 lastmod: '2024-03-13T22:44:59.345994-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas es verificar si una es anterior, posterior o igual a\
-  \ la otra. Programadores lo hacen para eventos, registros temporales o para medir\u2026"
+summary: Comparar dos fechas es verificar si una es anterior, posterior o igual a
+  la otra.
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

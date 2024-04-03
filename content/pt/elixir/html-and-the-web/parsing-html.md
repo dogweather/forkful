@@ -6,8 +6,7 @@ description: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, t
 lastmod: '2024-03-13T22:44:46.236061-06:00'
 model: unknown
 summary: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
-  \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
-  \ dados de\u2026"
+  \ para extrair informa\xE7\xF5es dele."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

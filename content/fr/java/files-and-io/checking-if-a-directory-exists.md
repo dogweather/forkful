@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.657562-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Java est une t\xE2che fondamentale\
   \ qui implique de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire du syst\xE8me de\
-  \ fichiers avant de\u2026"
+  \ fichiers avant de le lire, d'\xE9crire dedans ou d'effectuer toute op\xE9ration\
+  \ n\xE9cessitant son existence."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

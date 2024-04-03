@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.742609-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de code\
   \ qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
-  \ en\u2026"
+  \ en s'assurant qu'ils fonctionnent comme pr\xE9vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

@@ -4,8 +4,8 @@ description: "Organizzare il codice in funzioni significa suddividere il mostro 
   \ un programma in pezzi gestibili, ognuno svolgente un compito distinto. I\u2026"
 lastmod: '2024-03-13T22:44:43.314467-06:00'
 model: gpt-4-1106-preview
-summary: "Organizzare il codice in funzioni significa suddividere il mostro di un\
-  \ programma in pezzi gestibili, ognuno svolgente un compito distinto. I\u2026"
+summary: Organizzare il codice in funzioni significa suddividere il mostro di un programma
+  in pezzi gestibili, ognuno svolgente un compito distinto.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

@@ -4,8 +4,9 @@ description: "In PowerShell, you can debug scripts using the built-in PowerShell
   \ Scripting Environment (ISE) or Visual Studio Code (VS Code) with the\u2026"
 lastmod: '2024-03-13T22:45:00.288406-06:00'
 model: gpt-4-1106-preview
-summary: "In PowerShell, you can debug scripts using the built-in PowerShell Integrated\
-  \ Scripting Environment (ISE) or Visual Studio Code (VS Code) with the\u2026"
+summary: In PowerShell, you can debug scripts using the built-in PowerShell Integrated
+  Scripting Environment (ISE) or Visual Studio Code (VS Code) with the PowerShell
+  extension.
 title: Using a debugger
 weight: 35
 ---

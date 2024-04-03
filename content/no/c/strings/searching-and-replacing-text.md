@@ -7,7 +7,7 @@ description: "\xC5 s\xF8ke og erstatte tekst i C inneb\xE6rer \xE5 identifisere 
 lastmod: '2024-03-13T22:44:41.255122-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 s\xF8ke og erstatte tekst i C inneb\xE6rer \xE5 identifisere spesifikke\
-  \ delstrenger innenfor en st\xF8rre streng og erstatte dem med forskjellige delstrenger.\u2026"
+  \ delstrenger innenfor en st\xF8rre streng og erstatte dem med forskjellige delstrenger."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

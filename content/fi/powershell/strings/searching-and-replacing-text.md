@@ -5,8 +5,8 @@ description: "Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijono
   t ja virhealttiit\u2026"
 lastmod: '2024-03-13T22:44:56.765875-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa\
-  \ ne toisiin. Koodarit tekev\xE4t t\xE4t\xE4 automatisoidakseen tyls\xE4t ja virhealttiit\u2026"
+summary: Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa
+  ne toisiin.
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

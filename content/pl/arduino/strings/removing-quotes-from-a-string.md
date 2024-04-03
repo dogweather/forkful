@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.660360-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
   cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
-  w cudzys\u0142owu otaczaj\u0105cych tekst.\u2026"
+  w cudzys\u0142owu otaczaj\u0105cych tekst."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

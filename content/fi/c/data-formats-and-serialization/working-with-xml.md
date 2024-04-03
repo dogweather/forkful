@@ -8,8 +8,7 @@ description: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttie
 lastmod: '2024-03-13T22:44:57.067339-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4\
-  sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia kirjastoja.\
-  \ Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
+  sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia kirjastoja."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

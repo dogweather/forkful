@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.325895-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekst\
   \ som representerer en dato, til et datoomsjekt, noe som muliggj\xF8r at programmerere\
-  \ kan\u2026"
+  \ kan utf\xF8re dato-relaterte operasjoner som sammenligninger, aritmetikk og formatering."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

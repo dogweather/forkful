@@ -6,7 +6,7 @@ description: "Clojure se apoia na M\xE1quina Virtual Java (JVM), ent\xE3o muito 
 lastmod: '2024-03-13T22:44:46.201283-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure se apoia na M\xE1quina Virtual Java (JVM), ent\xE3o muito da depura\xE7\
-  \xE3o acontece com ferramentas Java. Uma dessas ferramentas \xE9 o `CIDER`, um pacote\u2026"
+  \xE3o acontece com ferramentas Java."
 title: Usando um depurador
 weight: 35
 ---

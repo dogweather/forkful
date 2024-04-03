@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.906909-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
   \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
-  c ich\u2026"
+  c ich prawid\u0142owe dzia\u0142anie w r\xF3\u017Cnych warunkach."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

@@ -6,8 +6,7 @@ description: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es di
 lastmod: '2024-03-13T22:44:46.854039-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es diretamente\
-  \ quando iniciamos um programa. Programadores fazem isso para customizar a execu\xE7\
-  \xE3o do\u2026"
+  \ quando iniciamos um programa."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

@@ -6,8 +6,8 @@ description: "Een datum naar een tekenreeks converteren betekent het vertegenwoo
   \ van een datumobject als leesbare tekst die een specifiek patroon volgt.\u2026"
 lastmod: '2024-03-13T22:44:50.694071-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum naar een tekenreeks converteren betekent het vertegenwoordigen\
-  \ van een datumobject als leesbare tekst die een specifiek patroon volgt.\u2026"
+summary: Een datum naar een tekenreeks converteren betekent het vertegenwoordigen
+  van een datumobject als leesbare tekst die een specifiek patroon volgt.
 title: Een datum converteren naar een string
 weight: 28
 ---

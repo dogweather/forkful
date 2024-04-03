@@ -6,8 +6,8 @@ description: "Een datum parsen uit een string in Visual Basic for Applications (
   \ gaat over het omzetten van tekst die een datum voorstelt naar een datum\u2026"
 lastmod: '2024-03-13T22:44:50.646555-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum parsen uit een string in Visual Basic for Applications (VBA) gaat\
-  \ over het omzetten van tekst die een datum voorstelt naar een datum\u2026"
+summary: Een datum parsen uit een string in Visual Basic for Applications (VBA) gaat
+  over het omzetten van tekst die een datum voorstelt naar een datum gegevenstype.
 title: Een datum ontleden uit een string
 weight: 30
 ---

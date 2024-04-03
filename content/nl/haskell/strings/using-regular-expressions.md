@@ -7,8 +7,7 @@ description: "Reguliere expressies (regex) zoeken en manipuleren teksten op basi
   \ parsing,\u2026"
 lastmod: '2024-03-13T22:44:50.842220-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) zoeken en manipuleren teksten op basis van\
-  \ patronen. Programmeurs gebruiken ze voor taken zoals formulier validatie, parsing,\u2026"
+summary: Reguliere expressies (regex) zoeken en manipuleren teksten op basis van patronen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

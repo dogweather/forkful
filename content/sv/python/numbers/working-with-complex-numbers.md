@@ -6,8 +6,7 @@ description: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` o
 lastmod: '2024-03-13T22:44:37.477279-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och `b`\
-  \ \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\
-  \ anv\xE4nder vi\u2026"
+  \ \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`)."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

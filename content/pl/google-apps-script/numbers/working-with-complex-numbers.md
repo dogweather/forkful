@@ -6,8 +6,8 @@ description: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywi
   \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
 lastmod: '2024-03-13T22:44:34.895817-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
-  \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
+summary: Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych i
+  urojonych (np.
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

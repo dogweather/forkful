@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.279605-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
   \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\
-  \ qu'il se comporte\u2026"
+  \ qu'il se comporte comme pr\xE9vu, ce qui peut consid\xE9rablement am\xE9liorer\
+  \ la fiabilit\xE9 et la maintenabilit\xE9 de vos applications."
 title: "R\xE9daction de tests"
 weight: 36
 ---

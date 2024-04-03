@@ -4,8 +4,8 @@ description: "Lire un fichier texte, c'est extraire son contenu pour que votre p
   \ Lua puisse l'utiliser. On fait \xE7a pour des tas de raisons \u2013 charger des\u2026"
 lastmod: '2024-03-13T22:44:57.956389-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte, c'est extraire son contenu pour que votre programme\
-  \ Lua puisse l'utiliser. On fait \xE7a pour des tas de raisons \u2013 charger des\u2026"
+summary: Lire un fichier texte, c'est extraire son contenu pour que votre programme
+  Lua puisse l'utiliser.
 title: Lecture d'un fichier texte
 weight: 22
 ---

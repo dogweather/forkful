@@ -8,7 +8,7 @@ description: "Przetwarzanie daty z ci\u0105gu znak\xF3w w C# polega na konwertow
 lastmod: '2024-03-13T22:44:35.417698-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w C# polega na konwertowaniu tekstowych\
-  \ reprezentacji dat i czas\xF3w na obiekt `DateTime`. Jest to kluczowe dla aplikacji,\u2026"
+  \ reprezentacji dat i czas\xF3w na obiekt `DateTime`."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

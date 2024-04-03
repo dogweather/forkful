@@ -4,8 +4,8 @@ description: "Associative arrays are like super-charged arrays that let you use 
   \ as indexes instead of just integers. Programmers use them for more complex data\u2026"
 lastmod: '2024-03-13T22:45:00.236595-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays are like super-charged arrays that let you use strings\
-  \ as indexes instead of just integers. Programmers use them for more complex data\u2026"
+summary: Associative arrays are like super-charged arrays that let you use strings
+  as indexes instead of just integers.
 title: Using associative arrays
 weight: 15
 ---

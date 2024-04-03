@@ -8,8 +8,7 @@ description: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0
 lastmod: '2024-03-13T22:44:35.747785-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0105 przechowywa\u0107\
-  \ i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\u0107. Programi\u015B\
-  ci u\u017Cywaj\u0105 ich do\u2026"
+  \ i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\u0107."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

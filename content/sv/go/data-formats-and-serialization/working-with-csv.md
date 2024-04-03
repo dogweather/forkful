@@ -8,7 +8,8 @@ description: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvara
 lastmod: '2024-03-13T22:44:37.416192-06:00'
 model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande f\xF6\
-  r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med de flesta\u2026"
+  r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med de flesta\
+  \ programmeringsspr\xE5k, inklusive Go."
 title: Arbeta med CSV
 weight: 37
 ---

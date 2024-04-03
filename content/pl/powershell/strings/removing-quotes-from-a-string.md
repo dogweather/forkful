@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.615764-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w PowerShellu polega na wyeliminowaniu\
   \ pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu otaczaj\u0105\
-  cych tekst.\u2026"
+  cych tekst."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

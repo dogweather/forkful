@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.666065-06:00'
 model: gpt-4-0125-preview
 summary: "Logging l\xE0 qu\xE1 tr\xECnh ghi ch\xE9p c\xE1c s\u1EF1 ki\u1EC7n v\xE0\
   \ d\u1EEF li\u1EC7u \u0111\u1EA7u ra c\u1EE7a \u1EE9ng d\u1EE5ng trong qu\xE1 tr\xEC\
-  nh ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n logging \u0111\u1EC3\
-  \ ch\u1EA9n \u0111o\xE1n l\u1ED7i, theo d\xF5i\u2026"
+  nh ch\u1EA1y."
 title: Ghi log
 weight: 17
 ---

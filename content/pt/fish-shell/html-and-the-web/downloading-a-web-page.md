@@ -5,7 +5,7 @@ description: "Baixar uma p\xE1gina da web \xE9, basicamente, capturar todo o con
 lastmod: '2024-03-13T22:44:47.004832-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9, basicamente, capturar todo o conte\xFA\
-  do de uma URL para que voc\xEA possa v\xEA-lo offline ou manipul\xE1-lo programaticamente.\u2026"
+  do de uma URL para que voc\xEA possa v\xEA-lo offline ou manipul\xE1-lo programaticamente."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

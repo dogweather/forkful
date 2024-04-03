@@ -8,8 +8,7 @@ description: "Web-sivun lataaminen tarkoittaa web-sivun sis\xE4ll\xF6n noutamist
 lastmod: '2024-03-13T22:44:56.269385-06:00'
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen tarkoittaa web-sivun sis\xE4ll\xF6n noutamista sen\
-  \ URL-osoitteen kautta k\xE4sittely\xE4 tai tallennusta varten. Ohjelmoijat tekev\xE4\
-  t t\xE4m\xE4n tiedon\u2026"
+  \ URL-osoitteen kautta k\xE4sittely\xE4 tai tallennusta varten."
 title: Web-sivun lataaminen
 weight: 42
 ---

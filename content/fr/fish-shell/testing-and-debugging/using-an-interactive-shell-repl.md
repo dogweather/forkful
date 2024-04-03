@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.326241-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, ou Boucle Lire-\xC9valuer-Imprimer, est un environnement de programmation\
   \ interactif qui prend des entr\xE9es utilisateur individuelles, les ex\xE9cute\
-  \ et\u2026"
+  \ et retourne le r\xE9sultat."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

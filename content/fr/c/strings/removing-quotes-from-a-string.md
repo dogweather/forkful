@@ -7,7 +7,7 @@ description: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le
 lastmod: '2024-03-13T22:44:58.357979-06:00'
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
-  \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"
+  \ textuel sans les guillemets simples (' ') ou doubles (\" \")."
 title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 weight: 9
 ---

@@ -8,7 +8,8 @@ description: "\xC5 slette tegn som samsvarer med et bestemt m\xF8nster fra stren
 lastmod: '2024-03-13T22:44:41.253849-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som samsvarer med et bestemt m\xF8nster fra strenger i\
-  \ C handler om \xE5 fjerne alle forekomster av visse tegn som passer forh\xE5ndsdefinerte\u2026"
+  \ C handler om \xE5 fjerne alle forekomster av visse tegn som passer forh\xE5ndsdefinerte\
+  \ kriterier."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

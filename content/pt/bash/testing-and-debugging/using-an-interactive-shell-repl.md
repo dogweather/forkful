@@ -6,8 +6,7 @@ description: "REPL significa Loop de Ler-Avaliar-Imprimir, um ambiente de progra
 lastmod: '2024-03-13T22:44:46.754327-06:00'
 model: gpt-4-0125-preview
 summary: "REPL significa Loop de Ler-Avaliar-Imprimir, um ambiente de programa\xE7\
-  \xE3o computacional simples e interativo. Programadores o utilizam para escrever\
-  \ e\u2026"
+  \xE3o computacional simples e interativo."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

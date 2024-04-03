@@ -4,8 +4,7 @@ description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakua tekstipohjaisest
   \ tiedostosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan analysoinnin,\u2026"
 lastmod: '2024-03-13T22:44:56.548711-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakua tekstipohjaisesta tiedostosta.\
-  \ Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan analysoinnin,\u2026"
+summary: Tekstitiedoston lukeminen tarkoittaa tiedon hakua tekstipohjaisesta tiedostosta.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

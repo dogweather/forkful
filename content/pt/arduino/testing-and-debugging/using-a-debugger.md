@@ -6,8 +6,7 @@ description: "Com a IDE do Arduino, voc\xEA pode usar impress\xF5es Serial para 
 lastmod: '2024-03-13T22:44:46.843263-06:00'
 model: gpt-4-0125-preview
 summary: "Com a IDE do Arduino, voc\xEA pode usar impress\xF5es Serial para depurar,\
-  \ mas \xE9 um pouco como usar uma lanterna para explorar uma caverna. Para uma depura\xE7\
-  \xE3o\u2026"
+  \ mas \xE9 um pouco como usar uma lanterna para explorar uma caverna."
 title: Usando um depurador
 weight: 35
 ---

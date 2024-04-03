@@ -6,8 +6,7 @@ description: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataf
 lastmod: '2024-03-13T22:44:40.909767-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataformat\
-  \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker. Programmerere bruker\
-  \ det\u2026"
+  \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker."
 title: Jobbe med TOML
 weight: 39
 ---

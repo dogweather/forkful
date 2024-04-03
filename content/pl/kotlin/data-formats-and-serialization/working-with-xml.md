@@ -6,8 +6,7 @@ description: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumen
 lastmod: '2024-03-13T22:44:35.389534-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami XML\
-  \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych. Programi\u015B\
-  ci robi\u0105\u2026"
+  \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych."
 title: Praca z XML
 weight: 40
 ---

@@ -4,8 +4,8 @@ description: "Confrontare due date significa controllare se sono uguali, o deter
   \ quale precede o segue l'altra. I programmatori lo fanno per gestire scadenze,\u2026"
 lastmod: '2024-03-13T22:44:43.321424-06:00'
 model: gpt-4-1106-preview
-summary: "Confrontare due date significa controllare se sono uguali, o determinare\
-  \ quale precede o segue l'altra. I programmatori lo fanno per gestire scadenze,\u2026"
+summary: Confrontare due date significa controllare se sono uguali, o determinare
+  quale precede o segue l'altra.
 title: Confronto tra due date
 weight: 27
 ---

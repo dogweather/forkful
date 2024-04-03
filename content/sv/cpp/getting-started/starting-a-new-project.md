@@ -6,8 +6,7 @@ description: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4s
 lastmod: '2024-03-13T22:44:38.209805-06:00'
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4sch kodkodbas\
-  \ fr\xE5n nollpunkt. Programmerare g\xF6r detta f\xF6r att f\xF6rverkliga nya id\xE9\
-  er, l\xF6sa unika\u2026"
+  \ fr\xE5n nollpunkt."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

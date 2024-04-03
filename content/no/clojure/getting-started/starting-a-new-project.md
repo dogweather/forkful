@@ -5,9 +5,7 @@ description: "Noen ganger trenger vi bare et blankt lerret. \xC5 starte et nytt 
   \ eller bygge\u2026"
 lastmod: '2024-03-13T22:44:40.403042-06:00'
 model: gpt-4-1106-preview
-summary: "Noen ganger trenger vi bare et blankt lerret. \xC5 starte et nytt prosjekt\
-  \ i Clojure gir oss den freshe starten \u2013 for \xE5 utforske, eksperimentere,\
-  \ eller bygge\u2026"
+summary: Noen ganger trenger vi bare et blankt lerret.
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

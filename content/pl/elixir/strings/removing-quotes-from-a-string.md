@@ -6,8 +6,7 @@ description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbyc
 lastmod: '2024-03-13T22:44:35.028405-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
-  \ tych dodatkowych wrapper\xF3w, aby uzyska\u0107 czysty tekst wewn\u0105trz. Programi\u015B\
-  ci robi\u0105 to, aby oczy\u015Bci\u0107\u2026"
+  \ tych dodatkowych wrapper\xF3w, aby uzyska\u0107 czysty tekst wewn\u0105trz."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

@@ -6,8 +6,8 @@ description: "L'analyse du HTML implique de passer au crible la structure et le 
   \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"
 lastmod: '2024-03-13T22:44:57.992279-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse du HTML implique de passer au crible la structure et le contenu\
-  \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"
+summary: L'analyse du HTML implique de passer au crible la structure et le contenu
+  d'un fichier HTML pour en extraire des informations.
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

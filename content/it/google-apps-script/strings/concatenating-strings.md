@@ -8,8 +8,7 @@ description: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe 
 lastmod: '2024-03-13T22:44:42.945861-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe in una\
-  \ singola stringa. I programmatori lo fanno per costruire dinamicamente messaggi,\
-  \ URL\u2026"
+  \ singola stringa."
 title: Concatenazione di stringhe
 weight: 3
 ---

@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodinp\xE4tk\xE4n purka
 lastmod: '2024-03-13T22:44:57.084516-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodinp\xE4tk\xE4n purkamista,\
-  \ jotta ymm\xE4rt\xE4isimme sen rakenteen ja sis\xE4ll\xF6n. Ohjelmoijat tekev\xE4\
-  t t\xE4t\xE4 dataa poimiakseen,\u2026"
+  \ jotta ymm\xE4rt\xE4isimme sen rakenteen ja sis\xE4ll\xF6n."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

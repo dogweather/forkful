@@ -6,8 +6,7 @@ description: "Att skapa en tempor\xE4r fil inneb\xE4r att generera en fil som en
 lastmod: '2024-03-13T22:44:38.144999-06:00'
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil inneb\xE4r att generera en fil som endast \xE4\
-  r avsedd f\xF6r tillf\xE4llig anv\xE4ndning. Programmerare g\xF6r detta f\xF6r att\
-  \ hantera data som\u2026"
+  r avsedd f\xF6r tillf\xE4llig anv\xE4ndning."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

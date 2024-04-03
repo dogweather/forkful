@@ -4,8 +4,8 @@ description: "Starting a new project in Rust means setting up a basic structure 
   \ your code has a place to live. Programmers kick off new projects to solve problems,\u2026"
 lastmod: '2024-03-13T22:44:59.896433-06:00'
 model: gpt-4-1106-preview
-summary: "Starting a new project in Rust means setting up a basic structure so your\
-  \ code has a place to live. Programmers kick off new projects to solve problems,\u2026"
+summary: Starting a new project in Rust means setting up a basic structure so your
+  code has a place to live.
 title: Starting a new project
 weight: 1
 ---

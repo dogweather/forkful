@@ -7,7 +7,9 @@ description: "Att skriva till standardfel (stderr) i PHP handlar om att styra fe
 lastmod: '2024-03-13T22:44:38.012546-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i PHP handlar om att styra felmeddelanden\
-  \ eller diagnostik separat fr\xE5n standardutdata (stdout), vilket g\xF6r det\u2026"
+  \ eller diagnostik separat fr\xE5n standardutdata (stdout), vilket g\xF6r det m\xF6\
+  jligt f\xF6r utvecklare att b\xE4ttre hantera sina utdatastr\xF6mmar f\xF6r fels\xF6\
+  kning och loggning."
 title: Skriva till standardfel
 weight: 25
 ---

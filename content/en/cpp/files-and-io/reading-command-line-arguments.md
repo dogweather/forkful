@@ -4,8 +4,8 @@ description: "Command line arguments let users influence a program's behavior wi
   \ changing the code. Programs use them to get input params, filepath, or operation\u2026"
 lastmod: '2024-03-13T22:45:00.371443-06:00'
 model: gpt-4-1106-preview
-summary: "Command line arguments let users influence a program's behavior without\
-  \ changing the code. Programs use them to get input params, filepath, or operation\u2026"
+summary: Command line arguments let users influence a program's behavior without changing
+  the code.
 title: Reading command line arguments
 weight: 23
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.461718-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
   ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\
-  e\u2026"
+  e manipulowa\u0107."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

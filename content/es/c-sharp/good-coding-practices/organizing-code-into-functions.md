@@ -6,8 +6,7 @@ description: "Organizar el c\xF3digo en funciones es como ordenar ladrillos de L
 lastmod: '2024-03-13T22:44:59.083507-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones es como ordenar ladrillos de LEGO en\
-  \ cajas: facilita su b\xFAsqueda y utilizaci\xF3n. Hacemos esto para evitar la repetici\xF3\
-  n,\u2026"
+  \ cajas: facilita su b\xFAsqueda y utilizaci\xF3n."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

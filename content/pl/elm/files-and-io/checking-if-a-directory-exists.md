@@ -5,9 +5,7 @@ description: "\"Co i dlaczego?\" Sprawdzanie istnienia katalogu pozwala potwierd
   \ to, aby unikn\u0105\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.336277-06:00'
 model: unknown
-summary: "\"Co i dlaczego?\" Sprawdzanie istnienia katalogu pozwala potwierdzi\u0107\
-  , czy dany folder jest dost\u0119pny w systemie plik\xF3w. Programi\u015Bci robi\u0105\
-  \ to, aby unikn\u0105\u0107\u2026"
+summary: '"Co i dlaczego.'
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

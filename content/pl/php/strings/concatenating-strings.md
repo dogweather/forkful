@@ -6,8 +6,7 @@ description: "\u0141\u0105czenie string\xF3w to po prostu sklejanie dw\xF3ch lub
 lastmod: '2024-03-13T22:44:35.488995-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie string\xF3w to po prostu sklejanie dw\xF3ch lub wi\u0119\
-  cej tekst\xF3w w jeden. Programi\u015Bci robi\u0105 to, aby budowa\u0107 wiadomo\u015B\
-  ci, tworzy\u0107 zapytania SQL, a nawet\u2026"
+  cej tekst\xF3w w jeden."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

@@ -6,8 +6,8 @@ description: "Een webpagina downloaden betekent het binnenhalen van de HTML, CSS
   \ mogelijk andere bronnen van de URL die je bezoekt. Programmeurs doen dit om inhoud\u2026"
 lastmod: '2024-03-13T22:44:50.549394-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en mogelijk\
-  \ andere bronnen van de URL die je bezoekt. Programmeurs doen dit om inhoud\u2026"
+summary: Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en mogelijk
+  andere bronnen van de URL die je bezoekt.
 title: Een webpagina downloaden
 weight: 42
 ---

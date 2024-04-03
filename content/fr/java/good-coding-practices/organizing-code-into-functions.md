@@ -6,8 +6,7 @@ description: "Organiser le code en fonctions signifie d\xE9composer le monstre q
 lastmod: '2024-03-13T22:44:57.646446-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
-  \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte.\
-  \ Les\u2026"
+  \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte."
 title: Organisation du code en fonctions
 weight: 18
 ---

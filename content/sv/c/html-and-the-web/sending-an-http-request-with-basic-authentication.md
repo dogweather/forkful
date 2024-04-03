@@ -8,7 +8,8 @@ description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i
 lastmod: '2024-03-13T22:44:38.382265-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C inneb\xE4\
-  r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med\u2026"
+  r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med anv\xE4\
+  ndaruppgifter kodade i Base64."
 title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---

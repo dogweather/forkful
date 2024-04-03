@@ -7,8 +7,8 @@ description: "Een nieuw project starten gaat over het leggen van de fundamenten 
   \ of\u2026"
 lastmod: '2024-03-13T22:44:51.029847-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten gaat over het leggen van de fundamenten voor je\
-  \ codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of\u2026"
+summary: Een nieuw project starten gaat over het leggen van de fundamenten voor je
+  codeerkunstwerk.
 title: Een nieuw project starten
 weight: 1
 ---

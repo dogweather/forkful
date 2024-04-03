@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "JSON, ho\u1EB7c JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECB\
   nh d\u1EA1ng nh\u1EB9 cho vi\u1EC7c l\u01B0u tr\u1EEF v\xE0 v\u1EADn chuy\u1EC3\
   n d\u1EEF li\u1EC7u, l\xFD t\u01B0\u1EDFng cho vi\u1EC7c giao ti\u1EBFp gi\u1EEF\
-  a m\xE1y ch\u1EE7 v\xE0 m\xE1y kh\xE1ch\u2026"
+  a m\xE1y ch\u1EE7 v\xE0 m\xE1y kh\xE1ch v\xE0 c\xE1c t\u1EC7p c\u1EA5u h\xECnh."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

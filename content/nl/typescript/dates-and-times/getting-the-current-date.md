@@ -6,8 +6,8 @@ description: "De huidige datum in je code krijgen betekent het vastleggen van he
   \ huidige moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
 lastmod: '2024-03-13T22:44:50.561490-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in je code krijgen betekent het vastleggen van het huidige\
-  \ moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
+summary: De huidige datum in je code krijgen betekent het vastleggen van het huidige
+  moment tot op de dag.
 title: Het huidige datum ophalen
 weight: 29
 ---

@@ -6,8 +6,9 @@ description: "Gli array associativi, noti in Python come dizionari, mappano chia
   \ a valori, rendendo facile recuperare, modificare o tenere traccia dei dati mediante\u2026"
 lastmod: '2024-03-13T22:44:42.994090-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, noti in Python come dizionari, mappano chiavi a valori,\
-  \ rendendo facile recuperare, modificare o tenere traccia dei dati mediante\u2026"
+summary: Gli array associativi, noti in Python come dizionari, mappano chiavi a valori,
+  rendendo facile recuperare, modificare o tenere traccia dei dati mediante un identificatore
+  unico.
 title: Utilizzo di array associativi
 weight: 15
 ---

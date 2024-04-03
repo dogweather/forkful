@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.215178-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
   \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
-  \ ci\u0105gu znak\xF3w, co umo\u017Cliwia\u2026"
+  \ ci\u0105gu znak\xF3w, co umo\u017Cliwia dynamiczne tworzenie ci\u0105g\xF3w."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

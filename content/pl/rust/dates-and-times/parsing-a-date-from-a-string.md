@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.194954-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w to cz\u0119ste zadanie podczas pracy\
   \ z danymi wprowadzanymi przez u\u017Cytkownika lub odczytywaniem danych z plik\xF3\
-  w. Polega to na\u2026"
+  w."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

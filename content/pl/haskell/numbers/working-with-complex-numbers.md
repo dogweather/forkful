@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.445378-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej, s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach obliczeniowych,\
-  \ takich jak in\u017Cynieria, fizyka i\u2026"
+  \ takich jak in\u017Cynieria, fizyka i przetwarzanie sygna\u0142\xF3w."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

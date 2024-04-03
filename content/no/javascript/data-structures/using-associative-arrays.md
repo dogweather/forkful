@@ -8,8 +8,7 @@ description: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i Ja
 lastmod: '2024-03-13T22:44:41.177100-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i JavaScript,\
-  \ objekter, lar deg knytte n\xF8kler til verdier. Dette er super praktisk for n\xE5\
-  r du\u2026"
+  \ objekter, lar deg knytte n\xF8kler til verdier."
 title: Bruke associative tabeller
 weight: 15
 ---

@@ -7,7 +7,7 @@ description: "Het vergelijken van twee datums betekent controleren hoe ze zich t
 lastmod: '2024-03-13T22:44:50.432643-06:00'
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums betekent controleren hoe ze zich tot elkaar\
-  \ verhouden\u2014is de ene eerder, later, of exact hetzelfde als de andere?\u2026"
+  \ verhouden\u2014is de ene eerder, later, of exact hetzelfde als de andere."
 title: Twee datums vergelijken
 weight: 27
 ---

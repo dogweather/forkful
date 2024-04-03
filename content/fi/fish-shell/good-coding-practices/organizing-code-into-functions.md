@@ -9,8 +9,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skri
 lastmod: '2024-03-13T22:44:57.000344-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
-  \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\
-  \ luettavaa,\u2026"
+  \ tiettyj\xE4 teht\xE4vi\xE4 varten."
 title: "Koodin j\xE4rjest\xE4minen funktioiksi"
 weight: 18
 ---

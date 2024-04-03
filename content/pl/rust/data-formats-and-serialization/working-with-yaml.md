@@ -7,7 +7,8 @@ description: "W programowaniu w Rust, praca z YAML (YAML Ain't Markup Language) 
 lastmod: '2024-03-13T22:44:35.206706-06:00'
 model: gpt-4-0125-preview
 summary: "W programowaniu w Rust, praca z YAML (YAML Ain't Markup Language) polega\
-  \ na analizowaniu i generowaniu danych w formacie YAML, czyli przyjaznym dla\u2026"
+  \ na analizowaniu i generowaniu danych w formacie YAML, czyli przyjaznym dla cz\u0142\
+  owieka standardzie serializacji danych."
 title: Praca z YAML
 weight: 41
 ---

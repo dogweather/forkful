@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.834981-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE8 un formato leggero per lo scambio\
   \ di dati, facile da leggere e scrivere per gli umani e da analizzare e generare\
-  \ per\u2026"
+  \ per le macchine."
 title: Lavorare con JSON
 weight: 38
 ---

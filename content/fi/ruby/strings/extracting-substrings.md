@@ -6,8 +6,7 @@ description: "Substringien poiminta tarkoittaa isomman merkkijonon sis\xE4lt\xE4
 lastmod: '2024-03-13T22:44:57.073914-06:00'
 model: gpt-4-1106-preview
 summary: "Substringien poiminta tarkoittaa isomman merkkijonon sis\xE4lt\xE4 tietyn\
-  \ osan irrottamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain\
-  \ jonkin tiedon\u2026"
+  \ osan irrottamista."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

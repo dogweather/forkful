@@ -5,9 +5,7 @@ description: "Mik\xE4 ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin
   \ virheiden\u2026"
 lastmod: '2024-03-13T22:44:56.533363-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin toiminnan\
-  \ tarkkailua reaaliajassa. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t sit\xE4 sovellusten\
-  \ virheiden\u2026"
+summary: "Mik\xE4 ja miksi."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

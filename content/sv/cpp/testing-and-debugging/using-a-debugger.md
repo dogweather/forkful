@@ -5,9 +5,7 @@ description: "C++ integreras med debuggers som GDB eller Visual Studio-debuggern
   \ { int a = 5;\u2026"
 lastmod: '2024-03-13T22:44:38.213588-06:00'
 model: gpt-4-0125-preview
-summary: "C++ integreras med debuggers som GDB eller Visual Studio-debuggern. H\xE4\
-  r \xE4r ett litet exempel med GDB: ```C++ #include <iostream> int main() { int a\
-  \ = 5;\u2026"
+summary: C++ integreras med debuggers som GDB eller Visual Studio-debuggern.
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

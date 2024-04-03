@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.164846-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para muitas\
   \ aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada de decis\xF5\
-  es baseadas\u2026"
+  es baseadas no tempo."
 title: Obtendo a data atual
 weight: 29
 ---

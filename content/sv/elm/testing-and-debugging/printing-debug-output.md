@@ -6,8 +6,7 @@ description: "Skriva ut fels\xF6kningsdata g\xF6r det l\xE4ttare att se vad ditt
 lastmod: '2024-03-13T22:44:37.831958-06:00'
 model: gpt-4-1106-preview
 summary: "Skriva ut fels\xF6kningsdata g\xF6r det l\xE4ttare att se vad ditt program\
-  \ egentligen g\xF6r. Programmerare anv\xE4nder det f\xF6r att hitta buggar och f\xF6\
-  rst\xE5 programfl\xF6det."
+  \ egentligen g\xF6r."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

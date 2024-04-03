@@ -8,8 +8,7 @@ description: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de con
 lastmod: '2024-03-13T22:44:47.003872-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
-  do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\
-  \ automatizar\u2026"
+  do HTML, uma tarefa comum ao lidar com dados da web."
 title: Analisando HTML
 weight: 43
 ---

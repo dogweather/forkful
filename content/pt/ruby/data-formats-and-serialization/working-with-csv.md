@@ -7,9 +7,8 @@ description: "Trabalhar com arquivos CSV em Ruby oferece uma abordagem direta pa
   tica para\u2026"
 lastmod: '2024-03-13T22:44:47.117681-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV em Ruby oferece uma abordagem direta para lidar\
-  \ com dados tabulares. Programadores frequentemente se engajam nesta pr\xE1tica\
-  \ para\u2026"
+summary: Trabalhar com arquivos CSV em Ruby oferece uma abordagem direta para lidar
+  com dados tabulares.
 title: Trabalhando com CSV
 weight: 37
 ---

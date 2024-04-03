@@ -4,8 +4,8 @@ description: "Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impost
   \ breakpoint, ispezionare variabili ed esaminare espressioni. Eccoti un esempio:\u2026"
 lastmod: '2024-03-13T22:44:43.774661-06:00'
 model: gpt-4-0125-preview
-summary: "Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare breakpoint,\
-  \ ispezionare variabili ed esaminare espressioni. Eccoti un esempio:\u2026"
+summary: Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare breakpoint,
+  ispezionare variabili ed esaminare espressioni.
 title: Utilizzo di un debugger
 weight: 35
 ---

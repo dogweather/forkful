@@ -8,8 +8,7 @@ description: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol
 lastmod: '2024-03-13T22:44:47.063538-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol\xF3gica\
-  \ entre elas -- se uma data precede a outra ou se s\xE3o iguais. Essa capacidade\
-  \ \xE9 crucial em\u2026"
+  \ entre elas -- se uma data precede a outra ou se s\xE3o iguais."
 title: Comparando duas datas
 weight: 27
 ---

@@ -5,9 +5,7 @@ description: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w 
   \ korygowa\u0107 b\u0142\u0119dy, aktualizowa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.657575-06:00'
 model: gpt-4-1106-preview
-summary: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na inny.\
-  \ Programi\u015Bci wykorzystuj\u0105 t\u0119 technik\u0119, by automatycznie korygowa\u0107\
-  \ b\u0142\u0119dy, aktualizowa\u0107\u2026"
+summary: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na inny."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.287078-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date courante en JavaScript est une t\xE2che fondamentale, qui\
   \ implique de r\xE9cup\xE9rer et \xE9ventuellement de manipuler la date et l'heure\
-  \ du jour.\u2026"
+  \ du jour."
 title: Obtenir la date actuelle
 weight: 29
 ---

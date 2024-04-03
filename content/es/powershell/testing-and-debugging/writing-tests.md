@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.295779-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en PowerShell implica crear scripts que validen autom\xE1\
   ticamente la funcionalidad de tu c\xF3digo de PowerShell, asegur\xE1ndose de que\
-  \ se\u2026"
+  \ se comporte como se espera."
 title: Escribiendo pruebas
 weight: 36
 ---

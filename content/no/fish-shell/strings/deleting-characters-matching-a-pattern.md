@@ -6,7 +6,7 @@ description: "\xC5 slette tegn som matcher et m\xF8nster betyr \xE5 fjerne beste
 lastmod: '2024-03-13T22:44:41.209608-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 slette tegn som matcher et m\xF8nster betyr \xE5 fjerne bestemte sekvenser\
-  \ fra tekststrenger. Programmerere gj\xF8r dette for \xE5 rense data, ekstrahere\u2026"
+  \ fra tekststrenger."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

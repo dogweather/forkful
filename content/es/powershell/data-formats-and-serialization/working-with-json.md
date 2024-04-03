@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.313778-06:00'
 model: gpt-4-0125-preview
 summary: "La integraci\xF3n de PowerShell con JSON (JavaScript Object Notation) se\
   \ trata de analizar (leer) y generar (escribir) datos JSON, un formato com\xFAn\
-  \ para el\u2026"
+  \ para el intercambio de datos en la web."
 title: Trabajando con JSON
 weight: 38
 ---

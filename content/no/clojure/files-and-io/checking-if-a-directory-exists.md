@@ -8,8 +8,7 @@ description: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 v
 lastmod: '2024-03-13T22:44:40.416102-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 verifisere\
-  \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon.\
-  \ Denne\u2026"
+  \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

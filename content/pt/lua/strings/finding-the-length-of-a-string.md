@@ -5,7 +5,7 @@ description: "Descobrir o comprimento de uma string \xE9 basicamente saber quant
 lastmod: '2024-03-13T22:44:46.700394-06:00'
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string \xE9 basicamente saber quantos caracteres\
-  \ ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
+  \ ela possui."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

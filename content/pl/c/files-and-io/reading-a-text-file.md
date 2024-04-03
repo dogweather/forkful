@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.905406-06:00'
 model: gpt-4-0125-preview
 summary: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w systemie\
   \ w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania zgodnie\
-  \ z\u2026"
+  \ z potrzebami."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

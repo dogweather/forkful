@@ -6,8 +6,7 @@ description: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovell
 lastmod: '2024-03-13T22:44:56.227415-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovelluksen\
-  \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4. Koodarit tekev\xE4t t\xE4m\xE4\
-  n tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4,\u2026"
+  \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

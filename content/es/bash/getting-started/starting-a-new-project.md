@@ -6,8 +6,7 @@ description: "Iniciar un proyecto nuevo significa crear la base desde la que cre
 lastmod: '2024-03-13T22:44:59.247342-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo significa crear la base desde la que crecer\xE1\
-  \ tu aplicaci\xF3n o script. Los programadores lo hacen para organizar sus ideas\
-  \ y\u2026"
+  \ tu aplicaci\xF3n o script."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

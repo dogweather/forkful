@@ -8,8 +8,7 @@ description: "Descargar una p\xE1gina web implica obtener el contenido de una p\
 lastmod: '2024-03-13T22:44:58.749380-06:00'
 model: gpt-4-0125-preview
 summary: "Descargar una p\xE1gina web implica obtener el contenido de una p\xE1gina\
-  \ web a trav\xE9s de su URL para su procesamiento o almacenamiento. Los programadores\
-  \ hacen\u2026"
+  \ web a trav\xE9s de su URL para su procesamiento o almacenamiento."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

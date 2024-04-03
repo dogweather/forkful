@@ -5,7 +5,7 @@ description: "Eliminar comillas de una cadena significa quitar cualquier comilla
 lastmod: '2024-03-13T22:44:59.107552-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena significa quitar cualquier comilla\u2014\
-  simple (' ') o doble (\" \")\u2014que sea parte de los datos de la cadena. Los programadores\u2026"
+  simple (' ') o doble (\" \")\u2014que sea parte de los datos de la cadena."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

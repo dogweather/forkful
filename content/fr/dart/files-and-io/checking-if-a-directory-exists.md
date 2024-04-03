@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.406455-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Dart consiste \xE0 v\xE9rifier\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 sur le syst\xE8\
-  me de fichiers avant d'effectuer\u2026"
+  me de fichiers avant d'effectuer des op\xE9rations comme lire ou \xE9crire des fichiers."
 title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 weight: 20
 ---

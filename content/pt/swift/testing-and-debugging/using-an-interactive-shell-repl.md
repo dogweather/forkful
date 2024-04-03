@@ -6,8 +6,7 @@ description: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Im
 lastmod: '2024-03-13T22:44:46.922027-06:00'
 model: gpt-4-0125-preview
 summary: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
-  o (REPL), permite programar interativamente. Programadores usam isso para testar\
-  \ trechos\u2026"
+  o (REPL), permite programar interativamente."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

@@ -4,8 +4,8 @@ description: "Logging is essentially the process of recording events and data ou
   \ from a piece of software as it runs, think of it as the software's diary.\u2026"
 lastmod: '2024-03-13T22:45:00.016531-06:00'
 model: gpt-4-1106-preview
-summary: "Logging is essentially the process of recording events and data outputs\
-  \ from a piece of software as it runs, think of it as the software's diary.\u2026"
+summary: Logging is essentially the process of recording events and data outputs from
+  a piece of software as it runs, think of it as the software's diary.
 title: Logging
 weight: 17
 ---

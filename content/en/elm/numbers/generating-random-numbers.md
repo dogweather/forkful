@@ -7,8 +7,9 @@ description: "Generating random numbers in Elm involves using the `Random` modul
   \ as\u2026"
 lastmod: '2024-03-13T22:45:00.005764-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in Elm involves using the `Random` module to produce\
-  \ pseudo-random numbers, which come in handy for a variety of tasks such as\u2026"
+summary: Generating random numbers in Elm involves using the `Random` module to produce
+  pseudo-random numbers, which come in handy for a variety of tasks such as games,
+  simulations, and even as part of algorithms that require stochastic processes.
 title: Generating random numbers
 weight: 12
 ---

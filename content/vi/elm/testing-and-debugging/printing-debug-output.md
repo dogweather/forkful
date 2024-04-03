@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i trong Elm l\xE0 vi\u1EC7c hi\u1EC3n th\u1ECB\
   \ c\xE1c gi\xE1 tr\u1ECB tr\xEAn b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n \u0111\u1EC3\
   \ hi\u1EC3u \u0111i\u1EC1u g\xEC \u0111ang x\u1EA3y ra trong m\xE3 c\u1EE7a b\u1EA1\
-  n. Ch\xFAng t\xF4i l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+  n."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

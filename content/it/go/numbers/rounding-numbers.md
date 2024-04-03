@@ -8,7 +8,7 @@ description: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di 
 lastmod: '2024-03-13T22:44:42.902308-06:00'
 model: gpt-4-0125-preview
 summary: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un numero\
-  \ al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali. I\u2026"
+  \ al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali."
 title: Arrotondamento dei numeri
 weight: 13
 ---

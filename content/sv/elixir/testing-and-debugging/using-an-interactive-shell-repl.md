@@ -6,7 +6,7 @@ description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter di
 lastmod: '2024-03-13T22:44:37.568745-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig prova\
-  \ kodsnuttar i realtid. Elixir-programmerare anv\xE4nder REPL, kallad IEx (Interactive\u2026"
+  \ kodsnuttar i realtid."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

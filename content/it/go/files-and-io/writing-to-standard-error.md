@@ -7,9 +7,8 @@ description: "Scrivere su standard error (stderr) in Go comporta l'indirizzare m
   \ I\u2026"
 lastmod: '2024-03-13T22:44:42.925893-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi\
-  \ di errore o diagnostica che non sono destinati al flusso di output principale.\
-  \ I\u2026"
+summary: Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi
+  di errore o diagnostica che non sono destinati al flusso di output principale.
 title: Scrittura su errore standard
 weight: 25
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:40.680641-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave som\
   \ involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
-  r man leser\u2026"
+  r man leser fra den, skriver til den eller utf\xF8rer andre operasjoner som krever\
+  \ at den eksisterer."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

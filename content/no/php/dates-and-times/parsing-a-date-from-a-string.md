@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.895968-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng i PHP inneb\xE6rer \xE5 konvertere\
   \ tekst som representerer en dato og/eller tid til et PHP `DateTime`-objekt eller\
-  \ andre\u2026"
+  \ andre dato-/tidsformater."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

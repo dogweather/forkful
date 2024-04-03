@@ -5,7 +5,9 @@ description: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Lin
 lastmod: '2024-03-13T22:44:57.082600-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line Interface)\
-  \ yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"
+  \ yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen terminaalista,\
+  \ ilman ett\xE4 niit\xE4 t\xE4ytyy avata editorissa, tehd\xE4 muutokset ja tallentaa\
+  \ takaisin."
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 weight: 32
 ---

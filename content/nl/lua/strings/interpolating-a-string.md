@@ -7,9 +7,8 @@ description: "Stringinterpolatie stelt je in staat om variabelen direct in te vo
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.923705-06:00'
 model: gpt-4-0125-preview
-summary: "Stringinterpolatie stelt je in staat om variabelen direct in te voegen in\
-  \ strings. Dit wordt gedaan om dynamisch strings op te bouwen en de code schoon\
-  \ te\u2026"
+summary: Stringinterpolatie stelt je in staat om variabelen direct in te voegen in
+  strings.
 title: Een string interpoleren
 weight: 8
 ---

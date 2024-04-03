@@ -8,8 +8,7 @@ description: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych 
 lastmod: '2024-03-13T22:44:35.142439-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
-  w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\
-  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+  w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

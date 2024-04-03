@@ -8,8 +8,7 @@ description: "Arrays associativos s\xE3o como arrays superpotentes que permitem 
 lastmod: '2024-03-13T22:44:46.743836-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos s\xE3o como arrays superpotentes que permitem o uso\
-  \ de strings como \xEDndices, ao inv\xE9s de apenas inteiros. Programadores os utilizam\
-  \ para\u2026"
+  \ de strings como \xEDndices, ao inv\xE9s de apenas inteiros."
 title: Usando arrays associativos
 weight: 15
 ---

@@ -7,7 +7,7 @@ description: "HTML:n j\xE4sent\xE4minen PHP:lla tarkoittaa tiettyjen tietojen po
 lastmod: '2024-03-13T22:44:56.653676-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen PHP:lla tarkoittaa tiettyjen tietojen poimimista\
-  \ HTML-dokumenteista. Ohjelmoijat suorittavat t\xE4m\xE4n teht\xE4v\xE4n automatisoidakseen\u2026"
+  \ HTML-dokumenteista."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

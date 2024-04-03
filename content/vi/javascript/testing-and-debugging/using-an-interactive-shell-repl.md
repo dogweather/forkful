@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Shell t\u01B0\u01A1ng t\xE1c, hay REPLs (V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\
   \xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 tr\xEAn m\xE1y bay, ki\u1EC3\
   m th\u1EED c\xE1c h\xE0m, thu\u1EADt to\xE1n, ho\u1EB7c ngh\u1ECBch ng\u1EE3m v\u1EDB\
-  i \xFD t\u01B0\u1EDFng.\u2026"
+  i \xFD t\u01B0\u1EDFng."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

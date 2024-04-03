@@ -7,7 +7,8 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in Elixir werden verwendet, um in
 lastmod: '2024-03-13T22:44:53.452644-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Elixir werden verwendet, um in Zeichenketten\
-  \ basierend auf spezifischen Mustern zu suchen, \xDCbereinstimmungen zu finden und\u2026"
+  \ basierend auf spezifischen Mustern zu suchen, \xDCbereinstimmungen zu finden und\
+  \ Zeichenketten zu manipulieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

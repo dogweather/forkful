@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.655584-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em PHP significa eliminar aqueles caracteres\
   \ inc\xF4modos de aspas duplas (`\"`) ou simples (`'`) que podem atrapalhar a l\xF3\
-  gica do\u2026"
+  gica do seu c\xF3digo ou consultas ao banco de dados."
 title: Removendo aspas de uma string
 weight: 9
 ---

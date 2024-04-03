@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.395567-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w C# oznacza wyeliminowanie tych\
   \ uporczywych znak\xF3w podw\xF3jnego (`\"`) lub pojedynczego (`'`) cudzys\u0142\
-  owu obejmuj\u0105cych tw\xF3j\u2026"
+  owu obejmuj\u0105cych tw\xF3j tekst."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

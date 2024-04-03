@@ -5,7 +5,7 @@ description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein 
 lastmod: '2024-03-13T22:44:54.250759-06:00'
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Filterprozess:\
-  \ Unn\xF6tiges oder st\xF6rendes Zeugs fliegt raus. Programmierer nutzen das, um\u2026"
+  \ Unn\xF6tiges oder st\xF6rendes Zeugs fliegt raus."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

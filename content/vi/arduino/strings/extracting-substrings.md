@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.976302-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0\
   \ l\u1EA5y ra c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i - gi\u1ED1\
-  ng nh\u01B0 l\u1EA5y m\u1ED9t l\xE1t b\xE1nh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 t\xE1ch d\u1EEF\u2026"
+  ng nh\u01B0 l\u1EA5y m\u1ED9t l\xE1t b\xE1nh."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

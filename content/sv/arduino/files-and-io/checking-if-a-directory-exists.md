@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.181915-06:00'
 model: gpt-4-0125-preview
 summary: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
   \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
-  \ l\xE4sa\u2026"
+  \ l\xE4sa eller skriva filer utan fel."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

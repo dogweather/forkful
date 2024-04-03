@@ -6,8 +6,8 @@ description: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde 
   \ getal of gespecificeerde decimale plaats. Het is een basisprincipe in\u2026"
 lastmod: '2024-03-13T22:44:50.932391-06:00'
 model: gpt-4-0125-preview
-summary: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel\
-  \ getal of gespecificeerde decimale plaats. Het is een basisprincipe in\u2026"
+summary: Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel
+  getal of gespecificeerde decimale plaats.
 title: Afronden van getallen
 weight: 13
 ---

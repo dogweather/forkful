@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.666685-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PHP:ssa on perusteht\xE4v\xE4\
   , joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan hakemisen\
-  \ sek\xE4 manipuloinnin. T\xE4m\xE4 on\u2026"
+  \ sek\xE4 manipuloinnin."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

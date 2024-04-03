@@ -7,7 +7,9 @@ description: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL 
 lastmod: '2024-03-13T22:44:42.956873-06:00'
 model: gpt-4-0125-preview
 summary: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese\
-  \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e\u2026"
+  \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e interattivo\
+  \ che accoglie singoli input dell'utente (espressioni), li valuta e restituisce\
+  \ il risultato all'utente."
 title: Utilizzare un shell interattivo (REPL)
 weight: 34
 ---

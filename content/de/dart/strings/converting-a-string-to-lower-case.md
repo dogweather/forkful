@@ -7,7 +7,8 @@ description: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegen
 lastmod: '2024-03-13T22:44:53.565965-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
-  \ die das Transformieren aller Zeichen eines gegebenen Strings in ihre\u2026"
+  \ die das Transformieren aller Zeichen eines gegebenen Strings in ihre Kleinbuchstaben-\xC4\
+  quivalente beinhaltet."
 title: Eine Zeichenkette in Kleinbuchstaben umwandeln
 weight: 4
 ---

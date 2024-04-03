@@ -6,8 +6,7 @@ description: "J\xE4mf\xF6ra tv\xE5 datum handlar om att se vilket som kommer f\x
 lastmod: '2024-03-13T22:44:37.883571-06:00'
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6ra tv\xE5 datum handlar om att se vilket som kommer f\xF6rst\
-  \ eller hur l\xE5ng tid som har passerat mellan dem. Programmerare g\xF6r detta\
-  \ f\xF6r att hantera\u2026"
+  \ eller hur l\xE5ng tid som har passerat mellan dem."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

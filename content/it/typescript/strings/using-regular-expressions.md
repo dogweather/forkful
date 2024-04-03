@@ -6,8 +6,8 @@ description: "Le espressioni regolari, o regex, rappresentano uno strumento pote
   \ per la ricerca e il confronto di pattern nella programmazione. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.166189-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari, o regex, rappresentano uno strumento potente per\
-  \ la ricerca e il confronto di pattern nella programmazione. I programmatori\u2026"
+summary: Le espressioni regolari, o regex, rappresentano uno strumento potente per
+  la ricerca e il confronto di pattern nella programmazione.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

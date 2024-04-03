@@ -6,8 +6,9 @@ description: "Controllare se una directory esiste in Dart comporta la verifica d
   \ presenza di una directory in un percorso specificato sul file system prima di\u2026"
 lastmod: '2024-03-13T22:44:43.147872-06:00'
 model: gpt-4-0125-preview
-summary: "Controllare se una directory esiste in Dart comporta la verifica della presenza\
-  \ di una directory in un percorso specificato sul file system prima di\u2026"
+summary: Controllare se una directory esiste in Dart comporta la verifica della presenza
+  di una directory in un percorso specificato sul file system prima di eseguire operazioni
+  come la lettura o la scrittura di file.
 title: Verifica dell'esistenza di una directory
 weight: 20
 ---

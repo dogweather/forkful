@@ -5,7 +5,7 @@ description: "Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den n\
 lastmod: '2024-03-13T22:44:54.139949-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den n\xE4chstgelegenen\
-  \ ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen.\u2026"
+  \ ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen."
 title: Zahlen runden
 weight: 13
 ---

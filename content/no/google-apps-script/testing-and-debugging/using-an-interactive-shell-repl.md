@@ -7,7 +7,8 @@ description: "Et interaktivt skall, eller Lese-Evaluere-Skrive L\xF8kke (REPL), 
 lastmod: '2024-03-13T22:44:40.315871-06:00'
 model: gpt-4-0125-preview
 summary: "Et interaktivt skall, eller Lese-Evaluere-Skrive L\xF8kke (REPL), er et\
-  \ enkelt, interaktivt programmeringsmilj\xF8 som tar enkelte brukerinndata (uttrykk),\u2026"
+  \ enkelt, interaktivt programmeringsmilj\xF8 som tar enkelte brukerinndata (uttrykk),\
+  \ evaluerer dem, og returnerer resultatet til brukeren."
 title: "\xC5 bruke et interaktivt skall (REPL)"
 weight: 34
 ---

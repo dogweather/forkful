@@ -4,8 +4,8 @@ description: "Complex numbers expand our number system to include imaginary numb
   \ allowing us to solve equations that don't have real solutions. Programmers work\u2026"
 lastmod: '2024-03-13T22:45:00.082712-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers expand our number system to include imaginary numbers, allowing\
-  \ us to solve equations that don't have real solutions. Programmers work\u2026"
+summary: Complex numbers expand our number system to include imaginary numbers, allowing
+  us to solve equations that don't have real solutions.
 title: Working with complex numbers
 weight: 14
 ---

@@ -7,9 +7,8 @@ description: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skri
   m\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.147222-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien\
-  \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n\u2026"
+summary: Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien luomista
+  koodisi oikeellisuuden varmistamiseksi.
 title: Testien kirjoittaminen
 weight: 36
 ---

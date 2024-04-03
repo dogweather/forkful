@@ -7,7 +7,8 @@ description: "Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine e
 lastmod: '2024-03-13T22:44:53.335794-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine einfache,\
-  \ interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdr\xFCcke)\u2026"
+  \ interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdr\xFCcke)\
+  \ entgegennimmt, diese auswertet und das Ergebnis an den Benutzer zur\xFCckgibt."
 title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---

@@ -6,8 +6,8 @@ description: "Een tekstbestand lezen in programmeren stelt je code in staat gege
   \ te absorberen, zoals het gieten van koffie in je hersenen in de ochtend. We doen\u2026"
 lastmod: '2024-03-13T22:44:50.869900-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand lezen in programmeren stelt je code in staat gegevens te\
-  \ absorberen, zoals het gieten van koffie in je hersenen in de ochtend. We doen\u2026"
+summary: Een tekstbestand lezen in programmeren stelt je code in staat gegevens te
+  absorberen, zoals het gieten van koffie in je hersenen in de ochtend.
 title: Een tekstbestand lezen
 weight: 22
 ---

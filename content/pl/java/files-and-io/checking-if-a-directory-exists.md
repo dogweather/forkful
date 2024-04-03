@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.292187-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
   ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
-  \ niego,\u2026"
+  \ niego, zapisem do niego lub wykonaniem jakichkolwiek operacji wymagaj\u0105cych\
+  \ jego istnienia."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

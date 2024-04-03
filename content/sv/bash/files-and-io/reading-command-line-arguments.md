@@ -6,8 +6,7 @@ description: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden s
 lastmod: '2024-03-13T22:44:38.097555-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden som anv\xE4\
-  nds n\xE4r du k\xF6r ett script. Det l\xE5ter dig anpassa scriptets beteende utan\
-  \ att \xE4ndra koden."
+  nds n\xE4r du k\xF6r ett script."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

@@ -5,7 +5,7 @@ description: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de 
 lastmod: '2024-03-13T22:44:58.207285-06:00'
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
-  res qui la composent. Les programmeurs le font pour valider des saisies, optimiser\u2026"
+  res qui la composent."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

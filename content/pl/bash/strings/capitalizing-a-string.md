@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.565784-06:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Bashu polega na przekszta\u0142\
   ceniu pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, pozostawiaj\u0105\
-  c reszt\u0119 ci\u0105gu bez zmian.\u2026"
+  c reszt\u0119 ci\u0105gu bez zmian."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

@@ -7,8 +7,8 @@ description: "Een datum omzetten naar een tekenreeks betekent het wijzigen van h
   \ tekens.\u2026"
 lastmod: '2024-03-13T22:44:51.258735-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum omzetten naar een tekenreeks betekent het wijzigen van het datumformaat\
-  \ van de ruwe of timestampvorm naar een voor mensen leesbare reeks tekens.\u2026"
+summary: Een datum omzetten naar een tekenreeks betekent het wijzigen van het datumformaat
+  van de ruwe of timestampvorm naar een voor mensen leesbare reeks tekens.
 title: Een datum converteren naar een string
 weight: 28
 ---

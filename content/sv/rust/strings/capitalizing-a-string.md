@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.681306-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust inneb\xE4r att\
   \ modifiera str\xE4ngen s\xE5 att dess f\xF6rsta tecken blir en stor bokstav om\
-  \ det \xE4r en bokstav,\u2026"
+  \ det \xE4r en bokstav, medan resten av str\xE4ngen l\xE4mnas of\xF6r\xE4ndrad."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

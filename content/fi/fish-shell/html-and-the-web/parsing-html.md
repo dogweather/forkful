@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-si
 lastmod: '2024-03-13T22:44:56.992274-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-sis\xE4\
-  ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa.\
-  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
+  ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

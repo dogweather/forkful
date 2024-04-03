@@ -7,7 +7,8 @@ description: "Analizzare una data da una stringa in C comporta la conversione de
 lastmod: '2024-03-13T22:44:44.010141-06:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa in C comporta la conversione delle rappresentazioni\
-  \ testuali delle date in un formato che i programmi possono\u2026"
+  \ testuali delle date in un formato che i programmi possono manipolare ed analizzare\
+  \ pi\xF9 efficacemente."
 title: Analizzare una data da una stringa
 weight: 30
 ---

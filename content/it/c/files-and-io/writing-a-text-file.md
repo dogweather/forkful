@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:44.023601-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in C comporta la creazione o l'apertura di un\
   \ file in modalit\xE0 di scrittura e poi l'uso delle funzioni di I/O su file di\
-  \ C per\u2026"
+  \ C per salvare i dati di testo al suo interno."
 title: Scrivere un file di testo
 weight: 24
 ---

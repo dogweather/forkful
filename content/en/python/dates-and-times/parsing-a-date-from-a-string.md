@@ -4,8 +4,8 @@ description: "Parsing a date from a string involves converting textual date and 
   \ information into a datetime object or equivalent structured format. This is\u2026"
 lastmod: '2024-03-13T22:44:59.716491-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string involves converting textual date and time information\
-  \ into a datetime object or equivalent structured format. This is\u2026"
+summary: Parsing a date from a string involves converting textual date and time information
+  into a datetime object or equivalent structured format.
 title: Parsing a date from a string
 weight: 30
 ---

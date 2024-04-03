@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:54.198888-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
   \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\
-  \ wie\u2026"
+  \ wie das Lesen von oder das Schreiben in Dateien innerhalb dieses Verzeichnisses\
+  \ ausgef\xFChrt werden."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

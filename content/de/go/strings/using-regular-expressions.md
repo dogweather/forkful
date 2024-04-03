@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.276409-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
   \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
-  \ auf\u2026"
+  \ auf spezifischen Mustern zu manipulieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

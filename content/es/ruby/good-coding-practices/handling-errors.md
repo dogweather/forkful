@@ -6,7 +6,7 @@ description: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u20
 lastmod: '2024-03-13T22:44:59.598722-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014 gestionar\
-  \ los errores y problemas con gracia sin que se caiga la aplicaci\xF3n. Los\u2026"
+  \ los errores y problemas con gracia sin que se caiga la aplicaci\xF3n."
 title: Manejo de errores
 weight: 16
 ---

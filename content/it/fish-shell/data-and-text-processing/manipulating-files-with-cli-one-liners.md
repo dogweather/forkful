@@ -6,7 +6,8 @@ description: "Nel mondo della programmazione, specialmente quando si ha a che fa
 lastmod: '2024-03-13T22:44:43.853386-06:00'
 model: gpt-4-0125-preview
 summary: "Nel mondo della programmazione, specialmente quando si ha a che fare con\
-  \ ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI)\u2026"
+  \ ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI)\
+  \ non \xE8 solo una questione di comodit\xE0, ma uno strumento potente."
 title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---

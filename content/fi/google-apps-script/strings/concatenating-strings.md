@@ -8,8 +8,7 @@ description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkk
 lastmod: '2024-03-13T22:44:56.087752-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
-  \ yhdist\xE4mist\xE4 yhdeksi merkkijonoksi. Ohjelmoijat tekev\xE4t t\xE4t\xE4 dynaamisten\
-  \ viestien,\u2026"
+  \ yhdist\xE4mist\xE4 yhdeksi merkkijonoksi."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

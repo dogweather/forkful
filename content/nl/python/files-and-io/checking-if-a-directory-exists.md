@@ -6,8 +6,8 @@ description: "Controleren of een directory bestaat in Python gaat over het beves
   \ van de aanwezigheid van een map op het bestandssysteem voordat er acties op worden\u2026"
 lastmod: '2024-03-13T22:44:50.390915-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat in Python gaat over het bevestigen\
-  \ van de aanwezigheid van een map op het bestandssysteem voordat er acties op worden\u2026"
+summary: Controleren of een directory bestaat in Python gaat over het bevestigen van
+  de aanwezigheid van een map op het bestandssysteem voordat er acties op worden uitgevoerd.
 title: Controleren of een directory bestaat
 weight: 20
 ---

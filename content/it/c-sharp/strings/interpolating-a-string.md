@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.419793-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe in C# consente di creare una nuova stringa\
   \ includendo espressioni all'interno di un letterale stringa, facilitando cos\xEC\
-  \ la\u2026"
+  \ la formattazione e la concatenazione di stringhe."
 title: Interpolazione di una stringa
 weight: 8
 ---

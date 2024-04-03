@@ -8,7 +8,7 @@ description: "Organiser le code en fonctions dans Go implique de diviser le code
 lastmod: '2024-03-13T22:44:57.139957-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions dans Go implique de diviser le code en blocs\
-  \ r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques. Cette\u2026"
+  \ r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques."
 title: Organiser le code en fonctions
 weight: 18
 ---

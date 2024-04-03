@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.662264-06:00'
 model: gpt-4-1106-preview
 summary: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4\
   \ koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
-  vi\xE4 datapisteit\xE4, jotka\u2026"
+  vi\xE4 datapisteit\xE4, jotka tapahtuvat sovelluksesi suorittaessa."
 title: Lokitus
 weight: 17
 ---

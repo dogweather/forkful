@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ghi v\xE0o k\xEAnh l\u1ED7i chu\u1EA9n (`stderr`) chuy\u1EC3n\
   \ c\xE1c th\xF4ng \u0111i\u1EC7p quan tr\u1ECDng \u0111\u1EBFn m\u1ED9t lu\u1ED3\
   ng xu\u1EA5t ra \u0111\u1EB7c bi\u1EC7t \u0111\u01B0\u1EE3c d\xE0nh ri\xEAng cho\
-  \ l\u1ED7i, t\xE1ch bi\u1EC7t kh\u1ECFi lu\u1ED3ng xu\u1EA5t\u2026"
+  \ l\u1ED7i, t\xE1ch bi\u1EC7t kh\u1ECFi lu\u1ED3ng xu\u1EA5t ch\xEDnh (`stdout`)."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.595818-06:00'
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
   \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
-  es d'une date\u2026"
+  es d'une date donn\xE9e."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

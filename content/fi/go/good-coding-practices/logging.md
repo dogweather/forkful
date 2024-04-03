@@ -8,7 +8,8 @@ description: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tie
 lastmod: '2024-03-13T22:44:56.057643-06:00'
 model: gpt-4-0125-preview
 summary: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa ohjelman\
-  \ suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4 ja\u2026"
+  \ suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4 ja diagnosoida\
+  \ ongelmia."
 title: Lokitiedostot
 weight: 17
 ---

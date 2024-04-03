@@ -5,9 +5,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiw
   \ tak, aby\u015B m\xF3g\u0142 utrzyma\u0107 swoj\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.547500-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu nieoczekiwanego.\
-  \ To sztuka planowania na wypadek gdyby co\u015B posz\u0142o nie tak, aby\u015B\
-  \ m\xF3g\u0142 utrzyma\u0107 swoj\u0105\u2026"
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu nieoczekiwanego."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

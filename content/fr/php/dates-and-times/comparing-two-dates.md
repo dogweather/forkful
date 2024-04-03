@@ -6,8 +6,7 @@ description: "Comparer deux dates, c'est voir si elles sont identiques, quelle e
 lastmod: '2024-03-13T22:44:57.892070-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est voir si elles sont identiques, quelle est la\
-  \ plus r\xE9cente, etc. En PHP, on fait \xE7a souvent pour valider des \xE9v\xE9\
-  nements, des\u2026"
+  \ plus r\xE9cente, etc."
 title: Comparer deux dates
 weight: 27
 ---

@@ -8,7 +8,8 @@ description: "Trovare la lunghezza di una Stringa in Dart equivale a determinare
 lastmod: '2024-03-13T22:44:43.119389-06:00'
 model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una Stringa in Dart equivale a determinare il numero\
-  \ di unit\xE0 di codice (essenzialmente, il numero di caratteri se pensato in modo\u2026"
+  \ di unit\xE0 di codice (essenzialmente, il numero di caratteri se pensato in modo\
+  \ semplificato) in una data Stringa."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

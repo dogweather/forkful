@@ -6,7 +6,7 @@ description: "I Bash kan du slette tegn som matcher et m\xF8nster for \xE5 foren
 lastmod: '2024-03-13T22:44:40.956781-06:00'
 model: gpt-4-1106-preview
 summary: "I Bash kan du slette tegn som matcher et m\xF8nster for \xE5 forenkle strenger\
-  \ eller rense data. Dette er nyttig n\xE5r du jobber med tekstbehandling eller\u2026"
+  \ eller rense data."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

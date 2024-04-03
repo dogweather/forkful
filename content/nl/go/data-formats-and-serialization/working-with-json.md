@@ -6,8 +6,8 @@ description: "Werken met JSON (JavaScript Object Notation) in Go houdt in dat er
   \ worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.\u2026"
 lastmod: '2024-03-13T22:44:50.309341-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met JSON (JavaScript Object Notation) in Go houdt in dat er gegevens\
-  \ worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.\u2026"
+summary: Werken met JSON (JavaScript Object Notation) in Go houdt in dat er gegevens
+  worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.
 title: Werken met JSON
 weight: 38
 ---

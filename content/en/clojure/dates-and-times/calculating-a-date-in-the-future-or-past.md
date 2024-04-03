@@ -5,9 +5,8 @@ description: "Calculating future or past dates involves manipulating dates to fi
   \ for\u2026"
 lastmod: '2024-03-13T22:44:59.757671-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating future or past dates involves manipulating dates to find out\
-  \ what they'll be after a certain period or what they were. Programmers do this\
-  \ for\u2026"
+summary: Calculating future or past dates involves manipulating dates to find out
+  what they'll be after a certain period or what they were.
 title: Calculating a date in the future or past
 weight: 26
 ---

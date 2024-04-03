@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.109304-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtomuoto, joka on yleinen\
   \ verkkosovelluksissa datan vaihtamiseen asiakkaiden ja palvelinten v\xE4lill\xE4\
-  .\u2026"
+  ."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

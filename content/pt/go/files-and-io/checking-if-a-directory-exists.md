@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.076547-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
   \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
-  \ ou modificar\u2026"
+  \ ou modificar diret\xF3rios."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

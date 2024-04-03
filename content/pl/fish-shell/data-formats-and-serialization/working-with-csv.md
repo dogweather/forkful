@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.864186-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values), czyli warto\u015Bciami rozdzielanymi\
   \ przecinkami, wi\u0105\u017Ce si\u0119 z parsowaniem, manipulowaniem i generowaniem\
-  \ danych w\u2026"
+  \ danych w formacie tabelarycznym, kt\xF3ry jest szeroko stosowany do wymiany danych\
+  \ mi\u0119dzy aplikacjami."
 title: Praca z plikami CSV
 weight: 37
 ---

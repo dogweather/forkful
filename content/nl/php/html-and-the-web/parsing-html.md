@@ -7,8 +7,8 @@ description: "HTML parsen betekent het verwerken en analyseren van de structuur 
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.892669-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parsen betekent het verwerken en analyseren van de structuur en inhoud\
-  \ van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens te\u2026"
+summary: HTML parsen betekent het verwerken en analyseren van de structuur en inhoud
+  van HTML-code.
 title: HTML Parsen
 weight: 43
 ---

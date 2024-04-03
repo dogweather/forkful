@@ -6,8 +6,8 @@ description: "Het afdrukken van debugoutput in Elixir omvat het weergeven van tu
   \ resultaten of variabele waarden in de console. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:50.464734-06:00'
 model: gpt-4-0125-preview
-summary: "Het afdrukken van debugoutput in Elixir omvat het weergeven van tussentijdse\
-  \ resultaten of variabele waarden in de console. Programmeurs doen dit om\u2026"
+summary: Het afdrukken van debugoutput in Elixir omvat het weergeven van tussentijdse
+  resultaten of variabele waarden in de console.
 title: Debug-output afdrukken
 weight: 33
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.542831-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en C implica examinar documentos HTML para extraer datos,\
   \ estructura o partes espec\xEDficas de forma eficiente, a menudo como precursor\
-  \ de la\u2026"
+  \ de la miner\xEDa de datos o el web scraping."
 title: Analizando HTML
 weight: 43
 ---

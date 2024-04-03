@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.110758-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoiksi on perustavaa laatua\
   \ oleva teht\xE4v\xE4, joka mahdollistaa ohjelmoijille p\xE4iv\xE4m\xE4\xE4r\xE4\
-  tiedon k\xE4sittelyn ja n\xE4ytt\xE4misen\u2026"
+  tiedon k\xE4sittelyn ja n\xE4ytt\xE4misen ihmiselle luettavassa muodossa."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

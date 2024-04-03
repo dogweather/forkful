@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.221348-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste \xE0\
   \ fournir un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 une ressource\
-  \ web.\u2026"
+  \ web."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

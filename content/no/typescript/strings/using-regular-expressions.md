@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\x
 lastmod: '2024-03-13T22:44:40.522283-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8nsters\xF8\
-  king og -matching i programmering. Programmerere bruker regex til oppgaver som \xE5\
-  \u2026"
+  king og -matching i programmering."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

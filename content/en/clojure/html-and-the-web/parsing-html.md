@@ -4,8 +4,8 @@ description: "Parsing HTML in Clojure involves programmatically extracting infor
   \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
 lastmod: '2024-03-13T22:44:59.743143-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in Clojure involves programmatically extracting information\
-  \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
+summary: Parsing HTML in Clojure involves programmatically extracting information
+  from HTML documents.
 title: Parsing HTML
 weight: 43
 ---

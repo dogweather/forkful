@@ -6,8 +6,7 @@ description: "TOML (Toms \xC5penbare, Minimale Spr\xE5k) er et data serialiserin
 lastmod: '2024-03-13T22:44:41.123717-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Toms \xC5penbare, Minimale Spr\xE5k) er et data serialiseringsformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\
-  \ TOML for\u2026"
+  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk."
 title: Jobbe med TOML
 weight: 39
 ---

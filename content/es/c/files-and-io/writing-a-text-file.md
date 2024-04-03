@@ -7,7 +7,8 @@ description: "Escribir un archivo de texto en C implica crear o abrir un archivo
 lastmod: '2024-03-13T22:44:59.565895-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en C implica crear o abrir un archivo en modo\
-  \ de escritura y luego usar las funciones de E/S de archivos de C para guardar\u2026"
+  \ de escritura y luego usar las funciones de E/S de archivos de C para guardar datos\
+  \ de texto en \xE9l."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

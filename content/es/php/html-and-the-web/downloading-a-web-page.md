@@ -6,7 +6,7 @@ description: "Descargar una p\xE1gina web significa traer el contenido de una UR
 lastmod: '2024-03-13T22:44:59.159679-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer el contenido de una URL directa\
-  \ a tu programa. Los programadores lo hacen para procesar datos, automatizar tareas\u2026"
+  \ a tu programa."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

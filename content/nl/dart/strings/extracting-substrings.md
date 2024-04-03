@@ -6,8 +6,8 @@ description: "Het extraheren van substrings gaat over het ophalen van specifieke
   \ van een string op basis van hun posities of patronen. Programmeurs doen dit voor\u2026"
 lastmod: '2024-03-13T22:44:50.493228-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings gaat over het ophalen van specifieke delen\
-  \ van een string op basis van hun posities of patronen. Programmeurs doen dit voor\u2026"
+summary: Het extraheren van substrings gaat over het ophalen van specifieke delen
+  van een string op basis van hun posities of patronen.
 title: Substrings extraheren
 weight: 6
 ---

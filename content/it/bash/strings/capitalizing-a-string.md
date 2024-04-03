@@ -6,8 +6,8 @@ description: "Capitalizzare una stringa in Bash comporta la trasformazione del p
   \ carattere della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"
 lastmod: '2024-03-13T22:44:43.582143-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa in Bash comporta la trasformazione del primo carattere\
-  \ della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"
+summary: Capitalizzare una stringa in Bash comporta la trasformazione del primo carattere
+  della stringa in maiuscolo lasciando inalterata il resto della stringa.
 title: Capitalizzare una stringa
 weight: 2
 ---

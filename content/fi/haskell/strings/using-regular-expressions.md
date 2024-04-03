@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.605781-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
   \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\
-  \ etsimiseen ja\u2026"
+  \ etsimiseen ja k\xE4sittelyyn."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

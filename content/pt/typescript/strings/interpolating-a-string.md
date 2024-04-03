@@ -6,8 +6,7 @@ description: "Interpolar uma string \xE9 o processo de inserir valores de vari\x
 lastmod: '2024-03-13T22:44:46.311923-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o processo de inserir valores de vari\xE1veis\
-  \ dentro de uma string literal. Programadores fazem isso para construir strings\
-  \ de\u2026"
+  \ dentro de uma string literal."
 title: Interpolando uma string
 weight: 8
 ---

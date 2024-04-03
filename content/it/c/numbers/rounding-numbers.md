@@ -7,7 +7,8 @@ description: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre
 lastmod: '2024-03-13T22:44:43.907400-06:00'
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di un\
-  \ numero per ridurne la precisione secondo determinate regole, sia verso il numero\u2026"
+  \ numero per ridurne la precisione secondo determinate regole, sia verso il numero\
+  \ intero pi\xF9 vicino sia un numero specificato di decimali."
 title: Arrotondamento dei numeri
 weight: 13
 ---

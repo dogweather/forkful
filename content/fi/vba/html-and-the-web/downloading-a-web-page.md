@@ -7,7 +7,7 @@ description: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoi
 lastmod: '2024-03-13T22:44:56.399199-06:00'
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
-  \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"
+  \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4."
 title: Verkkosivun lataaminen
 weight: 42
 ---

@@ -6,7 +6,7 @@ description: "Para usar el depurador en Xcode (el IDE para Swift), puedes establ
 lastmod: '2024-03-13T22:44:59.421056-06:00'
 model: gpt-4-0125-preview
 summary: "Para usar el depurador en Xcode (el IDE para Swift), puedes establecer puntos\
-  \ de interrupci\xF3n, inspeccionar variables y observar expresiones. Aqu\xED tienes\u2026"
+  \ de interrupci\xF3n, inspeccionar variables y observar expresiones."
 title: Usando un depurador
 weight: 35
 ---

@@ -8,8 +8,7 @@ description: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la con
 lastmod: '2024-03-13T22:44:59.529978-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la construcci\xF3\
-  n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales.\
-  \ Los\u2026"
+  n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales."
 title: Interpolando una cadena de texto
 weight: 8
 ---

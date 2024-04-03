@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh\
   \ gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\
   n l\u1EBB nh\u1EADp t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi m\xE3 l\u1EC7\
-  nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3. L\u1EADp\u2026"
+  nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

@@ -8,8 +8,7 @@ description: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017C
 lastmod: '2024-03-13T22:44:35.311029-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
-  \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\
-  \ jak w innych j\u0119zykach,\u2026"
+  \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.184013-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web avec Google Apps Script implique de r\xE9\
   cup\xE9rer le contenu d'une page web via HTML pour diverses raisons, telles que\
-  \ le web\u2026"
+  \ le web scraping, l'extraction de donn\xE9es ou la surveillance des changements."
 title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---

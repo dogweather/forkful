@@ -6,8 +6,8 @@ description: "Gli array associativi, spesso noti come dizionari in Visual Basic 
   \ Applications (VBA), consentono ai programmatori di creare collezioni di coppie\u2026"
 lastmod: '2024-03-13T22:44:43.254861-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, spesso noti come dizionari in Visual Basic for Applications\
-  \ (VBA), consentono ai programmatori di creare collezioni di coppie\u2026"
+summary: Gli array associativi, spesso noti come dizionari in Visual Basic for Applications
+  (VBA), consentono ai programmatori di creare collezioni di coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

@@ -5,7 +5,7 @@ description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o seu c\xF3digo 
 lastmod: '2024-03-13T22:44:46.847042-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o seu c\xF3digo para melhorar\
-  \ sua estrutura e legibilidade sem alterar o comportamento externo ou funcionalidade.\u2026"
+  \ sua estrutura e legibilidade sem alterar o comportamento externo ou funcionalidade."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:40.944611-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5r\
   \ man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\
-  \ ditt\u2026"
+  \ ditt opererer p\xE5 gyldige baner og forhindrer feil relatert til ikke-eksisterende\
+  \ mapper."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

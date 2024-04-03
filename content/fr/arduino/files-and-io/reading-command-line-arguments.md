@@ -6,8 +6,7 @@ description: "Lire des arguments de ligne de commande permet \xE0 un programme A
 lastmod: '2024-03-13T22:44:58.130605-06:00'
 model: gpt-4-1106-preview
 summary: "Lire des arguments de ligne de commande permet \xE0 un programme Arduino\
-  \ de saisir des donn\xE9es externe d\xE8s son d\xE9marrage. C'est utile pour personnaliser\
-  \ le\u2026"
+  \ de saisir des donn\xE9es externe d\xE8s son d\xE9marrage."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

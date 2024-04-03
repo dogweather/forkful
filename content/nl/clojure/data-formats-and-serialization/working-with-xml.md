@@ -6,8 +6,8 @@ description: "XML is een opmaaktaal voor het coderen van documenten op een wijze
   \ zowel door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"
 lastmod: '2024-03-13T22:44:50.444259-06:00'
 model: gpt-4-0125-preview
-summary: "XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel\
-  \ door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"
+summary: XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel
+  door mensen als machines gelezen kan worden.
 title: Werken met XML
 weight: 40
 ---

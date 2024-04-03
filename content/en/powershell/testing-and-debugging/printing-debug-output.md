@@ -5,8 +5,7 @@ description: "Printing debug output is like having a conversation with your code
   \ your\u2026"
 lastmod: '2024-03-13T22:45:00.286433-06:00'
 model: gpt-4-1106-preview
-summary: "Printing debug output is like having a conversation with your code. It's\
-  \ about inserting print statements to show what's going on under the hood of your\u2026"
+summary: Printing debug output is like having a conversation with your code.
 title: Printing debug output
 weight: 33
 ---

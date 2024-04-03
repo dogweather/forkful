@@ -5,8 +5,7 @@ description: "(\xBFQu\xE9 y Por Qu\xE9?) Convertir una fecha en una cadena de te
   \ Los\u2026"
 lastmod: '2024-03-13T22:44:58.948810-06:00'
 model: gpt-4-1106-preview
-summary: "(\xBFQu\xE9 y Por Qu\xE9?) Convertir una fecha en una cadena de texto significa\
-  \ transformar un objeto `Date` a una representaci\xF3n legible para humanos. Los\u2026"
+summary: "(\xBFQu\xE9 y Por Qu\xE9."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

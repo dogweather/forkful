@@ -6,8 +6,7 @@ description: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en
 lastmod: '2024-03-13T22:44:59.163390-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en pantalla\
-  \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo. Los programadores\
-  \ lo hacen\u2026"
+  \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

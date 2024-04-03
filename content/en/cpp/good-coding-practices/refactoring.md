@@ -5,8 +5,8 @@ description: "Refactoring is the process of changing a computer program's intern
   \ their\u2026"
 lastmod: '2024-03-13T22:45:00.365266-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is the process of changing a computer program's internal structure\
-  \ without altering its external behavior. Programmers do it to clean up their\u2026"
+summary: Refactoring is the process of changing a computer program's internal structure
+  without altering its external behavior.
 title: Refactoring
 weight: 19
 ---

@@ -4,8 +4,8 @@ description: "Complex numbers have a real part and an imaginary part, typically 
   \ as `a + bi`. They're vital for some math-heavy Arduino projects involving signal\u2026"
 lastmod: '2024-03-13T22:45:00.316687-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers have a real part and an imaginary part, typically written\
-  \ as `a + bi`. They're vital for some math-heavy Arduino projects involving signal\u2026"
+summary: Complex numbers have a real part and an imaginary part, typically written
+  as `a + bi`.
 title: Working with complex numbers
 weight: 14
 ---

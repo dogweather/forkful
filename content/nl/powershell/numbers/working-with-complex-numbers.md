@@ -7,7 +7,7 @@ description: "Complexe getallen, die een re\xEBel deel en een imaginair deel heb
 lastmod: '2024-03-13T22:44:51.020857-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben (zoals\
-  \ 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"
+  \ 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en datawetenschap."
 title: Werken met complexe getallen
 weight: 14
 ---

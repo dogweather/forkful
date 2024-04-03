@@ -4,8 +4,9 @@ description: "Writing to standard error (stderr) is about directing your program
   \ error messages or diagnostics output to a separate stream, distinct from the standard\u2026"
 lastmod: '2024-03-13T22:45:00.410678-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error (stderr) is about directing your program's error\
-  \ messages or diagnostics output to a separate stream, distinct from the standard\u2026"
+summary: Writing to standard error (stderr) is about directing your program's error
+  messages or diagnostics output to a separate stream, distinct from the standard
+  output (stdout).
 title: Writing to standard error
 weight: 25
 ---

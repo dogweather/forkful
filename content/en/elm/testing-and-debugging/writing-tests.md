@@ -4,8 +4,8 @@ description: "Writing tests in Elm involves crafting test cases to verify the co
   \ of your Elm code, ensuring it behaves as expected. Programmers do it to catch\u2026"
 lastmod: '2024-03-13T22:45:00.013866-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Elm involves crafting test cases to verify the correctness\
-  \ of your Elm code, ensuring it behaves as expected. Programmers do it to catch\u2026"
+summary: Writing tests in Elm involves crafting test cases to verify the correctness
+  of your Elm code, ensuring it behaves as expected.
 title: Writing tests
 weight: 36
 ---

@@ -5,8 +5,8 @@ description: "Kicking off a new PHP project means setting up a foundation to bui
   \ and\u2026"
 lastmod: '2024-03-13T22:45:00.167364-06:00'
 model: gpt-4-1106-preview
-summary: "Kicking off a new PHP project means setting up a foundation to build your\
-  \ web app or script. We do it to start fresh, structure our ideas into code, and\u2026"
+summary: Kicking off a new PHP project means setting up a foundation to build your
+  web app or script.
 title: Starting a new project
 weight: 1
 ---

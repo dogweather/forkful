@@ -6,8 +6,7 @@ description: "L\xE4sning av textfiler handlar om att f\xE5 tillg\xE5ng till info
 lastmod: '2024-03-13T22:44:38.013540-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sning av textfiler handlar om att f\xE5 tillg\xE5ng till information\
-  \ sparad p\xE5 servern. Programmerare g\xF6r det f\xF6r att hantera data, konfigurera\
-  \ system eller\u2026"
+  \ sparad p\xE5 servern."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

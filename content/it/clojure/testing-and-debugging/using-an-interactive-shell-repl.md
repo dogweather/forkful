@@ -6,7 +6,7 @@ description: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE
 lastmod: '2024-03-13T22:44:43.043779-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8 un ambiente\
-  \ di programmazione per testare dinamicamente codice Clojure pezzo per pezzo. I\u2026"
+  \ di programmazione per testare dinamicamente codice Clojure pezzo per pezzo."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

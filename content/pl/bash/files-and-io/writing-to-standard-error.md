@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.601775-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Bashu polega na kierowaniu\
   \ komunikat\xF3w b\u0142\u0119d\xF3w lub wszelkich wa\u017Cnych wyj\u015B\u0107\
-  \ diagnostycznych oddzielnie od\u2026"
+  \ diagnostycznych oddzielnie od standardowego wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

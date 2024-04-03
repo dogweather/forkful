@@ -8,7 +8,8 @@ description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en 
 lastmod: '2024-03-13T22:44:57.144326-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Go implique\
-  \ de convertir la date repr\xE9sent\xE9e sous forme de texte en un format plus utilisable\u2026"
+  \ de convertir la date repr\xE9sent\xE9e sous forme de texte en un format plus utilisable\
+  \ (par exemple, `time."
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 weight: 30
 ---

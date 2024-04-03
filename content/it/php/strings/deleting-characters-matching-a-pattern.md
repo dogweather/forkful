@@ -5,9 +5,7 @@ description: "\"Che cosa e perch\xE9?\" Eliminare caratteri che corrispondono a 
   \ I\u2026"
 lastmod: '2024-03-13T22:44:43.501692-06:00'
 model: gpt-4-1106-preview
-summary: "\"Che cosa e perch\xE9?\" Eliminare caratteri che corrispondono a un modello\
-  \ specifico \xE8 come fare il pruning su un albero; togli i rami non necessari.\
-  \ I\u2026"
+summary: "\"Che cosa e perch\xE9."
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

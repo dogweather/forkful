@@ -4,8 +4,7 @@ description: "Leer un archivo de texto es obtener su contenido para procesarlo. 
   \ programadores hacen esto para manipular datos, configuraciones o simplemente\u2026"
 lastmod: '2024-03-13T22:44:58.675170-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto es obtener su contenido para procesarlo. Los programadores\
-  \ hacen esto para manipular datos, configuraciones o simplemente\u2026"
+summary: Leer un archivo de texto es obtener su contenido para procesarlo.
 title: Lectura de un archivo de texto
 weight: 22
 ---

@@ -8,8 +8,7 @@ description: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowa
 lastmod: '2024-03-13T22:44:35.101924-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu tekstowego\
-  \ przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest niezb\u0119\
-  dna dla\u2026"
+  \ przedstawienia dat i czas\xF3w na obiekt `DateTime`."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

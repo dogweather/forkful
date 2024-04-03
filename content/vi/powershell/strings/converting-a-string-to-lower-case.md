@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.916096-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDD\
   ng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ECDi ch\u1EEF c\xE1i trong chu\u1ED7i th\xE0\
-  nh ch\u1EEF c\xE1i nh\u1ECF. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 chu\u1EA9n h\xF3a v\u0103n b\u1EA3n,\u2026"
+  nh ch\u1EEF c\xE1i nh\u1ECF."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

@@ -8,8 +8,7 @@ description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og se
 lastmod: '2024-03-13T22:44:41.268360-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og sende en\
-  \ foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data. Programmerere\
-  \ gj\xF8r dette i C\u2026"
+  \ foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

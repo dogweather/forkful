@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.681453-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
-  \ de realizar\u2026"
+  \ de realizar opera\xE7\xF5es como ler ou escrever arquivos dentro dele."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

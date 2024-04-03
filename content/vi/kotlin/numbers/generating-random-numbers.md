@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.596115-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
   nh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng c\xF3 b\u1EA5\
-  t k\u1EF3 m\u1ED9t m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc n\xE0o. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+  t k\u1EF3 m\u1ED9t m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc n\xE0o."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

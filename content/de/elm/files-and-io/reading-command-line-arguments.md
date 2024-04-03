@@ -6,7 +6,7 @@ description: "Kommandozeilenargumente lesen bedeutet, Parameter von der Shell in
 lastmod: '2024-03-13T22:44:53.820767-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente lesen bedeutet, Parameter von der Shell ins Programm\
-  \ zu \xFCbertragen. Programmierer nutzen es, um Einstellungen zu steuern oder\u2026"
+  \ zu \xFCbertragen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

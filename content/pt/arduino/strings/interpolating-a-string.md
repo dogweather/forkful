@@ -5,9 +5,7 @@ description: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro
   \ para exibir\u2026"
 lastmod: '2024-03-13T22:44:46.825275-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro dela.\
-  \ Programadores usam isso para facilitar a montagem de mensagens din\xE2micas ou\
-  \ para exibir\u2026"
+summary: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro dela."
 title: Interpolando uma string
 weight: 8
 ---

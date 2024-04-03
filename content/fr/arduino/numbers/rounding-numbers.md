@@ -6,8 +6,7 @@ description: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 s
 lastmod: '2024-03-13T22:44:58.103721-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 sa valeur\
-  \ enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales. Les programmeurs\
-  \ arrondissent\u2026"
+  \ enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales."
 title: Arrondir les nombres
 weight: 13
 ---

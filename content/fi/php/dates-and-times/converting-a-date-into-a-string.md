@@ -5,9 +5,7 @@ description: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkki
   \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.667721-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
-  \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\
-  \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+summary: "\"Mik\xE4 & Miksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

@@ -4,8 +4,7 @@ description: "String interpolation lets us toss variables into strings without a
   \ Why? To dynamically construct text\u2014way handier than old-school string\u2026"
 lastmod: '2024-03-13T22:44:59.732940-06:00'
 model: gpt-4-1106-preview
-summary: "String interpolation lets us toss variables into strings without a fuss.\
-  \ Why? To dynamically construct text\u2014way handier than old-school string\u2026"
+summary: String interpolation lets us toss variables into strings without a fuss.
 title: Interpolating a string
 weight: 8
 ---

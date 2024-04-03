@@ -4,8 +4,7 @@ description: "Reading a text file is pulling info from a .txt document into your
   \ Programmers do it to access and manipulate data: config settings, logs,\u2026"
 lastmod: '2024-03-13T22:45:00.450029-06:00'
 model: gpt-4-1106-preview
-summary: "Reading a text file is pulling info from a .txt document into your program.\
-  \ Programmers do it to access and manipulate data: config settings, logs,\u2026"
+summary: Reading a text file is pulling info from a .
 title: Reading a text file
 weight: 22
 ---

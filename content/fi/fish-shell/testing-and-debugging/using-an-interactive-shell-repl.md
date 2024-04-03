@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.996189-06:00'
 model: gpt-4-0125-preview
 summary: "REPL eli Read-Eval-Print Loop on interaktiivinen ohjelmointiymp\xE4rist\xF6\
   , joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\
-  \ ne ja palauttaa\u2026"
+  \ ne ja palauttaa tuloksen."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

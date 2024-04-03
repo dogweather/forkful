@@ -8,8 +8,7 @@ description: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Blen
 lastmod: '2024-03-13T22:44:35.876273-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Bleniu liczby\
-  \ znak\xF3w przed terminator nulowym `\\0`. Programi\u015Bci robi\u0105 to, aby\
-  \ poprawnie manipulowa\u0107 ci\u0105gami\u2026"
+  \ znak\xF3w przed terminator nulowym `\\0`."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 weight: 7
 ---

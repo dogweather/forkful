@@ -9,9 +9,7 @@ description: "Trong Haskell, vi\u1EC7c ghi m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l
 lastmod: '2024-03-13T22:44:36.736219-06:00'
 model: gpt-4-0125-preview
 summary: "Trong Haskell, vi\u1EC7c ghi m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 v\u1EC1\
-  \ vi\u1EC7c l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 duy tr\xEC d\u1EEF li\u1EC7\
-  u gi\u1EEFa c\xE1c phi\xEAn l\xE0m vi\u1EC7c, chia\u2026"
+  \ vi\u1EC7c l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

@@ -6,8 +6,7 @@ description: "Refaktorering er prosessen med \xE5 tweake koden din uten \xE5 end
 lastmod: '2024-03-13T22:44:40.850271-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering er prosessen med \xE5 tweake koden din uten \xE5 endre dens\
-  \ eksterne oppf\xF8rsel. Det handler alt om \xE5 rydde opp og organisere din handling\
-  \ for \xE5\u2026"
+  \ eksterne oppf\xF8rsel."
 title: Refaktorering
 weight: 19
 ---

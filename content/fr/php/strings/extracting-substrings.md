@@ -6,7 +6,8 @@ description: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout d
 lastmod: '2024-03-13T22:44:57.866505-06:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de bois\
-  \ d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne de\u2026"
+  \ d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne de caract\xE8\
+  res."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

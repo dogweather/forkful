@@ -6,8 +6,7 @@ description: "YAML is een gebruikersvriendelijke data-serialisatiestandaard. Pro
   \ gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"
 lastmod: '2024-03-13T22:44:50.571981-06:00'
 model: gpt-4-0125-preview
-summary: "YAML is een gebruikersvriendelijke data-serialisatiestandaard. Programmeurs\
-  \ gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"
+summary: YAML is een gebruikersvriendelijke data-serialisatiestandaard.
 title: Werken met YAML
 weight: 41
 ---

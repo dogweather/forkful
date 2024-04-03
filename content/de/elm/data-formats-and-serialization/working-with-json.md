@@ -8,7 +8,7 @@ description: "Die Arbeit mit JSON in Elm dreht sich um das Dekodieren von JSON-D
 lastmod: '2024-03-13T22:44:53.826890-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON in Elm dreht sich um das Dekodieren von JSON-Daten in\
-  \ Elm-Typen und das Kodieren von Elm-Werten zur\xFCck in JSON. Dieser Prozess ist\u2026"
+  \ Elm-Typen und das Kodieren von Elm-Werten zur\xFCck in JSON."
 title: Arbeiten mit JSON
 weight: 38
 ---

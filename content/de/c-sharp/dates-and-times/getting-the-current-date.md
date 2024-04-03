@@ -6,8 +6,8 @@ description: "Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der 
   \ Datums- und Uhrzeitangaben vom System. Programmierer m\xFCssen oft auf diese\u2026"
 lastmod: '2024-03-13T22:44:53.898822-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen\
-  \ Datums- und Uhrzeitangaben vom System. Programmierer m\xFCssen oft auf diese\u2026"
+summary: Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen
+  Datums- und Uhrzeitangaben vom System.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.844959-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Fish Shell polega na tworzeniu skrypt\xF3w, kt\xF3re\
   \ automatycznie uruchamiaj\u0105 Tw\xF3j kod w celu zweryfikowania jego zachowania\
-  \ wzgl\u0119dem\u2026"
+  \ wzgl\u0119dem oczekiwanych wynik\xF3w."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

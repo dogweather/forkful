@@ -6,8 +6,8 @@ description: "Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te
   \ en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle\u2026"
 lastmod: '2024-03-13T22:44:50.811813-06:00'
 model: gpt-4-0125-preview
-summary: "Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen\
-  \ en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle\u2026"
+summary: Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen
+  en deze interactief uit te voeren.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

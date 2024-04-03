@@ -6,7 +6,7 @@ description: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering 
 lastmod: '2024-03-13T22:44:40.867802-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering og generering\
-  \ av XML-strukturer. Programmerere h\xE5ndterer XML for \xE5 samhandle med tallrike\u2026"
+  \ av XML-strukturer."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

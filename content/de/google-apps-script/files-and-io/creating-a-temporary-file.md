@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.355103-06:00'
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
   \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\
-  \ ist,\u2026"
+  \ ist, typischerweise f\xFCr die Zwischenspeicherung von Daten, Debugging oder Cache-Zwecke."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

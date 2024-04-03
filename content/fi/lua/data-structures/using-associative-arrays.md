@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.690851-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot ovat kuin salaiset k\xE4ttelytiedot Luassa\u2014\
   sen sijaan, ett\xE4 vain numerot j\xE4rjestyisiv\xE4t uskollisesti indeksin mukaan,\
-  \ avaimiksi voi\u2026"
+  \ avaimiksi voi valita mit\xE4 tahansa, mik\xE4 tekee datan hakemisesta tuulennopeaa."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

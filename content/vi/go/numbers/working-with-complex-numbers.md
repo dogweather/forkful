@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c trong l\u1EADp tr\xECnh \u0111\
   \u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c s\u1ED1 c\xF3\
   \ c\u1EA3 ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3o, th\u01B0\u1EDDng \u0111\u01B0\
-  \u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0 `a + bi`. C\xE1c l\u1EADp tr\xECnh\u2026"
+  \u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0 `a + bi`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

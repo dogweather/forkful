@@ -6,8 +6,7 @@ description: "De lengte van een string bepalen betekent het tellen van de karakt
   \ Programmeurs doen dit om invoer te valideren, door karakters te loopen, of\u2026"
 lastmod: '2024-03-13T22:44:50.970637-06:00'
 model: gpt-4-0125-preview
-summary: "De lengte van een string bepalen betekent het tellen van de karakters. Programmeurs\
-  \ doen dit om invoer te valideren, door karakters te loopen, of\u2026"
+summary: De lengte van een string bepalen betekent het tellen van de karakters.
 title: De lengte van een string vinden
 weight: 7
 ---

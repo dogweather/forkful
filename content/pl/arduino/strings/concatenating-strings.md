@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.664344-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli konkatenacja,\
   \ to proces tworzenia jednego \u0142a\u0144cucha z dw\xF3ch lub wi\u0119cej istniej\u0105\
-  cych. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107\u2026"
+  cych."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

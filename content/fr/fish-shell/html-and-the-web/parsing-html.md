@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.322269-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML consiste \xE0 extraire des donn\xE9es ou des informations\
   \ \xE0 partir de contenus HTML, une t\xE2che courante lorsqu'on traite des donn\xE9\
-  es web. Les\u2026"
+  es web."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

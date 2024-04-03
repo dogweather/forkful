@@ -6,8 +6,7 @@ description: "Commencer un nouveau projet en Haskell, c'est partir de z\xE9ro po
 lastmod: '2024-03-13T22:44:57.834708-06:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet en Haskell, c'est partir de z\xE9ro pour cr\xE9\
-  er un programme. Les programmeurs se lancent dans cette aventure pour concr\xE9\
-  tiser une\u2026"
+  er un programme."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

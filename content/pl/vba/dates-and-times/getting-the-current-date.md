@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.243449-06:00'
 model: gpt-4-0125-preview
 summary: "W Visual Basic for Applications (VBA), pobieranie bie\u017C\u0105cej daty\
   \ to powszechne zadanie, kt\xF3re umo\u017Cliwia programistom dynamiczn\u0105 prac\u0119\
-  \ z datami w ich\u2026"
+  \ z datami w ich makrach lub aplikacjach."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

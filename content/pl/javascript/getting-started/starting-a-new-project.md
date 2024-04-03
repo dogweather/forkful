@@ -5,9 +5,7 @@ description: "Zaczynanie nowego projektu to stawianie pierwszych krok\xF3w w kod
   \ lub stworzy\u0107 co\u015B\u2026"
 lastmod: '2024-03-13T22:44:35.797256-06:00'
 model: gpt-4-1106-preview
-summary: "Zaczynanie nowego projektu to stawianie pierwszych krok\xF3w w kodzie. Robimy\
-  \ to, by rozwi\u0105za\u0107 problem, nauczy\u0107 si\u0119 czego\u015B nowego lub\
-  \ stworzy\u0107 co\u015B\u2026"
+summary: "Zaczynanie nowego projektu to stawianie pierwszych krok\xF3w w kodzie."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

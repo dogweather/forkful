@@ -6,8 +6,7 @@ description: "Vamos passear com o GHCi, o ambiente interativo do Haskell que pod
 lastmod: '2024-03-13T22:44:46.629715-06:00'
 model: gpt-4-0125-preview
 summary: "Vamos passear com o GHCi, o ambiente interativo do Haskell que pode atuar\
-  \ como um depurador b\xE1sico. Voc\xEA o inicia com o seu c\xF3digo Haskell e come\xE7\
-  a a\u2026"
+  \ como um depurador b\xE1sico."
 title: Usando um depurador
 weight: 35
 ---

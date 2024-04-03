@@ -6,8 +6,9 @@ description: "Getting the current date in Elixir involves accessing the system's
   \ and time information, a common task for logging, data stamping, or any\u2026"
 lastmod: '2024-03-13T22:44:59.791562-06:00'
 model: gpt-4-0125-preview
-summary: "Getting the current date in Elixir involves accessing the system's date\
-  \ and time information, a common task for logging, data stamping, or any\u2026"
+summary: Getting the current date in Elixir involves accessing the system's date and
+  time information, a common task for logging, data stamping, or any functionality
+  that requires knowledge of the current date.
 title: Getting the current date
 weight: 29
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.713801-06:00'
 model: gpt-4-0125-preview
 summary: "I programutveckling \xE4r det ofta n\xF6dv\xE4ndigt att kontrollera om en\
   \ katalog existerar f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6ker f\xE5 tillg\xE5\
-  ng till, l\xE4sa eller\u2026"
+  ng till, l\xE4sa eller skriva filer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

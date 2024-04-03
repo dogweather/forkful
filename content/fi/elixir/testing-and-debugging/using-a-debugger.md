@@ -6,8 +6,7 @@ description: "Elixir sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun graafisen debugger
 lastmod: '2024-03-13T22:44:56.231494-06:00'
 model: gpt-4-0125-preview
 summary: "Elixir sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun graafisen debuggerin nimelt\xE4\
-  \xE4n `:debugger`. K\xE4ytt\xE4\xE4ksesi sit\xE4, sinun tarvitsee k\xE4ynnist\xE4\
-  \xE4 se ja liitt\xE4\xE4 se k\xE4ynniss\xE4\u2026"
+  \xE4n `:debugger`."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

@@ -8,7 +8,7 @@ description: "Escrever testes em TypeScript envolve criar scripts automatizados 
 lastmod: '2024-03-13T22:44:46.329677-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em TypeScript envolve criar scripts automatizados para verificar\
-  \ a funcionalidade e corretude do seu c\xF3digo. Os programadores fazem isso\u2026"
+  \ a funcionalidade e corretude do seu c\xF3digo."
 title: Escrevendo testes
 weight: 36
 ---

@@ -6,8 +6,9 @@ description: "Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermel
   \ oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt\u2026"
 lastmod: '2024-03-13T22:44:53.395120-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermeldungen\
-  \ oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt\u2026"
+summary: Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermeldungen
+  oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt
+  von der Standardausgabe (`stdout`).
 title: Schreiben auf Standardfehler
 weight: 25
 ---

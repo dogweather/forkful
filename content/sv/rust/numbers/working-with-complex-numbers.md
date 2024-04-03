@@ -6,8 +6,7 @@ description: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF
 lastmod: '2024-03-13T22:44:37.691925-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF6rande\
-  \ inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik. Programmerare\
-  \ anv\xE4nder\u2026"
+  \ inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

@@ -6,8 +6,7 @@ description: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og byt
 lastmod: '2024-03-13T22:44:40.957828-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og bytte dem\
-  \ ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\
-  \ feil,\u2026"
+  \ ut med noe annet."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

@@ -6,8 +6,9 @@ description: "Gli array associativi, noti come `std::map` o `std::unordered_map`
   \ C++, colmano il divario tra gli indici degli array e i dati del mondo reale,\u2026"
 lastmod: '2024-03-13T22:44:43.719423-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, noti come `std::map` o `std::unordered_map` in C++,\
-  \ colmano il divario tra gli indici degli array e i dati del mondo reale,\u2026"
+summary: Gli array associativi, noti come `std::map` o `std::unordered_map` in C++,
+  colmano il divario tra gli indici degli array e i dati del mondo reale, consentendoti
+  di usare chiavi significative.
 title: Utilizzo di array associativi
 weight: 15
 ---

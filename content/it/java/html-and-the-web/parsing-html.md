@@ -4,8 +4,8 @@ description: "Il parsing di HTML consiste nell'analizzare il codice HTML per est
   \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
 lastmod: '2024-03-13T22:44:43.306808-06:00'
 model: unknown
-summary: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
-  \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
+summary: Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne dati
+  o manipolarlo.
 title: Analisi dell'HTML
 weight: 43
 ---

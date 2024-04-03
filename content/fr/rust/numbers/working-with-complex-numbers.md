@@ -6,7 +6,8 @@ description: "Les nombres complexes comportent une partie r\xE9elle et une parti
 lastmod: '2024-03-13T22:44:57.475747-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes comportent une partie r\xE9elle et une partie imaginaire\
-  \ et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la physique et\u2026"
+  \ et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la physique et\
+  \ les graphiques informatiques."
 title: Manipulation des nombres complexes
 weight: 14
 ---

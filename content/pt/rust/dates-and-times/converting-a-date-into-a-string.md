@@ -6,7 +6,7 @@ description: "Converter uma data em uma string em Rust \xE9 transformar um valor
 lastmod: '2024-03-13T22:44:46.379248-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string em Rust \xE9 transformar um valor de data/hora\
-  \ em um formato de texto leg\xEDvel. Fazemos isso principalmente para mostrar\u2026"
+  \ em um formato de texto leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

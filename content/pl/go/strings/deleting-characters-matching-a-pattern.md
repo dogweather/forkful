@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.831221-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega na\
   \ usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
-  w tekstowych, na podstawie regu\u0142\u2026"
+  w tekstowych, na podstawie regu\u0142 okre\u015Blonych przez wzorzec (zazwyczaj\
+  \ za pomoc\u0105 wyra\u017Ce\u0144 regularnych)."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

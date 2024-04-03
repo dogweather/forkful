@@ -8,7 +8,8 @@ description: "Verificar si un directorio existe en JavaScript es esencial para l
 lastmod: '2024-03-13T22:44:59.472649-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en JavaScript es esencial para las tareas\
-  \ de manipulaci\xF3n de archivos, permitiendo a los scripts verificar la presencia\u2026"
+  \ de manipulaci\xF3n de archivos, permitiendo a los scripts verificar la presencia\
+  \ del directorio antes de leerlo o escribir en \xE9l."
 title: Comprobando si un directorio existe
 weight: 20
 ---

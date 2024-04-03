@@ -5,8 +5,9 @@ description: "Rounding numbers is the process of adjusting the digits of a numbe
   \ whole\u2026"
 lastmod: '2024-03-13T22:45:00.506964-06:00'
 model: gpt-4-0125-preview
-summary: "Rounding numbers is the process of adjusting the digits of a number to reduce\
-  \ its precision according to certain rules, either towards the nearest whole\u2026"
+summary: Rounding numbers is the process of adjusting the digits of a number to reduce
+  its precision according to certain rules, either towards the nearest whole number
+  or a specified number of decimal places.
 title: Rounding numbers
 weight: 13
 ---

@@ -5,7 +5,8 @@ description: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiast
 lastmod: '2024-03-13T22:44:35.358714-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki kwadratowe\
-  \ z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"
+  \ z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\
+  \ kwadratowemu z -1."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

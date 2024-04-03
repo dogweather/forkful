@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.917028-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Swiftille tarkoittaa `Date`\
   \ luokan k\xE4ytt\xE4mist\xE4 p\xE4\xE4st\xE4ksesi k\xE4siksi p\xE4iv\xE4m\xE4\xE4\
-  r\xE4\xE4n ja aikaan, jolloin sovellusta ajetaan.\u2026"
+  r\xE4\xE4n ja aikaan, jolloin sovellusta ajetaan."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

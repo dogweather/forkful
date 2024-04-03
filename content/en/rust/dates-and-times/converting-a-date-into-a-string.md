@@ -4,8 +4,8 @@ description: "Converting a date to a string in Rust lets us display dates in a h
   \ format. We do this for UIs, logs, or any place where people need to make\u2026"
 lastmod: '2024-03-13T22:44:59.906483-06:00'
 model: gpt-4-1106-preview
-summary: "Converting a date to a string in Rust lets us display dates in a human-readable\
-  \ format. We do this for UIs, logs, or any place where people need to make\u2026"
+summary: Converting a date to a string in Rust lets us display dates in a human-readable
+  format.
 title: Converting a date into a string
 weight: 28
 ---

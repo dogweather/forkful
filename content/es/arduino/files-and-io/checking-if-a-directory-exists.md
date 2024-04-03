@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.347885-06:00'
 model: gpt-4-0125-preview
 summary: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
   \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\
-  \ o\u2026"
+  \ o escribir archivos sin errores."
 title: Comprobando si un directorio existe
 weight: 20
 ---

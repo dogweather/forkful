@@ -7,7 +7,8 @@ description: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des S
 lastmod: '2024-03-13T22:44:53.403799-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings,\
-  \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\u2026"
+  \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\
+  \ unver\xE4ndert bleibt."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

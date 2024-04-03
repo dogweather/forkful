@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.819027-06:00'
 model: gpt-4-0125-preview
 summary: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso de\
   \ enviar mensajes de error o registros directamente al flujo de salida de error\
-  \ del\u2026"
+  \ del entorno (por ejemplo, la consola en node."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

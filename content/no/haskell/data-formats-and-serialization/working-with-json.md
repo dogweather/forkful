@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.864890-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Haskell inneb\xE6rer\
   \ \xE5 analysere JSON-data til Haskell-typer og konvertere Haskell-typer tilbake\
-  \ til JSON.\u2026"
+  \ til JSON."
 title: Arbeider med JSON
 weight: 38
 ---

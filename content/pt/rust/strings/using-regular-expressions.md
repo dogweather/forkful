@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.357969-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares, ou regex, permitem que desenvolvedores procurem,\
   \ combinem e manipulem strings com t\xE9cnicas avan\xE7adas de correspond\xEAncia\
-  \ de padr\xF5es.\u2026"
+  \ de padr\xF5es."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

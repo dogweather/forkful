@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.223764-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
   \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
-  \ som att l\xE4sa fr\xE5n\u2026"
+  \ som att l\xE4sa fr\xE5n eller skriva till filer inuti den."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

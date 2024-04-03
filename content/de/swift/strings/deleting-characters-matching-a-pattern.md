@@ -6,7 +6,7 @@ description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet
 lastmod: '2024-03-13T22:44:54.210428-06:00'
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
-  \ Teile eines Strings zu entfernen, basierend auf Regeln oder \"Mustern\".\u2026"
+  \ Teile eines Strings zu entfernen, basierend auf Regeln oder \"Mustern\"."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

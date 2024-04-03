@@ -4,8 +4,8 @@ description: "Let's take a stroll with GHCi, Haskell's interactive environment t
   \ can act as a basic debugger. You fire it up with your Haskell code and start poking\u2026"
 lastmod: '2024-03-13T22:45:00.132579-06:00'
 model: gpt-4-1106-preview
-summary: "Let's take a stroll with GHCi, Haskell's interactive environment that can\
-  \ act as a basic debugger. You fire it up with your Haskell code and start poking\u2026"
+summary: Let's take a stroll with GHCi, Haskell's interactive environment that can
+  act as a basic debugger.
 title: Using a debugger
 weight: 35
 ---

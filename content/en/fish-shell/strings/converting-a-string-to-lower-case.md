@@ -4,8 +4,8 @@ description: "Converting a string to lower case changes all the letters in that 
   \ to their lower case form. Programmers do it for consistency, comparison, sorting,\u2026"
 lastmod: '2024-03-13T22:45:00.460383-06:00'
 model: gpt-4-1106-preview
-summary: "Converting a string to lower case changes all the letters in that string\
-  \ to their lower case form. Programmers do it for consistency, comparison, sorting,\u2026"
+summary: Converting a string to lower case changes all the letters in that string
+  to their lower case form.
 title: Converting a string to lower case
 weight: 4
 ---

@@ -7,8 +7,9 @@ description: "Calcolare una data nel futuro o nel passato comporta la determinaz
   \ o\u2026"
 lastmod: '2024-03-13T22:44:44.014855-06:00'
 model: gpt-4-0125-preview
-summary: "Calcolare una data nel futuro o nel passato comporta la determinazione di\
-  \ una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi o\u2026"
+summary: Calcolare una data nel futuro o nel passato comporta la determinazione di
+  una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi o anni
+  da una data data.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in JavaScript are patterns used to mat
   \ character combinations in strings. Programmers use them for searching, extracting,\u2026"
 lastmod: '2024-03-13T22:45:00.424298-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in JavaScript are patterns used to match character\
-  \ combinations in strings. Programmers use them for searching, extracting,\u2026"
+summary: Regular expressions (regex) in JavaScript are patterns used to match character
+  combinations in strings.
 title: Using regular expressions
 weight: 11
 ---

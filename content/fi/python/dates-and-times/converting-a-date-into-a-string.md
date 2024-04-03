@@ -6,8 +6,7 @@ description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta voimme n
 lastmod: '2024-03-13T22:44:56.155130-06:00'
 model: gpt-4-1106-preview
 summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta voimme n\xE4ytt\xE4\
-  \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n haluamassamme muodossa. Sit\xE4 tarvitaan lokitiedostoissa,\
-  \ k\xE4ytt\xF6liittymiss\xE4 ja datan\u2026"
+  \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n haluamassamme muodossa."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

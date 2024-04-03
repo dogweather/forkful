@@ -5,9 +5,8 @@ description: "Rounding numbers is trimming a decimal to its closest whole value 
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.317538-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers is trimming a decimal to its closest whole value or to\
-  \ a set number of decimal places. Programmers round numbers to make them easier\
-  \ to\u2026"
+summary: Rounding numbers is trimming a decimal to its closest whole value or to a
+  set number of decimal places.
 title: Rounding numbers
 weight: 13
 ---

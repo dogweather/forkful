@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.035718-06:00'
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Google Apps Script l\xE0 vi\u1EC7\
   c l\u1EADp tr\xECnh g\u1ECDi \u0111\u1EBFn m\u1ED9t m\xE1y ch\u1EE7 web ho\u1EB7\
-  c API b\xEAn ngo\xE0i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 truy xu\u1EA5t ho\u1EB7c\u2026"
+  c API b\xEAn ngo\xE0i."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

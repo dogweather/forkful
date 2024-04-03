@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.631911-06:00'
 model: gpt-4-0125-preview
 summary: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende datoen\
   \ en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer i\
-  \ sine\u2026"
+  \ sine makroer eller applikasjoner."
 title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---

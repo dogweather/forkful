@@ -6,8 +6,7 @@ description: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL)
 lastmod: '2024-03-13T22:44:35.631359-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL), pozwala\
-  \ na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego odzewu.\
-  \ Programi\u015Bci\u2026"
+  \ na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego odzewu."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

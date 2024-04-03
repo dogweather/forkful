@@ -7,8 +7,8 @@ description: "Een tekenreeks kapitaliseren in programmeren betekent alle letters
   \ het\u2026"
 lastmod: '2024-03-13T22:44:50.793080-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in een\
-  \ tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor het\u2026"
+summary: Een tekenreeks kapitaliseren in programmeren betekent alle letters in een
+  tekenreeks in hoofdletters omzetten.
 title: Een string met hoofdletters maken
 weight: 2
 ---

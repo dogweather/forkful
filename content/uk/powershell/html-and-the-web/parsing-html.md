@@ -4,8 +4,7 @@ description: Parsing HTML means extracting data from HTML content. Programmers d
   it to automate data retrieval from websites, like scraping prices or headlines.
 lastmod: '2024-03-13T22:44:49.646626-06:00'
 model: unknown
-summary: Parsing HTML means extracting data from HTML content. Programmers do it to
-  automate data retrieval from websites, like scraping prices or headlines.
+summary: Parsing HTML means extracting data from HTML content.
 title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"
 weight: 43
 ---

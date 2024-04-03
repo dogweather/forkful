@@ -5,7 +5,7 @@ description: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt krit
 lastmod: '2024-03-13T22:44:40.421081-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt kritt-tavle;\
-  \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge.\u2026"
+  \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge."
 title: Opprette en midlertidig fil
 weight: 21
 ---

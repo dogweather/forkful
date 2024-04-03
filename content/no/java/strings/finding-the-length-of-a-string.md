@@ -4,8 +4,7 @@ description: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inn
   \ Programmerere trenger dette for validering, looping og manipulering av tekstdata."
 lastmod: '2024-03-13T22:44:40.657320-06:00'
 model: gpt-4-1106-preview
-summary: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder.\
-  \ Programmerere trenger dette for validering, looping og manipulering av tekstdata."
+summary: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

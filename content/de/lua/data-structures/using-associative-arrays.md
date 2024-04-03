@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:54.008069-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays sind wie geheime Handschl\xE4ge f\xFCr Daten in Lua\u2014\
   anstatt dass sich nur Zahlen brav nach Index aufreihen, k\xF6nnen deine Schl\xFC\
-  ssel alles\u2026"
+  ssel alles sein, was du m\xF6chtest, wodurch das Abrufen von Daten ein Kinderspiel\
+  \ wird."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

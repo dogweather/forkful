@@ -11,9 +11,7 @@ lastmod: '2024-03-13T22:44:36.343693-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129\
   a l\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p c\xF3 ph\u1EA7n m\u1EDF\
-  \ r\u1ED9ng `.txt`. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 log, c\u1EA5u h\xECnh, ho\u1EB7c l\u01B0u tr\u1EEF d\u1EEF\
-  \u2026"
+  \ r\u1ED9ng `."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

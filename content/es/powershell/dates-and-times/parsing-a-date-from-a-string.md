@@ -6,8 +6,9 @@ description: "Analizar una fecha de una cadena se trata de reconocer y convertir
   \ escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda\u2026"
 lastmod: '2024-03-13T22:44:59.301518-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena se trata de reconocer y convertir fechas\
-  \ escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda\u2026"
+summary: Analizar una fecha de una cadena se trata de reconocer y convertir fechas
+  escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda entender
+  y con el que pueda trabajar.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

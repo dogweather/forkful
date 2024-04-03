@@ -6,7 +6,7 @@ description: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\x
 lastmod: '2024-03-13T22:44:56.244339-06:00'
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4lt\xF6\
-  \xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein tekstitiedostoina."
+  \xE4."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

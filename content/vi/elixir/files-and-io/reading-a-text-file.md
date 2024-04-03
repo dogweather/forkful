@@ -11,9 +11,7 @@ lastmod: '2024-03-13T22:44:36.231012-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
   \ \u0111\u01B0a d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 x\u1EED l\xFD ho\u1EB7c ph\xE2n t\xEDch n\u1ED9i dung, nh\u01B0 \u0111\
-  \u1ECDc c\u1EA5u\u2026"
+  ng tr\xECnh c\u1EE7a b\u1EA1n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

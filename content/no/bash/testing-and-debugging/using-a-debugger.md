@@ -6,8 +6,7 @@ description: "Bash kommer ikke med en innebygd feils\xF8ker som noen andre spr\x
 lastmod: '2024-03-13T22:44:40.979452-06:00'
 model: gpt-4-0125-preview
 summary: "Bash kommer ikke med en innebygd feils\xF8ker som noen andre spr\xE5k, men\
-  \ du kan bruke innebygde kommandoer som `set -x` for \xE5 spore hva som skjer. Eller,\
-  \ for\u2026"
+  \ du kan bruke innebygde kommandoer som `set -x` for \xE5 spore hva som skjer."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

@@ -7,8 +7,9 @@ description: "Het berekenen van een datum in de toekomst of het verleden houdt i
   \ moment\u2026"
 lastmod: '2024-03-13T22:44:50.475572-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van een datum in de toekomst of het verleden houdt in dat\
-  \ je een datum bepaalt die zoveel dagen, maanden of jaren vanaf een specifiek moment\u2026"
+summary: Het berekenen van een datum in de toekomst of het verleden houdt in dat je
+  een datum bepaalt die zoveel dagen, maanden of jaren vanaf een specifiek moment
+  ligt.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

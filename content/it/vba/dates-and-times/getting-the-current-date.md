@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.274636-06:00'
 model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA), recuperare la data corrente \xE8\
   \ un compito comune che permette ai programmatori di lavorare dinamicamente con\
-  \ le\u2026"
+  \ le date nei loro macro o applicazioni."
 title: Ottenere la data corrente
 weight: 29
 ---

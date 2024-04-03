@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in programming are used to search, mat
   \ and manipulate strings based on specific patterns. Programmers use them for tasks\u2026"
 lastmod: '2024-03-13T22:44:59.622128-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in programming are used to search, match, and\
-  \ manipulate strings based on specific patterns. Programmers use them for tasks\u2026"
+summary: Regular expressions (regex) in programming are used to search, match, and
+  manipulate strings based on specific patterns.
 title: Using regular expressions
 weight: 11
 ---

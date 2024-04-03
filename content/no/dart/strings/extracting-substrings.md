@@ -8,8 +8,7 @@ description: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler 
 lastmod: '2024-03-13T22:44:40.475251-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler av en\
-  \ streng basert p\xE5 deres posisjoner eller m\xF8nstre. Programmerere gj\xF8r dette\
-  \ for oppgaver\u2026"
+  \ streng basert p\xE5 deres posisjoner eller m\xF8nstre."
 title: Utdrag av delstrenger
 weight: 6
 ---

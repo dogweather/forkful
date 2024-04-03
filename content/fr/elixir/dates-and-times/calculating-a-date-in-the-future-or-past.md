@@ -6,7 +6,7 @@ description: "Calculer une date dans le futur ou le pass\xE9, c'est ajuster une 
 lastmod: '2024-03-13T22:44:57.341853-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est ajuster une date donn\xE9\
-  e en y ajoutant ou soustrayant des jours, des mois, etc. Les programmeurs le font\u2026"
+  e en y ajoutant ou soustrayant des jours, des mois, etc."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

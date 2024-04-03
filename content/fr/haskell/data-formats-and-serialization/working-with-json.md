@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.856130-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) en Haskell implique\
   \ de parser les donn\xE9es JSON en types Haskell et de convertir les types Haskell\
-  \ de\u2026"
+  \ de retour en JSON."
 title: Travailler avec JSON
 weight: 38
 ---

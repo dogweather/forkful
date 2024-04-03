@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere strukturen du
 lastmod: '2024-03-13T22:44:40.574489-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere strukturen du trenger\
-  \ for \xE5 bygge noe fra scratch i Rust. Programmerere gj\xF8r dette for \xE5 skape\
-  \ et rent\u2026"
+  \ for \xE5 bygge noe fra scratch i Rust."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

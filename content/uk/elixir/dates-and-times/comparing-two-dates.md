@@ -5,7 +5,7 @@ description: "Comparing two dates means checking how they relate to each other\u
 lastmod: '2024-03-13T22:44:48.744298-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates means checking how they relate to each other\u2014are\
-  \ they the same, is one earlier, or is it later. Programmers need this for scheduling\u2026"
+  \ they the same, is one earlier, or is it later."
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

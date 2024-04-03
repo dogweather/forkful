@@ -6,7 +6,7 @@ description: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para
 lastmod: '2024-03-13T22:44:46.326633-06:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para um programador:\
-  \ \xE9 uma oportunidade de criar algo do zero. Programadores come\xE7am novos\u2026"
+  \ \xE9 uma oportunidade de criar algo do zero."
 title: Iniciando um novo projeto
 weight: 1
 ---

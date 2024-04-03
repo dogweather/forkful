@@ -5,7 +5,7 @@ description: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-
 lastmod: '2024-03-13T22:44:56.228555-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
-  \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"
+  \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

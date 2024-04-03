@@ -6,8 +6,8 @@ description: "Ottenere la data corrente in Dart comporta l'interrogazione del si
   \ per conoscere la data e l'ora attuali. Questa funzionalit\xE0 \xE8 comunemente\u2026"
 lastmod: '2024-03-13T22:44:43.142484-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Dart comporta l'interrogazione del sistema\
-  \ per conoscere la data e l'ora attuali. Questa funzionalit\xE0 \xE8 comunemente\u2026"
+summary: Ottenere la data corrente in Dart comporta l'interrogazione del sistema per
+  conoscere la data e l'ora attuali.
 title: Ottenere la data corrente
 weight: 29
 ---

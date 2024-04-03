@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.955739-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
   \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
-  \ S\xE4tze,\u2026"
+  \ S\xE4tze, Titel oder Eigennamen korrekt in einem Datensatz beginnen."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

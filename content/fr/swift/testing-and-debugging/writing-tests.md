@@ -8,8 +8,7 @@ description: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter
 lastmod: '2024-03-13T22:44:58.226452-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du code\
-  \ qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\
-  \ Les programmeurs\u2026"
+  \ qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application."
 title: "R\xE9daction de tests"
 weight: 36
 ---

@@ -6,8 +6,7 @@ description: "Lua nie posiada wbudowanego debuggera, ale mo\u017Cna u\u017Cywa\u
 lastmod: '2024-03-13T22:44:35.544501-06:00'
 model: gpt-4-0125-preview
 summary: "Lua nie posiada wbudowanego debuggera, ale mo\u017Cna u\u017Cywa\u0107 zewn\u0119\
-  trznych, na przyk\u0142ad ZeroBrane Studio. Oto ma\u0142a pr\xF3bka pracy z nim:\
-  \ ```Lua -- To jest prosty\u2026"
+  trznych, na przyk\u0142ad ZeroBrane Studio."
 title: Korzystanie z debugera
 weight: 35
 ---

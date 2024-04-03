@@ -6,8 +6,7 @@ description: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data 
 lastmod: '2024-03-13T22:44:40.971356-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data eller\
-  \ handling fra en server. Programmerere gj\xF8r dette for \xE5 hente informasjon,\
-  \ interagere med\u2026"
+  \ handling fra en server."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

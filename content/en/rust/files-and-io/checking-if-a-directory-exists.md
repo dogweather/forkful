@@ -5,8 +5,8 @@ description: "In software development, it's often necessary to check if a direct
   \ being\u2026"
 lastmod: '2024-03-13T22:44:59.909178-06:00'
 model: gpt-4-0125-preview
-summary: "In software development, it's often necessary to check if a directory exists\
-  \ to avoid errors when attempting to access, read, or write files. Rust, being\u2026"
+summary: In software development, it's often necessary to check if a directory exists
+  to avoid errors when attempting to access, read, or write files.
 title: Checking if a directory exists
 weight: 20
 ---

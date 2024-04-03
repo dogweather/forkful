@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:35.967787-06:00'
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong l\u1EADp tr\xECnh \u0111\u01B0\
   \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1\
-  c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu c\u1EE5 th\u1EC3. C\xE1c l\u1EADp\
-  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho\u2026"
+  c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu c\u1EE5 th\u1EC3."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

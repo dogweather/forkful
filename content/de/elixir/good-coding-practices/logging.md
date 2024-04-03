@@ -5,7 +5,8 @@ description: "Logging in der Softwareentwicklung ist die Technik, Ereignisse auf
 lastmod: '2024-03-13T22:44:53.540325-06:00'
 model: gpt-4-1106-preview
 summary: "Logging in der Softwareentwicklung ist die Technik, Ereignisse aufzuzeichnen,\
-  \ die w\xE4hrend des Betriebs eines Programms auftreten, typischerweise in einer\u2026"
+  \ die w\xE4hrend des Betriebs eines Programms auftreten, typischerweise in einer\
+  \ Datei oder in einem externen System."
 title: Protokollierung
 weight: 17
 ---

@@ -6,8 +6,7 @@ description: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te beg
   \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"
 lastmod: '2024-03-13T22:44:51.092190-06:00'
 model: gpt-4-0125-preview
-summary: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen\
-  \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"
+summary: YAML is geen opmaaktaal.
 title: Werken met YAML
 weight: 41
 ---

@@ -5,8 +5,8 @@ description: "Calculating future or past dates means figuring out what the date 
   \ like\u2026"
 lastmod: '2024-03-13T22:45:00.217645-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating future or past dates means figuring out what the date will be\
-  \ after or before a certain amount of time. Programmers do this for features like\u2026"
+summary: Calculating future or past dates means figuring out what the date will be
+  after or before a certain amount of time.
 title: Calculating a date in the future or past
 weight: 26
 ---

@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.034952-06:00'
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng s\u1ED1 th\u1EF1c b\u1EB1ng c\xE1ch\
   \ th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, bi\u1EC3u di\u1EC5n nh\u01B0 l\xE0\
-  \ 'i', n\u01A1i m\xE0 i^2 = -1. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFA\
-  ng cho c\xE1c b\xE0i to\xE1n m\xF4 ph\u1ECFng, x\u1EED l\xFD\u2026"
+  \ 'i', n\u01A1i m\xE0 i^2 = -1."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

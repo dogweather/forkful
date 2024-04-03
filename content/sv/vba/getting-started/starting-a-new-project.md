@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.743842-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
   r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
-  \ automatisera\u2026"
+  \ automatisera uppgifter eller ut\xF6ka funktionalitet."
 title: Att starta ett nytt projekt
 weight: 1
 ---

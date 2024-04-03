@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.114165-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre estruturar o seu c\xF3\
   digo do Google Apps Script separando segmentos l\xF3gicos em blocos distintos, cada\
-  \ um realizando\u2026"
+  \ um realizando uma tarefa espec\xEDfica."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

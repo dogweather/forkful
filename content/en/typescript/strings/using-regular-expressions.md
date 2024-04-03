@@ -4,8 +4,8 @@ description: "Regular expressions, or regex, is a powerful pattern matching and 
   \ tool in programming. Programmers use regex for tasks like validating user\u2026"
 lastmod: '2024-03-13T22:44:59.849444-06:00'
 model: unknown
-summary: "Regular expressions, or regex, is a powerful pattern matching and searching\
-  \ tool in programming. Programmers use regex for tasks like validating user\u2026"
+summary: Regular expressions, or regex, is a powerful pattern matching and searching
+  tool in programming.
 title: Using regular expressions
 weight: 11
 ---

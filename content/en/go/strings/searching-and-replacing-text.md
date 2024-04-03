@@ -4,8 +4,9 @@ description: "Searching and replacing text in programming facilitates the modifi
   \ and management of strings, which is a fundamental task in data manipulation and\u2026"
 lastmod: '2024-03-13T22:44:59.617875-06:00'
 model: gpt-4-0125-preview
-summary: "Searching and replacing text in programming facilitates the modification\
-  \ and management of strings, which is a fundamental task in data manipulation and\u2026"
+summary: Searching and replacing text in programming facilitates the modification
+  and management of strings, which is a fundamental task in data manipulation and
+  software development.
 title: Searching and replacing text
 weight: 10
 ---

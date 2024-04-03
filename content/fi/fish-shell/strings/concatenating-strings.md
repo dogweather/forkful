@@ -5,9 +5,7 @@ description: "Mik\xE4 & Miksi? Yhdistelemme merkkijonoja - eli \"concatenate\" -
   t t\xE4m\xE4n usein\u2026"
 lastmod: '2024-03-13T22:44:56.984055-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 & Miksi? Yhdistelemme merkkijonoja - eli \"concatenate\" - kun haluamme\
-  \ liitt\xE4\xE4 erilliset tekstip\xE4tk\xE4t yhteen. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n usein\u2026"
+summary: "Mik\xE4 & Miksi."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

@@ -7,7 +7,7 @@ description: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a
 lastmod: '2024-03-13T22:44:46.252391-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado no sistema de arquivos. Programadores\u2026"
+  a de um diret\xF3rio em um caminho especificado no sistema de arquivos."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

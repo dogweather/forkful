@@ -6,8 +6,8 @@ description: "Il recupero della data corrente in Bash comporta l'utilizzo di com
   \ integrati per visualizzare la data e l'ora in vari formati. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.610208-06:00'
 model: gpt-4-0125-preview
-summary: "Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati\
-  \ per visualizzare la data e l'ora in vari formati. I programmatori\u2026"
+summary: Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati
+  per visualizzare la data e l'ora in vari formati.
 title: Ottenere la data corrente
 weight: 29
 ---

@@ -8,8 +8,7 @@ description: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en 
 lastmod: '2024-03-13T22:44:37.426248-06:00'
 model: gpt-4-0125-preview
 summary: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
-  ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\
-  \ g\xF6r\u2026"
+  ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

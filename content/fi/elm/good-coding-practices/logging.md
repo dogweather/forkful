@@ -5,7 +5,8 @@ description: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia j
 lastmod: '2024-03-13T22:44:56.495172-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja ohjelmiston\
-  \ tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston\u2026"
+  \ tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston p\xE4iv\xE4\
+  kirjana."
 title: Lokitus
 weight: 17
 ---

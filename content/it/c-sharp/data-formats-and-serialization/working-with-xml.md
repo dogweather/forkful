@@ -4,8 +4,8 @@ description: "XML (eXtensible Markup Language) riguarda la strutturazione dei da
   \ in un formato leggibile. I programmatori maneggiano XML per configurazione, scambio\u2026"
 lastmod: '2024-03-13T22:44:43.457994-06:00'
 model: gpt-4-0125-preview
-summary: "XML (eXtensible Markup Language) riguarda la strutturazione dei dati in\
-  \ un formato leggibile. I programmatori maneggiano XML per configurazione, scambio\u2026"
+summary: XML (eXtensible Markup Language) riguarda la strutturazione dei dati in un
+  formato leggibile.
 title: Lavorare con XML
 weight: 40
 ---

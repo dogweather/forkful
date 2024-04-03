@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.200089-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir des dates en cha\xEEnes de caract\xE8res est une t\xE2che fondamentale\
   \ qui permet aux programmeurs de manipuler et d\u2019afficher des informations de\
-  \ date\u2026"
+  \ date dans un format lisible par l\u2019homme."
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.938635-06:00'
 model: gpt-4-0125-preview
 summary: "Shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1\
   nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n nh\u1EADp c\xE1c l\u1EC7nh PowerShell\
-  \ v\xE0 nh\u1EADn ph\u1EA3n h\u1ED3i t\u1EE9c th\xEC. L\u1EADp tr\xECnh vi\xEAn\
-  \ s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 nhanh\u2026"
+  \ v\xE0 nh\u1EADn ph\u1EA3n h\u1ED3i t\u1EE9c th\xEC."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

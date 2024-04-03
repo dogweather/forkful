@@ -8,7 +8,7 @@ description: "Pobieranie bie\u017C\u0105cej daty w PowerShell polega na uzyskiwa
 lastmod: '2024-03-13T22:44:35.640455-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w PowerShell polega na uzyskiwaniu aktualnej\
-  \ daty i godziny systemu. Ta operacja jest fundamentalna dla zada\u0144 takich jak\u2026"
+  \ daty i godziny systemu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

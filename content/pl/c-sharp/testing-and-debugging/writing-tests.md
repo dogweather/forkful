@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.411896-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w C# polega na tworzeniu zautomatyzowanych skrypt\xF3\
   w w celu weryfikacji funkcjonalno\u015Bci kodu, gwarantuj\u0105c, \u017Ce dzia\u0142\
-  a on zgodnie z\u2026"
+  a on zgodnie z oczekiwaniami."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

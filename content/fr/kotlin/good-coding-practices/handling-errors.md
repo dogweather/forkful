@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.747883-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs est la mani\xE8re dont votre code traite les probl\xE8\
   mes qui surviennent pendant l'ex\xE9cution \u2014 comme g\xE9rer un impr\xE9vu sans\
-  \ le laisser\u2026"
+  \ le laisser tomber."
 title: Gestion des erreurs
 weight: 16
 ---

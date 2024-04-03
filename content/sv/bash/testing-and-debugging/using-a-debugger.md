@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.086931-06:00'
 model: gpt-4-0125-preview
 summary: "Bash kommer inte med en inbyggd debugger som vissa andra spr\xE5k, men du\
   \ kan anv\xE4nda inbyggda kommandon som `set -x` f\xF6r att sp\xE5ra vad som h\xE4\
-  nder. Eller,\u2026"
+  nder."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

@@ -8,8 +8,7 @@ description: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 stren
 lastmod: '2024-03-13T22:44:41.109370-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 strengformatet\
-  \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+  \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

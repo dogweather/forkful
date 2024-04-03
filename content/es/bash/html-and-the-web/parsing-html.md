@@ -7,7 +7,7 @@ description: "Parsear HTML significa tamizar la estructura y el contenido de un 
 lastmod: '2024-03-13T22:44:59.244295-06:00'
 model: gpt-4-0125-preview
 summary: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
-  \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"
+  \ HTML para extraer informaci\xF3n."
 title: Analizando HTML
 weight: 43
 ---

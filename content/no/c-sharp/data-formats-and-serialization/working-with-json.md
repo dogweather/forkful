@@ -7,7 +7,8 @@ description: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, g
 lastmod: '2024-03-13T22:44:40.819387-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, generering\
-  \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\u2026"
+  \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\
+  \ moderne programmering."
 title: Arbeider med JSON
 weight: 38
 ---

@@ -6,8 +6,7 @@ description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do bliskiej warto
 lastmod: '2024-03-13T22:44:35.036625-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do bliskiej warto\u015B\
-  ci dla uproszczenia lub aby dopasowa\u0107 je do okre\u015Blonej precyzji. Jest\
-  \ to przydatne do\u2026"
+  ci dla uproszczenia lub aby dopasowa\u0107 je do okre\u015Blonej precyzji."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

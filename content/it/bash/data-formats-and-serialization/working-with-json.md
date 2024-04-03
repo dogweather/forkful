@@ -6,8 +6,8 @@ description: "Lavorare con JSON nella programmazione Bash coinvolge l'analisi, l
   \ e la manipolazione di dati JSON direttamente dalla linea di comando. Gli\u2026"
 lastmod: '2024-03-13T22:44:43.620930-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON nella programmazione Bash coinvolge l'analisi, l'estrazione\
-  \ e la manipolazione di dati JSON direttamente dalla linea di comando. Gli\u2026"
+summary: Lavorare con JSON nella programmazione Bash coinvolge l'analisi, l'estrazione
+  e la manipolazione di dati JSON direttamente dalla linea di comando.
 title: Lavorare con JSON
 weight: 38
 ---

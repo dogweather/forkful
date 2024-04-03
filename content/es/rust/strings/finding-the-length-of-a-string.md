@@ -6,8 +6,7 @@ description: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\x
 lastmod: '2024-03-13T22:44:58.837599-06:00'
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\xE1ntos\
-  \ bytes ocupa. Esto importa al trabajar con textos: validar entradas, limitar tama\xF1\
-  o,\u2026"
+  \ bytes ocupa."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Dart bao g\u1ED3m vi\u1EC7\
   c ph\xE2n t\xEDch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 ch\u1EC9nh s\u1EEDa c\xE1c\
   \ t\xE0i li\u1EC7u XML, m\u1ED9t qu\xE1 tr\xECnh r\u1EA5t quan tr\u1ECDng \u0111\
-  \u1ED1i v\u1EDBi c\xE1c \u1EE9ng d\u1EE5ng\u2026"
+  \u1ED1i v\u1EDBi c\xE1c \u1EE9ng d\u1EE5ng t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1\
+  c d\u1ECBch v\u1EE5 web, c\xE1c t\u1EC7p c\u1EA5u h\xECnh ho\u1EB7c c\xE1c h\u1EC7\
+  \ th\u1ED1ng c\u0169."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

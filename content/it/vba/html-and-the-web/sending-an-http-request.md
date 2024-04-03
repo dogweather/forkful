@@ -6,8 +6,8 @@ description: "Inviare una richiesta HTTP in Visual Basic for Applications (VBA) 
   \ l'accesso programmatico a risorse o servizi web effettuando richieste tramite\u2026"
 lastmod: '2024-03-13T22:44:43.259052-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP in Visual Basic for Applications (VBA) comporta\
-  \ l'accesso programmatico a risorse o servizi web effettuando richieste tramite\u2026"
+summary: Inviare una richiesta HTTP in Visual Basic for Applications (VBA) comporta
+  l'accesso programmatico a risorse o servizi web effettuando richieste tramite HTTP.
 title: Inviare una richiesta HTTP
 weight: 44
 ---

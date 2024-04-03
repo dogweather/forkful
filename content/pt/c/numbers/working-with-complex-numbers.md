@@ -7,7 +7,7 @@ description: "N\xFAmeros complexos consistem em uma parte real e uma parte imagi
 lastmod: '2024-03-13T22:44:47.043058-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
-  ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`. Programadores\u2026"
+  ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`."
 title: "Trabalhando com N\xFAmeros Complexos"
 weight: 14
 ---

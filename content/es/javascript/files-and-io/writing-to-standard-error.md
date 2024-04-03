@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:59.474675-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de dirigir\
   \ mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xEDfico\
-  \ y\u2026"
+  \ y separado, lo cual es especialmente \xFAtil en entornos similares a Unix para\
+  \ prop\xF3sitos de registro y depuraci\xF3n."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

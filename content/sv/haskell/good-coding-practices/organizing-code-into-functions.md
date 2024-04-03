@@ -6,8 +6,7 @@ description: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner
 lastmod: '2024-03-13T22:44:37.960417-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner din kod\
-  \ i \xE5teranv\xE4ndbara, namngivna block. Varf\xF6r? Det h\xE5ller din kod DRY\
-  \ (Don't Repeat\u2026"
+  \ i \xE5teranv\xE4ndbara, namngivna block."
 title: Att organisera kod i funktioner
 weight: 18
 ---

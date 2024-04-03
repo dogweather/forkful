@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:43.817923-06:00'
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni permette di suddividere le attivit\xE0\
   \ in parti riutilizzabili, rendendo il codice pi\xF9 ordinato e pi\xF9 facile da\
-  \ mantenere.\u2026"
+  \ mantenere."
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

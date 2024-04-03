@@ -7,7 +7,7 @@ description: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la m
 lastmod: '2024-03-13T22:44:58.399426-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la manipulation\
-  \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques. Les programmeurs se\u2026"
+  \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques."
 title: Travailler avec XML
 weight: 40
 ---

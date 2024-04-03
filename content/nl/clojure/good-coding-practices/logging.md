@@ -6,8 +6,9 @@ description: "Loggen is in wezen de software-equivalent van een scheepsjournaal;
   \ is een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een\u2026"
 lastmod: '2024-03-13T22:44:50.426618-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen is in wezen de software-equivalent van een scheepsjournaal; het is\
-  \ een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een\u2026"
+summary: Loggen is in wezen de software-equivalent van een scheepsjournaal; het is
+  een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een applicatie
+  wordt uitgevoerd.
 title: Logboekregistratie
 weight: 17
 ---

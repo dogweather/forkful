@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Ghi nh\u1EADt k\xFD, n\xF3i m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn, gi\u1ED1\
   ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t cu\u1ED1n nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5\
   ng c\u1EE7a b\u1EA1n\u2014n\xF3 ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i,\
-  \ v\xE0 c\xE1c h\xE0nh \u0111\u1ED9ng \u0111\xE1ng ch\xFA \xFD kh\xE1c\u2026"
+  \ v\xE0 c\xE1c h\xE0nh \u0111\u1ED9ng \u0111\xE1ng ch\xFA \xFD kh\xE1c x\u1EA3y\
+  \ ra trong khi ph\u1EA7n m\u1EC1m \u0111ang ch\u1EA1y."
 title: Ghi log
 weight: 17
 ---

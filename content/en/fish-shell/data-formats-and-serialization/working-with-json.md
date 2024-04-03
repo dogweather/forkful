@@ -4,8 +4,9 @@ description: "Working with JSON in the Fish Shell involves parsing and generatin
   \ JSON data, a common task for configuring applications, API interaction, and\u2026"
 lastmod: '2024-03-13T22:45:00.493218-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON in the Fish Shell involves parsing and generating JSON\
-  \ data, a common task for configuring applications, API interaction, and\u2026"
+summary: Working with JSON in the Fish Shell involves parsing and generating JSON
+  data, a common task for configuring applications, API interaction, and streamlining
+  command-line workflows.
 title: Working with JSON
 weight: 38
 ---

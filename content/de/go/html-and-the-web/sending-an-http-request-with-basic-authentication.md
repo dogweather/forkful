@@ -7,7 +7,8 @@ description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go bei
 lastmod: '2024-03-13T22:44:53.287285-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
-  \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"
+  \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen Benutzernamen\
+  \ und ein Passwort in Form eines base64-codierten Strings enth\xE4lt."
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---

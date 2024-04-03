@@ -5,7 +5,7 @@ description: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2
 lastmod: '2024-03-13T22:44:56.531269-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2013 mahdollisuus\
-  \ luoda jotakin uutta. Koodarit tekev\xE4t sen ratkaistakseen ongelmia,\u2026"
+  \ luoda jotakin uutta."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

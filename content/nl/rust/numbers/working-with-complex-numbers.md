@@ -7,7 +7,7 @@ description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel e
 lastmod: '2024-03-13T22:44:50.588002-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en zijn\
-  \ cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"
+  \ cruciaal in diverse velden zoals engineering, fysica en computergrafiek."
 title: Werken met complexe getallen
 weight: 14
 ---

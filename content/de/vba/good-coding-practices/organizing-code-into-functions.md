@@ -7,7 +7,8 @@ description: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu org
 lastmod: '2024-03-13T22:44:53.724259-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu organisieren,\
-  \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\u2026"
+  \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\
+  \ zu unterteilen."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

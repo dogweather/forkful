@@ -8,8 +8,7 @@ description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on oh
 lastmod: '2024-03-13T22:44:56.061882-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
-  \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\
-  \ -esimerkkiin. Se on\u2026"
+  \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

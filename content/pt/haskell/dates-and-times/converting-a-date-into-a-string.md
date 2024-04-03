@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.636572-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string significa transformar a representa\xE7\xE3\
   o de uma data, normalmente numa estrutura de dados espec\xEDfica, para um formato\
-  \ de\u2026"
+  \ de texto leg\xEDvel."
 title: Convertendo uma data em uma string
 weight: 28
 ---

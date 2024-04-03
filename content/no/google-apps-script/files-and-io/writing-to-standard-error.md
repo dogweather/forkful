@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.333843-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i programmeringsspr\xE5k handler om\
   \ \xE5 dirigere feilmeldinger og diagnostikk til en separat str\xF8m, bort fra standard\
-  \ utgang\u2026"
+  \ utgang (stdout)."
 title: Skrive til standardfeil
 weight: 25
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.853015-06:00'
 model: gpt-4-0125-preview
 summary: "No contexto da programa\xE7\xE3o Arduino, verificar se um diret\xF3rio existe\
   \ em um cart\xE3o SD ou m\xF3dulo de armazenamento similar permite que voc\xEA leia\
-  \ ou escreva\u2026"
+  \ ou escreva arquivos sem erros."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

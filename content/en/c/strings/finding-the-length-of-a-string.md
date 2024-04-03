@@ -4,8 +4,8 @@ description: "Finding the length of a string in C involves determining the numbe
   \ of characters before the null terminator `\\0`. Programmers do this to manipulate\u2026"
 lastmod: '2024-03-13T22:45:00.503541-06:00'
 model: gpt-4-0125-preview
-summary: "Finding the length of a string in C involves determining the number of characters\
-  \ before the null terminator `\\0`. Programmers do this to manipulate\u2026"
+summary: Finding the length of a string in C involves determining the number of characters
+  before the null terminator `\0`.
 title: Finding the length of a string
 weight: 7
 ---

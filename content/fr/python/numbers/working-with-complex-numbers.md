@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.228578-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes sont un ensemble de nombres de la forme `a + bi`,\
   \ o\xF9 `a` et `b` sont des nombres r\xE9els, et `i` est l'unit\xE9 imaginaire (`i^2\
-  \ = -1`).\u2026"
+  \ = -1`)."
 title: Manipulation des nombres complexes
 weight: 14
 ---

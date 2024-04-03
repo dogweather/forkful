@@ -5,7 +5,7 @@ description: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfachere
 lastmod: '2024-03-13T22:44:54.052393-06:00'
 model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren Wert\
-  \ zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"
+  \ zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist."
 title: Zahlen runden
 weight: 13
 ---

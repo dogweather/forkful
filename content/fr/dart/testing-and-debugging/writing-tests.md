@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.393954-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Dart consiste \xE0 cr\xE9er des cas de test pour\
   \ v\xE9rifier automatiquement que diff\xE9rentes parties de votre programme fonctionnent\
-  \ comme\u2026"
+  \ comme pr\xE9vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

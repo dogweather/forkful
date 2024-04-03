@@ -6,7 +6,7 @@ description: "Comparare due date significa verificare qual \xE8 la pi\xF9 recent
 lastmod: '2024-03-13T22:44:43.612077-06:00'
 model: gpt-4-1106-preview
 summary: "Comparare due date significa verificare qual \xE8 la pi\xF9 recente o calcolare\
-  \ la differenza temporale tra di esse. I programmatori lo fanno per gestire\u2026"
+  \ la differenza temporale tra di esse."
 title: Confronto tra due date
 weight: 27
 ---

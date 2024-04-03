@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.351681-06:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet \xE4r precis vad\
   \ det l\xE5ter som \u2013 att hitta ett specifikt datum f\xF6re eller efter en given\
-  \ tidpunkt.\u2026"
+  \ tidpunkt."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra ch\xFAng c\xF3 m\u1ED1\
   i quan h\u1EC7 nh\u01B0 th\u1EBF n\xE0o\u2014m\u1ED9t ng\xE0y c\xF3 s\u1EDBm h\u01A1\
   n, mu\u1ED9n h\u01A1n, hay ch\xEDnh x\xE1c c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3\
-  m v\u1EDBi ng\xE0y kia kh\xF4ng.\u2026"
+  m v\u1EDBi ng\xE0y kia kh\xF4ng."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

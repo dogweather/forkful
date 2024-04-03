@@ -7,7 +7,8 @@ description: "Um shell interativo (REPL - Read-Evaluate-Print Loop) para Dart pe
 lastmod: '2024-03-13T22:44:46.283398-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo (REPL - Read-Evaluate-Print Loop) para Dart permite\
-  \ que programadores digitem e executem c\xF3digo Dart linha por linha sem a necessidade\u2026"
+  \ que programadores digitem e executem c\xF3digo Dart linha por linha sem a necessidade\
+  \ de compilar scripts inteiros."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

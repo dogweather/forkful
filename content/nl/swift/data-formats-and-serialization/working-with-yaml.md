@@ -7,8 +7,9 @@ description: "YAML, een afkorting voor \"YAML Ain't Markup Language\", is een vo
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.178432-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, een afkorting voor \"YAML Ain't Markup Language\", is een voor mensen\
-  \ leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te\u2026"
+summary: YAML, een afkorting voor "YAML Ain't Markup Language", is een voor mensen
+  leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te configureren
+  of gegevensuitwisseling te doen.
 title: Werken met YAML
 weight: 41
 ---

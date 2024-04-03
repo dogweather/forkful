@@ -8,7 +8,9 @@ description: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\x
 lastmod: '2024-03-13T22:44:56.672149-06:00'
 model: gpt-4-0125-preview
 summary: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\xE4 tarkoittaa\
-  \ virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n\u2026"
+  \ virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n standarditulosteesta\
+  \ (stdout), mik\xE4 antaa kehitt\xE4jille paremmat mahdollisuudet hallita tulostevirtojaan\
+  \ debuggauksen ja lokitiedostojen kannalta."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

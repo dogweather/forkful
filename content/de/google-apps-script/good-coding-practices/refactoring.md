@@ -7,7 +7,8 @@ description: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des
 lastmod: '2024-03-13T22:44:53.343207-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens\
-  \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\u2026"
+  \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\
+  \ seines externen Verhaltens \u2013 um nicht-funktionale Attribute zu verbessern."
 title: Refactoring
 weight: 19
 ---

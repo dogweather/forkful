@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.233467-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus ohjelmistokehityksess\xE4 on tekniikka, jossa kirjataan muistiin\
   \ tapahtumia, jotka ilmenev\xE4t ohjelman suorituksen aikana, yleens\xE4 tiedostoon\
-  \ tai\u2026"
+  \ tai ulkoiseen j\xE4rjestelm\xE4\xE4n."
 title: Lokitus
 weight: 17
 ---

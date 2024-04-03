@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.470402-06:00'
 model: gpt-4-0125-preview
 summary: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3n\"\
   \ implica producir mensajes informativos detallados que ayudan a los desarrolladores\
-  \ a\u2026"
+  \ a comprender el flujo de ejecuci\xF3n de su programa o identificar problemas."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

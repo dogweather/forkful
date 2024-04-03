@@ -6,8 +6,9 @@ description: "HTML parsen in Go houdt in dat je de inhoud van HTML-bestanden ana
   \ om gegevens te extraheren, de structuur te manipuleren of HTML naar andere\u2026"
 lastmod: '2024-03-13T22:44:50.285122-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parsen in Go houdt in dat je de inhoud van HTML-bestanden analyseert\
-  \ om gegevens te extraheren, de structuur te manipuleren of HTML naar andere\u2026"
+summary: HTML parsen in Go houdt in dat je de inhoud van HTML-bestanden analyseert
+  om gegevens te extraheren, de structuur te manipuleren of HTML naar andere formaten
+  te converteren.
 title: HTML Parsen
 weight: 43
 ---

@@ -8,8 +8,7 @@ description: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5n
 lastmod: '2024-03-13T22:44:40.687742-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5ndtere\
-  \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere\
-  \ velger\u2026"
+  \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine."
 title: Arbeider med JSON
 weight: 38
 ---

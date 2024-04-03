@@ -6,8 +6,7 @@ description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to j\u0119zyk s
 lastmod: '2024-03-13T22:44:35.345429-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to j\u0119zyk serializacji\
-  \ danych. Programi\u015Bci Elm u\u017Cywaj\u0105 go do zarz\u0105dzania danymi konfiguracyjnymi,\
-  \ poniewa\u017C\u2026"
+  \ danych."
 title: Praca z TOML
 weight: 39
 ---

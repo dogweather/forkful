@@ -4,8 +4,8 @@ description: "La gestione degli errori consente al tuo script di affrontare l'in
   \ con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli\u2026"
 lastmod: '2024-03-13T22:44:43.866700-06:00'
 model: gpt-4-1106-preview
-summary: "La gestione degli errori consente al tuo script di affrontare l'inaspettato\
-  \ con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli\u2026"
+summary: La gestione degli errori consente al tuo script di affrontare l'inaspettato
+  con eleganza.
 title: Gestione degli errori
 weight: 16
 ---

@@ -6,7 +6,7 @@ description: "Utskrift for feils\xF8king viser programdata under kj\xF8ring, sli
 lastmod: '2024-03-13T22:44:40.404844-06:00'
 model: gpt-4-1106-preview
 summary: "Utskrift for feils\xF8king viser programdata under kj\xF8ring, slik at programmerere\
-  \ raskt kan spore problemer. Vi bruker det fordi det er enkelt, og det gir\u2026"
+  \ raskt kan spore problemer."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

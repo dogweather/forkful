@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.892831-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Visual Basic\
   \ para Aplicaciones (VBA) se trata de acceder a recursos web que est\xE1n protegidos\
-  \ por\u2026"
+  \ por credenciales de nombre de usuario y contrase\xF1a."
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

@@ -6,8 +6,9 @@ description: "Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (
   \ Ain't Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard,\u2026"
 lastmod: '2024-03-13T22:44:53.310092-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (YAML Ain't\
-  \ Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard,\u2026"
+summary: Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (YAML Ain't
+  Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard, in Go-Datenstrukturen
+  und umgekehrt.
 title: Arbeiten mit YAML
 weight: 41
 ---

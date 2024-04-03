@@ -5,7 +5,7 @@ description: "Ler argumentos de linha de comando significa pegar dados que o usu
 lastmod: '2024-03-13T22:44:46.169608-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando significa pegar dados que o usu\xE1rio\
-  \ passa diretamente ao seu script Python quando o executa. Fazemos isso para tornar\u2026"
+  \ passa diretamente ao seu script Python quando o executa."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

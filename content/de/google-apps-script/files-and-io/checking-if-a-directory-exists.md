@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.349795-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Google Apps Script existiert,\
   \ beinhaltet die Verifizierung der Pr\xE4senz eines Ordners innerhalb von Google\
-  \ Drive.\u2026"
+  \ Drive."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

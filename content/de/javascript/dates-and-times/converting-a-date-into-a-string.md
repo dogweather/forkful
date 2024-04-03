@@ -4,8 +4,8 @@ description: "Datum in String umwandeln bedeutet, ein `Date`-Objekt in eine lesb
   \ Zeichenkette zu verwandeln. Programmierer machen das, um Daten benutzerfreundlich\u2026"
 lastmod: '2024-03-13T22:44:54.277506-06:00'
 model: gpt-4-1106-preview
-summary: "Datum in String umwandeln bedeutet, ein `Date`-Objekt in eine lesbare Zeichenkette\
-  \ zu verwandeln. Programmierer machen das, um Daten benutzerfreundlich\u2026"
+summary: Datum in String umwandeln bedeutet, ein `Date`-Objekt in eine lesbare Zeichenkette
+  zu verwandeln.
 title: Datum in einen String umwandeln
 weight: 28
 ---

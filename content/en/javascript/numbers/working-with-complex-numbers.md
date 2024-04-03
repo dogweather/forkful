@@ -4,8 +4,7 @@ description: "Complex numbers are numbers with a real and an imaginary part (lik
   \ 3 + 4i). They crop up in various programming problems, especially in signal\u2026"
 lastmod: '2024-03-13T22:45:00.427908-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers are numbers with a real and an imaginary part (like 3 +\
-  \ 4i). They crop up in various programming problems, especially in signal\u2026"
+summary: Complex numbers are numbers with a real and an imaginary part (like 3 + 4i).
 title: Working with complex numbers
 weight: 14
 ---

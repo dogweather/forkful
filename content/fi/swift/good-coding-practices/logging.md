@@ -6,7 +6,8 @@ description: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\
 lastmod: '2024-03-13T22:44:56.913148-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4 tietoja\
-  \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\u2026"
+  \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\
+  \ tietokantaan."
 title: Lokitus
 weight: 17
 ---

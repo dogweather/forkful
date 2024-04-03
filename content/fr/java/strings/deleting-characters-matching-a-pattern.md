@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.618032-06:00'
 model: gpt-4-1106-preview
 summary: "En Java, supprimer des caract\xE8res correspondant \xE0 un motif, c'est\
   \ retirer de fa\xE7on s\xE9lective certains caract\xE8res d'une cha\xEEne en se\
-  \ basant sur des r\xE8gles\u2026"
+  \ basant sur des r\xE8gles d\xE9finies (le motif)."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

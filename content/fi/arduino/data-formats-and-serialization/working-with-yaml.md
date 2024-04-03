@@ -8,7 +8,8 @@ description: "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva dat
 lastmod: '2024-03-13T22:44:56.843562-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva datan serialisointistandardi,\
-  \ jota voidaan k\xE4ytt\xE4\xE4 m\xE4\xE4ritystiedostoissa, ohjelmien\u2026"
+  \ jota voidaan k\xE4ytt\xE4\xE4 m\xE4\xE4ritystiedostoissa, ohjelmien v\xE4lisess\xE4\
+  \ viestinn\xE4ss\xE4 ja datan tallennuksessa."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

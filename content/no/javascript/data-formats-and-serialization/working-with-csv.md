@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.205636-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (kommaseparerte verdier) i JavaScript inneb\xE6rer parsing\
   \ eller generering av CSV-filer for enten \xE5 ta inn tabul\xE6re data fra eksterne\
-  \ kilder\u2026"
+  \ kilder eller eksportere data for bruk i andre programmer."
 title: Arbeide med CSV
 weight: 37
 ---

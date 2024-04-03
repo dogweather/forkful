@@ -6,7 +6,7 @@ description: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4
 lastmod: '2024-03-13T22:44:53.893597-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4lter zu\
-  \ sortieren \u2013 es macht das Finden und Verwenden einfacher. Wir tun dies, um\u2026"
+  \ sortieren \u2013 es macht das Finden und Verwenden einfacher."
 title: Code in Funktionen organisieren
 weight: 18
 ---

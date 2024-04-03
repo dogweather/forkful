@@ -8,7 +8,7 @@ description: "Verificar se um diret\xF3rio existe em C envolve consultar o siste
 lastmod: '2024-03-13T22:44:47.065681-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em C envolve consultar o sistema de\
-  \ arquivos para verificar se um caminho espec\xEDfico leva a um diret\xF3rio. Os\u2026"
+  \ arquivos para verificar se um caminho espec\xEDfico leva a um diret\xF3rio."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

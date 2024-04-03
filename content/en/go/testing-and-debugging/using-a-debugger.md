@@ -5,8 +5,7 @@ description: "Go provides a built-in facility for debugging called `delve`. It i
   \ step,\u2026"
 lastmod: '2024-03-13T22:44:59.635155-06:00'
 model: gpt-4-0125-preview
-summary: "Go provides a built-in facility for debugging called `delve`. It is a full-featured\
-  \ debugging tool that allows you to execute Go programs step by step,\u2026"
+summary: Go provides a built-in facility for debugging called `delve`.
 title: Using a debugger
 weight: 35
 ---

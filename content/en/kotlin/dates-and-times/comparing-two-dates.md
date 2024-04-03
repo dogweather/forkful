@@ -5,8 +5,8 @@ description: "Comparing two dates means checking whether one comes before or aft
   \ like\u2026"
 lastmod: '2024-03-13T22:45:00.060319-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates means checking whether one comes before or after the\
-  \ other, or if they're the same moment in time. Programmers do this for tasks like\u2026"
+summary: Comparing two dates means checking whether one comes before or after the
+  other, or if they're the same moment in time.
 title: Comparing two dates
 weight: 27
 ---

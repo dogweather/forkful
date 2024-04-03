@@ -6,8 +6,7 @@ description: "Wysy\u0142amy zapytanie HTTP z podstawowym uwierzytelnieniem, by u
 lastmod: '2024-03-13T22:44:35.138630-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142amy zapytanie HTTP z podstawowym uwierzytelnieniem, by uzyska\u0107\
-  \ dost\u0119p do zasob\xF3w wymagaj\u0105cych prostej autoryzacji. Programi\u015B\
-  ci robi\u0105 to, aby\u2026"
+  \ dost\u0119p do zasob\xF3w wymagaj\u0105cych prostej autoryzacji."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

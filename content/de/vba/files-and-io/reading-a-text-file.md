@@ -7,7 +7,8 @@ description: "Das Lesen einer Textdatei in Visual Basic f\xFCr Anwendungen (VBA)
 lastmod: '2024-03-13T22:44:53.737735-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
-  \ den programmatischen Zugriff auf und das Extrahieren des Inhalts einer\u2026"
+  \ den programmatischen Zugriff auf und das Extrahieren des Inhalts einer Textdatei\
+  \ innerhalb einer Office-Anwendung."
 title: Eine Textdatei lesen
 weight: 22
 ---

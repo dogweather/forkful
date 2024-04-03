@@ -6,8 +6,9 @@ description: "Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Cod
   \ die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren\u2026"
 lastmod: '2024-03-13T22:44:53.849889-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Code-Snippets,\
-  \ die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren\u2026"
+summary: Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Code-Snippets,
+  die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren und
+  sicherstellen, dass sie wie erwartet funktionieren.
 title: Tests Schreiben
 weight: 36
 ---

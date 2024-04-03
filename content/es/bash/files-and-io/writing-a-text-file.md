@@ -7,7 +7,7 @@ description: "Escribir un archivo de texto en Bash te permite automatizar el alm
 lastmod: '2024-03-13T22:44:59.265637-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Bash te permite automatizar el almacenamiento\
-  \ de datos, el registro, la configuraci\xF3n de ajustes, y m\xE1s. Es una habilidad\u2026"
+  \ de datos, el registro, la configuraci\xF3n de ajustes, y m\xE1s."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

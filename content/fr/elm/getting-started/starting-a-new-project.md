@@ -6,7 +6,7 @@ description: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9p
 lastmod: '2024-03-13T22:44:57.689903-06:00'
 model: gpt-4-1106-preview
 summary: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9part propre\
-  \ pour coder une appli web fonctionnelle et r\xE9active. On fait \xE7a pour structurer\u2026"
+  \ pour coder une appli web fonctionnelle et r\xE9active."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.720462-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
   \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\
-  \ chose\u2026"
+  \ chose de nouveau."
 title: Recherche et remplacement de texte
 weight: 10
 ---

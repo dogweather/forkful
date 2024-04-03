@@ -4,8 +4,8 @@ description: "Organizing code into functions in Visual Basic for Applications (V
   \ involves breaking down a program into smaller, manageable pieces known as functions.\u2026"
 lastmod: '2024-03-13T22:44:59.939314-06:00'
 model: gpt-4-0125-preview
-summary: "Organizing code into functions in Visual Basic for Applications (VBA) involves\
-  \ breaking down a program into smaller, manageable pieces known as functions.\u2026"
+summary: Organizing code into functions in Visual Basic for Applications (VBA) involves
+  breaking down a program into smaller, manageable pieces known as functions.
 title: Organizing code into functions
 weight: 18
 ---

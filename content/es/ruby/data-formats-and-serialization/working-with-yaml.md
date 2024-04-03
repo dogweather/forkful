@@ -7,7 +7,8 @@ description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No Es Un 
 lastmod: '2024-03-13T22:44:59.611276-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No Es Un Lenguaje\
-  \ de Marcado), es ampliamente usado en Ruby para archivos de configuraci\xF3n y\u2026"
+  \ de Marcado), es ampliamente usado en Ruby para archivos de configuraci\xF3n y\
+  \ serializaci\xF3n de datos debido a su formato legible por humanos."
 title: Trabajando con YAML
 weight: 41
 ---

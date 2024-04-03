@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.366305-06:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet in der\
   \ Regel, \xFCberfl\xFCssige doppelte (\") oder einfache (') Anf\xFChrungszeichen\
-  \ wegzunehmen.\u2026"
+  \ wegzunehmen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

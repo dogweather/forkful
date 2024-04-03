@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Bash kh\xF4ng c\xF3 tr\xECnh g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p s\u1EB5n\
   \ gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng b\u1EA1\
   n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7nh t\xEDch h\u1EE3p nh\u01B0 `set\
-  \ -x` \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang\u2026"
+  \ -x` \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang x\u1EA3y ra."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

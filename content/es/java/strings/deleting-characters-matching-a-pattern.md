@@ -5,7 +5,8 @@ description: "Eliminar caracteres que coinciden con un patr\xF3n nos permite lim
 lastmod: '2024-03-13T22:44:58.922301-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n nos permite limpiar y\
-  \ manipular strings seg\xFAn nuestras necesidades, como quitar espacios o caracteres\u2026"
+  \ manipular strings seg\xFAn nuestras necesidades, como quitar espacios o caracteres\
+  \ especiales."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

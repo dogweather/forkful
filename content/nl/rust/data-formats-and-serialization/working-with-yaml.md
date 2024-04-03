@@ -6,8 +6,8 @@ description: "Werken met YAML betekent omgaan met gegevens in het \"YAML Ain't M
   \ Language\" formaat - een mensvriendelijke standaard voor gegevensserialisatie.\u2026"
 lastmod: '2024-03-13T22:44:50.614552-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met YAML betekent omgaan met gegevens in het \"YAML Ain't Markup\
-  \ Language\" formaat - een mensvriendelijke standaard voor gegevensserialisatie.\u2026"
+summary: Werken met YAML betekent omgaan met gegevens in het "YAML Ain't Markup Language"
+  formaat - een mensvriendelijke standaard voor gegevensserialisatie.
 title: Werken met YAML
 weight: 41
 ---

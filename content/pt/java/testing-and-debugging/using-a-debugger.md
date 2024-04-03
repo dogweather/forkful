@@ -6,8 +6,7 @@ description: "Digamos que voc\xEA tenha um simples programa Java que est\xE1 cau
 lastmod: '2024-03-13T22:44:46.460584-06:00'
 model: gpt-4-0125-preview
 summary: "Digamos que voc\xEA tenha um simples programa Java que est\xE1 causando\
-  \ problemas, e voc\xEA n\xE3o consegue descobrir o porqu\xEA. Aqui est\xE1 como\
-  \ voc\xEA iniciaria um\u2026"
+  \ problemas, e voc\xEA n\xE3o consegue descobrir o porqu\xEA."
 title: Usando um depurador
 weight: 35
 ---

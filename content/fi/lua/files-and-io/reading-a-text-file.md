@@ -4,8 +4,7 @@ description: "Lukemalla tekstitiedostoa koodissasi k\xE4sittelet tiedon virtoja.
   \ lukevat tiedostoja automatisoidakseen datan k\xE4sittely\xE4 \u2013 hae, muokkaa,\u2026"
 lastmod: '2024-03-13T22:44:56.713935-06:00'
 model: gpt-4-1106-preview
-summary: "Lukemalla tekstitiedostoa koodissasi k\xE4sittelet tiedon virtoja. Ohjelmoijat\
-  \ lukevat tiedostoja automatisoidakseen datan k\xE4sittely\xE4 \u2013 hae, muokkaa,\u2026"
+summary: "Lukemalla tekstitiedostoa koodissasi k\xE4sittelet tiedon virtoja."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

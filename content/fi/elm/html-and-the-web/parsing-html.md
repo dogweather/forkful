@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poim
 lastmod: '2024-03-13T22:44:56.486389-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
-  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\
-  \xE4 web-sis\xE4lt\xF6\xE4 tai\u2026"
+  \ HTML-dokumenteista."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

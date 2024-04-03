@@ -6,7 +6,9 @@ description: "La journalisation est en gros l'\xE9quivalent de tenir un journal 
 lastmod: '2024-03-13T22:44:57.885602-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour votre\
-  \ code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\u2026"
+  \ code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\
+  \ points de donn\xE9es significatifs qui se produisent lorsque votre application\
+  \ fonctionne."
 title: Journalisation
 weight: 17
 ---

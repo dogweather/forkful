@@ -8,7 +8,7 @@ description: "Assoziative Arrays in PHP sind wie aufgeladene Listen, bei denen j
 lastmod: '2024-03-13T22:44:53.965515-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays in PHP sind wie aufgeladene Listen, bei denen jedes Element\
-  \ mit einem lesbaren Schl\xFCssel statt nur mit Nummern zugegriffen werden kann.\u2026"
+  \ mit einem lesbaren Schl\xFCssel statt nur mit Nummern zugegriffen werden kann."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

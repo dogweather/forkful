@@ -6,8 +6,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa kood
 lastmod: '2024-03-13T22:44:56.620474-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa koodin pilkkomista\
-  \ uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin. Miksi? Se pit\xE4\xE4 koodisi\
-  \ DRY:n\xE4\u2026"
+  \ uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

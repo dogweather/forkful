@@ -4,8 +4,7 @@ description: "Reading text files means grabbing text data from a .txt (or simila
   \ file. Programmers read files to use data like configuration settings, import user\u2026"
 lastmod: '2024-03-13T22:44:50.023321-06:00'
 model: gpt-4-1106-preview
-summary: "Reading text files means grabbing text data from a .txt (or similar) file.\
-  \ Programmers read files to use data like configuration settings, import user\u2026"
+summary: Reading text files means grabbing text data from a .
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 weight: 22

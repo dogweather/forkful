@@ -5,7 +5,7 @@ description: "Buscar y reemplazar texto es una operaci\xF3n com\xFAn que interca
 lastmod: '2024-03-13T22:44:59.063731-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es una operaci\xF3n com\xFAn que intercambia un\
-  \ fragmento de texto por otro. Los programadores lo hacen para corregir errores,\u2026"
+  \ fragmento de texto por otro."
 title: Buscando y reemplazando texto
 weight: 10
 ---

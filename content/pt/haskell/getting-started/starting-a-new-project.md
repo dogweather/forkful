@@ -6,8 +6,7 @@ description: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura ba
 lastmod: '2024-03-13T22:44:46.625989-06:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura base de\
-  \ um programa, definindo seus m\xF3dulos e depend\xEAncias. Programadores fazem\
-  \ isso para\u2026"
+  \ um programa, definindo seus m\xF3dulos e depend\xEAncias."
 title: Iniciando um novo projeto
 weight: 1
 ---

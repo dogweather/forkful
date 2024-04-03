@@ -6,7 +6,7 @@ description: "Rechercher et remplacer du texte, c'est modifier automatiquement u
 lastmod: '2024-03-13T22:44:58.090909-06:00'
 model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est modifier automatiquement une cha\xEE\
-  ne de caract\xE8res par une autre. Les programmeurs utilisent cette technique pour\u2026"
+  ne de caract\xE8res par une autre."
 title: Recherche et remplacement de texte
 weight: 10
 ---

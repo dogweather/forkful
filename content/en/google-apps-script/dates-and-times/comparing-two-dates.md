@@ -4,8 +4,9 @@ description: "Comparing two dates in Google Apps Script, a derivative of JavaScr
   \ tailored for Google's suite of apps, is an essential task for developers dealing\u2026"
 lastmod: '2024-03-13T22:44:59.681013-06:00'
 model: gpt-4-0125-preview
-summary: "Comparing two dates in Google Apps Script, a derivative of JavaScript tailored\
-  \ for Google's suite of apps, is an essential task for developers dealing\u2026"
+summary: Comparing two dates in Google Apps Script, a derivative of JavaScript tailored
+  for Google's suite of apps, is an essential task for developers dealing with scheduling,
+  timelines, or any date-related data.
 title: Comparing two dates
 weight: 27
 ---

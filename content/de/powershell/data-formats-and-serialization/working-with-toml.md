@@ -5,7 +5,7 @@ description: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein 
 lastmod: '2024-03-13T22:44:54.126899-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Daten-Serialisierungsformat,\
-  \ das leicht zu lesen ist aufgrund seiner klaren Semantik.\u2026"
+  \ das leicht zu lesen ist aufgrund seiner klaren Semantik."
 title: Arbeiten mit TOML
 weight: 39
 ---

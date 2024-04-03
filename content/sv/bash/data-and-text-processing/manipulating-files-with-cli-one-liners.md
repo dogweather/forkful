@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:38.077354-06:00'
 model: gpt-4-0125-preview
 summary: "Att manipulera filer med CLI (kommandoradsgr\xE4nssnitt) one-liners inneb\xE4\
   r att anv\xE4nda Bash-skript eller kommandon f\xF6r att utf\xF6ra \xE5tg\xE4rder\
-  \ p\xE5 filer, som att\u2026"
+  \ p\xE5 filer, som att skapa, l\xE4sa, uppdatera eller radera dem, allt fr\xE5n\
+  \ terminalen."
 title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---

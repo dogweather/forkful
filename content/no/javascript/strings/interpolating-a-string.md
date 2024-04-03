@@ -5,7 +5,7 @@ description: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bit
 lastmod: '2024-03-13T22:44:41.170315-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bitene av\
-  \ tekst og variabler til en helhetlig streng. Vi gj\xF8r det for \xE5 lage dynamiske\u2026"
+  \ tekst og variabler til en helhetlig streng."
 title: Interpolering av en streng
 weight: 8
 ---

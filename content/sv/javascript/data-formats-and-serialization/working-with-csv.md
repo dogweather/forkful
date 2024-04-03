@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.315716-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values, komma-separerade v\xE4rden)\
   \ i JavaScript inneb\xE4r att tolka eller generera CSV-filer f\xF6r att antingen\
-  \ importera\u2026"
+  \ importera tabelldata fr\xE5n externa k\xE4llor eller exportera data f\xF6r anv\xE4\
+  ndning i andra program."
 title: Arbeta med CSV
 weight: 37
 ---

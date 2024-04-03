@@ -7,8 +7,7 @@ description: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i streng
   \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
 lastmod: '2024-03-13T22:44:40.347029-06:00'
 model: gpt-4-0125-preview
-summary: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
-  \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
+summary: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler."
 title: Interpolering av en streng
 weight: 8
 ---

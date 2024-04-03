@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.826135-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con CSV (Valores Separados por Comas) implica la lectura y escritura\
   \ de archivos CSV, un formato com\xFAn de intercambio de datos utilizado debido\
-  \ a\u2026"
+  \ a su simplicidad y amplio soporte a trav\xE9s de diversas plataformas e idiomas."
 title: Trabajando con CSV
 weight: 37
 ---

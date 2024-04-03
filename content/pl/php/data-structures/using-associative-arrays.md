@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.490048-06:00'
 model: gpt-4-0125-preview
 summary: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
   ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
-  \ zrozumia\u0142ego dla cz\u0142owieka zamiast\u2026"
+  \ zrozumia\u0142ego dla cz\u0142owieka zamiast tylko numer\xF3w."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

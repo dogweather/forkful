@@ -6,7 +6,7 @@ description: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w
 lastmod: '2024-03-13T22:44:53.848996-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w\xE4hrend\
-  \ der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller zu\u2026"
+  \ der Laufzeit zu beobachten."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

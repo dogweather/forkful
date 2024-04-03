@@ -6,8 +6,9 @@ description: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-ap
   \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
 lastmod: '2024-03-13T22:44:50.284162-06:00'
 model: gpt-4-0125-preview
-summary: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
-  \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
+summary: Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie
+  een oproep wordt gedaan naar een webserver, API of een andere op HTTP-gebaseerde
+  dienst.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

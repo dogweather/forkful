@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:47.020101-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts tomem\
   \ decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
-  rios,\u2026"
+  rios, possibilitando tarefas como opera\xE7\xF5es condicionais de arquivos, registro\
+  \ em logs ou configura\xE7\xE3o do ambiente."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

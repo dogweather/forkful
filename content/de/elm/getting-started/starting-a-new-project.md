@@ -5,8 +5,7 @@ description: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues z
   sen oder\u2026"
 lastmod: '2024-03-13T22:44:53.805798-06:00'
 model: gpt-4-1106-preview
-summary: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen.\
-  \ Programmierer machen das, um Ideen zu verwirklichen, Probleme zu l\xF6sen oder\u2026"
+summary: Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen.
 title: Einen neuen Projekt starten
 weight: 1
 ---

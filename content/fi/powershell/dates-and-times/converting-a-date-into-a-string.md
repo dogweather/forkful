@@ -5,9 +5,7 @@ description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi. Se puree tiedo
   minen tietyss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.793965-06:00'
 model: gpt-4-1106-preview
-summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi. Se puree tiedot ihmisen\
-  \ luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esitt\xE4minen\
-  \ tietyss\xE4\u2026"
+summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

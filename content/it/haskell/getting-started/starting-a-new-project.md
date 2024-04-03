@@ -4,8 +4,8 @@ description: "Iniziare un nuovo progetto in Haskell significa digitare alcuni co
   \ per creare una struttura di base. I programmatori lo fanno per avere un ambiente\u2026"
 lastmod: '2024-03-13T22:44:43.475686-06:00'
 model: gpt-4-1106-preview
-summary: "Iniziare un nuovo progetto in Haskell significa digitare alcuni comandi\
-  \ per creare una struttura di base. I programmatori lo fanno per avere un ambiente\u2026"
+summary: Iniziare un nuovo progetto in Haskell significa digitare alcuni comandi per
+  creare una struttura di base.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

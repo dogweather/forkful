@@ -7,7 +7,7 @@ description: "Los arreglos asociativos, o lo que los Rust\xE1ceos llaman \"mapas
 lastmod: '2024-03-13T22:44:58.839491-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o lo que los Rust\xE1ceos llaman \"mapas hash\"\
-  , son colecciones que almacenan datos en pares clave-valor. Los programadores los\u2026"
+  , son colecciones que almacenan datos en pares clave-valor."
 title: Uso de matrices asociativas
 weight: 15
 ---

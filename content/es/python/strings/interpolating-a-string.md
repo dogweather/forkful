@@ -8,7 +8,7 @@ description: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expres
 lastmod: '2024-03-13T22:44:58.596503-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
-  \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
+  \ dentro de literales de cadena."
 title: Interpolando una cadena de caracteres
 weight: 8
 ---

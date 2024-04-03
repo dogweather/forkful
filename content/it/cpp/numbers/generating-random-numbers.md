@@ -4,8 +4,8 @@ description: "La generazione di numeri casuali nella programmazione comporta la 
   \ di sequenze di numeri che non presentano un ordine o un modello prevedibile. I\u2026"
 lastmod: '2024-03-13T22:44:43.722532-06:00'
 model: gpt-4-0125-preview
-summary: "La generazione di numeri casuali nella programmazione comporta la creazione\
-  \ di sequenze di numeri che non presentano un ordine o un modello prevedibile. I\u2026"
+summary: La generazione di numeri casuali nella programmazione comporta la creazione
+  di sequenze di numeri che non presentano un ordine o un modello prevedibile.
 title: Generazione di numeri casuali
 weight: 12
 ---

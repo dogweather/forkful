@@ -6,8 +6,8 @@ description: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te kr
   \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
 lastmod: '2024-03-13T22:44:50.809703-06:00'
 model: gpt-4-0125-preview
-summary: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
-  \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
+summary: We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen tot
+  beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

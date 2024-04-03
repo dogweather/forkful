@@ -8,7 +8,7 @@ description: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konverter
 lastmod: '2024-03-13T22:44:40.497646-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering av\
-  \ tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne operasjonen\u2026"
+  \ tekstlig representasjon av datoer og tider til et `DateTime`-objekt."
 title: Analyserer en dato fra en streng
 weight: 30
 ---

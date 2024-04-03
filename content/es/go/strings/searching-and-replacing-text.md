@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.450399-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en programaci\xF3n facilita la modificaci\xF3\
   n y gesti\xF3n de cadenas, que es una tarea fundamental en la manipulaci\xF3n de\
-  \ datos y el\u2026"
+  \ datos y el desarrollo de software."
 title: Buscando y reemplazando texto
 weight: 10
 ---

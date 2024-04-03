@@ -4,8 +4,8 @@ description: "Checking if a directory exists in the filesystem is essential for 
   \ file structures from within your Swift applications. This task enables\u2026"
 lastmod: '2024-03-13T22:45:00.408998-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in the filesystem is essential for managing\
-  \ file structures from within your Swift applications. This task enables\u2026"
+summary: Checking if a directory exists in the filesystem is essential for managing
+  file structures from within your Swift applications.
 title: Checking if a directory exists
 weight: 20
 ---

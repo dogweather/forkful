@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.768689-06:00'
 model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop -\
   \ V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n vi\u1EBF\
-  t v\xE0 ch\u1EA1y m\xE3 PHP ngay l\u1EADp t\u1EE9c. N\xF3 l\xFD t\u01B0\u1EDFng\
-  \ cho vi\u1EC7c th\u1EED\u2026"
+  t v\xE0 ch\u1EA1y m\xE3 PHP ngay l\u1EADp t\u1EE9c."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

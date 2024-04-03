@@ -6,8 +6,8 @@ description: "Aqu\xED tienes un peque\xF1o adelanto de c\xF3mo depurar en Kotlin
 lastmod: '2024-03-13T22:44:59.040422-06:00'
 model: gpt-4-0125-preview
 summary: "Aqu\xED tienes un peque\xF1o adelanto de c\xF3mo depurar en Kotlin con IntelliJ\
-  \ IDEA - el Sherlock Holmes de los IDEs: ```kotlin fun main() { val mysteryNumber\
-  \ =\u2026"
+  \ IDEA - el Sherlock Holmes de los IDEs:\n\n```kotlin\nfun main() {\n    val mysteryNumber\
+  \ = 42\n    var guess = 0\n\n    while (guess ."
 title: Usando un depurador
 weight: 35
 ---

@@ -6,8 +6,7 @@ description: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wiel
 lastmod: '2024-03-13T22:44:35.190698-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
-  \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119. Robimy\
-  \ to, aby nasz kod\u2026"
+  \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

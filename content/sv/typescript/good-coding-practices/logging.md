@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.662453-06:00'
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan viktig\
   \ information under ett programs utf\xF6rande till ett externt medium, ofta filer\
-  \ eller\u2026"
+  \ eller databaser."
 title: Loggning
 weight: 17
 ---

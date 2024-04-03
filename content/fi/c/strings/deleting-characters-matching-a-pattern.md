@@ -7,7 +7,8 @@ description: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C
 lastmod: '2024-03-13T22:44:57.021818-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C-kieless\xE4\
-  \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\u2026"
+  \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\
+  \ merkkien poistamista."
 title: Merkkien poistaminen vastaavan mallin mukaan
 weight: 5
 ---

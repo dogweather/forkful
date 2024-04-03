@@ -6,8 +6,7 @@ description: "Lukeminen tarkoittaa tiedoston datan siirt\xE4mist\xE4 ohjelmasi k
 lastmod: '2024-03-13T22:44:56.160949-06:00'
 model: gpt-4-1106-preview
 summary: "Lukeminen tarkoittaa tiedoston datan siirt\xE4mist\xE4 ohjelmasi k\xE4ytt\xF6\
-  \xF6n. Ohjelmoijat lukevat tekstitiedostoja, koska niist\xE4 saa t\xE4rke\xE4\xE4\
-  \ tietoa \u2013 asetukset,\u2026"
+  \xF6n."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

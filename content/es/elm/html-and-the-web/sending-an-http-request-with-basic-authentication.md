@@ -6,8 +6,7 @@ description: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica signifi
 lastmod: '2024-03-13T22:44:58.984761-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica significa incluir\
-  \ credenciales de usuario para acceder a recursos protegidos. Los programadores\
-  \ lo hacen\u2026"
+  \ credenciales de usuario para acceder a recursos protegidos."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

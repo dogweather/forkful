@@ -4,8 +4,9 @@ description: "Working with JSON in Lua involves parsing JSON-formatted strings i
   \ Lua tables and vice versa, enabling easy data interchange between Lua applications\u2026"
 lastmod: '2024-03-13T22:45:00.224622-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON in Lua involves parsing JSON-formatted strings into Lua\
-  \ tables and vice versa, enabling easy data interchange between Lua applications\u2026"
+summary: Working with JSON in Lua involves parsing JSON-formatted strings into Lua
+  tables and vice versa, enabling easy data interchange between Lua applications and
+  web services or external APIs.
 title: Working with JSON
 weight: 38
 ---

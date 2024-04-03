@@ -4,8 +4,8 @@ description: "Invio di una richiesta HTTP con autenticazione di base permette di
   \ a risorse protette online. I programmatori lo utilizzano per interagire con\u2026"
 lastmod: '2024-03-13T22:44:43.516402-06:00'
 model: gpt-4-1106-preview
-summary: "Invio di una richiesta HTTP con autenticazione di base permette di accedere\
-  \ a risorse protette online. I programmatori lo utilizzano per interagire con\u2026"
+summary: Invio di una richiesta HTTP con autenticazione di base permette di accedere
+  a risorse protette online.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

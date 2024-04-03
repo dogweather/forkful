@@ -4,8 +4,8 @@ description: "Elixir wird mit einem integrierten grafischen Debugger namens `:de
   \ geliefert. Um ihn zu nutzen, m\xFCssen Sie ihn starten und sich an Ihren laufenden\u2026"
 lastmod: '2024-03-13T22:44:53.538222-06:00'
 model: gpt-4-0125-preview
-summary: "Elixir wird mit einem integrierten grafischen Debugger namens `:debugger`\
-  \ geliefert. Um ihn zu nutzen, m\xFCssen Sie ihn starten und sich an Ihren laufenden\u2026"
+summary: Elixir wird mit einem integrierten grafischen Debugger namens `:debugger`
+  geliefert.
 title: Einsatz eines Debuggers
 weight: 35
 ---

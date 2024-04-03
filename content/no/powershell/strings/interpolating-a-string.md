@@ -6,7 +6,7 @@ description: "Interpolering av strenger er rett og slett \xE5 putte variabler el
 lastmod: '2024-03-13T22:44:41.002765-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger er rett og slett \xE5 putte variabler eller uttrykk\
-  \ inni en tekststreng. Programmerere bruker det for \xE5 bygge dynamiske meldinger\u2026"
+  \ inni en tekststreng."
 title: Interpolering av en streng
 weight: 8
 ---

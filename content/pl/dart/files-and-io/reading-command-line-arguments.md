@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:35.109013-06:00'
 model: gpt-4-0125-preview
 summary: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia programistom\
   \ bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania programu\
-  \ Dart,\u2026"
+  \ Dart, zwi\u0119kszaj\u0105c jego interaktywno\u015B\u0107 i elastyczno\u015B\u0107\
+  \ dla r\xF3\u017Cnych przypadk\xF3w u\u017Cycia, w tym skrypt\xF3w automatyzuj\u0105\
+  cych, narz\u0119dzi CLI lub przetwarzania wsadowego."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

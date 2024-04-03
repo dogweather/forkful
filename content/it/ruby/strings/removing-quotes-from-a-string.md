@@ -4,8 +4,8 @@ description: "Rimuovere le virgolette da una stringa significa togliere quei seg
   \ di virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori\u2026"
 lastmod: '2024-03-13T22:44:44.037750-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa significa togliere quei segni di\
-  \ virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori\u2026"
+summary: Rimuovere le virgolette da una stringa significa togliere quei segni di virgolette
+  doppie o singole che circondano i valori di testo.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

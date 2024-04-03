@@ -8,7 +8,7 @@ description: "Parsear HTML en Visual Basic for Applications (VBA) implica extrae
 lastmod: '2024-03-13T22:44:58.890572-06:00'
 model: gpt-4-0125-preview
 summary: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer informaci\xF3\
-  n espec\xEDfica de un documento HTML. Los programadores lo hacen para\u2026"
+  n espec\xEDfica de un documento HTML."
 title: Analizando HTML
 weight: 43
 ---

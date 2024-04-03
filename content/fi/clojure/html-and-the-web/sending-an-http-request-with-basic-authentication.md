@@ -6,8 +6,7 @@ description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla tarkoitta
 lastmod: '2024-03-13T22:44:56.184283-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla tarkoittaa verkkoresurssin\
-  \ pyyt\xE4mist\xE4 k\xE4ytt\xE4en k\xE4ytt\xE4j\xE4nime\xE4 ja salasanaa. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n\u2026"
+  \ pyyt\xE4mist\xE4 k\xE4ytt\xE4en k\xE4ytt\xE4j\xE4nime\xE4 ja salasanaa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

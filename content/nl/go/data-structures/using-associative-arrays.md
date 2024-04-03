@@ -6,8 +6,8 @@ description: "Associatieve arrays, bekend als maps in Go, stellen je in staat om
   \ op te slaan waarbij elke unieke sleutel naar een waarde wijst.\u2026"
 lastmod: '2024-03-13T22:44:50.280017-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, bekend als maps in Go, stellen je in staat om sleutel-waardeparen\
-  \ op te slaan waarbij elke unieke sleutel naar een waarde wijst.\u2026"
+summary: Associatieve arrays, bekend als maps in Go, stellen je in staat om sleutel-waardeparen
+  op te slaan waarbij elke unieke sleutel naar een waarde wijst.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.258012-06:00'
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Visual Basic for Applications (VBA) consente\
   \ ai programmi di simulare processi con elementi di casualit\xE0 o variabilit\xE0\
-  , come il\u2026"
+  , come il lancio di dadi o il campionamento dei dati."
 title: Generare numeri casuali
 weight: 12
 ---

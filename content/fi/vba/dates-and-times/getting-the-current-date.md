@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.412094-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications (VBA) -ohjelmoinnissa nykyisen p\xE4iv\xE4\
   m\xE4\xE4r\xE4n noutaminen on yleinen teht\xE4v\xE4, joka mahdollistaa ohjelmoijien\
-  \ dynaamisen\u2026"
+  \ dynaamisen ty\xF6skentelyn p\xE4iv\xE4m\xE4\xE4rien kanssa makroissaan tai sovelluksissaan."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

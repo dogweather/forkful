@@ -5,7 +5,8 @@ description: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux-
 lastmod: '2024-03-13T22:44:54.304361-06:00'
 model: gpt-4-0125-preview
 summary: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux- oder\
-  \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die\u2026"
+  \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die Befehlszeilenschnittstelle\
+  \ (CLI) nicht nur eine Frage der Bequemlichkeit \u2013 es ist ein m\xE4chtiges Werkzeug."
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

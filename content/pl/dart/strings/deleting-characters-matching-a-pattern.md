@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.072361-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
   gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
-  \ tekstu do\u2026"
+  \ tekstu do dalszego przetwarzania."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

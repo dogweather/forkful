@@ -4,8 +4,8 @@ description: "Converting a string to lower case means transforming all the chara
   \ in the text to their lower-case variants, such as turning \"Hello, World!\" into\u2026"
 lastmod: '2024-03-13T22:44:59.733802-06:00'
 model: gpt-4-1106-preview
-summary: "Converting a string to lower case means transforming all the characters\
-  \ in the text to their lower-case variants, such as turning \"Hello, World!\" into\u2026"
+summary: Converting a string to lower case means transforming all the characters in
+  the text to their lower-case variants, such as turning "Hello, World.
 title: Converting a string to lower case
 weight: 4
 ---

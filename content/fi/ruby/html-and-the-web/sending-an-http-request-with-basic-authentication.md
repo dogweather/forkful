@@ -6,8 +6,7 @@ description: "HTTP-pyynt\xF6j\xE4 perusautentikaatiolla k\xE4ytet\xE4\xE4n, kun 
 lastmod: '2024-03-13T22:44:57.086357-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6j\xE4 perusautentikaatiolla k\xE4ytet\xE4\xE4n, kun halutaan\
-  \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkossa. Koodaajat k\xE4ytt\xE4\
-  v\xE4t t\xE4t\xE4 menetelm\xE4\xE4, jotta\u2026"
+  \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkossa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

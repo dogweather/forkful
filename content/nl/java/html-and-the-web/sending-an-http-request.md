@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek versturen betekent een server vragen om gegevens 
   \ acties, zoals het ophalen van een webpagina of het versturen van een formulier.\u2026"
 lastmod: '2024-03-13T22:44:50.678460-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek versturen betekent een server vragen om gegevens of acties,\
-  \ zoals het ophalen van een webpagina of het versturen van een formulier.\u2026"
+summary: Een HTTP-verzoek versturen betekent een server vragen om gegevens of acties,
+  zoals het ophalen van een webpagina of het versturen van een formulier.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

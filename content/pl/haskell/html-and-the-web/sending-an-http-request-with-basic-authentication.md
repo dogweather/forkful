@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.451578-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie zapytania HTTP z podstawowym uwierzytelnianiem to proces\
   \ przekazywania loginu i has\u0142a by uzyska\u0107 dost\u0119p do zabezpieczonych\
-  \ zasob\xF3w. Programi\u015Bci\u2026"
+  \ zasob\xF3w."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

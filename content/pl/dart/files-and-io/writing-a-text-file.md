@@ -8,8 +8,7 @@ description: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfi
 lastmod: '2024-03-13T22:44:35.112675-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
-  \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\
-  ci\u2026"
+  \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

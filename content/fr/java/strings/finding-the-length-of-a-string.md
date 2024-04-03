@@ -6,8 +6,7 @@ description: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simpl
 lastmod: '2024-03-13T22:44:57.629176-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
-  \ compter les caract\xE8res qu'elle contient. Les programmeurs ont besoin de cette\
-  \ info pour\u2026"
+  \ compter les caract\xE8res qu'elle contient."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

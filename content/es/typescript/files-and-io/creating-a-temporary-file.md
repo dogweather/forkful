@@ -5,7 +5,8 @@ description: "Crear un archivo temporal significa generar un fichero que pretend
 lastmod: '2024-03-13T22:44:58.822605-06:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa generar un fichero que pretendemos usar\
-  \ solo durante un breve periodo de tiempo o mientras dura una operaci\xF3n\u2026"
+  \ solo durante un breve periodo de tiempo o mientras dura una operaci\xF3n espec\xED\
+  fica."
 title: Creando un archivo temporal
 weight: 21
 ---

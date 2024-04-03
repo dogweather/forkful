@@ -7,8 +7,8 @@ description: "Debug-output afdrukken betekent extra informatie uitspugen om je t
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.249938-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-output afdrukken betekent extra informatie uitspugen om je te helpen\
-  \ begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker te\u2026"
+summary: Debug-output afdrukken betekent extra informatie uitspugen om je te helpen
+  begrijpen wat je code doet.
 title: Debug-output afdrukken
 weight: 33
 ---

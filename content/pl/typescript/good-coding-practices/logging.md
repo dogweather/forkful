@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.145851-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i innych\
   \ istotnych informacji podczas wykonania programu do zewn\u0119trznego medium, cz\u0119\
-  sto plik\xF3w lub baz\u2026"
+  sto plik\xF3w lub baz danych."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

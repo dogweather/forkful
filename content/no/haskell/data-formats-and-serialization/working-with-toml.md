@@ -6,8 +6,7 @@ description: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \
 lastmod: '2024-03-13T22:44:40.866911-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5penbare,\
-  \ Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt \xE5\
-  \ h\xE5ndtere\u2026"
+  \ Minimale Spr\xE5k) data med Haskell."
 title: Jobbe med TOML
 weight: 39
 ---

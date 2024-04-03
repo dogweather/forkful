@@ -7,7 +7,8 @@ description: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallent
 lastmod: '2024-03-13T22:44:56.121563-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallentamiseen\
-  \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\u2026"
+  \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\
+  \ sek\xE4 konfiguraatiotiedostoihin."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

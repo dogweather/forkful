@@ -8,8 +8,7 @@ description: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on teknii
 lastmod: '2024-03-13T22:44:56.079044-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on tekniikka, jota\
-  \ k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa.\
-  \ Google Apps\u2026"
+  \ k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa."
 title: Mallin mukaisten merkkien poistaminen
 weight: 5
 ---

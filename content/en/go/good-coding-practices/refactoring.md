@@ -6,7 +6,7 @@ description: "Refactoring in programming involves restructuring existing compute
 lastmod: '2024-03-13T22:44:59.638575-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in programming involves restructuring existing computer code\u2014\
-  changing the factoring\u2014without changing its external behavior. Programmers\u2026"
+  changing the factoring\u2014without changing its external behavior."
 title: Refactoring
 weight: 19
 ---

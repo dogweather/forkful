@@ -7,7 +7,7 @@ description: "Complexe getallen breiden ons getallensysteem uit met imaginaire g
 lastmod: '2024-03-13T22:44:50.803965-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden ons getallensysteem uit met imaginaire getallen,\
-  \ waardoor we vergelijkingen kunnen oplossen die geen re\xEBle oplossingen hebben.\u2026"
+  \ waardoor we vergelijkingen kunnen oplossen die geen re\xEBle oplossingen hebben."
 title: Werken met complexe getallen
 weight: 14
 ---

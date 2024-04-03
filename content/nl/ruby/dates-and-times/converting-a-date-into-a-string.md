@@ -7,8 +7,8 @@ description: "Het converteren van een datum naar een string zet het datumobject 
   \ een\u2026"
 lastmod: '2024-03-13T22:44:51.350173-06:00'
 model: gpt-4-0125-preview
-summary: "Het converteren van een datum naar een string zet het datumobject om in\
-  \ tekst die we kunnen lezen en gebruiken. Programmeurs doen dit om datums in een\u2026"
+summary: Het converteren van een datum naar een string zet het datumobject om in tekst
+  die we kunnen lezen en gebruiken.
 title: Een datum converteren naar een string
 weight: 28
 ---

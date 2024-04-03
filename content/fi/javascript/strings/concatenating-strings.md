@@ -6,8 +6,7 @@ description: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\
 lastmod: '2024-03-13T22:44:56.941902-06:00'
 model: gpt-4-1106-preview
 summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4tk\xE4\
-  n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen k\xE4\
-  ytt\xE4j\xE4lle n\xE4ytett\xE4vi\xE4\u2026"
+  n liitt\xE4mist\xE4 yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

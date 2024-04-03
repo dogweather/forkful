@@ -6,7 +6,7 @@ description: "Textsuche und -ersatz erm\xF6glichen es, bestimmte Zeichenketten i
 lastmod: '2024-03-13T22:44:54.251686-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz erm\xF6glichen es, bestimmte Zeichenketten in einem\
-  \ Text zu finden und sie durch andere auszutauschen. Programmierer nutzen diese\u2026"
+  \ Text zu finden und sie durch andere auszutauschen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

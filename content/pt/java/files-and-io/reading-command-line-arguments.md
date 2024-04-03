@@ -6,8 +6,7 @@ description: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xE
 lastmod: '2024-03-13T22:44:46.471222-06:00'
 model: gpt-4-1106-preview
 summary: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA passa\
-  \ para o seu programa Java ao inici\xE1-lo. Programadores usam isso para customizar\
-  \ a execu\xE7\xE3o de\u2026"
+  \ para o seu programa Java ao inici\xE1-lo."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.619224-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Visual\
   \ Basic for Applications (VBA) dreier seg om \xE5 f\xE5 tilgang til webressurser\
-  \ som er\u2026"
+  \ som er beskyttet av brukernavn- og passordopplysninger."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

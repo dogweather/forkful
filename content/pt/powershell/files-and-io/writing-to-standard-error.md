@@ -8,7 +8,8 @@ description: "Escrever para o erro padr\xE3o (stderr) no PowerShell envolve envi
 lastmod: '2024-03-13T22:44:46.813153-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) no PowerShell envolve enviar mensagens\
-  \ de erro ou diagn\xF3sticos diretamente para o stream stderr, distinto do stream\u2026"
+  \ de erro ou diagn\xF3sticos diretamente para o stream stderr, distinto do stream\
+  \ de sa\xEDda padr\xE3o (stdout)."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

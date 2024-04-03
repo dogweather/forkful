@@ -6,8 +6,8 @@ description: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on ihmisen l
   \ oleva tiedon sarjallistamisformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.885754-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on ihmisen luettavissa\
-  \ oleva tiedon sarjallistamisformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\u2026"
+summary: YAML, joka tarkoittaa "YAML Ain't Markup Language", on ihmisen luettavissa
+  oleva tiedon sarjallistamisformaatti.
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

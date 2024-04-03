@@ -6,8 +6,8 @@ description: "Lua komt niet met een ingebouwde debugger, maar je kunt externe de
   \ gebruiken, zoals ZeroBrane Studio. Hier is een voorproefje van hoe je ermee zou\u2026"
 lastmod: '2024-03-13T22:44:50.941948-06:00'
 model: gpt-4-0125-preview
-summary: "Lua komt niet met een ingebouwde debugger, maar je kunt externe debuggers\
-  \ gebruiken, zoals ZeroBrane Studio. Hier is een voorproefje van hoe je ermee zou\u2026"
+summary: Lua komt niet met een ingebouwde debugger, maar je kunt externe debuggers
+  gebruiken, zoals ZeroBrane Studio.
 title: Een debugger gebruiken
 weight: 35
 ---

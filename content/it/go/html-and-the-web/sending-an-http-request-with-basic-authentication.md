@@ -7,8 +7,9 @@ description: "Inviare una richiesta HTTP con autenticazione di base in Go compor
   \ un\u2026"
 lastmod: '2024-03-13T22:44:42.907975-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta\
-  \ di un'intestazione di autorizzazione alla tua richiesta che include un\u2026"
+summary: Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta
+  di un'intestazione di autorizzazione alla tua richiesta che include un nome utente
+  e una password sotto forma di stringa codificata in Base64.
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

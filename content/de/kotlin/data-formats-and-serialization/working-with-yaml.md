@@ -5,8 +5,7 @@ description: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet is
   \ gut f\xFCr\u2026"
 lastmod: '2024-03-13T22:44:53.866576-06:00'
 model: unknown
-summary: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist. Programmierer\
-  \ nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut f\xFCr\u2026"
+summary: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist."
 title: Arbeiten mit YAML
 weight: 41
 ---

@@ -6,8 +6,8 @@ description: "TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegev
   \ dat voornamelijk wordt gebruikt voor configuratiebestanden.\u2026"
 lastmod: '2024-03-13T22:44:50.661556-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
-  \ dat voornamelijk wordt gebruikt voor configuratiebestanden.\u2026"
+summary: TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat
+  dat voornamelijk wordt gebruikt voor configuratiebestanden.
 title: Werken met TOML
 weight: 39
 ---

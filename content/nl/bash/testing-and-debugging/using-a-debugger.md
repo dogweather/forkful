@@ -6,8 +6,9 @@ description: "Bash wordt niet geleverd met een ingebouwde debugger zoals sommige
   \ talen, maar je kunt ingebouwde commando's gebruiken zoals `set -x` om te\u2026"
 lastmod: '2024-03-13T22:44:50.987367-06:00'
 model: gpt-4-0125-preview
-summary: "Bash wordt niet geleverd met een ingebouwde debugger zoals sommige andere\
-  \ talen, maar je kunt ingebouwde commando's gebruiken zoals `set -x` om te\u2026"
+summary: Bash wordt niet geleverd met een ingebouwde debugger zoals sommige andere
+  talen, maar je kunt ingebouwde commando's gebruiken zoals `set -x` om te traceren
+  wat er gebeurt.
 title: Een debugger gebruiken
 weight: 35
 ---

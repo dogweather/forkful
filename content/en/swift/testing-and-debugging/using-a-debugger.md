@@ -4,8 +4,8 @@ description: "To use the debugger in Xcode (the IDE for Swift), you can set brea
   \ inspect variables, and watch expressions. Here's an example: ```Swift func\u2026"
 lastmod: '2024-03-13T22:45:00.400539-06:00'
 model: gpt-4-1106-preview
-summary: "To use the debugger in Xcode (the IDE for Swift), you can set breakpoints,\
-  \ inspect variables, and watch expressions. Here's an example: ```Swift func\u2026"
+summary: To use the debugger in Xcode (the IDE for Swift), you can set breakpoints,
+  inspect variables, and watch expressions.
 title: Using a debugger
 weight: 35
 ---

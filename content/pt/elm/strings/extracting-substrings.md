@@ -6,8 +6,7 @@ description: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma stri
 lastmod: '2024-03-13T22:44:46.488831-06:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string - como\
-  \ cortar um peda\xE7o de torta para provar. Programadores fazem isso para manipular\
-  \ e\u2026"
+  \ cortar um peda\xE7o de torta para provar."
 title: Extraindo substrings
 weight: 6
 ---

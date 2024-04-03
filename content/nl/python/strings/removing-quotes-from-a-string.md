@@ -6,8 +6,8 @@ description: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent m
   \ het wegnemen van overbodige dubbele (\") of enkele (') aanhalingstekens.\u2026"
 lastmod: '2024-03-13T22:44:50.364344-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent meestal\
-  \ het wegnemen van overbodige dubbele (\") of enkele (') aanhalingstekens.\u2026"
+summary: Het verwijderen van aanhalingstekens uit een tekenreeks betekent meestal
+  het wegnemen van overbodige dubbele (") of enkele (') aanhalingstekens.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

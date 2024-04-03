@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:35.986998-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong Go bao g\u1ED3m vi\u1EC7c t\u1EA1o ra nh\u1EEFng \u0111\
   o\u1EA1n m\xE3 nh\u1ECF, d\u1EC5 qu\u1EA3n l\xFD nh\u1EB1m x\xE1c nh\u1EADn ch\u1EE9\
-  c n\u0103ng v\xE0 h\xE0nh vi c\u1EE7a \u1EE9ng d\u1EE5ng. L\u1EADp tr\xECnh vi\xEA\
-  n vi\u1EBFt test \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
+  c n\u0103ng v\xE0 h\xE0nh vi c\u1EE7a \u1EE9ng d\u1EE5ng."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

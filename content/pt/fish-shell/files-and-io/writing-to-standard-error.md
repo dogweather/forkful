@@ -8,8 +8,7 @@ description: "Escrever para o erro padr\xE3o (stderr) no Fish Shell \xE9 sobre d
 lastmod: '2024-03-13T22:44:47.022065-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) no Fish Shell \xE9 sobre direcionar\
-  \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout).\
-  \ Os\u2026"
+  \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout)."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

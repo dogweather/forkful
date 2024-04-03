@@ -6,8 +6,8 @@ description: "Nel contesto di Ruby, il testing si riferisce alla verifica che il
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
 lastmod: '2024-03-13T22:44:44.054802-06:00'
 model: gpt-4-0125-preview
-summary: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
-  \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
+summary: Nel contesto di Ruby, il testing si riferisce alla verifica che il codice
+  si comporti come previsto in varie condizioni.
 title: Scrivere test
 weight: 36
 ---

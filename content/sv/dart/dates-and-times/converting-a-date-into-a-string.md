@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.624501-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera ett datum till en str\xE4ng i Dart \xE4r en vanlig uppgift\
   \ n\xE4r du beh\xF6ver visa datum- och tidsinformation i ett l\xE4ttl\xE4st format,\
-  \ eller n\xE4r du\u2026"
+  \ eller n\xE4r du t\xE4nker serialisera data f\xF6r lagring eller \xF6verf\xF6ring."
 title: "Att konvertera ett datum till en str\xE4ng"
 weight: 28
 ---

@@ -6,8 +6,7 @@ description: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 et
 lastmod: '2024-03-13T22:44:38.345912-06:00'
 model: gpt-4-1106-preview
 summary: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett smidigt\
-  \ s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4ndares h\xE5\
-  r gr\xE5nar."
+  \ s\xE4tt."
 title: Hantering av fel
 weight: 16
 ---

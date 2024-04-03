@@ -4,8 +4,8 @@ description: "REPL stands for Read-Eval-Print Loop, a simple, interactive comput
   \ programming environment. Coders use it to quickly write and test code, experiment\u2026"
 lastmod: '2024-03-13T22:45:00.246307-06:00'
 model: gpt-4-1106-preview
-summary: "REPL stands for Read-Eval-Print Loop, a simple, interactive computer programming\
-  \ environment. Coders use it to quickly write and test code, experiment\u2026"
+summary: REPL stands for Read-Eval-Print Loop, a simple, interactive computer programming
+  environment.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

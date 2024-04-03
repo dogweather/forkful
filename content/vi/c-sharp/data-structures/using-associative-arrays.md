@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.647895-06:00'
 model: gpt-4-0125-preview
 summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay t\u1EEB \u0111i\u1EC3n trong C#, cho ph\xE9\
   p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD c\xE1c c\u1EB7p kho\xE1 v\xE0\
-  \ gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7u khi b\u1EA1\
-  n c\u1EA7n l\u1EA5y nhanh gi\xE1 tr\u1ECB d\u1EF1a\u2026"
+  \ gi\xE1 tr\u1ECB."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

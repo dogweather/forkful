@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.051779-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in Clojure consiste nel convertire\
   \ le rappresentazioni testuali di date ed orari in una forma pi\xF9 utilizzabile\
-  \ (ad\u2026"
+  \ (ad esempio, l'oggetto DateTime di Clojure)."
 title: Analisi di una data da una stringa
 weight: 30
 ---

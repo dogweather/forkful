@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.698457-06:00'
 model: gpt-4-0125-preview
 summary: "Le remaniement (ou refactoring) est essentiellement le grand m\xE9nage de\
   \ votre base de code - il s'agit de restructurer le code existant sans en changer\
-  \ le\u2026"
+  \ le comportement externe."
 title: Refactoring
 weight: 19
 ---

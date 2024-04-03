@@ -7,7 +7,8 @@ description: "JSON, o JavaScript Object Notation, \xE8 un formato leggero per l'
 lastmod: '2024-03-13T22:44:42.980166-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, o JavaScript Object Notation, \xE8 un formato leggero per l'archiviazione\
-  \ e il trasporto dei dati, ideale per la comunicazione server-client e i file\u2026"
+  \ e il trasporto dei dati, ideale per la comunicazione server-client e i file di\
+  \ configurazione."
 title: Lavorare con JSON
 weight: 38
 ---

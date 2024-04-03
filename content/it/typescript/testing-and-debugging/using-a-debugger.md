@@ -6,8 +6,7 @@ description: "Per iniziare con un debugger in TypeScript, tutto ci\xF2 che serve
 lastmod: '2024-03-13T22:44:43.180491-06:00'
 model: gpt-4-0125-preview
 summary: "Per iniziare con un debugger in TypeScript, tutto ci\xF2 che serve \xE8\
-  \ un IDE supportato (come Visual Studio Code) e una configurazione `launch.json`.\
-  \ Ecco un\u2026"
+  \ un IDE supportato (come Visual Studio Code) e una configurazione `launch."
 title: Utilizzo di un debugger
 weight: 35
 ---

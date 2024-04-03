@@ -12,7 +12,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh l\xE0\
   \ v\u1EC1 vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
   \ \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3c c\xF3 th\u1EC3 s\u1EED d\u1EE5\
-  ng cho m\u1ED9t lo\u1EA1t c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 m\xF4 ph\u1ECFng,\u2026"
+  ng cho m\u1ED9t lo\u1EA1t c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 m\xF4 ph\u1ECFng,\
+  \ tr\xF2 ch\u01A1i ho\u1EB7c \u1EE9ng d\u1EE5ng b\u1EA3o m\u1EADt."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

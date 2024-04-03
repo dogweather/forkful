@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.890391-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w C polega na tworzeniu mniejszych, pomocniczych program\xF3\
   w lub funkcji, kt\xF3re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego\
-  \ kodu.\u2026"
+  \ kodu."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

@@ -5,7 +5,7 @@ description: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat
 lastmod: '2024-03-13T22:44:56.764986-06:00'
 model: gpt-4-1106-preview
 summary: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
-  \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"
+  \ kaavaa."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

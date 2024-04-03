@@ -5,9 +5,8 @@ description: "Organizzare il codice in funzioni significa impacchettare blocchi 
   \ pi\xF9\u2026"
 lastmod: '2024-03-13T22:44:43.047694-06:00'
 model: gpt-4-1106-preview
-summary: "Organizzare il codice in funzioni significa impacchettare blocchi di codice\
-  \ che compiono compiti specifici. Fare ci\xF2 rende il tuo codice pulito, pi\xF9\
-  \u2026"
+summary: Organizzare il codice in funzioni significa impacchettare blocchi di codice
+  che compiono compiti specifici.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

@@ -5,8 +5,8 @@ description: "Leggere gli argomenti della riga di comando in Lua significa estra
   \ questo\u2026"
 lastmod: '2024-03-13T22:44:43.572505-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere gli argomenti della riga di comando in Lua significa estrarre i\
-  \ dati inseriti dall'utente quando avvia il tuo script. I programmatori fanno questo\u2026"
+summary: Leggere gli argomenti della riga di comando in Lua significa estrarre i dati
+  inseriti dall'utente quando avvia il tuo script.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

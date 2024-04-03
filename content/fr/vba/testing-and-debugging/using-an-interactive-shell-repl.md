@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.579637-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
   \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
-  \ les\u2026"
+  \ les ex\xE9cuter et de voir les r\xE9sultats en temps r\xE9el."
 title: Utiliser un shell interactif (REPL)
 weight: 34
 ---

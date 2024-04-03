@@ -9,9 +9,7 @@ description: "In \u0111\u1EA7u ra g\u1EE1 l\u1ED7i v\xE0o m\xE0n h\xECnh n\u1ED1
 lastmod: '2024-03-13T22:44:36.992262-06:00'
 model: gpt-4-0125-preview
 summary: "In \u0111\u1EA7u ra g\u1EE1 l\u1ED7i v\xE0o m\xE0n h\xECnh n\u1ED1i ti\u1EBF\
-  p l\xE0 m\u1ED9t c\xE1ch \u0111\u1EC3 nh\xECn v\xE0o t\xE2m tr\xED c\u1EE7a Arduino.\
-  \ C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\
-  \ d\xF5i c\xE1c l\u1ED7i nh\u1ECF, ki\u1EC3m th\u1EED gi\u1EA3\u2026"
+  p l\xE0 m\u1ED9t c\xE1ch \u0111\u1EC3 nh\xECn v\xE0o t\xE2m tr\xED c\u1EE7a Arduino."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

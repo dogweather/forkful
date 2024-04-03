@@ -4,8 +4,9 @@ description: "Finding the length of a String in Dart is about determining the nu
   \ of code units (essentially, the number of characters if thinking about it\u2026"
 lastmod: '2024-03-13T22:44:59.812490-06:00'
 model: gpt-4-0125-preview
-summary: "Finding the length of a String in Dart is about determining the number of\
-  \ code units (essentially, the number of characters if thinking about it\u2026"
+summary: Finding the length of a String in Dart is about determining the number of
+  code units (essentially, the number of characters if thinking about it simplistically)
+  in a given String.
 title: Finding the length of a string
 weight: 7
 ---

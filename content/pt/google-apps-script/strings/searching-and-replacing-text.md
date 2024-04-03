@@ -8,7 +8,8 @@ description: "Buscar e substituir texto em Google Apps Script envolve identifica
 lastmod: '2024-03-13T22:44:46.090677-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar e substituir texto em Google Apps Script envolve identificar programaticamente\
-  \ strings espec\xEDficas em um documento, planilha ou qualquer outro tipo\u2026"
+  \ strings espec\xEDficas em um documento, planilha ou qualquer outro tipo de conte\xFA\
+  do do Google Apps, e substitu\xED-las por outros valores de texto."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

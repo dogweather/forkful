@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.188446-06:00'
 model: gpt-4-0125-preview
 summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7c t\xEC\
   m c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng th\u1EE9\
-  \ kh\xE1c. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
-  \u1EC3 c\u1EADp nh\u1EADt m\xE3, s\u1EEDa l\u1ED7i, ho\u1EB7c\u2026"
+  \ kh\xE1c."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

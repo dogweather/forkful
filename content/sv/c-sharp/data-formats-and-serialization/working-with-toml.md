@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.937079-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE4r en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, ett\
   \ konfigurationsfilsformat som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga\
-  \ semantik.\u2026"
+  \ semantik."
 title: Att arbeta med TOML
 weight: 39
 ---

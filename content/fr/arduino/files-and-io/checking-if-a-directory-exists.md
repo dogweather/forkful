@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.129537-06:00'
 model: gpt-4-0125-preview
 summary: "Dans le contexte de la programmation Arduino, v\xE9rifier si un r\xE9pertoire\
   \ existe sur une carte SD ou un module de stockage similaire vous permet de lire\
-  \ ou\u2026"
+  \ ou d'\xE9crire des fichiers sans erreurs."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

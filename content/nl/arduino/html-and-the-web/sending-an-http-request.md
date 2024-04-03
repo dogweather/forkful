@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek verzenden is de manier waarop je Arduino met het 
   \ praat, zoals een server vragen om wat gegevens terug te sturen. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:51.069529-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden is de manier waarop je Arduino met het web praat,\
-  \ zoals een server vragen om wat gegevens terug te sturen. Programmeurs doen\u2026"
+summary: Een HTTP-verzoek verzenden is de manier waarop je Arduino met het web praat,
+  zoals een server vragen om wat gegevens terug te sturen.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

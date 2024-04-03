@@ -8,8 +8,7 @@ description: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u01
 lastmod: '2024-03-13T22:44:35.158190-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119tno\u015B\
-  ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w.\
-  \ Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
+  ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

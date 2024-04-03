@@ -5,8 +5,8 @@ description: "Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Dat
   r\u2026"
 lastmod: '2024-03-13T22:44:54.038740-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten (Tom's\
-  \ Offensichtliche, Minimale Sprache) mit Lua. Programmierer nutzen TOML f\xFCr\u2026"
+summary: Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten (Tom's
+  Offensichtliche, Minimale Sprache) mit Lua.
 title: Arbeiten mit TOML
 weight: 39
 ---

@@ -5,7 +5,7 @@ description: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, stru
 lastmod: '2024-03-13T22:44:38.362499-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
-  \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"
+  \ format som anv\xE4nds i konfigurationer, meddelanden och mer."
 title: Att arbeta med XML
 weight: 40
 ---

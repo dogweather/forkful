@@ -8,7 +8,7 @@ description: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgabe
 lastmod: '2024-03-13T22:44:54.358398-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben in kleinere,\
-  \ wiederverwendbare Codebl\xF6cke zu unterteilen. Diese Praxis verbessert die\u2026"
+  \ wiederverwendbare Codebl\xF6cke zu unterteilen."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

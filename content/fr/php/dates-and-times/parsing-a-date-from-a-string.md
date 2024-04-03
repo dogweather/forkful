@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.889081-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne en PHP implique de convertir\
   \ un texte repr\xE9sentant une date et/ou une heure en un objet `DateTime` de PHP\
-  \ ou en\u2026"
+  \ ou en d'autres formats de date/heure."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.107115-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokonekoodin\
   \ uudelleenj\xE4rjest\xE4miseen\u2014muuttamalla sen toteutusta muuttamatta sen\
-  \ ulkoista\u2026"
+  \ ulkoista k\xE4yt\xF6st\xE4\u2014parantaakseen ei-toiminnallisia ominaisuuksia."
 title: Uudelleenkoodaus
 weight: 19
 ---

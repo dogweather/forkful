@@ -6,8 +6,7 @@ description: "L\xE4hett\xE4ess\xE4mme HTTP-pyynn\xF6n perusautentikaation kera, 
 lastmod: '2024-03-13T22:44:56.572877-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4ess\xE4mme HTTP-pyynn\xF6n perusautentikaation kera, liit\xE4\
-  mme k\xE4ytt\xE4j\xE4n tunnistetiedot pyynt\xF6\xF6mme. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n turvatakseen p\xE4\xE4syn\u2026"
+  mme k\xE4ytt\xE4j\xE4n tunnistetiedot pyynt\xF6\xF6mme."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

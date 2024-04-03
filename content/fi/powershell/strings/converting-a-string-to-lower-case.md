@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.767662-06:00'
 model: gpt-4-1106-preview
 summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tiedon\
   \ vertailu ja k\xE4sittely on yhdenmukaista, tapahtuipa se sitten k\xE4ytt\xF6liittym\xE4\
-  ss\xE4 tai\u2026"
+  ss\xE4 tai tietokannassa."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -5,9 +5,7 @@ description: "\"\u0429\u043E \u0442\u0430 \u041D\u0430\u0432\u0456\u0449\u043E?\
   \ your console. Programmers do it to understand what's\u2026"
 lastmod: '2024-03-13T22:44:49.997641-06:00'
 model: gpt-4-1106-preview
-summary: "\"\u0429\u043E \u0442\u0430 \u041D\u0430\u0432\u0456\u0449\u043E?\" Debug\
-  \ printing means showing variable values, error messages, or trace steps in your\
-  \ console. Programmers do it to understand what's\u2026"
+summary: "\"\u0429\u043E \u0442\u0430 \u041D\u0430\u0432\u0456\u0449\u043E."
 title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043B\u0430\
   \u0433\u043E\u0434\u0436\u0443\u0432\u0430\u043B\u044C\u043D\u043E\u0457 \u0456\u043D\
   \u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457"

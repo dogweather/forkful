@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.669912-06:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
   \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\
-  \ bugs ou verificar\u2026"
+  \ bugs ou verificar o fluxo de execu\xE7\xE3o."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

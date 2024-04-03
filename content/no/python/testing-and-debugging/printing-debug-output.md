@@ -6,8 +6,7 @@ description: "\xC5 skrive ut debug-informasjon betyr \xE5 vise data som hjelper 
 lastmod: '2024-03-13T22:44:40.363920-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut debug-informasjon betyr \xE5 vise data som hjelper deg \xE5\
-  \ forst\xE5 hva programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 feils\xF8\
-  ke kode og sikre\u2026"
+  \ forst\xE5 hva programmet ditt gj\xF8r."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

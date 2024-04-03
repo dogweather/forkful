@@ -6,8 +6,7 @@ description: "Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden, k\xF
 lastmod: '2024-03-13T22:44:54.229975-06:00'
 model: gpt-4-0125-preview
 summary: "Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden, k\xF6nnen\
-  \ Sie Haltepunkte setzen, Variablen inspizieren und Ausdr\xFCcke \xFCberwachen.\
-  \ Hier ist ein\u2026"
+  \ Sie Haltepunkte setzen, Variablen inspizieren und Ausdr\xFCcke \xFCberwachen."
 title: Einsatz eines Debuggers
 weight: 35
 ---

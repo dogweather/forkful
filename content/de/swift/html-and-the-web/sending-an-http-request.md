@@ -4,8 +4,7 @@ description: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren.
   \ nutzen sie, um Daten zu senden und zu empfangen, was f\xFCr moderne Anwendungen\u2026"
 lastmod: '2024-03-13T22:44:54.222349-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren. Programmierer\
-  \ nutzen sie, um Daten zu senden und zu empfangen, was f\xFCr moderne Anwendungen\u2026"
+summary: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren."
 title: Einen HTTP-Request senden
 weight: 44
 ---

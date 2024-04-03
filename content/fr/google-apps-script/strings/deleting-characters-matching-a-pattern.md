@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.164990-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
-  res en\u2026"
+  res en programmation."
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

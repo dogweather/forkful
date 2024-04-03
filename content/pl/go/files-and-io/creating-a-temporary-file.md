@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.874559-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
   ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\
-  \ takich jak\u2026"
+  \ takich jak przechowywanie danych tymczasowych lub pomoc w zadaniach przetwarzania\
+  \ wsadowego."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

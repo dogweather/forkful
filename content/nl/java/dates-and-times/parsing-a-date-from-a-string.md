@@ -6,8 +6,8 @@ description: "Het ontleden van een datum uit een string betekent het omzetten va
   \ geschreven tekst naar een Date-object dat een programma kan gebruiken. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.692014-06:00'
 model: gpt-4-0125-preview
-summary: "Het ontleden van een datum uit een string betekent het omzetten van geschreven\
-  \ tekst naar een Date-object dat een programma kan gebruiken. Programmeurs\u2026"
+summary: Het ontleden van een datum uit een string betekent het omzetten van geschreven
+  tekst naar een Date-object dat een programma kan gebruiken.
 title: Een datum uit een string parsen
 weight: 30
 ---

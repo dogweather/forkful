@@ -6,8 +6,7 @@ description: "D\xE9couper le code en fonctions signifie diviser votre code en mo
 lastmod: '2024-03-13T22:44:58.168142-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9couper le code en fonctions signifie diviser votre code en morceaux\
-  \ plus petits et r\xE9utilisables. Nous le faisons pour \xE9viter la r\xE9p\xE9\
-  tition, pour rendre\u2026"
+  \ plus petits et r\xE9utilisables."
 title: Organisation du code en fonctions
 weight: 18
 ---

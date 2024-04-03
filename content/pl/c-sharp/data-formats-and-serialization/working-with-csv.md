@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.431420-06:00'
 model: gpt-4-0125-preview
 summary: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
   \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\
-  \ w postaci\u2026"
+  \ w postaci zwyk\u0142ego tekstu, u\u017Cywaj\u0105c przecink\xF3w do oddzielania\
+  \ poszczeg\xF3lnych warto\u015Bci."
 title: Praca z plikami CSV
 weight: 37
 ---

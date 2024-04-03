@@ -6,8 +6,7 @@ description: "Tworzenie pliku tymczasowego pozwala na przechowywanie danych, kt\
 lastmod: '2024-03-13T22:44:35.815649-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie pliku tymczasowego pozwala na przechowywanie danych, kt\xF3rych\
-  \ nie potrzebujemy d\u0142ugo. Programi\u015Bci u\u017Cywaj\u0105 ich do przechowywania\
-  \ danych\u2026"
+  \ nie potrzebujemy d\u0142ugo."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

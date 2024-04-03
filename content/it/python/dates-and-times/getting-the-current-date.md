@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.011470-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale per\
   \ molte applicazioni, come la registrazione degli eventi (logging), l'analisi dei\
-  \ dati\u2026"
+  \ dati e la presa di decisioni basate sul tempo."
 title: Ottenere la data corrente
 weight: 29
 ---

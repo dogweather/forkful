@@ -5,8 +5,8 @@ description: "Reading a text file in Visual Basic for Applications (VBA) involve
   \ an\u2026"
 lastmod: '2024-03-13T22:44:59.950047-06:00'
 model: gpt-4-0125-preview
-summary: "Reading a text file in Visual Basic for Applications (VBA) involves programmatically\
-  \ accessing and extracting the contents of a text file from within an\u2026"
+summary: Reading a text file in Visual Basic for Applications (VBA) involves programmatically
+  accessing and extracting the contents of a text file from within an Office application.
 title: Reading a text file
 weight: 22
 ---

@@ -6,8 +6,8 @@ description: "Tekst zoeken en vervangen is hoe je specifieke stringen in inhoud 
   \ en ze omwisselt voor iets anders. Programmeurs doen dit om gegevens bij te werken,\u2026"
 lastmod: '2024-03-13T22:44:50.879623-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen is hoe je specifieke stringen in inhoud vindt\
-  \ en ze omwisselt voor iets anders. Programmeurs doen dit om gegevens bij te werken,\u2026"
+summary: Tekst zoeken en vervangen is hoe je specifieke stringen in inhoud vindt en
+  ze omwisselt voor iets anders.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

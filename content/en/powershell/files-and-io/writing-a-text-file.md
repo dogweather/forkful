@@ -4,8 +4,9 @@ description: "Writing a text file in PowerShell involves creating and manipulati
   \ text-based files which is a fundamental operation for logging, data storage, and\u2026"
 lastmod: '2024-03-13T22:45:00.300988-06:00'
 model: gpt-4-0125-preview
-summary: "Writing a text file in PowerShell involves creating and manipulating text-based\
-  \ files which is a fundamental operation for logging, data storage, and\u2026"
+summary: Writing a text file in PowerShell involves creating and manipulating text-based
+  files which is a fundamental operation for logging, data storage, and configuration
+  scripting.
 title: Writing a text file
 weight: 24
 ---

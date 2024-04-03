@@ -6,8 +6,7 @@ description: "Fouten afhandelen in programmeren gaat over het verwachten van het
   \ Het is de kunst van het plannen voor wanneer dingen misgaan, zodat je\u2026"
 lastmod: '2024-03-13T22:44:50.944887-06:00'
 model: gpt-4-0125-preview
-summary: "Fouten afhandelen in programmeren gaat over het verwachten van het onverwachte.\
-  \ Het is de kunst van het plannen voor wanneer dingen misgaan, zodat je\u2026"
+summary: Fouten afhandelen in programmeren gaat over het verwachten van het onverwachte.
 title: Fouten afhandelen
 weight: 16
 ---

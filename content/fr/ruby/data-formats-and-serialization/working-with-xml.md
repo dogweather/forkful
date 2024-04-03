@@ -6,7 +6,7 @@ description: "Travailler avec XML signifie analyser, g\xE9n\xE9rer et manipuler 
 lastmod: '2024-03-13T22:44:58.446853-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie analyser, g\xE9n\xE9rer et manipuler des documents\
-  \ XML (eXtensible Markup Language) en utilisant du code. Les programmeurs le font\u2026"
+  \ XML (eXtensible Markup Language) en utilisant du code."
 title: Travailler avec XML
 weight: 40
 ---

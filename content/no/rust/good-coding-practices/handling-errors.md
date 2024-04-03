@@ -5,9 +5,7 @@ description: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer 
   \ er robuste\u2026"
 lastmod: '2024-03-13T22:44:40.581238-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg. Programmerere\
-  \ gj\xF8r dette for \xE5 h\xE5ndtere det uventede, slik at deres Rust-programmer\
-  \ er robuste\u2026"
+summary: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

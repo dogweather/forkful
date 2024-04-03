@@ -4,8 +4,7 @@ description: "Trova la lunghezza di una stringa per sapere quanti caratteri cont
   \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"
 lastmod: '2024-03-13T22:44:43.425266-06:00'
 model: gpt-4-1106-preview
-summary: "Trova la lunghezza di una stringa per sapere quanti caratteri contiene.\
-  \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"
+summary: Trova la lunghezza di una stringa per sapere quanti caratteri contiene.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

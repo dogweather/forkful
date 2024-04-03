@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Visual Basic\
   \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o ra m\u1ED9t t\u1EC7p th\xF4\
   ng qua l\u1EADp tr\xECnh d\xF9ng cho m\u1EE5c \u0111\xEDch ng\u1EAFn h\u1EA1n, th\u01B0\
-  \u1EDDng l\xE0\u2026"
+  \u1EDDng l\xE0 cho vi\u1EC7c x\u1EED l\xFD d\u1EEF li\u1EC7u ho\u1EB7c nh\u01B0\
+  \ m\u1ED9t b\u1ED9 \u0111\u1EC7m trong c\xE1c t\xE1c v\u1EE5 t\u1EF1 \u0111\u1ED9\
+  ng h\xF3a."
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---

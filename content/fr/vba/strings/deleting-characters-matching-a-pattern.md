@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.533095-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
-  \ ensuite\u2026"
+  \ ensuite les caract\xE8res ou cha\xEEnes qui r\xE9pondent \xE0 certains crit\xE8\
+  res."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

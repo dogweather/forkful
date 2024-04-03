@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.278928-06:00'
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop), czyli p\u0119tla czytaj-wykonaj-drukuj, to\
   \ interaktywna pow\u0142oka, kt\xF3ra przetwarza pojedyncze wej\u015Bcia u\u017C\
-  ytkownika, wykonuje kod i\u2026"
+  ytkownika, wykonuje kod i zwraca wynik."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

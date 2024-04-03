@@ -8,8 +8,7 @@ description: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundament
 lastmod: '2024-03-13T22:44:46.074450-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundamental que\
-  \ permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas.\
-  \ Tais compara\xE7\xF5es\u2026"
+  \ permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas."
 title: Comparando duas datas
 weight: 27
 ---

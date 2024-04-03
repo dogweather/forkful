@@ -6,8 +6,7 @@ description: "Organizar o c\xF3digo em fun\xE7\xF5es divide seu script em partes
 lastmod: '2024-03-13T22:44:47.100823-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es divide seu script em partes reutiliz\xE1\
-  veis. \xC9 tudo sobre tornar o c\xF3digo limpo, gerenci\xE1vel e menos propenso\
-  \ a erros. C\xF3digo\u2026"
+  veis."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

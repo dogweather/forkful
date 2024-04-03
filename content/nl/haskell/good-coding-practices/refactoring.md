@@ -6,8 +6,8 @@ description: "Refactoring is het proces van het aanpassen van je code zonder het
   \ gedrag ervan te veranderen. Het gaat helemaal om het opruimen en organiseren\u2026"
 lastmod: '2024-03-13T22:44:50.860940-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring is het proces van het aanpassen van je code zonder het externe\
-  \ gedrag ervan te veranderen. Het gaat helemaal om het opruimen en organiseren\u2026"
+summary: Refactoring is het proces van het aanpassen van je code zonder het externe
+  gedrag ervan te veranderen.
 title: Refactoring
 weight: 19
 ---

@@ -7,7 +7,8 @@ description: "La creazione di un file temporaneo in Visual Basic for Application
 lastmod: '2024-03-13T22:44:43.284622-06:00'
 model: gpt-4-0125-preview
 summary: "La creazione di un file temporaneo in Visual Basic for Applications (VBA)\
-  \ comporta la generazione programmata di un file per un uso a breve termine,\u2026"
+  \ comporta la generazione programmata di un file per un uso a breve termine, tipicamente\
+  \ per l'elaborazione dei dati o come buffer nelle attivit\xE0 di automazione."
 title: Creazione di un file temporaneo
 weight: 21
 ---

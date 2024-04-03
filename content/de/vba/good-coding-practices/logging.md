@@ -8,7 +8,8 @@ description: "Das Logging in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet da
 lastmod: '2024-03-13T22:44:53.725300-06:00'
 model: gpt-4-0125-preview
 summary: "Das Logging in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das Aufzeichnen\
-  \ von Informationen \xFCber das Laufzeitverhalten eines Programms in einer Datei,\u2026"
+  \ von Informationen \xFCber das Laufzeitverhalten eines Programms in einer Datei,\
+  \ Konsole oder Datenbank."
 title: Protokollierung
 weight: 17
 ---

@@ -4,8 +4,8 @@ description: "Downloading a web page involves fetching the content of a web page
   \ its URL for processing or storage. Programmers do this to extract information,\u2026"
 lastmod: '2024-03-13T22:44:59.819698-06:00'
 model: gpt-4-0125-preview
-summary: "Downloading a web page involves fetching the content of a web page via its\
-  \ URL for processing or storage. Programmers do this to extract information,\u2026"
+summary: Downloading a web page involves fetching the content of a web page via its
+  URL for processing or storage.
 title: Downloading a web page
 weight: 42
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.097855-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
   \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
-  \ Sheets\u2026"
+  \ Sheets jne."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

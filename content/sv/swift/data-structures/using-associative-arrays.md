@@ -8,8 +8,7 @@ description: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter d
 lastmod: '2024-03-13T22:44:38.244314-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig lagra\
-  \ och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r\
-  \ att organisera data\u2026"
+  \ och hantera data som nyckel-v\xE4rdepar."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

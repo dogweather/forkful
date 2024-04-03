@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.056579-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
   \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
-  \ teht\xE4vi\xE4.\u2026"
+  \ teht\xE4vi\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

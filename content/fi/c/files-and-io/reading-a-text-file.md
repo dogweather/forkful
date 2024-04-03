@@ -8,7 +8,8 @@ description: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaam
 lastmod: '2024-03-13T22:44:57.059311-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista j\xE4\
-  rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\u2026"
+  rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\
+  \ n\xE4ytt\xE4miseksi."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

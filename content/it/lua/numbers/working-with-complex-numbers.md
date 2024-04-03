@@ -4,8 +4,8 @@ description: "I numeri complessi estendono l'idea della linea numerica unidimens
   \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"
 lastmod: '2024-03-13T22:44:43.552081-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
-  \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"
+summary: I numeri complessi estendono l'idea della linea numerica unidimensionale
+  al piano bidimensionale includendo un asse immaginario perpendicolare.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

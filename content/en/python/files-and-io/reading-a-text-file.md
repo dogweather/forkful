@@ -4,8 +4,8 @@ description: "Reading a text file in Python is grabbing data from a file that's 
   \ on your disk or over a network. Programmers read files to use the stored data\u2026"
 lastmod: '2024-04-01'
 model: gpt-4-1106-preview
-summary: "Reading a text file in Python is grabbing data from a file that's accessible\
-  \ on your disk or over a network. Programmers read files to use the stored data\u2026"
+summary: Reading a text file in Python is grabbing data from a file that's accessible
+  on your disk or over a network.
 title: Reading a text file
 weight: 22
 ---

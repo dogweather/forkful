@@ -8,7 +8,8 @@ description: "Obtener la fecha actual en Java es una operaci\xF3n fundamental qu
 lastmod: '2024-03-13T22:44:58.947779-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Java es una operaci\xF3n fundamental que permite\
-  \ a los programadores manipular objetos de fecha para operaciones tales como\u2026"
+  \ a los programadores manipular objetos de fecha para operaciones tales como registro\
+  \ (logging), c\xE1lculos de fechas y condiciones basadas en tiempo."
 title: Obteniendo la fecha actual
 weight: 29
 ---

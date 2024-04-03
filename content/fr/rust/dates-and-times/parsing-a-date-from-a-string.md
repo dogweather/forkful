@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.492134-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res est une\
   \ t\xE2che courante lorsqu'il s'agit de g\xE9rer les entr\xE9es utilisateur ou de\
-  \ lire des donn\xE9es\u2026"
+  \ lire des donn\xE9es depuis des fichiers, ce qui implique de convertir les donn\xE9\
+  es en cha\xEEne dans un format de date reconnu par le langage de programmation."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

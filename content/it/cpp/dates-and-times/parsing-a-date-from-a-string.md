@@ -6,8 +6,8 @@ description: "Analizzare una data da una stringa implica interpretare il formato
   \ stringa per estrarre componenti della data come giorno, mese e anno. I\u2026"
 lastmod: '2024-03-13T22:44:43.736111-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa implica interpretare il formato della\
-  \ stringa per estrarre componenti della data come giorno, mese e anno. I\u2026"
+summary: Analizzare una data da una stringa implica interpretare il formato della
+  stringa per estrarre componenti della data come giorno, mese e anno.
 title: Analisi di una data da una stringa
 weight: 30
 ---

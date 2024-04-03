@@ -8,9 +8,7 @@ description: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteis
   lt\xF6\xE4,\u2026"
 lastmod: '2024-03-13T22:44:56.947743-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista. Ohjelmoijat\
-  \ tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4lt\xF6\
-  \xE4,\u2026"
+summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

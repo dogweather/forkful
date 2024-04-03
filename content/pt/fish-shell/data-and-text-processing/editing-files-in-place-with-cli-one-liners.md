@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:47.001899-06:00'
 model: gpt-4-0125-preview
 summary: "Editar arquivos in-loco com linhas de comando \xFAnicas (CLI one-liners)\
   \ \xE9 sobre fazer mudan\xE7as diretamente nos arquivos a partir da linha de comando,\
-  \ sem\u2026"
+  \ sem abrir eles em um editor de texto."
 title: Editando arquivos in loco com linhas de comando
 weight: 32
 ---

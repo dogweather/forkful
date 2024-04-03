@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA)\
   \ \u0111\u1EC1 c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh nh\xFAng bi\u1EBFn ho\u1EB7\
   c bi\u1EC3u th\u1EE9c v\xE0o trong m\u1ED9t chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9\
-  p t\u1EA1o chu\u1ED7i \u0111\u1ED9ng. L\u1EADp\u2026"
+  p t\u1EA1o chu\u1ED7i \u0111\u1ED9ng."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

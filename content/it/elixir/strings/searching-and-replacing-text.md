@@ -5,7 +5,7 @@ description: "Cercare e sostituire testo \xE8 fondamentale per manipolare string
 lastmod: '2024-03-13T22:44:43.069598-06:00'
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo \xE8 fondamentale per manipolare stringhe e automatizzare\
-  \ l'editing. I programmatori lo fanno per correggere errori, aggiornare\u2026"
+  \ l'editing."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

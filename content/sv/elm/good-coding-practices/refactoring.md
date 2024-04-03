@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.837845-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r i grund och botten v\xE5rst\xE4dning av din kodbas\
   \ \u2013 det handlar om att omstrukturera befintlig kod utan att \xE4ndra dess externa\
-  \ beteende.\u2026"
+  \ beteende."
 title: Refaktorisering
 weight: 19
 ---

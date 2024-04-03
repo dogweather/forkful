@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een b
   \ op het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"
 lastmod: '2024-03-13T22:44:51.334677-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron op\
-  \ het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"
+summary: Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron op
+  het web.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

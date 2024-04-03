@@ -7,7 +7,8 @@ description: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti
 lastmod: '2024-03-13T22:44:56.844632-06:00'
 model: gpt-4-0125-preview
 summary: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka\
-  \ sopii erinomaisesti sek\xE4 tietojen tallennukseen ett\xE4 kokoonpanotiedostoihin\u2026"
+  \ sopii erinomaisesti sek\xE4 tietojen tallennukseen ett\xE4 kokoonpanotiedostoihin\
+  \ Arduino-projekteissa."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

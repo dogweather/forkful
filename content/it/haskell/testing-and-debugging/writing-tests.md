@@ -6,8 +6,8 @@ description: "Scrivere test in Haskell consiste nell'assicurarsi che le tue funz
   \ funzionino come previsto attraverso controlli automatizzati. I programmatori lo\u2026"
 lastmod: '2024-03-13T22:44:43.478719-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Haskell consiste nell'assicurarsi che le tue funzioni funzionino\
-  \ come previsto attraverso controlli automatizzati. I programmatori lo\u2026"
+summary: Scrivere test in Haskell consiste nell'assicurarsi che le tue funzioni funzionino
+  come previsto attraverso controlli automatizzati.
 title: Scrivere test
 weight: 36
 ---

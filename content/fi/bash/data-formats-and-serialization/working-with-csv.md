@@ -8,7 +8,7 @@ description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa kos
 lastmod: '2024-03-13T22:44:56.761096-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee tekstimuodossa\
-  \ tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja manipulointia.\u2026"
+  \ tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja manipulointia."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

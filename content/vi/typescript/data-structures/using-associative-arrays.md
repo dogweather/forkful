@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.309355-06:00'
 model: gpt-4-0125-preview
 summary: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, ho\u1EB7c \u0111\u1ED1i t\u01B0\u1EE3\
   ng trong TypeScript, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i (ho\u1EB7\
-  c kh\xF3a) \u0111\u1EC3 truy c\u1EADp c\xE1c c\u1EB7p gi\xE1 tr\u1ECB. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\u2026"
+  c kh\xF3a) \u0111\u1EC3 truy c\u1EADp c\xE1c c\u1EB7p gi\xE1 tr\u1ECB."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

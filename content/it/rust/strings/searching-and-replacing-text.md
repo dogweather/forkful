@@ -6,8 +6,7 @@ description: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche s
 lastmod: '2024-03-13T22:44:43.203373-06:00'
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche stringhe\
-  \ in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni\
-  \ in\u2026"
+  \ in un dato testo e scambiarle con altre."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

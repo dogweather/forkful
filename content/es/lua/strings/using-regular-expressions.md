@@ -8,8 +8,7 @@ description: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAs
 lastmod: '2024-03-13T22:44:59.192112-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAsqueda\
-  \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos. Los programadores\
-  \ las\u2026"
+  \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos."
 title: Usando expresiones regulares
 weight: 11
 ---

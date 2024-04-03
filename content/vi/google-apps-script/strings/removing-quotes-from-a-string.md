@@ -11,7 +11,10 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9\
   t chu\u1ED7i trong Google Apps Script l\xE0 \u0111\u1EC3 lo\u1EA1i b\u1ECF nh\u1EEF\
   ng d\u1EA5u ngo\u1EB7c k\xE9p kh\xF4ng c\u1EA7n thi\u1EBFt c\xF3 th\u1EC3 bao quanh\
-  \ d\u1EEF li\u1EC7u chu\u1ED7i c\u1EE7a\u2026"
+  \ d\u1EEF li\u1EC7u chu\u1ED7i c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng xu\u1EA5t ph\xE1\
+  t t\u1EEB c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng JSON \u0111\xE3 ph\xE2n t\xEDch,\
+  \ nh\u1EADp li\u1EC7u t\u1EEB ng\u01B0\u1EDDi d\xF9ng, ho\u1EB7c tr\xEDch xu\u1EA5\
+  t d\u1EEF li\u1EC7u."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i k\xFD t\u1EF1"
 weight: 9
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.870969-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Go polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnoz nieprzeznaczonych dla g\u0142\xF3\
-  wnego strumienia wyj\u015Bciowego.\u2026"
+  wnego strumienia wyj\u015Bciowego."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.467041-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica agregar\
   \ un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre de usuario\
-  \ y\u2026"
+  \ y contrase\xF1a en forma de una cadena codificada en Base64."
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

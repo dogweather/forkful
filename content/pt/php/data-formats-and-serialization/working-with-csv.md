@@ -7,7 +7,8 @@ description: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por
 lastmod: '2024-03-13T22:44:46.689600-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
-  rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para\u2026"
+  rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para representar\
+  \ dados tabulares em texto plano."
 title: Trabalhando com CSV
 weight: 37
 ---

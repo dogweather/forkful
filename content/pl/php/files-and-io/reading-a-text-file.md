@@ -5,9 +5,8 @@ description: "Czytanie pliku tekstowego to proces pobierania danych zawartych w 
   ugiwa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.514941-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku\
-  \ tekstowym do dalszego przetwarzania. Programi\u015Bci robi\u0105 to, by obs\u0142\
-  ugiwa\u0107\u2026"
+summary: Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku tekstowym
+  do dalszego przetwarzania.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

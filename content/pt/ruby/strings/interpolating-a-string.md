@@ -6,8 +6,7 @@ description: "A interpola\xE7\xE3o de strings permite misturar trechos de texto 
 lastmod: '2024-03-13T22:44:47.080255-06:00'
 model: gpt-4-1106-preview
 summary: "A interpola\xE7\xE3o de strings permite misturar trechos de texto com c\xF3\
-  digo Ruby, para criar uma string \xFAnica de forma din\xE2mica. Programadores usam\
-  \ essa\u2026"
+  digo Ruby, para criar uma string \xFAnica de forma din\xE2mica."
 title: Interpolando uma string
 weight: 8
 ---

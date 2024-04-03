@@ -6,8 +6,8 @@ description: "Zoeken en vervangen van tekst in Visual Basic for Applications (VB
   \ is essentieel voor het programmatisch bewerken van documenten, spreadsheets en\u2026"
 lastmod: '2024-03-13T22:44:50.621321-06:00'
 model: gpt-4-0125-preview
-summary: "Zoeken en vervangen van tekst in Visual Basic for Applications (VBA) is\
-  \ essentieel voor het programmatisch bewerken van documenten, spreadsheets en\u2026"
+summary: Zoeken en vervangen van tekst in Visual Basic for Applications (VBA) is essentieel
+  voor het programmatisch bewerken van documenten, spreadsheets en databases.
 title: Zoeken en vervangen van tekst
 weight: 10
 ---

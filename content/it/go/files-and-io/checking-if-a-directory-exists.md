@@ -7,7 +7,8 @@ description: "Verificare se una directory esiste in Go \xE8 fondamentale per le 
 lastmod: '2024-03-13T22:44:42.923758-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Go \xE8 fondamentale per le applicazioni\
-  \ che interagiscono con il file system, per evitare errori quando si tenta di\u2026"
+  \ che interagiscono con il file system, per evitare errori quando si tenta di accedere\
+  \ o modificare directory."
 title: Verificare se una directory esiste
 weight: 20
 ---

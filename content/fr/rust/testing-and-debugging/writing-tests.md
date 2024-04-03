@@ -8,8 +8,7 @@ description: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rifica
 lastmod: '2024-03-13T22:44:57.485592-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rifications\
-  \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu. Les programmeurs\
-  \ font cela\u2026"
+  \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

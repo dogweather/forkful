@@ -7,7 +7,8 @@ description: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl
 lastmod: '2024-03-13T22:44:53.570581-06:00'
 model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der Codeeinheiten\
-  \ (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"
+  \ (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet) in einem\
+  \ gegebenen String zu bestimmen."
 title: "Die L\xE4nge einer Zeichenkette finden"
 weight: 7
 ---

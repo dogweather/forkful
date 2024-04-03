@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.533168-06:00'
 model: gpt-4-0125-preview
 summary: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
   \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
-  \ como la\u2026"
+  \ como la posici\xF3n y la longitud."
 title: Extrayendo subcadenas
 weight: 6
 ---

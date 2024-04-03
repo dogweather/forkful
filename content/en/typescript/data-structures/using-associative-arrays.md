@@ -4,8 +4,8 @@ description: "Associative arrays, or objects in TypeScript, let you use strings 
   \ keys) to access value pairs. Programmers use them for more dynamic data access\u2026"
 lastmod: '2024-03-13T22:44:59.851984-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, or objects in TypeScript, let you use strings (or keys)\
-  \ to access value pairs. Programmers use them for more dynamic data access\u2026"
+summary: Associative arrays, or objects in TypeScript, let you use strings (or keys)
+  to access value pairs.
 title: Using associative arrays
 weight: 15
 ---

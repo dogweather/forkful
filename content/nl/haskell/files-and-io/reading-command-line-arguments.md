@@ -6,8 +6,8 @@ description: "Het lezen van commandoregelargumenten in Haskell laat je gebruiker
   \ opsnuiven wanneer ze je programma uitvoeren. Waarom? Om het gedrag van het\u2026"
 lastmod: '2024-03-13T22:44:50.867939-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten in Haskell laat je gebruikersinvoer\
-  \ opsnuiven wanneer ze je programma uitvoeren. Waarom? Om het gedrag van het\u2026"
+summary: Het lezen van commandoregelargumenten in Haskell laat je gebruikersinvoer
+  opsnuiven wanneer ze je programma uitvoeren.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

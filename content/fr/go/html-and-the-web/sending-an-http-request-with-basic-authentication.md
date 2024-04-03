@@ -7,7 +7,8 @@ description: "Envoyer une requ\xEAte HTTP avec authentification de base en Go im
 lastmod: '2024-03-13T22:44:57.133052-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification de base en Go implique\
-  \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\u2026"
+  \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\
+  \ d'utilisateur et un mot de passe sous forme de cha\xEEne encod\xE9e en Base64."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

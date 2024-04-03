@@ -6,8 +6,7 @@ description: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142
 lastmod: '2024-03-13T22:44:35.125325-06:00'
 model: gpt-4-1106-preview
 summary: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
-  \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\
-  \ by ujednolici\u0107 dane\u2026"
+  \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

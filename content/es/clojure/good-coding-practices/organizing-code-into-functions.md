@@ -6,8 +6,7 @@ description: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de
 lastmod: '2024-03-13T22:44:58.662277-06:00'
 model: gpt-4-1106-preview
 summary: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de c\xF3\
-  digo que cumplen tareas espec\xEDficas. Hacer esto vuelve tu c\xF3digo limpio, m\xE1\
-  s f\xE1cil de\u2026"
+  digo que cumplen tareas espec\xEDficas."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

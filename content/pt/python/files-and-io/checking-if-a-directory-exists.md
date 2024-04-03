@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.168612-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Python consiste em confirmar a presen\xE7\
   a de uma pasta no sistema de arquivos antes de realizar opera\xE7\xF5es como ler\
-  \ ou\u2026"
+  \ ou escrever arquivos."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

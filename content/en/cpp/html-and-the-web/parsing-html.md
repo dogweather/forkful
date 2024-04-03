@@ -4,8 +4,8 @@ description: "Parsing HTML means breaking down HTML content into something a pro
   \ can understand and manipulate. Programmers do this to extract data, manipulate\u2026"
 lastmod: '2024-03-13T22:45:00.355600-06:00'
 model: unknown
-summary: "Parsing HTML means breaking down HTML content into something a program can\
-  \ understand and manipulate. Programmers do this to extract data, manipulate\u2026"
+summary: Parsing HTML means breaking down HTML content into something a program can
+  understand and manipulate.
 title: Parsing HTML
 weight: 43
 ---

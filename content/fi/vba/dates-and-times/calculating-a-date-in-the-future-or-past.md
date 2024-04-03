@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.415456-06:00'
 model: gpt-4-0125-preview
 summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen liittyy\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4miseen, joka on m\xE4\xE4r\xE4tyn\
-  \ lukum\xE4\xE4r\xE4n p\xE4ivi\xE4, kuukausia tai vuosia pois\u2026"
+  \ lukum\xE4\xE4r\xE4n p\xE4ivi\xE4, kuukausia tai vuosia pois annetusta p\xE4iv\xE4\
+  m\xE4\xE4r\xE4st\xE4."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

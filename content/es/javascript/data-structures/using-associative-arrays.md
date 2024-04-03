@@ -7,7 +7,7 @@ description: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en
 lastmod: '2024-03-13T22:44:59.451735-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en JavaScript,\
-  \ objetos, te permiten mapear claves a valores. Esto es extremadamente \xFAtil\u2026"
+  \ objetos, te permiten mapear claves a valores."
 title: Uso de matrices asociativas
 weight: 15
 ---

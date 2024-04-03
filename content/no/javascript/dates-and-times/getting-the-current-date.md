@@ -7,7 +7,7 @@ description: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende o
 lastmod: '2024-03-13T22:44:41.193944-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
-  \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"
+  \ som involverer \xE5 hente og muligens manipulere dagens dato og tid."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

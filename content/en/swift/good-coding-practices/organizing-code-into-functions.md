@@ -5,7 +5,6 @@ description: Grouping code into functions is breaking down tasks into reusable c
 lastmod: '2024-03-13T22:45:00.401384-06:00'
 model: gpt-4-1106-preview
 summary: Grouping code into functions is breaking down tasks into reusable chunks.
-  It makes the code clean, less error-prone, and easier to debug or refactor.
 title: Organizing code into functions
 weight: 18
 ---

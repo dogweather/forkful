@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.477431-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en String i Dart handler om \xE5 bestemme antallet\
   \ kodeenheter (i hovedsak antallet tegn hvis man tenker p\xE5 det p\xE5 en forenklet\
-  \ m\xE5te) i en\u2026"
+  \ m\xE5te) i en gitt String."
 title: "Finne lengden p\xE5 en streng"
 weight: 7
 ---

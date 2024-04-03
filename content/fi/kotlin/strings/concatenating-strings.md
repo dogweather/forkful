@@ -6,7 +6,7 @@ description: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman merkkijon
 lastmod: '2024-03-13T22:44:56.522746-06:00'
 model: gpt-4-1106-preview
 summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon liitt\xE4\
-  mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska se helpottaa tekstipohjaisten\u2026"
+  mist\xE4 yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

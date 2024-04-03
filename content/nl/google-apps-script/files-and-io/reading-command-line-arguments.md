@@ -6,8 +6,9 @@ description: "Het lezen van commandoregelargumenten in Google Apps Script is een
   \ een verkeerde benaming, omdat, in tegenstelling tot traditionele command-line\u2026"
 lastmod: '2024-03-13T22:44:50.348550-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten in Google Apps Script is een beetje\
-  \ een verkeerde benaming, omdat, in tegenstelling tot traditionele command-line\u2026"
+summary: Het lezen van commandoregelargumenten in Google Apps Script is een beetje
+  een verkeerde benaming, omdat, in tegenstelling tot traditionele command-line interfaces
+  in programmeertalen zoals Python of Node.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

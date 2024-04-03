@@ -5,9 +5,7 @@ description: "PHP levereras med en interaktiv debugger som kallas Xdebug. S\xE5 
   \ i din\u2026"
 lastmod: '2024-03-13T22:44:38.000750-06:00'
 model: gpt-4-0125-preview
-summary: "PHP levereras med en interaktiv debugger som kallas Xdebug. S\xE5 h\xE4\
-  r anv\xE4nder du den. F\xF6rst, se till att du har Xdebug installerat och konfigurerat\
-  \ i din\u2026"
+summary: PHP levereras med en interaktiv debugger som kallas Xdebug.
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

@@ -7,7 +7,8 @@ description: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dic
 lastmod: '2024-03-13T22:44:46.788218-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dicion\xE1\
-  rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a\u2026"
+  rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a recupera\xE7\
+  \xE3o de dados direta e eficiente."
 title: Usando arrays associativos
 weight: 15
 ---

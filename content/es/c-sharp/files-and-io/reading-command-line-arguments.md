@@ -5,7 +5,7 @@ description: "Los argumentos de la l\xEDnea de comandos son datos que pasas a tu
 lastmod: '2024-03-13T22:44:59.092975-06:00'
 model: gpt-4-1106-preview
 summary: "Los argumentos de la l\xEDnea de comandos son datos que pasas a tu aplicaci\xF3\
-  n al iniciarla. Los programadores los usan para personalizar la ejecuci\xF3n del\u2026"
+  n al iniciarla."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

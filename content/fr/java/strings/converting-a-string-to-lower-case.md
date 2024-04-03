@@ -6,8 +6,7 @@ description: "Changer une cha\xEEne en minuscules, c'est transformer tous ses ca
 lastmod: '2024-03-13T22:44:57.622024-06:00'
 model: gpt-4-1106-preview
 summary: "Changer une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
-  res en leur \xE9quivalent en lettre minuscule. Les programmeurs font \xE7a pour\
-  \ uniformiser\u2026"
+  res en leur \xE9quivalent en lettre minuscule."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

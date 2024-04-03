@@ -6,7 +6,7 @@ description: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\
 lastmod: '2024-03-13T22:44:54.004303-06:00'
 model: gpt-4-1106-preview
 summary: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\xE4ngeren\
-  \ String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren, zu\u2026"
+  \ String herauszutrennen."
 title: Teilstrings extrahieren
 weight: 6
 ---

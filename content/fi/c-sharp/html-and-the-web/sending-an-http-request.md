@@ -6,8 +6,7 @@ description: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopa
 lastmod: '2024-03-13T22:44:56.570061-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopalveluiden\
-  \ kanssa. Koodarit tekev\xE4t t\xE4m\xE4n hakeakseen tietoja tai l\xE4hett\xE4\xE4\
-  kseen niit\xE4, ja usein\u2026"
+  \ kanssa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

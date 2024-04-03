@@ -8,7 +8,8 @@ description: "Les expressions r\xE9guli\xE8res (regex) dans Fish Shell permetten
 lastmod: '2024-03-13T22:44:58.311501-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Fish Shell permettent de rechercher,\
-  \ d'apparier et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs\u2026"
+  \ d'apparier et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs\
+  \ sp\xE9cifiques."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

@@ -6,8 +6,7 @@ description: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF
 lastmod: '2024-03-13T22:44:58.633522-06:00'
 model: gpt-4-1106-preview
 summary: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3n para\
-  \ guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se hace\
-  \ para no dejar\u2026"
+  \ guardar datos que solo necesitas durante la ejecuci\xF3n de tu script."
 title: Creando un archivo temporal
 weight: 21
 ---

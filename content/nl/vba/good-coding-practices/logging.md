@@ -6,8 +6,9 @@ description: "Loggen in Visual Basic for Applications (VBA) houdt in dat er info
   \ over het runtimegedrag van een programma wordt vastgelegd in een bestand, console\u2026"
 lastmod: '2024-03-13T22:44:50.643532-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie\
-  \ over het runtimegedrag van een programma wordt vastgelegd in een bestand, console\u2026"
+summary: Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie
+  over het runtimegedrag van een programma wordt vastgelegd in een bestand, console
+  of database.
 title: Logboekregistratie
 weight: 17
 ---

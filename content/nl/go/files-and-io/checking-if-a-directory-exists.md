@@ -6,8 +6,9 @@ description: "Controleren of een map bestaat in Go is cruciaal voor applicaties 
   \ interageren met het bestandssysteem, om fouten te voorkomen bij het proberen te\u2026"
 lastmod: '2024-03-13T22:44:50.302385-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat in Go is cruciaal voor applicaties die interageren\
-  \ met het bestandssysteem, om fouten te voorkomen bij het proberen te\u2026"
+summary: Controleren of een map bestaat in Go is cruciaal voor applicaties die interageren
+  met het bestandssysteem, om fouten te voorkomen bij het proberen te benaderen of
+  wijzigen van mappen.
 title: Controleren of een directory bestaat
 weight: 20
 ---

@@ -9,9 +9,7 @@ description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y 
 lastmod: '2024-03-13T22:44:37.138845-06:00'
 model: gpt-4-0125-preview
 summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\u1ED9\
-  t ph\u1EA7n c\u1EE7a chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn c\u1EAFt v\xE0 chia chu\u1ED7\
-  i \u0111\u1EC3 c\xF4 l\u1EADp d\u1EEF li\u1EC7u, nh\u1EADp m\u1ED9t s\u1ED1 \u0111\
-  \u1ECBnh d\u1EA1ng, ho\u1EB7c ch\u1EC9nh s\u1EEDa v\u0103n b\u1EA3n\u2026"
+  t ph\u1EA7n c\u1EE7a chu\u1ED7i."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

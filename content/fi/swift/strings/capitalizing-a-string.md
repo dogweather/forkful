@@ -8,7 +8,8 @@ description: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa anne
 lastmod: '2024-03-13T22:44:56.890961-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua merkkijonoa\
-  \ siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit ovat\u2026"
+  \ siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit ovat pieni\xE4\
+  \ kirjaimia."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

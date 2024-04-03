@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.285713-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res permet aux\
   \ programmeurs de convertir les repr\xE9sentations textuelles des dates en objets\
-  \ `Date`\u2026"
+  \ `Date` JavaScript, facilitant les manipulations, comparaisons et op\xE9rations\
+  \ de formatage des dates."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

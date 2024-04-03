@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.372418-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en Dart offrent un moyen puissant\
   \ de rechercher et de manipuler des cha\xEEnes de caract\xE8res, permettant aux\
-  \ programmeurs\u2026"
+  \ programmeurs d'effectuer des t\xE2ches complexes de traitement de texte efficacement."
 title: "Utiliser des expressions r\xE9guli\xE8res"
 weight: 11
 ---

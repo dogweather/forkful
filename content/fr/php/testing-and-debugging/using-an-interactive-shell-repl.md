@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.880348-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle de Lire-\xC9\
   valuer-Imprimer), vous permet d'\xE9crire et d'ex\xE9cuter du code PHP \xE0 la vol\xE9\
-  e. C'est\u2026"
+  e."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

@@ -6,7 +6,7 @@ description: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern 
 lastmod: '2024-03-13T22:44:54.119062-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern zu verarbeiten,\
-  \ die ein Skript ausgef\xFChrt haben. Programmierer nutzen das, um Skripts\u2026"
+  \ die ein Skript ausgef\xFChrt haben."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

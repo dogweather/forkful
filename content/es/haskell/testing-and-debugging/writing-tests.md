@@ -6,8 +6,8 @@ description: "Escribir pruebas en Haskell se trata de asegurar que tus funciones
   \ como se espera mediante controles automatizados. Los programadores lo hacen\u2026"
 lastmod: '2024-03-13T22:44:59.122346-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Haskell se trata de asegurar que tus funciones funcionen\
-  \ como se espera mediante controles automatizados. Los programadores lo hacen\u2026"
+summary: Escribir pruebas en Haskell se trata de asegurar que tus funciones funcionen
+  como se espera mediante controles automatizados.
 title: Escribiendo pruebas
 weight: 36
 ---

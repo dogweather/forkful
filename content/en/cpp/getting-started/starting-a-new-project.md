@@ -4,8 +4,7 @@ description: "Starting a new project means setting up the foundation for your co
   \ Programmers do this to kickstart the development process, guide the project's\u2026"
 lastmod: '2024-03-13T22:45:00.358161-06:00'
 model: gpt-4-1106-preview
-summary: "Starting a new project means setting up the foundation for your codebase.\
-  \ Programmers do this to kickstart the development process, guide the project's\u2026"
+summary: Starting a new project means setting up the foundation for your codebase.
 title: Starting a new project
 weight: 1
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.519017-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien,\
   \ joko yksitt\xE4isten (' ') tai kaksois (\" \"), poistamista k\xE4sitelt\xE4v\xE4\
-  st\xE4\u2026"
+  st\xE4 tekstidatasta."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

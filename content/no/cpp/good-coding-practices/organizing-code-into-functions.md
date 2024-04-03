@@ -6,8 +6,7 @@ description: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp 
 lastmod: '2024-03-13T22:44:41.105450-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i mindre,\
-  \ gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8re koden\
-  \ v\xE5r lesbar,\u2026"
+  \ gjenbrukbare deler."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

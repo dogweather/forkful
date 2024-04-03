@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.359669-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne de caract\xE8res en minuscules est une op\xE9ration\
   \ fondamentale qui consiste \xE0 transformer tous les caract\xE8res d'une cha\xEE\
-  ne donn\xE9e en\u2026"
+  ne donn\xE9e en leurs \xE9quivalents en minuscules."
 title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---

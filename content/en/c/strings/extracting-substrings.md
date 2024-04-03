@@ -4,8 +4,8 @@ description: "Extracting substrings in C involves creating a smaller string (sub
   \ from a larger string based on specified criteria, such as position and length.\u2026"
 lastmod: '2024-03-13T22:45:00.501817-06:00'
 model: gpt-4-0125-preview
-summary: "Extracting substrings in C involves creating a smaller string (substring)\
-  \ from a larger string based on specified criteria, such as position and length.\u2026"
+summary: Extracting substrings in C involves creating a smaller string (substring)
+  from a larger string based on specified criteria, such as position and length.
 title: Extracting substrings
 weight: 6
 ---

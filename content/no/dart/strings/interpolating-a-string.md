@@ -7,7 +7,8 @@ description: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier
 lastmod: '2024-03-13T22:44:40.471747-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier direkte\
-  \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte\u2026"
+  \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte sammensl\xE5\
+  inger."
 title: Interpolering av en streng
 weight: 8
 ---

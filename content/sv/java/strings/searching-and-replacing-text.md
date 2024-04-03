@@ -6,8 +6,7 @@ description: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta s
 lastmod: '2024-03-13T22:44:37.772957-06:00'
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta specifika\
-  \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+  \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

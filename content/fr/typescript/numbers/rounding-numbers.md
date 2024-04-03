@@ -6,8 +6,7 @@ description: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une 
 lastmod: '2024-03-13T22:44:57.431119-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
-  cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\
-  rique afin\u2026"
+  cision sp\xE9cifique."
 title: Arrondir les nombres
 weight: 13
 ---

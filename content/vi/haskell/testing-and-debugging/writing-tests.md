@@ -9,9 +9,7 @@ description: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u
 lastmod: '2024-03-13T22:44:36.716655-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111\xFA\
-  ng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng. Testing gi\xFAp b\u1EAF\
-  t l\u1ED7i, h\u1ED7 tr\u1EE3 b\u1EA3o tr\xEC code, v\xE0 \u0111\u1EA3m b\u1EA3o\
-  \ c\xE1c thay \u0111\u1ED5i kh\xF4ng\u2026"
+  ng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

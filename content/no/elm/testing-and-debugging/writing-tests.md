@@ -8,7 +8,7 @@ description: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \x
 lastmod: '2024-03-13T22:44:40.712616-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \xE5 verifisere\
-  \ korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som forventet.\u2026"
+  \ korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som forventet."
 title: Skrive tester
 weight: 36
 ---

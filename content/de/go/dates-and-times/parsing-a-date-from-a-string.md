@@ -6,8 +6,8 @@ description: "Das Parsen eines Datums aus einem String in Go beinhaltet die Umwa
   \ des als Text dargestellten Datums in ein nutzbareres Format (z. B. `time.Time`).\u2026"
 lastmod: '2024-03-13T22:44:53.298332-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String in Go beinhaltet die Umwandlung\
-  \ des als Text dargestellten Datums in ein nutzbareres Format (z. B. `time.Time`).\u2026"
+summary: Das Parsen eines Datums aus einem String in Go beinhaltet die Umwandlung
+  des als Text dargestellten Datums in ein nutzbareres Format (z.
 title: Ein Datum aus einem String interpretieren
 weight: 30
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.625237-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Haskellissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n nykyisen ajan hankkimisen ja sen muuntamisen luettavaan\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4muotoon. Ohjelmoijat\u2026"
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4muotoon."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

@@ -8,8 +8,7 @@ description: "Pisanie test\xF3w w Pythonie polega na tworzeniu automatycznych sk
 lastmod: '2024-03-13T22:44:34.953084-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Pythonie polega na tworzeniu automatycznych skrypt\xF3\
-  w, maj\u0105cych na celu zweryfikowanie poprawno\u015Bci dzia\u0142ania kodu. Programi\u015B\
-  ci robi\u0105 to,\u2026"
+  w, maj\u0105cych na celu zweryfikowanie poprawno\u015Bci dzia\u0142ania kodu."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

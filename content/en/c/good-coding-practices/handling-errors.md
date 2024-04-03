@@ -5,8 +5,8 @@ description: "Handling errors in C involves detecting and responding to anomalou
   \ bugs,\u2026"
 lastmod: '2024-03-13T22:45:00.518058-06:00'
 model: gpt-4-0125-preview
-summary: "Handling errors in C involves detecting and responding to anomalous conditions\
-  \ that arise during program execution. Programmers do this to prevent bugs,\u2026"
+summary: Handling errors in C involves detecting and responding to anomalous conditions
+  that arise during program execution.
 title: Handling errors
 weight: 16
 ---

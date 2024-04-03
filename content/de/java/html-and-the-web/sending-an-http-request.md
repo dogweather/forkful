@@ -4,8 +4,7 @@ description: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet komm
   \ Programmierer senden sie, um Daten zu holen, zu senden, zu \xE4ndern oder zu\u2026"
 lastmod: '2024-03-13T22:44:53.760038-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet kommunizieren.\
-  \ Programmierer senden sie, um Daten zu holen, zu senden, zu \xE4ndern oder zu\u2026"
+summary: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet kommunizieren."
 title: Einen HTTP-Request senden
 weight: 44
 ---

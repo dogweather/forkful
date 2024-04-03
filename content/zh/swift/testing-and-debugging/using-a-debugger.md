@@ -10,8 +10,13 @@ model: gpt-4-0125-preview
 summary: "\u8981\u5728Xcode\uFF08Swift\u7684\u96C6\u6210\u5F00\u53D1\u73AF\u5883\uFF09\
   \u4E2D\u4F7F\u7528\u8C03\u8BD5\u5668\uFF0C\u4F60\u53EF\u4EE5\u8BBE\u7F6E\u65AD\u70B9\
   \u3001\u68C0\u67E5\u53D8\u91CF\u548C\u89C2\u5BDF\u8868\u8FBE\u5F0F\u3002\u8FD9\u91CC\
-  \u6709\u4E00\u4E2A\u4F8B\u5B50\uFF1A ```Swift func findFactorial(of number: Int)\
-  \ -> Int { if number == 0 { return 1 } return number *\u2026"
+  \u6709\u4E00\u4E2A\u4F8B\u5B50\uFF1A\n\n```Swift\nfunc findFactorial(of number:\
+  \ Int) -> Int {\n    if number == 0 {\n        return 1\n    }\n    return number\
+  \ * findFactorial(of: number - 1)\n}\n\nlet result = findFactorial(of: 5)\nprint(result)\n\
+  ```\n\n\u901A\u8FC7\u5728Xcode\u4E2D\u4E00\u4E2A\u884C\u53F7\u7684\u5DE6\u4FA7\u70B9\
+  \u51FB\u8BBE\u7F6E\u4E00\u4E2A\u65AD\u70B9\uFF0C\u7136\u540E\u8FD0\u884C\u7A0B\u5E8F\
+  \u3002\u5F53\u7A0B\u5E8F\u9047\u5230\u65AD\u70B9\u65F6\uFF0CXcode\u4F1A\u6682\u505C\
+  \u6267\u884C\u3002\u73B0\u5728\u4F60\u53EF\u4EE5\uFF1A\n\n1."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

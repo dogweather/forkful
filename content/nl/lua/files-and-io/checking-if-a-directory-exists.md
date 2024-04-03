@@ -8,7 +8,7 @@ description: "Controleren of een map bestaat betekent verifi\xEBren of een folde
 lastmod: '2024-03-13T22:44:50.951688-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat betekent verifi\xEBren of een folder aanwezig\
-  \ is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen, zoals\u2026"
+  \ is in het bestandssysteem."
 title: Controleren of een directory bestaat
 weight: 20
 ---

@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in programming are patterns used for m
   \ character combinations in strings. In Elm, just like in other languages,\u2026"
 lastmod: '2024-03-13T22:45:00.000408-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in programming are patterns used for matching\
-  \ character combinations in strings. In Elm, just like in other languages,\u2026"
+summary: Regular expressions (regex) in programming are patterns used for matching
+  character combinations in strings.
 title: Using regular expressions
 weight: 11
 ---

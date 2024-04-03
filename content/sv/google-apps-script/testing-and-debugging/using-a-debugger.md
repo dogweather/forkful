@@ -8,8 +8,7 @@ description: "Google Apps Script erbjuder en inbyggd fels\xF6kare inom Apps Scri
 lastmod: '2024-03-13T22:44:37.443732-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script erbjuder en inbyggd fels\xF6kare inom Apps Script Editor\
-  \ f\xF6r att hj\xE4lpa till att fels\xF6ka skript. S\xE5 h\xE4r initierar och anv\xE4\
-  nder du\u2026"
+  \ f\xF6r att hj\xE4lpa till att fels\xF6ka skript."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

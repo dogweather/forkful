@@ -4,8 +4,8 @@ description: "La recherche et remplacement de texte, c'est simplement trouver de
   \ bouts de texte et les troquer contre autre chose. Les programmeurs le font pour\u2026"
 lastmod: '2024-03-13T22:44:58.306646-06:00'
 model: gpt-4-1106-preview
-summary: "La recherche et remplacement de texte, c'est simplement trouver des bouts\
-  \ de texte et les troquer contre autre chose. Les programmeurs le font pour\u2026"
+summary: La recherche et remplacement de texte, c'est simplement trouver des bouts
+  de texte et les troquer contre autre chose.
 title: Recherche et remplacement de texte
 weight: 10
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.588152-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen C#:ssa tarkoittaa kansion l\xE4sn\xE4\
   olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4\
-  . Ohjelmoijat tekev\xE4t\u2026"
+  ."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

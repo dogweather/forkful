@@ -5,8 +5,8 @@ description: "Reading a text file means accessing the content of a file stored o
   \ their\u2026"
 lastmod: '2024-03-13T22:45:00.567169-06:00'
 model: gpt-4-1106-preview
-summary: "Reading a text file means accessing the content of a file stored on disk\
-  \ through code. Programmers do it to process, analyze, or display data within their\u2026"
+summary: Reading a text file means accessing the content of a file stored on disk
+  through code.
 title: Reading a text file
 weight: 22
 ---

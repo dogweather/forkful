@@ -4,8 +4,8 @@ description: "Remover aspas de uma string no PowerShell elimina as marcas de asp
   \ simples (`'`) ou duplas (`\"`) envolvendo seu texto. Programadores frequentemente\u2026"
 lastmod: '2024-03-13T22:44:46.783512-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string no PowerShell elimina as marcas de aspas simples\
-  \ (`'`) ou duplas (`\"`) envolvendo seu texto. Programadores frequentemente\u2026"
+summary: Remover aspas de uma string no PowerShell elimina as marcas de aspas simples
+  (`'`) ou duplas (`"`) envolvendo seu texto.
 title: Removendo aspas de uma string
 weight: 9
 ---

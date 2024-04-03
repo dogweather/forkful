@@ -4,8 +4,8 @@ description: "Retrieving the current date in Haskell involves obtaining the syst
   \ current time and transforming it into a readable date format. Programmers do this\u2026"
 lastmod: '2024-03-13T22:45:00.138036-06:00'
 model: gpt-4-0125-preview
-summary: "Retrieving the current date in Haskell involves obtaining the system's current\
-  \ time and transforming it into a readable date format. Programmers do this\u2026"
+summary: Retrieving the current date in Haskell involves obtaining the system's current
+  time and transforming it into a readable date format.
 title: Getting the current date
 weight: 29
 ---

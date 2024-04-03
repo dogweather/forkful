@@ -7,7 +7,7 @@ description: "Komplekse tall, representert som en kombinasjon av reelle og imagi
 lastmod: '2024-03-13T22:44:40.307400-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, representert som en kombinasjon av reelle og imagin\xE6\
-  re enheter (f.eks. 3 + 4i), er grunnleggende i ulike beregningsproblemer, spesielt\u2026"
+  re enheter (f."
 title: Arbeide med komplekse tall
 weight: 14
 ---

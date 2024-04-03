@@ -4,8 +4,9 @@ description: "Checking if a directory exists in TypeScript is essential for file
   \ tasks, such as reading from or writing data to files, ensuring that\u2026"
 lastmod: '2024-03-13T22:44:59.871565-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in TypeScript is essential for file management\
-  \ tasks, such as reading from or writing data to files, ensuring that\u2026"
+summary: Checking if a directory exists in TypeScript is essential for file management
+  tasks, such as reading from or writing data to files, ensuring that operations are
+  performed only on valid directories.
 title: Checking if a directory exists
 weight: 20
 ---

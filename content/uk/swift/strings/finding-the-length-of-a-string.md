@@ -4,8 +4,8 @@ description: "Finding the length of a string in Swift is about getting the count
   \ characters it contains. Programmers do this to validate inputs, size elements,\u2026"
 lastmod: '2024-03-13T22:44:49.903826-06:00'
 model: gpt-4-1106-preview
-summary: "Finding the length of a string in Swift is about getting the count of characters\
-  \ it contains. Programmers do this to validate inputs, size elements,\u2026"
+summary: Finding the length of a string in Swift is about getting the count of characters
+  it contains.
 title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
   \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
 weight: 7

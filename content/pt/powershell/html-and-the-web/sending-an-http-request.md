@@ -6,8 +6,7 @@ description: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xF5es
 lastmod: '2024-03-13T22:44:46.793931-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xF5es a um\
-  \ servidor web. Programadores fazem isso para interagir com APIs, buscar dados e\
-  \ comunicar-se\u2026"
+  \ servidor web."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

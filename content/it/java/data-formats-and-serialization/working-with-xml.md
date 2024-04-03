@@ -4,8 +4,8 @@ description: "Lavorare con XML comporta il parsing, l'interrogazione e la manipo
   \ di documenti XML con Java. I programmatori lo fanno per lo scambio di dati, la\u2026"
 lastmod: '2024-03-13T22:44:43.333309-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML comporta il parsing, l'interrogazione e la manipolazione\
-  \ di documenti XML con Java. I programmatori lo fanno per lo scambio di dati, la\u2026"
+summary: Lavorare con XML comporta il parsing, l'interrogazione e la manipolazione
+  di documenti XML con Java.
 title: Lavorare con XML
 weight: 40
 ---

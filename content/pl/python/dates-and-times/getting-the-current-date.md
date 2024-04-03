@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.960500-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w Pythonie to podstawowa operacja dla\
   \ wielu aplikacji, takich jak logowanie, analiza danych i podejmowanie decyzji opartych\
-  \ na\u2026"
+  \ na czasie."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

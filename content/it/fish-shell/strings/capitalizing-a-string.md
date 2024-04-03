@@ -6,8 +6,8 @@ description: "Capitalizzare una stringa significa modificarla in modo che la pri
   \ lettera sia maiuscola e il resto della stringa sia minuscolo. Questo \xE8 un compito\u2026"
 lastmod: '2024-03-13T22:44:43.839157-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa significa modificarla in modo che la prima lettera\
-  \ sia maiuscola e il resto della stringa sia minuscolo. Questo \xE8 un compito\u2026"
+summary: Capitalizzare una stringa significa modificarla in modo che la prima lettera
+  sia maiuscola e il resto della stringa sia minuscolo.
 title: Capitalizzare una stringa
 weight: 2
 ---

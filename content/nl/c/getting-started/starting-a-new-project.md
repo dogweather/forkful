@@ -7,7 +7,7 @@ description: "Een nieuw project in C starten, betekent het opzetten van een fund
 lastmod: '2024-03-13T22:44:51.291890-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
-  \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren.\u2026"
+  \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren."
 title: Een nieuw project starten
 weight: 1
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.061208-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values) filer inneb\xE4r att tolka och\
   \ generera textdata organiserad i rader och kolumner, d\xE4r komman anv\xE4nds f\xF6\
-  r att\u2026"
+  r att separera enskilda v\xE4rden."
 title: Arbeta med CSV
 weight: 37
 ---

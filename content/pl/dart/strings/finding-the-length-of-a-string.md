@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.080996-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w (String) w Dart polega\
   \ na okre\u015Bleniu liczby jednostek kodu (w zasadzie liczby znak\xF3w, je\u015B\
-  li my\u015Ble\u0107 o tym uproszczonymi\u2026"
+  li my\u015Ble\u0107 o tym uproszczonymi kategoriami) w danym ci\u0105gu znak\xF3\
+  w."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---

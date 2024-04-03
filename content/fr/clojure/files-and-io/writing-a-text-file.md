@@ -7,7 +7,8 @@ description: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de m
 lastmod: '2024-03-13T22:44:57.301328-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
-  \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"
+  \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\
+  \ la persistance, la configuration, la journalisation ou la communication inter-processus."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

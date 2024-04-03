@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.636868-06:00'
 model: gpt-4-0125-preview
 summary: "Logging in software development is the process of recording information\
   \ about a program\u2019s execution, designed to track its behavior and diagnose\
-  \ issues.\u2026"
+  \ issues."
 title: Logging
 weight: 17
 ---

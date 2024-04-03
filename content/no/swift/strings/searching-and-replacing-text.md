@@ -6,8 +6,7 @@ description: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fra
 lastmod: '2024-03-13T22:44:41.127520-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser i\
-  \ en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\
-  \ eller\u2026"
+  \ en streng."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

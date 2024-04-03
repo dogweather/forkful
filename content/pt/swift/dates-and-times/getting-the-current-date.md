@@ -7,7 +7,7 @@ description: "Obter a data atual em Swift envolve o uso da classe `Date` para ac
 lastmod: '2024-03-13T22:44:46.931052-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Swift envolve o uso da classe `Date` para acessar\
-  \ a data e a hora em que o aplicativo est\xE1 sendo executado. Os programadores\u2026"
+  \ a data e a hora em que o aplicativo est\xE1 sendo executado."
 title: Obtendo a data atual
 weight: 29
 ---

@@ -6,8 +6,7 @@ description: "Tilap\xE4istiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka ohjel
 lastmod: '2024-03-13T22:44:56.715835-06:00'
 model: gpt-4-1106-preview
 summary: "Tilap\xE4istiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka ohjelmat luovat\
-  \ v\xE4liaikaisen datan tallentamiseen. Ne ovat t\xE4rkeit\xE4, sill\xE4 ne auttavat\
-  \ v\xE4ltt\xE4m\xE4\xE4n\u2026"
+  \ v\xE4liaikaisen datan tallentamiseen."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

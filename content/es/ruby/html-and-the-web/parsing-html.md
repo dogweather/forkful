@@ -7,7 +7,7 @@ description: "Analizar HTML significa desglosar un trozo de c\xF3digo HTML para 
 lastmod: '2024-03-13T22:44:59.589454-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML significa desglosar un trozo de c\xF3digo HTML para comprender\
-  \ su estructura y contenido. Los programadores lo hacen para extraer datos,\u2026"
+  \ su estructura y contenido."
 title: Analizando HTML
 weight: 43
 ---

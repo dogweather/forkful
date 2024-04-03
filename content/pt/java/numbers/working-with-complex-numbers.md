@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\x
 lastmod: '2024-03-13T22:44:46.450113-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\xE9s da\
-  \ adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`. Eles s\xE3o cruciais\
-  \ em campos como\u2026"
+  \ adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

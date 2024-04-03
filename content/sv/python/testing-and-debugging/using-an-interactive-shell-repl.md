@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.484751-06:00'
 model: gpt-4-0125-preview
 summary: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
   \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
-  \ till\u2026"
+  \ till anv\xE4ndaren."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

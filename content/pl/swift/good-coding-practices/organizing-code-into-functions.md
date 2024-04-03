@@ -6,8 +6,7 @@ description: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielok
 lastmod: '2024-03-13T22:44:35.760426-06:00'
 model: gpt-4-0125-preview
 summary: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielokrotnie\
-  \ u\u017Cywalne fragmenty. Sprawia to, \u017Ce kod jest czytelny, mniej podatny\
-  \ na b\u0142\u0119dy i\u2026"
+  \ u\u017Cywalne fragmenty."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

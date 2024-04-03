@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.551625-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on eritt\xE4in luettavissa\
   \ oleva datan serialisointimuoto, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa,\
-  \ datan\u2026"
+  \ datan tallennuksessa ja prosessien v\xE4lisess\xE4 viestinn\xE4ss\xE4."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

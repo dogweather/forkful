@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.877882-06:00'
 model: gpt-4-0125-preview
 summary: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny w\
   \ wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
-  \u0107 integracji z wi\u0119kszo\u015Bci\u0105\u2026"
+  \u0107 integracji z wi\u0119kszo\u015Bci\u0105 j\u0119zyk\xF3w programowania, w\
+  \ tym Go."
 title: Praca z plikami CSV
 weight: 37
 ---

@@ -6,8 +6,9 @@ description: "Das Schreiben in den Standardfehler (stderr) geht darum, Fehlermel
   \ oder Diagnoseausgaben Ihres Programms auf einen separaten Stream zu leiten,\u2026"
 lastmod: '2024-03-13T22:44:54.241320-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in den Standardfehler (stderr) geht darum, Fehlermeldungen\
-  \ oder Diagnoseausgaben Ihres Programms auf einen separaten Stream zu leiten,\u2026"
+summary: Das Schreiben in den Standardfehler (stderr) geht darum, Fehlermeldungen
+  oder Diagnoseausgaben Ihres Programms auf einen separaten Stream zu leiten, getrennt
+  von der Standardausgabe (stdout).
 title: Schreiben auf Standardfehler
 weight: 25
 ---

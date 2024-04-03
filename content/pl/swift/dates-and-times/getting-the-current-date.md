@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.765220-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu klasy\
   \ `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja jest\
-  \ uruchamiana.\u2026"
+  \ uruchamiana."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

@@ -6,8 +6,8 @@ description: "Comprobar si un directorio existe en el sistema de archivos es ese
   \ para gestionar estructuras de archivos desde tus aplicaciones Swift. Esta tarea\u2026"
 lastmod: '2024-03-13T22:44:59.430670-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe en el sistema de archivos es esencial\
-  \ para gestionar estructuras de archivos desde tus aplicaciones Swift. Esta tarea\u2026"
+summary: Comprobar si un directorio existe en el sistema de archivos es esencial para
+  gestionar estructuras de archivos desde tus aplicaciones Swift.
 title: Comprobando si un directorio existe
 weight: 20
 ---

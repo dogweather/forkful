@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.091625-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die ein Suchmuster\
   \ bilden, das haupts\xE4chlich f\xFCr die Stringsuche und -manipulation verwendet\
-  \ wird.\u2026"
+  \ wird."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

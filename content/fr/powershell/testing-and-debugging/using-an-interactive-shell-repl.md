@@ -6,7 +6,7 @@ description: "La coquille interactive, ou Boucle de Lecture-\xC9valuation-Affich
 lastmod: '2024-03-13T22:44:58.049417-06:00'
 model: gpt-4-0125-preview
 summary: "La coquille interactive, ou Boucle de Lecture-\xC9valuation-Affichage (REPL),\
-  \ vous permet de taper des commandes PowerShell et d'obtenir un retour imm\xE9diat.\u2026"
+  \ vous permet de taper des commandes PowerShell et d'obtenir un retour imm\xE9diat."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

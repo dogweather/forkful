@@ -8,8 +8,7 @@ description: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 br
 lastmod: '2024-03-13T22:44:41.152606-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 bruke `Date`-klassen\
-  \ for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt. Programmerere\
-  \ trenger \xE5 hente\u2026"
+  \ for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

@@ -6,8 +6,7 @@ description: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w
 lastmod: '2024-03-13T22:44:35.590754-06:00'
 model: gpt-4-1106-preview
 summary: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na mniejsze,\
-  \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania.\
-  \ Sprawia to, \u017Ce kod\u2026"
+  \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

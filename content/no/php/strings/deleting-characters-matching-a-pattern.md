@@ -6,8 +6,7 @@ description: "I PHP kan vi slette tegn som passer til et m\xF8nster for \xE5 ren
 lastmod: '2024-03-13T22:44:40.869822-06:00'
 model: gpt-4-1106-preview
 summary: "I PHP kan vi slette tegn som passer til et m\xF8nster for \xE5 rense data\
-  \ eller forenkle behandlingen av tekststrenger. Programmerere gj\xF8r dette for\
-  \ \xE5 fjerne\u2026"
+  \ eller forenkle behandlingen av tekststrenger."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

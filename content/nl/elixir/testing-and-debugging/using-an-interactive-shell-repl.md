@@ -7,9 +7,8 @@ description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je i
   \ de\u2026"
 lastmod: '2024-03-13T22:44:50.463784-06:00'
 model: gpt-4-0125-preview
-summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat\
-  \ om codefragmenten in real-time uit te proberen. Elixir-programmeurs gebruiken\
-  \ de\u2026"
+summary: Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat
+  om codefragmenten in real-time uit te proberen.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

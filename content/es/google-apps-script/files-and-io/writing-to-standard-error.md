@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.581476-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en lenguajes de programaci\xF3\
   n se trata de dirigir mensajes de error y diagn\xF3sticos a un flujo separado, aparte\
-  \ de la\u2026"
+  \ de la salida est\xE1ndar (stdout)."
 title: "Escribir en el error est\xE1ndar"
 weight: 25
 ---

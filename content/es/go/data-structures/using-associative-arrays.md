@@ -7,7 +7,7 @@ description: "Los arreglos asociativos, conocidos como mapas en Go, te permiten 
 lastmod: '2024-03-13T22:44:58.459375-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar\
-  \ pares clave-valor donde cada clave \xFAnica se asocia a un valor. Los\u2026"
+  \ pares clave-valor donde cada clave \xFAnica se asocia a un valor."
 title: Usando arrays asociativos
 weight: 15
 ---

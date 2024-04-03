@@ -6,8 +6,7 @@ description: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket dat
 lastmod: '2024-03-13T22:44:38.263314-06:00'
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket datum som\
-  \ kommer f\xF6rst eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6r att\
-  \ hantera deadlines,\u2026"
+  \ kommer f\xF6rst eller om de \xE4r samma."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

@@ -8,7 +8,7 @@ description: "Obter a data atual em TypeScript, uma linguagem constru\xEDda sobr
 lastmod: '2024-03-13T22:44:46.336450-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em TypeScript, uma linguagem constru\xEDda sobre o JavaScript,\
-  \ permite acessar e manipular as informa\xE7\xF5es da data e hora atuais.\u2026"
+  \ permite acessar e manipular as informa\xE7\xF5es da data e hora atuais."
 title: Obtendo a data atual
 weight: 29
 ---

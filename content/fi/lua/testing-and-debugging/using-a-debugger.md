@@ -6,8 +6,7 @@ description: "Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria, mutta voi
 lastmod: '2024-03-13T22:44:56.701626-06:00'
 model: gpt-4-0125-preview
 summary: "Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria, mutta voit k\xE4\
-  ytt\xE4\xE4 ulkoisia, kuten ZeroBrane Studio. T\xE4ss\xE4 maistiainen siit\xE4,\
-  \ miten sen kanssa\u2026"
+  ytt\xE4\xE4 ulkoisia, kuten ZeroBrane Studio."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

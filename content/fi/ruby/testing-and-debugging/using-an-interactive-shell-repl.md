@@ -5,9 +5,8 @@ description: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-
   v\xE4t\u2026"
 lastmod: '2024-03-13T22:44:57.088122-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta\
-  \ -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t\u2026"
+summary: Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta
+  -silmukka), mahdollistaa koodin testaamisen reaaliajassa.
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

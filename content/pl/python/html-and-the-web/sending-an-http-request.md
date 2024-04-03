@@ -6,8 +6,7 @@ description: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol)
 lastmod: '2024-03-13T22:44:34.946102-06:00'
 model: gpt-4-1106-preview
 summary: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to spos\xF3\
-  b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami w Internecie.\
-  \ Robimy to, \u017Ceby pobra\u0107\u2026"
+  b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami w Internecie."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

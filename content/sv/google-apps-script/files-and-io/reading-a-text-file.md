@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.457727-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Google Apps Script (GAS) inneb\xE4r att f\xE5 tillg\xE5\
   ng till och extrahera textdata fr\xE5n filer som \xE4r lagrade p\xE5 Google Drive\
-  \ eller annan\u2026"
+  \ eller annan tillg\xE4nglig molnbaserad lagring."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

@@ -6,8 +6,8 @@ description: "TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensse
   \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
 lastmod: '2024-03-13T22:44:51.053671-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
-  \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
+summary: TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat
+  dat gemakkelijk te lezen is vanwege de duidelijke semantiek.
 title: Werken met TOML
 weight: 39
 ---

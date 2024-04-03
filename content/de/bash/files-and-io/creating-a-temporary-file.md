@@ -5,7 +5,7 @@ description: "Tempor\xE4re Dateien sind kurzlebige Dateien, die w\xE4hrend der L
 lastmod: '2024-03-13T22:44:54.078798-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Dateien, die w\xE4hrend der Laufzeit\
-  \ eines Programms erstellt werden. Programmierer nutzen sie f\xFCr Datenverarbeitung,\u2026"
+  \ eines Programms erstellt werden."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

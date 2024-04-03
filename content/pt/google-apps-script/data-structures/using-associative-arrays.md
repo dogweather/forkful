@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.099392-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como objetos no Google Apps Script (uma\
   \ variante do JavaScript), permitem que programadores criem cole\xE7\xF5es de pares\
-  \ chave-\u2026"
+  \ chave-valor."
 title: Usando arrays associativos
 weight: 15
 ---

@@ -5,9 +5,7 @@ description: "\xC5 trekke ut understrenger inneb\xE6rer \xE5 hente en del av en 
   \ st\xF8rre\u2026"
 lastmod: '2024-03-13T22:44:41.088348-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 trekke ut understrenger inneb\xE6rer \xE5 hente en del av en tekststreng.\
-  \ Dette brukes for \xE5 bearbeide eller analysere spesifikke datasegmenter fra en\
-  \ st\xF8rre\u2026"
+summary: "\xC5 trekke ut understrenger inneb\xE6rer \xE5 hente en del av en tekststreng."
 title: Uthenting av delstrenger
 weight: 6
 ---

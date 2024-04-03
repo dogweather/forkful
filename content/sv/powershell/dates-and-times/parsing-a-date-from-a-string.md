@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.135199-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att k\xE4nna igen och\
   \ konvertera skrivna datum i textform till en datatyp som PowerShell kan f\xF6rst\xE5\
-  \ och arbeta\u2026"
+  \ och arbeta med."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

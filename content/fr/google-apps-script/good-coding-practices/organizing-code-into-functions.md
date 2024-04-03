@@ -7,7 +7,8 @@ description: "Organiser le code en fonctions consiste \xE0 structurer votre code
 lastmod: '2024-03-13T22:44:57.192341-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions consiste \xE0 structurer votre code Google\
-  \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\u2026"
+  \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\
+  \ une t\xE2che sp\xE9cifique."
 title: Organiser le code en fonctions
 weight: 18
 ---

@@ -6,8 +6,7 @@ description: "Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzaj\u01
 lastmod: '2024-03-13T22:44:35.168750-06:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzaj\u0105ce \u0142\
-  a\u0144cuchy znak\xF3w - znajdujemy fragment tekstu i podmieniamy go na inny. Programi\u015B\
-  ci robi\u0105\u2026"
+  a\u0144cuchy znak\xF3w - znajdujemy fragment tekstu i podmieniamy go na inny."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

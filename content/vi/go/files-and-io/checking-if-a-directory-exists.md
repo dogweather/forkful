@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
   i trong Go l\xE0 r\u1EA5t quan tr\u1ECDng \u0111\u1ED1i v\u1EDBi c\xE1c \u1EE9ng\
   \ d\u1EE5ng t\u01B0\u01A1ng t\xE1c v\u1EDBi h\u1EC7 th\u1ED1ng t\u1EADp tin, nh\u1EB1\
-  m tr\xE1nh l\u1ED7i khi c\u1ED1 g\u1EAFng truy\u2026"
+  m tr\xE1nh l\u1ED7i khi c\u1ED1 g\u1EAFng truy c\u1EADp ho\u1EB7c ch\u1EC9nh s\u1EED\
+  a th\u01B0 m\u1EE5c."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

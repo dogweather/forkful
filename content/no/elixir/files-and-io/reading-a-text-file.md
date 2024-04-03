@@ -5,8 +5,7 @@ description: "\xC5 lese en tekstfil handler om \xE5 laste innholdet fra filen in
   \ eller\u2026"
 lastmod: '2024-03-13T22:44:40.460816-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil handler om \xE5 laste innholdet fra filen inn i programmet.\
-  \ Programmerere gj\xF8r dette for \xE5 manipulere data, lagre innstillinger, eller\u2026"
+summary: "\xC5 lese en tekstfil handler om \xE5 laste innholdet fra filen inn i programmet."
 title: Lese en tekstfil
 weight: 22
 ---

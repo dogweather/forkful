@@ -5,8 +5,8 @@ description: "Arrotondare i numeri significa tagliare le cifre decimali fino a u
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.511629-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa tagliare le cifre decimali fino a una precisione\
-  \ impostata, spesso fino ai numeri interi. I programmatori arrotondano per\u2026"
+summary: Arrotondare i numeri significa tagliare le cifre decimali fino a una precisione
+  impostata, spesso fino ai numeri interi.
 title: Arrotondamento dei numeri
 weight: 13
 ---

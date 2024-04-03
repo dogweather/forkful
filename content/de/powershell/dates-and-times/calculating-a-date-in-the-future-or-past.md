@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:54.117036-06:00'
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums in PowerShell\
   \ bedeutet einfach, bestimmte Zeitspannen zu einem existierenden Datum hinzuzuf\xFC\
-  gen\u2026"
+  gen oder davon zu subtrahieren."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

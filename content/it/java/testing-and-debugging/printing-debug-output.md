@@ -6,8 +6,7 @@ description: "Stampare output di debug significa mostrare informazioni temporane
 lastmod: '2024-03-13T22:44:43.311428-06:00'
 model: gpt-4-1106-preview
 summary: "Stampare output di debug significa mostrare informazioni temporanee di log\
-  \ mentre un programma \xE8 in esecuzione. Programmatori lo fanno per capire cosa\
-  \ sta\u2026"
+  \ mentre un programma \xE8 in esecuzione."
 title: Stampa dell'output di debug
 weight: 33
 ---

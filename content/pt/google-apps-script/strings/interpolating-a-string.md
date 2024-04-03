@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.091873-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
   \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
-  o de c\xF3digos mais\u2026"
+  o de c\xF3digos mais leg\xEDveis e f\xE1ceis de manter."
 title: Interpolando uma string
 weight: 8
 ---

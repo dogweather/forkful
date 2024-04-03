@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.215907-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
   \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\
-  \ web\u2026"
+  \ web crawler."
 title: Analisi del HTML
 weight: 43
 ---

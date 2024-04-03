@@ -8,7 +8,8 @@ description: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben j
 lastmod: '2024-03-13T22:44:54.128786-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes\
-  \ in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird,\u2026"
+  \ in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird,\
+  \ dass der Rest klein bleibt."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

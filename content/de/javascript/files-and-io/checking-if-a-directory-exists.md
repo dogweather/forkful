@@ -8,8 +8,7 @@ description: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzei
 lastmod: '2024-03-13T22:44:54.280829-06:00'
 model: gpt-4-0125-preview
 summary: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzeichnis\
-  \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren. Dadurch k\xF6nnen\
-  \ Skripte die\u2026"
+  \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

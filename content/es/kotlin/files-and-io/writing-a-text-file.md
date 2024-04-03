@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.054280-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Kotlin implica crear un archivo e ingresar\
   \ contenido de texto en \xE9l, una tarea com\xFAn para almacenar datos, registrar\
-  \ o\u2026"
+  \ o configurar ajustes."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

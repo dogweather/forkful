@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.730357-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON em Lua envolve a an\xE1lise de strings formatadas em\
   \ JSON para tabelas Lua e vice-versa, possibilitando uma f\xE1cil troca de dados\
-  \ entre\u2026"
+  \ entre aplica\xE7\xF5es Lua e servi\xE7os web ou APIs externas."
 title: Trabalhando com JSON
 weight: 38
 ---

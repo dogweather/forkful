@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.402389-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone poszerzaj\u0105 nasz system liczbowy o liczby urojone,\
   \ umo\u017Cliwiaj\u0105c rozwi\u0105zywanie r\xF3wna\u0144, kt\xF3re nie maj\u0105\
-  \ rzeczywistych rozwi\u0105za\u0144. Programi\u015Bci\u2026"
+  \ rzeczywistych rozwi\u0105za\u0144."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

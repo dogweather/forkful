@@ -6,8 +6,7 @@ description: "Suddividere il codice in funzioni significa suddividere il codice 
 lastmod: '2024-03-13T22:44:43.732233-06:00'
 model: gpt-4-1106-preview
 summary: "Suddividere il codice in funzioni significa suddividere il codice in parti\
-  \ pi\xF9 piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere\
-  \ il\u2026"
+  \ pi\xF9 piccole e riutilizzabili."
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

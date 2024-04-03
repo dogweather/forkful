@@ -7,8 +7,8 @@ description: "In Elm is het verzenden van een HTTP-verzoek de manier waarop je a
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:50.721540-06:00'
 model: gpt-4-0125-preview
-summary: "In Elm is het verzenden van een HTTP-verzoek de manier waarop je app communiceert\
-  \ met andere webservices om gegevens uit te wisselen. Programmeurs doen\u2026"
+summary: In Elm is het verzenden van een HTTP-verzoek de manier waarop je app communiceert
+  met andere webservices om gegevens uit te wisselen.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

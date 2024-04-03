@@ -4,8 +4,8 @@ description: "Downloading a web page means grabbing the HTML, CSS, and potential
   \ other resources from the URL you hit. Programmers do it to process content, scrape\u2026"
 lastmod: '2024-03-13T22:44:59.857772-06:00'
 model: gpt-4-1106-preview
-summary: "Downloading a web page means grabbing the HTML, CSS, and potentially other\
-  \ resources from the URL you hit. Programmers do it to process content, scrape\u2026"
+summary: Downloading a web page means grabbing the HTML, CSS, and potentially other
+  resources from the URL you hit.
 title: Downloading a web page
 weight: 42
 ---

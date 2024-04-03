@@ -4,8 +4,8 @@ description: "Converting dates into strings is a fundamental task that enables p
   \ to manipulate and display date information in a human-readable format. This\u2026"
 lastmod: '2024-03-13T22:44:59.680153-06:00'
 model: gpt-4-0125-preview
-summary: "Converting dates into strings is a fundamental task that enables programmers\
-  \ to manipulate and display date information in a human-readable format. This\u2026"
+summary: Converting dates into strings is a fundamental task that enables programmers
+  to manipulate and display date information in a human-readable format.
 title: Converting a date into a string
 weight: 28
 ---

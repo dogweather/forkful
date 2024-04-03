@@ -6,8 +6,7 @@ description: "TOML, kort f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett dat
 lastmod: '2024-03-13T22:44:38.019805-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, kort f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett dataformat\
-  \ liknande JSON eller YAML, men l\xE4ttare att l\xE4sa f\xF6r m\xE4nniskor. Programmerare\
-  \ anv\xE4nder det\u2026"
+  \ liknande JSON eller YAML, men l\xE4ttare att l\xE4sa f\xF6r m\xE4nniskor."
 title: Att arbeta med TOML
 weight: 39
 ---

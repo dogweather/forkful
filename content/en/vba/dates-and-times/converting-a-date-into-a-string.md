@@ -4,8 +4,8 @@ description: "Converting a date into a string in Visual Basic for Applications (
   \ is a process used for changing the data type of a date to a string format.\u2026"
 lastmod: '2024-03-13T22:44:59.944661-06:00'
 model: gpt-4-0125-preview
-summary: "Converting a date into a string in Visual Basic for Applications (VBA) is\
-  \ a process used for changing the data type of a date to a string format.\u2026"
+summary: Converting a date into a string in Visual Basic for Applications (VBA) is
+  a process used for changing the data type of a date to a string format.
 title: Converting a date into a string
 weight: 28
 ---

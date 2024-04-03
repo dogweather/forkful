@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.470706-06:00'
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8ke strenger\
   \ for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte dem med nytt\
-  \ innhold.\u2026"
+  \ innhold."
 title: "S\xF8k og erstatt tekst"
 weight: 10
 ---

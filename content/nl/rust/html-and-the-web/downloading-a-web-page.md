@@ -6,8 +6,8 @@ description: "Een webpagina downloaden betekent het verzamelen van de gegevens d
   \ het bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"
 lastmod: '2024-03-13T22:44:50.592891-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden betekent het verzamelen van de gegevens die het\
-  \ bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"
+summary: Een webpagina downloaden betekent het verzamelen van de gegevens die het
+  bevat.
 title: Een webpagina downloaden
 weight: 42
 ---

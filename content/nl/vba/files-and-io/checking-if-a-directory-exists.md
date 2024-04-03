@@ -7,7 +7,9 @@ description: "Controleren of een map bestaat in Visual Basic for Applications (V
 lastmod: '2024-03-13T22:44:50.651479-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Visual Basic for Applications (VBA) gaat\
-  \ over het verifi\xEBren van de aanwezigheid van een map binnen het bestandssysteem\u2026"
+  \ over het verifi\xEBren van de aanwezigheid van een map binnen het bestandssysteem\
+  \ voordat men operaties uitvoert zoals het opslaan van bestanden of het aanmaken\
+  \ van nieuwe mappen."
 title: Controleren of een directory bestaat
 weight: 20
 ---

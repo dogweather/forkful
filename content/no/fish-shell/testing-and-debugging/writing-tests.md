@@ -8,8 +8,7 @@ description: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som 
 lastmod: '2024-03-13T22:44:41.230465-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
-  \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\
-  \ Denne\u2026"
+  \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater."
 title: Skrive tester
 weight: 36
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.838075-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w programowaniu s\u0105 u\u017Cywane do\
   \ wyszukiwania, dopasowywania i manipulowania ci\u0105gami znak\xF3w na podstawie\
-  \ okre\u015Blonych wzorc\xF3w.\u2026"
+  \ okre\u015Blonych wzorc\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

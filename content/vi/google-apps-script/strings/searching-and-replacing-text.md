@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Google Apps\
   \ Script l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh ch\u01B0\u01A1ng tr\xECnh c\xE1c\
   \ chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh,\
-  \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i\u2026"
+  \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i dung Google Apps n\xE0o kh\xE1c,\
+  \ v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1c gi\xE1 tr\u1ECB v\u0103n b\u1EA3\
+  n kh\xE1c."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.648181-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu\
   \ plikami opartymi na tek\u015Bcie, co jest fundamentaln\u0105 operacj\u0105 dla\
-  \ logowania,\u2026"
+  \ logowania, przechowywania danych i pisania skrypt\xF3w konfiguracji."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

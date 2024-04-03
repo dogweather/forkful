@@ -8,7 +8,7 @@ description: "Trabajar con XML en Go implica analizar (leer) y generar (escribir
 lastmod: '2024-03-13T22:44:58.496858-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Go implica analizar (leer) y generar (escribir) documentos\
-  \ XML, un formato est\xE1ndar para el intercambio de datos estructurados. Los\u2026"
+  \ XML, un formato est\xE1ndar para el intercambio de datos estructurados."
 title: Trabajando con XML
 weight: 40
 ---

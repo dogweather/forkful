@@ -5,9 +5,8 @@ description: "El registro (\"logging\") es esencialmente el proceso de grabar ev
   \ diario\u2026"
 lastmod: '2024-03-13T22:44:58.999461-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (\"logging\") es esencialmente el proceso de grabar eventos\
-  \ y salidas de datos de un software mientras se ejecuta; piense en ello como el\
-  \ diario\u2026"
+summary: El registro ("logging") es esencialmente el proceso de grabar eventos y salidas
+  de datos de un software mientras se ejecuta; piense en ello como el diario del software.
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

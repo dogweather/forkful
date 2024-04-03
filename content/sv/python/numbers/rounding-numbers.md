@@ -6,8 +6,7 @@ description: "Att avrunda tal inneb\xE4r att justera dem f\xF6r att vara n\xE4rm
 lastmod: '2024-03-13T22:44:37.478204-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera dem f\xF6r att vara n\xE4rmare ett\
-  \ enklare eller mer signifikant v\xE4rde. Programmerare avrundar tal f\xF6r att\
-  \ f\xF6renkla\u2026"
+  \ enklare eller mer signifikant v\xE4rde."
 title: Avrundning av tal
 weight: 13
 ---

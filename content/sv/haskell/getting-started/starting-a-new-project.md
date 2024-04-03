@@ -6,8 +6,7 @@ description: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en ny kodb
 lastmod: '2024-03-13T22:44:37.955829-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en ny kodbas fr\xE5\
-  n grunden. Programmerare g\xF6r det f\xF6r att skapa unika l\xF6sningar eller utforska\
-  \ nya id\xE9er."
+  n grunden."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

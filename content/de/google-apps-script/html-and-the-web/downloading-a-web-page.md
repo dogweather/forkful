@@ -8,7 +8,8 @@ description: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet 
 lastmod: '2024-03-13T22:44:53.332499-06:00'
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen\
-  \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum\u2026"
+  \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum Beispiel\
+  \ Web Scraping, Datenextraktion oder die \xDCberwachung von \xC4nderungen."
 title: Herunterladen einer Webseite
 weight: 42
 ---

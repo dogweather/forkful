@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.246469-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omdanne det f\xF8rste tegnet\
   \ i en gitt streng til stor bokstav hvis det er i sm\xE5 bokstaver, for \xE5 s\xF8\
-  rge for at strengen\u2026"
+  rge for at strengen skiller seg ut eller overholder spesifikke grammatiske normer."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

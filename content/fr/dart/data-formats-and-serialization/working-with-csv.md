@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:57.415611-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Comma Separated Values), c'est-\xE0-dire\
   \ des fichiers texte o\xF9 chaque ligne contient des valeurs s\xE9par\xE9es par\
-  \ des virgules,\u2026"
+  \ des virgules, permet aux programmeurs de faciliter l'\xE9change de donn\xE9es\
+  \ entre diff\xE9rentes applications ou de stocker des donn\xE9es dans un format\
+  \ l\xE9ger et lisible par l'homme."
 title: Travailler avec CSV
 weight: 37
 ---

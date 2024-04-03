@@ -8,8 +8,7 @@ description: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cli
 lastmod: '2024-03-13T22:44:35.923789-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cliwiaj\u0105\
-  \ parowanie unikalnych kluczy z warto\u015Bciami. S\u0105 niezast\u0105pione, kiedy\
-  \ potrzebujesz \u015Bledzi\u0107\u2026"
+  \ parowanie unikalnych kluczy z warto\u015Bciami."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.502192-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden er en vanlig oppgave for\
   \ programmerere, som handler om planlegging, p\xE5minnelser, eller enhver funksjon\
-  \ som\u2026"
+  \ som avhenger av datoberegninger."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

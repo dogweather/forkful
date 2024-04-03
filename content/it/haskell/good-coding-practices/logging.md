@@ -5,7 +5,8 @@ description: "Il logging nella programmazione \xE8 sostanzialmente come lasciare
 lastmod: '2024-03-13T22:44:43.481647-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging nella programmazione \xE8 sostanzialmente come lasciare una traccia\
-  \ di briciole sotto forma di eventi o messaggi registrati, che possono essere\u2026"
+  \ di briciole sotto forma di eventi o messaggi registrati, che possono essere utilizzati\
+  \ per monitorare cosa sta facendo la tua applicazione in ogni momento."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

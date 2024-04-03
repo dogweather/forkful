@@ -6,8 +6,7 @@ description: "String interpolatie betreft het mengen van variabelen met tekst. P
   \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
 lastmod: '2024-03-13T22:44:51.058755-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
-  \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
+summary: String interpolatie betreft het mengen van variabelen met tekst.
 title: Een string interpoleren
 weight: 8
 ---

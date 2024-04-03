@@ -6,7 +6,7 @@ description: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 inp
 lastmod: '2024-03-13T22:44:41.157408-06:00'
 model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input de\
-  \ f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5 tilpasse\u2026"
+  \ f\xE5r n\xE5r de startes fra terminalen."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

@@ -6,7 +6,7 @@ description: "Att redigera filer direkt med CLI-engreppsrader handlar om att g\x
 lastmod: '2024-03-13T22:44:38.333642-06:00'
 model: gpt-4-0125-preview
 summary: "Att redigera filer direkt med CLI-engreppsrader handlar om att g\xF6ra \xE4\
-  ndringar direkt i filer fr\xE5n kommandoraden, utan att \xF6ppna dem i en textredigerare.\u2026"
+  ndringar direkt i filer fr\xE5n kommandoraden, utan att \xF6ppna dem i en textredigerare."
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---

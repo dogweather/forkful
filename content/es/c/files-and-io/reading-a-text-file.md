@@ -8,7 +8,7 @@ description: "Leer un archivo de texto en C involucra abrir un archivo en tu sis
 lastmod: '2024-03-13T22:44:59.564818-06:00'
 model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en C involucra abrir un archivo en tu sistema para\
-  \ extraer informaci\xF3n y manipularla o mostrarla seg\xFAn sea necesario. Los\u2026"
+  \ extraer informaci\xF3n y manipularla o mostrarla seg\xFAn sea necesario."
 title: Leyendo un archivo de texto
 weight: 22
 ---

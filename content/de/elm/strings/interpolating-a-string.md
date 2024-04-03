@@ -5,7 +5,7 @@ description: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenket
 lastmod: '2024-03-13T22:44:53.790589-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten einzuf\xFC\
-  gen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"
+  gen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

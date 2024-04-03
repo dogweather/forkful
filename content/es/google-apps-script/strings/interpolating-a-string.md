@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.506242-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
   n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
-  \ c\xF3digo\u2026"
+  \ c\xF3digo m\xE1s legible y mantenible."
 title: Interpolando una cadena de texto
 weight: 8
 ---

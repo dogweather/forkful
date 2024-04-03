@@ -6,8 +6,7 @@ description: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie 
 lastmod: '2024-03-13T22:44:34.993389-06:00'
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie jej zawarto\u015B\
-  ci do lokalnej pami\u0119ci komputera. Programi\u015Bci to robi\u0105, by przetworzy\u0107\
-  \ dane, zautomatyzowa\u0107\u2026"
+  ci do lokalnej pami\u0119ci komputera."
 title: Pobieranie strony internetowej
 weight: 42
 ---

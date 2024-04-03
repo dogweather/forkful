@@ -5,9 +5,7 @@ description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle c
   \ comme\u2026"
 lastmod: '2024-03-13T22:44:57.915607-06:00'
 model: gpt-4-1106-preview
-summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
-  \ Pourquoi s'en soucier? Parce qu'on a souvent besoin de savoir o\xF9 on en est,\
-  \ comme\u2026"
+summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

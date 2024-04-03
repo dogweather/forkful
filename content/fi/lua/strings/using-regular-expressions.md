@@ -8,8 +8,7 @@ description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat mer
 lastmod: '2024-03-13T22:44:56.687965-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
-  \ hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t niit\xE4\u2026"
+  \ hakemisen ja manipuloinnin tiettyjen mallien perusteella."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

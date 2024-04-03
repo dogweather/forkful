@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.319856-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
   ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
-  veis ou\u2026"
+  veis ou imposs\xEDveis apenas com os reais."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

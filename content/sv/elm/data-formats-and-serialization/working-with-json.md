@@ -8,8 +8,7 @@ description: "Att arbeta med JSON i Elm handlar om att avkoda JSON-data till Elm
 lastmod: '2024-03-13T22:44:37.850937-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Elm handlar om att avkoda JSON-data till Elm-typer\
-  \ och koda om Elm-v\xE4rden tillbaka till JSON. Denna process \xE4r avg\xF6rande\
-  \ f\xF6r\u2026"
+  \ och koda om Elm-v\xE4rden tillbaka till JSON."
 title: Arbeta med JSON
 weight: 38
 ---

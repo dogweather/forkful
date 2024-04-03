@@ -6,8 +6,7 @@ description: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variable
 lastmod: '2024-03-13T22:44:57.973772-06:00'
 model: gpt-4-1106-preview
 summary: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables ou d'expressions\
-  \ directement dans le texte. C'est ultra-pratique pour int\xE9grer des donn\xE9\
-  es\u2026"
+  \ directement dans le texte."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

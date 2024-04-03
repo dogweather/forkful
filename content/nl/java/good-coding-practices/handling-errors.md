@@ -6,8 +6,8 @@ description: "Foutafhandeling betekent code schrijven die anticipeert op en omga
   \ met dingen die misgaan. Programmeurs doen dit om software robuust te maken, waardoor\u2026"
 lastmod: '2024-03-13T22:44:50.689845-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling betekent code schrijven die anticipeert op en omgaat met\
-  \ dingen die misgaan. Programmeurs doen dit om software robuust te maken, waardoor\u2026"
+summary: Foutafhandeling betekent code schrijven die anticipeert op en omgaat met
+  dingen die misgaan.
 title: Fouten afhandelen
 weight: 16
 ---

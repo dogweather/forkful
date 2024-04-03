@@ -7,7 +7,7 @@ description: "Convertir une date en cha\xEEne de caract\xE8res en C implique de 
 lastmod: '2024-03-13T22:44:58.384848-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res en C implique de traduire\
-  \ une structure de date ou un horodatage en un format lisible par l'homme. Les\u2026"
+  \ une structure de date ou un horodatage en un format lisible par l'homme."
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

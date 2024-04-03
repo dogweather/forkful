@@ -5,9 +5,7 @@ description: "Wyci\u0105ganie podci\u0105g\xF3w (ang. \"substring extraction\") 
   w. Programi\u015Bci to robi\u0105, \u017Ceby pracowa\u0107 tylko z\u2026"
 lastmod: '2024-03-13T22:44:35.029818-06:00'
 model: gpt-4-1106-preview
-summary: "Wyci\u0105ganie podci\u0105g\xF3w (ang. \"substring extraction\") to spos\xF3\
-  b na wyj\u0119cie specyficznej cz\u0119\u015Bci z ci\u0105gu znak\xF3w. Programi\u015B\
-  ci to robi\u0105, \u017Ceby pracowa\u0107 tylko z\u2026"
+summary: "Wyci\u0105ganie podci\u0105g\xF3w (ang."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

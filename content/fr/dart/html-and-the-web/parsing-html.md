@@ -8,7 +8,7 @@ description: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE
 lastmod: '2024-03-13T22:44:57.387323-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE9es de\
-  \ documents HTML. Les programmeurs font cela pour interagir avec ou gratter le contenu\u2026"
+  \ documents HTML."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

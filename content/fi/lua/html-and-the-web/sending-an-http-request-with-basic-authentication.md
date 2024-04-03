@@ -6,8 +6,7 @@ description: "L\xE4hett\xE4\xE4 HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa 
 lastmod: '2024-03-13T22:44:56.697049-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4\xE4 HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa k\xE4\
-  ytt\xE4j\xE4tunnuksen ja salasanan l\xE4hett\xE4mist\xE4 palvelimelle. T\xE4m\xE4\
-  \ tehd\xE4\xE4n yleens\xE4 turvallisen resurssin\u2026"
+  ytt\xE4j\xE4tunnuksen ja salasanan l\xE4hett\xE4mist\xE4 palvelimelle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

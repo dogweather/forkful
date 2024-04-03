@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.699970-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv Rust-skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
   \ k\xF6ra Rust-kod p\xE5 flygande fot och se omedelbara resultat, perfekt f\xF6\
-  r experiment\u2026"
+  r experiment eller l\xE4rande."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

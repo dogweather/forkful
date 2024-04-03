@@ -7,8 +7,8 @@ description: "Een datum naar een string converteren betekent dat je een specifie
   \ om\u2026"
 lastmod: '2024-03-13T22:44:50.779320-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum naar een string converteren betekent dat je een specifiek moment\
-  \ representeert in een voor mensen leesbaar formaat. Programmeurs doen dit om\u2026"
+summary: Een datum naar een string converteren betekent dat je een specifiek moment
+  representeert in een voor mensen leesbaar formaat.
 title: Een datum converteren naar een string
 weight: 28
 ---

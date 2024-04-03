@@ -4,8 +4,7 @@ description: "Interpolointi tarkoittaa muuttujien arvojen yhdist\xE4mist\xE4 mer
   \ Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten viestien luomiseen ja koodin selkeyden\u2026"
 lastmod: '2024-03-13T22:44:56.642348-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolointi tarkoittaa muuttujien arvojen yhdist\xE4mist\xE4 merkkijonoon.\
-  \ Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten viestien luomiseen ja koodin selkeyden\u2026"
+summary: "Interpolointi tarkoittaa muuttujien arvojen yhdist\xE4mist\xE4 merkkijonoon."
 title: Merkkijonon interpolointi
 weight: 8
 ---

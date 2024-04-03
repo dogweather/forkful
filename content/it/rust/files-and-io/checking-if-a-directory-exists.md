@@ -7,7 +7,7 @@ description: "Nello sviluppo software, spesso \xE8 necessario verificare se una 
 lastmod: '2024-03-13T22:44:43.232783-06:00'
 model: gpt-4-0125-preview
 summary: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
-  \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"
+  \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file."
 title: Verifica se una directory esiste
 weight: 20
 ---

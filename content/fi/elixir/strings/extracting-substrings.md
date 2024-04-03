@@ -4,8 +4,7 @@ description: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista.
   \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"
 lastmod: '2024-03-13T22:44:56.215417-06:00'
 model: gpt-4-1106-preview
-summary: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
-  \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"
+summary: Substringien irrottaminen tarkoittaa merkkijonon osien poimimista.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -4,8 +4,8 @@ description: "Convertire una data in una stringa significa trasformarla in un fo
   \ leggibile e gestibile. I programmatori lo fanno per visualizzare date in modo\u2026"
 lastmod: '2024-03-13T22:44:43.528035-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una data in una stringa significa trasformarla in un formato\
-  \ leggibile e gestibile. I programmatori lo fanno per visualizzare date in modo\u2026"
+summary: Convertire una data in una stringa significa trasformarla in un formato leggibile
+  e gestibile.
 title: Conversione di una data in una stringa
 weight: 28
 ---

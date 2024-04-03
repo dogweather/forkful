@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.049121-06:00'
 model: gpt-4-0125-preview
 summary: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i c\xE1\
   c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\xE1ng\
-  \ ch\xFA \xFD trong qu\xE1 tr\xECnh runtime. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1\u2026"
+  \ ch\xFA \xFD trong qu\xE1 tr\xECnh runtime."
 title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---

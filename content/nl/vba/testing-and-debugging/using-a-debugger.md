@@ -6,8 +6,8 @@ description: "In VBA is de debugger een integraal onderdeel van de Visual Basic 
   \ (VBE). Zo kun je er gebruik van maken: 1. **Breekpunten instellen**: Klik in de\u2026"
 lastmod: '2024-03-13T22:44:50.641466-06:00'
 model: gpt-4-0125-preview
-summary: "In VBA is de debugger een integraal onderdeel van de Visual Basic Editor\
-  \ (VBE). Zo kun je er gebruik van maken: 1. **Breekpunten instellen**: Klik in de\u2026"
+summary: In VBA is de debugger een integraal onderdeel van de Visual Basic Editor
+  (VBE).
 title: Een debugger gebruiken
 weight: 35
 ---

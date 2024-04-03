@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.430848-06:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle est une t\xE2che essentielle dans presque\
   \ tous les projets de programmation, que ce soit pour consigner des activit\xE9\
-  s dans une\u2026"
+  s dans une application ou pour g\xE9n\xE9rer des rapports avec des dates."
 title: Obtenir la date actuelle
 weight: 29
 ---

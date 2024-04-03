@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.247892-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5 fjerne\
   \ visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
-  \ av et\u2026"
+  \ av et m\xF8nster (vanligvis via regul\xE6re uttrykk)."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

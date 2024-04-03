@@ -8,8 +8,7 @@ description: "\xC5 f\xE5 tak i den n\xE5v\xE6rende datoen i Dart inneb\xE6rer \x
 lastmod: '2024-03-13T22:44:40.498759-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i den n\xE5v\xE6rende datoen i Dart inneb\xE6rer \xE5 sp\xF8\
-  rre systemet om den n\xE5v\xE6rende datoen og tiden. Denne funksjonaliteten brukes\
-  \ ofte i applikasjoner\u2026"
+  rre systemet om den n\xE5v\xE6rende datoen og tiden."
 title: "F\xE5 den n\xE5v\xE6rende datoen"
 weight: 29
 ---

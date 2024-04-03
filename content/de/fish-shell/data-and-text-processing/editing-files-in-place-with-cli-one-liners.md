@@ -5,7 +5,8 @@ description: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bea
 lastmod: '2024-03-13T22:44:54.305431-06:00'
 model: gpt-4-0125-preview
 summary: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bearbeiten,\
-  \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\u2026"
+  \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\
+  \ zu \xF6ffnen."
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

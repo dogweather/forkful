@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.424765-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w C# polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki oddzielnie od regularnego wyj\u015B\
-  cia (stdout), aby\u2026"
+  cia (stdout), aby u\u017Cytkownicy i programi\u015Bci mogli odr\xF3\u017Cni\u0107\
+  \ normalne wyniki dzia\u0142ania programu od powiadomie\u0144 o b\u0142\u0119dach."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

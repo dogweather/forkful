@@ -4,8 +4,8 @@ description: "Rounding numbers is the process of adjusting a number to its neare
   \ whole number or to a specified number of decimal places. Programmers often round\u2026"
 lastmod: '2024-03-13T22:44:59.816256-06:00'
 model: gpt-4-0125-preview
-summary: "Rounding numbers is the process of adjusting a number to its nearest whole\
-  \ number or to a specified number of decimal places. Programmers often round\u2026"
+summary: Rounding numbers is the process of adjusting a number to its nearest whole
+  number or to a specified number of decimal places.
 title: Rounding numbers
 weight: 13
 ---

@@ -7,7 +7,8 @@ description: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des e
 lastmod: '2024-03-13T22:44:53.998364-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des ersten\
-  \ Buchstabens jedes Wortes in einem Satz zu einem Gro\xDFbuchstaben, w\xE4hrend\u2026"
+  \ Buchstabens jedes Wortes in einem Satz zu einem Gro\xDFbuchstaben, w\xE4hrend\
+  \ sichergestellt wird, dass die restlichen Buchstaben klein geschrieben werden."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

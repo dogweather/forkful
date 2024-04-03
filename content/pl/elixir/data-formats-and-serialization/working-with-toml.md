@@ -6,8 +6,7 @@ description: "Praca z TOML oznacza parsowanie i generowanie danych TOML (Tom's O
 lastmod: '2024-03-13T22:44:35.068377-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z TOML oznacza parsowanie i generowanie danych TOML (Tom's Obvious,\
-  \ Minimal Language) za pomoc\u0105 Elixir. Programi\u015Bci u\u017Cywaj\u0105 go\
-  \ do obs\u0142ugi plik\xF3w\u2026"
+  \ Minimal Language) za pomoc\u0105 Elixir."
 title: Praca z TOML
 weight: 39
 ---

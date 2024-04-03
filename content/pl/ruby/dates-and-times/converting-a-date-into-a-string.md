@@ -6,8 +6,7 @@ description: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces prz
 lastmod: '2024-03-13T22:44:35.943844-06:00'
 model: gpt-4-1106-preview
 summary: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
-  cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\
-  atwi\u0107 wy\u015Bwietlanie dat\u2026"
+  cania obiektu daty w czytelny tekst."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

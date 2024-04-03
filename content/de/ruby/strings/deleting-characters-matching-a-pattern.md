@@ -5,9 +5,8 @@ description: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster ent
   ubern\u2026"
 lastmod: '2024-03-13T22:44:54.382279-06:00'
 model: gpt-4-1106-preview
-summary: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
-  \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\
-  ubern\u2026"
+summary: Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,
+  aus einem String entfernen.
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

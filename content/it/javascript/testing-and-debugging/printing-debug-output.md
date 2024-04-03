@@ -5,9 +5,8 @@ description: "Stampare output di debug significa far apparire nel console messag
   \ perch\xE9\u2026"
 lastmod: '2024-03-13T22:44:43.814647-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare output di debug significa far apparire nel console messaggi che\
-  \ aiutano il programmatore a capire cosa sta succedendo nel codice. Lo si fa perch\xE9\
-  \u2026"
+summary: Stampare output di debug significa far apparire nel console messaggi che
+  aiutano il programmatore a capire cosa sta succedendo nel codice.
 title: Stampa dell'output di debug
 weight: 33
 ---

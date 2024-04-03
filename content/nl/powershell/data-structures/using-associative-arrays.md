@@ -8,7 +8,8 @@ description: "Associatieve arrays, ook bekend als hash-tabellen of woordenboeken
 lastmod: '2024-03-13T22:44:51.019580-06:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, ook bekend als hash-tabellen of woordenboeken in PowerShell,\
-  \ stellen je in staat om gegevens op te slaan in sleutel-waardeparen, wat\u2026"
+  \ stellen je in staat om gegevens op te slaan in sleutel-waardeparen, wat de gegevensopvraging\
+  \ eenvoudig en effici\xEBnt maakt."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

@@ -6,8 +6,7 @@ description: "HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten
   \ extrahieren. Programmierer tun dies, um mit Webinhalten oder APIs zu interagieren,\u2026"
 lastmod: '2024-03-13T22:44:53.802791-06:00'
 model: gpt-4-0125-preview
-summary: "HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten zu extrahieren.\
-  \ Programmierer tun dies, um mit Webinhalten oder APIs zu interagieren,\u2026"
+summary: HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten zu extrahieren.
 title: HTML parsen
 weight: 43
 ---

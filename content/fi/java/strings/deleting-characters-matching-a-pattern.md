@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.429202-06:00'
 model: gpt-4-1106-preview
 summary: "Java-ohjelmoinnissa merkkien poistaminen kuvioita vastaavasti tarkoittaa\
   \ tietyn s\xE4\xE4nn\xF6llisen lausekkeen (regex) m\xE4\xE4ritt\xE4mi\xE4 merkkej\xE4\
-  \ olevien kohtien\u2026"
+  \ olevien kohtien poistamista merkkijonosta."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

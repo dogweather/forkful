@@ -7,7 +7,9 @@ description: "Het genereren van willekeurige getallen in PHP gaat over het produ
 lastmod: '2024-03-13T22:44:50.890632-06:00'
 model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in PHP gaat over het produceren\
-  \ van onvoorspelbare waarden binnen een gespecificeerd bereik, wat essentieel is\u2026"
+  \ van onvoorspelbare waarden binnen een gespecificeerd bereik, wat essentieel is\
+  \ voor taken zoals het cre\xEBren van unieke gebruikers-ID's, het genereren van\
+  \ wachtwoorden, of voor gebruik in simulaties en spellen."
 title: Willekeurige getallen genereren
 weight: 12
 ---

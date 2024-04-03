@@ -5,9 +5,7 @@ description: "C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debugge
   \ <iostream> int\u2026"
 lastmod: '2024-03-13T22:44:56.869684-06:00'
 model: gpt-4-0125-preview
-summary: "C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin kanssa.\
-  \ T\xE4ss\xE4 on pieni esimerkki GDB:n k\xE4yt\xF6st\xE4: ```C++ #include <iostream>\
-  \ int\u2026"
+summary: C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin kanssa.
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

@@ -5,8 +5,7 @@ description: "Logging i programmering er som \xE5 holde en dagbok for applikasjo
   \ som\u2026"
 lastmod: '2024-03-13T22:44:41.334800-06:00'
 model: gpt-4-1106-preview
-summary: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen din.\
-  \ Det er den systematiske opptegnelsen av hendelser, meldinger og datapunkter som\u2026"
+summary: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen din."
 title: "Loggf\xF8ring"
 weight: 17
 ---

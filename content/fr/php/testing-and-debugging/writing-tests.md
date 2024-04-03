@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.882433-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en programmation implique de cr\xE9er et d'ex\xE9cuter\
   \ des scripts qui v\xE9rifient que le code se comporte comme pr\xE9vu dans diverses\
-  \ conditions.\u2026"
+  \ conditions."
 title: "R\xE9daction de tests"
 weight: 36
 ---

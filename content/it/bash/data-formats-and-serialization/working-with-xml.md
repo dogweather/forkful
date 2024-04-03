@@ -5,9 +5,8 @@ description: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazio
   \ con XML\u2026"
 lastmod: '2024-03-13T22:44:43.623867-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione dei\
-  \ dati nel formato Extensible Markup Language. I programmatori si scontrano con\
-  \ XML\u2026"
+summary: Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione dei
+  dati nel formato Extensible Markup Language.
 title: Lavorare con XML
 weight: 40
 ---

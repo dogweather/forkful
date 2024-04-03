@@ -6,8 +6,7 @@ description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguag
 lastmod: '2024-03-13T22:44:46.522923-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M\xED\
-  nima e \xD3bvia do Tom), \xE9 uma linguagem de serializa\xE7\xE3o de dados. Programadores\
-  \ Elm a usam\u2026"
+  nima e \xD3bvia do Tom), \xE9 uma linguagem de serializa\xE7\xE3o de dados."
 title: Trabalhando com TOML
 weight: 39
 ---

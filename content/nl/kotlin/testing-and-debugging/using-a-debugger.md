@@ -8,7 +8,8 @@ description: "Hier is een voorproefje van het debuggen in Kotlin met IntelliJ ID
 lastmod: '2024-03-13T22:44:50.772386-06:00'
 model: gpt-4-0125-preview
 summary: "Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA - de\
-  \ Sherlock Holmes van IDE's: ```kotlin fun main() { val mysterieNummer = 42 var\u2026"
+  \ Sherlock Holmes van IDE's:\n\n```kotlin\nfun main() {\n    val mysterieNummer\
+  \ = 42\n    var gok = 0\n\n    while (gok ."
 title: Een debugger gebruiken
 weight: 35
 ---

@@ -5,8 +5,8 @@ description: "Ottenere la data attuale significa catturare il momento presente i
   \ gestire\u2026"
 lastmod: '2024-03-13T22:44:43.360041-06:00'
 model: unknown
-summary: "Ottenere la data attuale significa catturare il momento presente in termini\
-  \ di giorno, mese e anno. I programmatori lo fanno per tracciare eventi, gestire\u2026"
+summary: Ottenere la data attuale significa catturare il momento presente in termini
+  di giorno, mese e anno.
 title: Ottenere la data corrente
 weight: 29
 ---

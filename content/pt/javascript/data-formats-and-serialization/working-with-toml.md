@@ -6,8 +6,7 @@ description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, define 
 lastmod: '2024-03-13T22:44:46.985570-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, define como estruturar\
-  \ arquivos de configura\xE7\xE3o. Programadores trabalham com TOML porque \xE9 f\xE1\
-  cil de\u2026"
+  \ arquivos de configura\xE7\xE3o."
 title: Trabalhando com TOML
 weight: 39
 ---

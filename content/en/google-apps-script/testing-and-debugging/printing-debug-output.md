@@ -4,8 +4,8 @@ description: "Printing debug output involves strategically placing log statement
   \ in your code to display variable values, execution flow, or message errors during\u2026"
 lastmod: '2024-03-13T22:44:59.672355-06:00'
 model: gpt-4-0125-preview
-summary: "Printing debug output involves strategically placing log statements in your\
-  \ code to display variable values, execution flow, or message errors during\u2026"
+summary: Printing debug output involves strategically placing log statements in your
+  code to display variable values, execution flow, or message errors during runtime.
 title: Printing debug output
 weight: 33
 ---

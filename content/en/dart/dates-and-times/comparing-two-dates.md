@@ -4,8 +4,9 @@ description: "Comparing two dates in Dart involves evaluating the temporal diffe
   \ or order between them, an essential functionality in applications managing events,\u2026"
 lastmod: '2024-03-13T22:44:59.831667-06:00'
 model: gpt-4-0125-preview
-summary: "Comparing two dates in Dart involves evaluating the temporal difference\
-  \ or order between them, an essential functionality in applications managing events,\u2026"
+summary: Comparing two dates in Dart involves evaluating the temporal difference or
+  order between them, an essential functionality in applications managing events,
+  deadlines, or any time-sensitive data.
 title: Comparing two dates
 weight: 27
 ---

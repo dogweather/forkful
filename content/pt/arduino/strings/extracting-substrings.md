@@ -5,9 +5,7 @@ description: "Extrair substrings significa pegar partes espec\xEDficas de uma st
   \ forma\u2026"
 lastmod: '2024-03-13T22:44:46.828439-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
-  \ Programadores fazem isso para manipular, analisar ou validar dados de texto de\
-  \ forma\u2026"
+summary: "Extrair substrings significa pegar partes espec\xEDficas de uma string."
 title: Extraindo substrings
 weight: 6
 ---

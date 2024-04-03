@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.789192-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, aqueles com uma parte real e uma parte imagin\xE1\
   ria (como 3 + 4i), s\xE3o vitais em campos como engenharia, f\xEDsica e ci\xEAncia\
-  \ de dados.\u2026"
+  \ de dados."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

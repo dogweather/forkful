@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.043824-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4 lukujen\
   \ manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
-  \ ilmaistuna\u2026"
+  \ ilmaistuna muodossa `a + bi`."
 title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
 weight: 14
 ---

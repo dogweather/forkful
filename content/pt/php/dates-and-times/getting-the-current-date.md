@@ -7,7 +7,7 @@ description: "Obter a data atual em PHP \xE9 uma tarefa fundamental que permite 
 lastmod: '2024-03-13T22:44:46.677734-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em PHP \xE9 uma tarefa fundamental que permite recuperar\
-  \ e manipular a data e a hora do sistema. Isso \xE9 crucial para fun\xE7\xF5es como\u2026"
+  \ e manipular a data e a hora do sistema."
 title: Obtendo a data atual
 weight: 29
 ---

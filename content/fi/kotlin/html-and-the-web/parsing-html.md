@@ -6,7 +6,7 @@ description: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-ko
 lastmod: '2024-03-13T22:44:56.528422-06:00'
 model: unknown
 summary: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin muuttamista\
-  \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi. Koodaajat\u2026"
+  \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

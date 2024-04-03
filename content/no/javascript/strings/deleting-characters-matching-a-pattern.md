@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:41.168460-06:00'
 model: gpt-4-1106-preview
 summary: "I JavaScript kan vi slette tegn som matcher et m\xF8nster gjennom regul\xE6\
   re uttrykk for \xE5 rense strenger, trekke ut data eller for en rekke andre oppgaver\
-  \ som\u2026"
+  \ som krever tekstmanipulasjon."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

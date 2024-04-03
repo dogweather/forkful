@@ -5,7 +5,7 @@ description: "Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsi
 lastmod: '2024-03-13T22:44:56.558500-06:00'
 model: gpt-4-1106-preview
 summary: "Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimist\xE4\
-  \ ja sen korvaamista toisella. Sit\xE4 k\xE4ytet\xE4\xE4n tiedon muokkaukseen ja\u2026"
+  \ ja sen korvaamista toisella."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

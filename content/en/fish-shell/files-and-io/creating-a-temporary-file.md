@@ -4,8 +4,7 @@ description: "Creating a temporary file means making a file for short-term use. 
   \ do it to store data that's only needed during the execution of a program,\u2026"
 lastmod: '2024-03-13T22:45:00.491511-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file means making a file for short-term use. Programmers\
-  \ do it to store data that's only needed during the execution of a program,\u2026"
+summary: Creating a temporary file means making a file for short-term use.
 title: Creating a temporary file
 weight: 21
 ---

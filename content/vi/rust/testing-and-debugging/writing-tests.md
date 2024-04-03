@@ -11,8 +11,7 @@ lastmod: '2024-03-13T22:44:36.381318-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra nh\u1EEFng \u0111\
   o\u1EA1n m\xE3 nh\u1ECF ki\u1EC3m tra xem c\xE1c ph\u1EA7n m\xE3 kh\xE1c ho\u1EA1\
-  t \u0111\u1ED9ng \u0111\xFAng hay kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m v\u1EADy \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o\u2026"
+  t \u0111\u1ED9ng \u0111\xFAng hay kh\xF4ng."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

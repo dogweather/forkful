@@ -6,7 +6,7 @@ description: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de 
 lastmod: '2024-03-13T22:44:57.473698-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de deux textes\
-  \ en un seul. On le fait souvent pour construire des messages ou combiner des\u2026"
+  \ en un seul."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

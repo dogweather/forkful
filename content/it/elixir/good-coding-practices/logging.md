@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:43.090137-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging nello sviluppo software \xE8 la tecnica di registrazione degli\
   \ eventi che si verificano mentre un programma \xE8 in esecuzione, tipicamente su\
-  \ un\u2026"
+  \ un file o un sistema esterno."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

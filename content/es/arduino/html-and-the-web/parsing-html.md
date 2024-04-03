@@ -8,8 +8,7 @@ description: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\x
 lastmod: '2024-03-13T22:44:59.331956-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\xF3n de\
-  \ p\xE1ginas web. Los programadores hacen esto para permitir que sus dispositivos\
-  \ Arduino\u2026"
+  \ p\xE1ginas web."
 title: Analizando HTML
 weight: 43
 ---

@@ -7,7 +7,8 @@ description: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (va
 lastmod: '2024-03-13T22:44:37.605329-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (vanligtvis\
-  \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett\u2026"
+  \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett tv\xE5dimensionellt\
+  \ rum."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

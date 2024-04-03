@@ -6,8 +6,7 @@ description: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell pe
 lastmod: '2024-03-13T22:44:46.626904-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permite\
-  \ executar trechos de c\xF3digo ao vivo. \xC9 um espa\xE7o de experimenta\xE7\xE3\
-  o para feedback\u2026"
+  \ executar trechos de c\xF3digo ao vivo."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

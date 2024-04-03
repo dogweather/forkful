@@ -7,7 +7,7 @@ description: "Tests schrijven in programmering controleert of code zich gedraagt
 lastmod: '2024-03-13T22:44:51.205360-06:00'
 model: gpt-4-0125-preview
 summary: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
-  \ verwacht\u2014als een quiz voor je functies. Programmeurs schrijven tests om bugs\u2026"
+  \ verwacht\u2014als een quiz voor je functies."
 title: Tests Schrijven
 weight: 36
 ---

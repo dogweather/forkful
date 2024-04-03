@@ -4,8 +4,8 @@ description: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you try
   \ code snippets in real-time. Elixir programmers use the REPL, called IEx\u2026"
 lastmod: '2024-03-13T22:44:59.783973-06:00'
 model: gpt-4-1106-preview
-summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you try out code\
-  \ snippets in real-time. Elixir programmers use the REPL, called IEx\u2026"
+summary: An interactive shell, or REPL (Read-Eval-Print Loop), lets you try out code
+  snippets in real-time.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

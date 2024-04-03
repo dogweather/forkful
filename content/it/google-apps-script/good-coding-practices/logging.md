@@ -6,8 +6,8 @@ description: "Il logging nella programmazione comporta la registrazione di event
   \ errori o occorrenze notevoli durante l'esecuzione. I programmatori lo fanno per\u2026"
 lastmod: '2024-03-13T22:44:42.962747-06:00'
 model: gpt-4-0125-preview
-summary: "Il logging nella programmazione comporta la registrazione di eventi, errori\
-  \ o occorrenze notevoli durante l'esecuzione. I programmatori lo fanno per\u2026"
+summary: Il logging nella programmazione comporta la registrazione di eventi, errori
+  o occorrenze notevoli durante l'esecuzione.
 title: Registrazione
 weight: 17
 ---

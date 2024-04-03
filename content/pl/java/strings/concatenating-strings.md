@@ -6,8 +6,7 @@ description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\
 lastmod: '2024-03-13T22:44:35.269251-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\xF3w,\
-  \ to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst. Dzi\u0119\
-  ki temu mo\u017Cemy tworzy\u0107 wiadomo\u015Bci, kt\xF3re maj\u0105\u2026"
+  \ to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

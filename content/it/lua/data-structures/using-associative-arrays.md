@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:43.551086-06:00'
 model: gpt-4-0125-preview
 summary: "Gli array associativi in Lua sono come strette di mano segrete per i dati\
   \ \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\
-  \ le tue\u2026"
+  \ le tue chiavi possono essere ci\xF2 che vuoi, rendendo il recupero dei dati un\
+  \ gioco da ragazzi."
 title: Utilizzo di array associativi
 weight: 15
 ---

@@ -4,8 +4,8 @@ description: "Parsing HTML in Go involves analyzing the content of HTML files to
   \ data, manipulate the structure, or to convert HTML into other formats.\u2026"
 lastmod: '2024-03-13T22:44:59.628998-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in Go involves analyzing the content of HTML files to extract\
-  \ data, manipulate the structure, or to convert HTML into other formats.\u2026"
+summary: Parsing HTML in Go involves analyzing the content of HTML files to extract
+  data, manipulate the structure, or to convert HTML into other formats.
 title: Parsing HTML
 weight: 43
 ---

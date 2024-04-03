@@ -6,8 +6,7 @@ description: "\xC5 sammenligne to datoer dreier seg om \xE5 finne ut om de er li
 lastmod: '2024-03-13T22:44:41.112378-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sammenligne to datoer dreier seg om \xE5 finne ut om de er like, eller\
-  \ hvis ikke, hvilken som kommer f\xF8r eller etter den andre. Programmerere gj\xF8\
-  r dette\u2026"
+  \ hvis ikke, hvilken som kommer f\xF8r eller etter den andre."
 title: Sammenlikning av to datoer
 weight: 27
 ---

@@ -6,7 +6,8 @@ description: "En Read-Eval-Print-Loop (REPL) \xE4r en programmeringsmilj\xF6 som
 lastmod: '2024-03-13T22:44:37.657708-06:00'
 model: gpt-4-0125-preview
 summary: "En Read-Eval-Print-Loop (REPL) \xE4r en programmeringsmilj\xF6 som tar emot\
-  \ enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet till\u2026"
+  \ enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet till\
+  \ anv\xE4ndaren."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

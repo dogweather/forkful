@@ -6,8 +6,8 @@ description: "Strings samenvoegen betekent ze aan elkaar plakken om een nieuwe s
   \ te maken. Het is zoals Lego met strings. We doen dit om tekst op te bouwen; denk\u2026"
 lastmod: '2024-03-13T22:44:50.368333-06:00'
 model: gpt-4-0125-preview
-summary: "Strings samenvoegen betekent ze aan elkaar plakken om een nieuwe string\
-  \ te maken. Het is zoals Lego met strings. We doen dit om tekst op te bouwen; denk\u2026"
+summary: Strings samenvoegen betekent ze aan elkaar plakken om een nieuwe string te
+  maken.
 title: Samenvoegen van strings
 weight: 3
 ---

@@ -6,8 +6,7 @@ description: "Refactoring ist der Prozess, die interne Struktur eines Computerpr
 lastmod: '2024-03-13T22:44:54.193208-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess, die interne Struktur eines Computerprogramms\
-  \ zu ver\xE4ndern, ohne sein externes Verhalten zu \xE4ndern. Programmierer nehmen\
-  \ dies\u2026"
+  \ zu ver\xE4ndern, ohne sein externes Verhalten zu \xE4ndern."
 title: Refactoring
 weight: 19
 ---

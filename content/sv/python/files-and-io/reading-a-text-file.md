@@ -6,8 +6,7 @@ description: "Att l\xE4sa en textfil i Python inneb\xE4r att \xF6ppna och extrah
 lastmod: '2024-03-13T22:44:37.500192-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil i Python inneb\xE4r att \xF6ppna och extrahera inneh\xE5\
-  llet fr\xE5n en fil p\xE5 din dator till ditt program. Programmerare g\xF6r detta\
-  \ f\xF6r att\u2026"
+  llet fr\xE5n en fil p\xE5 din dator till ditt program."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

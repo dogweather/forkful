@@ -5,8 +5,9 @@ description: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet
   \ im\u2026"
 lastmod: '2024-03-13T22:44:54.184446-06:00'
 model: gpt-4-1106-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass\
-  \ der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im\u2026"
+summary: Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass
+  der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im HTTP-Header
+  mitschickt.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

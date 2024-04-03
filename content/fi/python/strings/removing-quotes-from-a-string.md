@@ -6,8 +6,7 @@ description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 yl
 lastmod: '2024-03-13T22:44:56.131341-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 ylim\xE4\
-  \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista.\
-  \ Ohjelmoijat\u2026"
+  \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

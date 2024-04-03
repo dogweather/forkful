@@ -6,8 +6,7 @@ description: "En elm, encontrar la longitud de una cadena significa contar cu\xE
 lastmod: '2024-03-13T22:44:58.970468-06:00'
 model: gpt-4-1106-preview
 summary: "En elm, encontrar la longitud de una cadena significa contar cu\xE1ntos\
-  \ caracteres contiene. Los programadores lo hacen para validar entradas, limitar\
-  \ texto\u2026"
+  \ caracteres contiene."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

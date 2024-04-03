@@ -7,7 +7,7 @@ description: "GDB (GNU Debugger) \xE9 o depurador mais comumente usado para a pr
 lastmod: '2024-03-13T22:44:47.055160-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) \xE9 o depurador mais comumente usado para a programa\xE7\
-  \xE3o em C. Aqui est\xE1 um guia breve sobre como usar o GDB para depurar um programa\u2026"
+  \xE3o em C."
 title: Usando um depurador
 weight: 35
 ---

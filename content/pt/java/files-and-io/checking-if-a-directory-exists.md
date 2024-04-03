@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.470150-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Java \xE9 uma tarefa fundamental\
   \ que envolve a verifica\xE7\xE3o da presen\xE7a de um diret\xF3rio no sistema de\
-  \ arquivos antes de\u2026"
+  \ arquivos antes de ler, escrever ou realizar qualquer opera\xE7\xE3o que exija\
+  \ sua exist\xEAncia."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

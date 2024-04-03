@@ -4,8 +4,8 @@ description: "Deleting characters matching a pattern in Lua is about using patte
   \ to identify and remove specific sequences of characters from a string. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.191112-06:00'
 model: gpt-4-1106-preview
-summary: "Deleting characters matching a pattern in Lua is about using patterns to\
-  \ identify and remove specific sequences of characters from a string. Programmers\u2026"
+summary: Deleting characters matching a pattern in Lua is about using patterns to
+  identify and remove specific sequences of characters from a string.
 title: Deleting characters matching a pattern
 weight: 5
 ---

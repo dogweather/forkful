@@ -4,8 +4,9 @@ description: "Writing to a text file in Fish Shell allows you to store data pers
   \ enabling easy data retrieval or manipulation by either the same Fish script or\u2026"
 lastmod: '2024-03-13T22:45:00.490655-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to a text file in Fish Shell allows you to store data persistently,\
-  \ enabling easy data retrieval or manipulation by either the same Fish script or\u2026"
+summary: Writing to a text file in Fish Shell allows you to store data persistently,
+  enabling easy data retrieval or manipulation by either the same Fish script or other
+  programs.
 title: Writing a text file
 weight: 24
 ---

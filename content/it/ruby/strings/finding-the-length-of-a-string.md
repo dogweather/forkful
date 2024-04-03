@@ -5,8 +5,7 @@ description: "Capire la lunghezza di una stringa significa contare i caratteri c
   \ la\u2026"
 lastmod: '2024-03-13T22:44:44.040653-06:00'
 model: gpt-4-1106-preview
-summary: "Capire la lunghezza di una stringa significa contare i caratteri che la\
-  \ compongono. Lo facciamo per validare l'input, limitare il testo, o gestire la\u2026"
+summary: Capire la lunghezza di una stringa significa contare i caratteri che la compongono.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

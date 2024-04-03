@@ -7,7 +7,7 @@ description: "Analizar una fecha de una cadena implica convertir informaci\xF3n 
 lastmod: '2024-03-13T22:44:58.622049-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena implica convertir informaci\xF3n textual\
-  \ de fecha y hora en un objeto datetime o un formato estructurado equivalente. Esto\u2026"
+  \ de fecha y hora en un objeto datetime o un formato estructurado equivalente."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

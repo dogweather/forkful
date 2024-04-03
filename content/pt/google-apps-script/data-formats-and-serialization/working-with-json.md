@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.132449-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve para armazenar\
   \ e transportar dados, ideal para comunica\xE7\xE3o de servidor para cliente e arquivos\
-  \ de\u2026"
+  \ de configura\xE7\xE3o."
 title: Trabalhando com JSON
 weight: 38
 ---

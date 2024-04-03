@@ -7,7 +7,7 @@ description: "Att avrunda tal i programmering handlar om att approximera ett tal
 lastmod: '2024-03-13T22:44:37.737399-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal i programmering handlar om att approximera ett tal till\
-  \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"
+  \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser."
 title: Avrundning av nummer
 weight: 13
 ---

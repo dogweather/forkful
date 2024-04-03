@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.313659-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning involverer\
   \ koding av et brukernavn og passord i en foresp\xF8rselsoverskrift for \xE5 f\xE5\
-  \ tilgang til\u2026"
+  \ tilgang til beskyttede ressurser."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

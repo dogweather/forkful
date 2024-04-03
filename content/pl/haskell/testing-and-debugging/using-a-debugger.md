@@ -6,8 +6,7 @@ description: "Wybierzmy si\u0119 na spacer z GHCi, interaktywnym \u015Brodowiski
 lastmod: '2024-03-13T22:44:35.456465-06:00'
 model: gpt-4-0125-preview
 summary: "Wybierzmy si\u0119 na spacer z GHCi, interaktywnym \u015Brodowiskiem Haskella,\
-  \ kt\xF3re mo\u017Ce pe\u0142ni\u0107 funkcj\u0119 podstawowego debugera. Wystartuj\
-  \ go ze swoim kodem Haskell\u2026"
+  \ kt\xF3re mo\u017Ce pe\u0142ni\u0107 funkcj\u0119 podstawowego debugera."
 title: Korzystanie z debugera
 weight: 35
 ---

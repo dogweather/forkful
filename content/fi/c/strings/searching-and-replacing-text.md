@@ -8,7 +8,7 @@ description: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyje
 lastmod: '2024-03-13T22:44:57.022893-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen alimerkkijonojen\
-  \ tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri\u2026"
+  \ tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri alimerkkijonoilla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

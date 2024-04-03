@@ -5,7 +5,7 @@ description: "Concatenar strings significa juntar texto de duas ou mais strings,
 lastmod: '2024-03-13T22:44:46.145781-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings significa juntar texto de duas ou mais strings, formando\
-  \ uma \xFAnica sequ\xEAncia. Programadores fazem isso para construir mensagens,\u2026"
+  \ uma \xFAnica sequ\xEAncia."
 title: Concatenando strings
 weight: 3
 ---

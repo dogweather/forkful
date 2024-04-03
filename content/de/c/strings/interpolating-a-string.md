@@ -7,7 +7,7 @@ description: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau
 lastmod: '2024-03-13T22:44:54.337212-06:00'
 model: gpt-4-0125-preview
 summary: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten,\
-  \ indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"
+  \ indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet werden."
 title: Interpolation eines Strings
 weight: 8
 ---

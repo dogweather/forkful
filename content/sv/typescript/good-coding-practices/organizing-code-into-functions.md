@@ -6,8 +6,7 @@ description: "Att organisera kod i funktioner inneb\xE4r att dela upp din kod i 
 lastmod: '2024-03-13T22:44:37.661562-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner inneb\xE4r att dela upp din kod i \xE5teranv\xE4\
-  ndbara, modul\xE4ra block. Vi g\xF6r detta f\xF6r att h\xE5lla saker DRY (Don\u2019\
-  t Repeat\u2026"
+  ndbara, modul\xE4ra block."
 title: Organisera kod i funktioner
 weight: 18
 ---

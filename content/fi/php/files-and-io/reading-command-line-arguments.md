@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:27.568862-07:00
 description: '`'
 lastmod: '2024-03-13T22:44:56.671430-06:00'
 model: gpt-4-1106-preview
-summary: '`'
+summary: '`.'
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

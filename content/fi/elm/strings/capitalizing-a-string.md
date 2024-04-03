@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.471245-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon\
   \ ensimm\xE4isen merkin isoksi kirjaimeksi samalla, kun loput merkit j\xE4tet\xE4\
-  \xE4n pieniksi\u2026"
+  \xE4n pieniksi kirjaimiksi."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

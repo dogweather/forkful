@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.222490-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja w Visual Basic for Applications (VBA) polega na \u0142\u0105\
   czeniu dw\xF3ch lub wi\u0119cej ci\u0105g\xF3w znak\xF3w w jedn\u0105 jednostk\u0119\
-  . Jest to podstawowe zadanie w\u2026"
+  ."
 title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
 weight: 3
 ---

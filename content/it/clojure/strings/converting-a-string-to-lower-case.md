@@ -6,8 +6,7 @@ description: "Convertire una stringa in minuscolo \xE8 il processo di trasformaz
 lastmod: '2024-03-13T22:44:43.029784-06:00'
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo \xE8 il processo di trasformazione di\
-  \ tutti i caratteri di una stringa in lettere minuscole. Si fa per uniformit\xE0\
-  , per\u2026"
+  \ tutti i caratteri di una stringa in lettere minuscole."
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

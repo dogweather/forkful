@@ -6,8 +6,8 @@ description: "Stringconcatenatie in C omvat het samenvoegen van twee of meer str
   \ achter elkaar om een nieuwe string te vormen. Programmeurs voeren deze bewerking\u2026"
 lastmod: '2024-03-13T22:44:51.282103-06:00'
 model: gpt-4-0125-preview
-summary: "Stringconcatenatie in C omvat het samenvoegen van twee of meer strings achter\
-  \ elkaar om een nieuwe string te vormen. Programmeurs voeren deze bewerking\u2026"
+summary: Stringconcatenatie in C omvat het samenvoegen van twee of meer strings achter
+  elkaar om een nieuwe string te vormen.
 title: Strings samenvoegen
 weight: 3
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.052331-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
   \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\
-  n\u2026"
+  n palautteen saamisen."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 weight: 34
 ---

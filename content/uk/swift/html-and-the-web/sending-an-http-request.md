@@ -6,7 +6,7 @@ description: "Sending an HTTP request lets your app talk to a web server\u2014li
 lastmod: '2024-03-13T22:44:49.914040-06:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request lets your app talk to a web server\u2014like asking\
-  \ for data or sending it. Programmers use this to interact with web APIs, grabbing\u2026"
+  \ for data or sending it."
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
 weight: 44

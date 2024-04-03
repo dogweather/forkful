@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.177737-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Arduino-projekt inneb\xE4r att erh\xE5\
   lla realtidsinformation som kan vara avg\xF6rande f\xF6r loggning, tidsst\xE4mpling\
-  \ eller\u2026"
+  \ eller schemal\xE4ggning av uppgifter."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

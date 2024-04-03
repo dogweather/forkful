@@ -6,8 +6,7 @@ description: "\xC5 jobbe med XML inneb\xE6rer parsing og manipulering av XML-dok
 lastmod: '2024-03-13T22:44:40.954815-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing og manipulering av XML-dokumenter\
-  \ ved hjelp av kode. Programmerere gj\xF8r dette for \xE5 lese, skrive og modifisere\
-  \ data i et\u2026"
+  \ ved hjelp av kode."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

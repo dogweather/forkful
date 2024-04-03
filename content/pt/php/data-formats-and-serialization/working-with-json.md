@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.688563-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados\
   \ f\xE1cil de ler e escrever por humanos, e f\xE1cil de analisar e gerar por m\xE1\
-  quinas.\u2026"
+  quinas."
 title: Trabalhando com JSON
 weight: 38
 ---

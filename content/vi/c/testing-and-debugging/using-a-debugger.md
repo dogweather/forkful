@@ -9,9 +9,7 @@ description: "GDB (GNU Debugger) l\xE0 c\xF4ng c\u1EE5 debugger \u0111\u01B0\u1E
 lastmod: '2024-03-13T22:44:37.274313-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) l\xE0 c\xF4ng c\u1EE5 debugger \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng ph\u1ED5 bi\u1EBFn nh\u1EA5t cho l\u1EADp tr\xECnh C. D\u01B0\u1EDB\
-  i \u0111\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn ng\u1EAFn g\u1ECDn v\u1EC1 vi\u1EC7\
-  c s\u1EED d\u1EE5ng GDB \u0111\u1EC3 g\u1EE1 l\u1ED7i m\u1ED9t ch\u01B0\u01A1ng\u2026"
+  \ d\u1EE5ng ph\u1ED5 bi\u1EBFn nh\u1EA5t cho l\u1EADp tr\xECnh C."
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 weight: 35
 ---

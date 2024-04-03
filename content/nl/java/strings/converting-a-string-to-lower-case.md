@@ -6,8 +6,8 @@ description: "Een string omzetten naar kleine letters betekent het transformeren
   \ alle letters in een string naar hun kleine-lettervorm. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:50.667642-06:00'
 model: gpt-4-0125-preview
-summary: "Een string omzetten naar kleine letters betekent het transformeren van alle\
-  \ letters in een string naar hun kleine-lettervorm. Programmeurs doen dit om\u2026"
+summary: Een string omzetten naar kleine letters betekent het transformeren van alle
+  letters in een string naar hun kleine-lettervorm.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

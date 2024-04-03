@@ -6,8 +6,8 @@ description: "Tekst zoeken en vervangen in bash betekent het omwisselen van woor
   \ of patronen in een string of bestand met iets anders. Het is een dagelijkse taak\u2026"
 lastmod: '2024-03-13T22:44:50.964416-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen in bash betekent het omwisselen van woorden of\
-  \ patronen in een string of bestand met iets anders. Het is een dagelijkse taak\u2026"
+summary: Tekst zoeken en vervangen in bash betekent het omwisselen van woorden of
+  patronen in een string of bestand met iets anders.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

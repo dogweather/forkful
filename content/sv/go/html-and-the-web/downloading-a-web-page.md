@@ -8,8 +8,7 @@ description: "Att ladda ner en webbsida handlar om att h\xE4mta HTML-inneh\xE5ll
 lastmod: '2024-03-13T22:44:37.390690-06:00'
 model: gpt-4-0125-preview
 summary: "Att ladda ner en webbsida handlar om att h\xE4mta HTML-inneh\xE5llet p\xE5\
-  \ en webbsida via HTTP/HTTPS-protokollet. Programmerare g\xF6r ofta detta f\xF6\
-  r webbskrapning,\u2026"
+  \ en webbsida via HTTP/HTTPS-protokollet."
 title: Ladda ner en webbsida
 weight: 42
 ---

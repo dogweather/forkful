@@ -8,8 +8,7 @@ description: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan 
 lastmod: '2024-03-13T22:44:56.051310-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
-  misen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n koodin\u2026"
+  misen ja sen alustamisen tarvittavilla Go-moduuleilla."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

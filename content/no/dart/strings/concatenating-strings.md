@@ -8,8 +8,7 @@ description: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 komb
 lastmod: '2024-03-13T22:44:40.478519-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 kombinere\
-  \ to eller flere strenger til \xE9n. Programmerere gj\xF8r dette for \xE5 enkelt\
-  \ manipulere tekstdata,\u2026"
+  \ to eller flere strenger til \xE9n."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

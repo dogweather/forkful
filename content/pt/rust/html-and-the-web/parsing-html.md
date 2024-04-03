@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.365570-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML, o que\
   \ \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\xE3o\
-  \ de web crawlers.\u2026"
+  \ de web crawlers."
 title: Analisando HTML
 weight: 43
 ---

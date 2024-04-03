@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.968046-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
   \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
-  ne inchang\xE9.\u2026"
+  ne inchang\xE9."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

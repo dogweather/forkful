@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:58.618990-06:00'
 model: gpt-4-1106-preview
 summary: "La generaci\xF3n de registros (logging) es el proceso de grabar eventos\
   \ de una aplicaci\xF3n mientras un programa se ejecuta, proporcionando un rastro\
-  \ que puede\u2026"
+  \ que puede ser analizado despu\xE9s de la ejecuci\xF3n y monitoreado en tiempo\
+  \ real."
 title: Registro de Actividades
 weight: 17
 ---

@@ -6,8 +6,7 @@ description: "Handling errors in C# is about managing the unexpected\u2014like t
 lastmod: '2024-03-13T22:45:00.096148-06:00'
 model: gpt-4-1106-preview
 summary: "Handling errors in C# is about managing the unexpected\u2014like tripping\
-  \ over your shoelaces. Programs can trip over bad data or wonky connections. We\
-  \ handle\u2026"
+  \ over your shoelaces."
 title: Handling errors
 weight: 16
 ---

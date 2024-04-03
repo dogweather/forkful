@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.769046-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar mensagens\
   \ de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente da sa\xED\
-  da\u2026"
+  da padr\xE3o (stdout)."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

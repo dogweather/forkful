@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.367330-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Rustissa on yleinen teht\xE4\
   v\xE4 lokitusta, aikaan perustuvia operaatioita tai yksinkertaisesti p\xE4iv\xE4\
-  m\xE4\xE4r\xE4n n\xE4ytt\xE4mist\xE4 varten.\u2026"
+  m\xE4\xE4r\xE4n n\xE4ytt\xE4mist\xE4 varten."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

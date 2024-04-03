@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.098183-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
   res qui d\xE9finissent des mod\xE8les de recherche, principalement utilis\xE9es\
-  \ pour la\u2026"
+  \ pour la correspondance et la manipulation de cha\xEEnes de caract\xE8res."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

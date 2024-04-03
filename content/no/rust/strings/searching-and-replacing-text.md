@@ -6,7 +6,7 @@ description: "\xC5 s\xF8ke og erstatte tekst lar oss finne strenger i data og by
 lastmod: '2024-03-13T22:44:40.559183-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 s\xF8ke og erstatte tekst lar oss finne strenger i data og bytte dem\
-  \ ut med nye strenger. Programmererne trenger dette for \xE5 oppdatere data, korrigere\u2026"
+  \ ut med nye strenger."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

@@ -5,7 +5,7 @@ description: "Pour utiliser le d\xE9bogueur dans Xcode (l'IDE pour Swift), vous 
 lastmod: '2024-03-13T22:44:58.227520-06:00'
 model: gpt-4-0125-preview
 summary: "Pour utiliser le d\xE9bogueur dans Xcode (l'IDE pour Swift), vous pouvez\
-  \ d\xE9finir des points d'arr\xEAt, inspecter des variables et observer des expressions.\u2026"
+  \ d\xE9finir des points d'arr\xEAt, inspecter des variables et observer des expressions."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

@@ -7,7 +7,8 @@ description: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog 
 lastmod: '2024-03-13T22:44:35.685845-06:00'
 model: gpt-4-0125-preview
 summary: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog istnieje\
-  \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\u2026"
+  \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\
+  \ plik\xF3w bez b\u0142\u0119d\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

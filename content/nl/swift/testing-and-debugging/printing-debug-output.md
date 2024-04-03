@@ -6,8 +6,9 @@ description: "In Swift betekent het printen van debug-output het weergeven van g
   \ in een debuggebied, meestal binnen een IDE of een console, om te monitoren wat\u2026"
 lastmod: '2024-03-13T22:44:51.159537-06:00'
 model: gpt-4-0125-preview
-summary: "In Swift betekent het printen van debug-output het weergeven van gegevens\
-  \ in een debuggebied, meestal binnen een IDE of een console, om te monitoren wat\u2026"
+summary: In Swift betekent het printen van debug-output het weergeven van gegevens
+  in een debuggebied, meestal binnen een IDE of een console, om te monitoren wat er
+  live in je code gebeurt.
 title: Debug-output afdrukken
 weight: 33
 ---

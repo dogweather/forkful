@@ -4,8 +4,7 @@ description: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\x
   lt\xF6\xE4 huomiottaen kirjainkoon."
 lastmod: '2024-03-13T22:44:56.725360-06:00'
 model: gpt-4-1106-preview
-summary: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4lt\xF6\
-  \xE4 huomiottaen kirjainkoon."
+summary: "Muuttaa kirjaimet pieniksi tekstiss\xE4."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

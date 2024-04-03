@@ -5,8 +5,8 @@ description: "Handling errors is about expecting the unexpected; it's how we man
   \ a\u2026"
 lastmod: '2024-03-13T22:44:59.865571-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors is about expecting the unexpected; it's how we manage when\
-  \ things go wrong in our code. We do it to avoid crashes and to give users a\u2026"
+summary: Handling errors is about expecting the unexpected; it's how we manage when
+  things go wrong in our code.
 title: Handling errors
 weight: 16
 ---

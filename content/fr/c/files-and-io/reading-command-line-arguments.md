@@ -7,7 +7,8 @@ description: "En programmation C, lire les arguments de la ligne de commande per
 lastmod: '2024-03-13T22:44:58.389299-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation C, lire les arguments de la ligne de commande permet aux\
-  \ programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui\u2026"
+  \ programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui am\xE9\
+  liore leur flexibilit\xE9 et leur utilisabilit\xE9."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

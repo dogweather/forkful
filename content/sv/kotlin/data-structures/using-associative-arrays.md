@@ -8,8 +8,7 @@ description: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som la
 lastmod: '2024-03-13T22:44:37.864385-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar nyckel-v\xE4\
-  rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera och h\xE4\
-  mta\u2026"
+  rdepar."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

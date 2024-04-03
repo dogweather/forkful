@@ -6,7 +6,7 @@ description: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une pa
 lastmod: '2024-03-13T22:44:57.275713-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie suppl\xE9\
-  mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans divers\u2026"
+  mentaire, l'unit\xE9 imaginaire 'i'."
 title: Manipulation des nombres complexes
 weight: 14
 ---

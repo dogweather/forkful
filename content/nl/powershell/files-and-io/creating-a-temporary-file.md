@@ -7,7 +7,7 @@ description: "Het maken van een tijdelijk bestand betekent het cre\xEBren van ee
 lastmod: '2024-03-13T22:44:51.049513-06:00'
 model: gpt-4-0125-preview
 summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
-  \ voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan.\u2026"
+  \ voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

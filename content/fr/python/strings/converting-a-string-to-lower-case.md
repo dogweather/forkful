@@ -4,8 +4,7 @@ description: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour un
   \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."
 lastmod: '2024-03-13T22:44:57.221500-06:00'
 model: gpt-4-1106-preview
-summary: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
-  \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."
+summary: "Pourquoi convertir des cha\xEEnes en minuscules ."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

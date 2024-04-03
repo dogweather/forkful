@@ -6,8 +6,7 @@ description: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie
 lastmod: '2024-03-13T22:44:35.861147-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
-  \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\
-  \ szybkiego,\u2026"
+  \ bez za\u015Bmiecania systemu."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

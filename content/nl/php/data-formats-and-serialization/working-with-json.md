@@ -6,8 +6,8 @@ description: "JSON (JavaScript Object Notation) is een lichtgewicht gegevensform
   \ voor gegevensuitwisseling. Programmeurs gebruiken het omdat het makkelijk te\u2026"
 lastmod: '2024-03-13T22:44:50.917068-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat voor\
-  \ gegevensuitwisseling. Programmeurs gebruiken het omdat het makkelijk te\u2026"
+summary: JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat voor
+  gegevensuitwisseling.
 title: Werken met JSON
 weight: 38
 ---

@@ -6,8 +6,7 @@ description: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w k
 lastmod: '2024-03-13T22:44:35.482473-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w kodzie,\
-  \ aby dynamicznie budowa\u0107 tekst. Programi\u015Bci u\u017Cywaj\u0105 jej, by\
-  \ kod by\u0142 bardziej elastyczny\u2026"
+  \ aby dynamicznie budowa\u0107 tekst."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

@@ -6,7 +6,8 @@ description: "Los n\xFAmeros complejos, que constan de una parte real y una part
 lastmod: '2024-03-13T22:44:58.793787-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria\
-  \ (generalmente escritos como a + bi), abren la puerta a c\xE1lculos que son\u2026"
+  \ (generalmente escritos como a + bi), abren la puerta a c\xE1lculos que son pr\xE1\
+  cticamente dif\xEDciles o imposibles solo con n\xFAmeros reales."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

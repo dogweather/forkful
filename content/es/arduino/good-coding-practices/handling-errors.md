@@ -6,8 +6,7 @@ description: "El manejo de errores en tus programas detecta los problemas imprev
 lastmod: '2024-03-13T22:44:59.340631-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores en tus programas detecta los problemas imprevistos\
-  \ que intentar\xE1n hacerte tropezar. Lo haces para evitar que tu Arduino tenga\
-  \ un\u2026"
+  \ que intentar\xE1n hacerte tropezar."
 title: Manejo de errores
 weight: 16
 ---

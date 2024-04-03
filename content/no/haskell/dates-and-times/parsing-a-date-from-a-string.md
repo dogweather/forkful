@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.851432-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Haskell inneb\xE6rer \xE5 konvertere\
   \ tekstuelle representasjoner av datoer til et strukturert format som programmet\
-  \ kan\u2026"
+  \ kan manipulere."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

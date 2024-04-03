@@ -8,7 +8,8 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoava
 lastmod: '2024-03-13T22:44:56.259639-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoavat tehokkaan\
-  \ tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa\u2026"
+  \ tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa\
+  \ monimutkaisia tekstink\xE4sittelyteht\xE4vi\xE4 tehokkaasti."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

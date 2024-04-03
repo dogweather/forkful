@@ -5,7 +5,7 @@ description: "Comenzar un proyecto nuevo es como plantar una semilla digital, es
 lastmod: '2024-03-13T22:44:59.459443-06:00'
 model: gpt-4-1106-preview
 summary: "Comenzar un proyecto nuevo es como plantar una semilla digital, esperando\
-  \ que crezca y se convierta en algo incre\xEDble. Los programadores iniciamos\u2026"
+  \ que crezca y se convierta en algo incre\xEDble."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

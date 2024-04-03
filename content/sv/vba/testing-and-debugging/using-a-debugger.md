@@ -7,9 +7,7 @@ description: "I VBA \xE4r fels\xF6karen en integrerad del av Visual Basic Editor
   \ i v\xE4nstermarginalen\u2026"
 lastmod: '2024-03-13T22:44:37.748064-06:00'
 model: gpt-4-0125-preview
-summary: "I VBA \xE4r fels\xF6karen en integrerad del av Visual Basic Editorn (VBE).\
-  \ S\xE5 h\xE4r kan du utnyttja den: 1. **Att s\xE4tta brytpunkter**: Klicka i v\xE4\
-  nstermarginalen\u2026"
+summary: "I VBA \xE4r fels\xF6karen en integrerad del av Visual Basic Editorn (VBE)."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

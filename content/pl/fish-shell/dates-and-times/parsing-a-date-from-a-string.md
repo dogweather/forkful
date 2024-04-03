@@ -8,7 +8,8 @@ description: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o da
 lastmod: '2024-03-13T22:44:35.851091-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej\
-  \ w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format, kt\xF3ry\u2026"
+  \ w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format, kt\xF3ry \u015B\
+  rodowiska programistyczne mog\u0105 rozpoznawa\u0107 i manipulowa\u0107."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

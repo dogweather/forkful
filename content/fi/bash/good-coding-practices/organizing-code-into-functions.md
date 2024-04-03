@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.744729-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
   \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
-  vi\xE4. Se tekee\u2026"
+  vi\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

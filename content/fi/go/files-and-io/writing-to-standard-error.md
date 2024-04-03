@@ -8,8 +8,7 @@ description: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virhevi
 lastmod: '2024-03-13T22:44:56.068246-06:00'
 model: gpt-4-0125-preview
 summary: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviestien\
-  \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta. Ohjelmoijat k\xE4\
-  ytt\xE4v\xE4t\u2026"
+  \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

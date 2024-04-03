@@ -4,8 +4,8 @@ description: "Regular expressions, or regex, allow developers to search, match, 
   \ manipulate strings with advanced pattern-matching techniques. In Rust, utilizing\u2026"
 lastmod: '2024-03-13T22:44:59.886867-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions, or regex, allow developers to search, match, and manipulate\
-  \ strings with advanced pattern-matching techniques. In Rust, utilizing\u2026"
+summary: Regular expressions, or regex, allow developers to search, match, and manipulate
+  strings with advanced pattern-matching techniques.
 title: Using regular expressions
 weight: 11
 ---

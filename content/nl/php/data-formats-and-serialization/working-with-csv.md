@@ -6,8 +6,8 @@ description: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden wa
   \ is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.\u2026"
 lastmod: '2024-03-13T22:44:50.917981-06:00'
 model: gpt-4-0125-preview
-summary: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
-  \ is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.\u2026"
+summary: CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),
+  is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.
 title: Werken met CSV
 weight: 37
 ---

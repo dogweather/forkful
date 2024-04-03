@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.601990-06:00'
 model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Dart handlar om att best\xE4mma\
   \ antalet kodenheter (i grunden antalet tecken om man t\xE4nker p\xE5 det p\xE5\
-  \ ett f\xF6renklat s\xE4tt) i\u2026"
+  \ ett f\xF6renklat s\xE4tt) i en given str\xE4ng."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

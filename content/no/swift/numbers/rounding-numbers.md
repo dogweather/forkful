@@ -6,8 +6,7 @@ description: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en 
 lastmod: '2024-03-13T22:44:41.136841-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en spesifikk\
-  \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler. Programmerere avrunder\
-  \ for \xE5\u2026"
+  \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler."
 title: Avrunding av tall
 weight: 13
 ---

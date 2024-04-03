@@ -8,7 +8,8 @@ description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envo
 lastmod: '2024-03-13T22:44:47.028048-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar,\
-  \ manipular e gerar dados em um formato tabular que \xE9 amplamente utilizado para\u2026"
+  \ manipular e gerar dados em um formato tabular que \xE9 amplamente utilizado para\
+  \ a troca de dados entre aplica\xE7\xF5es."
 title: Trabalhando com CSV
 weight: 37
 ---

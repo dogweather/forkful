@@ -5,9 +5,7 @@ description: "L\xE4sa en textfil? Det handlar om att f\xE5 fram informationen sk
   \ data,\u2026"
 lastmod: '2024-03-13T22:44:38.449137-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sa en textfil? Det handlar om att f\xE5 fram informationen skriven\
-  \ i filen och anv\xE4nda den i ditt program. Utvecklare g\xF6r det f\xF6r att ladda\
-  \ data,\u2026"
+summary: "L\xE4sa en textfil."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

@@ -6,8 +6,7 @@ description: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca 
 lastmod: '2024-03-13T22:44:46.948252-06:00'
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca e troca,\
-  \ onde um trecho de texto \xE9 localizado e trocado por outro. Programadores fazem\
-  \ isso para\u2026"
+  \ onde um trecho de texto \xE9 localizado e trocado por outro."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

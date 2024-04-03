@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.400216-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic for\
   \ Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen, jotka\
-  \ on suojattu\u2026"
+  \ on suojattu k\xE4ytt\xE4j\xE4tunnuksen ja salasanan avulla."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

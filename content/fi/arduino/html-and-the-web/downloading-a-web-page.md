@@ -5,9 +5,7 @@ description: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetis
   \xE4 laitteen dataa\u2026"
 lastmod: '2024-03-13T22:44:56.823825-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetiss\xE4\
-  \ olevasta osoitteesta. Koodarit tekev\xE4t t\xE4m\xE4n, kun tarvitsevat p\xE4ivitt\xE4\
-  \xE4 laitteen dataa\u2026"
+summary: "Mik\xE4 ja miksi."
 title: Verkkosivun lataaminen
 weight: 42
 ---

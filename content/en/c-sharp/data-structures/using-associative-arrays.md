@@ -4,8 +4,8 @@ description: "Associative arrays, or dictionaries in C#, let you store and manag
   \ pairs of keys and values. They're your go-to when you need to fetch values quickly\u2026"
 lastmod: '2024-03-13T22:45:00.081621-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, or dictionaries in C#, let you store and manage pairs\
-  \ of keys and values. They're your go-to when you need to fetch values quickly\u2026"
+summary: Associative arrays, or dictionaries in C#, let you store and manage pairs
+  of keys and values.
 title: Using associative arrays
 weight: 15
 ---

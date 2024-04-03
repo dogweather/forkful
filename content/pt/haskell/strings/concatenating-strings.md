@@ -5,7 +5,7 @@ description: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de carac
 lastmod: '2024-03-13T22:44:46.617455-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string. Programadores fazem isso para manipular texto, construir\u2026"
+  \ para formar uma nova string."
 title: Concatenando strings
 weight: 3
 ---

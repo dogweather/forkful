@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.148793-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czas\xF3w na format, kt\xF3ry mo\u017Ce by\u0107 przetwarzany\
-  \ i analizowany przez\u2026"
+  \ i analizowany przez program."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

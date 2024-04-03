@@ -8,8 +8,7 @@ description: "Travailler avec JSON (JavaScript Object Notation) implique d'analy
 lastmod: '2024-03-13T22:44:57.259502-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser des\
-  \ cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\
-  \ pour le\u2026"
+  \ cha\xEEnes format\xE9es JSON en objets Python et vice versa."
 title: Travailler avec JSON
 weight: 38
 ---

@@ -7,8 +7,9 @@ description: "Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt j
   \ en\u2026"
 lastmod: '2024-03-13T22:44:50.289169-06:00'
 model: gpt-4-0125-preview
-summary: "Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je in staat\
-  \ om in real-time met Go-code te experimenteren, commando's uit te voeren en\u2026"
+summary: Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je in staat
+  om in real-time met Go-code te experimenteren, commando's uit te voeren en onmiddellijke
+  feedback te krijgen.
 title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---

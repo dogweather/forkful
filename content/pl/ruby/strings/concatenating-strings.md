@@ -6,8 +6,7 @@ description: "Konkatenacja string\xF3w to po prostu \u0142\u0105czenie tekst\xF3
 lastmod: '2024-03-13T22:44:35.922809-06:00'
 model: gpt-4-1106-preview
 summary: "Konkatenacja string\xF3w to po prostu \u0142\u0105czenie tekst\xF3w w jeden\
-  \ ci\u0105g. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107 wiadomo\u015B\
-  ci, generowa\u0107 unikatowe identyfikatory, czy te\u017C\u2026"
+  \ ci\u0105g."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

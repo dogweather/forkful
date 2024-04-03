@@ -10,7 +10,7 @@ lastmod: '2024-03-13T22:44:35.444308-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli s\u0142owniki, w Haskellu s\u0142u\u017C\u0105\
   \ do mapowania kluczy na warto\u015Bci w celu szybkiego wyszukiwania i efektywnego\
-  \ zarz\u0105dzania danymi.\u2026"
+  \ zarz\u0105dzania danymi."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

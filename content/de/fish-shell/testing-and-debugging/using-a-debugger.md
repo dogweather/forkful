@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:54.313954-06:00'
 model: gpt-4-0125-preview
 summary: "Fish hat keinen eingebauten Debugger wie einige andere Shells, aber Sie\
   \ k\xF6nnen externe Tools wie `gdb` f\xFCr das Debuggen von kompilierten Programmen\
-  \ oder\u2026"
+  \ oder `fish -d` zum Ausf\xFChren von Fish mit Debug-Ausgabe auf unterschiedlichen\
+  \ Ebenen nutzen."
 title: Einsatz eines Debuggers
 weight: 35
 ---

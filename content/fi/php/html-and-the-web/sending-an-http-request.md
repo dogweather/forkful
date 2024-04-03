@@ -6,8 +6,7 @@ description: "PHP:ss\xE4 HTTP-pyynt\xF6 l\xE4hett\xE4\xE4 tietoja palvelimelle t
 lastmod: '2024-03-13T22:44:56.652571-06:00'
 model: gpt-4-1106-preview
 summary: "PHP:ss\xE4 HTTP-pyynt\xF6 l\xE4hett\xE4\xE4 tietoja palvelimelle tai hakee\
-  \ niit\xE4 sielt\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta voivat siirt\xE4\
-  \xE4 dataa, hakea resursseja tai\u2026"
+  \ niit\xE4 sielt\xE4."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

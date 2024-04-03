@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.707038-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell bao g\u1ED3m vi\u1EC7\
   c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n theo\
-  \ ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi. \u0110i\u1EC1u n\xE0y c\u1EF1c k\u1EF3\
-  \ quan tr\u1ECDng trong c\xE1c\u2026"
+  \ ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

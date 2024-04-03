@@ -6,8 +6,7 @@ description: "Error handling is about managing the unexpected in programs\u2014l
 lastmod: '2024-03-13T22:44:59.752323-06:00'
 model: gpt-4-1106-preview
 summary: "Error handling is about managing the unexpected in programs\u2014like a\
-  \ bouncer dealing with troublemakers. Programmers like it smooth; error handling\
-  \ helps\u2026"
+  \ bouncer dealing with troublemakers."
 title: Handling errors
 weight: 16
 ---

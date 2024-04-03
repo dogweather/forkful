@@ -5,7 +5,7 @@ description: "La concat\xE9nation de cha\xEEnes de caract\xE8res, c'est comme co
 lastmod: '2024-03-13T22:44:57.428091-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res, c'est comme coller des\
-  \ mots ensemble pour former des phrases. On la fait pour construire des messages\u2026"
+  \ mots ensemble pour former des phrases."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

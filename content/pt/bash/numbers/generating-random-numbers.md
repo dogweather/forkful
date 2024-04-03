@@ -5,7 +5,8 @@ description: "Gerar n\xFAmeros aleat\xF3rios no Bash oferece uma maneira de intr
 lastmod: '2024-03-13T22:44:46.746647-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios no Bash oferece uma maneira de introduzir\
-  \ imprevisibilidade nos scripts, o que \xE9 essencial para tarefas como gerar senhas\u2026"
+  \ imprevisibilidade nos scripts, o que \xE9 essencial para tarefas como gerar senhas\
+  \ seguras, simular dados ou para programar jogos."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

@@ -6,7 +6,7 @@ description: "Descargar una p\xE1gina web es obtener el contenido HTML de una UR
 lastmod: '2024-03-13T22:44:58.845309-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es obtener el contenido HTML de una URL espec\xED\
-  fica. Los programadores hacen esto para analizar datos, probar aplicaciones y\u2026"
+  fica."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

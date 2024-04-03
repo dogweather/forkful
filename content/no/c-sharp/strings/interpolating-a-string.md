@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.781117-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolering i C# lar deg opprette en ny streng ved \xE5 inkludere\
   \ uttrykk inni en strengbokstavelig, noe som gj\xF8r det enklere \xE5 formatere\
-  \ og\u2026"
+  \ og konkatere strenger."
 title: Interpolering av en streng
 weight: 8
 ---

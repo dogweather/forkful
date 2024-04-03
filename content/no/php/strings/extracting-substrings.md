@@ -5,9 +5,7 @@ description: "Utdrag av substringer er n\xE5r du henter en del av en streng. Pro
   \ fra\u2026"
 lastmod: '2024-03-13T22:44:40.874646-06:00'
 model: gpt-4-1106-preview
-summary: "Utdrag av substringer er n\xE5r du henter en del av en streng. Programmerere\
-  \ gj\xF8r dette for \xE5 manipulere og analysere tekst, som \xE5 hente ut et brukernavn\
-  \ fra\u2026"
+summary: "Utdrag av substringer er n\xE5r du henter en del av en streng."
 title: Uthenting av delstrenger
 weight: 6
 ---

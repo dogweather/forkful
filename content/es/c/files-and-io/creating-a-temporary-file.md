@@ -8,7 +8,8 @@ description: "Crear un archivo temporal en C implica generar un archivo que est\
 lastmod: '2024-03-13T22:44:59.566996-06:00'
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en C implica generar un archivo que est\xE1 destinado\
-  \ a ser utilizado por un corto per\xEDodo, generalmente como espacio de trabajo\u2026"
+  \ a ser utilizado por un corto per\xEDodo, generalmente como espacio de trabajo\
+  \ para el procesamiento o almacenamiento de datos."
 title: Creando un archivo temporal
 weight: 21
 ---

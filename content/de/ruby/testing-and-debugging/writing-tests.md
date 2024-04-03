@@ -7,8 +7,8 @@ description: "Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unte
   \ um\u2026"
 lastmod: '2024-03-13T22:44:54.404067-06:00'
 model: gpt-4-0125-preview
-summary: "Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter verschiedenen\
-  \ Bedingungen wie erwartet funktioniert. Programmierer erstellen Tests, um\u2026"
+summary: Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter verschiedenen
+  Bedingungen wie erwartet funktioniert.
 title: Tests Schreiben
 weight: 36
 ---

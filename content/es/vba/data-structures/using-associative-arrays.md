@@ -7,9 +7,9 @@ description: "Los arreglos asociativos, a menudo conocidos como diccionarios en 
   \ de\u2026"
 lastmod: '2024-03-13T22:44:58.885004-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, a menudo conocidos como diccionarios en Visual\
-  \ Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones\
-  \ de\u2026"
+summary: Los arreglos asociativos, a menudo conocidos como diccionarios en Visual
+  Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones de
+  pares clave-valor.
 title: Utilizando arreglos asociativos
 weight: 15
 ---

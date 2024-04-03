@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.262106-06:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to podstawowe operacje umo\u017Cliwiaj\u0105\
   ce zmian\u0119 jednego ci\u0105gu znak\xF3w na inny w obr\u0119bie wi\u0119kszego\
-  \ tekstu. Programi\u015Bci robi\u0105 to\u2026"
+  \ tekstu."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

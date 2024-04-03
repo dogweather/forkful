@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.676289-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4ndarv\xE4\
   nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden och\
-  \ datalagring.\u2026"
+  \ datalagring."
 title: Att Arbeta med YAML
 weight: 41
 ---

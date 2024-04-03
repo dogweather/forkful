@@ -7,7 +7,7 @@ description: "\xC9crire des tests en TypeScript implique de cr\xE9er des scripts
 lastmod: '2024-03-13T22:44:57.440535-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en TypeScript implique de cr\xE9er des scripts automatis\xE9\
-  s pour v\xE9rifier la fonctionnalit\xE9 et la correction de votre code. Les programmeurs\u2026"
+  s pour v\xE9rifier la fonctionnalit\xE9 et la correction de votre code."
 title: "R\xE9daction de tests"
 weight: 36
 ---

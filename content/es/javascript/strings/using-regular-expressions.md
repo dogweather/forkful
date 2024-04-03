@@ -6,8 +6,8 @@ description: "Las expresiones regulares (regex) en JavaScript son patrones utili
   \ para buscar combinaciones de caracteres en cadenas. Los programadores las usan\u2026"
 lastmod: '2024-03-13T22:44:59.448879-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en JavaScript son patrones utilizados\
-  \ para buscar combinaciones de caracteres en cadenas. Los programadores las usan\u2026"
+summary: Las expresiones regulares (regex) en JavaScript son patrones utilizados para
+  buscar combinaciones de caracteres en cadenas.
 title: Usando expresiones regulares
 weight: 11
 ---

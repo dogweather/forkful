@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.805898-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w pozwala programistom konwertowa\u0107\
   \ tekstowe reprezentacje dat na obiekty `Date` w JavaScript, u\u0142atwiaj\u0105\
-  c operacje\u2026"
+  c operacje manipulowania dat\u0105, por\xF3wnywania i formatowania."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

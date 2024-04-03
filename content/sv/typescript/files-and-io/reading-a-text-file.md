@@ -6,8 +6,7 @@ description: "L\xE4sning av en textfil inneb\xE4r att h\xE4mta data fr\xE5n en f
 lastmod: '2024-03-13T22:44:37.673404-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sning av en textfil inneb\xE4r att h\xE4mta data fr\xE5n en fil som\
-  \ \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att bearbeta, visa\
-  \ eller transformera\u2026"
+  \ \xE4r lagrad p\xE5 disken."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

@@ -6,8 +6,8 @@ description: "Reguliere expressies zijn patronen die worden gebruikt om karakter
   \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"
 lastmod: '2024-03-13T22:44:51.102682-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
-  \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"
+summary: Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties
+  in tekst te matchen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

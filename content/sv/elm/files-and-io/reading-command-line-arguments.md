@@ -6,8 +6,7 @@ description: "Att l\xE4sa kommandoradsargument inneb\xE4r att tolka data som anv
 lastmod: '2024-03-13T22:44:37.844941-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att tolka data som anv\xE4ndarna\
-  \ anger n\xE4r de startar ett program fr\xE5n terminalen. Programmerare g\xF6r detta\
-  \ f\xF6r att\u2026"
+  \ anger n\xE4r de startar ett program fr\xE5n terminalen."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

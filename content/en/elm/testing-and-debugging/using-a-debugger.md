@@ -4,8 +4,8 @@ description: "Elm doesn't have a built-in debugger in the traditional sense that
   \ say, JavaScript does with browser dev tools. However, the Elm community has built\u2026"
 lastmod: '2024-03-13T22:45:00.014745-06:00'
 model: gpt-4-1106-preview
-summary: "Elm doesn't have a built-in debugger in the traditional sense that, say,\
-  \ JavaScript does with browser dev tools. However, the Elm community has built\u2026"
+summary: Elm doesn't have a built-in debugger in the traditional sense that, say,
+  JavaScript does with browser dev tools.
 title: Using a debugger
 weight: 35
 ---

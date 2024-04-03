@@ -8,7 +8,8 @@ description: "Capitalizar una cadena en Visual Basic para Aplicaciones (VBA) imp
 lastmod: '2024-03-13T22:44:58.872032-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Visual Basic para Aplicaciones (VBA) implica convertir\
-  \ el primer car\xE1cter de cada palabra en una cadena a may\xFAsculas, asegurando\u2026"
+  \ el primer car\xE1cter de cada palabra en una cadena a may\xFAsculas, asegurando\
+  \ que el resto est\xE9n en min\xFAsculas."
 title: Capitalizando una cadena de caracteres
 weight: 2
 ---

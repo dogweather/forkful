@@ -5,7 +5,7 @@ description: "Imagina que acabas de descubrir que necesitas hacer una actualizac
 lastmod: '2024-03-13T22:44:59.242228-06:00'
 model: gpt-4-0125-preview
 summary: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
-  n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"
+  n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor."
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

@@ -8,8 +8,7 @@ description: "G\xE9rer les erreurs en Go implique de reconna\xEEtre et de r\xE9p
 lastmod: '2024-03-13T22:44:57.142144-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9rer les erreurs en Go implique de reconna\xEEtre et de r\xE9pondre\
-  \ aux conditions d'erreur dans votre programme. Les programmeurs s'engagent dans\
-  \ la gestion\u2026"
+  \ aux conditions d'erreur dans votre programme."
 title: Gestion des erreurs
 weight: 16
 ---

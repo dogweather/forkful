@@ -5,9 +5,8 @@ description: "T\xE4nk dig att du har ett litet program som inte fungerar r\xE4tt
   \ } static\u2026"
 lastmod: '2024-03-13T22:44:37.917930-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE4nk dig att du har ett litet program som inte fungerar r\xE4tt: ```C#\
-  \ static void Main() { int resultat = Sum(1, 2); Console.WriteLine(resultat); }\
-  \ static\u2026"
+summary: "T\xE4nk dig att du har ett litet program som inte fungerar r\xE4tt:\n\n\
+  ```C#\nstatic void Main()\n{\n    int resultat = Sum(1, 2);\n    Console."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

@@ -4,8 +4,8 @@ description: "Ricercare e sostituire testo significa trovare specifiche stringhe
   \ un testo e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
 lastmod: '2024-03-13T22:44:44.034794-06:00'
 model: gpt-4-1106-preview
-summary: "Ricercare e sostituire testo significa trovare specifiche stringhe in un\
-  \ testo e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
+summary: Ricercare e sostituire testo significa trovare specifiche stringhe in un
+  testo e cambiarle con altre.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

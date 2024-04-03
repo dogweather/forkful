@@ -6,8 +6,9 @@ description: "Het ontleden van een datum uit een string in C betreft het omzette
   \ van tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
 lastmod: '2024-03-13T22:44:51.300744-06:00'
 model: gpt-4-0125-preview
-summary: "Het ontleden van een datum uit een string in C betreft het omzetten van\
-  \ tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
+summary: Het ontleden van een datum uit een string in C betreft het omzetten van tekstuele
+  voorstellingen van data naar een formaat dat programma's effectiever kunnen manipuleren
+  en analyseren.
 title: Een datum ontleden uit een string
 weight: 30
 ---

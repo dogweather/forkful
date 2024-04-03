@@ -6,8 +6,7 @@ description: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utv
 lastmod: '2024-03-13T22:44:41.186093-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utviklere\
-  \ se hva som skjer i koden under kj\xF8ring. Vi gj\xF8r det for \xE5 forst\xE5 feil,\
-  \ optimalisere\u2026"
+  \ se hva som skjer i koden under kj\xF8ring."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

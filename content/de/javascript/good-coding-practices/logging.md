@@ -5,7 +5,7 @@ description: "JavaScript bietet direkt nach der Installation eine einfache M\xF6
 lastmod: '2024-03-13T22:44:54.272356-06:00'
 model: gpt-4-1106-preview
 summary: "JavaScript bietet direkt nach der Installation eine einfache M\xF6glichkeit,\
-  \ Nachrichten in die Konsole zu loggen: ```javascript console.log('Diese Nachricht\u2026"
+  \ Nachrichten in die Konsole zu loggen:\n\n```javascript\nconsole."
 title: Protokollierung
 weight: 17
 ---

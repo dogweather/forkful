@@ -6,8 +6,9 @@ description: "Schrijven naar standaard fout (`stderr`) kanalen cruciale berichte
   \ naar een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd\u2026"
 lastmod: '2024-03-13T22:44:51.174299-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar\
-  \ een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd\u2026"
+summary: Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar
+  een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd uitvoer
+  (`stdout`).
 title: Schrijven naar standaardfout
 weight: 25
 ---

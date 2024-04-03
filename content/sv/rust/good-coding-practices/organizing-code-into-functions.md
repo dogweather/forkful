@@ -6,8 +6,7 @@ description: "Att organisera kod i funktioner handlar om att bryta upp ditt prog
 lastmod: '2024-03-13T22:44:37.704031-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att bryta upp ditt program i\
-  \ \xE5teranv\xE4ndbara, modul\xE4ra delar som identifieras med ett namn. Vi g\xF6\
-  r det f\xF6r att\u2026"
+  \ \xE5teranv\xE4ndbara, modul\xE4ra delar som identifieras med ett namn."
 title: Att organisera kod i funktioner
 weight: 18
 ---

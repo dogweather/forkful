@@ -6,8 +6,7 @@ description: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra jest
 lastmod: '2024-03-13T22:44:35.808865-06:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra jest wcze\u015B\
-  niejsza czy p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby zarz\u0105dza\u0107\
-  \ terminami, sprawdza\u0107 r\xF3\u017Cnice czasowe\u2026"
+  niejsza czy p\xF3\u017Aniejsza."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

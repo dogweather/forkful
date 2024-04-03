@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.024488-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtracji tekstu\
   \ - wybierasz, kt\xF3re znaki \"przetrwaj\u0105\", a kt\xF3re zostan\u0105 usuni\u0119\
-  te. Programi\u015Bci robi\u0105 to, by\u2026"
+  te."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

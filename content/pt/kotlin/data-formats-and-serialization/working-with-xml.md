@@ -5,7 +5,7 @@ description: "Trabalhar com XML envolve analisar, criar e manipular documentos X
 lastmod: '2024-03-13T22:44:46.566590-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve analisar, criar e manipular documentos XML - uma\
-  \ linguagem de marca\xE7\xE3o para armazenamento e transfer\xEAncia de dados.\u2026"
+  \ linguagem de marca\xE7\xE3o para armazenamento e transfer\xEAncia de dados."
 title: Trabalhando com XML
 weight: 40
 ---

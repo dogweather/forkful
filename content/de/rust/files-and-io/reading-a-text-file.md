@@ -4,8 +4,7 @@ description: "Textdateien auslesen hei\xDFt, ihren Inhalt programmatisch zu erfa
   \ Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden."
 lastmod: '2024-03-13T22:44:53.690305-06:00'
 model: gpt-4-1106-preview
-summary: "Textdateien auslesen hei\xDFt, ihren Inhalt programmatisch zu erfassen.\
-  \ Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden."
+summary: "Textdateien auslesen hei\xDFt, ihren Inhalt programmatisch zu erfassen."
 title: Textdatei einlesen
 weight: 22
 ---

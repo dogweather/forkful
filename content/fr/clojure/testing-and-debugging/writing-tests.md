@@ -8,7 +8,8 @@ description: "\xC9crire des tests en Clojure, tout comme dans d'autres langages 
 lastmod: '2024-03-13T22:44:57.286023-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de programmation,\
-  \ implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre code principal\u2026"
+  \ implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre code principal\
+  \ fonctionne comme pr\xE9vu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

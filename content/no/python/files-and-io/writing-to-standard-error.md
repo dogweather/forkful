@@ -5,7 +5,7 @@ description: "Skriving til standard error (stderr) er hvordan programmer rapport
 lastmod: '2024-03-13T22:44:40.377482-06:00'
 model: unknown
 summary: "Skriving til standard error (stderr) er hvordan programmer rapporterer feil\
-  \ og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
+  \ og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout)."
 title: Skrive til standardfeil
 weight: 25
 ---

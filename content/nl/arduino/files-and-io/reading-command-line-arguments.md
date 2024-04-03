@@ -6,8 +6,9 @@ description: "Het lezen van command line argumenten betekent het ophalen van de 
   \ die naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
 lastmod: '2024-03-13T22:44:51.087318-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van command line argumenten betekent het ophalen van de data die\
-  \ naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
+summary: Het lezen van command line argumenten betekent het ophalen van de data die
+  naar een programma wordt doorgegeven wanneer je het start vanuit een terminal of
+  command prompt.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

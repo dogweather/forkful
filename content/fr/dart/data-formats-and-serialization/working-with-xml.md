@@ -7,7 +7,9 @@ description: "Travailler avec XML en Dart implique l'analyse, l'interrogation et
 lastmod: '2024-03-13T22:44:57.417683-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Dart implique l'analyse, l'interrogation et la modification\
-  \ de documents XML, un processus crucial pour les applications qui\u2026"
+  \ de documents XML, un processus crucial pour les applications qui interagissent\
+  \ avec des services Web, des fichiers de configuration ou des syst\xE8mes h\xE9\
+  rit\xE9s."
 title: Travailler avec XML
 weight: 40
 ---

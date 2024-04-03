@@ -5,9 +5,8 @@ description: "With the Arduino IDE, you can use Serial prints to debug, but it's
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.325268-06:00'
 model: gpt-4-1106-preview
-summary: "With the Arduino IDE, you can use Serial prints to debug, but it's a bit\
-  \ like using a flashlight to explore a cave. For real debugging, you might want\
-  \ to\u2026"
+summary: With the Arduino IDE, you can use Serial prints to debug, but it's a bit
+  like using a flashlight to explore a cave.
 title: Using a debugger
 weight: 35
 ---

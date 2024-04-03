@@ -6,8 +6,7 @@ description: "Arrondir les nombres signifie les ajuster \xE0 la valeur de place 
 lastmod: '2024-03-13T22:44:57.781527-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres signifie les ajuster \xE0 la valeur de place la plus\
-  \ proche\u2014pensez \xE0 les simplifier. Les programmeurs arrondissent pour contr\xF4\
-  ler la\u2026"
+  \ proche\u2014pensez \xE0 les simplifier."
 title: Arrondir les nombres
 weight: 13
 ---

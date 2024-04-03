@@ -6,8 +6,8 @@ description: "Controleren of een map bestaat in Google Apps Script houdt in dat 
   \ geverifieerd of een map in Google Drive aanwezig is. Programmeurs voeren deze\u2026"
 lastmod: '2024-03-13T22:44:50.347533-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat in Google Apps Script houdt in dat wordt\
-  \ geverifieerd of een map in Google Drive aanwezig is. Programmeurs voeren deze\u2026"
+summary: Controleren of een map bestaat in Google Apps Script houdt in dat wordt geverifieerd
+  of een map in Google Drive aanwezig is.
 title: Controleren of een directory bestaat
 weight: 20
 ---

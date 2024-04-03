@@ -8,8 +8,7 @@ description: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 prze
 lastmod: '2024-03-13T22:44:35.401377-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 przechowywa\u0107\
-  \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci. S\u0105 Twoim pierwszym wyborem,\
-  \ gdy potrzebujesz szybko\u2026"
+  \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

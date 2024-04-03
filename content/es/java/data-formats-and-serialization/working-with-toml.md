@@ -6,7 +6,7 @@ description: "TOML significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo
 lastmod: '2024-03-13T22:44:58.960828-06:00'
 model: gpt-4-0125-preview
 summary: "TOML significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo y Obvio\
-  \ de Tom). Es un formato de serializaci\xF3n de datos utilizado para archivos de\u2026"
+  \ de Tom)."
 title: Trabajando con TOML
 weight: 39
 ---

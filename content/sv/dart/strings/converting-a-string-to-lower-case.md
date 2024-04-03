@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.597147-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
   \ som inneb\xE4r att man transformerar alla tecken i en given str\xE4ng till deras\
-  \ gemena\u2026"
+  \ gemena motsvarigheter."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

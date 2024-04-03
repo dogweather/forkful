@@ -5,7 +5,7 @@ description: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\x
 lastmod: '2024-03-13T22:44:58.421603-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9valuer-Imprimer),\
-  \ vous permet de tester du code en temps r\xE9el. Les programmeurs\u2026"
+  \ vous permet de tester du code en temps r\xE9el."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

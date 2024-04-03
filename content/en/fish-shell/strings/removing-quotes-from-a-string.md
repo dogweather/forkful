@@ -5,9 +5,8 @@ description: "Removing quotes from a string is about stripping those pesky singl
   \ do this to\u2026"
 lastmod: '2024-03-13T22:45:00.461260-06:00'
 model: gpt-4-1106-preview
-summary: "Removing quotes from a string is about stripping those pesky single (' ')\
-  \ or double (\" \") quotation marks off your text data. Programmers often do this\
-  \ to\u2026"
+summary: Removing quotes from a string is about stripping those pesky single (' ')
+  or double (" ") quotation marks off your text data.
 title: Removing quotes from a string
 weight: 9
 ---

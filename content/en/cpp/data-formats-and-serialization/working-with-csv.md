@@ -4,8 +4,9 @@ description: "Working with CSV (Comma Separated Values) files is about processin
   \ and manipulating data stored in a simple text format, where each line of the text\u2026"
 lastmod: '2024-03-13T22:45:00.378041-06:00'
 model: gpt-4-0125-preview
-summary: "Working with CSV (Comma Separated Values) files is about processing and\
-  \ manipulating data stored in a simple text format, where each line of the text\u2026"
+summary: Working with CSV (Comma Separated Values) files is about processing and manipulating
+  data stored in a simple text format, where each line of the text represents a row
+  in a table, and commas separate individual columns.
 title: Working with CSV
 weight: 37
 ---

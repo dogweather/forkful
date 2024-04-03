@@ -6,8 +6,7 @@ description: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point 
 lastmod: '2024-03-13T22:44:58.269620-06:00'
 model: gpt-4-0125-preview
 summary: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point dans un\
-  \ nombre. Les programmeurs arrondissent pour contr\xF4ler la pr\xE9cision, g\xE9\
-  rer la m\xE9moire,\u2026"
+  \ nombre."
 title: Arrondir les nombres
 weight: 13
 ---

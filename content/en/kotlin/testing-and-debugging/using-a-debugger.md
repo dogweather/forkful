@@ -6,7 +6,8 @@ description: "Here's a little taste of debugging in Kotlin with IntelliJ IDEA - 
 lastmod: '2024-03-13T22:45:00.052928-06:00'
 model: gpt-4-1106-preview
 summary: "Here's a little taste of debugging in Kotlin with IntelliJ IDEA - the Sherlock\
-  \ Holmes of IDEs: ```kotlin fun main() { val mysteryNumber = 42 var guess = 0\u2026"
+  \ Holmes of IDEs:\n\n```kotlin\nfun main() {\n    val mysteryNumber = 42\n    var\
+  \ guess = 0\n\n    while (guess ."
 title: Using a debugger
 weight: 35
 ---

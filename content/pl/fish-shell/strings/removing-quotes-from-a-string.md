@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.826539-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w polega na pozbyciu si\u0119\
   \ tych irytuj\u0105cych pojedynczych (' ') lub podw\xF3jnych (\" \") znak\xF3w cudzys\u0142\
-  owu z danych tekstowych.\u2026"
+  owu z danych tekstowych."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

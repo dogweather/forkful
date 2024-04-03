@@ -4,8 +4,8 @@ description: "TOML, which stands for Tom's Obvious, Minimal Language, is a data 
   \ format predominantly used for configuration files. Programmers leverage\u2026"
 lastmod: '2024-03-13T22:44:59.955565-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization\
-  \ format predominantly used for configuration files. Programmers leverage\u2026"
+summary: TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization
+  format predominantly used for configuration files.
 title: Working with TOML
 weight: 39
 ---

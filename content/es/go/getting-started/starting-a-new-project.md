@@ -7,7 +7,7 @@ description: "Iniciar un nuevo proyecto en Go implica configurar un espacio de t
 lastmod: '2024-03-13T22:44:58.468156-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo\
-  \ e inicializarlo con los m\xF3dulos de Go necesarios. Los programadores hacen esto\u2026"
+  \ e inicializarlo con los m\xF3dulos de Go necesarios."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

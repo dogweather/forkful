@@ -4,8 +4,7 @@ description: "Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koo
   \ aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"
 lastmod: '2024-03-13T22:44:56.185144-06:00'
 model: gpt-4-1106-preview
-summary: "Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koodarit\
-  \ aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"
+summary: Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi.
 title: Uuden projektin aloittaminen
 weight: 1
 ---

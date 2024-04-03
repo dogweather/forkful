@@ -7,7 +7,8 @@ description: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Sc
 lastmod: '2024-03-13T22:44:53.339964-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script Code\
-  \ zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt\u2026"
+  \ zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt werden,\
+  \ wobei jeder Block eine spezifische Aufgabe erf\xFCllt."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

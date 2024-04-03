@@ -5,7 +5,7 @@ description: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifi
 lastmod: '2024-03-13T22:44:53.367236-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten\
-  \ aus gr\xF6\xDFeren Textmengen zu gewinnen. Programmierer nutzen diese Technik\u2026"
+  \ aus gr\xF6\xDFeren Textmengen zu gewinnen."
 title: Teilstrings extrahieren
 weight: 6
 ---

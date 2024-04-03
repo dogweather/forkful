@@ -6,8 +6,7 @@ description: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF
 lastmod: '2024-03-13T22:44:38.338782-06:00'
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF6r att\
-  \ utveckla dina id\xE9er. Programmerare g\xF6r detta f\xF6r att organisera, f\xF6\
-  renkla och\u2026"
+  \ utveckla dina id\xE9er."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

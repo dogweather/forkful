@@ -7,7 +7,8 @@ description: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera
 lastmod: '2024-03-13T22:44:38.359577-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera JSON-data,\
-  \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och\u2026"
+  \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och effektivisering\
+  \ av arbetsfl\xF6den i kommandotolken."
 title: Arbeta med JSON
 weight: 38
 ---

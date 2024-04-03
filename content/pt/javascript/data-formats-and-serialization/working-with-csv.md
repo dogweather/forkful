@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.984528-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) em JavaScript envolve\
   \ a an\xE1lise ou gera\xE7\xE3o de arquivos CSV para ingerir dados tabulares de\
-  \ fontes\u2026"
+  \ fontes externas ou exportar dados para uso em outros programas."
 title: Trabalhando com CSV
 weight: 37
 ---

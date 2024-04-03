@@ -8,7 +8,7 @@ description: "Eliminare caratteri che corrispondono a un specifico pattern \xE8 
 lastmod: '2024-03-13T22:44:42.936728-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminare caratteri che corrispondono a un specifico pattern \xE8 una tecnica\
-  \ utilizzata per pulire o formattare stringhe nella programmazione. Nel contesto\u2026"
+  \ utilizzata per pulire o formattare stringhe nella programmazione."
 title: Eliminare i caratteri corrispondenti a un modello
 weight: 5
 ---

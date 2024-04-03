@@ -5,7 +5,7 @@ description: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stelle
 lastmod: '2024-03-13T22:44:53.883111-06:00'
 model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
-  \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren.\u2026"
+  \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren."
 title: Zahlen runden
 weight: 13
 ---

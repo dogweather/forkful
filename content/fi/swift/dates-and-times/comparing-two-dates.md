@@ -6,8 +6,7 @@ description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme,
 lastmod: '2024-03-13T22:44:56.918991-06:00'
 model: gpt-4-1106-preview
 summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme, kumpi\
-  \ on aikaisempi tai onko ne samat. T\xE4m\xE4 on t\xE4rke\xE4\xE4, jotta voimme\
-  \ j\xE4rjest\xE4\xE4 tapahtumia, tarkistaa\u2026"
+  \ on aikaisempi tai onko ne samat."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

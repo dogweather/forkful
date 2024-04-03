@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.853737-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bew\xE4ltigt,\
   \ die w\xE4hrend der Ausf\xFChrung auftreten - wie das Fangen eines unerwarteten\
-  \ Balls,\u2026"
+  \ Balls, ohne ihn fallen zu lassen."
 title: Fehlerbehandlung
 weight: 16
 ---

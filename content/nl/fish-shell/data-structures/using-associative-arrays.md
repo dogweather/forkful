@@ -6,8 +6,9 @@ description: "Associatieve arrays, of hash maps, laten je data opslaan als sleut
   \ paren, wat het makkelijker maakt om informatie te organiseren en op te halen\u2026"
 lastmod: '2024-03-13T22:44:51.238045-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, of hash maps, laten je data opslaan als sleutel-waarde\
-  \ paren, wat het makkelijker maakt om informatie te organiseren en op te halen\u2026"
+summary: Associatieve arrays, of hash maps, laten je data opslaan als sleutel-waarde
+  paren, wat het makkelijker maakt om informatie te organiseren en op te halen op
+  basis van sleutel.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

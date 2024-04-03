@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.358305-06:00'
 model: gpt-4-0125-preview
 summary: "Rustin interaktiivinen kuori eli REPL (Lue-Arvo-Tulosta-Silmukka) mahdollistaa\
   \ Rust-koodin suorittamisen lennossa, tarjoten v\xE4litt\xF6mi\xE4 tuloksia, mik\xE4\
-  \ on\u2026"
+  \ on t\xE4ydellist\xE4 kokeiluun tai oppimiseen."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

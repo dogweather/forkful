@@ -4,8 +4,8 @@ description: "Datum zu String-Konversion ist der Prozess der Umwandlung eines Da
   \ in eine lesbare Zeichenkette. Programmierer machen das, um Daten\u2026"
 lastmod: '2024-03-13T22:44:54.196197-06:00'
 model: gpt-4-1106-preview
-summary: "Datum zu String-Konversion ist der Prozess der Umwandlung eines Datumsobjekts\
-  \ in eine lesbare Zeichenkette. Programmierer machen das, um Daten\u2026"
+summary: Datum zu String-Konversion ist der Prozess der Umwandlung eines Datumsobjekts
+  in eine lesbare Zeichenkette.
 title: Datum in einen String umwandeln
 weight: 28
 ---

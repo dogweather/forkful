@@ -8,8 +8,7 @@ description: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om 
 lastmod: '2024-03-13T22:44:40.310482-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5 programmert\
-  \ utf\xF8re et kall til en ekstern webserver eller API. Programmerere gj\xF8r dette\
-  \ for\u2026"
+  \ utf\xF8re et kall til en ekstern webserver eller API."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

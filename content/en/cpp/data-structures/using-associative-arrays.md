@@ -4,8 +4,8 @@ description: "Associative arrays, known as `std::map` or `std::unordered_map` in
   \ bridge the gap between array indices and real-world data, letting you use\u2026"
 lastmod: '2024-03-13T22:45:00.351368-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, known as `std::map` or `std::unordered_map` in C++,\
-  \ bridge the gap between array indices and real-world data, letting you use\u2026"
+summary: Associative arrays, known as `std::map` or `std::unordered_map` in C++, bridge
+  the gap between array indices and real-world data, letting you use meaningful keys.
 title: Using associative arrays
 weight: 15
 ---

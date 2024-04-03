@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.788450-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w, czyli \"concatenating strings\"\
   , pozwala sklei\u0107 ze sob\u0105 dwie lub wi\u0119cej r\xF3\u017Cnych cz\u0119\
-  \u015Bci tekstu. Programi\u015Bci robi\u0105 to, aby tworzy\u0107\u2026"
+  \u015Bci tekstu."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

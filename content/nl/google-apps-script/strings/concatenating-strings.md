@@ -7,7 +7,7 @@ description: "Het aaneenschakelen van strings houdt in dat twee of meer strings 
 lastmod: '2024-03-13T22:44:50.322553-06:00'
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
-  \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
+  \ gecombineerd tot \xE9\xE9n enkele string."
 title: Strings samenvoegen
 weight: 3
 ---

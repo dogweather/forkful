@@ -6,8 +6,8 @@ description: "Obtener la fecha actual en C# implica obtener los detalles actuale
   \ de fecha y hora del sistema. Los programadores a menudo necesitan acceder a esta\u2026"
 lastmod: '2024-03-13T22:44:59.088261-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en C# implica obtener los detalles actuales de fecha\
-  \ y hora del sistema. Los programadores a menudo necesitan acceder a esta\u2026"
+summary: Obtener la fecha actual en C# implica obtener los detalles actuales de fecha
+  y hora del sistema.
 title: Obteniendo la fecha actual
 weight: 29
 ---

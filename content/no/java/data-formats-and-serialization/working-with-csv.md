@@ -8,7 +8,8 @@ description: "\xC5 jobbe med CSV-filer involverer lesing fra og skriving av data
 lastmod: '2024-03-13T22:44:40.688758-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer involverer lesing fra og skriving av data til komma-separerte\
-  \ verdier (CSV)-filer, et popul\xE6rt format for datautveksling fordi det\u2026"
+  \ verdier (CSV)-filer, et popul\xE6rt format for datautveksling fordi det er enkelt\
+  \ og bredt st\xF8ttet."
 title: Arbeide med CSV
 weight: 37
 ---

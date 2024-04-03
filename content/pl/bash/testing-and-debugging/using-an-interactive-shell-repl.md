@@ -6,8 +6,7 @@ description: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego
 lastmod: '2024-03-13T22:44:35.586540-06:00'
 model: gpt-4-0125-preview
 summary: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego \u015B\
-  rodowiska programistycznego. Programi\u015Bci u\u017Cywaj\u0105 go do szybkiego\
-  \ pisania i testowania\u2026"
+  rodowiska programistycznego."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

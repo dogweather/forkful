@@ -8,8 +8,7 @@ description: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir s
 lastmod: '2024-03-13T22:44:46.045541-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
-  \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\
-  \ Programadores fazem isso\u2026"
+  \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings."
 title: Interpolando uma String
 weight: 8
 ---

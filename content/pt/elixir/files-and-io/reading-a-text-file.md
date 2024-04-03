@@ -6,8 +6,7 @@ description: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e r
 lastmod: '2024-03-13T22:44:46.255302-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e recuperar\
-  \ informa\xE7\xF5es de um arquivo salvo em disco. Programadores fazem isso para\
-  \ manipular\u2026"
+  \ informa\xE7\xF5es de um arquivo salvo em disco."
 title: Lendo um arquivo de texto
 weight: 22
 ---

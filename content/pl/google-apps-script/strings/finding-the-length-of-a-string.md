@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.891991-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Google Apps\
   \ Script, j\u0119zyku skryptowym JavaScript dla chmury, kt\xF3ry pozwala na automatyzacj\u0119\
-  \ zada\u0144 w produktach\u2026"
+  \ zada\u0144 w produktach Google, dotyczy okre\u015Blenia liczby znak\xF3w zawartych\
+  \ w ci\u0105gu znak\xF3w."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---

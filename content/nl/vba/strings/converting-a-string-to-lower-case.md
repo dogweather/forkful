@@ -6,8 +6,8 @@ description: "Het omzetten van een tekenreeks naar kleine letters omvat het tran
   \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
 lastmod: '2024-03-13T22:44:50.623302-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
-  \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
+summary: Het omzetten van een tekenreeks naar kleine letters omvat het transformeren
+  van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

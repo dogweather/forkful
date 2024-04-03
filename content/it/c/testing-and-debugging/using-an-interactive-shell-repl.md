@@ -6,8 +6,10 @@ description: "Un shell interattivo, conosciuto anche come Ciclo Leggi-Valuta-Sta
   \ (REPL, dall'inglese Read-Eval-Print Loop), permette ai programmatori di digitare\u2026"
 lastmod: '2024-03-13T22:44:44.000057-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interattivo, conosciuto anche come Ciclo Leggi-Valuta-Stampa (REPL,\
-  \ dall'inglese Read-Eval-Print Loop), permette ai programmatori di digitare\u2026"
+summary: Un shell interattivo, conosciuto anche come Ciclo Leggi-Valuta-Stampa (REPL,
+  dall'inglese Read-Eval-Print Loop), permette ai programmatori di digitare espressioni
+  o codice e vedere immediatamente i risultati, migliorando i processi di apprendimento
+  e di debug.
 title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---

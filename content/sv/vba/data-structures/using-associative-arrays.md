@@ -8,7 +8,8 @@ description: "Associativa arrayer, ofta k\xE4nda som ordb\xF6cker i Visual Basic
 lastmod: '2024-03-13T22:44:37.735328-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, ofta k\xE4nda som ordb\xF6cker i Visual Basic for Applications\
-  \ (VBA), g\xF6r det m\xF6jligt f\xF6r programmerare att skapa samlingar av nyckel-\u2026"
+  \ (VBA), g\xF6r det m\xF6jligt f\xF6r programmerare att skapa samlingar av nyckel-v\xE4\
+  rde-par."
 title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---

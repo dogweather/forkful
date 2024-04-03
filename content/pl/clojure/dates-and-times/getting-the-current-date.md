@@ -8,8 +8,7 @@ description: "Pobranie bie\u017C\u0105cej daty w programowaniu jest kluczowe z w
 lastmod: '2024-03-13T22:44:35.007413-06:00'
 model: gpt-4-0125-preview
 summary: "Pobranie bie\u017C\u0105cej daty w programowaniu jest kluczowe z wielu przyczyn,\
-  \ w tym logowania, oznaczania czasu zdarze\u0144 i planowania zada\u0144. W Clojure,\
-  \ dialekcie\u2026"
+  \ w tym logowania, oznaczania czasu zdarze\u0144 i planowania zada\u0144."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

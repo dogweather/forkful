@@ -6,7 +6,7 @@ description: "Calcolare una data nel futuro o nel passato \xE8 una pratica comun
 lastmod: '2024-03-13T22:44:43.488654-06:00'
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune in programmazione,\
-  \ utile per gestire eventi, scadenze e funzionalit\xE0 legate al tempo. I\u2026"
+  \ utile per gestire eventi, scadenze e funzionalit\xE0 legate al tempo."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

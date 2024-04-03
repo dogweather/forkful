@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.508661-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu c\xF3\
   digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu comportamento\
-  \ externo.\u2026"
+  \ externo."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

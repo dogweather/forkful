@@ -7,7 +7,8 @@ description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci rozdzi
 lastmod: '2024-03-13T22:44:35.607816-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci rozdzielone\
-  \ przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi\u2026"
+  \ przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi\
+  \ przechowywanymi w formacie tekstu zwyk\u0142ego."
 title: Praca z plikami CSV
 weight: 37
 ---

@@ -6,7 +6,7 @@ description: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il mod
 lastmod: '2024-03-13T22:44:43.183288-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il modo in cui\
-  \ ci comportiamo quando le cose vanno male nel nostro codice. Lo facciamo per\u2026"
+  \ ci comportiamo quando le cose vanno male nel nostro codice."
 title: Gestione degli errori
 weight: 16
 ---

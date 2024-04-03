@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma 
 lastmod: '2024-03-13T22:44:46.873723-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
-  \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\
-  \ para\u2026"
+  \ imagin\xE1ria, representada como 'i', onde i^2 = -1."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

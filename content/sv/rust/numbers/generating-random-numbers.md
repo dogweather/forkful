@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:37.693886-06:00'
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga nummer i Rust inneb\xE4r att anv\xE4nda bibliotek\
   \ f\xF6r att producera of\xF6ruts\xE4gbara numeriska v\xE4rden, vilket \xE4r oumb\xE4\
-  rligt f\xF6r uppgifter\u2026"
+  rligt f\xF6r uppgifter som str\xE4cker sig fr\xE5n kryptografi och simulationer\
+  \ till spel och slumpm\xE4ssiga algoritmer."
 title: Generera slumptal
 weight: 12
 ---

@@ -6,8 +6,7 @@ description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est comme assembl
 lastmod: '2024-03-13T22:44:57.869607-06:00'
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est comme assembler des\
-  \ LEGO : on les joint bout \xE0 bout pour former un tout. Les programmeurs font\
-  \ \xE7a pour cr\xE9er\u2026"
+  \ LEGO : on les joint bout \xE0 bout pour former un tout."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

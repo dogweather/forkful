@@ -4,8 +4,8 @@ description: "Le remaniement est le processus de restructuration du code informa
   \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
 lastmod: '2024-03-13T22:44:57.796875-06:00'
 model: gpt-4-0125-preview
-summary: "Le remaniement est le processus de restructuration du code informatique\
-  \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
+summary: Le remaniement est le processus de restructuration du code informatique existant
+  sans changer son comportement externe.
 title: Refactoring
 weight: 19
 ---

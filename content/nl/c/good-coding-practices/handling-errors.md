@@ -6,8 +6,8 @@ description: "Fouten afhandelen in C houdt in dat je afwijkende omstandigheden d
   \ en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:51.298766-06:00'
 model: gpt-4-0125-preview
-summary: "Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert\
-  \ en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen\u2026"
+summary: Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert
+  en daarop reageert tijdens de uitvoering van het programma.
 title: Fouten afhandelen
 weight: 16
 ---

@@ -6,8 +6,8 @@ description: "Associatieve arrays, of woordenboeken in C#, laten je paren van sl
   \ en waarden opslaan en beheren. Ze zijn je beste keuze wanneer je snel waarden\u2026"
 lastmod: '2024-03-13T22:44:50.803014-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, of woordenboeken in C#, laten je paren van sleutels\
-  \ en waarden opslaan en beheren. Ze zijn je beste keuze wanneer je snel waarden\u2026"
+summary: Associatieve arrays, of woordenboeken in C#, laten je paren van sleutels
+  en waarden opslaan en beheren.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

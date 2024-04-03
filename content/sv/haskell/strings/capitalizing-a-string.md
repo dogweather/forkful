@@ -8,8 +8,7 @@ description: "Att f\xF6rstora en str\xE4ng inneb\xE4r att omvandla den f\xF6rsta
 lastmod: '2024-03-13T22:44:37.938986-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xF6rstora en str\xE4ng inneb\xE4r att omvandla den f\xF6rsta bokstaven\
-  \ i en given str\xE4ng till versal medan resten av bokst\xE4verna f\xF6rblir gemener.\
-  \ Programmerare\u2026"
+  \ i en given str\xE4ng till versal medan resten av bokst\xE4verna f\xF6rblir gemener."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

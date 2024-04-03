@@ -7,7 +7,8 @@ description: "Comma-Separated Values (CSV)-formatet er allestedsn\xE6rv\xE6rende
 lastmod: '2024-03-13T22:44:40.292148-06:00'
 model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV)-formatet er allestedsn\xE6rv\xE6rende for datautveksling\
-  \ p\xE5 grunn av sin enkelhet og enkel integrasjon med de fleste\u2026"
+  \ p\xE5 grunn av sin enkelhet og enkel integrasjon med de fleste programmeringsspr\xE5\
+  k, inkludert Go."
 title: Arbeide med CSV
 weight: 37
 ---

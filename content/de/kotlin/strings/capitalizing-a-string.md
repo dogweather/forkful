@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.830730-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in der Programmierung beinhaltet das\
   \ Umwandeln des ersten Zeichens des Strings in Gro\xDFbuchstaben, sofern dies noch\
-  \ nicht\u2026"
+  \ nicht der Fall ist."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

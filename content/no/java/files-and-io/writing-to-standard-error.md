@@ -8,8 +8,7 @@ description: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut 
 lastmod: '2024-03-13T22:44:40.682810-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut feilmeldinger\
-  \ og diagnostikk til konsollen eller terminalen. Programmerere gj\xF8r dette for\
-  \ \xE5\u2026"
+  \ og diagnostikk til konsollen eller terminalen."
 title: Skriving til standardfeil
 weight: 25
 ---

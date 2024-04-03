@@ -5,9 +5,7 @@ description: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og 
   \ endre\u2026"
 lastmod: '2024-03-13T22:44:41.301280-06:00'
 model: gpt-4-1106-preview
-summary: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
-  \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
-  \ endre\u2026"
+summary: ("Hva & Hvorfor.
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

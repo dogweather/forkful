@@ -4,8 +4,8 @@ description: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die 
   \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
 lastmod: '2024-03-13T22:44:53.815907-06:00'
 model: unknown
-summary: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
-  \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
+summary: Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane
+  Datumswerte (Tag, Monat, Jahr) vom Computer erhalten.
 title: Aktuelles Datum abrufen
 weight: 29
 ---

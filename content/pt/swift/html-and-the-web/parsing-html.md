@@ -6,8 +6,7 @@ description: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu 
 lastmod: '2024-03-13T22:44:46.918396-06:00'
 model: unknown
 summary: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
-  \ entenda e possa manipular. Programadores fazem isso para extrair informa\xE7\xF5\
-  es,\u2026"
+  \ entenda e possa manipular."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

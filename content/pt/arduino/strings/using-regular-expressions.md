@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.829405-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que definem\
   \ padr\xF5es de pesquisa, usados principalmente para correspond\xEAncia e manipula\xE7\
-  \xE3o de\u2026"
+  \xE3o de strings."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

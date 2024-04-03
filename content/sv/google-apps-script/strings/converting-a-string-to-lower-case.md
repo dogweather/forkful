@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.423933-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Script,\
   \ ett molnbaserat skriptspr\xE5k f\xF6r automatisering av uppgifter \xF6ver Googles\
-  \ produkter, \xE4r\u2026"
+  \ produkter, \xE4r en grundl\xE4ggande uppgift syftad till att standardisera textdata."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

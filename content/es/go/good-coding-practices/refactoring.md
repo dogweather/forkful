@@ -8,8 +8,7 @@ description: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3d
 lastmod: '2024-03-13T22:44:58.477155-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo inform\xE1\
-  tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo.\
-  \ Los\u2026"
+  tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.589547-06:00'
 model: gpt-4-0125-preview
 summary: "Bash nie jest wyposa\u017Cony w wbudowany debugger, tak jak niekt\xF3re\
   \ inne j\u0119zyki, ale mo\u017Cna u\u017Cy\u0107 wbudowanych polece\u0144 takich\
-  \ jak `set -x`, aby \u015Bledzi\u0107, co si\u0119\u2026"
+  \ jak `set -x`, aby \u015Bledzi\u0107, co si\u0119 dzieje."
 title: Korzystanie z debugera
 weight: 35
 ---

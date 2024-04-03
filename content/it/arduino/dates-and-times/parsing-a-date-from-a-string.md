@@ -8,7 +8,9 @@ description: "Effettuare il parsing di una data da una stringa in Arduino compor
 lastmod: '2024-03-13T22:44:43.691804-06:00'
 model: gpt-4-0125-preview
 summary: "Effettuare il parsing di una data da una stringa in Arduino comporta l'estrazione\
-  \ e la conversione delle componenti della data (anno, mese, giorno) da una\u2026"
+  \ e la conversione delle componenti della data (anno, mese, giorno) da una rappresentazione\
+  \ testuale a un formato che pu\xF2 essere utilizzato per la gestione del tempo,\
+  \ confronti o manipolazioni all'interno degli sketch."
 title: Analisi di una data da una stringa
 weight: 30
 ---

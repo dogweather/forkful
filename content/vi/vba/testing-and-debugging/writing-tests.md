@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong l\u1EADp tr\xECnh\
   \ bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c th\u1EE7 t\u1EE5c c\u1EE5 th\u1EC3 \u0111\
   \u1EC3 x\xE1c th\u1EF1c t\xEDnh n\u0103ng v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a c\xE1\
-  c \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o\u2026"
+  c \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFAng ho\u1EA1\
+  t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i d\u01B0\u1EDBi c\xE1c \u0111i\u1EC1\
+  u ki\u1EC7n kh\xE1c nhau."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

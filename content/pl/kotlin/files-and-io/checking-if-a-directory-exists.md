@@ -8,8 +8,7 @@ description: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacj
 lastmod: '2024-03-13T22:44:35.379603-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji obecno\u015B\
-  ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105. Programi\u015Bci wykonuj\u0105\
-  \ to zadanie, aby\u2026"
+  ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

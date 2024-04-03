@@ -6,8 +6,7 @@ description: "\xC5 lese en tekstfil betyr \xE5 f\xE5 tilgang til innholdet i fil
 lastmod: '2024-03-13T22:44:41.034431-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 f\xE5 tilgang til innholdet i filen via\
-  \ et program. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere programmer,\
-  \ eller\u2026"
+  \ et program."
 title: Lese en tekstfil
 weight: 22
 ---

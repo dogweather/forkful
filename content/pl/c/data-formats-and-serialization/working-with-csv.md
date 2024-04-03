@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.910787-06:00'
 model: gpt-4-0125-preview
 summary: "W \u015Bwiecie programowania praca z plikami CSV (Comma-Separated Values)\
   \ obejmuje odczyt z plik\xF3w tekstowych oraz zapis danych do nich, zorganizowanych\
-  \ w\u2026"
+  \ w wiersze, gdzie ka\u017Cdy wiersz reprezentuje rekord, a poszczeg\xF3lne pola\
+  \ rekordu s\u0105 oddzielone przecinkami."
 title: Praca z plikami CSV
 weight: 37
 ---

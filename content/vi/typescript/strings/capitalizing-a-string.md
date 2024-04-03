@@ -11,8 +11,7 @@ lastmod: '2024-03-13T22:44:36.296446-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 bi\u1EBFn ch\u1EEF\
   \ c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB th\xE0nh ch\u1EEF hoa v\xE0\
-  \ ph\u1EA7n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
+  \ ph\u1EA7n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDDng."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

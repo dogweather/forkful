@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.662313-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra c\xE1\
   c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
-  n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+  n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

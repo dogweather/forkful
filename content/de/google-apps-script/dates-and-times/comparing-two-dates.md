@@ -8,7 +8,9 @@ description: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwand
 lastmod: '2024-03-13T22:44:53.347669-06:00'
 model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung von\
-  \ JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde, ist\u2026"
+  \ JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde, ist\
+  \ eine wesentliche Aufgabe f\xFCr Entwickler, die sich mit Planung, Zeitpl\xE4nen\
+  \ oder jeglichen datumsbezogenen Daten besch\xE4ftigen."
 title: Zwei Daten vergleichen
 weight: 27
 ---

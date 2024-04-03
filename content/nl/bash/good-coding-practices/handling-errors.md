@@ -6,8 +6,8 @@ description: "Foutafhandeling in Bash-scripting gaat over het anticiperen op mom
   \ waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt\u2026"
 lastmod: '2024-03-13T22:44:50.990564-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten\
-  \ waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt\u2026"
+summary: Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten waarop
+  dingen mis kunnen gaan en hier sierlijk mee omgaan.
 title: Fouten afhandelen
 weight: 16
 ---

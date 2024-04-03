@@ -8,7 +8,7 @@ description: "El an\xE1lisis de HTML en la programaci\xF3n implica extraer datos
 lastmod: '2024-03-13T22:44:58.748092-06:00'
 model: gpt-4-0125-preview
 summary: "El an\xE1lisis de HTML en la programaci\xF3n implica extraer datos de documentos\
-  \ HTML. Los programadores hacen esto para interactuar o raspar el contenido web\u2026"
+  \ HTML."
 title: Analizando HTML
 weight: 43
 ---

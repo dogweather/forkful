@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.848197-06:00'
 model: gpt-4-1106-preview
 summary: "Logging i programmering inneb\xE6rer i bunn og grunn \xE5 etterlate seg\
   \ et spor av \"smuler\" i form av registrerte hendelser eller meldinger, som kan\
-  \ brukes til\u2026"
+  \ brukes til \xE5 spore hva applikasjonen din gj\xF8r i et gitt \xF8yeblikk."
 title: "Loggf\xF8ring"
 weight: 17
 ---

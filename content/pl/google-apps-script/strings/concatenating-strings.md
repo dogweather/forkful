@@ -8,8 +8,7 @@ description: "Konkatenacja \u0142a\u0144cuch\xF3w polega na \u0142\u0105czeniu d
 lastmod: '2024-03-13T22:44:34.893335-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja \u0142a\u0144cuch\xF3w polega na \u0142\u0105czeniu dw\xF3\
-  ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden \u0142a\u0144cuch. Programi\u015B\
-  ci robi\u0105 to, aby dynamicznie konstruowa\u0107 wiadomo\u015Bci, adresy\u2026"
+  ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden \u0142a\u0144cuch."
 title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
 weight: 3
 ---

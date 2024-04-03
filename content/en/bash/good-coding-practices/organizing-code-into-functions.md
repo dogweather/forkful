@@ -4,8 +4,8 @@ description: "Splitting code into functions means breaking down scripts into sma
   \ reusable blocks that do specific tasks. It makes the code cleaner, more\u2026"
 lastmod: '2024-03-13T22:45:00.249723-06:00'
 model: gpt-4-1106-preview
-summary: "Splitting code into functions means breaking down scripts into smaller,\
-  \ reusable blocks that do specific tasks. It makes the code cleaner, more\u2026"
+summary: Splitting code into functions means breaking down scripts into smaller, reusable
+  blocks that do specific tasks.
 title: Organizing code into functions
 weight: 18
 ---

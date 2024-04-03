@@ -7,9 +7,9 @@ description: "La stampa di output per il debug riguarda la generazione di messag
   \ il\u2026"
 lastmod: '2024-03-13T22:44:44.001150-06:00'
 model: gpt-4-0125-preview
-summary: "La stampa di output per il debug riguarda la generazione di messaggi di\
-  \ log temporanei e informativi che possono aiutare i programmatori a comprendere\
-  \ il\u2026"
+summary: La stampa di output per il debug riguarda la generazione di messaggi di log
+  temporanei e informativi che possono aiutare i programmatori a comprendere il flusso
+  e lo stato di un programma durante la sua esecuzione.
 title: Stampa dell'output di debug
 weight: 33
 ---

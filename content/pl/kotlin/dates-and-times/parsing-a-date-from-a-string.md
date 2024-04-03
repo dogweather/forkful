@@ -8,8 +8,7 @@ description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ce
 lastmod: '2024-03-13T22:44:35.374388-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu\
-  \ na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\
-  \ w interakcje z\u2026"
+  \ na obiekt Daty."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

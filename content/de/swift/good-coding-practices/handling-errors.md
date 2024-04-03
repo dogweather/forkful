@@ -6,8 +6,7 @@ description: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die
 lastmod: '2024-03-13T22:44:54.232671-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten,\
-  \ wenn Ihr Code ausgef\xFChrt wird. Wir tun dies, um das Chaos zu kontrollieren\
-  \ \u2013\u2026"
+  \ wenn Ihr Code ausgef\xFChrt wird."
 title: Fehlerbehandlung
 weight: 16
 ---

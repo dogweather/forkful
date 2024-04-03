@@ -6,8 +6,7 @@ description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wc
 lastmod: '2024-03-13T22:44:35.009408-06:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
-  niejsza, a kt\xF3ra p\xF3\u017Aniejsza lub czy s\u0105 identyczne. W programowaniu\
-  \ robimy to, aby zarz\u0105dza\u0107\u2026"
+  niejsza, a kt\xF3ra p\xF3\u017Aniejsza lub czy s\u0105 identyczne."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

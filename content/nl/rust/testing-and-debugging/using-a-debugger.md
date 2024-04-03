@@ -6,8 +6,8 @@ description: "Rust ondersteunt verschillende debuggers, maar een veelvoorkomende
   \ `gdb` voor GNU/Linux of `lldb` voor macOS. Je kunt ook `rust-gdb` of `rust-lldb`\u2026"
 lastmod: '2024-03-13T22:44:50.598646-06:00'
 model: gpt-4-0125-preview
-summary: "Rust ondersteunt verschillende debuggers, maar een veelvoorkomende is `gdb`\
-  \ voor GNU/Linux of `lldb` voor macOS. Je kunt ook `rust-gdb` of `rust-lldb`\u2026"
+summary: Rust ondersteunt verschillende debuggers, maar een veelvoorkomende is `gdb`
+  voor GNU/Linux of `lldb` voor macOS.
 title: Een debugger gebruiken
 weight: 35
 ---

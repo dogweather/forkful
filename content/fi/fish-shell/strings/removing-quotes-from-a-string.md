@@ -5,7 +5,8 @@ description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiu
 lastmod: '2024-03-13T22:44:56.980207-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
-  \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\u2026"
+  \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\
+  \ tekstidatastasi."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

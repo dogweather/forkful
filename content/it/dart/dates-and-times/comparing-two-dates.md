@@ -7,7 +7,8 @@ description: "Confrontare due date in Dart comporta la valutazione della differe
 lastmod: '2024-03-13T22:44:43.145331-06:00'
 model: gpt-4-0125-preview
 summary: "Confrontare due date in Dart comporta la valutazione della differenza temporale\
-  \ o dell'ordine tra di esse, una funzionalit\xE0 essenziale nelle applicazioni\u2026"
+  \ o dell'ordine tra di esse, una funzionalit\xE0 essenziale nelle applicazioni che\
+  \ gestiscono eventi, scadenze o qualsiasi dato sensibile al tempo."
 title: Confronto tra due date
 weight: 27
 ---

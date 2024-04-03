@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.971969-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, dass\
   \ wir unseren Nutzernamen und unser Passwort im Klartext (base64-kodiert) \xFCber\
-  \ das\u2026"
+  \ das Netzwerk senden, um uns gegen\xFCber dem Server zu authentifizieren."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

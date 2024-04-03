@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.324792-06:00'
 model: gpt-4-0125-preview
 summary: "Omstrukturering i programmeringsspr\xE5ket refererer til prosessen med \xE5\
   \ restrukturere eksisterende dataprogramkode - endre faktoriseringen uten \xE5 endre\
-  \ den\u2026"
+  \ den eksterne oppf\xF8rselen - for \xE5 forbedre ikke-funksjonelle attributter."
 title: Refaktorering
 weight: 19
 ---

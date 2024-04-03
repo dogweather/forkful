@@ -7,7 +7,7 @@ description: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohj
 lastmod: '2024-03-13T22:44:57.044261-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohjelmien\
-  \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden.\u2026"
+  \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden."
 title: Testien kirjoittaminen
 weight: 36
 ---

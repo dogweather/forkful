@@ -5,9 +5,8 @@ description: "Calculating a future or past date is just tweaking a given date by
   anything\u2026"
 lastmod: '2024-03-13T22:45:00.022917-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating a future or past date is just tweaking a given date by a set\
-  \ amount of time. Programmers do it to handle deadlines, events, reminders\u2014\
-  anything\u2026"
+summary: Calculating a future or past date is just tweaking a given date by a set
+  amount of time.
 title: Calculating a date in the future or past
 weight: 26
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.855164-06:00'
 model: gpt-4-1106-preview
 summary: "Obliczenie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to po\
   \ prostu wyznaczenie dat r\xF3\u017Cni\u0105cych si\u0119 o ustalon\u0105 liczb\u0119\
-  \ dni od dzi\u015B. Programi\u015Bci robi\u0105 to, by\u2026"
+  \ dni od dzi\u015B."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

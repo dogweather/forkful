@@ -6,8 +6,7 @@ description: "Procurar e substituir texto \xE9 uma pr\xE1tica de encontrar sequ\
 lastmod: '2024-03-13T22:44:46.441801-06:00'
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 uma pr\xE1tica de encontrar sequ\xEAncias\
-  \ espec\xEDficas de caracteres numa string e troc\xE1-las por outras. Programadores\
-  \ fazem isso\u2026"
+  \ espec\xEDficas de caracteres numa string e troc\xE1-las por outras."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

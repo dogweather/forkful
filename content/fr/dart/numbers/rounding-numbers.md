@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.383855-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres est le processus qui consiste \xE0 ajuster un nombre\
   \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de d\xE9\
-  cimales. Les\u2026"
+  cimales."
 title: Arrondissement des nombres
 weight: 13
 ---

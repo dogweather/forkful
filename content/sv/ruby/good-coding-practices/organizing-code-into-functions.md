@@ -6,7 +6,7 @@ description: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv
 lastmod: '2024-03-13T22:44:38.436415-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4ndbara\
-  \ delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre buggig.\u2026"
+  \ delar."
 title: Att organisera kod i funktioner
 weight: 18
 ---

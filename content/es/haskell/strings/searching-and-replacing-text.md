@@ -4,8 +4,8 @@ description: "Buscar y reemplazar texto implica localizar ciertas cadenas de car
   \ y sustituirlas por otras diferentes. Los programadores lo hacen constantemente\u2026"
 lastmod: '2024-03-13T22:44:59.104824-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres\
-  \ y sustituirlas por otras diferentes. Los programadores lo hacen constantemente\u2026"
+summary: Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres
+  y sustituirlas por otras diferentes.
 title: Buscando y reemplazando texto
 weight: 10
 ---

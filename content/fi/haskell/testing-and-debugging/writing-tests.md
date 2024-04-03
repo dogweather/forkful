@@ -6,8 +6,8 @@ description: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen
   \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
 lastmod: '2024-03-13T22:44:56.618595-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
-  \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
+summary: Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten
+  varmistamista automatisoitujen tarkistusten kautta.
 title: Testien kirjoittaminen
 weight: 36
 ---

@@ -6,7 +6,7 @@ description: "La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8 som k
 lastmod: '2024-03-13T22:44:40.846179-06:00'
 model: gpt-4-0125-preview
 summary: "La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8 som kan fungere\
-  \ som en grunnleggende feils\xF8ker. Du fyrer det opp med Haskell-koden din og\u2026"
+  \ som en grunnleggende feils\xF8ker."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

@@ -6,8 +6,10 @@ description: "Scrivere su standard error (stderr) in C# implica dirigere i messa
   \ di errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare\u2026"
 lastmod: '2024-03-13T22:44:43.449881-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in C# implica dirigere i messaggi di\
-  \ errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare\u2026"
+summary: Scrivere su standard error (stderr) in C# implica dirigere i messaggi di
+  errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare
+  utenti e sviluppatori a distinguere tra l'output normale del programma e le notifiche
+  di errore.
 title: Scrivere sull'errore standard
 weight: 25
 ---

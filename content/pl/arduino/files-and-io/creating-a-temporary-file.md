@@ -5,9 +5,7 @@ description: "(Co i Dlaczego?) Tworzenie tymczasowego pliku to po prostu robieni
   ci robi\u0105 to, by nie\u2026"
 lastmod: '2024-03-13T22:44:35.690784-06:00'
 model: gpt-4-1106-preview
-summary: "(Co i Dlaczego?) Tworzenie tymczasowego pliku to po prostu robienie miejsca\
-  \ na dane, kt\xF3re s\u0105 potrzebne tylko na chwil\u0119. Programi\u015Bci robi\u0105\
-  \ to, by nie\u2026"
+summary: (Co i Dlaczego.
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

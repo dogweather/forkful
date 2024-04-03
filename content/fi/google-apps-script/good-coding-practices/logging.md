@@ -8,8 +8,7 @@ description: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheide
 lastmod: '2024-03-13T22:44:56.104850-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden tai\
-  \ merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\
-  t n\xE4in\u2026"
+  \ merkitt\xE4vien esiintymien tallentamista suoritusaikana."
 title: Lokiointi
 weight: 17
 ---

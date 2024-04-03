@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.201202-06:00'
 model: gpt-4-0125-preview
 summary: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
   \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\
-  \ pour les\u2026"
+  \ pour les d\xE9veloppeurs traitant de planification, de chronologies ou de toute\
+  \ donn\xE9e li\xE9e aux dates."
 title: Comparer deux dates
 weight: 27
 ---

@@ -5,7 +5,7 @@ description: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte
 lastmod: '2024-03-13T22:44:53.532385-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte Zugriffe\
-  \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden.\u2026"
+  \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

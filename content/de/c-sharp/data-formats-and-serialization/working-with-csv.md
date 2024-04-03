@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:53.911088-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte,\
   \ sind ein \xFCbliches Datenformat f\xFCr den Austausch, das tabellarische Daten\
-  \ in\u2026"
+  \ in reinem Text darstellt, wobei Kommata verwendet werden, um einzelne Werte voneinander\
+  \ zu trennen."
 title: Arbeiten mit CSV
 weight: 37
 ---

@@ -6,8 +6,7 @@ description: "L\xE4sning av kommandoradsargument handlar om att snappa upp de ex
 lastmod: '2024-03-13T22:44:38.308752-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sning av kommandoradsargument handlar om att snappa upp de extra inputs\
-  \ som skickas till ditt program n\xE4r det k\xF6rs i terminalen. Programmerare g\xF6\
-  r detta\u2026"
+  \ som skickas till ditt program n\xE4r det k\xF6rs i terminalen."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

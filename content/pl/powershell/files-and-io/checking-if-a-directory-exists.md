@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:35.644380-06:00'
 model: gpt-4-0125-preview
 summary: "W PowerShellu sprawdzanie, czy katalog istnieje, jest cz\u0119stym zadaniem,\
   \ kt\xF3re pomaga skryptom podejmowa\u0107 decyzje na podstawie struktury systemu\
-  \ plik\xF3w -\u2026"
+  \ plik\xF3w - na przyk\u0142ad unikaj\u0105c b\u0142\u0119d\xF3w przez potwierdzenie,\
+  \ \u017Ce docelowy katalog jest na miejscu przed pr\xF3b\u0105 czytania z niego\
+  \ lub zapisywania do niego."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

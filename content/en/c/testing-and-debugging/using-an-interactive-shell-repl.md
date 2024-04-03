@@ -4,8 +4,9 @@ description: "An interactive shell, also known as a Read-Eval-Print Loop (REPL),
   \ programmers to type in expressions or code and immediately see results,\u2026"
 lastmod: '2024-03-13T22:45:00.513015-06:00'
 model: gpt-4-0125-preview
-summary: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
-  \ programmers to type in expressions or code and immediately see results,\u2026"
+summary: An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows
+  programmers to type in expressions or code and immediately see results, enhancing
+  learning and debugging processes.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

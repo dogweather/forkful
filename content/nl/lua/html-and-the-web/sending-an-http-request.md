@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek verzenden betekent een verzoek doen aan een exter
   \ server voor gegevens of actie. Programmeurs doen dit om te interageren met\u2026"
 lastmod: '2024-03-13T22:44:50.934324-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe server\
-  \ voor gegevens of actie. Programmeurs doen dit om te interageren met\u2026"
+summary: Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe server
+  voor gegevens of actie.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

@@ -11,7 +11,11 @@ model: gpt-4-0125-preview
 summary: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDB\
   i c\xE1c t\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3\
   c t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c \u0111\u1ECD\
-  c t\u1EEB v\xE0 vi\u1EBFt d\u1EEF\u2026"
+  c t\u1EEB v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u v\xE0o c\xE1c t\u1EC7p v\u0103n b\u1EA3\
+  n \u0111\u01B0\u1EE3c t\u1ED5 ch\u1EE9c theo h\xE0ng, n\u01A1i m\u1ED7i h\xE0ng\
+  \ \u0111\u1EA1i di\u1EC7n cho m\u1ED9t b\u1EA3n ghi v\xE0 c\xE1c tr\u01B0\u1EDD\
+  ng c\u1EE7a m\u1ED7i b\u1EA3n ghi \u0111\u01B0\u1EE3c t\xE1ch bi\u1EC7t b\u1EB1\
+  ng d\u1EA5u ph\u1EA9y."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

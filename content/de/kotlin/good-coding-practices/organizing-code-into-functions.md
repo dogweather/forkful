@@ -4,8 +4,8 @@ description: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiede
   \ Teile zu zerlegen, von denen jeder eine spezifische Aufgabe erledigt. Wir\u2026"
 lastmod: '2024-03-13T22:44:53.851788-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare\
-  \ Teile zu zerlegen, von denen jeder eine spezifische Aufgabe erledigt. Wir\u2026"
+summary: Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare
+  Teile zu zerlegen, von denen jeder eine spezifische Aufgabe erledigt.
 title: Code in Funktionen organisieren
 weight: 18
 ---

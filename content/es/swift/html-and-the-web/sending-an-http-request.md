@@ -6,7 +6,7 @@ description: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con 
 lastmod: '2024-03-13T22:44:59.413417-06:00'
 model: gpt-4-1106-preview
 summary: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un servidor\
-  \ web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo para\u2026"
+  \ web para obtener, enviar o modificar datos."
 title: Enviando una solicitud http
 weight: 44
 ---

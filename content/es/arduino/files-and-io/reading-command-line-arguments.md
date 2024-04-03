@@ -6,7 +6,7 @@ description: "Leer argumentos de la l\xEDnea de comando permite que tus programa
 lastmod: '2024-03-13T22:44:59.348932-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comando permite que tus programas de Arduino\
-  \ reactiven a la entrada del usuario cuando arrancan. Los programadores usan\u2026"
+  \ reactiven a la entrada del usuario cuando arrancan."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

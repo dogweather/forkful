@@ -4,8 +4,7 @@ description: "Omforming fra dato til streng lar oss vise datoer som lesbare teks
   \ Dette er essensielt for brukergrensesnitt og datalagring i et forst\xE5elig\u2026"
 lastmod: '2024-03-13T22:44:40.853855-06:00'
 model: gpt-4-1106-preview
-summary: "Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger.\
-  \ Dette er essensielt for brukergrensesnitt og datalagring i et forst\xE5elig\u2026"
+summary: Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger.
 title: Konvertere en dato til en streng
 weight: 28
 ---

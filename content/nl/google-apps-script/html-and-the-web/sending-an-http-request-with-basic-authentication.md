@@ -7,8 +7,9 @@ description: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat he
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.331163-06:00'
 model: gpt-4-0125-preview
-summary: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het coderen\
-  \ van een gebruikersnaam en wachtwoord in een aanvraagheader om toegang te\u2026"
+summary: Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het coderen
+  van een gebruikersnaam en wachtwoord in een aanvraagheader om toegang te krijgen
+  tot beschermde bronnen.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

@@ -6,7 +6,7 @@ description: "I numeri complessi estendono i numeri reali con una parte aggiunti
 lastmod: '2024-03-13T22:44:43.036000-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono i numeri reali con una parte aggiuntiva, l'unit\xE0\
-  \ immaginaria 'i'. I programmatori li utilizzano in vari ambiti, tra cui\u2026"
+  \ immaginaria 'i'."
 title: Lavorare con i numeri complessi
 weight: 14
 ---

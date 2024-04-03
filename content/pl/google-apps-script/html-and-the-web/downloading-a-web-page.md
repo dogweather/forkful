@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.901355-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
   \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
-  w, takich jak web\u2026"
+  w, takich jak web scraping, ekstrakcja danych lub monitorowanie zmian."
 title: Pobieranie strony internetowej
 weight: 42
 ---

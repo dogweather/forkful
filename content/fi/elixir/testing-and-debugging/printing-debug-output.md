@@ -5,9 +5,7 @@ description: "(Mit\xE4 & Miksi?) Debug-tulostus auttaa ymm\xE4rt\xE4m\xE4\xE4n, 
   \ ja oman koodin\u2026"
 lastmod: '2024-03-13T22:44:56.229542-06:00'
 model: gpt-4-1106-preview
-summary: "(Mit\xE4 & Miksi?) Debug-tulostus auttaa ymm\xE4rt\xE4m\xE4\xE4n, mit\xE4\
-  \ ohjelmassasi tapahtuu. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 virheiden paikallistamiseen\
-  \ ja oman koodin\u2026"
+summary: "(Mit\xE4 & Miksi."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

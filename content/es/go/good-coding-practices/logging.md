@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.474867-06:00'
 model: gpt-4-0125-preview
 summary: "El registro (logging) en el desarrollo de software es el proceso de grabar\
   \ informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
-  \ su\u2026"
+  \ su comportamiento y diagnosticar problemas."
 title: Registro
 weight: 17
 ---

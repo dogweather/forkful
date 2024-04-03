@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.957641-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, abreviatura de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
   \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que\u2026"
+  \ que los programadores utilizan para archivos de configuraci\xF3n, volcados de\
+  \ datos y transmisi\xF3n de datos entre lenguajes."
 title: Trabajando con YAML
 weight: 41
 ---

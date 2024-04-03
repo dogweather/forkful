@@ -8,7 +8,8 @@ description: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dat
 lastmod: '2024-03-13T22:44:43.555686-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni\
-  \ dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi dei\u2026"
+  \ dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi dei dati\
+  \ e i compiti di automazione."
 title: Analisi del HTML
 weight: 43
 ---

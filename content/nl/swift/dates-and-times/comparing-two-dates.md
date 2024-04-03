@@ -6,8 +6,7 @@ description: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip 
   \ het ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
 lastmod: '2024-03-13T22:44:51.170196-06:00'
 model: gpt-4-0125-preview
-summary: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of het\
-  \ ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
+summary: Twee datums vergelijken is als vragen, "Wie was er eerst, de kip of het ei.
 title: Twee datums vergelijken
 weight: 27
 ---

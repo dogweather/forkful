@@ -4,8 +4,8 @@ description: "Logging, at its core, is the practice of recording events and data
   \ a software application to an external output, like a file or console. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.054850-06:00'
 model: gpt-4-1106-preview
-summary: "Logging, at its core, is the practice of recording events and data from\
-  \ a software application to an external output, like a file or console. Programmers\u2026"
+summary: Logging, at its core, is the practice of recording events and data from a
+  software application to an external output, like a file or console.
 title: Logging
 weight: 17
 ---

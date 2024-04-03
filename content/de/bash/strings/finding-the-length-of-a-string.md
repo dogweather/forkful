@@ -6,8 +6,7 @@ description: "L\xE4nge eines Strings messen hei\xDFt, zu z\xE4hlen, wie viele Ze
 lastmod: '2024-03-13T22:44:54.048525-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4nge eines Strings messen hei\xDFt, zu z\xE4hlen, wie viele Zeichen\
-  \ er enth\xE4lt. Das brauchen Programmierer, um Eingaben zu validieren, Textdaten\
-  \ zu verarbeiten\u2026"
+  \ er enth\xE4lt."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

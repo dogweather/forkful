@@ -7,7 +7,8 @@ description: "Trabalhar com JSON (JavaScript Object Notation) envolve a convers\
 lastmod: '2024-03-13T22:44:46.304767-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) envolve a convers\xE3o de\
-  \ dados JSON de strings para objetos Dart e vice-versa, uma tarefa comum no\u2026"
+  \ dados JSON de strings para objetos Dart e vice-versa, uma tarefa comum no desenvolvimento\
+  \ de web e aplicativos para a troca de dados."
 title: Trabalhando com JSON
 weight: 38
 ---

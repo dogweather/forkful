@@ -8,8 +8,7 @@ description: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 
 lastmod: '2024-03-13T22:44:40.596424-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese fra\
-  \ og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\
-  r dette for\u2026"
+  \ og skrive til rene tekstfiler som lagrer tabul\xE6re data."
 title: Arbeide med CSV
 weight: 37
 ---

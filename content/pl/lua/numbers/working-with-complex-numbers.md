@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.534019-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 ide\u0119 jednowymiarowej linii liczbowej\
   \ na dwuwymiarow\u0105 p\u0142aszczyzn\u0119, poprzez w\u0142\u0105czenie prostopad\u0142\
-  ej osi urojonej. Programi\u015Bci\u2026"
+  ej osi urojonej."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -4,8 +4,7 @@ description: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Di
   \ schiefgehen. Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"
 lastmod: '2024-03-13T22:44:53.680095-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge schiefgehen.\
-  \ Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"
+summary: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge schiefgehen."
 title: Fehlerbehandlung
 weight: 16
 ---

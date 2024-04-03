@@ -5,7 +5,9 @@ description: "El registro (logging) en programaci\xF3n es esencialmente dejar un
 lastmod: '2024-03-13T22:44:59.125125-06:00'
 model: gpt-4-1106-preview
 summary: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
-  \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"
+  \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\
+  \ usar para rastrear lo que tu aplicaci\xF3n est\xE1 haciendo en cualquier momento\
+  \ dado."
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

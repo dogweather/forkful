@@ -7,7 +7,7 @@ description: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 
 lastmod: '2024-03-13T22:44:57.181838-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
-  \ programmatiquement un appel \xE0 un serveur web externe ou une API. Les programmeurs\u2026"
+  \ programmatiquement un appel \xE0 un serveur web externe ou une API."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

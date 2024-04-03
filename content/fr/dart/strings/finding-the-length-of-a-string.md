@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.373763-06:00'
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res (String) en Dart consiste\
   \ \xE0 d\xE9terminer le nombre d'unit\xE9s de code (essentiellement, le nombre de\
-  \ caract\xE8res\u2026"
+  \ caract\xE8res si on le pense de mani\xE8re simpliste) dans une String donn\xE9\
+  e."
 title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---

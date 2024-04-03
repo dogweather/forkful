@@ -7,7 +7,8 @@ description: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata
 lastmod: '2024-03-13T22:44:41.160210-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata permanent\
-  \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre\u2026"
+  \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre konfigurasjonsinnstillinger,\
+  \ brukerdata eller logger."
 title: Skrive en tekstfil
 weight: 24
 ---

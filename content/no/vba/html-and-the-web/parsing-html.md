@@ -8,8 +8,7 @@ description: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE
 lastmod: '2024-03-13T22:44:40.617062-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6rer \xE5\
-  \ trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8r dette\
-  \ for \xE5\u2026"
+  \ trekke ut spesifikk informasjon fra et HTML-dokument."
 title: Analysering av HTML
 weight: 43
 ---

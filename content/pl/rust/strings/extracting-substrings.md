@@ -6,8 +6,7 @@ description: "Wyodr\u0119bnianie podci\u0105g\xF3w to dzia\u0142anie polegaj\u01
 lastmod: '2024-03-13T22:44:35.173113-06:00'
 model: gpt-4-1106-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to dzia\u0142anie polegaj\u0105ce na\
-  \ przyw\u0142aszczeniu sobie cz\u0119\u015Bci stringu. Programi\u015Bci robi\u0105\
-  \ to, aby pracowa\u0107 tylko z tymi z\u0142otymi kawa\u0142kami\u2026"
+  \ przyw\u0142aszczeniu sobie cz\u0119\u015Bci stringu."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.986543-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i PHP \xE4r m\xF6nster som anv\xE4nds f\xF6\
   r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r avancerade\
-  \ s\xF6k-och-ers\xE4tt-\u2026"
+  \ s\xF6k-och-ers\xE4tt-operationer och datavalidering."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

@@ -4,8 +4,8 @@ description: "Avviare un nuovo progetto significa configurare l'ambiente di svil
   \ per piazzare solidamente le basi del software. I programmatori fanno questo per\u2026"
 lastmod: '2024-03-13T22:44:43.042895-06:00'
 model: gpt-4-1106-preview
-summary: "Avviare un nuovo progetto significa configurare l'ambiente di sviluppo per\
-  \ piazzare solidamente le basi del software. I programmatori fanno questo per\u2026"
+summary: Avviare un nuovo progetto significa configurare l'ambiente di sviluppo per
+  piazzare solidamente le basi del software.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -7,7 +7,7 @@ description: "Foutenafhandeling in programmeren gaat over het beheren van het on
 lastmod: '2024-03-13T22:44:50.859758-06:00'
 model: gpt-4-0125-preview
 summary: "Foutenafhandeling in programmeren gaat over het beheren van het onverwachte\u2014\
-  zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun\u2026"
+  zaken die mis kunnen gaan."
 title: Fouten afhandelen
 weight: 16
 ---

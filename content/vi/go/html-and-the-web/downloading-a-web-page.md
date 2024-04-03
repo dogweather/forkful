@@ -9,9 +9,7 @@ description: "T\u1EA3i v\u1EC1 m\u1ED9t trang web l\xE0 vi\u1EC7c l\u1EA5y n\u1E
 lastmod: '2024-03-13T22:44:35.980302-06:00'
 model: gpt-4-0125-preview
 summary: "T\u1EA3i v\u1EC1 m\u1ED9t trang web l\xE0 vi\u1EC7c l\u1EA5y n\u1ED9i dung\
-  \ HTML c\u1EE7a m\u1ED9t trang web qua giao th\u1EE9c HTTP/HTTPS. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1u n\xE0y cho vi\u1EC7c thu\
-  \ th\u1EADp d\u1EEF\u2026"
+  \ HTML c\u1EE7a m\u1ED9t trang web qua giao th\u1EE9c HTTP/HTTPS."
 title: "T\u1EA3i trang web v\u1EC1"
 weight: 42
 ---

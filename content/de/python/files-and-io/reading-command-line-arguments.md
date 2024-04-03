@@ -6,8 +6,7 @@ description: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen,
 lastmod: '2024-03-13T22:44:53.394189-06:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen, beim\
-  \ Start Parameter von au\xDFen zu empfangen. Diese Flexibilit\xE4t ist essentiell,\
-  \ um\u2026"
+  \ Start Parameter von au\xDFen zu empfangen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

@@ -7,7 +7,7 @@ description: "Calcular una fecha en el futuro o en el pasado se trata de manipul
 lastmod: '2024-03-13T22:44:58.562475-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado se trata de manipular objetos\
-  \ de fecha para encontrar fechas m\xE1s all\xE1 o antes de la fecha actual,\u2026"
+  \ de fecha para encontrar fechas m\xE1s all\xE1 o antes de la fecha actual, respectivamente."
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---

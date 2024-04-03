@@ -6,8 +6,7 @@ description: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 j
 lastmod: '2024-03-13T22:44:57.318351-06:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 joindre\
-  \ deux ou plusieurs cha\xEEnes pour former un seul texte. Vous pourriez avoir besoin\
-  \ de fusionner\u2026"
+  \ deux ou plusieurs cha\xEEnes pour former un seul texte."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

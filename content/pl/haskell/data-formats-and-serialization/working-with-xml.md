@@ -5,9 +5,8 @@ description: "Praca z XML w Haskellu obejmuje parsowanie, manipulowanie i genero
   \ z licznymi\u2026"
 lastmod: '2024-03-13T22:44:35.478236-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML w Haskellu obejmuje parsowanie, manipulowanie i generowanie\
-  \ struktur XML. Programi\u015Bci obs\u0142uguj\u0105 XML, aby interakcjonowa\u0107\
-  \ z licznymi\u2026"
+summary: Praca z XML w Haskellu obejmuje parsowanie, manipulowanie i generowanie struktur
+  XML.
 title: Praca z XML
 weight: 40
 ---

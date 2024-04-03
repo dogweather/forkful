@@ -6,8 +6,8 @@ description: "Verificar si un directorio existe en C# implica comprobar la prese
   \ de una carpeta en una ruta especificada en el sistema de archivos. Los\u2026"
 lastmod: '2024-03-13T22:44:59.091996-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar si un directorio existe en C# implica comprobar la presencia de\
-  \ una carpeta en una ruta especificada en el sistema de archivos. Los\u2026"
+summary: Verificar si un directorio existe en C# implica comprobar la presencia de
+  una carpeta en una ruta especificada en el sistema de archivos.
 title: Comprobando si un directorio existe
 weight: 20
 ---

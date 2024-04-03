@@ -6,8 +6,7 @@ description: "Att hantera fel i Swift inneb\xE4r att f\xF6rutse och svara p\xE5 
 lastmod: '2024-03-13T22:44:38.258383-06:00'
 model: gpt-4-1106-preview
 summary: "Att hantera fel i Swift inneb\xE4r att f\xF6rutse och svara p\xE5 problem\
-  \ som dyker upp n\xE4r din kod k\xF6rs. Vi g\xF6r det f\xF6r att kontrollera kaoset\
-  \ \u2013 f\xF6r att f\xF6rhindra\u2026"
+  \ som dyker upp n\xE4r din kod k\xF6rs."
 title: Hantering av fel
 weight: 16
 ---

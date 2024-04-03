@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.600111-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em C# envolve direcionar mensagens de\
   \ erro e diagn\xF3sticos separadamente da sa\xEDda regular (stdout) para ajudar\
-  \ usu\xE1rios e\u2026"
+  \ usu\xE1rios e desenvolvedores a distinguir entre a sa\xEDda normal do programa\
+  \ e notifica\xE7\xF5es de erro."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

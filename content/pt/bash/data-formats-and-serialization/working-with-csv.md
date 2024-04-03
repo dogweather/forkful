@@ -8,7 +8,7 @@ description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) no B
 lastmod: '2024-03-13T22:44:46.775668-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) no Bash \xE9\
-  \ sobre processar e manipular dados tabulares armazenados em formato de texto simples.\u2026"
+  \ sobre processar e manipular dados tabulares armazenados em formato de texto simples."
 title: Trabalhando com CSV
 weight: 37
 ---

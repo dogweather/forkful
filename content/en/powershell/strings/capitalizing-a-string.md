@@ -4,8 +4,8 @@ description: "Capitalizing a string in PowerShell involves transforming the firs
   \ character of a given string to uppercase while leaving the rest of the string\u2026"
 lastmod: '2024-03-13T22:45:00.266879-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string in PowerShell involves transforming the first character\
-  \ of a given string to uppercase while leaving the rest of the string\u2026"
+summary: Capitalizing a string in PowerShell involves transforming the first character
+  of a given string to uppercase while leaving the rest of the string unchanged.
 title: Capitalizing a string
 weight: 2
 ---

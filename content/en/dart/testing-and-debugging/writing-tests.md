@@ -5,8 +5,8 @@ description: "Writing tests in Dart involves creating test cases to automaticall
   \ to\u2026"
 lastmod: '2024-03-13T22:44:59.823981-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Dart involves creating test cases to automatically verify\
-  \ that different parts of your program work as expected. Programmers do this to\u2026"
+summary: Writing tests in Dart involves creating test cases to automatically verify
+  that different parts of your program work as expected.
 title: Writing tests
 weight: 36
 ---

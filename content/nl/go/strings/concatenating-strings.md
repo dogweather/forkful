@@ -7,8 +7,8 @@ description: "Het samenvoegen van strings betreft het aaneenrijgen van twee of m
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.279017-06:00'
 model: gpt-4-0125-preview
-summary: "Het samenvoegen van strings betreft het aaneenrijgen van twee of meer strings\
-  \ om een nieuwe string te vormen. Programmeurs doen dit om dynamisch tekst te\u2026"
+summary: Het samenvoegen van strings betreft het aaneenrijgen van twee of meer strings
+  om een nieuwe string te vormen.
 title: Strings samenvoegen
 weight: 3
 ---

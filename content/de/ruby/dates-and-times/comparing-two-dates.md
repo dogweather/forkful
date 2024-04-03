@@ -6,8 +6,7 @@ description: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher 
 lastmod: '2024-03-13T22:44:54.412637-06:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher oder sp\xE4\
-  ter ist. Programmierer nutzen dies f\xFCr Funktionalit\xE4ten wie G\xFCltigkeitspr\xFC\
-  fungen,\u2026"
+  ter ist."
 title: Vergleich von zwei Daten
 weight: 27
 ---

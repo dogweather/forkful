@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.729893-06:00'
 model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA) ist das Abrufen des aktuellen Datums\
   \ eine g\xE4ngige Aufgabe, die es Programmierern erm\xF6glicht, dynamisch mit Daten\
-  \ in\u2026"
+  \ in ihren Makros oder Anwendungen zu arbeiten."
 title: Das aktuelle Datum abrufen
 weight: 29
 ---

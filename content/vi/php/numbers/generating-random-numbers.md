@@ -11,7 +11,10 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PHP l\xE0 v\u1EC1 vi\u1EC7\
   c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3 \u0111o\xE1n tr\u01B0\
   \u1EDBc trong m\u1ED9t d\u1EA3i gi\xE1 tr\u1ECB nh\u1EA5t \u0111\u1ECBnh, \u0111\
-  i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c t\xE1c\u2026"
+  i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1\
+  o ID ng\u01B0\u1EDDi d\xF9ng \u0111\u1ED9c nh\u1EA5t, sinh m\u1EADt kh\u1EA9u, ho\u1EB7\
+  c \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\xE1c m\xF4 ph\u1ECFng v\xE0 tr\xF2\
+  \ ch\u01A1i."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

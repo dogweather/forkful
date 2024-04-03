@@ -8,8 +8,7 @@ description: "Testowanie w Ruby polega na weryfikacji, czy Tw\xF3j kod zachowuje
 lastmod: '2024-03-13T22:44:35.935903-06:00'
 model: gpt-4-0125-preview
 summary: "Testowanie w Ruby polega na weryfikacji, czy Tw\xF3j kod zachowuje si\u0119\
-  \ zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015Bci pisz\u0105\
-  \ testy, aby zapewni\u0107\u2026"
+  \ zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

@@ -7,8 +7,8 @@ description: "Werken met XML betekent het parseren, manipuleren en produceren va
   \ wordt\u2026"
 lastmod: '2024-03-13T22:44:51.227001-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML betekent het parseren, manipuleren en produceren van XML-inhoud\
-  \ met behulp van code. Programmeurs doen dit omdat XML veel gebruikt wordt\u2026"
+summary: Werken met XML betekent het parseren, manipuleren en produceren van XML-inhoud
+  met behulp van code.
 title: Werken met XML
 weight: 40
 ---

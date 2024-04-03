@@ -6,8 +6,7 @@ description: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego s
 lastmod: '2024-03-13T22:44:35.136642-06:00'
 model: unknown
 summary: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego struktur\u0119\
-  \ i wyodr\u0119bni\u0107 z niego dane. Programi\u015Bci robi\u0105 to, \u017Ceby\
-  \ manipulowa\u0107 tym kodem lub\u2026"
+  \ i wyodr\u0119bni\u0107 z niego dane."
 title: Przetwarzanie HTML
 weight: 43
 ---

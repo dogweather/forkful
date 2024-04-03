@@ -8,8 +8,7 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster
 lastmod: '2024-03-13T22:44:53.794762-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster, die\
-  \ zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm, genau\
-  \ wie\u2026"
+  \ zum Abgleichen von Zeichenkombinationen in Strings verwendet werden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

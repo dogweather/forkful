@@ -6,8 +6,7 @@ description: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te pe
 lastmod: '2024-03-13T22:44:59.162470-06:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permite\
-  \ escribir y ejecutar c\xF3digo PHP al momento. Es ideal para experimentar, depurar,\
-  \ o\u2026"
+  \ escribir y ejecutar c\xF3digo PHP al momento."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

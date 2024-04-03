@@ -6,8 +6,7 @@ description: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie c
 lastmod: '2024-03-13T22:44:58.265245-06:00'
 model: gpt-4-1106-preview
 summary: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
-  \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\
-  \ entr\xE9es,\u2026"
+  \ le nombre de caract\xE8res qu'elle contient."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

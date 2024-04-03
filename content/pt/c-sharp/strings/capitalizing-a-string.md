@@ -8,8 +8,7 @@ description: "Capitalizar uma string em C# envolve converter o primeiro caracter
 lastmod: '2024-03-13T22:44:46.567590-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string em C# envolve converter o primeiro caractere de uma\
-  \ string para mai\xFAscula, caso ele j\xE1 n\xE3o seja. Essa altera\xE7\xE3o pode\
-  \ ser crucial\u2026"
+  \ string para mai\xFAscula, caso ele j\xE1 n\xE3o seja."
 title: Capitalizando uma string
 weight: 2
 ---

@@ -8,8 +8,7 @@ description: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapy
 lastmod: '2024-03-13T22:44:35.103012-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
-  \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\
-  \ u\u017Cywana w aplikacjach do\u2026"
+  \ systemu o aktualn\u0105 dat\u0119 i czas."
 title: "Pobieranie bie\u017C\u0105cej daty"
 weight: 29
 ---

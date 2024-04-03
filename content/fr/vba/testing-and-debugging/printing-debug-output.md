@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.581003-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
   \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\
-  \ code pour\u2026"
+  \ code pour afficher les valeurs des variables, le flux d'ex\xE9cution ou des messages\
+  \ de d\xE9bogage personnalis\xE9s."
 title: "Affichage du d\xE9bogage"
 weight: 33
 ---

@@ -6,8 +6,8 @@ description: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diag
   \ los van de hoofdoutput. Programmeurs gebruiken dit om problemen te rapporteren\u2026"
 lastmod: '2024-03-13T22:44:51.263560-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostiek\
-  \ los van de hoofdoutput. Programmeurs gebruiken dit om problemen te rapporteren\u2026"
+summary: Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostiek
+  los van de hoofdoutput.
 title: Schrijven naar standaardfout
 weight: 25
 ---

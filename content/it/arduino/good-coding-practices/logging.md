@@ -6,8 +6,7 @@ description: "\"Logging\" significa mantenere un registro degli eventi, delle tr
 lastmod: '2024-03-13T22:44:43.688923-06:00'
 model: gpt-4-1106-preview
 summary: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
-  \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\
-  \ lo\u2026"
+  \ o delle attivit\xE0 che si verificano nel tempo in un sistema."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

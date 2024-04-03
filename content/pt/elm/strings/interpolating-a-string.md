@@ -6,8 +6,7 @@ description: "Interpolar uma string significa enfiar valores de vari\xE1veis den
 lastmod: '2024-03-13T22:44:46.485684-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string significa enfiar valores de vari\xE1veis dentro de\
-  \ uma string, criando assim uma nova string 'personalizada'. Programadores fazem\
-  \ isso\u2026"
+  \ uma string, criando assim uma nova string 'personalizada'."
 title: Interpolando uma string
 weight: 8
 ---

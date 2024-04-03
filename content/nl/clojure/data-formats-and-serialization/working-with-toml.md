@@ -7,9 +7,9 @@ description: "Werken met TOML betekent dat je gegevens beheert in een minimaal \
   \ de\u2026"
 lastmod: '2024-03-13T22:44:50.443300-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met TOML betekent dat je gegevens beheert in een minimaal \"Tom's\
-  \ Obvious, Minimal Language\" formaat, populair voor configuratiebestanden vanwege\
-  \ de\u2026"
+summary: Werken met TOML betekent dat je gegevens beheert in een minimaal "Tom's Obvious,
+  Minimal Language" formaat, populair voor configuratiebestanden vanwege de gemakkelijke
+  leesbaarheid.
 title: Werken met TOML
 weight: 39
 ---

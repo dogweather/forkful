@@ -6,8 +6,8 @@ description: "De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je
   \ staat om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.\u2026"
 lastmod: '2024-03-13T22:44:51.031102-06:00'
 model: gpt-4-0125-preview
-summary: "De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in staat\
-  \ om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.\u2026"
+summary: De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in staat
+  om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

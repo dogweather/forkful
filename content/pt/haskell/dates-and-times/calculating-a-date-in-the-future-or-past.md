@@ -5,7 +5,7 @@ description: "Calcular uma data no futuro ou passado \xE9 simplesmente determina
 lastmod: '2024-03-13T22:44:46.638444-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou passado \xE9 simplesmente determinar uma\
-  \ data adicionando ou subtraindo um certo per\xEDodo de tempo a partir de hoje.\u2026"
+  \ data adicionando ou subtraindo um certo per\xEDodo de tempo a partir de hoje."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

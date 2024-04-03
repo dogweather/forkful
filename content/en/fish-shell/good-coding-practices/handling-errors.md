@@ -4,8 +4,7 @@ description: Error handling lets your script deal with the unexpected gracefully
   We do it to manage failure without turning our user's hair gray.
 lastmod: '2024-03-13T22:45:00.481335-06:00'
 model: gpt-4-1106-preview
-summary: Error handling lets your script deal with the unexpected gracefully. We do
-  it to manage failure without turning our user's hair gray.
+summary: Error handling lets your script deal with the unexpected gracefully.
 title: Handling errors
 weight: 16
 ---

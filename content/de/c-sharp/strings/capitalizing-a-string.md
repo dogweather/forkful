@@ -8,7 +8,8 @@ description: "Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung d
 lastmod: '2024-03-13T22:44:53.871519-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung des ersten\
-  \ Zeichens eines Strings in Gro\xDFbuchstaben, falls dies nicht bereits der Fall\u2026"
+  \ Zeichens eines Strings in Gro\xDFbuchstaben, falls dies nicht bereits der Fall\
+  \ ist."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

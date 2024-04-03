@@ -6,8 +6,8 @@ description: "In Elixir worden associatieve arrays, genaamd Maps, gebruikt als c
   \ van sleutel-waardeparen waar een unieke sleutel naar een waarde wijst. Ze zijn\u2026"
 lastmod: '2024-03-13T22:44:50.454974-06:00'
 model: gpt-4-0125-preview
-summary: "In Elixir worden associatieve arrays, genaamd Maps, gebruikt als collecties\
-  \ van sleutel-waardeparen waar een unieke sleutel naar een waarde wijst. Ze zijn\u2026"
+summary: In Elixir worden associatieve arrays, genaamd Maps, gebruikt als collecties
+  van sleutel-waardeparen waar een unieke sleutel naar een waarde wijst.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

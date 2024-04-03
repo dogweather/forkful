@@ -5,7 +5,7 @@ description: "Ler um arquivo de texto \xE9 simplesmente acessar e manipular o co
 lastmod: '2024-03-13T22:44:46.726275-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar e manipular o conte\xFA\
-  do armazenado nele usando um programa. Programadores fazem isso para carregar\u2026"
+  do armazenado nele usando um programa."
 title: Lendo um arquivo de texto
 weight: 22
 ---

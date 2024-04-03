@@ -6,7 +6,7 @@ description: "Leer un archivo de texto en programaci\xF3n implica acceder y obte
 lastmod: '2024-03-13T22:44:59.135835-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en programaci\xF3n implica acceder y obtener el\
-  \ contenido almacenado en un archivo. Los programadores lo hacen para procesar o\u2026"
+  \ contenido almacenado en un archivo."
 title: Lectura de un archivo de texto
 weight: 22
 ---

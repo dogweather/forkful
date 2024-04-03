@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck (regex) erbjuder ett s\xE4tt att s\xF6ka, mat
 lastmod: '2024-03-13T22:44:38.371405-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) erbjuder ett s\xE4tt att s\xF6ka, matcha och\
-  \ manipulera str\xE4ngar med definierade m\xF6nster. Programmerare anv\xE4nder dem\
-  \ i stor\u2026"
+  \ manipulera str\xE4ngar med definierade m\xF6nster."
 title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

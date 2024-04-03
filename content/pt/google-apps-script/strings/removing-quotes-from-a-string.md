@@ -7,7 +7,8 @@ description: "Remover aspas de uma string no Google Apps Script \xE9 sobre elimi
 lastmod: '2024-03-13T22:44:46.094116-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string no Google Apps Script \xE9 sobre eliminar aspas\
-  \ desnecess\xE1rias que podem circundar seus dados de string, geralmente provenientes\u2026"
+  \ desnecess\xE1rias que podem circundar seus dados de string, geralmente provenientes\
+  \ de objetos JSON analisados, entrada de usu\xE1rio ou extra\xE7\xE3o de dados."
 title: Removendo aspas de uma string
 weight: 9
 ---

@@ -7,8 +7,8 @@ description: "Werken met YAML houdt in dat je gegevens parseert en genereert in 
   \ voor\u2026"
 lastmod: '2024-03-13T22:44:51.133619-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met YAML houdt in dat je gegevens parseert en genereert in de voor\
-  \ mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het voor\u2026"
+summary: Werken met YAML houdt in dat je gegevens parseert en genereert in de voor
+  mensen vriendelijke YAML Ain't Markup Language.
 title: Werken met YAML
 weight: 41
 ---

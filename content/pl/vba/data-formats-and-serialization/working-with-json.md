@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.255381-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) to lekki format wymiany danych, kt\xF3\
   ry jest \u0142atwy do odczytu i zapisu dla ludzi oraz do parsowania i generowania\
-  \ przez\u2026"
+  \ przez maszyny."
 title: Praca z JSON
 weight: 38
 ---

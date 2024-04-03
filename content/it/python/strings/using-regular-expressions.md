@@ -6,8 +6,8 @@ description: "Le espressioni regolari (regex) sono modelli utilizzati per indivi
   \ combinazioni di caratteri nelle stringhe. I programmatori le utilizzano per\u2026"
 lastmod: '2024-03-13T22:44:42.991373-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) sono modelli utilizzati per individuare\
-  \ combinazioni di caratteri nelle stringhe. I programmatori le utilizzano per\u2026"
+summary: Le espressioni regolari (regex) sono modelli utilizzati per individuare combinazioni
+  di caratteri nelle stringhe.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

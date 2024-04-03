@@ -8,8 +8,7 @@ description: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on
 lastmod: '2024-03-13T22:44:51.203102-06:00'
 model: gpt-4-0125-preview
 summary: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
-  \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\
-  \ de\u2026"
+  \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn."
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

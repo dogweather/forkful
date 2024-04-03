@@ -4,8 +4,7 @@ description: "XML es un lenguaje de marcado utilizado para almacenar y transport
   \ datos. Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"
 lastmod: '2024-03-13T22:44:59.184781-06:00'
 model: gpt-4-0125-preview
-summary: "XML es un lenguaje de marcado utilizado para almacenar y transportar datos.\
-  \ Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"
+summary: XML es un lenguaje de marcado utilizado para almacenar y transportar datos.
 title: Trabajando con XML
 weight: 40
 ---

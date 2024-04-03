@@ -8,7 +8,7 @@ description: "I Elixir kalles associative arrays for Maps, og er samlinger av n\
 lastmod: '2024-03-13T22:44:40.436412-06:00'
 model: gpt-4-0125-preview
 summary: "I Elixir kalles associative arrays for Maps, og er samlinger av n\xF8kkel-verdi-par\
-  \ der en unik n\xF8kkel peker p\xE5 en verdi. De er veldig praktiske for \xE5 lagre\u2026"
+  \ der en unik n\xF8kkel peker p\xE5 en verdi."
 title: Bruke associative tabeller
 weight: 15
 ---

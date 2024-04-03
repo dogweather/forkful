@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in PHP are patterns used to match char
   \ combinations in strings, allowing for sophisticated search-and-replace operations\u2026"
 lastmod: '2024-03-13T22:45:00.157455-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in PHP are patterns used to match character\
-  \ combinations in strings, allowing for sophisticated search-and-replace operations\u2026"
+summary: Regular expressions (regex) in PHP are patterns used to match character combinations
+  in strings, allowing for sophisticated search-and-replace operations and data validation.
 title: Using regular expressions
 weight: 11
 ---

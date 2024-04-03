@@ -7,7 +7,8 @@ description: "Att skriva till standardfel (stderr) handlar om att rikta ditt pro
 lastmod: '2024-03-13T22:44:38.267103-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) handlar om att rikta ditt programs\
-  \ felmeddelanden eller diagnostikutdata till en separat str\xF6m, skild fr\xE5n\u2026"
+  \ felmeddelanden eller diagnostikutdata till en separat str\xF6m, skild fr\xE5n\
+  \ standardutdata (stdout)."
 title: Skriva till standardfel
 weight: 25
 ---

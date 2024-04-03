@@ -8,7 +8,7 @@ description: "Recuperar la fecha actual en Rust es una tarea com\xFAn para accio
 lastmod: '2024-03-13T22:44:58.857096-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Rust es una tarea com\xFAn para acciones como\
-  \ registrar, operaciones basadas en tiempo o simplemente mostrar la fecha. A\u2026"
+  \ registrar, operaciones basadas en tiempo o simplemente mostrar la fecha."
 title: Obteniendo la fecha actual
 weight: 29
 ---

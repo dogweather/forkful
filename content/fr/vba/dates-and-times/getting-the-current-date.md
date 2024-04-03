@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.592287-06:00'
 model: gpt-4-0125-preview
 summary: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
   \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\
-  \ avec\u2026"
+  \ avec des dates dans leurs macros ou applications."
 title: Obtenir la date actuelle
 weight: 29
 ---

@@ -4,8 +4,8 @@ description: "XML (eXtensible Markup Language) dreht sich um das Strukturieren v
   \ Daten in einem lesbaren Format. Programmierer jonglieren mit XML f\xFCr Konfigurationen,\u2026"
 lastmod: '2024-03-13T22:44:53.913460-06:00'
 model: gpt-4-0125-preview
-summary: "XML (eXtensible Markup Language) dreht sich um das Strukturieren von Daten\
-  \ in einem lesbaren Format. Programmierer jonglieren mit XML f\xFCr Konfigurationen,\u2026"
+summary: XML (eXtensible Markup Language) dreht sich um das Strukturieren von Daten
+  in einem lesbaren Format.
 title: Arbeiten mit XML
 weight: 40
 ---

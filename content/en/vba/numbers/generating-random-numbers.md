@@ -4,8 +4,9 @@ description: "Generating random numbers in Visual Basic for Applications (VBA) a
   \ programs to simulate processes with elements of chance or variability, such as\u2026"
 lastmod: '2024-03-13T22:44:59.930640-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in Visual Basic for Applications (VBA) allows\
-  \ programs to simulate processes with elements of chance or variability, such as\u2026"
+summary: Generating random numbers in Visual Basic for Applications (VBA) allows programs
+  to simulate processes with elements of chance or variability, such as dice rolls
+  or sampling data.
 title: Generating random numbers
 weight: 12
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.097513-06:00'
 model: gpt-4-0125-preview
 summary: "Organizacja kodu w funkcje w j\u0119zyku Dart polega na definiowaniu ponownie\
   \ wykorzystywalnych blok\xF3w kodu, kt\xF3re wykonuj\u0105 okre\u015Blone zadania,\
-  \ zwykle\u2026"
+  \ zwykle odbieraj\u0105c dane wej\u015Bciowe, przetwarzaj\u0105c dane i mo\u017C\
+  liwie zwracaj\u0105c dane wyj\u015Bciowe."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

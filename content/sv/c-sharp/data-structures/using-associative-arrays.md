@@ -8,8 +8,7 @@ description: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra o
 lastmod: '2024-03-13T22:44:37.906042-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och hantera\
-  \ par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du beh\xF6\
-  ver h\xE4mta v\xE4rden\u2026"
+  \ par av nycklar och v\xE4rden."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

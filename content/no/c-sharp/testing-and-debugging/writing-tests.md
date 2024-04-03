@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.799318-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C# inneb\xE6rer \xE5 lage automatiserte skript for\
   \ \xE5 validere funksjonaliteten til koden din, for \xE5 sikre at den oppf\xF8rer\
-  \ seg som forventet.\u2026"
+  \ seg som forventet."
 title: Skrive tester
 weight: 36
 ---

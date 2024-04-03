@@ -7,7 +7,7 @@ description: "Obtener la fecha actual en C implica acceder a la biblioteca est\x
 lastmod: '2024-03-13T22:44:59.557327-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en C implica acceder a la biblioteca est\xE1ndar\
-  \ de C para buscar y formatear la fecha y hora actuales del sistema. Los programadores\u2026"
+  \ de C para buscar y formatear la fecha y hora actuales del sistema."
 title: Obteniendo la fecha actual
 weight: 29
 ---

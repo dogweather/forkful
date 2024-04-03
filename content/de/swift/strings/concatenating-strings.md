@@ -4,8 +4,7 @@ description: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entw
   \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"
 lastmod: '2024-03-13T22:44:54.217771-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entwickler\
-  \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"
+summary: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

@@ -5,7 +5,7 @@ description: "Das Vergleichen zweier Daten ermittelt, welches fr\xFCher oder sp\
 lastmod: '2024-03-13T22:44:54.071749-06:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten ermittelt, welches fr\xFCher oder sp\xE4ter\
-  \ liegt oder ob sie identisch sind. F\xFCr Programmierer ist das wichtig, um Zeitdifferenzen\u2026"
+  \ liegt oder ob sie identisch sind."
 title: Vergleich von zwei Daten
 weight: 27
 ---

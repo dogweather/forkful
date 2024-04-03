@@ -5,7 +5,7 @@ description: "Leer un archivo de texto es el proceso de obtener y procesar infor
 lastmod: '2024-03-13T22:44:59.518684-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es el proceso de obtener y procesar informaci\xF3\
-  n almacenada en un archivo de texto simple. Los programadores lo hacen para\u2026"
+  n almacenada en un archivo de texto simple."
 title: Lectura de un archivo de texto
 weight: 22
 ---

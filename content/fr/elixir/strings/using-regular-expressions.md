@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.316305-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Elixir sont utilis\xE9es pour\
   \ chercher, faire correspondre, et manipuler des cha\xEEnes de caract\xE8res bas\xE9\
-  es sur des\u2026"
+  es sur des mod\xE8les sp\xE9cifiques."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

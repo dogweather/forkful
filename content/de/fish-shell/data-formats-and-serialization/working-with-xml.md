@@ -5,7 +5,8 @@ description: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, st
 lastmod: '2024-03-13T22:44:54.332973-06:00'
 model: gpt-4-0125-preview
 summary: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten\
-  \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\u2026"
+  \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\
+  \ mehr verwendet wird."
 title: Arbeiten mit XML
 weight: 40
 ---

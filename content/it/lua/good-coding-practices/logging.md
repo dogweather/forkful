@@ -5,7 +5,8 @@ description: "Il logging \xE8 la pratica di registrare eventi, errori e altri pu
 lastmod: '2024-03-13T22:44:43.563918-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 la pratica di registrare eventi, errori e altri punti dati\
-  \ significativi che si verificano all'interno del ciclo di vita di un'applicazione\u2026"
+  \ significativi che si verificano all'interno del ciclo di vita di un'applicazione\
+  \ software."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

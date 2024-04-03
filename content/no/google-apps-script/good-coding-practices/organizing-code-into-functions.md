@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.321628-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 strukturere Google Apps\
   \ Script-koden din ved \xE5 separere logiske segmenter i distinkte blokker, hver\
-  \ med ansvar\u2026"
+  \ med ansvar for en spesifikk oppgave."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

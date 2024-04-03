@@ -6,7 +6,7 @@ description: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattoma
 lastmod: '2024-03-13T22:44:56.831109-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat asiat,\
-  \ jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4 Arduinoasi\u2026"
+  \ jotka yritt\xE4v\xE4t kaataa suunnitelmasi."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

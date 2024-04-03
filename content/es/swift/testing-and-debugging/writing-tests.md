@@ -8,8 +8,7 @@ description: "Escribir pruebas en Swift implica crear y ejecutar c\xF3digo que v
 lastmod: '2024-03-13T22:44:59.420080-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Swift implica crear y ejecutar c\xF3digo que verifica\
-  \ la correcci\xF3n de otras unidades de c\xF3digo en tu aplicaci\xF3n. Los programadores\
-  \ lo\u2026"
+  \ la correcci\xF3n de otras unidades de c\xF3digo en tu aplicaci\xF3n."
 title: Escribiendo pruebas
 weight: 36
 ---

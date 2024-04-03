@@ -5,9 +5,7 @@ description: "Czytanie pliku tekstowego to po prostu wczytywanie danych z pliku 
   \ i integrowa\u0107 systemy."
 lastmod: '2024-03-13T22:44:35.062026-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie pliku tekstowego to po prostu wczytywanie danych z pliku na dysku.\
-  \ Programi\u015Bci to robi\u0105, by przetwarza\u0107, analizowa\u0107 dane i integrowa\u0107\
-  \ systemy."
+summary: Czytanie pliku tekstowego to po prostu wczytywanie danych z pliku na dysku.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

@@ -5,9 +5,7 @@ description: "XML er et merkespr\xE5k brukt for lagring og transport av data. Pr
   \ og\u2026"
 lastmod: '2024-03-13T22:44:40.910675-06:00'
 model: gpt-4-0125-preview
-summary: "XML er et merkespr\xE5k brukt for lagring og transport av data. Programmerere\
-  \ arbeider med XML for \xE5 muliggj\xF8re interoperabilitet mellom applikasjoner\
-  \ og\u2026"
+summary: "XML er et merkespr\xE5k brukt for lagring og transport av data."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

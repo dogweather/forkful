@@ -7,7 +7,8 @@ description: "En la programaci\xF3n Bash, comprobar si un directorio existe es u
 lastmod: '2024-03-13T22:44:59.261452-06:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n Bash, comprobar si un directorio existe es un mecanismo\
-  \ de control esencial utilizado para verificar la presencia de un directorio\u2026"
+  \ de control esencial utilizado para verificar la presencia de un directorio antes\
+  \ de realizar operaciones con archivos."
 title: Comprobando si un directorio existe
 weight: 20
 ---

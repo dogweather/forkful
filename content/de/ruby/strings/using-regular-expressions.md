@@ -8,8 +8,7 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwende
 lastmod: '2024-03-13T22:44:54.388161-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet werden,\
-  \ um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\
-  \ Text\u2026"
+  \ um Zeichenkombinationen in Strings zu finden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

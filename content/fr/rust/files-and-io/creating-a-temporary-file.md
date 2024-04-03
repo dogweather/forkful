@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire, c'est une fa\xE7on d'avoir un stoc
 lastmod: '2024-03-13T22:44:57.513515-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est une fa\xE7on d'avoir un stockage \xE9\
-  ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. Les programmeurs le font pour\
-  \ manipuler des\u2026"
+  ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

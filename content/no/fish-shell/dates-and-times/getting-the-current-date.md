@@ -8,8 +8,7 @@ description: "\xC5 hente den n\xE5v\xE6rende datoen i programmering er en grunnl
 lastmod: '2024-03-13T22:44:41.238167-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i programmering er en grunnleggende\
-  \ oppgave som lar deg hente og manipulere systemets dato- og tidsdata. I scripting\
-  \ og\u2026"
+  \ oppgave som lar deg hente og manipulere systemets dato- og tidsdata."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

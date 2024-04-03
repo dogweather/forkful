@@ -4,8 +4,9 @@ description: "Comma-Separated Values (CSV) format is ubiquitous for data exchang
   \ due to its simplicity and ease of integration with most programming languages,\u2026"
 lastmod: '2024-03-13T22:44:59.651078-06:00'
 model: gpt-4-0125-preview
-summary: "Comma-Separated Values (CSV) format is ubiquitous for data exchange due\
-  \ to its simplicity and ease of integration with most programming languages,\u2026"
+summary: Comma-Separated Values (CSV) format is ubiquitous for data exchange due to
+  its simplicity and ease of integration with most programming languages, including
+  Go.
 title: Working with CSV
 weight: 37
 ---

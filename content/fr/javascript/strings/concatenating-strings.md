@@ -6,8 +6,7 @@ description: "La concat\xE9nation de cha\xEEnes est le processus de raccordement
 lastmod: '2024-03-13T22:44:58.266209-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de deux\
-  \ cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\
-  \ des\u2026"
+  \ cha\xEEnes de texte ou plus en une seule."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

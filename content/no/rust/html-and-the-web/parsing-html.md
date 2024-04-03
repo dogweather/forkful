@@ -7,7 +7,7 @@ description: "\xC5 parse HTML i Rust handler om \xE5 trekke ut data fra HTML-dok
 lastmod: '2024-03-13T22:44:40.571743-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML i Rust handler om \xE5 trekke ut data fra HTML-dokumenter,\
-  \ som er essensielt for web scraping, datautvinning eller bygging av nett-crawlere.\u2026"
+  \ som er essensielt for web scraping, datautvinning eller bygging av nett-crawlere."
 title: Analysering av HTML
 weight: 43
 ---

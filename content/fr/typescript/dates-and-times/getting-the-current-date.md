@@ -7,7 +7,8 @@ description: "Obtenir la date courante en TypeScript, un langage construit sur J
 lastmod: '2024-03-13T22:44:57.448182-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date courante en TypeScript, un langage construit sur JavaScript,\
-  \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\u2026"
+  \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\
+  \ d'heure."
 title: Obtenir la date actuelle
 weight: 29
 ---

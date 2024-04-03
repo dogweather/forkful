@@ -6,8 +6,7 @@ description: "D\xE9marrer un nouveau projet C#, c\u2019est cr\xE9er une base pou
 lastmod: '2024-03-13T22:44:57.788077-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet C#, c\u2019est cr\xE9er une base pour transformer\
-  \ vos id\xE9es en code op\xE9rationnel. Les programmeurs se lancent dans de nouveaux\
-  \ projets\u2026"
+  \ vos id\xE9es en code op\xE9rationnel."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

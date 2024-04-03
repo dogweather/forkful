@@ -6,8 +6,7 @@ description: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-represe
 lastmod: '2024-03-13T22:44:40.986407-06:00'
 model: gpt-4-1106-preview
 summary: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
-  \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\
-  \ et format som\u2026"
+  \ til en lesbar tekststreng."
 title: Konvertere en dato til en streng
 weight: 28
 ---

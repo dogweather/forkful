@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:43.829743-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in JavaScript riguarda l'indirizzare\
   \ messaggi di errore o qualsiasi informazione critica verso un flusso specifico\
-  \ e\u2026"
+  \ e separato, il che \xE8 particolarmente utile negli ambienti simili a Unix per\
+  \ fini di registrazione e debugging."
 title: Scrivere sull'errore standard
 weight: 25
 ---

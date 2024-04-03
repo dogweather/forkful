@@ -7,8 +7,8 @@ description: "Analizar HTML significa descomponer el contenido HTML en algo que 
   \ datos,\u2026"
 lastmod: '2024-03-13T22:44:59.373203-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML significa descomponer el contenido HTML en algo que un programa\
-  \ puede entender y manipular. Los programadores hacen esto para extraer datos,\u2026"
+summary: Analizar HTML significa descomponer el contenido HTML en algo que un programa
+  puede entender y manipular.
 title: Analizando HTML
 weight: 43
 ---

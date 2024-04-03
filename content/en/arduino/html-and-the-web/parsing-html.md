@@ -5,8 +5,8 @@ description: "Parsing HTML in Arduino projects is about extracting information f
   \ the\u2026"
 lastmod: '2024-03-13T22:45:00.320102-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in Arduino projects is about extracting information from web\
-  \ pages. Programmers do this to enable their Arduino devices to interact with the\u2026"
+summary: Parsing HTML in Arduino projects is about extracting information from web
+  pages.
 title: Parsing HTML
 weight: 43
 ---

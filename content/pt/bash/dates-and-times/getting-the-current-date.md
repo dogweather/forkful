@@ -7,7 +7,7 @@ description: "Recuperar a data atual no Bash envolve o uso de comandos internos 
 lastmod: '2024-03-13T22:44:46.763313-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual no Bash envolve o uso de comandos internos para exibir\
-  \ a data e a hora em v\xE1rios formatos. Programadores utilizam essa\u2026"
+  \ a data e a hora em v\xE1rios formatos."
 title: Obtendo a data atual
 weight: 29
 ---

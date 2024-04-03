@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.411053-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for Applications\
   \ (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
-  r\xE4\xE4, muuntamista\u2026"
+  r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4tyyppiseksi tiedoksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 weight: 30
 ---

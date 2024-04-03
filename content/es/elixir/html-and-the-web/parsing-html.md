@@ -7,9 +7,7 @@ description: "Parsear HTML en Elixir implica extraer informaci\xF3n de documento
   ginas web,\u2026"
 lastmod: '2024-03-13T22:44:58.700247-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos HTML.\
-  \ Los programadores hacen esto para interactuar program\xE1ticamente con p\xE1ginas\
-  \ web,\u2026"
+summary: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos HTML."
 title: Analizando HTML
 weight: 43
 ---

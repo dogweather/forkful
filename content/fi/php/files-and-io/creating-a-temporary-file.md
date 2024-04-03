@@ -6,8 +6,7 @@ description: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan til
 lastmod: '2024-03-13T22:44:56.675150-06:00'
 model: gpt-4-1106-preview
 summary: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan tilap\xE4\
-  inen tallennus. Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4, siirtoa tai\
-  \ turvallisuuden\u2026"
+  inen tallennus."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

@@ -5,8 +5,8 @@ description: "Stampare output di debug significa mostrare dati interni del progr
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.477508-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare output di debug significa mostrare dati interni del programma durante\
-  \ l'esecuzione per capire cosa sta succedendo. I programmatori lo usano per\u2026"
+summary: Stampare output di debug significa mostrare dati interni del programma durante
+  l'esecuzione per capire cosa sta succedendo.
 title: Stampa dell'output di debug
 weight: 33
 ---

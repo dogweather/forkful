@@ -5,7 +5,7 @@ description: "\"Arbeid med XML\" refererer til prosessen med \xE5 lese, opprette
 lastmod: '2024-03-13T22:44:40.385178-06:00'
 model: gpt-4-0125-preview
 summary: "\"Arbeid med XML\" refererer til prosessen med \xE5 lese, opprette og modifisere\
-  \ XML (eXtensible Markup Language) filer ved hjelp av programmering.\u2026"
+  \ XML (eXtensible Markup Language) filer ved hjelp av programmering."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

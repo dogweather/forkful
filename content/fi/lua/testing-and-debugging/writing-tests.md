@@ -8,7 +8,8 @@ description: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa pienten, erillist
 lastmod: '2024-03-13T22:44:56.700633-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa pienten, erillisten koodinp\xE4\
-  tkien luomista automaattisesti varmistamaan, ett\xE4 sovelluksesi eri osat\u2026"
+  tkien luomista automaattisesti varmistamaan, ett\xE4 sovelluksesi eri osat toimivat\
+  \ odotetusti."
 title: Testien kirjoittaminen
 weight: 36
 ---

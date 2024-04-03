@@ -6,8 +6,7 @@ description: "\xC5 organisere kode i funksjoner betyr \xE5 bryte ned et stort pr
 lastmod: '2024-03-13T22:44:40.672126-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte ned et stort program\
-  \ inn i h\xE5ndterbare deler, hvor hver gj\xF8r en distinkt oppgave. Programmerere\
-  \ gj\xF8r dette\u2026"
+  \ inn i h\xE5ndterbare deler, hvor hver gj\xF8r en distinkt oppgave."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

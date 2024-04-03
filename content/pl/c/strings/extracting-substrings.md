@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.873879-06:00'
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w w C polega na tworzeniu mniejszego\
   \ \u0142a\u0144cucha znak\xF3w (podci\u0105gu) z wi\u0119kszego \u0142a\u0144cucha\
-  \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak\u2026"
+  \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak pozycja i d\u0142ugo\u015B\
+  \u0107."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

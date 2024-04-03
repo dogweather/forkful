@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.237981-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w Visual Basic for Applications (VBA) polega\
   \ na podziale programu na mniejsze, zarz\u0105dzalne cz\u0119\u015Bci znane jako\
-  \ funkcje.\u2026"
+  \ funkcje."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

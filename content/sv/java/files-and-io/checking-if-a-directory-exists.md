@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:37.801398-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande uppgift\
   \ som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet innan\
-  \ man l\xE4ser\u2026"
+  \ man l\xE4ser fr\xE5n den, skriver till den eller utf\xF6r andra operationer som\
+  \ kr\xE4ver dess existens."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

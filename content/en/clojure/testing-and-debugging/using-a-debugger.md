@@ -9,8 +9,8 @@ description: "Clojure leans on the Java Virtual Machine (JVM), so a lot of debug
   \ happens with Java tools. One such tool is `CIDER`, a powerhouse package for Clojure\u2026"
 lastmod: 2024-03-31
 model: gpt-4-1106-preview
-summary: "Clojure leans on the Java Virtual Machine (JVM), so a lot of debugging happens\
-  \ with Java tools. One such tool is `CIDER`, a powerhouse package for Clojure\u2026"
+summary: Clojure leans on the Java Virtual Machine (JVM), so a lot of debugging happens
+  with Java tools.
 title: Using a debugger
 weight: 35
 ---

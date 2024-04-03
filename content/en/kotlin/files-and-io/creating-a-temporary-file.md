@@ -4,8 +4,8 @@ description: "Creating a temporary file is crafting a file that's meant to live 
   \ on your filesystem, often for stuff like intermediary data. Programmers do it\u2026"
 lastmod: '2024-03-13T22:45:00.066713-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file is crafting a file that's meant to live short-term\
-  \ on your filesystem, often for stuff like intermediary data. Programmers do it\u2026"
+summary: Creating a temporary file is crafting a file that's meant to live short-term
+  on your filesystem, often for stuff like intermediary data.
 title: Creating a temporary file
 weight: 21
 ---

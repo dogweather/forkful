@@ -6,8 +6,8 @@ description: "Assosiative tabeller er som superladde tabeller som lar deg bruke 
   \ som indekser i stedet for bare heltall. Programmerere bruker dem til mer\u2026"
 lastmod: '2024-03-13T22:44:40.965275-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller er som superladde tabeller som lar deg bruke strenger\
-  \ som indekser i stedet for bare heltall. Programmerere bruker dem til mer\u2026"
+summary: Assosiative tabeller er som superladde tabeller som lar deg bruke strenger
+  som indekser i stedet for bare heltall.
 title: Bruke associative tabeller
 weight: 15
 ---

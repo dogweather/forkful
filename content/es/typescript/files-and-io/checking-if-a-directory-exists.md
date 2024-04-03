@@ -7,7 +7,8 @@ description: "Comprobar si un directorio existe en TypeScript es esencial para t
 lastmod: '2024-03-13T22:44:58.816770-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
-  \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"
+  \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\
+  \ que las operaciones se realicen solo en directorios v\xE1lidos."
 title: Comprobando si un directorio existe
 weight: 20
 ---

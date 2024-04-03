@@ -6,7 +6,7 @@ description: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere a
 lastmod: '2024-03-13T22:44:40.737297-06:00'
 model: gpt-4-1106-preview
 summary: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere alle bokstavene\
-  \ i en streng til deres sm\xE5 bokstaver. Programmerere gj\xF8r dette for \xE5 standardisere\u2026"
+  \ i en streng til deres sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

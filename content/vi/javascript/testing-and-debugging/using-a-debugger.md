@@ -9,9 +9,8 @@ description: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 Jav
 lastmod: '2024-03-13T22:44:37.159192-06:00'
 model: gpt-4-0125-preview
 summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 JavaScript\
-  \ kh\xF4ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i: ```javascript function\
-  \ buggyMultiply(a, b) { return a + b; // \xD4i! \u0110\xE2y ph\u1EA3i l\xE0 ph\xE9\
-  p nh\xE2n,\u2026"
+  \ kh\xF4ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i:\n\n```javascript\n\
+  function buggyMultiply(a, b) {\n    return a + b; // \xD4i."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

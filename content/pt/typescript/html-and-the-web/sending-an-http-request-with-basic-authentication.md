@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.325670-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir as credenciais do usu\xE1rio (usu\xE1rio e senha) na requisi\xE7\xE3o\
-  \ para acessar recursos\u2026"
+  \ para acessar recursos protegidos."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

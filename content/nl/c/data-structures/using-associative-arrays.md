@@ -7,7 +7,8 @@ description: "Associatieve arrays, bekend in andere talen als mappen of woordenb
 lastmod: '2024-03-13T22:44:51.283139-06:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
-  \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"
+  \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\
+  \ en manipulatie."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

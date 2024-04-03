@@ -6,7 +6,7 @@ description: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rt
 lastmod: '2024-03-13T22:44:54.260224-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rteil (wie\
-  \ 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere in\u2026"
+  \ 3 + 4i)."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

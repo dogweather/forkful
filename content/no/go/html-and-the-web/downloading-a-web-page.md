@@ -8,8 +8,7 @@ description: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\
 lastmod: '2024-03-13T22:44:40.265345-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5 en\
-  \ nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\
-  \ scraping,\u2026"
+  \ nettside via HTTP/HTTPS-protokollen."
 title: Laste ned en nettside
 weight: 42
 ---

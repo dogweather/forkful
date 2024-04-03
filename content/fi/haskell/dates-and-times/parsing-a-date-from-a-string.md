@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.624167-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys Haskellissa tarkoittaa\
   \ tekstiesitysten muuntamista ohjelman k\xE4sitelt\xE4viss\xE4 olevaan rakenteelliseen\
-  \ muotoon. T\xE4m\xE4\u2026"
+  \ muotoon."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

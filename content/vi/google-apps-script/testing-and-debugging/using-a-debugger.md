@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.046551-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script cung c\u1EA5p m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i t\xED\
   ch h\u1EE3p s\u1EB5n trong Tr\xECnh Bi\xEAn T\u1EADp Apps Script \u0111\u1EC3 gi\xFA\
-  p kh\u1EAFc ph\u1EE5c s\u1EF1 c\u1ED1 k\u1ECBch b\u1EA3n. D\u01B0\u1EDBi \u0111\xE2\
-  y l\xE0 c\xE1ch kh\u1EDFi ch\u1EA1y v\xE0\u2026"
+  p kh\u1EAFc ph\u1EE5c s\u1EF1 c\u1ED1 k\u1ECBch b\u1EA3n."
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 weight: 35
 ---

@@ -8,7 +8,7 @@ description: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6r
 lastmod: '2024-03-13T22:44:40.291136-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer koding\
-  \ og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven er\u2026"
+  \ og dekoding av data mellom Go-datastrukturer og JSON-format."
 title: Arbeide med JSON
 weight: 38
 ---

@@ -4,8 +4,7 @@ description: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion m
   \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"
 lastmod: '2024-03-13T22:44:56.210441-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion mukaisesti\
-  \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"
+summary: "\"Mik\xE4 ja miksi."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

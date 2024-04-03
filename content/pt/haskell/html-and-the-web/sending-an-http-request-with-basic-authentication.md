@@ -6,7 +6,8 @@ description: "Realizar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sic
 lastmod: '2024-03-13T22:44:46.625052-06:00'
 model: gpt-4-1106-preview
 summary: "Realizar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica consiste\
-  \ em enviar um cabe\xE7alho com credenciais codificadas em base64 para acessar recursos\u2026"
+  \ em enviar um cabe\xE7alho com credenciais codificadas em base64 para acessar recursos\
+  \ protegidos numa aplica\xE7\xE3o web."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

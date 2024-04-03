@@ -7,8 +7,9 @@ description: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar e
   \ van\u2026"
 lastmod: '2024-03-13T22:44:50.887534-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk element\
-  \ toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats van\u2026"
+summary: Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk element
+  toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats van alleen
+  nummers.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

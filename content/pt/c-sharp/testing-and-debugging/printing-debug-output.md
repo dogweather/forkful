@@ -6,8 +6,7 @@ description: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no
 lastmod: '2024-03-13T22:44:46.586623-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no programa\
-  \ durante a execu\xE7\xE3o. Programadores fazem isso para entender e resolver problemas\
-  \ \u2013\u2026"
+  \ durante a execu\xE7\xE3o."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

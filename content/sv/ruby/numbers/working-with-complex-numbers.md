@@ -6,8 +6,7 @@ description: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (so
 lastmod: '2024-03-13T22:44:38.422558-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (som 3+4i),\
-  \ \xE4r grundl\xE4ggande inom ingenj\xF6rsvetenskap och fysik. Programmerare arbetar\
-  \ med dem i\u2026"
+  \ \xE4r grundl\xE4ggande inom ingenj\xF6rsvetenskap och fysik."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

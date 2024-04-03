@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.026024-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
   ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
-  \ (\" \")\u2026"
+  \ (\" \") lainausmerkkej\xE4."
 title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---

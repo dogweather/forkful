@@ -8,7 +8,8 @@ description: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8
 lastmod: '2024-03-13T22:44:41.273707-06:00'
 model: gpt-4-0125-preview
 summary: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8kke (REPL),\
-  \ lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater, noe\u2026"
+  \ lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater, noe\
+  \ som forbedrer l\xE6ring og feils\xF8kingsprosesser."
 title: Bruk av interaktiv shell (REPL)
 weight: 34
 ---

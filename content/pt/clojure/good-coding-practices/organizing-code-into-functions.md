@@ -6,8 +6,7 @@ description: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos d
 lastmod: '2024-03-13T22:44:46.202218-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos de c\xF3\
-  digo que realizam tarefas espec\xEDficas. Fazer isso torna seu c\xF3digo limpo,\
-  \ mais f\xE1cil de manter e\u2026"
+  digo que realizam tarefas espec\xEDficas."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

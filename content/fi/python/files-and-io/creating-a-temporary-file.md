@@ -6,8 +6,7 @@ description: "Tilap\xE4iset tiedostot ovat ohjelmoinnissa k\xE4ytett\xE4vi\xE4 v
 lastmod: '2024-03-13T22:44:56.162874-06:00'
 model: gpt-4-1106-preview
 summary: "Tilap\xE4iset tiedostot ovat ohjelmoinnissa k\xE4ytett\xE4vi\xE4 v\xE4liaikaisia\
-  \ tiedostoja, jotka yleens\xE4 poistetaan ohjelman suorituksen lopussa. Niit\xE4\
-  \ k\xE4ytet\xE4\xE4n datan\u2026"
+  \ tiedostoja, jotka yleens\xE4 poistetaan ohjelman suorituksen lopussa."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

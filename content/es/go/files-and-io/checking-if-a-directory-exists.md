@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.483950-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Go es cr\xEDtico para aplicaciones\
   \ que interact\xFAan con el sistema de archivos, para evitar errores al intentar\
-  \ acceder o\u2026"
+  \ acceder o modificar directorios."
 title: Verificando si un directorio existe
 weight: 20
 ---

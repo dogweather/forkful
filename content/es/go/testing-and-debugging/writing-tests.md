@@ -8,7 +8,7 @@ description: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3di
 lastmod: '2024-03-13T22:44:58.471508-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo manejables\
-  \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n. Los\u2026"
+  \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n."
 title: Escribir pruebas
 weight: 36
 ---

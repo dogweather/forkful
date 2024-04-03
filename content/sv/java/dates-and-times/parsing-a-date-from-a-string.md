@@ -7,7 +7,7 @@ description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera
 lastmod: '2024-03-13T22:44:37.796436-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textrepresentationen\
-  \ av ett datum och tid till ett `Date`-objekt eller ett modernare\u2026"
+  \ av ett datum och tid till ett `Date`-objekt eller ett modernare `LocalDateTime`-objekt."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

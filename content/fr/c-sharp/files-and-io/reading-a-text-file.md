@@ -4,8 +4,7 @@ description: "Lire un fichier texte, c'est parcourir son contenu avec votre prog
   \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
 lastmod: '2024-03-13T22:44:57.806717-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
-  \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
+summary: Lire un fichier texte, c'est parcourir son contenu avec votre programme.
 title: Lecture d'un fichier texte
 weight: 22
 ---

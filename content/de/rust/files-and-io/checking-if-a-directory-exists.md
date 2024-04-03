@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.687360-06:00'
 model: gpt-4-0125-preview
 summary: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen, ob\
   \ ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
-  \ zu\u2026"
+  \ zu \xF6ffnen, zu lesen oder zu schreiben."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

@@ -7,8 +7,8 @@ description: "Het maken van een tijdelijk bestand stelt je app in staat om gegev
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.222192-06:00'
 model: gpt-4-0125-preview
-summary: "Het maken van een tijdelijk bestand stelt je app in staat om gegevens op\
-  \ te slaan die het niet voor altijd nodig heeft. Het komt van pas wanneer je te\u2026"
+summary: Het maken van een tijdelijk bestand stelt je app in staat om gegevens op
+  te slaan die het niet voor altijd nodig heeft.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

@@ -7,7 +7,8 @@ description: "Merkkijonoista tietyn kuvion mukaisesti vastaavien merkkien poista
 lastmod: '2024-03-13T22:44:56.253099-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonoista tietyn kuvion mukaisesti vastaavien merkkien poistaminen\
-  \ on olennaista datan validoinnissa, sanitoinnissa tai kun teksti\xE4 valmistellaan\u2026"
+  \ on olennaista datan validoinnissa, sanitoinnissa tai kun teksti\xE4 valmistellaan\
+  \ edelleen k\xE4sitelt\xE4v\xE4ksi."
 title: Mallin mukaisten merkkien poistaminen
 weight: 5
 ---

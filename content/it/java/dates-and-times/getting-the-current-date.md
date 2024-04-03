@@ -8,7 +8,8 @@ description: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale 
 lastmod: '2024-03-13T22:44:43.319269-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale che consente\
-  \ ai programmatori di manipolare gli oggetti data per operazioni quali il\u2026"
+  \ ai programmatori di manipolare gli oggetti data per operazioni quali il logging,\
+  \ il calcolo delle date e le condizioni basate sul tempo."
 title: Ottenere la data corrente
 weight: 29
 ---

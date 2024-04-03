@@ -6,8 +6,9 @@ description: "L'analisi di una data da una stringa comporta l'estrazione delle i
   \ sulla data codificate all'interno di stringhe e la loro conversione in un\u2026"
 lastmod: '2024-03-13T22:44:43.868928-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa comporta l'estrazione delle informazioni\
-  \ sulla data codificate all'interno di stringhe e la loro conversione in un\u2026"
+summary: L'analisi di una data da una stringa comporta l'estrazione delle informazioni
+  sulla data codificate all'interno di stringhe e la loro conversione in un formato
+  strutturato che gli ambienti di programmazione possono riconoscere e manipolare.
 title: Analisi di una data da una stringa
 weight: 30
 ---

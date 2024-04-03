@@ -6,8 +6,7 @@ description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6
 lastmod: '2024-03-13T22:44:56.895517-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6\xE4 ymp\xE4\
-  r\xF6ivien lainausmerkkien poistamista. T\xE4m\xE4 tehd\xE4\xE4n sy\xF6tteiden puhdistamiseksi,\
-  \ datan\u2026"
+  r\xF6ivien lainausmerkkien poistamista."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

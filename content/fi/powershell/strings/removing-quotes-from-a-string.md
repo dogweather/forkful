@@ -6,7 +6,7 @@ description: "Lainausmerkkien poistaminen merkkijonosta PowerShelliss\xE4 poista
 lastmod: '2024-03-13T22:44:56.768569-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta PowerShelliss\xE4 poistaa yksitt\xE4\
-  iset (`'`) tai kaksinkertaiset (`\"`) lainausmerkit tekstin ymp\xE4rilt\xE4. Ohjelmoijat\u2026"
+  iset (`'`) tai kaksinkertaiset (`\"`) lainausmerkit tekstin ymp\xE4rilt\xE4."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

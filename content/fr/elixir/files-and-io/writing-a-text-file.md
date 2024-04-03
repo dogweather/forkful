@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.347426-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Elixir est une comp\xE9tence essentielle\
   \ pour les d\xE9veloppeurs, permettant la persistance des donn\xE9es, le journalisation\
-  \ ou\u2026"
+  \ ou l'exportation de contenu lisible par l'homme."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

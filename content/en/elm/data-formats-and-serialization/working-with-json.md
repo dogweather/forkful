@@ -4,8 +4,8 @@ description: "Working with JSON in Elm is about decoding JSON data into Elm type
   \ and encoding Elm values back into JSON. This process is crucial for web applications\u2026"
 lastmod: '2024-03-13T22:45:00.029610-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON in Elm is about decoding JSON data into Elm types and\
-  \ encoding Elm values back into JSON. This process is crucial for web applications\u2026"
+summary: Working with JSON in Elm is about decoding JSON data into Elm types and encoding
+  Elm values back into JSON.
 title: Working with JSON
 weight: 38
 ---

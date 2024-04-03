@@ -6,8 +6,7 @@ description: "Afronden is het weglaten van de 'ruis' na een bepaald punt in een 
   \ Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de\u2026"
 lastmod: '2024-03-13T22:44:51.195825-06:00'
 model: gpt-4-0125-preview
-summary: "Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.\
-  \ Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de\u2026"
+summary: Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.
 title: Afronden van getallen
 weight: 13
 ---

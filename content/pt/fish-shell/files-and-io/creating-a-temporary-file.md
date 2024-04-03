@@ -6,8 +6,7 @@ description: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de arma
 lastmod: '2024-03-13T22:44:47.024976-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de armazenamento\
-  \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados. Programadores\
-  \ fazem\u2026"
+  \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

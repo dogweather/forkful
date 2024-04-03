@@ -6,8 +6,8 @@ description: "Werken met CSV, wat staat voor \"Comma-Separated Values\" (komma-g
   \ waarden), omvat het parsen en manipuleren van gegevens in een tabulair\u2026"
 lastmod: '2024-03-13T22:44:51.006250-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met CSV, wat staat voor \"Comma-Separated Values\" (komma-gescheiden\
-  \ waarden), omvat het parsen en manipuleren van gegevens in een tabulair\u2026"
+summary: Werken met CSV, wat staat voor "Comma-Separated Values" (komma-gescheiden
+  waarden), omvat het parsen en manipuleren van gegevens in een tabulair tekstformaat.
 title: Werken met CSV
 weight: 37
 ---

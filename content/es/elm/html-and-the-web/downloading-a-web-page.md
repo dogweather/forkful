@@ -6,8 +6,7 @@ description: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML
 lastmod: '2024-03-13T22:44:58.978767-06:00'
 model: gpt-4-1106-preview
 summary: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML a trav\xE9\
-  s de internet. Los programadores lo hacen para procesar datos, mostrar contenido\
-  \ en\u2026"
+  s de internet."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

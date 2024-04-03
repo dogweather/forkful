@@ -4,8 +4,9 @@ description: "Writing tests in Google Apps Script (GAS) is about creating automa
   \ scripts to verify the behavior of your codes, ensuring they perform as expected\u2026"
 lastmod: '2024-03-13T22:44:59.673213-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Google Apps Script (GAS) is about creating automated scripts\
-  \ to verify the behavior of your codes, ensuring they perform as expected\u2026"
+summary: Writing tests in Google Apps Script (GAS) is about creating automated scripts
+  to verify the behavior of your codes, ensuring they perform as expected under various
+  conditions.
 title: Writing tests
 weight: 36
 ---

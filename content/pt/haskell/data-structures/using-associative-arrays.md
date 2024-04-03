@@ -9,7 +9,7 @@ description: "Arrays associativos, ou dicion\xE1rios, em Haskell s\xE3o todos so
 lastmod: '2024-03-13T22:44:46.618423-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou dicion\xE1rios, em Haskell s\xE3o todos sobre mapear\
-  \ chaves a valores para uma busca r\xE1pida e um gerenciamento eficiente de dados.\u2026"
+  \ chaves a valores para uma busca r\xE1pida e um gerenciamento eficiente de dados."
 title: Usando arrays associativos
 weight: 15
 ---

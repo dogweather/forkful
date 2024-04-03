@@ -6,8 +6,7 @@ description: "Leer un archivo de texto en programaci\xF3n significa acceder al c
 lastmod: '2024-03-13T22:44:59.094962-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en programaci\xF3n significa acceder al contenido\
-  \ almacenado en un archivo en tu disco y trabajar con \xE9l en tu c\xF3digo. Es\
-  \ una tarea\u2026"
+  \ almacenado en un archivo en tu disco y trabajar con \xE9l en tu c\xF3digo."
 title: Lectura de un archivo de texto
 weight: 22
 ---

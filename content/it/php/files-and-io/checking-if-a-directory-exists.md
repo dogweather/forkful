@@ -8,7 +8,8 @@ description: "Verificare se una cartella esiste \xE8 un compito fondamentale nel
 lastmod: '2024-03-13T22:44:43.530840-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una cartella esiste \xE8 un compito fondamentale nella programmazione\
-  \ PHP, poich\xE9 permette di verificare la presenza di una directory prima di\u2026"
+  \ PHP, poich\xE9 permette di verificare la presenza di una directory prima di effettuare\
+  \ operazioni quali leggere o scrivere file al suo interno."
 title: Verifica se una directory esiste
 weight: 20
 ---

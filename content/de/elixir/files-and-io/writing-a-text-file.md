@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.554096-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Elixir ist eine wesentliche F\xE4higkeit\
   \ f\xFCr Entwickler, die es erm\xF6glicht, Daten zu persistieren, zu protokollieren\
-  \ oder\u2026"
+  \ oder menschenlesbare Inhalte zu exportieren."
 title: Eine Textdatei schreiben
 weight: 24
 ---

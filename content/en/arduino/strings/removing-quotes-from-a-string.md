@@ -5,9 +5,8 @@ description: "Removing quotes from a string means stripping out any instances of
   \ do\u2026"
 lastmod: '2024-03-13T22:45:00.311417-06:00'
 model: gpt-4-1106-preview
-summary: "Removing quotes from a string means stripping out any instances of single\
-  \ (`'`) or double (`\"`) quote characters that wrap the text. Programmers often\
-  \ do\u2026"
+summary: Removing quotes from a string means stripping out any instances of single
+  (`'`) or double (`"`) quote characters that wrap the text.
 title: Removing quotes from a string
 weight: 9
 ---

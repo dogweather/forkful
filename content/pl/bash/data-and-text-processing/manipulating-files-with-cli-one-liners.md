@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.579529-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI (Command\
   \ Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144 do wykonywania\
-  \ dzia\u0142a\u0144 na\u2026"
+  \ dzia\u0142a\u0144 na plikach, takich jak tworzenie, czytanie, aktualizowanie lub\
+  \ usuwanie ich, wszystko z poziomu terminala."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

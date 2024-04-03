@@ -4,8 +4,8 @@ description: "La gestione degli errori riguarda il controllo dell'inaspettato ne
   \ programmi, proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.049700-06:00'
 model: gpt-4-1106-preview
-summary: "La gestione degli errori riguarda il controllo dell'inaspettato nei programmi,\
-  \ proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori\u2026"
+summary: La gestione degli errori riguarda il controllo dell'inaspettato nei programmi,
+  proprio come un buttafuori che si occupa dei guastafeste.
 title: Gestione degli errori
 weight: 16
 ---

@@ -5,8 +5,8 @@ description: "Convertire una data in una stringa significa trasformare un oggett
   \ fa per\u2026"
 lastmod: '2024-03-13T22:44:43.187438-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una data in una stringa significa trasformare un oggetto `Date`\
-  \ di JavaScript in una sequenza di caratteri che rappresenta la data. Si fa per\u2026"
+summary: Convertire una data in una stringa significa trasformare un oggetto `Date`
+  di JavaScript in una sequenza di caratteri che rappresenta la data.
 title: Conversione di una data in una stringa
 weight: 28
 ---

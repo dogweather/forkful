@@ -7,7 +7,9 @@ description: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa
 lastmod: '2024-03-13T22:44:46.811191-06:00'
 model: gpt-4-0125-preview
 summary: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
-  \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"
+  \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\
+  \ arquivos\u2014como evitar erros ao confirmar que um diret\xF3rio-alvo est\xE1\
+  \ no lugar antes de tentar ler ou escrever nele."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

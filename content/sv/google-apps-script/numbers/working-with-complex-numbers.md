@@ -8,8 +8,7 @@ description: "Komplexa tal, representerade som en kombination av reella och imag
 lastmod: '2024-03-13T22:44:37.431496-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
-  ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
-  \ s\xE4rskilt inom\u2026"
+  ra enheter (t."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

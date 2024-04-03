@@ -14,8 +14,8 @@ summary: "\u098F\u0996\u09BE\u09A8\u09C7 IntelliJ IDEA - IDE \u098F\u09B0 \u09B6
   \u09B0\u09CD\u09B2\u0995 \u09B9\u09CB\u09AE\u09B8\u09C7\u09B0 \u09B8\u09BE\u09A5\
   \u09C7 Kotlin-\u098F \u09A1\u09BF\u09AC\u09BE\u0997\u09BF\u0982 \u098F\u09B0 \u098F\
   \u0995\u099F\u09BF \u09B8\u09CD\u09AC\u09BE\u09A6 \u09A6\u09C7\u0993\u09DF\u09BE\
-  \ \u09B9\u09B2\u0983 ```kotlin fun main() { val mysteryNumber = 42 var guess = 0\
-  \ while\u2026"
+  \ \u09B9\u09B2\u0983\n\n```kotlin\nfun main() {\n    val mysteryNumber = 42\n  \
+  \  var guess = 0\n\n    while (guess ."
 title: "\u09A1\u09BF\u09AC\u09BE\u0997\u09BE\u09B0 \u09AC\u09CD\u09AF\u09AC\u09B9\u09BE\
   \u09B0 \u0995\u09B0\u09BE"
 weight: 35

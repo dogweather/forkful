@@ -8,7 +8,9 @@ description: "Das Umwandeln eines Datums in einen String in Dart ist eine g\xE4n
 lastmod: '2024-03-13T22:44:53.593499-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Datums in einen String in Dart ist eine g\xE4ngige Aufgabe,\
-  \ wenn Sie Datum- und Zeitinformationen in einem f\xFCr Menschen lesbaren Format\u2026"
+  \ wenn Sie Datum- und Zeitinformationen in einem f\xFCr Menschen lesbaren Format\
+  \ anzeigen m\xF6chten oder wenn Sie beabsichtigen, Daten f\xFCr die Speicherung\
+  \ oder \xDCbertragung zu serialisieren."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

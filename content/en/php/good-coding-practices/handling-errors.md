@@ -4,8 +4,8 @@ description: "Error handling in PHP is about managing and responding to conditio
   \ that disrupt the normal flow of a program, like missing files or bad data input.\u2026"
 lastmod: '2024-03-13T22:45:00.173866-06:00'
 model: gpt-4-1106-preview
-summary: "Error handling in PHP is about managing and responding to conditions that\
-  \ disrupt the normal flow of a program, like missing files or bad data input.\u2026"
+summary: Error handling in PHP is about managing and responding to conditions that
+  disrupt the normal flow of a program, like missing files or bad data input.
 title: Handling errors
 weight: 16
 ---

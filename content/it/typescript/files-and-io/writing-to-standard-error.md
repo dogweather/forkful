@@ -7,7 +7,8 @@ description: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un proc
 lastmod: '2024-03-13T22:44:43.192405-06:00'
 model: gpt-4-0125-preview
 summary: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo che\
-  \ invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"
+  \ invia messaggi di errore o log direttamente al flusso di uscita di errore dell'ambiente\
+  \ (ad esempio, la console in node."
 title: Scrivere sull'errore standard
 weight: 25
 ---

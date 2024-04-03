@@ -6,8 +6,7 @@ description: "\xC5 jobbe med XML inneb\xE6rer parsing, transformasjon og generer
 lastmod: '2024-03-13T22:44:40.732568-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, transformasjon og generering av\
-  \ XML-dokumenter i Elm. Det gj\xF8res for \xE5 samhandle med mange webtjenester\
-  \ og eldre\u2026"
+  \ XML-dokumenter i Elm."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

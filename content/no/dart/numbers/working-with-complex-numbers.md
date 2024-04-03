@@ -7,7 +7,8 @@ description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (v
 lastmod: '2024-03-13T22:44:40.480578-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (vanligvis\
-  \ betegnet som a + bi), utvider konseptet av dimensjonsl\xF8se tall til et todimensjonalt\u2026"
+  \ betegnet som a + bi), utvider konseptet av dimensjonsl\xF8se tall til et todimensjonalt\
+  \ rom."
 title: Arbeide med komplekse tall
 weight: 14
 ---

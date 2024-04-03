@@ -9,7 +9,8 @@ description: "L'analisi di una data da una stringa consiste nel prendere del tes
 lastmod: '2024-03-13T22:44:43.093062-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa consiste nel prendere del testo, come\
-  \ \"2023-04-05\", e convertirlo in un formato data che il tuo programma pu\xF2\u2026"
+  \ \"2023-04-05\", e convertirlo in un formato data che il tuo programma pu\xF2 comprendere\
+  \ e con cui pu\xF2 lavorare."
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -6,8 +6,8 @@ description: "Scrivere test in Elm comporta la creazione di casi di test per ver
   \ la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto.\u2026"
 lastmod: '2024-03-13T22:44:43.353291-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Elm comporta la creazione di casi di test per verificare\
-  \ la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto.\u2026"
+summary: Scrivere test in Elm comporta la creazione di casi di test per verificare
+  la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto.
 title: Scrivere test
 weight: 36
 ---

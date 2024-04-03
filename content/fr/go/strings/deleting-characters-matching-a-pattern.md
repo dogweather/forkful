@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.114690-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les caract\xE8res correspondant \xE0 un mod\xE8le sp\xE9cifique\
   \ consiste \xE0 enlever certains caract\xE8res ou s\xE9quences de caract\xE8res\
-  \ des cha\xEEnes de caract\xE8res,\u2026"
+  \ des cha\xEEnes de caract\xE8res, selon des r\xE8gles d\xE9finies par un mod\xE8\
+  le (g\xE9n\xE9ralement via des expressions r\xE9guli\xE8res)."
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -5,7 +5,7 @@ description: "Imaginez que vous avez un petit programme qui ne fonctionne pas co
 lastmod: '2024-03-13T22:44:57.792360-06:00'
 model: gpt-4-0125-preview
 summary: "Imaginez que vous avez un petit programme qui ne fonctionne pas correctement\
-  \ : ```C# static void Main() { int result = Sum(1, 2);\u2026"
+  \ :\n\n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n    Console."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

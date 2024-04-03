@@ -7,9 +7,8 @@ description: "L'analisi dell'HTML significa setacciare la struttura e il contenu
   \ ai\u2026"
 lastmod: '2024-03-13T22:44:43.597644-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi dell'HTML significa setacciare la struttura e il contenuto di\
-  \ un file HTML per estrarre informazioni. I programmatori lo fanno per accedere\
-  \ ai\u2026"
+summary: L'analisi dell'HTML significa setacciare la struttura e il contenuto di un
+  file HTML per estrarre informazioni.
 title: Analisi del HTML
 weight: 43
 ---

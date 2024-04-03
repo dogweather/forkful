@@ -8,8 +8,7 @@ description: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pi
 lastmod: '2024-03-13T22:44:34.931388-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
-  \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\
-  \ Operacja ta jest powszechnie\u2026"
+  \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

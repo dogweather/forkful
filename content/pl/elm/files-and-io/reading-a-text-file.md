@@ -6,8 +6,7 @@ description: "Czytanie plik\xF3w tekstowych polega na za\u0142adowaniu ich zawar
 lastmod: '2024-03-13T22:44:35.339242-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie plik\xF3w tekstowych polega na za\u0142adowaniu ich zawarto\u015B\
-  ci do programu. Programi\u015Bci robi\u0105 to, \u017Ceby przetwarza\u0107 dane,\
-  \ konfigurowa\u0107 aplikacje lub\u2026"
+  ci do programu."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

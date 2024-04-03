@@ -6,8 +6,8 @@ description: "Het verkrijgen van de huidige datum in je C++ programma kan handig
   \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"
 lastmod: '2024-03-13T22:44:51.123169-06:00'
 model: gpt-4-0125-preview
-summary: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
-  \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"
+summary: 'Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:
+  denk aan loggen, tijdstempels of planningsfuncties.'
 title: Het huidige datum ophalen
 weight: 29
 ---

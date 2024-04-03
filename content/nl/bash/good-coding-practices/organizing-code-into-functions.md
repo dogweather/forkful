@@ -6,8 +6,8 @@ description: "Code opsplitsen in functies betekent scripts onderverdelen in klei
   \ herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter,\u2026"
 lastmod: '2024-03-13T22:44:50.988490-06:00'
 model: gpt-4-0125-preview
-summary: "Code opsplitsen in functies betekent scripts onderverdelen in kleinere,\
-  \ herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter,\u2026"
+summary: Code opsplitsen in functies betekent scripts onderverdelen in kleinere, herbruikbare
+  blokken die specifieke taken uitvoeren.
 title: Code organiseren in functies
 weight: 18
 ---

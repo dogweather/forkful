@@ -6,7 +6,7 @@ description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es, kurzlebi
 lastmod: '2024-03-13T22:44:54.328059-06:00'
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es, kurzlebige Daten\
-  \ zu speichern, ohne sich um manuelles Aufr\xE4umen k\xFCmmern zu m\xFCssen. Programmierer\u2026"
+  \ zu speichern, ohne sich um manuelles Aufr\xE4umen k\xFCmmern zu m\xFCssen."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

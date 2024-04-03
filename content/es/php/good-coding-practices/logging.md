@@ -6,7 +6,8 @@ description: "El registro (logging) es b\xE1sicamente como mantener un diario pa
 lastmod: '2024-03-13T22:44:59.167250-06:00'
 model: gpt-4-1106-preview
 summary: "El registro (logging) es b\xE1sicamente como mantener un diario para tu\
-  \ c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de datos\u2026"
+  \ c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de datos\
+  \ significativos que suceden cuando tu aplicaci\xF3n se ejecuta."
 title: Registro de Actividades
 weight: 17
 ---

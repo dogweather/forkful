@@ -4,8 +4,8 @@ description: "Das Berechnen eines Datums in der Zukunft oder der Vergangenheit i
   \ einfach, bestimmt wann Dinge passiert sind oder passieren werden. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:53.944410-06:00'
 model: gpt-4-1106-preview
-summary: "Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist einfach,\
-  \ bestimmt wann Dinge passiert sind oder passieren werden. Programmierer\u2026"
+summary: Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist einfach,
+  bestimmt wann Dinge passiert sind oder passieren werden.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

@@ -7,7 +7,7 @@ description: "Analisar HTML significa decompor o conte\xFAdo HTML em algo que um
 lastmod: '2024-03-13T22:44:46.877430-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa decompor o conte\xFAdo HTML em algo que um programa\
-  \ possa entender e manipular. Os programadores fazem isso para extrair dados,\u2026"
+  \ possa entender e manipular."
 title: Analisando HTML
 weight: 43
 ---

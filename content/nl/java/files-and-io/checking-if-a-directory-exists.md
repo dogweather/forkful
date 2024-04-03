@@ -8,8 +8,7 @@ description: "Controleren of een directory bestaat betekent verifi\xEBren dat de
 lastmod: '2024-03-13T22:44:50.697020-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat betekent verifi\xEBren dat deze er\
-  \ is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs doen\
-  \ dit\u2026"
+  \ is voordat je probeert bestanden erin te lezen of te schrijven."
 title: Controleren of een directory bestaat
 weight: 20
 ---

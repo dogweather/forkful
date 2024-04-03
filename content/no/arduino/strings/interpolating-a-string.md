@@ -5,7 +5,7 @@ description: "Interpolering av strenger lar deg sette verdier direkte inn i en t
 lastmod: '2024-03-13T22:44:41.045024-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng,\
-  \ noe som er hendig for \xE5 lage dynamisk tekst, som f.eks. sensorverdier eller\u2026"
+  \ noe som er hendig for \xE5 lage dynamisk tekst, som f."
 title: Interpolering av en streng
 weight: 8
 ---

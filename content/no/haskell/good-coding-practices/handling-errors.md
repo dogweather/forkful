@@ -6,8 +6,7 @@ description: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uv
 lastmod: '2024-03-13T22:44:40.849354-06:00'
 model: gpt-4-1106-preview
 summary: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uventede\u2014\
-  ting som kan g\xE5 galt. Programmerere gj\xF8r dette for \xE5 sikre at deres programmer\
-  \ kan\u2026"
+  ting som kan g\xE5 galt."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

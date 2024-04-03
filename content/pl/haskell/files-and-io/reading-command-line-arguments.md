@@ -6,8 +6,7 @@ description: "Czytanie argument\xF3w z linii polece\u0144 to proces pobierania d
 lastmod: '2024-03-13T22:44:35.468201-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 to proces pobierania danych\
-  \ od u\u017Cytkownika, kiedy uruchamia program. Programi\u015Bci robi\u0105 to,\
-  \ aby ich aplikacje mog\u0142y by\u0107\u2026"
+  \ od u\u017Cytkownika, kiedy uruchamia program."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

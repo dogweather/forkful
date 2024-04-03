@@ -4,8 +4,9 @@ description: "Organizing code into functions in Dart is about defining reusable 
   \ of code that perform specific tasks, typically receiving inputs, processing data,\u2026"
 lastmod: '2024-03-13T22:44:59.825662-06:00'
 model: gpt-4-0125-preview
-summary: "Organizing code into functions in Dart is about defining reusable blocks\
-  \ of code that perform specific tasks, typically receiving inputs, processing data,\u2026"
+summary: Organizing code into functions in Dart is about defining reusable blocks
+  of code that perform specific tasks, typically receiving inputs, processing data,
+  and possibly returning outputs.
 title: Organizing code into functions
 weight: 18
 ---

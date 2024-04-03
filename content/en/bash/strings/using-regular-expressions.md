@@ -5,8 +5,8 @@ description: "Regular expressions (regex) in Bash allow you to search, manipulat
   \ for\u2026"
 lastmod: '2024-03-13T22:45:00.234108-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in Bash allow you to search, manipulate, and\
-  \ handle strings and files based on specific patterns. Programmers use regex for\u2026"
+summary: Regular expressions (regex) in Bash allow you to search, manipulate, and
+  handle strings and files based on specific patterns.
 title: Using regular expressions
 weight: 11
 ---

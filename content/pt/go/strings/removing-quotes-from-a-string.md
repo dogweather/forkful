@@ -7,7 +7,7 @@ description: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de 
 lastmod: '2024-03-13T22:44:46.047669-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
-  \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"
+  \ e fechamento (`\"` ou `'`) de uma determinada string."
 title: Removendo aspas de uma string
 weight: 9
 ---

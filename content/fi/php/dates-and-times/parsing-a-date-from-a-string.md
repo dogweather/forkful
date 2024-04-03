@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.665538-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta PHP:ss\xE4 tarkoittaa\
   \ tekstin, joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 ja/tai aikaa, muuntamista\
-  \ PHP:n `DateTime`-objektiksi tai\u2026"
+  \ PHP:n `DateTime`-objektiksi tai muihin p\xE4iv\xE4ys-/aikamuotoihin."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

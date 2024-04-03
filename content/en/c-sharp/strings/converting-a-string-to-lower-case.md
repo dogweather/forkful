@@ -4,8 +4,8 @@ description: "Converting a string to lowercase means transforming all uppercase 
   \ in the text to their lowercase equivalents. Programmers do it for\u2026"
 lastmod: '2024-03-13T22:45:00.075792-06:00'
 model: gpt-4-1106-preview
-summary: "Converting a string to lowercase means transforming all uppercase characters\
-  \ in the text to their lowercase equivalents. Programmers do it for\u2026"
+summary: Converting a string to lowercase means transforming all uppercase characters
+  in the text to their lowercase equivalents.
 title: Converting a string to lower case
 weight: 4
 ---

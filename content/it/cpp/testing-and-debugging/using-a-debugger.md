@@ -5,8 +5,7 @@ description: "C++ si integra con debugger come GDB o il debugger di Visual Studi
   \ { int\u2026"
 lastmod: '2024-03-13T22:44:43.731205-06:00'
 model: gpt-4-0125-preview
-summary: "C++ si integra con debugger come GDB o il debugger di Visual Studio. Ecco\
-  \ un esempio semplice utilizzando GDB: ```C++ #include <iostream> int main() { int\u2026"
+summary: C++ si integra con debugger come GDB o il debugger di Visual Studio.
 title: Utilizzo di un debugger
 weight: 35
 ---

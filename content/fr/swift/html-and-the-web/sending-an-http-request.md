@@ -6,8 +6,7 @@ description: "Envoyer une requ\xEAte HTTP, c'est comme exp\xE9dier une lettre su
 lastmod: '2024-03-13T22:44:58.217838-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est comme exp\xE9dier une lettre sur Internet\
-  \ pour r\xE9cup\xE9rer des donn\xE9es ou interagir avec des services. Les devs le\
-  \ font pour\u2026"
+  \ pour r\xE9cup\xE9rer des donn\xE9es ou interagir avec des services."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

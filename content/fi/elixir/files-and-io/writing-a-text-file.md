@@ -7,7 +7,8 @@ description: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE
 lastmod: '2024-03-13T22:44:56.245224-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4jille,\
-  \ sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"
+  \ sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\
+  \ sis\xE4ll\xF6n viemisen."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

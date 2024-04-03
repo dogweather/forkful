@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.819237-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Comma-Separated Values ou Valores Separados\
   \ por V\xEDrgula) \xE9 uma tarefa comum para o gerenciamento e manipula\xE7\xE3\
-  o de dados de uma\u2026"
+  o de dados de uma forma estruturada e tabular."
 title: Trabalhando com CSV
 weight: 37
 ---

@@ -7,7 +7,7 @@ description: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen 
 lastmod: '2024-03-13T22:44:53.278746-06:00'
 model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen von zwei\
-  \ oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden.\u2026"
+  \ oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden."
 title: Strings verketten
 weight: 3
 ---

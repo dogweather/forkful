@@ -7,8 +7,9 @@ description: "Loggen is in een notendop als het bijhouden van een dagboek voor j
   \ die\u2026"
 lastmod: '2024-03-13T22:44:51.208495-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie\
-  \ - het registreert gebeurtenissen, fouten en andere belangrijke acties die\u2026"
+summary: Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie
+  - het registreert gebeurtenissen, fouten en andere belangrijke acties die plaatsvinden
+  terwijl de software draait.
 title: Logboekregistratie
 weight: 17
 ---

@@ -7,7 +7,8 @@ description: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvar
 lastmod: '2024-03-13T22:44:41.245920-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende,\
-  \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\u2026"
+  \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\
+  \ eller andre programmer."
 title: Skrive en tekstfil
 weight: 24
 ---

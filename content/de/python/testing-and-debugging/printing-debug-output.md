@@ -5,9 +5,7 @@ description: "Druckausgabe zur Fehlersuche (engl. \"debug output\") wirft einen 
   \ was im\u2026"
 lastmod: '2024-03-13T22:44:53.381262-06:00'
 model: gpt-4-1106-preview
-summary: "Druckausgabe zur Fehlersuche (engl. \"debug output\") wirft einen Blick\
-  \ unter die Motorhaube deines Codes. Programmierer nutzen sie, um zu verstehen,\
-  \ was im\u2026"
+summary: Druckausgabe zur Fehlersuche (engl.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

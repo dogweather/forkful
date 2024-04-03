@@ -6,8 +6,7 @@ description: "Extrahering av substr\xE4ngar involverar att plocka specifika dela
 lastmod: '2024-03-13T22:44:38.240412-06:00'
 model: gpt-4-1106-preview
 summary: "Extrahering av substr\xE4ngar involverar att plocka specifika delar ur en\
-  \ str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter behov.\
-  \ Det sparas\u2026"
+  \ str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter behov."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

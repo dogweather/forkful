@@ -7,7 +7,7 @@ description: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man 
 lastmod: '2024-03-13T22:44:37.750138-06:00'
 model: gpt-4-0125-preview
 summary: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
-  \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas.\u2026"
+  \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas."
 title: Loggning
 weight: 17
 ---

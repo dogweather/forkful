@@ -5,7 +5,7 @@ description: "Contar caracteres de un texto es \xFAtil para validar entradas y m
 lastmod: '2024-03-13T22:44:58.647601-06:00'
 model: gpt-4-1106-preview
 summary: "Contar caracteres de un texto es \xFAtil para validar entradas y manejar\
-  \ datos precisamente. Los programadores lo hacen todo el tiempo para delimitar,\u2026"
+  \ datos precisamente."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

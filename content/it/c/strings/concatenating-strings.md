@@ -8,7 +8,7 @@ description: "La concatenazione di stringhe in C consiste nell'unire due o pi\xF
 lastmod: '2024-03-13T22:44:43.903847-06:00'
 model: gpt-4-0125-preview
 summary: "La concatenazione di stringhe in C consiste nell'unire due o pi\xF9 stringhe\
-  \ da capo a coda per formare una nuova stringa. I programmatori eseguono questa\u2026"
+  \ da capo a coda per formare una nuova stringa."
 title: Concatenazione di stringhe
 weight: 3
 ---

@@ -6,8 +6,7 @@ description: "Clojure st\xF8tter seg p\xE5 Java Virtual Machine (JVM), s\xE5 mye
 lastmod: '2024-03-13T22:44:40.406720-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure st\xF8tter seg p\xE5 Java Virtual Machine (JVM), s\xE5 mye av feils\xF8\
-  kingen skjer med Java-verkt\xF8y. Et slikt verkt\xF8y er `CIDER`, en kraftpakkepakke\
-  \ for\u2026"
+  kingen skjer med Java-verkt\xF8y."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

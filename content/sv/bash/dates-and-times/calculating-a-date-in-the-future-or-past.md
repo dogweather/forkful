@@ -6,8 +6,7 @@ description: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att 
 lastmod: '2024-03-13T22:44:38.095571-06:00'
 model: gpt-4-1106-preview
 summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man l\xE4\
-  gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6r det\
-  \ f\xF6r att\u2026"
+  gger till eller drar ifr\xE5n dagar till ett givet datum."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

@@ -5,8 +5,8 @@ description: "Downloading a web page basically means grabbing the data from the 
   \ data,\u2026"
 lastmod: '2024-03-13T22:44:59.707033-06:00'
 model: gpt-4-1106-preview
-summary: "Downloading a web page basically means grabbing the data from the URL you\
-  \ specify and pulling it onto your local machine. Programmers do it to parse data,\u2026"
+summary: Downloading a web page basically means grabbing the data from the URL you
+  specify and pulling it onto your local machine.
 title: Downloading a web page
 weight: 42
 ---

@@ -6,8 +6,7 @@ description: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een taal 
   \ data-serialisatie. Elm-programmeurs gebruiken het om configuratiegegevens te\u2026"
 lastmod: '2024-03-13T22:44:50.748588-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een taal voor data-serialisatie.\
-  \ Elm-programmeurs gebruiken het om configuratiegegevens te\u2026"
+summary: TOML, afkorting voor Tom's Obvious, Minimal Language, is een taal voor data-serialisatie.
 title: Werken met TOML
 weight: 39
 ---

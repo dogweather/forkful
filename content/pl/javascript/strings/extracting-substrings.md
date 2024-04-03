@@ -6,8 +6,7 @@ description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkre
 lastmod: '2024-03-13T22:44:35.785503-06:00'
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkretnych\
-  \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulowa\u0107\
-  \ danymi, walidowa\u0107\u2026"
+  \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

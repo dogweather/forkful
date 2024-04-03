@@ -5,8 +5,9 @@ description: "Working with YAML involves parsing and manipulating YAML (YAML Ain
   \ in\u2026"
 lastmod: '2024-03-13T22:45:00.492355-06:00'
 model: gpt-4-0125-preview
-summary: "Working with YAML involves parsing and manipulating YAML (YAML Ain't Markup\
-  \ Language) files, a data serialization format used for configuration files, in\u2026"
+summary: Working with YAML involves parsing and manipulating YAML (YAML Ain't Markup
+  Language) files, a data serialization format used for configuration files, in Fish
+  Shell.
 title: Working with YAML
 weight: 41
 ---

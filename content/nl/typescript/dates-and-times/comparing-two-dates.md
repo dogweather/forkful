@@ -6,8 +6,8 @@ description: "Het vergelijken van twee datums houdt in dat je hun chronologische
   \ uitzoekt - zijn ze hetzelfde, is de ene eerder, of misschien later?\u2026"
 lastmod: '2024-03-13T22:44:50.563732-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums houdt in dat je hun chronologische relatie\
-  \ uitzoekt - zijn ze hetzelfde, is de ene eerder, of misschien later?\u2026"
+summary: Het vergelijken van twee datums houdt in dat je hun chronologische relatie
+  uitzoekt - zijn ze hetzelfde, is de ene eerder, of misschien later.
 title: Twee datums vergelijken
 weight: 27
 ---

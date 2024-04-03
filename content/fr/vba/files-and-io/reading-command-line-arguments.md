@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.598492-06:00'
 model: gpt-4-0125-preview
 summary: "La lecture des arguments de la ligne de commande dans Visual Basic pour\
   \ Applications (VBA) implique l'acc\xE8s aux param\xE8tres pass\xE9s \xE0 votre\
-  \ programme lors\u2026"
+  \ programme lors de son ex\xE9cution."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

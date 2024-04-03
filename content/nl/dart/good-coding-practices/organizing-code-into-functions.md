@@ -7,7 +7,8 @@ description: "Het organiseren van code in functies in Dart gaat over het defini\
 lastmod: '2024-03-13T22:44:50.510879-06:00'
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies in Dart gaat over het defini\xEBren\
-  \ van herbruikbare blokken code die specifieke taken uitvoeren, typisch input\u2026"
+  \ van herbruikbare blokken code die specifieke taken uitvoeren, typisch input ontvangen,\
+  \ gegevens verwerken en mogelijk outputs teruggeven."
 title: Code organiseren in functies
 weight: 18
 ---

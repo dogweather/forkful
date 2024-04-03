@@ -6,8 +6,7 @@ description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia u
 lastmod: '2024-03-13T22:44:56.914884-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenrakennetaan\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
-  \u2026"
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
 title: Koodin refaktorointi
 weight: 19
 ---

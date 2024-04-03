@@ -6,8 +6,7 @@ description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman tekst
 lastmod: '2024-03-13T22:44:56.689882-06:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4\
-  tk\xE4n liitt\xE4mist\xE4 yhteen. Se on handy tapa rakentaa dynaamisia tekstej\xE4\
-  , kuten viestej\xE4\u2026"
+  tk\xE4n liitt\xE4mist\xE4 yhteen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

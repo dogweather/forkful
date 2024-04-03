@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.563752-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de error\
   \ y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado principal\
-  \ del\u2026"
+  \ del programa."
 title: "Escribiendo al error est\xE1ndar"
 weight: 25
 ---

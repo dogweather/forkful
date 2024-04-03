@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.518927-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
   \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
-  \ do przetwarzania\u2026"
+  \ do przetwarzania i generowania przez maszyny."
 title: Praca z JSON
 weight: 38
 ---

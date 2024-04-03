@@ -4,8 +4,8 @@ description: "Obtener la fecha actual significa acceder al valor de la fecha y h
   \ del momento presente. Los programadores lo hacen para funciones como registros,\u2026"
 lastmod: '2024-03-13T22:44:59.003615-06:00'
 model: unknown
-summary: "Obtener la fecha actual significa acceder al valor de la fecha y hora del\
-  \ momento presente. Los programadores lo hacen para funciones como registros,\u2026"
+summary: Obtener la fecha actual significa acceder al valor de la fecha y hora del
+  momento presente.
 title: Obteniendo la fecha actual
 weight: 29
 ---

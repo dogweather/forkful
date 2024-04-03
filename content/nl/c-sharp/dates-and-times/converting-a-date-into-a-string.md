@@ -6,8 +6,8 @@ description: "Het omzetten van een datum naar een tekenreeks in C# houdt in dat 
   \ formaat van een DateTime-object wordt veranderd naar een tekstweergave. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.821479-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een datum naar een tekenreeks in C# houdt in dat het formaat\
-  \ van een DateTime-object wordt veranderd naar een tekstweergave. Programmeurs\u2026"
+summary: Het omzetten van een datum naar een tekenreeks in C# houdt in dat het formaat
+  van een DateTime-object wordt veranderd naar een tekstweergave.
 title: Een datum converteren naar een string
 weight: 28
 ---

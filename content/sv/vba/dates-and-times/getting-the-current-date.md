@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.754289-06:00'
 model: gpt-4-0125-preview
 summary: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift att\
   \ h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
-  \ arbeta med\u2026"
+  \ arbeta med datum i deras makron eller applikationer."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

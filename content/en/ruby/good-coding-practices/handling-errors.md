@@ -8,8 +8,7 @@ description: "Error handling is about expecting the unexpected in code \u2014 ma
 lastmod: '2024-03-13T22:45:00.557945-06:00'
 model: gpt-4-1106-preview
 summary: "Error handling is about expecting the unexpected in code \u2014 managing\
-  \ mistakes and problems gracefully without crashing. Programmers do it to control\
-  \ the\u2026"
+  \ mistakes and problems gracefully without crashing."
 title: Handling errors
 weight: 16
 ---

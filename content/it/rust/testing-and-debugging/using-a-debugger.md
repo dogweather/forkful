@@ -4,8 +4,8 @@ description: "Rust supporta vari debugger, ma quelli comuni sono `gdb` per GNU/L
   \ o `lldb` per macOS. Potresti anche usare `rust-gdb` o `rust-lldb`, che sono wrapper\u2026"
 lastmod: '2024-03-13T22:44:43.222469-06:00'
 model: gpt-4-0125-preview
-summary: "Rust supporta vari debugger, ma quelli comuni sono `gdb` per GNU/Linux o\
-  \ `lldb` per macOS. Potresti anche usare `rust-gdb` o `rust-lldb`, che sono wrapper\u2026"
+summary: Rust supporta vari debugger, ma quelli comuni sono `gdb` per GNU/Linux o
+  `lldb` per macOS.
 title: Utilizzo di un debugger
 weight: 35
 ---

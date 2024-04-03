@@ -7,7 +7,7 @@ description: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toe
 lastmod: '2024-03-13T22:44:50.675227-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toevoeging\
-  \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`. Ze zijn cruciaal in velden\u2026"
+  \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`."
 title: Werken met complexe getallen
 weight: 14
 ---

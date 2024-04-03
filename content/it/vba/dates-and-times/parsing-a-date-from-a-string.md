@@ -7,8 +7,8 @@ description: "Analizzare una data da una stringa in Visual Basic for Application
   \ dati\u2026"
 lastmod: '2024-03-13T22:44:43.273586-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa in Visual Basic for Applications (VBA)\
-  \ consiste nel convertire un testo che rappresenta una data in un tipo di dati\u2026"
+summary: Analizzare una data da una stringa in Visual Basic for Applications (VBA)
+  consiste nel convertire un testo che rappresenta una data in un tipo di dati data.
 title: Analisi di una data da una stringa
 weight: 30
 ---

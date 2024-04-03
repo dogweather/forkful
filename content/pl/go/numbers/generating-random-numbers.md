@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.844967-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
   \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\
-  \ przez przypadek.\u2026"
+  \ przez przypadek."
 title: Generowanie liczb losowych
 weight: 12
 ---

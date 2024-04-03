@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.124896-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien j\xE4\
   sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
-  \ ja\u2026"
+  \ ja -asetuksille."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

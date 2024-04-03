@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.545496-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Kotlin envolve a cria\xE7\xE3o de trechos de c\xF3digo\
   \ que validam automaticamente a corre\xE7\xE3o funcional dos seus m\xF3dulos de\
-  \ software, garantindo\u2026"
+  \ software, garantindo que eles funcionem conforme esperado."
 title: Escrevendo testes
 weight: 36
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.307744-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i JavaScript \xE4r avg\xF6rande f\xF6\
   r filhanteringsuppgifter, vilket m\xF6jligg\xF6r f\xF6r skript att verifiera katalogens\
-  \ n\xE4rvaro\u2026"
+  \ n\xE4rvaro innan de l\xE4ser fr\xE5n eller skriver till den."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

@@ -5,7 +5,7 @@ description: "Enviar una solicitud HTTP es c\xF3mo tu programa habla con el mund
 lastmod: '2024-03-13T22:44:59.455674-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP es c\xF3mo tu programa habla con el mundo: pide\
-  \ datos a un servidor o les dice qu\xE9 hacer. Los programadores lo hacen para\u2026"
+  \ datos a un servidor o les dice qu\xE9 hacer."
 title: Enviando una solicitud http
 weight: 44
 ---

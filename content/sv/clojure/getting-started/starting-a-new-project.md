@@ -6,8 +6,7 @@ description: "Starta ett nytt projekt inneb\xE4r att skapa en ny bas d\xE4r din 
 lastmod: '2024-03-13T22:44:37.526097-06:00'
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt inneb\xE4r att skapa en ny bas d\xE4r din kod kan\
-  \ v\xE4xa och utvecklas. Programmerare g\xF6r det f\xF6r att omvandla id\xE9er till\
-  \ k\xF6rbar kod som\u2026"
+  \ v\xE4xa och utvecklas."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

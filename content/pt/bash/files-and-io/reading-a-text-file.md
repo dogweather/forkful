@@ -5,7 +5,7 @@ description: "Ler um arquivo de texto significa acessar e manipular o conte\xFAd
 lastmod: '2024-03-13T22:44:46.770406-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto significa acessar e manipular o conte\xFAdo armazenado\
-  \ num arquivo no seu sistema. Programadores fazem isso para obter dados,\u2026"
+  \ num arquivo no seu sistema."
 title: Lendo um arquivo de texto
 weight: 22
 ---

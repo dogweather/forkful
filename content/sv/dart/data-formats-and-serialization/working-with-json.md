@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.635368-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka JSON-data\
   \ fr\xE5n str\xE4ngar till Dart-objekt och tv\xE4rtom, en vanlig uppgift i webb-\
-  \ och\u2026"
+  \ och apputveckling f\xF6r datautbyte."
 title: Att Arbeta med JSON
 weight: 38
 ---

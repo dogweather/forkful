@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.089044-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen k\xE4ytt\xF6\
   \xE4 v\xE4liaikaisten viestien n\xE4ytt\xE4miseen, jotta n\xE4hd\xE4\xE4n mit\xE4\
-  \ ohjelmassa tapahtuu. Se\u2026"
+  \ ohjelmassa tapahtuu."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "V\u1EDBi Arduino IDE, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng in ra Serial\
   \ \u0111\u1EC3 debug, nh\u01B0ng n\xF3 gi\u1ED1ng nh\u01B0 s\u1EED d\u1EE5ng m\u1ED9\
   t chi\u1EBFc \u0111\xE8n pin \u0111\u1EC3 kh\xE1m ph\xE1 m\u1ED9t hang \u0111\u1ED9\
-  ng. \u0110\u1EC3 debug th\u1EF1c s\u1EF1, b\u1EA1n\u2026"
+  ng."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

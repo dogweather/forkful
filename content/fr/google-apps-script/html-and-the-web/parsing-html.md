@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.182912-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
   es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
-  \ des\u2026"
+  \ des pages web ou des sources de donn\xE9es bas\xE9es sur le web."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

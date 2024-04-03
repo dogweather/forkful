@@ -8,8 +8,7 @@ description: "Inviare una richiesta HTTP in Dart \xE8 il processo di iniziazione
 lastmod: '2024-03-13T22:44:43.126281-06:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP in Dart \xE8 il processo di iniziazione delle\
-  \ comunicazioni con un server web o API da un'applicazione Dart. I programmatori\
-  \ lo\u2026"
+  \ comunicazioni con un server web o API da un'applicazione Dart."
 title: Inviare una richiesta HTTP
 weight: 44
 ---

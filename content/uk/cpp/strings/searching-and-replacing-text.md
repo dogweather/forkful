@@ -5,8 +5,8 @@ description: "Searching and replacing text is about finding specific sequences o
   \ it to\u2026"
 lastmod: '2024-03-13T22:44:49.816944-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text is about finding specific sequences of characters\
-  \ in a string and swapping them out for something else. Programmers do it to\u2026"
+summary: Searching and replacing text is about finding specific sequences of characters
+  in a string and swapping them out for something else.
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

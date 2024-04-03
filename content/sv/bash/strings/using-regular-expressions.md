@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck (regex) i Bash g\xF6r det m\xF6jligt att s\xF
 lastmod: '2024-03-13T22:44:38.070677-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i Bash g\xF6r det m\xF6jligt att s\xF6ka, manipulera\
-  \ och hantera str\xE4ngar och filer baserat p\xE5 s\xE4rskilda m\xF6nster. Programmerare\
-  \ anv\xE4nder\u2026"
+  \ och hantera str\xE4ngar och filer baserat p\xE5 s\xE4rskilda m\xF6nster."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

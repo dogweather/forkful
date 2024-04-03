@@ -6,8 +6,7 @@ description: "Temp-tiedoston luonti on v\xE4liaikaisten, usein kertak\xE4ytt\xF6
 lastmod: '2024-03-13T22:44:57.014428-06:00'
 model: gpt-4-1106-preview
 summary: "Temp-tiedoston luonti on v\xE4liaikaisten, usein kertak\xE4ytt\xF6isten\
-  \ tiedostojen tekemist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 esimerkiksi\
-  \ datan v\xE4liaikaiss\xE4ilytykseen\u2026"
+  \ tiedostojen tekemist\xE4."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

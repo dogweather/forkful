@@ -6,8 +6,7 @@ description: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand ell
 lastmod: '2024-03-13T22:44:57.490094-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles ne\
-  \ se d\xE9roulent pas comme pr\xE9vu. Les programmeurs le font pour g\xE9rer l'inattendu,\
-  \ en\u2026"
+  \ se d\xE9roulent pas comme pr\xE9vu."
 title: Gestion des erreurs
 weight: 16
 ---

@@ -7,7 +7,7 @@ description: "Escribir pruebas en Fish Shell implica crear scripts que ejecuten 
 lastmod: '2024-03-13T22:44:59.505155-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Fish Shell implica crear scripts que ejecuten autom\xE1\
-  ticamente tu c\xF3digo para validar su comportamiento frente a los resultados\u2026"
+  ticamente tu c\xF3digo para validar su comportamiento frente a los resultados esperados."
 title: Escribiendo pruebas
 weight: 36
 ---

@@ -8,7 +8,7 @@ description: "Et interaktivt skall, eller Read-Eval-Print Loop (REPL), lar bruke
 lastmod: '2024-03-13T22:44:40.621773-06:00'
 model: gpt-4-0125-preview
 summary: "Et interaktivt skall, eller Read-Eval-Print Loop (REPL), lar brukere skrive\
-  \ inn kommandoer, utf\xF8re dem og se resultatene i sanntid. Programmerere benytter\u2026"
+  \ inn kommandoer, utf\xF8re dem og se resultatene i sanntid."
 title: "\xC5 bruke et interaktivt skall (REPL)"
 weight: 34
 ---

@@ -5,7 +5,7 @@ description: "Reading a text file in Arduino lets you fetch data stored on an SD
 lastmod: '2024-03-13T22:45:00.336566-06:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file in Arduino lets you fetch data stored on an SD card\
-  \ or in the device's memory\u2014handy for settings, calibration data, or logs.\u2026"
+  \ or in the device's memory\u2014handy for settings, calibration data, or logs."
 title: Reading a text file
 weight: 22
 ---

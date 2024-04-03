@@ -7,7 +7,7 @@ description: "El depurador de GNU (GDB) es el depurador m\xE1s utilizado para la
 lastmod: '2024-03-13T22:44:59.550550-06:00'
 model: gpt-4-0125-preview
 summary: "El depurador de GNU (GDB) es el depurador m\xE1s utilizado para la programaci\xF3\
-  n en C. Aqu\xED hay una breve gu\xEDa sobre c\xF3mo usar GDB para depurar un simple\u2026"
+  n en C."
 title: Utilizando un depurador
 weight: 35
 ---

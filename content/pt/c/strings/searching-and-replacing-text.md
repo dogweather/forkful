@@ -7,7 +7,7 @@ description: "Pesquisar e substituir texto em C envolve identificar substrings e
 lastmod: '2024-03-13T22:44:47.033249-06:00'
 model: gpt-4-0125-preview
 summary: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
-  ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
+  ficas dentro de uma string maior e substitu\xED-las por diferentes substrings."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

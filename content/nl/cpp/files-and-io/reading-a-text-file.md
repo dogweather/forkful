@@ -7,8 +7,8 @@ description: "Het lezen van een tekstbestand gaat over het trekken van data uit 
   \ om\u2026"
 lastmod: '2024-03-13T22:44:51.130586-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van een tekstbestand gaat over het trekken van data uit een bestand\
-  \ op schijf naar je programma om ermee te werken. Programmeurs doen dit om\u2026"
+summary: Het lezen van een tekstbestand gaat over het trekken van data uit een bestand
+  op schijf naar je programma om ermee te werken.
 title: Een tekstbestand lezen
 weight: 22
 ---

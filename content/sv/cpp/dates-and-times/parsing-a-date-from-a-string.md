@@ -8,8 +8,7 @@ description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att man tolkar
 lastmod: '2024-03-13T22:44:38.218558-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att man tolkar str\xE4\
-  ngformatet f\xF6r att extrahera datumkomponenter som dag, m\xE5nad och \xE5r. Programmerare\
-  \ g\xF6r detta\u2026"
+  ngformatet f\xF6r att extrahera datumkomponenter som dag, m\xE5nad och \xE5r."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

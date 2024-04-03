@@ -6,8 +6,7 @@ description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man av
 lastmod: '2024-03-13T22:44:38.068769-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
-  gsnar de citationstecken som omsluter str\xE4ngen. Programmerare vill ofta g\xF6\
-  ra detta f\xF6r att\u2026"
+  gsnar de citationstecken som omsluter str\xE4ngen."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

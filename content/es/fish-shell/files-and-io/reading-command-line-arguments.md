@@ -6,8 +6,7 @@ description: "Leer argumentos de la l\xEDnea de comandos permite a los scripts r
 lastmod: '2024-03-13T22:44:59.516701-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite a los scripts recibir\
-  \ datos externos al ser ejecutados. Los programadores hacen esto para personalizar\
-  \ la\u2026"
+  \ datos externos al ser ejecutados."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

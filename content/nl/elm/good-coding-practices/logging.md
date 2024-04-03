@@ -7,8 +7,9 @@ description: "Loggen is in wezen het proces van het vastleggen van gebeurtenisse
   \ het\u2026"
 lastmod: '2024-03-13T22:44:50.731574-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen is in wezen het proces van het vastleggen van gebeurtenissen en data-uitvoer\
-  \ van een softwareprogramma tijdens het draaien, denk erover als het\u2026"
+summary: Loggen is in wezen het proces van het vastleggen van gebeurtenissen en data-uitvoer
+  van een softwareprogramma tijdens het draaien, denk erover als het dagboek van de
+  software.
 title: Logboekregistratie
 weight: 17
 ---

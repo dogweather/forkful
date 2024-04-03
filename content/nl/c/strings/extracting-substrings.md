@@ -7,7 +7,8 @@ description: "Het extraheren van substrings in C omvat het cre\xEBren van een kl
 lastmod: '2024-03-13T22:44:51.278986-06:00'
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings in C omvat het cre\xEBren van een kleinere\
-  \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\u2026"
+  \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\
+  \ zoals positie en lengte."
 title: Substrings extraheren
 weight: 6
 ---

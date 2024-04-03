@@ -7,8 +7,8 @@ description: "Avviare un nuovo progetto in Python significa impostare sin dall'i
   \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"
 lastmod: '2024-03-13T22:44:43.001446-06:00'
 model: gpt-4-0125-preview
-summary: "Avviare un nuovo progetto in Python significa impostare sin dall'inizio\
-  \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"
+summary: Avviare un nuovo progetto in Python significa impostare sin dall'inizio una
+  struttura organizzata e mantenibile.
 title: Iniziare un nuovo progetto
 weight: 1
 ---

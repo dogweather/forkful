@@ -5,7 +5,6 @@ description: String interpolation lets you embed variables and expressions into 
 lastmod: '2024-03-13T22:44:59.846015-06:00'
 model: gpt-4-1106-preview
 summary: String interpolation lets you embed variables and expressions into strings.
-  It keeps your code readable and flexible - no plus signs, no muss, no fuss.
 title: Interpolating a string
 weight: 8
 ---

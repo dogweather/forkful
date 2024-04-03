@@ -5,9 +5,7 @@ description: "TOML, czyli Tom's Obvious, Minimal Language, to format serializacj
   ; jest \u015Bwietny do plik\xF3w\u2026"
 lastmod: '2024-03-13T22:44:35.608833-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, czyli Tom's Obvious, Minimal Language, to format serializacji danych.\
-  \ Programi\u015Bci ceni\u0105 go za prostot\u0119 i czytelno\u015B\u0107; jest \u015B\
-  wietny do plik\xF3w\u2026"
+summary: TOML, czyli Tom's Obvious, Minimal Language, to format serializacji danych.
 title: Praca z TOML
 weight: 39
 ---

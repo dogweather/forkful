@@ -7,7 +7,8 @@ description: "Das Abrufen des aktuellen Datums in der Programmierung ist eine gr
 lastmod: '2024-03-13T22:44:54.319760-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende\
-  \ Aufgabe, die es Ihnen erm\xF6glicht, das Datum und die Zeitdaten des Systems\u2026"
+  \ Aufgabe, die es Ihnen erm\xF6glicht, das Datum und die Zeitdaten des Systems abzurufen\
+  \ und zu manipulieren."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

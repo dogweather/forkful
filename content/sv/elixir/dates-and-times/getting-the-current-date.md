@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:37.577967-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Elixir inneb\xE4r att man f\xE5r tillg\xE5\
   ng till systemets datum- och tidsinformation, en vanlig uppgift f\xF6r loggning,\
-  \ datumm\xE4rkning\u2026"
+  \ datumm\xE4rkning eller vilken funktionalitet som helst som kr\xE4ver kunskap om\
+  \ det aktuella datumet."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -6,8 +6,9 @@ description: "Het omzetten van een datum naar een string in Dart is een veelvoor
   \ taak wanneer u datum- en tijdinformatie op een voor mensen leesbare manier wilt\u2026"
 lastmod: '2024-03-13T22:44:50.517396-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een datum naar een string in Dart is een veelvoorkomende\
-  \ taak wanneer u datum- en tijdinformatie op een voor mensen leesbare manier wilt\u2026"
+summary: Het omzetten van een datum naar een string in Dart is een veelvoorkomende
+  taak wanneer u datum- en tijdinformatie op een voor mensen leesbare manier wilt
+  weergeven, of wanneer u gegevens wilt serialiseren voor opslag of verzending.
 title: Een datum omzetten naar een string
 weight: 28
 ---

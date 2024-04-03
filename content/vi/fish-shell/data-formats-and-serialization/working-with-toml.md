@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.241961-06:00'
 model: gpt-4-0125-preview
 summary: "TOML l\xE0 \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh, d\u1EC5 \u0111\
   \u1ECDc v\xE0 vi\u1EBFt b\u1EDFi con ng\u01B0\u1EDDi, c\u0169ng nh\u01B0 d\u1EC5\
-  \ d\xE0ng ph\xE2n t\xEDch v\xE0 t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7p\u2026"
+  \ d\xE0ng ph\xE2n t\xEDch v\xE0 t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

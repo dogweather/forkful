@@ -6,8 +6,7 @@ description: "\"Concatenating strings\" betyr \xE5 lime sammen tekster for \xE5 
 lastmod: '2024-03-13T22:44:40.524140-06:00'
 model: gpt-4-1106-preview
 summary: "\"Concatenating strings\" betyr \xE5 lime sammen tekster for \xE5 danne\
-  \ nye. Programmerere gj\xF8r dette for \xE5 manipulere tekst, vise meldinger eller\
-  \ kombinere data\u2026"
+  \ nye."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

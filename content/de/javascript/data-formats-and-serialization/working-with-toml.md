@@ -6,7 +6,7 @@ description: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Spra
 lastmod: '2024-03-13T22:44:54.289719-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, definiert,\
-  \ wie Konfigurationsdateien strukturiert werden sollen. Programmierer arbeiten\u2026"
+  \ wie Konfigurationsdateien strukturiert werden sollen."
 title: Arbeiten mit TOML
 weight: 39
 ---

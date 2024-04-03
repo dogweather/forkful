@@ -6,7 +6,7 @@ description: "Das Vergleichen zweier Daten erm\xF6glicht es uns, ihre chronologi
 lastmod: '2024-03-13T22:44:53.547810-06:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten erm\xF6glicht es uns, ihre chronologische Reihenfolge\
-  \ festzustellen \u2013 herauszufinden, welches fr\xFCher oder sp\xE4ter ist.\u2026"
+  \ festzustellen \u2013 herauszufinden, welches fr\xFCher oder sp\xE4ter ist."
 title: Vergleich von zwei Daten
 weight: 27
 ---

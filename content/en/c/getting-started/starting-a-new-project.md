@@ -5,8 +5,8 @@ description: "Starting a new project in C involves setting up a foundational cod
   \ do it\u2026"
 lastmod: '2024-03-13T22:45:00.512167-06:00'
 model: gpt-4-0125-preview
-summary: "Starting a new project in C involves setting up a foundational code structure\
-  \ and environment to efficiently manage development tasks. Programmers do it\u2026"
+summary: Starting a new project in C involves setting up a foundational code structure
+  and environment to efficiently manage development tasks.
 title: Starting a new project
 weight: 1
 ---

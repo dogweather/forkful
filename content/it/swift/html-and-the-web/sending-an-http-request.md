@@ -5,8 +5,7 @@ description: "Inviare una richiesta HTTP significa chiedere dati a un server web
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.767247-06:00'
 model: gpt-4-1106-preview
-summary: "Inviare una richiesta HTTP significa chiedere dati a un server web. I programmatori\
-  \ lo fanno per interagire con servizi web, come recuperare dati o\u2026"
+summary: Inviare una richiesta HTTP significa chiedere dati a un server web.
 title: Inviare una richiesta http
 weight: 44
 ---

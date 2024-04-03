@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnlaget for ko
 lastmod: '2024-03-13T22:44:41.018608-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnlaget for kodearbeidet\
-  \ ditt. Programmerere gj\xF8r dette for \xE5 organisere kode, dele arbeidet i h\xE5\
-  ndterbare\u2026"
+  \ ditt."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

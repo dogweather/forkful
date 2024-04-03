@@ -6,8 +6,7 @@ description: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som
 lastmod: '2024-03-13T22:44:37.480906-06:00'
 model: unknown
 summary: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som ett program\
-  \ eller skript kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta f\xF6\
-  r att\u2026"
+  \ eller skript kan f\xF6rst\xE5 och manipulera."
 title: Tolka HTML
 weight: 43
 ---

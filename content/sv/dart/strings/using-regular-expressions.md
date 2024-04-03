@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.600711-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i Dart erbjuder ett kraftfullt s\xE4tt att\
   \ s\xF6ka och manipulera str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare\
-  \ att utf\xF6ra komplex\u2026"
+  \ att utf\xF6ra komplex textbearbetning effektivt."
 title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

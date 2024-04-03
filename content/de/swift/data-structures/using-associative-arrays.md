@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.218710-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in Swift als W\xF6rterb\xFCcher (dictionaries) bekannt,\
   \ erm\xF6glichen es Ihnen, Daten als Schl\xFCssel-Wert-Paare zu speichern und zu\
-  \ verwalten.\u2026"
+  \ verwalten."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

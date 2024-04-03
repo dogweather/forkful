@@ -7,9 +7,8 @@ description: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji infor
   \ ich urz\u0105dzeniom\u2026"
 lastmod: '2024-03-13T22:44:35.670202-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
-  \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\
-  \ ich urz\u0105dzeniom\u2026"
+summary: Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji ze
+  stron internetowych.
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

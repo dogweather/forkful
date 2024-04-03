@@ -8,8 +8,7 @@ description: "YAML, b\u0119d\u0105cy skr\xF3tem od \"YAML Ain't Markup Language\
 lastmod: '2024-03-13T22:44:35.816666-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, b\u0119d\u0105cy skr\xF3tem od \"YAML Ain't Markup Language\", to\
-  \ format serializacji danych, kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015B\
-  ci cz\u0119sto u\u017Cywaj\u0105 go do\u2026"
+  \ format serializacji danych, kt\xF3ry jest czytelny dla cz\u0142owieka."
 title: Praca z YAML
 weight: 41
 ---

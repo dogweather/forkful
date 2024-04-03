@@ -5,9 +5,8 @@ description: "Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenf
   \ zu\u2026"
 lastmod: '2024-03-13T22:44:54.197072-06:00'
 model: gpt-4-1106-preview
-summary: "Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge zu\
-  \ bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines\
-  \ zu\u2026"
+summary: Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge zu
+  bestimmen.
 title: Vergleich von zwei Daten
 weight: 27
 ---

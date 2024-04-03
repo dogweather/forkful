@@ -7,7 +7,9 @@ description: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fonda
 lastmod: '2024-03-13T22:44:58.440323-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
-  \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"
+  \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\
+  \ permettant ainsi aux donn\xE9es d'\xEAtre consult\xE9es ou modifi\xE9es ult\xE9\
+  rieurement."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

@@ -6,8 +6,8 @@ description: "Analizzare l'HTML significa setacciare il codice HTML per trovare,
   \ o manipolare informazioni. I programmatori lo fanno per interagire con i\u2026"
 lastmod: '2024-03-13T22:44:43.173994-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare l'HTML significa setacciare il codice HTML per trovare, estrarre\
-  \ o manipolare informazioni. I programmatori lo fanno per interagire con i\u2026"
+summary: Analizzare l'HTML significa setacciare il codice HTML per trovare, estrarre
+  o manipolare informazioni.
 title: Analisi del HTML
 weight: 43
 ---

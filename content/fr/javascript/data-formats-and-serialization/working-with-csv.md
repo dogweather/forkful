@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.301529-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) en JavaScript\
   \ implique l'analyse ou la g\xE9n\xE9ration de fichiers CSV pour ing\xE9rer des\
-  \ donn\xE9es\u2026"
+  \ donn\xE9es tabulaires provenant de sources externes ou exporter des donn\xE9es\
+  \ pour une utilisation dans d'autres programmes."
 title: Travailler avec CSV
 weight: 37
 ---

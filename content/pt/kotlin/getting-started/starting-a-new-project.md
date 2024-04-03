@@ -6,8 +6,7 @@ description: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zer
 lastmod: '2024-03-13T22:44:46.542248-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zero \u2013\
-  \ voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las. Programadores\
-  \ fazem isso para\u2026"
+  \ voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las."
 title: Iniciando um novo projeto
 weight: 1
 ---

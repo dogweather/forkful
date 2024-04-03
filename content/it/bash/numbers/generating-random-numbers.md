@@ -5,7 +5,8 @@ description: "Generare numeri casuali in Bash offre un modo per introdurre impre
 lastmod: '2024-03-13T22:44:43.593432-06:00'
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
-  \ negli script, fondamentale per compiti come generare password sicure,\u2026"
+  \ negli script, fondamentale per compiti come generare password sicure, simulare\
+  \ dati, o per la programmazione di giochi."
 title: Generazione di numeri casuali
 weight: 12
 ---

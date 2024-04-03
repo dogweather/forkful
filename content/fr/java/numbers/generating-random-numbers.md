@@ -6,8 +6,7 @@ description: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 produir
 lastmod: '2024-03-13T22:44:57.634543-06:00'
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 produire des\
-  \ s\xE9quences ou des valeurs uniques impr\xE9visibles dans une plage d\xE9finie.\
-  \ Les programmeurs\u2026"
+  \ s\xE9quences ou des valeurs uniques impr\xE9visibles dans une plage d\xE9finie."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

@@ -5,9 +5,8 @@ description: "H\xE4r \xE4r en bit JavaScript-kod som inte beter sig som f\xF6rv\
   \ borde vara en\u2026"
 lastmod: '2024-03-13T22:44:38.297950-06:00'
 model: gpt-4-0125-preview
-summary: "H\xE4r \xE4r en bit JavaScript-kod som inte beter sig som f\xF6rv\xE4ntat:\
-  \ ```javascript function buggyMultiply(a, b) { return a + b; // Hoppsan! Detta borde\
-  \ vara en\u2026"
+summary: "H\xE4r \xE4r en bit JavaScript-kod som inte beter sig som f\xF6rv\xE4ntat:\n\
+  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Hoppsan."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

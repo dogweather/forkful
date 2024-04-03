@@ -5,9 +5,7 @@ description: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkij
   \ ty\xF6skentelyst\xE4 helpompaa, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.326623-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi\
-  \ hallitaksemme sen esitysmuotoa. T\xE4m\xE4 tekee p\xE4iv\xE4m\xE4\xE4rien kanssa\
-  \ ty\xF6skentelyst\xE4 helpompaa, kuten\u2026"
+summary: "\"Mik\xE4 ja Miksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

@@ -4,8 +4,7 @@ description: Comparing two dates helps you figure out which is earlier or later.
   do it to track time-sensitive events or calculate periods.
 lastmod: '2024-03-13T22:44:49.520954-06:00'
 model: gpt-4-1106-preview
-summary: Comparing two dates helps you figure out which is earlier or later. Programmers
-  do it to track time-sensitive events or calculate periods.
+summary: Comparing two dates helps you figure out which is earlier or later.
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

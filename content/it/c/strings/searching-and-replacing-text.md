@@ -7,7 +7,8 @@ description: "La ricerca e la sostituzione di testo in C prevedono l'identificaz
 lastmod: '2024-03-13T22:44:43.889152-06:00'
 model: gpt-4-0125-preview
 summary: "La ricerca e la sostituzione di testo in C prevedono l'identificazione di\
-  \ specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro\u2026"
+  \ specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro sostituzione\
+  \ con altre sottostringhe."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

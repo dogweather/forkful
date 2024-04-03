@@ -6,8 +6,9 @@ description: "Het kapitaliseren van een string houdt in dat de invoer wordt aang
   \ zodat het eerste teken een hoofdletter is en de rest kleine letters blijven, wat\u2026"
 lastmod: '2024-03-13T22:44:50.313306-06:00'
 model: gpt-4-0125-preview
-summary: "Het kapitaliseren van een string houdt in dat de invoer wordt aangepast\
-  \ zodat het eerste teken een hoofdletter is en de rest kleine letters blijven, wat\u2026"
+summary: Het kapitaliseren van een string houdt in dat de invoer wordt aangepast zodat
+  het eerste teken een hoofdletter is en de rest kleine letters blijven, wat vaak
+  wordt gebruikt voor het formatteren van namen of titels.
 title: Een string met hoofdletters maken
 weight: 2
 ---

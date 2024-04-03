@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECD\
   c-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m v\u1EDB\
   i m\xE3 Go trong th\u1EDDi gian th\u1EF1c, th\u1EF1c thi c\xE1c l\u1EC7nh v\xE0\
-  \ nh\u1EADn ph\u1EA3n h\u1ED3i ngay\u2026"
+  \ nh\u1EADn ph\u1EA3n h\u1ED3i ngay l\u1EADp t\u1EE9c."
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
 weight: 34

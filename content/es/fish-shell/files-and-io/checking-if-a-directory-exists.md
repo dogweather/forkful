@@ -7,7 +7,9 @@ description: "Verificar si un directorio existe en Fish Shell permite que los sc
 lastmod: '2024-03-13T22:44:59.515715-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Fish Shell permite que los scripts\
-  \ tomen decisiones basadas en la presencia o ausencia de estructuras de directorio,\u2026"
+  \ tomen decisiones basadas en la presencia o ausencia de estructuras de directorio,\
+  \ habilitando tareas como operaciones condicionales de archivos, registros o configuraci\xF3\
+  n del entorno."
 title: Comprobando si un directorio existe
 weight: 20
 ---

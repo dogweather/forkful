@@ -5,9 +5,7 @@ description: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\x
   \ isommasta\u2026"
 lastmod: '2024-03-13T22:44:56.433677-06:00'
 model: gpt-4-1106-preview
-summary: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t niit\xE4 tiedon k\xE4sittelyyn ja analysointiin - leikaten tarpeelliset palat\
-  \ isommasta\u2026"
+summary: Substringit ovat jonoista irrotettuja osia.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

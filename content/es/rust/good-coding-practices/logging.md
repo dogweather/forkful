@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.853046-06:00'
 model: gpt-4-1106-preview
 summary: "Hacer logging es como mantener un diario para tu aplicaci\xF3n; es la pr\xE1\
   ctica de registrar eventos, errores y otros datos pertinentes durante la ejecuci\xF3\
-  n.\u2026"
+  n."
 title: Registro de Actividades
 weight: 17
 ---

@@ -7,7 +7,8 @@ description: "Das Gro\xDFschreiben eines Strings beinhaltet die Umwandlung des e
 lastmod: '2024-03-13T22:44:53.914448-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Umwandlung des ersten\
-  \ Buchstabens eines gegebenen Strings in einen Gro\xDFbuchstaben, w\xE4hrend sichergestellt\u2026"
+  \ Buchstabens eines gegebenen Strings in einen Gro\xDFbuchstaben, w\xE4hrend sichergestellt\
+  \ wird, dass die restlichen Buchstaben klein bleiben."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

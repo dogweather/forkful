@@ -6,8 +6,8 @@ description: "Command line argumenten lezen stelt je Python script in staat om n
   \ om te gaan met gebruikersinvoer vanuit de terminal. Waarom? Wel, omdat\u2026"
 lastmod: '2024-03-13T22:44:50.391908-06:00'
 model: gpt-4-0125-preview
-summary: "Command line argumenten lezen stelt je Python script in staat om netjes\
-  \ om te gaan met gebruikersinvoer vanuit de terminal. Waarom? Wel, omdat\u2026"
+summary: Command line argumenten lezen stelt je Python script in staat om netjes om
+  te gaan met gebruikersinvoer vanuit de terminal.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

@@ -6,8 +6,7 @@ description: "Datumber\xE4kningar \xE4r typ best\xE4mning av framtida eller f\xF
 lastmod: '2024-03-13T22:44:37.496285-06:00'
 model: gpt-4-1106-preview
 summary: "Datumber\xE4kningar \xE4r typ best\xE4mning av framtida eller f\xF6rg\xE5\
-  ngna datum fr\xE5n en given punkt. Programmerare g\xF6r det f\xF6r att hantera bokningar,\
-  \ p\xE5minnelser,\u2026"
+  ngna datum fr\xE5n en given punkt."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

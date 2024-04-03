@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.639583-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
   \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
-  \ ofta medan resten\u2026"
+  \ ofta medan resten av str\xE4ngen l\xE4mnas of\xF6r\xE4ndrad."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

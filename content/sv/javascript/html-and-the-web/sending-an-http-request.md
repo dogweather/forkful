@@ -6,8 +6,7 @@ description: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar 
 lastmod: '2024-03-13T22:44:38.290273-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar information\
-  \ till en server. Programmerare g\xF6r detta f\xF6r att interagera med webbtj\xE4\
-  nster, h\xE4mta\u2026"
+  \ till en server."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

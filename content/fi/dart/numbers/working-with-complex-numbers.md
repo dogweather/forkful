@@ -8,7 +8,8 @@ description: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osa
 lastmod: '2024-03-13T22:44:56.264000-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta (yleens\xE4\
-  \ merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4\u2026"
+  \ merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4 kaksiulotteiseen\
+  \ avaruuteen."
 title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---

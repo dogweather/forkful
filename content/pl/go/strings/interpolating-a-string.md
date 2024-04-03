@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.833558-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w to metoda konstruowania \u0142a\u0144\
   cuch\xF3w, kt\xF3re w\u0142\u0105czaj\u0105 zmienne, umo\u017Cliwiaj\u0105c dynamiczne\
-  \ tworzenie \u0142a\u0144cuch\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
+  \ tworzenie \u0142a\u0144cuch\xF3w."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

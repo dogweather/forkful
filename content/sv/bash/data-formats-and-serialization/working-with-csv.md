@@ -8,8 +8,7 @@ description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handla
 lastmod: '2024-03-13T22:44:38.104600-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handlar om att\
-  \ bearbeta och manipulera tabellformaterade data lagrade i ren textformat. Detta\
-  \ \xE4r\u2026"
+  \ bearbeta och manipulera tabellformaterade data lagrade i ren textformat."
 title: Arbeta med CSV
 weight: 37
 ---

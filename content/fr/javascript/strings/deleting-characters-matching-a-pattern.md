@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.257547-06:00'
 model: gpt-4-1106-preview
 summary: "En JavaScript, supprimer des caract\xE8res qui correspondent \xE0 un motif,\
   \ c'est comme filtrer les grains de sable d'un d\xE9sert - on ne garde que ce qu'on\
-  \ veut.\u2026"
+  \ veut."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

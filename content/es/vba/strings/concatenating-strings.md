@@ -8,7 +8,7 @@ description: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implic
 lastmod: '2024-03-13T22:44:58.883841-06:00'
 model: gpt-4-0125-preview
 summary: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica unir\
-  \ dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental en\u2026"
+  \ dos o m\xE1s cadenas en una \xFAnica entidad."
 title: Concatenando cadenas de texto
 weight: 3
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.771945-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
   \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\
-  \ cha\xEEne, facilitant\u2026"
+  \ cha\xEEne, facilitant ainsi le formatage et la concat\xE9nation des cha\xEEnes."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

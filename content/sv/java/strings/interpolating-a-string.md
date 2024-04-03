@@ -6,8 +6,7 @@ description: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler 
 lastmod: '2024-03-13T22:44:37.773878-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och str\xE4\
-  ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar str\xE4\
-  ngar f\xF6r\u2026"
+  ngar f\xF6r att skapa en ny, sammansatt str\xE4ng."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

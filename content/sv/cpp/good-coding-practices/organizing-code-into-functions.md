@@ -6,8 +6,7 @@ description: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin ko
 lastmod: '2024-03-13T22:44:38.214535-06:00'
 model: gpt-4-1106-preview
 summary: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod i mindre,\
-  \ \xE5teranv\xE4ndbara bitar. Vi g\xF6r det f\xF6r att undvika upprepning, g\xF6\
-  ra v\xE5r kod\u2026"
+  \ \xE5teranv\xE4ndbara bitar."
 title: Att organisera kod i funktioner
 weight: 18
 ---

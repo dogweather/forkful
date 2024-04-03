@@ -6,7 +6,7 @@ description: "Los n\xFAmeros complejos tienen una parte real y una parte imagina
 lastmod: '2024-03-13T22:44:59.328253-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, escritos\
-  \ t\xEDpicamente como `a + bi`. Son vitales para algunos proyectos de Arduino que\u2026"
+  \ t\xEDpicamente como `a + bi`."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

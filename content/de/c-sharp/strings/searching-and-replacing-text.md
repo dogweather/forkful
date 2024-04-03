@@ -5,7 +5,7 @@ description: "Textsuche und -ersatz sind im Kern das Auffinden und Ersetzen von 
 lastmod: '2024-03-13T22:44:53.873423-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz sind im Kern das Auffinden und Ersetzen von Zeichenfolgen\
-  \ in einer gr\xF6\xDFeren Textmenge. Programmierer nutzen diese Operation, um\u2026"
+  \ in einer gr\xF6\xDFeren Textmenge."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

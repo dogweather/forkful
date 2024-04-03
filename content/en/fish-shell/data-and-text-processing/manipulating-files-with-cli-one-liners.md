@@ -5,7 +5,8 @@ description: "In the realm of programming, especially when dealing with Linux or
 lastmod: '2024-03-13T22:45:00.469236-06:00'
 model: gpt-4-0125-preview
 summary: "In the realm of programming, especially when dealing with Linux or Unix\
-  \ environments, manipulating files directly from the command line interface (CLI)\u2026"
+  \ environments, manipulating files directly from the command line interface (CLI)\
+  \ isn\u2019t just a matter of convenience\u2014it\u2019s a power tool."
 title: Manipulating files with CLI one-liners
 weight: 31
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.633463-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w PowerShellu polega na tworzeniu skrypt\xF3w, kt\xF3\
   re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego kodu PowerShell,\
-  \ zapewniaj\u0105c, \u017Ce\u2026"
+  \ zapewniaj\u0105c, \u017Ce zachowuje si\u0119 on zgodnie z oczekiwaniami."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

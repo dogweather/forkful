@@ -8,8 +8,7 @@ description: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista,
 lastmod: '2024-03-13T22:44:56.502809-06:00'
 model: gpt-4-0125-preview
 summary: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
-  \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
-  \ tekev\xE4t niin\u2026"
+  \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

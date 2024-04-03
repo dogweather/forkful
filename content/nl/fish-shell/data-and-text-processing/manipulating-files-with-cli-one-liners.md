@@ -7,8 +7,9 @@ description: "In de wereld van het programmeren, vooral wanneer je te maken hebt
   \ de\u2026"
 lastmod: '2024-03-13T22:44:51.241960-06:00'
 model: gpt-4-0125-preview
-summary: "In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux-\
-  \ of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de\u2026"
+summary: In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux-
+  of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de command-line
+  interface (CLI) niet alleen een kwestie van gemak - het is een krachtig hulpmiddel.
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

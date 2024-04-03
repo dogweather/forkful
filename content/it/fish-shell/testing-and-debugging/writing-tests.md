@@ -6,8 +6,9 @@ description: "Scrivere test in Fish Shell comporta la creazione di script che es
   \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
 lastmod: '2024-03-13T22:44:43.862668-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
-  \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
+summary: Scrivere test in Fish Shell comporta la creazione di script che eseguono
+  automaticamente il tuo codice per validarne il comportamento rispetto ai risultati
+  attesi.
 title: Scrivere test
 weight: 36
 ---

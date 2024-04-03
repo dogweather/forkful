@@ -6,8 +6,7 @@ description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet
 lastmod: '2024-03-13T22:44:40.579321-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
-  \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\
-  \ for \xE5 gj\xF8re\u2026"
+  \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

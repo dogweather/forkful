@@ -7,7 +7,8 @@ description: "Analisar uma data a partir de uma string envolve converter represe
 lastmod: '2024-03-13T22:44:46.335383-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter representa\xE7\
-  \xF5es textuais de datas e horas em um formato que possa ser manipulado e analisado\u2026"
+  \xF5es textuais de datas e horas em um formato que possa ser manipulado e analisado\
+  \ pelo programa."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

@@ -6,8 +6,7 @@ description: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\
 lastmod: '2024-03-13T22:44:57.092416-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\xE4ytett\xE4\
-  viin osiin. Kaikki on kiinni siit\xE4, ett\xE4 koodisi on siisti\xE4, hallittavaa\
-  \ ja v\xE4hemm\xE4n\u2026"
+  viin osiin."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

@@ -8,8 +8,7 @@ description: "Att tolka HTML inneb\xE4r att dissekera en webbsidas m\xE4rkspr\xE
 lastmod: '2024-03-13T22:44:37.869079-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att dissekera en webbsidas m\xE4rkspr\xE5k till\
-  \ n\xE5got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare tolkar\
-  \ HTML f\xF6r att\u2026"
+  \ n\xE5got som ett program kan f\xF6rst\xE5 och manipulera."
 title: Tolka HTML
 weight: 43
 ---

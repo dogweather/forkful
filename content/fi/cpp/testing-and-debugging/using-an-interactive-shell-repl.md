@@ -6,8 +6,7 @@ description: "REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksink
 lastmod: '2024-03-13T22:44:56.866588-06:00'
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksinkertainen,\
-  \ vuorovaikutteinen ohjelmointiymp\xE4rist\xF6. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \u2026"
+  \ vuorovaikutteinen ohjelmointiymp\xE4rist\xF6."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

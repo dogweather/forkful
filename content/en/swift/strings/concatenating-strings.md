@@ -4,8 +4,7 @@ description: "Concatenating strings is gluing separate strings together to make 
   \ new one. Programmers do it to combine text dynamically, like putting together\u2026"
 lastmod: '2024-03-13T22:45:00.389075-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenating strings is gluing separate strings together to make a new\
-  \ one. Programmers do it to combine text dynamically, like putting together\u2026"
+summary: Concatenating strings is gluing separate strings together to make a new one.
 title: Concatenating strings
 weight: 3
 ---

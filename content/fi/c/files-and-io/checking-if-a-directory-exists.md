@@ -7,7 +7,7 @@ description: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedosto
 lastmod: '2024-03-13T22:44:57.056250-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
-  rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat\u2026"
+  rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

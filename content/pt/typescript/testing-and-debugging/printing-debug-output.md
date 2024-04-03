@@ -6,8 +6,7 @@ description: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 soltar info \xFAtil no 
 lastmod: '2024-03-13T22:44:46.328721-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 soltar info \xFAtil no console\
-  \ que ajuda a entender o que seu c\xF3digo est\xE1 aprontando. Programadores fazem\
-  \ isso pra desenrolar\u2026"
+  \ que ajuda a entender o que seu c\xF3digo est\xE1 aprontando."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

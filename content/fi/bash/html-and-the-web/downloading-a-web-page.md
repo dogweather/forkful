@@ -4,8 +4,7 @@ description: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. O
   \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
 lastmod: '2024-03-13T22:44:56.738401-06:00'
 model: gpt-4-1106-preview
-summary: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
+summary: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle."
 title: Verkkosivun lataaminen
 weight: 42
 ---

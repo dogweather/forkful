@@ -8,7 +8,7 @@ description: "Scrivere test in Swift comporta la creazione e l'esecuzione di cod
 lastmod: '2024-03-13T22:44:43.773697-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in Swift comporta la creazione e l'esecuzione di codice che\
-  \ verifica la correttezza di altre unit\xE0 di codice nella tua applicazione. I\u2026"
+  \ verifica la correttezza di altre unit\xE0 di codice nella tua applicazione."
 title: Scrivere test
 weight: 36
 ---

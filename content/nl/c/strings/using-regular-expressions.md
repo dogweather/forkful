@@ -6,8 +6,8 @@ description: "Reguliere expressies (regex) bieden een manier om te zoeken, overe
   \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"
 lastmod: '2024-03-13T22:44:51.280103-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
-  \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"
+summary: Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten
+  te vinden en strings te manipuleren met behulp van gedefinieerde patronen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

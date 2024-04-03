@@ -6,8 +6,7 @@ description: "Kommandozeilenargumente sind Parameter, die ein Programm beim Star
 lastmod: '2024-03-13T22:44:54.030461-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind Parameter, die ein Programm beim Start \xFC\
-  ber die Konsole erh\xE4lt. Sie erm\xF6glichen es dem Benutzer, das Verhalten des\
-  \ Programms\u2026"
+  ber die Konsole erh\xE4lt."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

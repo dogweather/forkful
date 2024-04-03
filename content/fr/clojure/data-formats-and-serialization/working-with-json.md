@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.304591-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) en Clojure implique\
   \ de parser des cha\xEEnes JSON en structures de donn\xE9es Clojure (maps, vecteurs)\
-  \ et\u2026"
+  \ et vice versa."
 title: Travailler avec JSON
 weight: 38
 ---

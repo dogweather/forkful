@@ -7,7 +7,7 @@ description: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se e
 lastmod: '2024-03-13T22:44:59.594918-06:00'
 model: gpt-4-0125-preview
 summary: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se espera\
-  \ bajo varias condiciones. Los programistas escriben pruebas para asegurar la\u2026"
+  \ bajo varias condiciones."
 title: Escribiendo pruebas
 weight: 36
 ---

@@ -5,9 +5,7 @@ description: "Elixir leveres med en innebygd grafisk feils\xF8ker kalt `:debugge
   \ F\xF8rst, s\xF8rg for at\u2026"
 lastmod: '2024-03-13T22:44:40.447872-06:00'
 model: gpt-4-0125-preview
-summary: "Elixir leveres med en innebygd grafisk feils\xF8ker kalt `:debugger`. For\
-  \ \xE5 bruke den, m\xE5 du starte den og koble til din kj\xF8rende prosess. F\xF8\
-  rst, s\xF8rg for at\u2026"
+summary: "Elixir leveres med en innebygd grafisk feils\xF8ker kalt `:debugger`."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

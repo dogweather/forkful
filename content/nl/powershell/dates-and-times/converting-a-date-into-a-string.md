@@ -6,8 +6,8 @@ description: "Een datum naar een string converteren in PowerShell betekent het v
   \ van een `DateTime` object naar een tekstformaat. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:51.041596-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum naar een string converteren in PowerShell betekent het veranderen\
-  \ van een `DateTime` object naar een tekstformaat. Programmeurs doen dit om\u2026"
+summary: Een datum naar een string converteren in PowerShell betekent het veranderen
+  van een `DateTime` object naar een tekstformaat.
 title: Een datum converteren naar een string
 weight: 28
 ---

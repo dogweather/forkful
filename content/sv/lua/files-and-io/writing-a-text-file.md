@@ -8,8 +8,7 @@ description: "Att skriva till en textfil i Lua inneb\xE4r att skapa eller \xF6pp
 lastmod: '2024-03-13T22:44:38.057091-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Lua inneb\xE4r att skapa eller \xF6ppna en\
-  \ fil i skrivl\xE4ge, och sedan anv\xE4nda filoperationer f\xF6r att infoga text.\
-  \ Det \xE4r en\u2026"
+  \ fil i skrivl\xE4ge, och sedan anv\xE4nda filoperationer f\xF6r att infoga text."
 title: Att skriva en textfil
 weight: 24
 ---

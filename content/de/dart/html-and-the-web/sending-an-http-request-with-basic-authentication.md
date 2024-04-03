@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.580243-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet das\
   \ Anh\xE4ngen eines Benutzernamens und Passworts an eine Anfrage, um die Identit\xE4\
-  t des\u2026"
+  t des Benutzers zu \xFCberpr\xFCfen."
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---

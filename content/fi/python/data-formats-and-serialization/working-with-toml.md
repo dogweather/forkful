@@ -4,8 +4,8 @@ description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon 
   \ joka muistuttaa JSONia tai YAMLia, mutta pyrkii\u2026"
 lastmod: '2024-03-13T22:44:56.166807-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,\
-  \ joka muistuttaa JSONia tai YAMLia, mutta pyrkii\u2026"
+summary: TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,
+  joka muistuttaa JSONia tai YAMLia, mutta pyrkii yksinkertaisuuteen ja luettavuuteen.
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

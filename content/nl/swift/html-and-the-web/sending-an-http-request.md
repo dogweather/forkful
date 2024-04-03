@@ -7,8 +7,8 @@ description: "Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur va
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.153519-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een\
-  \ webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om te\u2026"
+summary: Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een webserver,
+  om gegevens te vragen of aan te bieden.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

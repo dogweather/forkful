@@ -5,9 +5,7 @@ description: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ?) L'interpolati
   \ C'est pratique\u2026"
 lastmod: '2024-03-13T22:44:57.620885-06:00'
 model: gpt-4-1106-preview
-summary: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ?) L'interpolation de\
-  \ cha\xEEnes permet d'ins\xE9rer des valeurs variables dans des textes fixes. C'est\
-  \ pratique\u2026"
+summary: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.100828-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w Dart to proces restrukturyzacji istniej\u0105cego kodu\
   \ bez zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119\
-  \ jego wewn\u0119trznej\u2026"
+  \ jego wewn\u0119trznej struktury, czytelno\u015Bci i mo\u017Cliwo\u015Bci utrzymania."
 title: Refaktoryzacja
 weight: 19
 ---

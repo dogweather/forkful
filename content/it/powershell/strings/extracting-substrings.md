@@ -5,8 +5,8 @@ description: "Estrarre sottostringhe significa selezionare una parte specifica d
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.630201-06:00'
 model: gpt-4-1106-preview
-summary: "Estrarre sottostringhe significa selezionare una parte specifica di una\
-  \ stringa di testo. I programmatori lo fanno per manipolare e analizzare dati, per\u2026"
+summary: Estrarre sottostringhe significa selezionare una parte specifica di una stringa
+  di testo.
 title: Estrazione di sottostringhe
 weight: 6
 ---

@@ -5,9 +5,7 @@ description: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt
   \ din robust og\u2026"
 lastmod: '2024-03-13T22:44:41.107485-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt. Det\
-  \ er avgj\xF8rende fordi det hjelper med \xE5 unng\xE5 krasjer og gj\xF8r programvaren\
-  \ din robust og\u2026"
+summary: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

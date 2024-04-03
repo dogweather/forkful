@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.903629-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Google Apps Script (GAS) wi\u0105\u017C\
   e si\u0119 z inicjalizacj\u0105 pliku skryptu w ekosystemie Google (Google Drive,\
-  \ Docs, Arkusze itp.) w\u2026"
+  \ Docs, Arkusze itp."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

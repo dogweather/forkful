@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.786931-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShellissa voit debugata skriptej\xE4 k\xE4ytt\xE4m\xE4ll\xE4 sis\xE4\
   \xE4nrakennettua PowerShell Integrated Scripting Environment (ISE) -ymp\xE4rist\xF6\
-  \xE4 tai Visual Studio Code\u2026"
+  \xE4 tai Visual Studio Code (VS Code) -ohjelmaa PowerShell-laajennuksen kanssa."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

@@ -8,7 +8,9 @@ description: "\xC9crire un fichier texte en C# implique de cr\xE9er ou de modifi
 lastmod: '2024-03-13T22:44:57.807720-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en C# implique de cr\xE9er ou de modifier programmiquement\
-  \ des fichiers textes sur le syst\xE8me de fichiers - une t\xE2che fondamentale\u2026"
+  \ des fichiers textes sur le syst\xE8me de fichiers - une t\xE2che fondamentale\
+  \ pour de nombreuses applications, telles que la journalisation, l'exportation de\
+  \ donn\xE9es, ou la gestion de configuration."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

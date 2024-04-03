@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.893965-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une t\xE2che fondamentale en\
   \ programmation PHP, car cela permet de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire\
-  \ avant\u2026"
+  \ avant d'effectuer des op\xE9rations telles que la lecture ou l'\xE9criture de\
+  \ fichiers \xE0 l'int\xE9rieur."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

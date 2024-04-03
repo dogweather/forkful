@@ -5,7 +5,7 @@ description: "Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus 
 lastmod: '2024-03-13T22:44:53.793356-06:00'
 model: gpt-4-1106-preview
 summary: "Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus einem\
-  \ l\xE4ngeren String herauszunehmen. Programmierer machen das, um mit Daten zu\u2026"
+  \ l\xE4ngeren String herauszunehmen."
 title: Teilstrings extrahieren
 weight: 6
 ---

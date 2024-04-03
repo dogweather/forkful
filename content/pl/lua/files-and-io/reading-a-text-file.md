@@ -6,8 +6,7 @@ description: "Czytanie pliku tekstowego to proces wyci\u0105gania danych z pliku
 lastmod: '2024-03-13T22:44:35.557495-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to proces wyci\u0105gania danych z pliku znajduj\u0105\
-  cego si\u0119 na dysku. Programi\u015Bci robi\u0105 to, \u017Ceby obs\u0142u\u017C\
-  y\u0107 zawarto\u015B\u0107 \u2013 wy\u015Bwietli\u0107 j\u0105,\u2026"
+  cego si\u0119 na dysku."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

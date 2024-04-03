@@ -4,8 +4,9 @@ description: "JSON, or JavaScript Object Notation, is a lightweight format for s
   \ and transporting data, ideal for server-to-client communication and configuration\u2026"
 lastmod: '2024-03-13T22:44:59.689431-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, or JavaScript Object Notation, is a lightweight format for storing\
-  \ and transporting data, ideal for server-to-client communication and configuration\u2026"
+summary: JSON, or JavaScript Object Notation, is a lightweight format for storing
+  and transporting data, ideal for server-to-client communication and configuration
+  files.
 title: Working with JSON
 weight: 38
 ---

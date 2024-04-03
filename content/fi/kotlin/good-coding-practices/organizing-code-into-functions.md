@@ -6,8 +6,7 @@ description: "Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista u
 lastmod: '2024-03-13T22:44:56.536398-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista uudelleenk\xE4\
-  ytett\xE4viin osiin, joista jokainen k\xE4sittelee tietty\xE4 teht\xE4v\xE4\xE4\
-  . T\xE4m\xE4 tehd\xE4\xE4n\u2026"
+  ytett\xE4viin osiin, joista jokainen k\xE4sittelee tietty\xE4 teht\xE4v\xE4\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

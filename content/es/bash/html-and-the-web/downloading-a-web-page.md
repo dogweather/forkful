@@ -4,8 +4,7 @@ description: "Descargar una p\xE1gina web significa guardar el contenido HTML en
   \ PC. Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"
 lastmod: '2024-03-13T22:44:59.245431-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu PC.\
-  \ Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"
+summary: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu PC."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.335942-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data p\xE5\
   \ en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk eller\
-  \ analyse.\u2026"
+  \ analyse."
 title: Skrive en tekstfil
 weight: 24
 ---

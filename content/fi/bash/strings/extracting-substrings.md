@@ -6,8 +6,7 @@ description: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaam
 lastmod: '2024-03-13T22:44:56.727066-06:00'
 model: gpt-4-1106-preview
 summary: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja\
-  \ k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\
-  ihin vain osan datasta."
+  \ k\xE4ytt\xE4mist\xE4."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

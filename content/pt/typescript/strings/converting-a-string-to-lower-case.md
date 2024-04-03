@@ -5,7 +5,7 @@ description: "Converter uma string para min\xFAsculas \xE9 basicamente transform
 lastmod: '2024-03-13T22:44:46.312831-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas \xE9 basicamente transformar todos\
-  \ os caracteres de uma frase ou palavra para o formato de letra pequena. Programadores\u2026"
+  \ os caracteres de uma frase ou palavra para o formato de letra pequena."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

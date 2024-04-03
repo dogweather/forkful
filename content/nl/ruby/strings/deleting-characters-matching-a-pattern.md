@@ -6,8 +6,9 @@ description: "Het verwijderen van tekens die overeenkomen met een patroon in str
   \ gaat over het nauwkeurig verwijderen van delen die je niet nodig hebt, zoals het\u2026"
 lastmod: '2024-03-13T22:44:51.318461-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van tekens die overeenkomen met een patroon in strings gaat\
-  \ over het nauwkeurig verwijderen van delen die je niet nodig hebt, zoals het\u2026"
+summary: Het verwijderen van tekens die overeenkomen met een patroon in strings gaat
+  over het nauwkeurig verwijderen van delen die je niet nodig hebt, zoals het strippen
+  van hashtags uit tweets.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

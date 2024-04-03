@@ -5,8 +5,8 @@ description: "Searching and replacing text lets you find specific strings and sw
   \ to\u2026"
 lastmod: '2024-03-13T22:44:59.996109-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text lets you find specific strings and swap them\
-  \ out for something else. Programmers use it for everything from fixing typos to\u2026"
+summary: Searching and replacing text lets you find specific strings and swap them
+  out for something else.
 title: Searching and replacing text
 weight: 10
 ---

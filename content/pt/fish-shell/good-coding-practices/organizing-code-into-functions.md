@@ -9,8 +9,7 @@ description: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7
 lastmod: '2024-03-13T22:44:47.011554-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7os de\
-  \ script para realizar tarefas espec\xEDficas. Fazemos isso porque torna o c\xF3\
-  digo mais f\xE1cil de ler,\u2026"
+  \ script para realizar tarefas espec\xEDficas."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

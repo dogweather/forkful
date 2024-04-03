@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.559433-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon interpolaatio C#:ssa mahdollistaa uuden merkkijonon luomisen\
   \ sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita merkkijonoliteraalin sis\xE4\xE4n, mik\xE4\
-  \ tekee merkkijonojen\u2026"
+  \ tekee merkkijonojen muotoilusta ja yhdist\xE4misest\xE4 helpompaa."
 title: Merkkijonon interpolointi
 weight: 8
 ---

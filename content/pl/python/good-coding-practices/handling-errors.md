@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:34.957361-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Pythonie (lub w dowolnym j\u0119zyku\
   \ programowania) wi\u0105\u017Ce si\u0119 z oczekiwaniem na nieoczekiwane \u2013\
-  \ to sztuka eleganckiego radzenia sobie, gdy w\u2026"
+  \ to sztuka eleganckiego radzenia sobie, gdy w kodzie pojawi\u0105 si\u0119 problemy."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

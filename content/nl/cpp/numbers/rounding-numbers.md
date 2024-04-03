@@ -7,8 +7,8 @@ description: "Het afronden van getallen betekent het aanpassen van een waarde na
   \ doen\u2026"
 lastmod: '2024-03-13T22:44:51.107581-06:00'
 model: gpt-4-0125-preview
-summary: "Het afronden van getallen betekent het aanpassen van een waarde naar de\
-  \ dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars doen\u2026"
+summary: Het afronden van getallen betekent het aanpassen van een waarde naar de dichtstbijzijnde
+  gehele getal of een gespecificeerde precisie.
 title: Afronden van getallen
 weight: 13
 ---

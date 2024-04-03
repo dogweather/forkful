@@ -6,8 +6,7 @@ description: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohj
 lastmod: '2024-03-13T22:44:56.591437-06:00'
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi\
-  \ k\xE4ytt\xF6\xF6n. T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6n taito tiedon k\xE4sittely\xE4\
-  , s\xE4ilytyst\xE4 ja analysointia\u2026"
+  \ k\xE4ytt\xF6\xF6n."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

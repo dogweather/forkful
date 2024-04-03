@@ -5,7 +5,7 @@ description: "Arrotondare i numeri significa aggiustare un valore alla sua inter
 lastmod: '2024-03-13T22:44:43.721606-06:00'
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa aggiustare un valore alla sua interezza pi\xF9\
-  \ vicina o alla precisione specificata. Gli sviluppatori lo fanno per\u2026"
+  \ vicina o alla precisione specificata."
 title: Arrotondamento dei numeri
 weight: 13
 ---

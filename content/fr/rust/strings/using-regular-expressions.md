@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.471353-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
   \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\
-  \ avec des\u2026"
+  \ avec des techniques avanc\xE9es de reconnaissance de motifs."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

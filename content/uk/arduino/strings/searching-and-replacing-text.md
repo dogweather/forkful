@@ -4,8 +4,8 @@ description: "Searching and replacing text in programming means scanning strings
   \ a match and swapping found instances with new text. Programmers do this to update\u2026"
 lastmod: '2024-03-13T22:44:49.695608-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text in programming means scanning strings for a\
-  \ match and swapping found instances with new text. Programmers do this to update\u2026"
+summary: Searching and replacing text in programming means scanning strings for a
+  match and swapping found instances with new text.
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

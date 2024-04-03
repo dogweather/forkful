@@ -4,8 +4,8 @@ description: "Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen 
   \ lokal zu speichern. Programmierer tun dies, um Inhalte zu analysieren, zu\u2026"
 lastmod: '2024-03-13T22:44:53.762027-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und lokal\
-  \ zu speichern. Programmierer tun dies, um Inhalte zu analysieren, zu\u2026"
+summary: Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und lokal
+  zu speichern.
 title: Webseite herunterladen
 weight: 42
 ---

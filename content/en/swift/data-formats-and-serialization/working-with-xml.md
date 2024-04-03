@@ -4,8 +4,7 @@ description: "Working with XML means parsing and generating XML data in Swift. P
   \ do this for data interchange, especially when integrating with systems where\u2026"
 lastmod: '2024-03-13T22:45:00.417611-06:00'
 model: gpt-4-1106-preview
-summary: "Working with XML means parsing and generating XML data in Swift. Programmers\
-  \ do this for data interchange, especially when integrating with systems where\u2026"
+summary: Working with XML means parsing and generating XML data in Swift.
 title: Working with XML
 weight: 40
 ---

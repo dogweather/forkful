@@ -8,7 +8,8 @@ description: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3
 lastmod: '2024-03-13T22:44:46.101562-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o de computadores,\
-  \ envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou para um n\xFAmero\u2026"
+  \ envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou para um n\xFAmero\
+  \ espec\xEDfico de casas decimais."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

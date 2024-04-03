@@ -12,8 +12,7 @@ model: gpt-4-0125-preview
 summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n C# m\u1EDBi c\xF3 ngh\u0129\
   a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t gi\u1EA3i ph\xE1p m\u1EDBi t\u1EEB \u0111\u1EA7\
   u v\xE0 c\xE1c t\u1EADp tin d\u1EF1 \xE1n \u0111\u1EC3 c\u1EA5u tr\xFAc m\xE3 c\u1EE7\
-  a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u nh\u1EEFng d\u1EF1\
-  \ \xE1n\u2026"
+  a b\u1EA1n."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

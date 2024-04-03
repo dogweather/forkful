@@ -5,7 +5,8 @@ description: "Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht ri
 lastmod: '2024-03-13T22:44:53.892670-06:00'
 model: gpt-4-0125-preview
 summary: "Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht richtig\
-  \ funktioniert: ```C# static void Main() { int result = Sum(1, 2);\u2026"
+  \ funktioniert:\n\n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n \
+  \   Console."
 title: Einsatz eines Debuggers
 weight: 35
 ---

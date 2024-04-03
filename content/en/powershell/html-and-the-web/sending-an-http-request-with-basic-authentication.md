@@ -4,8 +4,8 @@ description: "Sending an HTTP request with basic authentication is when your pro
   \ reaches out to a web server and says \"Hey, it's me,\" using a username and password.\u2026"
 lastmod: '2024-03-13T22:45:00.283766-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request with basic authentication is when your program reaches\
-  \ out to a web server and says \"Hey, it's me,\" using a username and password.\u2026"
+summary: Sending an HTTP request with basic authentication is when your program reaches
+  out to a web server and says "Hey, it's me," using a username and password.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

@@ -6,8 +6,7 @@ description: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generow
 lastmod: '2024-03-13T22:44:35.778860-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie danych\
-  \ XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza podczas\
-  \ integracji z\u2026"
+  \ XML."
 title: Praca z XML
 weight: 40
 ---

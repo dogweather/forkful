@@ -8,8 +8,7 @@ description: "Att hantera fel i C inneb\xE4r att uppt\xE4cka och bem\xF6ta onorm
 lastmod: '2024-03-13T22:44:38.390671-06:00'
 model: gpt-4-0125-preview
 summary: "Att hantera fel i C inneb\xE4r att uppt\xE4cka och bem\xF6ta onormala f\xF6\
-  rh\xE5llanden som uppst\xE5r under programk\xF6rning. Programmerare g\xF6r detta\
-  \ f\xF6r att f\xF6rhindra\u2026"
+  rh\xE5llanden som uppst\xE5r under programk\xF6rning."
 title: Hantera fel
 weight: 16
 ---

@@ -7,7 +7,7 @@ description: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten 
 lastmod: '2024-03-13T22:44:56.868432-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten ohjelmien\
-  \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan.\u2026"
+  \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan."
 title: Testien kirjoittaminen
 weight: 36
 ---

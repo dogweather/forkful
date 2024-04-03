@@ -7,7 +7,8 @@ description: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA
 lastmod: '2024-03-13T22:44:43.263350-06:00'
 model: gpt-4-0125-preview
 summary: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA) comporta\
-  \ l'installazione di un ambiente all'interno di un'applicazione host, come\u2026"
+  \ l'installazione di un ambiente all'interno di un'applicazione host, come Excel,\
+  \ per automatizzare compiti o estendere la funzionalit\xE0."
 title: Iniziando un nuovo progetto
 weight: 1
 ---

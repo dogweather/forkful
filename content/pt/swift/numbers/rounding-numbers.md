@@ -5,7 +5,7 @@ description: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a u
 lastmod: '2024-03-13T22:44:46.915628-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a uma precis\xE3\
-  o espec\xEDfica, tipicamente para remover decimais indesejados. Programadores\u2026"
+  o espec\xEDfica, tipicamente para remover decimais indesejados."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

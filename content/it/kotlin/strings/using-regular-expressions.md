@@ -6,8 +6,9 @@ description: "Le espressioni regolari (regex) sono uno strumento potente per l'e
   \ del testo, che permette ai programmatori di cercare, corrispondere e\u2026"
 lastmod: '2024-03-13T22:44:43.381887-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione\
-  \ del testo, che permette ai programmatori di cercare, corrispondere e\u2026"
+summary: Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione
+  del testo, che permette ai programmatori di cercare, corrispondere e manipolare
+  le stringhe con tecniche avanzate di corrispondenza di modelli.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

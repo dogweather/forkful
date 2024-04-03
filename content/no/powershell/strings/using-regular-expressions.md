@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\x
 lastmod: '2024-03-13T22:44:41.006436-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\xF8kem\xF8\
-  nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon. Programmerere utnytter\
-  \ regex i\u2026"
+  nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

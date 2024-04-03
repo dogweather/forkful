@@ -5,9 +5,7 @@ description: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il 
   \ di\u2026"
 lastmod: '2024-03-13T22:44:43.434570-06:00'
 model: gpt-4-1106-preview
-summary: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
-  \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\
-  \ di\u2026"
+summary: Iniziamo nuovi progetti per trasformare idee in software.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

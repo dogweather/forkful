@@ -8,8 +8,7 @@ description: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller f
 lastmod: '2024-03-13T22:44:41.262635-06:00'
 model: gpt-4-0125-preview
 summary: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller flere strenger\
-  \ ende-til-ende for \xE5 danne en ny streng. Programmerere utf\xF8rer denne operasjonen\
-  \ for\u2026"
+  \ ende-til-ende for \xE5 danne en ny streng."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

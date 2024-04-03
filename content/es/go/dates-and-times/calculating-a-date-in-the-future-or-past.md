@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.482854-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o pasado en Go implica manipular valores\
   \ de fecha y hora para determinar un punto espec\xEDfico en relaci\xF3n con una\
-  \ fecha\u2026"
+  \ fecha dada."
 title: "C\xE1lculo de una fecha en el futuro o en el pasado"
 weight: 26
 ---

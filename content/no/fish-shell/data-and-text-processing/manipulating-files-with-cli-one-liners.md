@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:41.221564-06:00'
 model: gpt-4-0125-preview
 summary: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
   \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
-  \ (CLI) ikke\u2026"
+  \ (CLI) ikke bare et sp\xF8rsm\xE5l om bekvemmelighet \u2013 det er et kraftverkt\xF8\
+  y."
 title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---

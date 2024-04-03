@@ -4,8 +4,8 @@ description: "Parsing HTML in programming involves analyzing the structure of an
   \ document, allowing you to extract, manipulate, and interact with its content\u2026"
 lastmod: '2024-03-13T22:45:00.086607-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in programming involves analyzing the structure of an HTML\
-  \ document, allowing you to extract, manipulate, and interact with its content\u2026"
+summary: Parsing HTML in programming involves analyzing the structure of an HTML document,
+  allowing you to extract, manipulate, and interact with its content programmatically.
 title: Parsing HTML
 weight: 43
 ---

@@ -6,8 +6,9 @@ description: "Een interactieve shell, ook bekend als een Lees-Evalueer-Print-Lus
   \ stelt programmeurs in staat om expressies of code in te typen en direct\u2026"
 lastmod: '2024-03-13T22:44:51.292916-06:00'
 model: gpt-4-0125-preview
-summary: "Een interactieve shell, ook bekend als een Lees-Evalueer-Print-Lus (REPL),\
-  \ stelt programmeurs in staat om expressies of code in te typen en direct\u2026"
+summary: Een interactieve shell, ook bekend als een Lees-Evalueer-Print-Lus (REPL),
+  stelt programmeurs in staat om expressies of code in te typen en direct resultaten
+  te zien, wat het leerproces en het debuggen verbetert.
 title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---

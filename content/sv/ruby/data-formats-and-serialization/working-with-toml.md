@@ -6,8 +6,7 @@ description: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4
 lastmod: '2024-03-13T22:44:38.455615-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa p\xE5\
-  \ grund av dess tydliga semantik. Programmerare anv\xE4nder TOML f\xF6r att hantera\
-  \ appkonfigurationer\u2026"
+  \ grund av dess tydliga semantik."
 title: Att arbeta med TOML
 weight: 39
 ---

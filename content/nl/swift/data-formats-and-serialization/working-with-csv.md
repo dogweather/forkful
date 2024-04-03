@@ -6,8 +6,8 @@ description: "CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestan
   \ voor het opslaan van tabelgegevens. Programmeurs gebruiken ze omdat ze gemakkelijk\u2026"
 lastmod: '2024-03-13T22:44:51.180351-06:00'
 model: gpt-4-0125-preview
-summary: "CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestanden voor\
-  \ het opslaan van tabelgegevens. Programmeurs gebruiken ze omdat ze gemakkelijk\u2026"
+summary: CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestanden voor
+  het opslaan van tabelgegevens.
 title: Werken met CSV
 weight: 37
 ---

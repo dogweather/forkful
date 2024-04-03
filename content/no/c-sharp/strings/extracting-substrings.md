@@ -6,8 +6,7 @@ description: "I C# er uttrekk av delstrenger det \xE5 hente ut en spesifikk del 
 lastmod: '2024-03-13T22:44:40.783993-06:00'
 model: gpt-4-1106-preview
 summary: "I C# er uttrekk av delstrenger det \xE5 hente ut en spesifikk del av en\
-  \ tekststreng. Vi gj\xF8r det for \xE5 bearbeide eller analysere visse seksjoner\
-  \ av data, som\u2026"
+  \ tekststreng."
 title: Uthenting av delstrenger
 weight: 6
 ---

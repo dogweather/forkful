@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.754188-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Kotlin inneb\xE6rer \xE5 lage kodeutsnitt som automatisk\
   \ validerer den funksjonelle korrektheten av programvaremodulene dine, og s\xF8\
-  rger for at\u2026"
+  rger for at de fungerer som forventet."
 title: Skrive tester
 weight: 36
 ---

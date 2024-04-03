@@ -8,9 +8,7 @@ description: "Analisar HTML significa extrair dados de documentos HTML. Programa
   \xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.960485-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML significa extrair dados de documentos HTML. Programadores\
-  \ fazem isso para interagir com ou manipular conte\xFAdo da web, automatizar a extra\xE7\
-  \xE3o\u2026"
+summary: Analisar HTML significa extrair dados de documentos HTML.
 title: Analisando HTML
 weight: 43
 ---

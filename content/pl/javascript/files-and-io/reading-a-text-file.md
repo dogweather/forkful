@@ -4,8 +4,7 @@ description: JavaScript (JS) often reads text files to process data. Programmers
   it to pull in configurations, fetch content, or parse external data.
 lastmod: '2024-03-13T22:44:35.813748-06:00'
 model: gpt-4-1106-preview
-summary: JavaScript (JS) often reads text files to process data. Programmers do it
-  to pull in configurations, fetch content, or parse external data.
+summary: JavaScript (JS) often reads text files to process data.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

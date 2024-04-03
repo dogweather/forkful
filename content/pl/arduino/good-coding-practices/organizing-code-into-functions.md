@@ -6,8 +6,7 @@ description: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotni
 lastmod: '2024-03-13T22:44:35.676827-06:00'
 model: gpt-4-1106-preview
 summary: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie u\u017C\
-  ywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie. Programi\u015B\
-  ci robi\u0105 to, aby\u2026"
+  ywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

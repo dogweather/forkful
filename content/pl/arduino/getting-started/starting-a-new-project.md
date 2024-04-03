@@ -6,8 +6,7 @@ description: "Zaczynanie nowego projektu to stworzenie miejsca na kod, kt\xF3ry 
 lastmod: '2024-03-13T22:44:35.673022-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu to stworzenie miejsca na kod, kt\xF3ry p\xF3\u017A\
-  niej zamieni si\u0119 w dzia\u0142aj\u0105cy program. Programi\u015Bci robi\u0105\
-  \ to, by przekszta\u0142ci\u0107 pomys\u0142y w\u2026"
+  niej zamieni si\u0119 w dzia\u0142aj\u0105cy program."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

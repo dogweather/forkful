@@ -8,8 +8,7 @@ description: "Arrondir les nombres en programmation consiste \xE0 approximer un 
 lastmod: '2024-03-13T22:44:57.551570-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
-  \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\
-  \ programmeurs\u2026"
+  \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales."
 title: Arrondissement des nombres
 weight: 13
 ---

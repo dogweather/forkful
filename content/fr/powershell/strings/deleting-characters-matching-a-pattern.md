@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.026094-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8gle\
   \ ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\
-  ne de caract\xE8res.\u2026"
+  ne de caract\xE8res."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

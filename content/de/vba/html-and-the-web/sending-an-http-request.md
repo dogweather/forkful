@@ -8,7 +8,8 @@ description: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VB
 lastmod: '2024-03-13T22:44:53.714266-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VBA) beinhaltet\
-  \ den programmatischen Zugriff auf Webressourcen oder Webservices durch das\u2026"
+  \ den programmatischen Zugriff auf Webressourcen oder Webservices durch das Stellen\
+  \ von Anfragen \xFCber HTTP."
 title: Eine HTTP-Anfrage senden
 weight: 44
 ---

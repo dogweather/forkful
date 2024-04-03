@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.401323-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohjelmassa\
   \ sis\xE4lt\xE4\xE4 ymp\xE4rist\xF6n pystytt\xE4misen is\xE4nt\xE4sovelluksen, kuten\
-  \ Excelin, sis\xE4ll\xE4\u2026"
+  \ Excelin, sis\xE4ll\xE4 teht\xE4vien automatisoimiseksi tai toiminnallisuuden laajentamiseksi."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

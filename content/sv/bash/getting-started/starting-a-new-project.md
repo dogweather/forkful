@@ -5,8 +5,7 @@ description: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din k
   n b\xF6rjan."
 lastmod: '2024-03-13T22:44:38.083216-06:00'
 model: gpt-4-1106-preview
-summary: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod. Programmerare\
-  \ g\xF6r detta f\xF6r att organisera och strukturera sitt arbete fr\xE5n b\xF6rjan."
+summary: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

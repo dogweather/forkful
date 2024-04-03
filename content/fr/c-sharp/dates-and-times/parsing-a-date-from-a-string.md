@@ -8,8 +8,7 @@ description: "Analyser une date \xE0 partir d'une cha\xEEne en C# consiste \xE0 
 lastmod: '2024-03-13T22:44:57.797937-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne en C# consiste \xE0 convertir\
-  \ des repr\xE9sentations textuelles de dates et d'heures en un objet `DateTime`.\
-  \ Cela est\u2026"
+  \ des repr\xE9sentations textuelles de dates et d'heures en un objet `DateTime`."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -7,7 +7,7 @@ description: "Capitalizzare una stringa in C# comporta la conversione del primo 
 lastmod: '2024-03-13T22:44:43.416865-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in C# comporta la conversione del primo carattere\
-  \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8. Questa modifica pu\xF2 essere\u2026"
+  \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8."
 title: Capitalizzare una stringa
 weight: 2
 ---

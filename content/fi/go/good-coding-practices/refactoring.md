@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.059671-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin\
   \ uudelleenj\xE4rjestely\xE4\u2014faktorisoinnin muuttamista\u2014muuttamatta sen\
-  \ ulkoista\u2026"
+  \ ulkoista k\xE4ytt\xE4ytymist\xE4."
 title: Koodin uudelleenkirjoitus
 weight: 19
 ---

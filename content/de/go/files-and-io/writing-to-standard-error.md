@@ -7,7 +7,8 @@ description: "Das Schreiben auf die Standardfehlerausgabe (stderr) in Go beinhal
 lastmod: '2024-03-13T22:44:53.305838-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf die Standardfehlerausgabe (stderr) in Go beinhaltet die\
-  \ Weiterleitung von Fehlermeldungen oder Diagnosen, die nicht f\xFCr den\u2026"
+  \ Weiterleitung von Fehlermeldungen oder Diagnosen, die nicht f\xFCr den Hauptausgabestrom\
+  \ bestimmt sind."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

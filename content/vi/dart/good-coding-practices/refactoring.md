@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "T\xE1i c\u1EA5u tr\xFAc trong Dart l\xE0 qu\xE1 tr\xECnh c\u01A1 c\u1EA5\
   u l\u1EA1i code hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi\
   \ b\xEAn ngo\xE0i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7\
-  n c\u1EA5u tr\xFAc n\u1ED9i b\u1ED9, kh\u1EA3\u2026"
+  n c\u1EA5u tr\xFAc n\u1ED9i b\u1ED9, kh\u1EA3 n\u0103ng \u0111\u1ECDc v\xE0 b\u1EA3\
+  o tr\xEC c\u1EE7a n\xF3."
 title: "T\xE1i c\u1EA5u tr\xFAc code"
 weight: 19
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.848850-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\
-  \ bas\xE9es\u2026"
+  \ bas\xE9es sur la pr\xE9sence ou l'absence de structures de r\xE9pertoires."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

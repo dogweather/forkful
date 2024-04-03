@@ -8,8 +8,7 @@ description: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony interneto
 lastmod: '2024-03-13T22:44:35.362793-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej na\
-  \ co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\
-  ci parsuj\u0105 HTML w celu\u2026"
+  \ co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

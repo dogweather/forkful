@@ -6,8 +6,10 @@ description: "In de wereld van het programmeren omvat het werken met CSV (Comma-
   \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"
 lastmod: '2024-03-13T22:44:51.314394-06:00'
 model: gpt-4-0125-preview
-summary: "In de wereld van het programmeren omvat het werken met CSV (Comma-Separated\
-  \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"
+summary: In de wereld van het programmeren omvat het werken met CSV (Comma-Separated
+  Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn georganiseerd
+  in rijen, waarbij elke rij een record vertegenwoordigt en de velden van elk record
+  zijn gescheiden door komma's.
 title: Werken met CSV
 weight: 37
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.200324-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Clojure, assim como em outras linguagens de programa\xE7\
   \xE3o, envolve a cria\xE7\xE3o de c\xF3digo dedicado para verificar se sua base\
-  \ de c\xF3digo\u2026"
+  \ de c\xF3digo principal funciona conforme o esperado."
 title: Escrevendo testes
 weight: 36
 ---

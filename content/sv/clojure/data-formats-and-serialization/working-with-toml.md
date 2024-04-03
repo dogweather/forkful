@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.548517-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att du hanterar data i det minimala formatet\
   \ \"Toms Obvious, Minimal Language\", popul\xE4rt f\xF6r konfigurationsfiler p\xE5\
-  \ grund av\u2026"
+  \ grund av dess l\xE4ttl\xE4sta format."
 title: Att arbeta med TOML
 weight: 39
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c Rust, hay REPL (Read-Eval-Print Loop),\
   \ cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 Rust t\u1EE9c th\xEC, xem k\u1EBFt qu\u1EA3\
   \ ngay l\u1EADp t\u1EE9c, r\u1EA5t ho\xE0n h\u1EA3o cho vi\u1EC7c th\u1EED nghi\u1EC7\
-  m\u2026"
+  m ho\u1EB7c h\u1ECDc h\u1ECFi."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

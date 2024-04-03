@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.657531-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para combinar\
   \ combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5es sofisticadas\
-  \ de busca e\u2026"
+  \ de busca e substitui\xE7\xE3o e valida\xE7\xE3o de dados."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

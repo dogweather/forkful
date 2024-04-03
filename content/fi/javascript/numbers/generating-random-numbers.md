@@ -6,7 +6,9 @@ description: "Satunnaislukujen generointi JavaScriptill\xE4 on tekniikka, jota k
 lastmod: '2024-03-13T22:44:56.945630-06:00'
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi JavaScriptill\xE4 on tekniikka, jota k\xE4ytet\xE4\
-  \xE4n luomaan ennustamattomuutta sovelluksiin, peleist\xE4, jotka tarvitsevat satunnaista\u2026"
+  \xE4n luomaan ennustamattomuutta sovelluksiin, peleist\xE4, jotka tarvitsevat satunnaista\
+  \ vihollisen k\xE4yt\xF6st\xE4, turva-algoritmeihin, jotka vaativat kryptografista\
+  \ satunnaisuutta."
 title: Satunnaislukujen generointi
 weight: 12
 ---

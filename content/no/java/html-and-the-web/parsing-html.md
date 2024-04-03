@@ -6,8 +6,7 @@ description: "Parsing av HTML betyr \xE5 tolke og organisere HTML-kode slik at d
 lastmod: '2024-03-13T22:44:40.664483-06:00'
 model: unknown
 summary: "Parsing av HTML betyr \xE5 tolke og organisere HTML-kode slik at data kan\
-  \ leses og h\xE5ndteres av et program. Programm\xF8rer parser HTML for \xE5 hente\
-  \ ut\u2026"
+  \ leses og h\xE5ndteres av et program."
 title: Analyse av HTML
 weight: 43
 ---

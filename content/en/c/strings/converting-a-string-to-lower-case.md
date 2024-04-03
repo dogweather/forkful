@@ -4,8 +4,8 @@ description: "Converting a string to lowercase in C involves transforming all up
   \ letters in a given string to their corresponding lowercase equivalents.\u2026"
 lastmod: '2024-03-13T22:45:00.500084-06:00'
 model: gpt-4-0125-preview
-summary: "Converting a string to lowercase in C involves transforming all uppercase\
-  \ letters in a given string to their corresponding lowercase equivalents.\u2026"
+summary: Converting a string to lowercase in C involves transforming all uppercase
+  letters in a given string to their corresponding lowercase equivalents.
 title: Converting a string to lower case
 weight: 4
 ---

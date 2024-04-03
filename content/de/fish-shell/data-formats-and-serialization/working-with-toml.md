@@ -6,7 +6,7 @@ description: "TOML ist ein Konfigurationsdateiformat, das f\xFCr Menschen leicht
 lastmod: '2024-03-13T22:44:54.332089-06:00'
 model: gpt-4-0125-preview
 summary: "TOML ist ein Konfigurationsdateiformat, das f\xFCr Menschen leicht zu lesen\
-  \ und zu schreiben ist und von Maschinen einfach geparst und generiert werden kann.\u2026"
+  \ und zu schreiben ist und von Maschinen einfach geparst und generiert werden kann."
 title: Arbeiten mit TOML
 weight: 39
 ---

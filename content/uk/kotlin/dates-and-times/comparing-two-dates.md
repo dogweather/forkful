@@ -6,8 +6,7 @@ description: "Comparing two dates means figuring out their order\u2014earlier, l
 lastmod: '2024-03-13T22:44:49.239773-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates means figuring out their order\u2014earlier, later,\
-  \ or the same moment. Programmers compare dates to track events, expire sessions,\
-  \ or sort\u2026"
+  \ or the same moment."
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

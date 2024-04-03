@@ -5,8 +5,7 @@ description: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm 
   \ oder\u2026"
 lastmod: '2024-03-13T22:44:53.779768-06:00'
 model: gpt-4-1106-preview
-summary: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu laden.\
-  \ Programmierer tun dies, um Daten zu verarbeiten, Konfigurationen zu laden oder\u2026"
+summary: Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu laden.
 title: Textdatei einlesen
 weight: 22
 ---

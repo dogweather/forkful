@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.975098-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, en f\xF6rkortning f\xF6r \"YAML Ain't Markup Language\", \xE4r en\
   \ m\xE4nniskov\xE4nlig standard f\xF6r dataseriering som kan anv\xE4ndas f\xF6r\
-  \ alla programmeringsspr\xE5k.\u2026"
+  \ alla programmeringsspr\xE5k."
 title: Att Arbeta med YAML
 weight: 41
 ---

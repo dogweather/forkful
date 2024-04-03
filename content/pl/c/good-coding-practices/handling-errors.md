@@ -8,8 +8,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w w C polega na wykrywaniu i reagow
 lastmod: '2024-03-13T22:44:35.894616-06:00'
 model: gpt-4-0125-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w C polega na wykrywaniu i reagowaniu na\
-  \ nietypowe warunki, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonania programu.\
-  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+  \ nietypowe warunki, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonania programu."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

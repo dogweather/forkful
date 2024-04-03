@@ -7,7 +7,8 @@ description: "La gestione degli errori in Dart riguarda l'anticipazione e la ges
 lastmod: '2024-03-13T22:44:43.139187-06:00'
 model: gpt-4-0125-preview
 summary: "La gestione degli errori in Dart riguarda l'anticipazione e la gestione\
-  \ delle eccezioni che si verificano durante l'esecuzione del programma per\u2026"
+  \ delle eccezioni che si verificano durante l'esecuzione del programma per migliorarne\
+  \ l'affidabilit\xE0 e l'usabilit\xE0."
 title: Gestione degli errori
 weight: 16
 ---

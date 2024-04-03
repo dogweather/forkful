@@ -7,7 +7,8 @@ description: "La journalisation dans Visual Basic pour Applications (VBA) impliq
 lastmod: '2024-03-13T22:44:57.587134-06:00'
 model: gpt-4-0125-preview
 summary: "La journalisation dans Visual Basic pour Applications (VBA) implique l'enregistrement\
-  \ d'informations sur le comportement d'un programme lors de son\u2026"
+  \ d'informations sur le comportement d'un programme lors de son ex\xE9cution dans\
+  \ un fichier, une console ou une base de donn\xE9es."
 title: Journalisation
 weight: 17
 ---

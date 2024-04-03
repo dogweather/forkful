@@ -4,8 +4,8 @@ description: "Checking if a directory exists in C# involves verifying the presen
   \ of a folder at a specified path in the file system. Programmers do this to avoid\u2026"
 lastmod: '2024-03-13T22:45:00.102348-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in C# involves verifying the presence of\
-  \ a folder at a specified path in the file system. Programmers do this to avoid\u2026"
+summary: Checking if a directory exists in C# involves verifying the presence of a
+  folder at a specified path in the file system.
 title: Checking if a directory exists
 weight: 20
 ---

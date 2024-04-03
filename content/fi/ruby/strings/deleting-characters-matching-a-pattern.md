@@ -4,8 +4,7 @@ description: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan
   , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"
 lastmod: '2024-03-13T22:44:57.069436-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyss\xE4\
-  , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"
+summary: "Mik\xE4 & Miksi."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

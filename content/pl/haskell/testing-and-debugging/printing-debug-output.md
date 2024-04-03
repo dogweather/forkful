@@ -6,8 +6,7 @@ description: "Wypisywanie informacji diagnostycznych (debug output) to spos\xF3b
 lastmod: '2024-03-13T22:44:35.454436-06:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie informacji diagnostycznych (debug output) to spos\xF3b na \u015B\
-  ledzenie tego, co si\u0119 dzieje w programie podczas jego dzia\u0142ania. Programi\u015B\
-  ci u\u017Cywaj\u0105\u2026"
+  ledzenie tego, co si\u0119 dzieje w programie podczas jego dzia\u0142ania."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

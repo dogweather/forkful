@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.274871-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo de uma parte real e uma imagin\xE1ria\
   \ (normalmente denotados como a + bi), estendem o conceito dos n\xFAmeros sem dimens\xE3\
-  o para\u2026"
+  o para um espa\xE7o bidimensional."
 title: "Trabalhando com N\xFAmeros Complexos"
 weight: 14
 ---

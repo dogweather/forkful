@@ -7,9 +7,9 @@ description: "Het lezen van commandoregelargumenten in Go houdt in dat je de arg
   \ of\u2026"
 lastmod: '2024-03-13T22:44:50.303379-06:00'
 model: gpt-4-0125-preview
-summary: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten\
-  \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\
-  \ of\u2026"
+summary: Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten
+  die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal of
+  opdrachtprompt haalt.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

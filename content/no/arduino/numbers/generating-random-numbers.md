@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:41.054514-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Arduino-prosjekter inneb\xE6rer \xE5 produsere\
   \ verdier som er uforutsigbare av design, noe som er avgj\xF8rende for applikasjoner\
-  \ som\u2026"
+  \ som spill, simuleringer og sikkerhetssystemer."
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.244469-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs en Python (ou dans tout autre langage de programmation)\
   \ consiste \xE0 anticiper l'inattendu \u2013 c'est l'art de g\xE9rer avec gr\xE2\
-  ce lorsque\u2026"
+  ce lorsque les choses prennent une mauvaise tournure dans votre code."
 title: Gestion des erreurs
 weight: 16
 ---

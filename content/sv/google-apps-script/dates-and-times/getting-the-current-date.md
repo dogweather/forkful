@@ -7,7 +7,8 @@ description: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att
 lastmod: '2024-03-13T22:44:37.450216-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
-  mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"
+  mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\
+  \ logga och tidsst\xE4mpla i appar knutna till Googles ekosystem."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

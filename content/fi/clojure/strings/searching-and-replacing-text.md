@@ -6,8 +6,7 @@ description: "Tekstin etsiminen ja korvaaminen on prosessi, jossa l\xF6ydet\xE4\
 lastmod: '2024-03-13T22:44:56.170487-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on prosessi, jossa l\xF6ydet\xE4\xE4n tietyt\
-  \ merkkijonot ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4\
-  \ tekstin\u2026"
+  \ merkkijonot ja korvataan ne toisilla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

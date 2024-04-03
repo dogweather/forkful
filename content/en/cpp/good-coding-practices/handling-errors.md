@@ -4,8 +4,7 @@ description: Handling errors means planning for when things go wrong. It's vital
   it helps avoid crashes and makes your software robust and user-friendly.
 lastmod: '2024-03-13T22:45:00.364454-06:00'
 model: gpt-4-1106-preview
-summary: Handling errors means planning for when things go wrong. It's vital because
-  it helps avoid crashes and makes your software robust and user-friendly.
+summary: Handling errors means planning for when things go wrong.
 title: Handling errors
 weight: 16
 ---

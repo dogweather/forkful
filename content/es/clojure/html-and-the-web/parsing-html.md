@@ -8,8 +8,7 @@ description: "Analizar HTML en Clojure implica extraer informaci\xF3n de documen
 lastmod: '2024-03-13T22:44:58.654431-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en Clojure implica extraer informaci\xF3n de documentos HTML\
-  \ de manera program\xE1tica. Los programadores hacen esto para acceder, manipular\
-  \ o\u2026"
+  \ de manera program\xE1tica."
 title: Analizando HTML
 weight: 43
 ---

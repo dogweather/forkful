@@ -5,7 +5,7 @@ description: "REPL, eller Read-Eval-Print Loop, er et programmeringsmilj\xF8 for
 lastmod: '2024-03-13T22:44:40.403946-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, eller Read-Eval-Print Loop, er et programmeringsmilj\xF8 for dynamisk\
-  \ testing av Clojure-kode stykke for stykke. Kodeutviklere bruker det for\u2026"
+  \ testing av Clojure-kode stykke for stykke."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

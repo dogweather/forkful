@@ -8,8 +8,7 @@ description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla a
 lastmod: '2024-03-13T22:44:37.729025-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla versaler\
-  \ i en str\xE4ng till deras motsvarigheter i gemener. Denna process \xE4r avg\xF6\
-  rande f\xF6r\u2026"
+  \ i en str\xE4ng till deras motsvarigheter i gemener."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

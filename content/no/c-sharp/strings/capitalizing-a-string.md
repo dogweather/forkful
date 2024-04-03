@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.777877-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
   \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
-  \ allerede er det. Denne\u2026"
+  \ allerede er det."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

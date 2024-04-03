@@ -6,8 +6,8 @@ description: "Tekst zoeken en vervangen is als verstoppertje spelen met strings,
   \ vervolgens de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"
 lastmod: '2024-03-13T22:44:50.752658-06:00'
 model: gpt-4-0125-preview
-summary: "Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens\
-  \ de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"
+summary: Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens
+  de verstopper te ruilen met iemand anders.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

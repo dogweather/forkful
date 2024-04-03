@@ -7,8 +7,8 @@ description: "Een nieuw PHP-project starten betekent een basis opzetten om je we
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.895666-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw PHP-project starten betekent een basis opzetten om je webapp of\
-  \ script op te bouwen. We doen dit om fris te starten, onze idee\xEBn in code te\u2026"
+summary: Een nieuw PHP-project starten betekent een basis opzetten om je webapp of
+  script op te bouwen.
 title: Een nieuw project starten
 weight: 1
 ---

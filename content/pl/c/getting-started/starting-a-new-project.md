@@ -7,7 +7,7 @@ description: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej
 lastmod: '2024-03-13T22:44:35.887259-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
-  \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
+  \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

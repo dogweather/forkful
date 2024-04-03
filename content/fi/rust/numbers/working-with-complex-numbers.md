@@ -5,7 +5,7 @@ description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskei
 lastmod: '2024-03-13T22:44:56.350797-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
-  \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"
+  \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

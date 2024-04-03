@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.613721-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skal (REPL - Read-Evaluate-Print Loop) f\xF6r Dart g\xF6r\
   \ det m\xF6jligt f\xF6r programmerare att dynamiskt skriva och exekvera Dart-kod\
-  \ rad f\xF6r rad\u2026"
+  \ rad f\xF6r rad utan att beh\xF6va kompilera hela skript."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

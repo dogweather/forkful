@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:36.041210-06:00'
 model: gpt-4-0125-preview
 summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Google Apps\
   \ Script (GAS) bao g\u1ED3m vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t file script b\xEA\
-  n trong h\u1EC7 sinh th\xE1i c\u1EE7a Google (Google Drive, Docs, Sheets,\u2026"
+  n trong h\u1EC7 sinh th\xE1i c\u1EE7a Google (Google Drive, Docs, Sheets, v."
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Enviar una solicitud HTTP es c\xF3mo tu programa en Kotlin habla c
 lastmod: '2024-03-13T22:44:59.032612-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP es c\xF3mo tu programa en Kotlin habla con el\
-  \ mundo, pidiendo y recibiendo datos de servicios web. Los programadores lo hacen\
-  \ para\u2026"
+  \ mundo, pidiendo y recibiendo datos de servicios web."
 title: Enviando una solicitud http
 weight: 44
 ---

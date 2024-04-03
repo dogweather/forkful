@@ -6,8 +6,7 @@ description: "Arrondir les nombres consiste \xE0 ajuster un nombre au plus proch
 lastmod: '2024-03-13T22:44:57.276780-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 ajuster un nombre au plus proche entier\
-  \ ou \xE0 une certaine pr\xE9cision d\xE9cimale. Nous arrondissons les nombres pour\
-  \ les\u2026"
+  \ ou \xE0 une certaine pr\xE9cision d\xE9cimale."
 title: Arrondir les nombres
 weight: 13
 ---

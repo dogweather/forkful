@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.294267-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) en JavaScript consiste \xE0 diriger\
   \ les messages d'erreur ou toute information critique vers un flux sp\xE9cifique\
-  \ et\u2026"
+  \ et s\xE9par\xE9, ce qui est particuli\xE8rement utile dans les environnements\
+  \ de type Unix pour la journalisation et le d\xE9bogage."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

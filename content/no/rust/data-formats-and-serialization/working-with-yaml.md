@@ -7,7 +7,8 @@ description: "I Rust-programmering handler det \xE5 arbeide med YAML (YAML Ain't
 lastmod: '2024-03-13T22:44:40.594313-06:00'
 model: gpt-4-0125-preview
 summary: "I Rust-programmering handler det \xE5 arbeide med YAML (YAML Ain't Markup\
-  \ Language) om \xE5 analysere og generere data i YAML-format, en menneskevennlig\u2026"
+  \ Language) om \xE5 analysere og generere data i YAML-format, en menneskevennlig\
+  \ standard for dataserielisering."
 title: Arbeider med YAML
 weight: 41
 ---

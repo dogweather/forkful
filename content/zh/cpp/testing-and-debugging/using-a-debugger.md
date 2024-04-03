@@ -9,9 +9,10 @@ lastmod: '2024-03-13T22:44:48.115372-06:00'
 model: gpt-4-0125-preview
 summary: "C++ \u53EF\u4EE5\u4E0EGDB\u6216Visual Studio\u8C03\u8BD5\u5668\u7B49\u8C03\
   \u8BD5\u5668\u96C6\u6210\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u4F7F\u7528GDB\u7684\
-  \u7B80\u77ED\u793A\u4F8B\uFF1A ```C++ #include <iostream> int main() { int a = 5;\
-  \ int b = 0; int c = a / b; // \u54CE\u5440\uFF0C\u9664\u4EE5\u96F6\u7684\u9519\u8BEF\
-  \uFF01 std::cout <<\u2026"
+  \u7B80\u77ED\u793A\u4F8B\uFF1A\n\n```C++\n#include <iostream>\n\nint main() {\n\
+  \    int a = 5;\n    int b = 0;\n    int c = a / b; // \u54CE\u5440\uFF0C\u9664\u4EE5\
+  \u96F6\u7684\u9519\u8BEF\uFF01\n    std::cout << c << std::endl;\n    return 0;\n\
+  }\n\n// \u7F16\u8BD1\u65B9\u5F0F\uFF1A\n// g++ -g -o my_program my_program."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

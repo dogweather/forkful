@@ -6,8 +6,8 @@ description: "YAML, \"YAML Ain't Markup Language,\" is een mensvriendelijke gege
   \ voor alle programmeertalen. Programmeurs gebruiken YAML voor\u2026"
 lastmod: '2024-03-13T22:44:50.440428-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, \"YAML Ain't Markup Language,\" is een mensvriendelijke gegevensserialisatiestandaard\
-  \ voor alle programmeertalen. Programmeurs gebruiken YAML voor\u2026"
+summary: YAML, "YAML Ain't Markup Language," is een mensvriendelijke gegevensserialisatiestandaard
+  voor alle programmeertalen.
 title: Werken met YAML
 weight: 41
 ---

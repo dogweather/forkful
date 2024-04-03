@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.856967-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto no Arduino envolve salvar dados em um arquivo\
   \ em um cart\xE3o SD ou m\xF3dulo de armazenamento semelhante, muitas vezes para\
-  \ fins\u2026"
+  \ fins de registro de dados."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

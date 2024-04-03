@@ -6,8 +6,7 @@ description: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA i
 lastmod: '2024-03-13T22:44:46.682482-06:00'
 model: gpt-4-1106-preview
 summary: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA insere\
-  \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas.\
-  \ Os programadores\u2026"
+  \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

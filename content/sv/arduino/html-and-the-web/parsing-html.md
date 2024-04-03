@@ -8,8 +8,7 @@ description: "Att tolka HTML i Arduino-projekt handlar om att extrahera informat
 lastmod: '2024-03-13T22:44:38.165954-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i Arduino-projekt handlar om att extrahera information fr\xE5\
-  n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6r deras\
-  \ Arduino-enheter\u2026"
+  n webbsidor."
 title: Tolka HTML
 weight: 43
 ---

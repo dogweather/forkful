@@ -5,7 +5,7 @@ description: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil habe
 lastmod: '2024-03-13T22:44:54.095630-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil haben (wie\
-  \ 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft.\u2026"
+  \ 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.352491-06:00'
 model: gpt-4-1106-preview
 summary: "Na programa\xE7\xE3o, deletar caracteres que correspondem a um padr\xE3\
   o significa identificar e remover s\xE9ries espec\xEDficas de caracteres dentro\
-  \ de uma string.\u2026"
+  \ de uma string."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

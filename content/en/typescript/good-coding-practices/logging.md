@@ -4,8 +4,9 @@ description: "Logging is the process of recording events, errors, and other sign
   \ information during the execution of a program to an external medium, often files\u2026"
 lastmod: '2024-03-13T22:44:59.864712-06:00'
 model: gpt-4-1106-preview
-summary: "Logging is the process of recording events, errors, and other significant\
-  \ information during the execution of a program to an external medium, often files\u2026"
+summary: Logging is the process of recording events, errors, and other significant
+  information during the execution of a program to an external medium, often files
+  or databases.
 title: Logging
 weight: 17
 ---

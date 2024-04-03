@@ -5,9 +5,8 @@ description: "Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfra
   \ um\u2026"
 lastmod: '2024-03-13T22:44:53.405675-06:00'
 model: gpt-4-1106-preview
-summary: "Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmente\
-  \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Funktion,\
-  \ um\u2026"
+summary: Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmente
+  gefunden und durch andere ersetzt werden.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

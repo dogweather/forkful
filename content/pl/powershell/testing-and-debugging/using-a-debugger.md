@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.634450-06:00'
 model: gpt-4-0125-preview
 summary: "W PowerShellu mo\u017Cesz debugowa\u0107 skrypty za pomoc\u0105 wbudowanego\
   \ \u015Brodowiska PowerShell Integrated Scripting Environment (ISE) lub Visual Studio\
-  \ Code (VS Code)\u2026"
+  \ Code (VS Code) z rozszerzeniem PowerShell."
 title: Korzystanie z debugera
 weight: 35
 ---

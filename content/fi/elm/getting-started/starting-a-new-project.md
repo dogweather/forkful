@@ -6,7 +6,7 @@ description: "Uuden projektin aloittaminen Elm:ss\xE4 tarkoittaa perustan luonti
 lastmod: '2024-03-13T22:44:56.489152-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen Elm:ss\xE4 tarkoittaa perustan luontia, josta\
-  \ projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia ideoita\u2026"
+  \ projektisi kasvaa."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

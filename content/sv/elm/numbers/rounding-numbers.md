@@ -6,8 +6,7 @@ description: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\
 lastmod: '2024-03-13T22:44:37.824121-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4rmaste\
-  \ hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar f\xF6\
-  r att\u2026"
+  \ hela v\xE4rde eller till ett angivet antal decimaler."
 title: Avrundning av tal
 weight: 13
 ---

@@ -5,9 +5,8 @@ description: "Let's say you've got a simple Java program that's acting up, and y
   \ one of the\u2026"
 lastmod: '2024-03-13T22:44:59.976435-06:00'
 model: gpt-4-1106-preview
-summary: "Let's say you've got a simple Java program that's acting up, and you can't\
-  \ figure out why. Here\u2019s how you\u2019d fire up a debugger using Eclipse, one\
-  \ of the\u2026"
+summary: Let's say you've got a simple Java program that's acting up, and you can't
+  figure out why.
 title: Using a debugger
 weight: 35
 ---

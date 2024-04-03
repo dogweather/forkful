@@ -8,7 +8,7 @@ description: "TOML, o Tom's Obvious, Minimal Language, \xE8 un formato di file d
 lastmod: '2024-03-13T22:44:43.157708-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, o Tom's Obvious, Minimal Language, \xE8 un formato di file di configurazione\
-  \ facile da leggere grazie alla sua chiara semantica. I programmatori lo\u2026"
+  \ facile da leggere grazie alla sua chiara semantica."
 title: Lavorare con TOML
 weight: 39
 ---

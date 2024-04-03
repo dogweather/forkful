@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.103526-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa Google Apps Script -koodisi\
   \ rakenteen j\xE4rjest\xE4mist\xE4 erottamalla loogiset osat toisistaan selv\xE4\
-  sti erottuviksi\u2026"
+  sti erottuviksi lohkoiksi, joista jokainen suorittaa tietyn teht\xE4v\xE4n."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

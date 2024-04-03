@@ -8,8 +8,7 @@ description: "Capitalizar una cadena en C# implica convertir el primer car\xE1ct
 lastmod: '2024-03-13T22:44:59.061824-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en C# implica convertir el primer car\xE1cter de\
-  \ una cadena a may\xFAsculas si ya no lo est\xE1. Esta alteraci\xF3n puede ser crucial\
-  \ para\u2026"
+  \ una cadena a may\xFAsculas si ya no lo est\xE1."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

@@ -5,8 +5,7 @@ description: "String-Konkatenation verbindet zwei oder mehr Zeichenketten zu ein
   \ um\u2026"
 lastmod: '2024-03-13T22:44:53.370276-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation verbindet zwei oder mehr Zeichenketten zu einer neuen.\
-  \ Es ist eine Standard-Technik, um dynamische Textausgaben zu erzeugen oder um\u2026"
+summary: String-Konkatenation verbindet zwei oder mehr Zeichenketten zu einer neuen.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

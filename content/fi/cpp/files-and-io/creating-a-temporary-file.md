@@ -6,8 +6,7 @@ description: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti p
 lastmod: '2024-03-13T22:44:56.884768-06:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti poistettava\
-  \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen. Ohjelmoijat\
-  \ luovat\u2026"
+  \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

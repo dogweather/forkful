@@ -6,8 +6,9 @@ description: "Een nieuw project starten in Google Apps Script (GAS) houdt in dat
   \ een scriptbestand initialiseert binnen het Google-ecosysteem (Google Drive,\u2026"
 lastmod: '2024-03-13T22:44:50.332205-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten in Google Apps Script (GAS) houdt in dat je een\
-  \ scriptbestand initialiseert binnen het Google-ecosysteem (Google Drive,\u2026"
+summary: Een nieuw project starten in Google Apps Script (GAS) houdt in dat je een
+  scriptbestand initialiseert binnen het Google-ecosysteem (Google Drive, Documenten,
+  Spreadsheets, enz.
 title: Een nieuw project starten
 weight: 1
 ---

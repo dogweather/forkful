@@ -5,9 +5,8 @@ description: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Di
   \ auf\u2026"
 lastmod: '2024-03-13T22:44:54.103620-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste\
-  \ oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff\
-  \ auf\u2026"
+summary: HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste oder
+  APIs einen Nutzernachweis erfordern.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

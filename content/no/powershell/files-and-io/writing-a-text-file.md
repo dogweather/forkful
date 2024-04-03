@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.035381-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i PowerShell inneb\xE6rer \xE5 opprette og manipulere\
   \ tekstbaserte filer, som er en grunnleggende operasjon for logging, datalagring\
-  \ og\u2026"
+  \ og konfigurasjonsskripting."
 title: Skrive en tekstfil
 weight: 24
 ---

@@ -8,7 +8,8 @@ description: "Colocar em mai\xFAscula uma string envolve modificar a primeira le
 lastmod: '2024-03-13T22:44:46.263178-06:00'
 model: gpt-4-0125-preview
 summary: "Colocar em mai\xFAscula uma string envolve modificar a primeira letra de\
-  \ uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos caracteres\u2026"
+  \ uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos caracteres\
+  \ como est\xE3o."
 title: Capitalizando uma string
 weight: 2
 ---

@@ -7,8 +7,8 @@ description: "De huidige datum in Elm krijgen betekent het ophalen van de huidig
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.735541-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum\
-  \ van het systeem. We doen dit om gebeurtenissen te timestampen, taken te\u2026"
+summary: De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum
+  van het systeem.
 title: Het huidige datum ophalen
 weight: 29
 ---

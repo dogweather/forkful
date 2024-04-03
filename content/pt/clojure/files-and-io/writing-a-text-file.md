@@ -7,7 +7,8 @@ description: "Escrever um arquivo de texto em Clojure envolve criar ou modificar
 lastmod: '2024-03-13T22:44:46.214785-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Clojure envolve criar ou modificar arquivos\
-  \ para salvar dados fora de sua aplica\xE7\xE3o, possibilitando persist\xEAncia,\u2026"
+  \ para salvar dados fora de sua aplica\xE7\xE3o, possibilitando persist\xEAncia,\
+  \ configura\xE7\xE3o, registro (logging) ou comunica\xE7\xE3o entre processos."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

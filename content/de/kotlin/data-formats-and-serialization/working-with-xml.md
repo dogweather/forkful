@@ -5,7 +5,7 @@ description: "Die Arbeit mit XML umfasst das Parsen, Erstellen und Manipulieren 
 lastmod: '2024-03-13T22:44:53.870525-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen, Erstellen und Manipulieren von XML-Dokumenten\
-  \ \u2013 einer Auszeichnungssprache f\xFCr die Datenspeicherung und\u2026"
+  \ \u2013 einer Auszeichnungssprache f\xFCr die Datenspeicherung und -\xFCbertragung."
 title: Arbeiten mit XML
 weight: 40
 ---

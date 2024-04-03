@@ -5,8 +5,8 @@ description: "Ler argumentos da linha de comando permite que seu programa TypeSc
   \ seus\u2026"
 lastmod: '2024-03-13T22:44:46.341405-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando permite que seu programa TypeScript receba\
-  \ inputs externos ao ser executado. Programadores fazem isso para tornar seus\u2026"
+summary: Ler argumentos da linha de comando permite que seu programa TypeScript receba
+  inputs externos ao ser executado.
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

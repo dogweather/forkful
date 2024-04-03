@@ -8,7 +8,7 @@ description: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserad
 lastmod: '2024-03-13T22:44:37.570876-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserade skript\
-  \ f\xF6r att validera beteendet hos ens kod. Programmerare g\xF6r detta f\xF6r att\u2026"
+  \ f\xF6r att validera beteendet hos ens kod."
 title: Skriva tester
 weight: 36
 ---

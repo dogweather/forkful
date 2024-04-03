@@ -5,8 +5,8 @@ description: "Das Umwandeln eines Datums in einen String ist der Prozess, bei de
   \ um\u2026"
 lastmod: '2024-03-13T22:44:53.642231-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Datums in einen String ist der Prozess, bei dem ein\
-  \ Datum als lesbare Zeichenkette dargestellt wird. Programmierer nutzen dies, um\u2026"
+summary: Das Umwandeln eines Datums in einen String ist der Prozess, bei dem ein Datum
+  als lesbare Zeichenkette dargestellt wird.
 title: Datum in einen String umwandeln
 weight: 28
 ---

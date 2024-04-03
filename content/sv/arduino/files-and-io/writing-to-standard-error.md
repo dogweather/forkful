@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.184277-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Arduino-programmering inneb\xE4r\
   \ att styra felmeddelanden och diagnostik till en separat kanal, f\xF6r att s\xE4\
-  kerst\xE4lla\u2026"
+  kerst\xE4lla att de inte blandas med standardutmatning (stdout)."
 title: Skriva till standardfel
 weight: 25
 ---

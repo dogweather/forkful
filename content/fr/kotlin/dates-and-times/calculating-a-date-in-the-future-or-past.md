@@ -5,7 +5,7 @@ description: "Calculer une date dans le futur ou le pass\xE9, c'est intentionnel
 lastmod: '2024-03-13T22:44:57.754700-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est intentionnellement\
-  \ ajuster la date et l'heure actuelles pour obtenir un moment pr\xE9cis. Les programmeurs\u2026"
+  \ ajuster la date et l'heure actuelles pour obtenir un moment pr\xE9cis."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

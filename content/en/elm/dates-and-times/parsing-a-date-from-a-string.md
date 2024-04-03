@@ -4,8 +4,9 @@ description: "Parsing a date from a string in Elm involves converting textual in
   \ representing dates and times into a format that Elm can understand and\u2026"
 lastmod: '2024-03-13T22:45:00.019151-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string in Elm involves converting textual information\
-  \ representing dates and times into a format that Elm can understand and\u2026"
+summary: Parsing a date from a string in Elm involves converting textual information
+  representing dates and times into a format that Elm can understand and manipulate,
+  specifically into the `Date` type.
 title: Parsing a date from a string
 weight: 30
 ---

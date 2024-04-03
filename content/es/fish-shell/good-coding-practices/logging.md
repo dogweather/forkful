@@ -6,8 +6,7 @@ description: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 
 lastmod: '2024-03-13T22:44:59.508204-06:00'
 model: gpt-4-1106-preview
 summary: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
-  \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\
-  \ para\u2026"
+  \ un diario, por as\xED decirlo, pero para el c\xF3digo."
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

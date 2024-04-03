@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.392723-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, et kraftfullt verkt\xF8y for m\xF8nstersammenligning\
   \ og databehandling, er essensielle i tekstbehandlingsoppgaver slik som \xE5 validere\
-  \ inndata,\u2026"
+  \ inndata, s\xF8ke og erstatte tekst."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -7,8 +7,8 @@ description: "Werken met XML in C houdt in dat je XML-documenten parseert, opvra
   \ met\u2026"
 lastmod: '2024-03-13T22:44:51.316398-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt en\
-  \ manipuleert met behulp van verschillende bibliotheken. Programmeurs werken met\u2026"
+summary: Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt en
+  manipuleert met behulp van verschillende bibliotheken.
 title: Werken met XML
 weight: 40
 ---

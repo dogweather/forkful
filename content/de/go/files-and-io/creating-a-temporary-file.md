@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:53.309004-06:00'
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
   \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\
-  \ ist,\u2026"
+  \ ist, haupts\xE4chlich f\xFCr Aufgaben wie das Speichern von Zwischendaten oder\
+  \ die Unterst\xFCtzung bei Batch-Verarbeitungs-Jobs."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

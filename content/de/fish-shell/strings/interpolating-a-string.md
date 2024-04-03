@@ -5,7 +5,7 @@ description: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spar
 lastmod: '2024-03-13T22:44:54.294314-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart dir\
-  \ viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"
+  \ viel Tipparbeit und vereinfacht die Code-Wartung."
 title: Zeichenketten interpolieren
 weight: 8
 ---

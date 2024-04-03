@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og
 lastmod: '2024-03-13T22:44:40.564038-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og manipulere\
-  \ strenger med avanserte m\xF8nsters\xF8kingsteknikker. I Rust bidrar bruk av regex\
-  \ til\u2026"
+  \ strenger med avanserte m\xF8nsters\xF8kingsteknikker."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -6,7 +6,7 @@ description: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du al
 lastmod: '2024-03-13T22:44:41.129286-06:00'
 model: gpt-4-1106-preview
 summary: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du alle bokstavene\
-  \ til deres miniatyr versjoner. Programmerere gj\xF8r dette for \xE5 forenkle\u2026"
+  \ til deres miniatyr versjoner."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

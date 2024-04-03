@@ -5,7 +5,7 @@ description: "Organizing code into functions is about breaking down your scripti
 lastmod: '2024-03-13T22:45:00.210651-06:00'
 model: gpt-4-1106-preview
 summary: "Organizing code into functions is about breaking down your scripting into\
-  \ bite-size chunks\u2014think functional LEGO blocks. We do it for clarity,\u2026"
+  \ bite-size chunks\u2014think functional LEGO blocks."
 title: Organizing code into functions
 weight: 18
 ---

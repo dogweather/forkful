@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:40.704665-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Elm inneb\xE6rer \xE5 bruke `Random`-modulen\
   \ for \xE5 produsere pseudo-tilfeldige tall, som er hendige for en rekke oppgaver\
-  \ som\u2026"
+  \ som spill, simuleringer og selv som en del av algoritmer som krever stokastiske\
+  \ prosesser."
 title: Generere tilfeldige tall
 weight: 12
 ---

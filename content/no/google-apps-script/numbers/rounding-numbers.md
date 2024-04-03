@@ -8,7 +8,8 @@ description: "Avrunding av tall, et grunnleggende konsept innen dataprogrammerin
 lastmod: '2024-03-13T22:44:40.308431-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering, inneb\xE6\
-  rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert antall\u2026"
+  rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert antall\
+  \ desimaler."
 title: Avrunding av tall
 weight: 13
 ---

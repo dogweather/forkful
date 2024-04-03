@@ -7,7 +7,7 @@ description: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4
 lastmod: '2024-03-13T22:44:37.769910-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r att\
-  \ analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"
+  \ analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-applikationer."
 title: Arbeta med XML
 weight: 40
 ---

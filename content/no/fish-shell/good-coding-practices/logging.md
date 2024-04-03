@@ -6,8 +6,7 @@ description: "Logging er i grunn \xE5 notere ned hva applikasjonen din gj\xF8r\u
 lastmod: '2024-03-13T22:44:41.233457-06:00'
 model: gpt-4-1106-preview
 summary: "Logging er i grunn \xE5 notere ned hva applikasjonen din gj\xF8r\u2014en\
-  \ slags dagbok, hvis du vil, men for kode. Programmerere gj\xF8r dette for \xE5\
-  \ holde styr p\xE5 de sm\xE5\u2026"
+  \ slags dagbok, hvis du vil, men for kode."
 title: "Loggf\xF8ring"
 weight: 17
 ---

@@ -6,7 +6,7 @@ description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer 
 lastmod: '2024-03-13T22:44:58.013925-06:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es fournies lors du lancement d'un script Bash. Les programmeurs utilisent cette\u2026"
+  es fournies lors du lancement d'un script Bash."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

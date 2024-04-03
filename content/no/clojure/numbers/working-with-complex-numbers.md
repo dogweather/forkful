@@ -5,7 +5,7 @@ description: "Komplekse tall utvider de reelle tallene med en ekstra del, den im
 lastmod: '2024-03-13T22:44:40.396433-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider de reelle tallene med en ekstra del, den imagin\xE6\
-  re enheten 'i'. Programmerere bruker dem i ulike domener, inkludert\u2026"
+  re enheten 'i'."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

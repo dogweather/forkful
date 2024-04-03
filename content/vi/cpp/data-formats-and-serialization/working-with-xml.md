@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.073071-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF li\u1EC7u XML (eXtensible Markup Language\
-  \ - Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng). C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn\u2026"
+  \ - Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng)."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

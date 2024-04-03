@@ -4,8 +4,8 @@ description: "Organizing code into functions in Haskell means breaking down your
   \ into reusable, named blocks. Why? It keeps your code DRY (Don't Repeat Yourself),\u2026"
 lastmod: '2024-03-13T22:45:00.133435-06:00'
 model: gpt-4-1106-preview
-summary: "Organizing code into functions in Haskell means breaking down your code\
-  \ into reusable, named blocks. Why? It keeps your code DRY (Don't Repeat Yourself),\u2026"
+summary: Organizing code into functions in Haskell means breaking down your code into
+  reusable, named blocks.
 title: Organizing code into functions
 weight: 18
 ---

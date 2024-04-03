@@ -5,8 +5,8 @@ description: "Leggere gli argomenti della linea di comando significa pescare dat
   \ Lo\u2026"
 lastmod: '2024-03-13T22:44:43.531975-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere gli argomenti della linea di comando significa pescare dati direttamente\
-  \ dall'input dell'utente in un ambiente CLI (Command Line Interface). Lo\u2026"
+summary: Leggere gli argomenti della linea di comando significa pescare dati direttamente
+  dall'input dell'utente in un ambiente CLI (Command Line Interface).
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

@@ -8,8 +8,7 @@ description: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en t
 lastmod: '2024-03-13T22:44:40.296660-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
-  \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\
-  \ Google\u2026"
+  \ brukt for \xE5 rense eller formatere strenger i programmering."
 title: "Slette tegn som samsvarer med et m\xF8nster"
 weight: 5
 ---

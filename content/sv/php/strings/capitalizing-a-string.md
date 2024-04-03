@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.979971-06:00'
 model: gpt-4-0125-preview
 summary: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
-  \ b\xF6rjar\u2026"
+  \ b\xF6rjar korrekt i en datam\xE4ngd."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

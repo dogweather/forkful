@@ -5,9 +5,8 @@ description: "Leer un archivo de texto en JavaScript es simplemente acceder al c
   \ Los\u2026"
 lastmod: '2024-03-13T22:44:59.475735-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto en JavaScript es simplemente acceder al contenido\
-  \ almacenado en un archivo de texto (.txt) y trabajar con \xE9l en tu programa.\
-  \ Los\u2026"
+summary: Leer un archivo de texto en JavaScript es simplemente acceder al contenido
+  almacenado en un archivo de texto (.
 title: Lectura de un archivo de texto
 weight: 22
 ---

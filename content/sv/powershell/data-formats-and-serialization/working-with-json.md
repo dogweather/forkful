@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.147352-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShells integration med JSON (JavaScript Object Notation) handlar om\
   \ att tolka (l\xE4sa) och generera (skriva) JSON-data, ett gemensamt format f\xF6\
-  r\u2026"
+  r datautbyte p\xE5 webben."
 title: Arbeta med JSON
 weight: 38
 ---

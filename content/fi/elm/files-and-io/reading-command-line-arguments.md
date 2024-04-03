@@ -6,8 +6,7 @@ description: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vas
 lastmod: '2024-03-13T22:44:56.503802-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
-  \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\
-  \ koska se\u2026"
+  \ k\xE4ynnistyksen yhteydess\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

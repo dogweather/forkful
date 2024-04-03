@@ -5,8 +5,8 @@ description: "Writing tests in C++ involves creating small, self-contained progr
   \ do\u2026"
 lastmod: '2024-03-13T22:45:00.360726-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in C++ involves creating small, self-contained programs that\
-  \ automatically verify the behavior of sections of your codebase. Programmers do\u2026"
+summary: Writing tests in C++ involves creating small, self-contained programs that
+  automatically verify the behavior of sections of your codebase.
 title: Writing tests
 weight: 36
 ---

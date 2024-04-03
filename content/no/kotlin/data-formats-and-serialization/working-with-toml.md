@@ -4,8 +4,7 @@ description: "TOML betyr Tom's Obvious, Minimal Language. Det brukes for konfigu
   \ fordi det er lett \xE5 lese og skrive for mennesker, samtidig som det er lett\u2026"
 lastmod: '2024-03-13T22:44:40.775797-06:00'
 model: gpt-4-0125-preview
-summary: "TOML betyr Tom's Obvious, Minimal Language. Det brukes for konfigurasjonsfiler\
-  \ fordi det er lett \xE5 lese og skrive for mennesker, samtidig som det er lett\u2026"
+summary: TOML betyr Tom's Obvious, Minimal Language.
 title: Jobbe med TOML
 weight: 39
 ---

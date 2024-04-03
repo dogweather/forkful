@@ -8,7 +8,7 @@ description: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u20
 lastmod: '2024-03-13T22:44:50.815749-06:00'
 model: gpt-4-0125-preview
 summary: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u2014het\
-  \ maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling te\u2026"
+  \ maakt het vinden en gebruiken ervan gemakkelijker."
 title: Code organiseren in functies
 weight: 18
 ---

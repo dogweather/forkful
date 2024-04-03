@@ -6,8 +6,7 @@ description: "REPL (Read-Eval-Print Loop - P\u0119tla Czytaj-Wykonaj-Wypisz) to 
 lastmod: '2024-03-13T22:44:35.366549-06:00'
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop - P\u0119tla Czytaj-Wykonaj-Wypisz) to proste,\
-  \ interaktywne \u015Brodowisko programistyczne. Programi\u015Bci u\u017Cywaj\u0105\
-  \ go do szybkich pr\xF3b\u2026"
+  \ interaktywne \u015Brodowisko programistyczne."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

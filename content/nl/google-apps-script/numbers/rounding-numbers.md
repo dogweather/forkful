@@ -6,8 +6,9 @@ description: "Afronden van getallen, een fundamenteel concept in computerprogram
   \ betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of\u2026"
 lastmod: '2024-03-13T22:44:50.325657-06:00'
 model: gpt-4-0125-preview
-summary: "Afronden van getallen, een fundamenteel concept in computerprogrammering,\
-  \ betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of\u2026"
+summary: Afronden van getallen, een fundamenteel concept in computerprogrammering,
+  betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of naar
+  een gespecificeerd aantal decimalen.
 title: Afronden van getallen
 weight: 13
 ---

@@ -7,7 +7,7 @@ description: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut a
 lastmod: '2024-03-13T22:44:40.284341-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
-  \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"
+  \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

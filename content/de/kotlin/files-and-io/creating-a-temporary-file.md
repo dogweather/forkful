@@ -6,7 +6,7 @@ description: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Date
 lastmod: '2024-03-13T22:44:53.865626-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten w\xE4\
-  hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt, um Zwischenergebnisse\u2026"
+  hrend der Ausf\xFChrung eines Programms aufnehmen."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

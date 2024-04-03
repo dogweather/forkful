@@ -7,9 +7,9 @@ description: "Organizzare il codice in funzioni riguarda la strutturazione del c
   \ dei\u2026"
 lastmod: '2024-03-13T22:44:42.961294-06:00'
 model: gpt-4-0125-preview
-summary: "Organizzare il codice in funzioni riguarda la strutturazione del codice\
-  \ di Google Apps Script separando i segmenti logici in blocchi distinti, ognuno\
-  \ dei\u2026"
+summary: Organizzare il codice in funzioni riguarda la strutturazione del codice di
+  Google Apps Script separando i segmenti logici in blocchi distinti, ognuno dei quali
+  esegue un compito specifico.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

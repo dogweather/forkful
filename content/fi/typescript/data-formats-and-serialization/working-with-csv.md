@@ -7,7 +7,8 @@ description: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu CSV-tiedosto
 lastmod: '2024-03-13T22:44:56.337448-06:00'
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu CSV-tiedostojen lukemista\
-  \ ja niihin kirjoittamista, mik\xE4 on yleinen tiedonvaihtomuoto sen\u2026"
+  \ ja niihin kirjoittamista, mik\xE4 on yleinen tiedonvaihtomuoto sen yksinkertaisuuden\
+  \ ja laajan tuen ansiosta eri alustoilla ja kielill\xE4."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

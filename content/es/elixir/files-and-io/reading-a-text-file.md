@@ -6,8 +6,7 @@ description: "Leer un archivo de texto significa acceder y obtener el contenido 
 lastmod: '2024-03-13T22:44:58.720380-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
-  \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\
-  \ o\u2026"
+  \ en \xE9l."
 title: Lectura de un archivo de texto
 weight: 22
 ---

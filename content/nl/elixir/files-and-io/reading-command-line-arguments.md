@@ -7,7 +7,7 @@ description: "Commandoregelargumenten lezen stelt een programma in staat om dire
 lastmod: '2024-03-13T22:44:50.477501-06:00'
 model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen stelt een programma in staat om direct vanuit\
-  \ de terminal gegevens te grijpen\u2014dingen zoals instellingen of bestandsnamen.\u2026"
+  \ de terminal gegevens te grijpen\u2014dingen zoals instellingen of bestandsnamen."
 title: Commandoregelargumenten lezen
 weight: 23
 ---

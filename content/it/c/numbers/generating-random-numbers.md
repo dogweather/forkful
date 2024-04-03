@@ -7,8 +7,8 @@ description: "Generare numeri casuali in C comporta la creazione di valori che s
   \ Questa\u2026"
 lastmod: '2024-03-13T22:44:43.908551-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali in C comporta la creazione di valori che sono imprevedibili\
-  \ e seguono una specifica distribuzione, come uniforme o normale. Questa\u2026"
+summary: Generare numeri casuali in C comporta la creazione di valori che sono imprevedibili
+  e seguono una specifica distribuzione, come uniforme o normale.
 title: Generazione di numeri casuali
 weight: 12
 ---

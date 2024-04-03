@@ -6,7 +6,7 @@ description: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till 
 lastmod: '2024-03-13T22:44:38.032176-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett tv\xE5\
-  dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel. Programmerare\u2026"
+  dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

@@ -7,7 +7,7 @@ description: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxi
 lastmod: '2024-03-13T22:44:47.053939-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
-  \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"
+  \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo."
 title: Escrevendo testes
 weight: 36
 ---

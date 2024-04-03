@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.991009-06:00'
 model: gpt-4-0125-preview
 summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Arduino c\xF3\
   \ ngh\u0129a l\xE0 kh\u1EDFi t\u1EA1o m\u1ED9t b\u1EA3n sketch m\u1EDBi, b\u1EA3\
-  ng v\u1EBD cho m\xE3 c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\
-  \ \u0111i\u1EC1u n\xE0y \u0111\u1EC3 th\u1ED5i h\u1ED3n v\xE0o c\xE1c\u2026"
+  ng v\u1EBD cho m\xE3 c\u1EE7a b\u1EA1n."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

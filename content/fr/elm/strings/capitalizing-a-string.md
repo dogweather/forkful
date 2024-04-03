@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.670906-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne implique de transformer le caract\xE8re initial\
   \ d'une cha\xEEne donn\xE9e en majuscule tout en gardant le reste en minuscule,\
-  \ souvent pour\u2026"
+  \ souvent pour des raisons de formatage standardis\xE9 ou de lisibilit\xE9."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

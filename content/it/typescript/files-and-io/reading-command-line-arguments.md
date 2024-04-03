@@ -4,8 +4,8 @@ description: "Leggere gli argomenti della riga di comando significa estrarre le 
   \ inserite dagli utenti quando lanciano un programma da terminale. I\u2026"
 lastmod: '2024-03-13T22:44:43.191428-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere gli argomenti della riga di comando significa estrarre le informazioni\
-  \ inserite dagli utenti quando lanciano un programma da terminale. I\u2026"
+summary: Leggere gli argomenti della riga di comando significa estrarre le informazioni
+  inserite dagli utenti quando lanciano un programma da terminale.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

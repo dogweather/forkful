@@ -8,7 +8,8 @@ description: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 `std::map` 
 lastmod: '2024-03-13T22:44:56.858070-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 `std::map` tai `std::unordered_map`\
-  \ C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen datan\u2026"
+  \ C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen datan v\xE4lille, antaen\
+  \ sinun k\xE4ytt\xE4\xE4 merkityksellisi\xE4 avaimia."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

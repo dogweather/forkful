@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.514341-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Dart inneb\xE6rer parsing, sp\xF8rre og modifisere\
   \ XML-dokumenter, en prosess som er avgj\xF8rende for applikasjoner som samhandler\
-  \ med\u2026"
+  \ med webtjenester, konfigurasjonsfiler eller arvesystemer."
 title: Arbeider med XML
 weight: 40
 ---

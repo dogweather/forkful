@@ -5,7 +5,6 @@ description: Ein Textfile auszulesen bedeutet, dessen Inhalt in ein Programm zu 
 lastmod: '2024-03-13T22:44:53.437660-06:00'
 model: gpt-4-1106-preview
 summary: Ein Textfile auszulesen bedeutet, dessen Inhalt in ein Programm zu laden.
-  Programmierer tun das, um Daten zu verarbeiten oder Konfigurationen zu laden.
 title: Textdatei einlesen
 weight: 22
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.408150-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
   \ spos\xF3b na autoryzacj\u0119 u\u017Cytkownika poprzez przesy\u0142anie loginu\
-  \ i has\u0142a w nag\u0142\xF3wku HTTP.\u2026"
+  \ i has\u0142a w nag\u0142\xF3wku HTTP."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

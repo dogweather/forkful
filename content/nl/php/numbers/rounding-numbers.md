@@ -6,8 +6,8 @@ description: "Getallen afronden betekent het afhakken van decimale getallen tot 
   \ vastgelegde nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"
 lastmod: '2024-03-13T22:44:50.889684-06:00'
 model: gpt-4-0125-preview
-summary: "Getallen afronden betekent het afhakken van decimale getallen tot een vastgelegde\
-  \ nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"
+summary: Getallen afronden betekent het afhakken van decimale getallen tot een vastgelegde
+  nauwkeurigheid, vaak tot hele getallen.
 title: Afronden van getallen
 weight: 13
 ---

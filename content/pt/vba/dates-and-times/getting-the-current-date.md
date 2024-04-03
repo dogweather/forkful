@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.423756-06:00'
 model: gpt-4-0125-preview
 summary: "No Visual Basic for Applications (VBA), recuperar a data atual \xE9 uma\
   \ tarefa comum que permite aos programadores trabalhar dinamicamente com datas em\
-  \ suas\u2026"
+  \ suas macros ou aplica\xE7\xF5es."
 title: Obtendo a data atual
 weight: 29
 ---

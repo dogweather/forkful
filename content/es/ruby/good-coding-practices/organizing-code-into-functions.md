@@ -4,8 +4,7 @@ description: "Organizar el c\xF3digo en funciones divide tu script en bloques re
   \ Se trata de hacer que tu c\xF3digo sea limpio, manejable y menos propenso a\u2026"
 lastmod: '2024-03-13T22:44:59.596808-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones divide tu script en bloques reutilizables.\
-  \ Se trata de hacer que tu c\xF3digo sea limpio, manejable y menos propenso a\u2026"
+summary: "Organizar el c\xF3digo en funciones divide tu script en bloques reutilizables."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

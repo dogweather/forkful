@@ -7,7 +7,8 @@ description: "Eliminar comillas de una cadena en Google Apps Script se trata de 
 lastmod: '2024-03-13T22:44:58.508981-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en Google Apps Script se trata de eliminar\
-  \ las comillas innecesarias que pueden rodear tus datos de cadena, generalmente\u2026"
+  \ las comillas innecesarias que pueden rodear tus datos de cadena, generalmente\
+  \ derivados de objetos JSON analizados, entrada de usuarios o extracci\xF3n de datos."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

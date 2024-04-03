@@ -5,8 +5,7 @@ description: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. 
   \ data dynamisk."
 lastmod: '2024-03-13T22:44:40.694435-06:00'
 model: gpt-4-1106-preview
-summary: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi gj\xF8\
-  r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere data dynamisk."
+summary: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst."
 title: Interpolering av en streng
 weight: 8
 ---

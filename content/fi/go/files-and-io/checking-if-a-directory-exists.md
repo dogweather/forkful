@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.066224-06:00'
 model: gpt-4-0125-preview
 summary: "Tarkistaminen, l\xF6ytyyk\xF6 kansio Go:ssa, on kriittist\xE4 sovelluksille,\
   \ jotka ovat vuorovaikutuksessa tiedostoj\xE4rjestelm\xE4n kanssa, jotta v\xE4ltet\xE4\
-  \xE4n virheet\u2026"
+  \xE4n virheet yritt\xE4ess\xE4 k\xE4ytt\xE4\xE4 tai muokata kansioita."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

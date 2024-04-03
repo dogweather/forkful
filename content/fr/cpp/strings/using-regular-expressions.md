@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.150651-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
   res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\
-  \ ou la\u2026"
+  \ ou la manipulation de cha\xEEnes de caract\xE8res."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

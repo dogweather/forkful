@@ -7,7 +7,7 @@ description: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uud
 lastmod: '2024-03-13T22:44:57.049259-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
 title: Koodin uudelleenkirjoitus
 weight: 19
 ---

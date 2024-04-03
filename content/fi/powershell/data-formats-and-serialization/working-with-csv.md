@@ -7,7 +7,7 @@ description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen 
 lastmod: '2024-03-13T22:44:56.805327-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen teht\xE4\
-  v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa.\u2026"
+  v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

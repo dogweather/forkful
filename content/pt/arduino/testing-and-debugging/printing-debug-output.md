@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.841270-06:00'
 model: gpt-4-1106-preview
 summary: "Debugar escrevendo sa\xEDdas \xE9 como dar uma espiada no c\xE9rebro do\
   \ seu Arduino \u2013 voc\xEA usa mensagens para descobrir o que est\xE1 acontecendo\
-  \ dentro do c\xF3digo.\u2026"
+  \ dentro do c\xF3digo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

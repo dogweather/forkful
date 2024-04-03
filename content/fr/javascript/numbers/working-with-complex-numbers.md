@@ -6,7 +6,7 @@ description: "Les nombres complexes sont des nombres ayant une partie r\xE9elle 
 lastmod: '2024-03-13T22:44:58.268289-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et une\
-  \ partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes de\u2026"
+  \ partie imaginaire (comme 3 + 4i)."
 title: Manipulation des nombres complexes
 weight: 14
 ---

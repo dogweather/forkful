@@ -4,8 +4,9 @@ description: "I numeri complessi, composti da una parte reale e una immaginaria 
   \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"
 lastmod: '2024-03-13T22:44:43.169940-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi, composti da una parte reale e una immaginaria (solitamente\
-  \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"
+summary: I numeri complessi, composti da una parte reale e una immaginaria (solitamente
+  scritti come a + bi), rendono possibili calcoli impraticabili o impossibili con
+  i soli numeri reali.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

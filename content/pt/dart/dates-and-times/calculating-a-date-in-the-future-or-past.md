@@ -8,7 +8,8 @@ description: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum pa
 lastmod: '2024-03-13T22:44:46.296159-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum para programadores,\
-  \ lidando com agendamentos, lembretes ou qualquer funcionalidade que\u2026"
+  \ lidando com agendamentos, lembretes ou qualquer funcionalidade que dependa de\
+  \ c\xE1lculos de datas."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

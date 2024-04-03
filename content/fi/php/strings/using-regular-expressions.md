@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.645903-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) PHP:ss\xE4 ovat malleja, joita\
   \ k\xE4ytet\xE4\xE4n merkkijonossa hahmojen yhdistelmien etsimiseen, mahdollistaen\
-  \ kehittyneet haku- ja\u2026"
+  \ kehittyneet haku- ja korvaustoiminnot sek\xE4 datan validoinnin."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

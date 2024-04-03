@@ -5,7 +5,8 @@ description: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzei
 lastmod: '2024-03-13T22:44:54.099665-06:00'
 model: gpt-4-0125-preview
 summary: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern in\
-  \ PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"
+  \ PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der Kommandozeile\
+  \ aus vorzunehmen, ohne sie in einem Editor \xF6ffnen zu m\xFCssen."
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

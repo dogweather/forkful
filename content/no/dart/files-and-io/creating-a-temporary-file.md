@@ -7,7 +7,9 @@ description: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere
 lastmod: '2024-03-13T22:44:40.508873-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere en fil\
-  \ som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\u2026"
+  \ som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\
+  \ midlertidig lagring for filbehandling eller oppbevaring av informasjon som er\
+  \ for sensitiv til \xE5 beholde lenge."
 title: Oppretting av en midlertidig fil
 weight: 21
 ---

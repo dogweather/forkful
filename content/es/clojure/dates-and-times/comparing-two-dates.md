@@ -5,7 +5,7 @@ description: "Comparar dos fechas significa verificar c\xF3mo se relacionan cron
 lastmod: '2024-03-13T22:44:58.670218-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar c\xF3mo se relacionan cronol\xF3\
-  gicamente. Los programadores lo hacen para manejar eventos, periodos de tiempo y\u2026"
+  gicamente."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

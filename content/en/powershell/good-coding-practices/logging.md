@@ -4,8 +4,8 @@ description: "Logging is basically leaving a breadcrumb trail through your code 
   \ it's how you keep tabs on what's happening when your script's running in the wild.\u2026"
 lastmod: '2024-03-13T22:45:00.290321-06:00'
 model: gpt-4-1106-preview
-summary: "Logging is basically leaving a breadcrumb trail through your code - it's\
-  \ how you keep tabs on what's happening when your script's running in the wild.\u2026"
+summary: Logging is basically leaving a breadcrumb trail through your code - it's
+  how you keep tabs on what's happening when your script's running in the wild.
 title: Logging
 weight: 17
 ---

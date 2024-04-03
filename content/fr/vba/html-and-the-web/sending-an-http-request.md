@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.554419-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP en Visual Basic pour Applications (VBA) implique\
   \ un acc\xE8s programmatique aux ressources Web ou aux services Web en effectuant\
-  \ des\u2026"
+  \ des demandes via HTTP."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.634671-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in TypeScript umfasst das Erstellen automatisierter\
   \ Skripte, um die Funktionalit\xE4t und Richtigkeit Ihres Codes zu \xFCberpr\xFC\
-  fen.\u2026"
+  fen."
 title: Tests Schreiben
 weight: 36
 ---

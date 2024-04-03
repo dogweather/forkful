@@ -7,7 +7,8 @@ description: "Analizzare una data da una stringa comporta la conversione di rapp
 lastmod: '2024-03-13T22:44:43.185163-06:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
-  \ testuali di date e orari in un formato che pu\xF2 essere manipolato ed\u2026"
+  \ testuali di date e orari in un formato che pu\xF2 essere manipolato ed analizzato\
+  \ dal programma."
 title: Analisi di una data da una stringa
 weight: 30
 ---

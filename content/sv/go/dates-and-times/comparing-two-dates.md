@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.405658-06:00'
 model: gpt-4-0125-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
   \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\
-  \ datum. S\xE5dana\u2026"
+  \ datum."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.111865-06:00'
 model: gpt-4-0125-preview
 summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4, joka\
   \ on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen teht\xE4\
-  v\xE4 kehitt\xE4jille,\u2026"
+  v\xE4 kehitt\xE4jille, jotka k\xE4sittelev\xE4t aikatauluja, aikajanoja tai mit\xE4\
+  \ tahansa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4n liittyvi\xE4 tietoja."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

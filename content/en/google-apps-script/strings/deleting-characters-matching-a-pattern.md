@@ -4,8 +4,8 @@ description: "Deleting characters matching a specific pattern is a technique use
   \ to cleanse or format strings in programming. In the context of Google Apps Script,\u2026"
 lastmod: '2024-03-13T22:44:59.654619-06:00'
 model: gpt-4-0125-preview
-summary: "Deleting characters matching a specific pattern is a technique used to cleanse\
-  \ or format strings in programming. In the context of Google Apps Script,\u2026"
+summary: Deleting characters matching a specific pattern is a technique used to cleanse
+  or format strings in programming.
 title: Deleting characters matching a pattern
 weight: 5
 ---

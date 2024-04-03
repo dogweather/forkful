@@ -6,8 +6,7 @@ description: "La recherche et le remplacement de texte, c'est changer une cha\xE
 lastmod: '2024-03-13T22:44:58.258656-06:00'
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte, c'est changer une cha\xEEne de\
-  \ caract\xE8res par une autre dans une donn\xE9e. Les programmeurs font \xE7a pour\
-  \ corriger des\u2026"
+  \ caract\xE8res par une autre dans une donn\xE9e."
 title: Recherche et remplacement de texte
 weight: 10
 ---

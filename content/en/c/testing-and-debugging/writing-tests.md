@@ -5,8 +5,8 @@ description: "Writing tests in C involves creating smaller, auxiliary programs o
   \ do it\u2026"
 lastmod: '2024-03-13T22:45:00.514714-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in C involves creating smaller, auxiliary programs or functions\
-  \ that automatically verify the functionality of your code. Programmers do it\u2026"
+summary: Writing tests in C involves creating smaller, auxiliary programs or functions
+  that automatically verify the functionality of your code.
 title: Writing tests
 weight: 36
 ---

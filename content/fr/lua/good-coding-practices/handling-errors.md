@@ -5,9 +5,7 @@ description: "G\xE9rer les erreurs en programmation, c'est anticiper l'impr\xE9v
   \ votre\u2026"
 lastmod: '2024-03-13T22:44:57.944309-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs en programmation, c'est anticiper l'impr\xE9vu. C'est\
-  \ l'art de planifier pour quand les choses d\xE9rapent afin de pouvoir maintenir\
-  \ votre\u2026"
+summary: "G\xE9rer les erreurs en programmation, c'est anticiper l'impr\xE9vu."
 title: Gestion des erreurs
 weight: 16
 ---

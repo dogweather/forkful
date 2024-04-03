@@ -6,8 +6,7 @@ description: "\xC5 slette tegn som matcher et m\xF8nster i Lua betyr \xE5 fjerne
 lastmod: '2024-03-13T22:44:40.913444-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 slette tegn som matcher et m\xF8nster i Lua betyr \xE5 fjerne spesifikke\
-  \ deler av en streng basert p\xE5 regler eller 'patterns'. Programm\xF8rer gj\xF8\
-  r dette for \xE5\u2026"
+  \ deler av en streng basert p\xE5 regler eller 'patterns'."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.575749-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan att\
   \ \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra icke-funktionella\
-  \ attribut\u2026"
+  \ attribut s\xE5som l\xE4sbarhet och underh\xE5llsbarhet."
 title: Refaktorisering
 weight: 19
 ---

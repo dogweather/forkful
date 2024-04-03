@@ -6,8 +6,7 @@ description: "Att sl\xE5 ihop str\xE4ngar, eller konkatenering, inneb\xE4r att d
 lastmod: '2024-03-13T22:44:38.243336-06:00'
 model: gpt-4-1106-preview
 summary: "Att sl\xE5 ihop str\xE4ngar, eller konkatenering, inneb\xE4r att du s\xE4\
-  tter samman tv\xE5 eller flera textstr\xE4ngar till en. Vi g\xF6r det f\xF6r att\
-  \ skapa dynamisk text, som\u2026"
+  tter samman tv\xE5 eller flera textstr\xE4ngar till en."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

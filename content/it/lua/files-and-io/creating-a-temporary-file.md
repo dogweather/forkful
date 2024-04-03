@@ -4,8 +4,8 @@ description: "Creare un file temporaneo significa realizzare un file destinato a
   \ cancellazione dopo il suo uso. Programmatori fanno ci\xF2 per manipolare dati\u2026"
 lastmod: '2024-03-13T22:44:43.576317-06:00'
 model: gpt-4-1106-preview
-summary: "Creare un file temporaneo significa realizzare un file destinato alla cancellazione\
-  \ dopo il suo uso. Programmatori fanno ci\xF2 per manipolare dati\u2026"
+summary: Creare un file temporaneo significa realizzare un file destinato alla cancellazione
+  dopo il suo uso.
 title: Creazione di un file temporaneo
 weight: 21
 ---

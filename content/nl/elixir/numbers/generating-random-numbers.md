@@ -6,8 +6,9 @@ description: "Het genereren van willekeurige getallen in Elixir is een fundament
   \ programmeertaak, essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
 lastmod: '2024-03-13T22:44:50.457928-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Elixir is een fundamentele programmeertaak,\
-  \ essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
+summary: Het genereren van willekeurige getallen in Elixir is een fundamentele programmeertaak,
+  essentieel voor applicaties die onvoorspelbare resultaten nodig hebben zoals bij
+  het genereren van veilige tokens, het bemonsteren van gegevens, of in spelalgoritmen.
 title: Willekeurige getallen genereren
 weight: 12
 ---

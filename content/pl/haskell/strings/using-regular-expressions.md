@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.440942-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
   ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\
-  gami\u2026"
+  gami znak\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

@@ -6,7 +6,7 @@ description: "Comparar dos fechas significa determinar si son iguales, cu\xE1l e
 lastmod: '2024-03-13T22:44:59.172919-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa determinar si son iguales, cu\xE1l es anterior\
-  \ o posterior. Los programadores lo hacen para validar plazos, ordenar eventos y\u2026"
+  \ o posterior."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

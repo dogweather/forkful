@@ -6,8 +6,7 @@ description: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \x
 lastmod: '2024-03-13T22:44:46.922957-06:00'
 model: gpt-4-1106-preview
 summary: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \xE9 colocar\
-  \ na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo. Fazemos isso\
-  \ para saber o que est\xE1\u2026"
+  \ na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

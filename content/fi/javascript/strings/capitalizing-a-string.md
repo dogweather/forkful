@@ -8,8 +8,7 @@ description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi kirjaimeks
 lastmod: '2024-03-13T22:44:56.933094-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi kirjaimeksi pit\xE4\
-  en loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista. T\xE4\
-  t\xE4\u2026"
+  en loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

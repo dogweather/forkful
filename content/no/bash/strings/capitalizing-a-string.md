@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.955797-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
   \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
-  \ uendret.\u2026"
+  \ uendret."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

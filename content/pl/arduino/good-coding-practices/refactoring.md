@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.679649-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
   \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\
-  ci.\u2026"
+  ci."
 title: Refaktoryzacja
 weight: 19
 ---

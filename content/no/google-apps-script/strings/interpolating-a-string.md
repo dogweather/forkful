@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.298849-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolering i Google Apps Script gj\xF8r det mulig for dynamisk\
   \ innlemming av uttrykk innenfor strenger, noe som letter skapelsen av mer lesbare\
-  \ og\u2026"
+  \ og vedlikeholdbare koder."
 title: Interpolering av en streng
 weight: 8
 ---

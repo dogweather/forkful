@@ -6,7 +6,7 @@ description: "\xC5 lese en tekstfil i C++ handler om \xE5 f\xE5 innholdet fra en
 lastmod: '2024-03-13T22:44:41.117446-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil i C++ handler om \xE5 f\xE5 innholdet fra en fil p\xE5\
-  \ harddisken inn i programmet ditt. Vi gj\xF8r dette for \xE5 behandle data, lagre\u2026"
+  \ harddisken inn i programmet ditt."
 title: Lese en tekstfil
 weight: 22
 ---

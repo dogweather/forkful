@@ -6,8 +6,7 @@ description: "Zaczynanie nowego projektu to tworzenie podstaw pod twoj\u0105 prz
 lastmod: '2024-03-13T22:44:35.585655-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu to tworzenie podstaw pod twoj\u0105 przysz\u0142\
-  \u0105 aplikacj\u0119 lub skrypt. Robimy to, aby uporz\u0105dkowa\u0107 nasze pomys\u0142\
-  y i zapewni\u0107 im solidne\u2026"
+  \u0105 aplikacj\u0119 lub skrypt."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

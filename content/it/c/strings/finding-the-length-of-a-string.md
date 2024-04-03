@@ -6,8 +6,8 @@ description: "Trovare la lunghezza di una stringa in C comporta determinare il n
   \ di caratteri prima del terminatore nullo `\\0`. I programmatori fanno ci\xF2 per\u2026"
 lastmod: '2024-03-13T22:44:43.896685-06:00'
 model: gpt-4-0125-preview
-summary: "Trovare la lunghezza di una stringa in C comporta determinare il numero\
-  \ di caratteri prima del terminatore nullo `\\0`. I programmatori fanno ci\xF2 per\u2026"
+summary: Trovare la lunghezza di una stringa in C comporta determinare il numero di
+  caratteri prima del terminatore nullo `\0`.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

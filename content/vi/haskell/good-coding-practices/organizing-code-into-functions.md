@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m trong Haskell c\xF3 ngh\u0129\
   a l\xE0 b\u1EA1n s\u1EBD ph\xE2n chia m\xE3 c\u1EE7a m\xECnh th\xE0nh c\xE1c kh\u1ED1\
   i \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn, c\xF3 th\u1EC3 t\xE1i s\u1EED d\u1EE5\
-  ng. T\u1EA1i sao l\u1EA1i nh\u01B0 v\u1EADy? \u0110i\u1EC1u\u2026"
+  ng."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

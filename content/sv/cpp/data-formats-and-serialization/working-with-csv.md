@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.231851-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (v\xE4rden separerade med kommatecken) handlar\
   \ om att bearbeta och manipulera data lagrad i ett enkelt textformat, d\xE4r varje\
-  \ rad i\u2026"
+  \ rad i texten representerar en rad i en tabell, och kommatecken separerar individuella\
+  \ kolumner."
 title: Arbeta med CSV
 weight: 37
 ---

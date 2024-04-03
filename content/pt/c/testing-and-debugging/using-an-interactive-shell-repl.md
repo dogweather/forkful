@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:47.051803-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, tamb\xE9m conhecido como Loop de Leitura-Avalia\xE7\
   \xE3o-Impress\xE3o (REPL, na sigla em ingl\xEAs), permite que programadores digitem\
-  \ express\xF5es ou\u2026"
+  \ express\xF5es ou c\xF3digo e vejam os resultados imediatamente, melhorando os\
+  \ processos de aprendizado e depura\xE7\xE3o."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

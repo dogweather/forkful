@@ -6,8 +6,7 @@ description: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeic
 lastmod: '2024-03-13T22:44:54.092609-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen zu\
-  \ z\xE4hlen, die er enth\xE4lt. Programmierer nutzen diese Information h\xE4ufig,\
-  \ um Eingaben\u2026"
+  \ z\xE4hlen, die er enth\xE4lt."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

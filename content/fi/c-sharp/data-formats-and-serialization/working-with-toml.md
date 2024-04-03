@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.597544-06:00'
 model: gpt-4-0125-preview
 summary: "TOML on lyhenne sanoista Tom's Obvious, Minimal Language, eli selke\xE4\
   \ ja minimalistinen konfiguraatiotiedostomuoto, joka on helppo lukea sen selke\xE4\
-  n\u2026"
+  n semantiikan ansiosta."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

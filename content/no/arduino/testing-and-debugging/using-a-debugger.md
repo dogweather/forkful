@@ -6,8 +6,7 @@ description: "Med Arduino IDE kan du bruke serieutskrifter til \xE5 feils\xF8ke,
 lastmod: '2024-03-13T22:44:41.062300-06:00'
 model: gpt-4-0125-preview
 summary: "Med Arduino IDE kan du bruke serieutskrifter til \xE5 feils\xF8ke, men det\
-  \ er litt som \xE5 bruke en lommelykt for \xE5 utforske en hule. For ekte feils\xF8\
-  king, kan du\u2026"
+  \ er litt som \xE5 bruke en lommelykt for \xE5 utforske en hule."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

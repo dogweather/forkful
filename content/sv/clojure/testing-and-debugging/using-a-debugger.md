@@ -6,8 +6,7 @@ description: "Clojure st\xF6djer sig p\xE5 Java Virtual Machine (JVM), s\xE5 myc
 lastmod: '2024-03-13T22:44:37.529904-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure st\xF6djer sig p\xE5 Java Virtual Machine (JVM), s\xE5 mycket av\
-  \ fels\xF6kningen sker med Java-verktyg. Ett s\xE5dant verktyg \xE4r `CIDER`, ett\
-  \ kraftfullt paket\u2026"
+  \ fels\xF6kningen sker med Java-verktyg."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

@@ -6,8 +6,8 @@ description: "Zoeken en vervangen van tekst zijn basisvaardigheden voor programm
   \ het gaat in essentie om het vinden van strings en deze omwisselen. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.447204-06:00'
 model: gpt-4-0125-preview
-summary: "Zoeken en vervangen van tekst zijn basisvaardigheden voor programmeren;\
-  \ het gaat in essentie om het vinden van strings en deze omwisselen. Programmeurs\u2026"
+summary: Zoeken en vervangen van tekst zijn basisvaardigheden voor programmeren; het
+  gaat in essentie om het vinden van strings en deze omwisselen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

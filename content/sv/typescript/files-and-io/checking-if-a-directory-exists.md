@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.670418-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt f\xF6\
   r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data till filer,\
-  \ f\xF6r att\u2026"
+  \ f\xF6r att s\xE4kerst\xE4lla att operationer endast utf\xF6rs p\xE5 giltiga mappar."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

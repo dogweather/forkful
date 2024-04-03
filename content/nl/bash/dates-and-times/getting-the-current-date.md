@@ -6,8 +6,8 @@ description: "De huidige datum in bash pakken gaat over het verkrijgen van de da
   \ en tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"
 lastmod: '2024-03-13T22:44:50.993708-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in bash pakken gaat over het verkrijgen van de datum en\
-  \ tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"
+summary: De huidige datum in bash pakken gaat over het verkrijgen van de datum en
+  tijd van het systeem.
 title: Het huidige datum ophalen
 weight: 29
 ---

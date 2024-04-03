@@ -7,7 +7,8 @@ description: "\xC9crire sur l'erreur standard (stderr) dans PowerShell implique 
 lastmod: '2024-03-13T22:44:58.075508-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) dans PowerShell implique d'envoyer\
-  \ des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct\u2026"
+  \ des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct\
+  \ du flux de sortie standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

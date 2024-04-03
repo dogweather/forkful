@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.206053-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Clojure trata-se de converter\
   \ representa\xE7\xF5es textuais de datas e horas em uma forma mais utiliz\xE1vel\
-  \ (por\u2026"
+  \ (por exemplo, o objeto DateTime do Clojure)."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

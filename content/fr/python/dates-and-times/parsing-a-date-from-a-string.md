@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.246601-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\
-  \ datetime ou un\u2026"
+  \ datetime ou un format structur\xE9 \xE9quivalent."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.104264-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Dart jest cz\u0119stym zadaniem,\
   \ gdy potrzebujemy wy\u015Bwietli\u0107 informacje o dacie i godzinie w formacie\
-  \ czytelnym dla\u2026"
+  \ czytelnym dla cz\u0142owieka, lub gdy zamierzamy serializowa\u0107 dane do przechowywania\
+  \ lub transmisji."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

@@ -6,7 +6,7 @@ description: "Starting a new project often means creating a directory structure 
 lastmod: '2024-03-13T22:45:00.245427-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project often means creating a directory structure and initial\
-  \ files\u2014kinda like laying the foundation of a house. Programmers do it to\u2026"
+  \ files\u2014kinda like laying the foundation of a house."
 title: Starting a new project
 weight: 1
 ---

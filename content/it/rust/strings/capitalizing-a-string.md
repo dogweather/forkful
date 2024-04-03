@@ -7,9 +7,9 @@ description: "Capitalizzare una stringa in Rust comporta la modifica della strin
   \ il\u2026"
 lastmod: '2024-03-13T22:44:43.201539-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa in Rust comporta la modifica della stringa in\
-  \ modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata\
-  \ il\u2026"
+summary: Capitalizzare una stringa in Rust comporta la modifica della stringa in modo
+  che il suo primo carattere sia una lettera maiuscola, lasciando inalterata il resto
+  della stringa.
 title: Capitalizzare una stringa
 weight: 2
 ---

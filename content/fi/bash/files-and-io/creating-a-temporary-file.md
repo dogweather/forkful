@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.758061-06:00'
 model: gpt-4-1106-preview
 summary: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
   miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
-  \ pysyy siistin\xE4. Ohjelmoijat\u2026"
+  \ pysyy siistin\xE4."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

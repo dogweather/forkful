@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.875682-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen C++:lla on perusteht\xE4v\xE4\
   \ ohjelmille, jotka tarvitsevat k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 p\xE4iv\xE4\
-  m\xE4\xE4ri\xE4 j\xE4rjestelm\xE4n kellon mukaan. Se on\u2026"
+  m\xE4\xE4ri\xE4 j\xE4rjestelm\xE4n kellon mukaan."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

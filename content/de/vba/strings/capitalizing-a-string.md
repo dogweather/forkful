@@ -7,7 +7,9 @@ description: "Das Kapitalisieren eines Strings in Visual Basic for Applications 
 lastmod: '2024-03-13T22:44:53.698782-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Visual Basic for Applications (VBA)\
-  \ beinhaltet die Umwandlung des ersten Zeichens jedes Wortes in einem String in\u2026"
+  \ beinhaltet die Umwandlung des ersten Zeichens jedes Wortes in einem String in\
+  \ Gro\xDFbuchstaben, w\xE4hrend sichergestellt wird, dass die restlichen Zeichen\
+  \ in Kleinbuchstaben bleiben."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

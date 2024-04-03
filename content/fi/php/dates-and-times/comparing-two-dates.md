@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.668703-06:00'
 model: gpt-4-1106-preview
 summary: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, kun haluamme tiet\xE4\xE4\
   \ niiden ajallisen eron tai selvitt\xE4\xE4 kumpi on aikaisempi tai my\xF6h\xE4\
-  isempi. T\xE4m\xE4 on t\xE4rke\xE4\xE4 esimerkiksi\u2026"
+  isempi."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

@@ -8,8 +8,7 @@ description: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen 
 lastmod: '2024-03-13T22:44:53.881232-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen es Ihnen,\
-  \ Schl\xFCssel-Wert-Paare zu speichern und zu verwalten. Sie sind Ihre erste Wahl,\
-  \ wenn Sie\u2026"
+  \ Schl\xFCssel-Wert-Paare zu speichern und zu verwalten."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

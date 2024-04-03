@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.415141-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Visual Basic for Applications (VBA)\
   \ envolve colocar estrategicamente instru\xE7\xF5es de impress\xE3o dentro do seu\
-  \ c\xF3digo para\u2026"
+  \ c\xF3digo para exibir valores de vari\xE1veis, fluxo de execu\xE7\xE3o ou mensagens\
+  \ de depura\xE7\xE3o personalizadas."
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

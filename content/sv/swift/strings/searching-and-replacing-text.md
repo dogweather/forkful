@@ -6,8 +6,7 @@ description: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\x
 lastmod: '2024-03-13T22:44:38.236747-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\xE4r vi\
-  \ hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare anv\xE4\
-  nder det f\xF6r\u2026"
+  \ hittar specifika teckenkombinationer och byter ut dem mot nya."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.879922-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen tarkoittaa m\xE4\xE4ritt\xE4mist\xE4\
   , onko tietyss\xE4 polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen\
-  \ tai niihin\u2026"
+  \ tai niihin kirjoittamisen, suorittamista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

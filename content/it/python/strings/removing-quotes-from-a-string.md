@@ -5,8 +5,8 @@ description: "Rimuovere le virgolette da una stringa significa solitamente elimi
   \ per\u2026"
 lastmod: '2024-03-13T22:44:42.989506-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa significa solitamente eliminare le\
-  \ superflue virgolette doppie (\") o singole ('). I programmatori fanno ci\xF2 per\u2026"
+summary: Rimuovere le virgolette da una stringa significa solitamente eliminare le
+  superflue virgolette doppie (") o singole (').
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

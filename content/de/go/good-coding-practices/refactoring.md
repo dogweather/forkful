@@ -7,7 +7,8 @@ description: "Refactoring in der Programmierung beinhaltet die Umstrukturierung 
 lastmod: '2024-03-13T22:44:53.297220-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
-  \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes\u2026"
+  \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes Verhalten\
+  \ zu ver\xE4ndern."
 title: Refaktorisierung
 weight: 19
 ---

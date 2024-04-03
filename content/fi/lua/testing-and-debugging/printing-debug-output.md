@@ -4,8 +4,7 @@ description: "Mik\xE4 se on ja miksi ihmeess\xE4? Koodin debuggaus eli vianetsin
   \ on prosessi, jossa etsit\xE4\xE4n ja korjataan ohjelmakoodin virheit\xE4. Tulostamalla\u2026"
 lastmod: '2024-03-13T22:44:56.699701-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 se on ja miksi ihmeess\xE4? Koodin debuggaus eli vianetsint\xE4\
-  \ on prosessi, jossa etsit\xE4\xE4n ja korjataan ohjelmakoodin virheit\xE4. Tulostamalla\u2026"
+summary: "Mik\xE4 se on ja miksi ihmeess\xE4."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

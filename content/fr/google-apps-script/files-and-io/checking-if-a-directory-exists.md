@@ -7,7 +7,7 @@ description: "V\xE9rifier si un r\xE9pertoire existe dans Google Apps Script imp
 lastmod: '2024-03-13T22:44:57.203545-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans Google Apps Script implique\
-  \ de v\xE9rifier la pr\xE9sence d'un dossier au sein de Google Drive. Les programmeurs\u2026"
+  \ de v\xE9rifier la pr\xE9sence d'un dossier au sein de Google Drive."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

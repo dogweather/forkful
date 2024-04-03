@@ -6,8 +6,7 @@ description: "Lua n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9, mais vous
 lastmod: '2024-03-13T22:44:57.941325-06:00'
 model: gpt-4-0125-preview
 summary: "Lua n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9, mais vous pouvez\
-  \ utiliser des d\xE9bogueurs externes, comme ZeroBrane Studio. Voici un aper\xE7\
-  u de la fa\xE7on\u2026"
+  \ utiliser des d\xE9bogueurs externes, comme ZeroBrane Studio."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

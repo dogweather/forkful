@@ -8,7 +8,8 @@ description: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (Y
 lastmod: '2024-03-13T22:44:38.358542-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML Ain't\
-  \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r\u2026"
+  \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r konfigurationsfiler,\
+  \ i Fish Shell."
 title: Att Arbeta med YAML
 weight: 41
 ---

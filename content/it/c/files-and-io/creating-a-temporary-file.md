@@ -6,8 +6,9 @@ description: "Creare un file temporaneo in C comporta la generazione di un file 
   \ a essere utilizzato per una breve durata, solitamente come spazio temporaneo\u2026"
 lastmod: '2024-03-13T22:44:44.025154-06:00'
 model: gpt-4-0125-preview
-summary: "Creare un file temporaneo in C comporta la generazione di un file destinato\
-  \ a essere utilizzato per una breve durata, solitamente come spazio temporaneo\u2026"
+summary: Creare un file temporaneo in C comporta la generazione di un file destinato
+  a essere utilizzato per una breve durata, solitamente come spazio temporaneo per
+  l'elaborazione o la memorizzazione dei dati.
 title: Creazione di un file temporaneo
 weight: 21
 ---

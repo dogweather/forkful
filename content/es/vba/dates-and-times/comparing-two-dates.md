@@ -8,7 +8,7 @@ description: "Comparar dos fechas en Visual Basic para Aplicaciones (VBA) implic
 lastmod: '2024-03-13T22:44:58.906824-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar dos fechas en Visual Basic para Aplicaciones (VBA) implica determinar\
-  \ su relaci\xF3n cronol\xF3gica entre s\xED. Los programadores hacen esto para\u2026"
+  \ su relaci\xF3n cronol\xF3gica entre s\xED."
 title: Comparando dos fechas
 weight: 27
 ---

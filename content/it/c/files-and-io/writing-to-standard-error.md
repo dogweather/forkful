@@ -6,8 +6,9 @@ description: "La scrittura su standard error in C comporta l'indirizzamento dei 
   \ di errore e delle informazioni diagnostiche su un flusso separato rispetto\u2026"
 lastmod: '2024-03-13T22:44:44.018674-06:00'
 model: gpt-4-0125-preview
-summary: "La scrittura su standard error in C comporta l'indirizzamento dei messaggi\
-  \ di errore e delle informazioni diagnostiche su un flusso separato rispetto\u2026"
+summary: La scrittura su standard error in C comporta l'indirizzamento dei messaggi
+  di errore e delle informazioni diagnostiche su un flusso separato rispetto all'output
+  principale del programma.
 title: Scrittura su errore standard
 weight: 25
 ---

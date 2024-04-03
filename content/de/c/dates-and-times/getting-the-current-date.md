@@ -6,8 +6,8 @@ description: "Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf di
   \ Standard-C-Bibliothek, um das aktuelle Datum und die aktuelle Zeit des Systems\u2026"
 lastmod: '2024-03-13T22:44:54.363900-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die Standard-C-Bibliothek,\
-  \ um das aktuelle Datum und die aktuelle Zeit des Systems\u2026"
+summary: Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die Standard-C-Bibliothek,
+  um das aktuelle Datum und die aktuelle Zeit des Systems abzurufen und zu formatieren.
 title: Das aktuelle Datum abrufen
 weight: 29
 ---

@@ -4,8 +4,7 @@ description: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme sub
   \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.686918-06:00'
 model: gpt-4-1106-preview
-summary: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme substringien\
-  \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"
+summary: Substringit ovat osia isommista tekstijonoista.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

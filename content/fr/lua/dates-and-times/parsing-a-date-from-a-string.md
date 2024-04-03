@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.946954-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures en un format\
-  \ qui peut \xEAtre\u2026"
+  \ qui peut \xEAtre facilement manipul\xE9, stock\xE9 ou compar\xE9 au sein d'un\
+  \ programme Lua."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

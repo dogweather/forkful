@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.490851-06:00'
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Go permite generar un archivo no persistente\
   \ dise\xF1ado para uso a corto plazo, principalmente para tareas como almacenar\
-  \ datos\u2026"
+  \ datos intermedios o asistir en trabajos de procesamiento por lotes."
 title: Creando un archivo temporal
 weight: 21
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.294039-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando voc\xEA\
   \ precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xEDvel por humanos,\
-  \ ou\u2026"
+  \ ou quando pretende serializar dados para armazenamento ou transmiss\xE3o."
 title: Convertendo uma data em uma string
 weight: 28
 ---

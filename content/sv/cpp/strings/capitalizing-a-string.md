@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.192483-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra en str\xE4ngs f\xF6rsta bokstav i varje ord versal handlar om\
   \ att konvertera den initiala karakt\xE4ren av varje ord i str\xE4ngen till versal\
-  \ om den \xE4r i\u2026"
+  \ om den \xE4r i gemen, samtidigt som de \xE5terst\xE5ende karakt\xE4rerna f\xF6\
+  rblir of\xF6r\xE4ndrade."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

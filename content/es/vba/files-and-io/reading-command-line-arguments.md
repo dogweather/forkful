@@ -8,7 +8,7 @@ description: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic par
 lastmod: '2024-03-13T22:44:58.910319-06:00'
 model: gpt-4-0125-preview
 summary: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para Aplicaciones\
-  \ (VBA) implica acceder a los par\xE1metros pasados a tu programa al ejecutarse.\u2026"
+  \ (VBA) implica acceder a los par\xE1metros pasados a tu programa al ejecutarse."
 title: "Leyendo argumentos de la l\xEDnea de comandos"
 weight: 23
 ---

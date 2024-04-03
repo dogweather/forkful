@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.031819-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan muissa kieli\xE4 karttoina tai sanakirjoina,\
   \ ovat avain-arvo-pareja, joita k\xE4ytet\xE4\xE4n tehokkaaseen datan etsint\xE4\
-  \xE4n ja\u2026"
+  \xE4n ja k\xE4sittelyyn."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

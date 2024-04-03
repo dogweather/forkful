@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.604571-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos son un conjunto de n\xFAmeros de la forma `a +\
   \ bi`, donde `a` y `b` son n\xFAmeros reales, e `i` es la unidad imaginaria (`i^2\
-  \ = -1`). En\u2026"
+  \ = -1`)."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

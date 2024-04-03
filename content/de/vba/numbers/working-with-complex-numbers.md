@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.710746-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit komplexen Zahlen umfasst das Ausf\xFChren mathematischer\
   \ Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imagin\xE4rteil\
-  \ haben.\u2026"
+  \ haben."
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

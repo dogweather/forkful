@@ -7,7 +7,8 @@ description: "Arrays associativos, conhecidos como `std::map` ou `std::unordered
 lastmod: '2024-03-13T22:44:46.872755-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como `std::map` ou `std::unordered_map`\
-  \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real,\u2026"
+  \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real, permitindo\
+  \ que voc\xEA use chaves significativas."
 title: Usando arrays associativos
 weight: 15
 ---

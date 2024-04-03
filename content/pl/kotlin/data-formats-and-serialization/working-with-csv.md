@@ -7,7 +7,8 @@ description: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczy
 lastmod: '2024-03-13T22:44:35.387587-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
-  \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
+  \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\
+  \ tabelarycznych danych w formie tekstowej."
 title: Praca z plikami CSV
 weight: 37
 ---

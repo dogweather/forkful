@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.196721-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res en Swift modifie la cha\xEEne\
   \ donn\xE9e de mani\xE8re que son premier caract\xE8re soit en majuscule et les\
-  \ caract\xE8res restants\u2026"
+  \ caract\xE8res restants en minuscule."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

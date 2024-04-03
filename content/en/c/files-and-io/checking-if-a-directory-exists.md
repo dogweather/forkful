@@ -4,8 +4,8 @@ description: "Checking whether a directory exists in C involves querying the fil
   \ system to verify if a specific path leads to a directory. Programmers often perform\u2026"
 lastmod: '2024-03-13T22:45:00.524102-06:00'
 model: gpt-4-0125-preview
-summary: "Checking whether a directory exists in C involves querying the file system\
-  \ to verify if a specific path leads to a directory. Programmers often perform\u2026"
+summary: Checking whether a directory exists in C involves querying the file system
+  to verify if a specific path leads to a directory.
 title: Checking if a directory exists
 weight: 20
 ---

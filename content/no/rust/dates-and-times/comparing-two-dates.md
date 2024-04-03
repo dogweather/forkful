@@ -6,8 +6,7 @@ description: "Sammenligning av to datoer ser p\xE5 forskjellen mellom dem \u2014
 lastmod: '2024-03-13T22:44:40.586314-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer ser p\xE5 forskjellen mellom dem \u2014 enten\
-  \ i tid, rekkef\xF8lge, eller begge deler. Programmerere bruker dette til \xE5 h\xE5\
-  ndtere frister,\u2026"
+  \ i tid, rekkef\xF8lge, eller begge deler."
 title: Sammenlikning av to datoer
 weight: 27
 ---

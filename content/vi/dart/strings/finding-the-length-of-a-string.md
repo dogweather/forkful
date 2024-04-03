@@ -13,7 +13,7 @@ summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t Chu\u1ED7i tron
   \ Dart l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 \u0111\u01A1n v\u1ECB m\xE3\
   \ h\xF3a (th\u1EF1c ch\u1EA5t l\xE0 s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 n\u1EBF\
   u suy ngh\u0129 m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3n) trong m\u1ED9t Chu\u1ED7\
-  i \u0111\xE3\u2026"
+  i \u0111\xE3 cho."
 title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 weight: 7
 ---

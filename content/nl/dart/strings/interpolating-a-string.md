@@ -7,7 +7,7 @@ description: "Stringinterpolatie is het proces van het direct invoegen van varia
 lastmod: '2024-03-13T22:44:50.490151-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie is het proces van het direct invoegen van variabele waarden\
-  \ in strings, vaak om betekenisvolle berichten te cre\xEBren zonder lastige\u2026"
+  \ in strings, vaak om betekenisvolle berichten te cre\xEBren zonder lastige aaneenschakelingen."
 title: Een string interpoleren
 weight: 8
 ---

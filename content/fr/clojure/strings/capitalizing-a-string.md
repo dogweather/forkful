@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.264135-06:00'
 model: gpt-4-0125-preview
 summary: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne afin\
   \ que son premier caract\xE8re soit en majuscule, tandis que le reste de la cha\xEE\
-  ne demeure\u2026"
+  ne demeure inchang\xE9."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

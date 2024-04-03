@@ -5,9 +5,8 @@ description: "Convertire una data in una stringa permette di manipolare e visual
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.871049-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una data in una stringa permette di manipolare e visualizzare\
-  \ il dato in un formato leggibile e personalizzabile. I programmatori fanno ci\xF2\
-  \ per\u2026"
+summary: Convertire una data in una stringa permette di manipolare e visualizzare
+  il dato in un formato leggibile e personalizzabile.
 title: Conversione di una data in una stringa
 weight: 28
 ---

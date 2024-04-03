@@ -4,8 +4,8 @@ description: "Reading command line arguments means grabbing the extras users tac
   \ onto commands when they run your script. Programmers do it to let users customize\u2026"
 lastmod: '2024-03-13T22:45:00.448115-06:00'
 model: gpt-4-1106-preview
-summary: "Reading command line arguments means grabbing the extras users tack onto\
-  \ commands when they run your script. Programmers do it to let users customize\u2026"
+summary: Reading command line arguments means grabbing the extras users tack onto
+  commands when they run your script.
 title: Reading command line arguments
 weight: 23
 ---

@@ -5,9 +5,8 @@ description: "Mandare una richiesta HTTP con autenticazione di base significa in
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.217835-06:00'
 model: gpt-4-1106-preview
-summary: "Mandare una richiesta HTTP con autenticazione di base significa inserire\
-  \ username e password per accedere a risorse protette. I programmatori lo fanno\
-  \ per\u2026"
+summary: Mandare una richiesta HTTP con autenticazione di base significa inserire
+  username e password per accedere a risorse protette.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

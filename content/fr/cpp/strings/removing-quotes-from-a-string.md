@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.148125-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res signifie retirer\
   \ ces nuisibles guillemets doubles ou simples qui encadrent notre texte (' ou \"\
-  ). Les\u2026"
+  )."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

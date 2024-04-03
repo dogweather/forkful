@@ -6,7 +6,8 @@ description: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journa
 lastmod: '2024-03-13T22:44:57.288916-06:00'
 model: gpt-4-1106-preview
 summary: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journal de bord\
-  \ d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se produisent\u2026"
+  \ d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se produisent\
+  \ pendant l'ex\xE9cution d'une application."
 title: Journalisation
 weight: 17
 ---

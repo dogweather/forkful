@@ -6,8 +6,9 @@ description: "Het schrijven van een tekstbestand in Google Apps Script stelt ont
   \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
 lastmod: '2024-03-13T22:44:50.351625-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
-  \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
+summary: Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars
+  in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn voor
+  toekomstig gebruik of analyse.
 title: Een tekstbestand schrijven
 weight: 24
 ---

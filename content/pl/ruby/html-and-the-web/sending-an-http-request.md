@@ -6,8 +6,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u
 lastmod: '2024-03-13T22:44:35.929669-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119 Twojego\
-  \ programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A. Programi\u015B\
-  ci to robi\u0105, aby\u2026"
+  \ programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

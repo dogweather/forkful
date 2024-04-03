@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.002526-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pok\u0142\
   adowego statku; jest to spos\xF3b na rejestrowanie zdarze\u0144, kt\xF3re maj\u0105\
-  \ miejsce podczas\u2026"
+  \ miejsce podczas dzia\u0142ania aplikacji."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

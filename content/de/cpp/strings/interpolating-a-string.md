@@ -6,7 +6,7 @@ description: "String-Interpolation erleichtert das Zusammensetzen von Strings, i
 lastmod: '2024-03-13T22:44:54.170994-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erleichtert das Zusammensetzen von Strings, indem Variablen\
-  \ oder Ausdr\xFCcke direkt in String-Literale eingebettet werden. Es macht den\u2026"
+  \ oder Ausdr\xFCcke direkt in String-Literale eingebettet werden."
 title: Zeichenketten interpolieren
 weight: 8
 ---

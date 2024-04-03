@@ -8,7 +8,8 @@ description: "Controllare se una directory esiste in TypeScript \xE8 essenziale 
 lastmod: '2024-03-13T22:44:43.190440-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in TypeScript \xE8 essenziale per compiti\
-  \ di gestione dei file, come leggere o scrivere dati su file, assicurando che le\u2026"
+  \ di gestione dei file, come leggere o scrivere dati su file, assicurando che le\
+  \ operazioni siano eseguite solo su directory valide."
 title: Verifica se una directory esiste
 weight: 20
 ---

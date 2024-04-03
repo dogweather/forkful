@@ -6,8 +6,9 @@ description: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je 
   \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"
 lastmod: '2024-03-13T22:44:50.851982-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
-  \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"
+summary: Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma
+  aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en wachtwoord
+  worden doorgegeven voor toegang.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

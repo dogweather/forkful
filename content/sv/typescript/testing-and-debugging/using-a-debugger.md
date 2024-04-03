@@ -6,8 +6,7 @@ description: "F\xF6r att komma ig\xE5ng med en debugger i TypeScript beh\xF6ver 
 lastmod: '2024-03-13T22:44:37.660628-06:00'
 model: gpt-4-0125-preview
 summary: "F\xF6r att komma ig\xE5ng med en debugger i TypeScript beh\xF6ver du bara\
-  \ en st\xF6dd IDE (som Visual Studio Code) och en `launch.json`-konfiguration. H\xE4\
-  r \xE4r ett\u2026"
+  \ en st\xF6dd IDE (som Visual Studio Code) och en `launch."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

@@ -6,8 +6,7 @@ description: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndt
 lastmod: '2024-03-13T22:44:40.673954-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndterer at\
-  \ ting g\xE5r galt. Programm\xF8rer gj\xF8r dette for \xE5 gj\xF8re programvaren\
-  \ robust, for \xE5 forhindre\u2026"
+  \ ting g\xE5r galt."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

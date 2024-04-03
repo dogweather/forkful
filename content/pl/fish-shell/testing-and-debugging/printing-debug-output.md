@@ -6,8 +6,7 @@ description: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji,
 lastmod: '2024-03-13T22:44:35.843988-06:00'
 model: gpt-4-1106-preview
 summary: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji, kt\xF3\
-  re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie. Programi\u015Bci\
-  \ robi\u0105 to, \u017Ceby szybko\u2026"
+  re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

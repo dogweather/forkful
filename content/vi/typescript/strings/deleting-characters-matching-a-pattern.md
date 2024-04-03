@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.297775-06:00'
 model: gpt-4-0125-preview
 summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu bao g\u1ED3\
   m vi\u1EC7c t\xECm ki\u1EBFm trong m\u1ED9t chu\u1ED7i cho m\u1ED9t d\xE3y k\xFD\
-  \ t\u1EF1 c\u1EE5 th\u1EC3 (m\u1EABu) v\xE0 lo\u1EA1i b\u1ECF ch\xFAng. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
+  \ t\u1EF1 c\u1EE5 th\u1EC3 (m\u1EABu) v\xE0 lo\u1EA1i b\u1ECF ch\xFAng."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

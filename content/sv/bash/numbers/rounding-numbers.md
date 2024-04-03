@@ -6,8 +6,7 @@ description: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till e
 lastmod: '2024-03-13T22:44:38.075419-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till ett enklare\
-  \ v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang. Programmerare\
-  \ avrundar\u2026"
+  \ v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang."
 title: Avrundning av tal
 weight: 13
 ---

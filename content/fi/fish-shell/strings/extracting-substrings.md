@@ -5,9 +5,7 @@ description: "Mik\xE4 se on ja miksi se on tarpeellista? Merkkijonojen osien irr
   \ kaivamista\u2026"
 lastmod: '2024-03-13T22:44:56.981151-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 se on ja miksi se on tarpeellista? Merkkijonojen osien irrottaminen\
-  \ \u2013 eli substringien erist\xE4minen \u2013 tarkoittaa tietyn merkkijonon aliosan\
-  \ kaivamista\u2026"
+summary: "Mik\xE4 se on ja miksi se on tarpeellista."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -6,8 +6,8 @@ description: "Een tekenreeks kapitaliseren betekent dat elke letter met een hoof
   \ begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.\u2026"
 lastmod: '2024-03-13T22:44:51.009372-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter\
-  \ begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.\u2026"
+summary: Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter
+  begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.
 title: Een string met hoofdletters maken
 weight: 2
 ---

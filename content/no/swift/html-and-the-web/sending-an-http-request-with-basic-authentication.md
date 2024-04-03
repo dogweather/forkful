@@ -5,7 +5,7 @@ description: "HTTP-foresp\xF8rsler med grunnleggende autentisering lar klienter 
 lastmod: '2024-03-13T22:44:41.141638-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering lar klienter bevise\
-  \ sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker\u2026"
+  \ sin identitet til serveren ved hjelp av brukernavn og passord."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

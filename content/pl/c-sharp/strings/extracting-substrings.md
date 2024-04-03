@@ -6,8 +6,7 @@ description: "Wycinanie podci\u0105g\xF3w to odizolowanie wybranych cz\u0119\u01
 lastmod: '2024-03-13T22:44:35.396562-06:00'
 model: gpt-4-1106-preview
 summary: "Wycinanie podci\u0105g\xF3w to odizolowanie wybranych cz\u0119\u015Bci z\
-  \ wi\u0119kszego ci\u0105gu znak\xF3w. Robimy to, by manipulowa\u0107 danymi, wyci\u0105\
-  ga\u0107 istotne informacje, czy\u2026"
+  \ wi\u0119kszego ci\u0105gu znak\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

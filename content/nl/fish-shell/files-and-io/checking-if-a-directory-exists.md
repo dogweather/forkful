@@ -6,8 +6,8 @@ description: "Controleren of een map bestaat zorgt ervoor dat een programma werk
   \ met geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke\u2026"
 lastmod: '2024-03-13T22:44:51.261657-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat zorgt ervoor dat een programma werkt met\
-  \ geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke\u2026"
+summary: Controleren of een map bestaat zorgt ervoor dat een programma werkt met geldige
+  paden, wat fouten voorkomt.
 title: Controleren of een directory bestaat
 weight: 20
 ---

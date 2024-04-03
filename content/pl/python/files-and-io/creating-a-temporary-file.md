@@ -6,8 +6,7 @@ description: "Tworzenie tymczasowych plik\xF3w to kwestia zapisywania danych, kt
 lastmod: '2024-03-13T22:44:34.970082-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowych plik\xF3w to kwestia zapisywania danych, kt\xF3re\
-  \ nie musz\u0105 pozosta\u0107 w systemie na sta\u0142e. Programi\u015Bci wykorzystuj\u0105\
-  \ je, aby przechowywa\u0107\u2026"
+  \ nie musz\u0105 pozosta\u0107 w systemie na sta\u0142e."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -4,8 +4,8 @@ description: "Deleting characters matching a specific pattern from strings in C 
   \ about removing all instances of certain characters that fit predefined criteria.\u2026"
 lastmod: '2024-03-13T22:45:00.497503-06:00'
 model: gpt-4-0125-preview
-summary: "Deleting characters matching a specific pattern from strings in C is about\
-  \ removing all instances of certain characters that fit predefined criteria.\u2026"
+summary: Deleting characters matching a specific pattern from strings in C is about
+  removing all instances of certain characters that fit predefined criteria.
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.938444-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering er kunsten \xE5 justere eksisterende kode for \xE5 forbedre\
   \ strukturen, lesbarheten, og effektiviteten uten \xE5 endre dens eksterne oppf\xF8\
-  rsel.\u2026"
+  rsel."
 title: Refaktorering
 weight: 19
 ---

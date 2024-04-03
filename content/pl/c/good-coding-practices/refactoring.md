@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.895662-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
   cego kodu bez zmiany jego zewn\u0119trznego zachowania, maj\u0105c na celu popraw\u0119\
-  \ atrybut\xF3w\u2026"
+  \ atrybut\xF3w niefunkcjonalnych, takich jak czytelno\u015B\u0107, redukcj\u0119\
+  \ z\u0142o\u017Cono\u015Bci i zwi\u0119kszenie utrzymywalno\u015Bci."
 title: Refaktoryzacja
 weight: 19
 ---

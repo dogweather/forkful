@@ -7,8 +7,8 @@ description: "Het verwijderen van aanhalingstekens uit een string in Go gaat ove
   \ een\u2026"
 lastmod: '2024-03-13T22:44:50.274975-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een string in Go gaat over het\
-  \ elimineren van de leidende en sluitende aanhalingstekens (`\"` of `'`) van een\u2026"
+summary: Het verwijderen van aanhalingstekens uit een string in Go gaat over het elimineren
+  van de leidende en sluitende aanhalingstekens (`"` of `'`) van een gegeven string.
 title: Quotes uit een string verwijderen
 weight: 9
 ---

@@ -7,7 +7,8 @@ description: "Escrever testes em PowerShell envolve criar scripts que validam au
 lastmod: '2024-03-13T22:44:46.800500-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
-  \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"
+  \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte conforme\
+  \ esperado."
 title: Escrevendo testes
 weight: 36
 ---

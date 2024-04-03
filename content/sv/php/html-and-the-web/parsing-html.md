@@ -7,7 +7,7 @@ description: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik informati
 lastmod: '2024-03-13T22:44:37.994179-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik information fr\xE5\
-  n HTML-dokument. Programmerare utf\xF6r denna uppgift f\xF6r att automatisera\u2026"
+  n HTML-dokument."
 title: Tolka HTML
 weight: 43
 ---

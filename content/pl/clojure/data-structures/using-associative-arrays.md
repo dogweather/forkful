@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.987478-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane tak\u017Ce jako mapy haszuj\u0105ce, w Clojure\
   \ pozwalaj\u0105 przechowywa\u0107 i pobiera\u0107 dane za pomoc\u0105 par klucz-warto\u015B\
-  \u0107. S\u0105 one ch\u0119tnie\u2026"
+  \u0107."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

@@ -4,8 +4,8 @@ description: "Manejar errores en C# es acerca de gestionar lo inesperado, como t
   \ con los cordones de tus zapatos. Los programas pueden tropezarse con datos\u2026"
 lastmod: '2024-03-13T22:44:59.085310-06:00'
 model: gpt-4-1106-preview
-summary: "Manejar errores en C# es acerca de gestionar lo inesperado, como tropezar\
-  \ con los cordones de tus zapatos. Los programas pueden tropezarse con datos\u2026"
+summary: Manejar errores en C# es acerca de gestionar lo inesperado, como tropezar
+  con los cordones de tus zapatos.
 title: Manejo de errores
 weight: 16
 ---

@@ -6,7 +6,7 @@ description: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON
 lastmod: '2024-03-13T22:44:37.723730-06:00'
 model: gpt-4-0125-preview
 summary: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s ordrika\
-  \ kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem, f\xF6retagsprogramvara\u2026"
+  \ kusin."
 title: Att arbeta med XML
 weight: 40
 ---

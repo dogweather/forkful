@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.757741-06:00'
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att best\xE4\
   mma ett datum som \xE4r ett angivet antal dagar, m\xE5nader eller \xE5r bort fr\xE5\
-  n ett givet\u2026"
+  n ett givet datum."
 title: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

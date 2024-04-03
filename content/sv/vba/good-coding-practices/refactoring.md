@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.752154-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering inom programmering inneb\xE4r att man \xE4ndrar strukturen\
   \ p\xE5 koden utan att \xE4ndra dess beteende, f\xF6r att f\xF6rb\xE4ttra aspekter\
-  \ som l\xE4sbarhet,\u2026"
+  \ som l\xE4sbarhet, underh\xE5llbarhet eller prestanda."
 title: Refaktorering
 weight: 19
 ---

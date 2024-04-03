@@ -5,7 +5,7 @@ description: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiede
 lastmod: '2024-03-13T22:44:53.678192-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare,\
-  \ modulare Bl\xF6cke zu gliedern, die durch einen Namen identifiziert werden.\u2026"
+  \ modulare Bl\xF6cke zu gliedern, die durch einen Namen identifiziert werden."
 title: Code in Funktionen organisieren
 weight: 18
 ---

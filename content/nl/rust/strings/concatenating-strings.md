@@ -6,8 +6,8 @@ description: "Stringconcatenatie is het aan elkaar plakken van strings om een ni
   \ te maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"
 lastmod: '2024-03-13T22:44:50.586068-06:00'
 model: gpt-4-0125-preview
-summary: "Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te\
-  \ maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"
+summary: Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te
+  maken.
 title: Samenvoegen van strings
 weight: 3
 ---

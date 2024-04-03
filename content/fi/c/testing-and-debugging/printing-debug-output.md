@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.043249-06:00'
 model: gpt-4-0125-preview
 summary: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
   \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
-  n ohjelman\u2026"
+  n ohjelman kulkua ja tilaa sen suorituksen aikana."
 title: "Tulostetaan virheenj\xE4ljitystietoja"
 weight: 33
 ---

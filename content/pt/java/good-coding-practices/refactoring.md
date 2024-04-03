@@ -6,8 +6,7 @@ description: "Refactoring \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo d
 lastmod: '2024-03-13T22:44:46.464241-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo de computador\
-  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\
-  \ Programadores\u2026"
+  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

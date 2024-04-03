@@ -4,8 +4,8 @@ description: "I numeri complessi hanno una parte reale e una immaginaria, tipica
   \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"
 lastmod: '2024-03-13T22:44:43.677220-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi hanno una parte reale e una immaginaria, tipicamente\
-  \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"
+summary: I numeri complessi hanno una parte reale e una immaginaria, tipicamente scritti
+  come `a + bi`.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

@@ -6,8 +6,7 @@ description: "Supprimer des caract\xE8res selon un motif, c'est retirer des part
 lastmod: '2024-03-13T22:44:57.861530-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un motif, c'est retirer des parties sp\xE9\
-  cifiques d'une cha\xEEne en se basant sur un pattern (motif). Les d\xE9veloppeurs\
-  \ font \xE7a\u2026"
+  cifiques d'une cha\xEEne en se basant sur un pattern (motif)."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

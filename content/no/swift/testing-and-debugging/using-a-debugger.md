@@ -6,7 +6,7 @@ description: "For \xE5 bruke feils\xF8keren i Xcode (IDE for Swift), kan du sett
 lastmod: '2024-03-13T22:44:41.146440-06:00'
 model: gpt-4-0125-preview
 summary: "For \xE5 bruke feils\xF8keren i Xcode (IDE for Swift), kan du sette brytepunkter,\
-  \ inspisere variabler og se p\xE5 uttrykk. Her er et eksempel: ```Swift func\u2026"
+  \ inspisere variabler og se p\xE5 uttrykk."
 title: "\xC5 bruke en debugger"
 weight: 35
 ---

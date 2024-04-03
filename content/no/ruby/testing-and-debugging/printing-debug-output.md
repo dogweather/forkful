@@ -6,8 +6,7 @@ description: "Utskrift for feils\xF8king lar deg vise data og programflyt i kons
 lastmod: '2024-03-13T22:44:41.330864-06:00'
 model: gpt-4-1106-preview
 summary: "Utskrift for feils\xF8king lar deg vise data og programflyt i konsollen\
-  \ for \xE5 forst\xE5 hva programmet ditt faktisk gj\xF8r. Programmerere bruker dette\
-  \ til \xE5 spore\u2026"
+  \ for \xE5 forst\xE5 hva programmet ditt faktisk gj\xF8r."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

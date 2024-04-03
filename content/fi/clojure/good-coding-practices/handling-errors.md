@@ -6,8 +6,7 @@ description: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden halli
 lastmod: '2024-03-13T22:44:56.191522-06:00'
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden hallintaa\u2014\
-  kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4. Ohjelmoijat pit\xE4\
-  v\xE4t sujuvuudesta;\u2026"
+  kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.396152-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions dans Dart consiste \xE0 d\xE9finir des blocs\
   \ de code r\xE9utilisables qui effectuent des t\xE2ches sp\xE9cifiques, recevant\
-  \ g\xE9n\xE9ralement\u2026"
+  \ g\xE9n\xE9ralement des entr\xE9es, traitant des donn\xE9es et, \xE9ventuellement,\
+  \ retournant des sorties."
 title: Organiser le code en fonctions
 weight: 18
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic for\
   \ Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEA\
   n web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xECnh b\u1EB1\
-  ng\u2026"
+  ng c\xE1ch th\u1EF1c hi\u1EC7n c\xE1c y\xEAu c\u1EA7u qua HTTP."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

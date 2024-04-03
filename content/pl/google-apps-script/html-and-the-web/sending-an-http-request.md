@@ -8,8 +8,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega 
 lastmod: '2024-03-13T22:44:34.899127-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega na programowym\
-  \ wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API. Programi\u015B\
-  ci robi\u0105 to, aby pobiera\u0107\u2026"
+  \ wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

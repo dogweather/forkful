@@ -7,8 +7,9 @@ description: "Scaricare una pagina web in Google Apps Script comporta il recuper
   \ web,\u2026"
 lastmod: '2024-03-13T22:44:42.953586-06:00'
 model: gpt-4-0125-preview
-summary: "Scaricare una pagina web in Google Apps Script comporta il recupero del\
-  \ contenuto di una pagina web tramite HTML per vari scopi, come lo scraping web,\u2026"
+summary: Scaricare una pagina web in Google Apps Script comporta il recupero del contenuto
+  di una pagina web tramite HTML per vari scopi, come lo scraping web, l'estrazione
+  di dati o il monitoraggio dei cambiamenti.
 title: Scaricare una pagina web
 weight: 42
 ---

@@ -7,8 +7,9 @@ description: "Eliminar comillas de una cadena en VBA implica quitar instancias d
   \ dentro\u2026"
 lastmod: '2024-03-13T22:44:58.878864-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena en VBA implica quitar instancias de comillas\
-  \ simples (`'`) o dobles (`\"`) que pueden encapsular o estar incrustadas dentro\u2026"
+summary: Eliminar comillas de una cadena en VBA implica quitar instancias de comillas
+  simples (`'`) o dobles (`"`) que pueden encapsular o estar incrustadas dentro de
+  la cadena.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

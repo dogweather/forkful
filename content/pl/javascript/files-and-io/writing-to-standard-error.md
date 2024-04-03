@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.812752-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega na\
   \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych informacji\
-  \ do specyficznego,\u2026"
+  \ do specyficznego, oddzielnego strumienia, co jest szczeg\xF3lnie przydatne w \u015B\
+  rodowiskach podobnych do Unix w celach logowania i debugowania."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

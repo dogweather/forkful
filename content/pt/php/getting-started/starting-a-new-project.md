@@ -5,7 +5,7 @@ description: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma
 lastmod: '2024-03-13T22:44:46.668010-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
-  \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"
+  \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta."
 title: Iniciando um novo projeto
 weight: 1
 ---

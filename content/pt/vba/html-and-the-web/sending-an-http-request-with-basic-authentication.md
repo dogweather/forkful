@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.411629-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em Visual\
   \ Basic for Applications (VBA) trata de acessar recursos da web que s\xE3o protegidos\
-  \ por\u2026"
+  \ por credenciais de nome de usu\xE1rio e senha."
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

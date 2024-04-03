@@ -4,8 +4,9 @@ description: "Generare numeri casuali in Rust comporta l'utilizzo di librerie pe
   \ produrre valori numerici imprevedibili, cosa indispensabile per compiti che vanno\u2026"
 lastmod: '2024-03-13T22:44:43.213969-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali in Rust comporta l'utilizzo di librerie per produrre\
-  \ valori numerici imprevedibili, cosa indispensabile per compiti che vanno\u2026"
+summary: Generare numeri casuali in Rust comporta l'utilizzo di librerie per produrre
+  valori numerici imprevedibili, cosa indispensabile per compiti che vanno dalla crittografia
+  e le simulazioni ai giochi e agli algoritmi randomizzati.
 title: Generazione di numeri casuali
 weight: 12
 ---

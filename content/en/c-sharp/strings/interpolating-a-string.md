@@ -4,8 +4,9 @@ description: "String interpolation in C# allows you to create a new string by in
   \ expressions inside a string literal, making it easier to format and concatenate\u2026"
 lastmod: '2024-03-13T22:45:00.074899-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolation in C# allows you to create a new string by including\
-  \ expressions inside a string literal, making it easier to format and concatenate\u2026"
+summary: String interpolation in C# allows you to create a new string by including
+  expressions inside a string literal, making it easier to format and concatenate
+  strings.
 title: Interpolating a string
 weight: 8
 ---

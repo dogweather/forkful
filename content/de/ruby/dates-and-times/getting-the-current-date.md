@@ -7,7 +7,8 @@ description: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in 
 lastmod: '2024-03-13T22:44:54.410761-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
-  \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"
+  \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\
+  \ bis hin zum Generieren von Berichten mit Datumsstempeln."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

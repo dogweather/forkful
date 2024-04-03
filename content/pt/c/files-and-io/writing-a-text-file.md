@@ -8,7 +8,8 @@ description: "Escrever um arquivo de texto em C envolve criar ou abrir um arquiv
 lastmod: '2024-03-13T22:44:47.069886-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em C envolve criar ou abrir um arquivo no modo\
-  \ de escrita e, em seguida, usar as fun\xE7\xF5es de E/S (Entrada/Sa\xEDda) de arquivos\u2026"
+  \ de escrita e, em seguida, usar as fun\xE7\xF5es de E/S (Entrada/Sa\xEDda) de arquivos\
+  \ do C para salvar dados de texto nele."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

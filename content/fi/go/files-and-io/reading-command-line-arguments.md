@@ -7,7 +7,8 @@ description: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen 
 lastmod: '2024-03-13T22:44:56.067247-06:00'
 model: gpt-4-0125-preview
 summary: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen k\xE4\
-  ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\u2026"
+  ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\
+  \ poimimista."
 title: Komentorivin argumenttien lukeminen
 weight: 23
 ---

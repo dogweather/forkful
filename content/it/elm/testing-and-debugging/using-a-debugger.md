@@ -4,8 +4,8 @@ description: "Elm non dispone di un debugger integrato nel senso tradizionale, c
   \ invece avviene per JavaScript con gli strumenti per sviluppatori del browser.\u2026"
 lastmod: '2024-03-13T22:44:43.354228-06:00'
 model: gpt-4-0125-preview
-summary: "Elm non dispone di un debugger integrato nel senso tradizionale, come invece\
-  \ avviene per JavaScript con gli strumenti per sviluppatori del browser.\u2026"
+summary: Elm non dispone di un debugger integrato nel senso tradizionale, come invece
+  avviene per JavaScript con gli strumenti per sviluppatori del browser.
 title: Utilizzo di un debugger
 weight: 35
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.258270-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language, \xE9 um padr\xE3o\
   \ de serializa\xE7\xE3o de dados leg\xEDvel por humanos comumente usado para arquivos\
-  \ de configura\xE7\xE3o e\u2026"
+  \ de configura\xE7\xE3o e troca de dados entre linguagens com diferentes estruturas\
+  \ de dados."
 title: Trabalhando com YAML
 weight: 41
 ---

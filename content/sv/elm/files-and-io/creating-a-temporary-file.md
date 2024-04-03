@@ -6,8 +6,7 @@ description: "Skapa en tillf\xE4llig fil inneb\xE4r att generera en fil som bara
 lastmod: '2024-03-13T22:44:37.848870-06:00'
 model: gpt-4-1106-preview
 summary: "Skapa en tillf\xE4llig fil inneb\xE4r att generera en fil som bara finns\
-  \ under programmets k\xF6rtid, vanligtvis f\xF6r att hantera data tempor\xE4rt.\
-  \ Programmerare g\xF6r\u2026"
+  \ under programmets k\xF6rtid, vanligtvis f\xF6r att hantera data tempor\xE4rt."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

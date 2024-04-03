@@ -7,7 +7,9 @@ description: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen od
 lastmod: '2024-03-13T22:44:54.202676-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder \xD6\
-  ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"
+  ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\
+  \ Aufgabe f\xFCr Anwendungen ist, die Daten persistent speichern m\xFCssen, wie\
+  \ beispielsweise Protokolle, von Benutzern generierte Inhalte oder Konfigurationseinstellungen."
 title: Eine Textdatei schreiben
 weight: 24
 ---

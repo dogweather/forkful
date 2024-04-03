@@ -4,8 +4,8 @@ description: "Calcolare una data futura o passata significa determinare una data
   \ che sia a una certa distanza temporale da oggi o da una data di partenza. I\u2026"
 lastmod: '2024-03-13T22:44:43.783027-06:00'
 model: gpt-4-1106-preview
-summary: "Calcolare una data futura o passata significa determinare una data specifica\
-  \ che sia a una certa distanza temporale da oggi o da una data di partenza. I\u2026"
+summary: Calcolare una data futura o passata significa determinare una data specifica
+  che sia a una certa distanza temporale da oggi o da una data di partenza.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

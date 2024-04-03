@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.792955-06:00'
 model: gpt-4-0125-preview
 summary: "Editar arquivos no local com comandos de linha de comando (CLI) em uma linha\
   \ no PowerShell \xE9 sobre fazer modifica\xE7\xF5es diretas nos arquivos a partir\
-  \ da\u2026"
+  \ da linha de comando, sem a necessidade de abri-los em um editor."
 title: Editando arquivos in loco com comandos de linha de comando
 weight: 32
 ---

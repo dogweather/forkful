@@ -6,8 +6,7 @@ description: "Comparer deux dates permet simplement de dire si une date est plus
 lastmod: '2024-03-13T22:44:58.068690-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates permet simplement de dire si une date est plus r\xE9\
-  cente, plus ancienne ou identique \xE0 une autre. Les programmeurs en ont besoin\
-  \ pour\u2026"
+  cente, plus ancienne ou identique \xE0 une autre."
 title: Comparer deux dates
 weight: 27
 ---

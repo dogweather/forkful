@@ -8,7 +8,8 @@ description: "Il recupero della data corrente nella programmazione \xE8 un compi
 lastmod: '2024-03-13T22:44:43.567847-06:00'
 model: gpt-4-0125-preview
 summary: "Il recupero della data corrente nella programmazione \xE8 un compito cruciale\
-  \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la\u2026"
+  \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la marcatura\
+  \ temporale (timestamping) degli eventi o la pianificazione delle attivit\xE0."
 title: Ottenere la data corrente
 weight: 29
 ---

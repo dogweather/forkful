@@ -4,8 +4,7 @@ description: "Komplekse tall har en reel del og en imagin\xE6r del (som 3 + 4i).
   \ bruker dem i Swift for oppgaver som signalbehandling, l\xF8sning av visse\u2026"
 lastmod: '2024-03-13T22:44:41.135954-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall har en reel del og en imagin\xE6r del (som 3 + 4i). Programmerere\
-  \ bruker dem i Swift for oppgaver som signalbehandling, l\xF8sning av visse\u2026"
+summary: "Komplekse tall har en reel del og en imagin\xE6r del (som 3 + 4i)."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

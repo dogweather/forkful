@@ -7,7 +7,8 @@ description: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende
 lastmod: '2024-03-13T22:44:40.940687-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende oppgave\
-  \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller\u2026"
+  \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller planlegging\
+  \ av oppgaver."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

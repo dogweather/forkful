@@ -10,9 +10,7 @@ description: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA
 lastmod: '2024-03-13T22:44:36.701865-06:00'
 model: gpt-4-0125-preview
 summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v\u1EDB\
-  i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. L\u1EADp tr\xECnh vi\xEAn\
-  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y khi h\u1ECD c\u1EA7n gh\xE9p c\xE1c\
-  \ \u0111o\u1EA1n v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o\u2026"
+  i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

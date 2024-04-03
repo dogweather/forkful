@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.840491-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, y\
   \ son cruciales en varios campos como la ingenier\xEDa, f\xEDsica y gr\xE1ficos\
-  \ por\u2026"
+  \ por computadora."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

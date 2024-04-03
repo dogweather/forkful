@@ -6,7 +6,8 @@ description: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os d
 lastmod: '2024-03-13T22:44:46.964157-06:00'
 model: gpt-4-0125-preview
 summary: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os de Ler-Avaliar-Imprimir),\
-  \ permitem que voc\xEA execute c\xF3digo de forma instant\xE2nea, testando\u2026"
+  \ permitem que voc\xEA execute c\xF3digo de forma instant\xE2nea, testando fun\xE7\
+  \xF5es, algoritmos ou brincando com ideias."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

@@ -7,8 +7,9 @@ description: "L'analisi dell'HTML nella programmazione consiste nell'analizzare 
   \ con\u2026"
 lastmod: '2024-03-13T22:44:43.431728-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi dell'HTML nella programmazione consiste nell'analizzare la struttura\
-  \ di un documento HTML, permettendo di estrarre, manipolare e interagire con\u2026"
+summary: L'analisi dell'HTML nella programmazione consiste nell'analizzare la struttura
+  di un documento HTML, permettendo di estrarre, manipolare e interagire con il suo
+  contenuto in modo programmatico.
 title: Analisi del HTML
 weight: 43
 ---

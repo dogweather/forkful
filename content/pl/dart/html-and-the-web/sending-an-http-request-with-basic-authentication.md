@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.091121-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ polega na do\u0142\u0105czeniu nazwy u\u017Cytkownika i has\u0142a do \u017C\u0105\
-  dania, w celu weryfikacji to\u017Csamo\u015Bci u\u017Cytkownika.\u2026"
+  dania, w celu weryfikacji to\u017Csamo\u015Bci u\u017Cytkownika."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem"
 weight: 45
 ---

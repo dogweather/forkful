@@ -6,8 +6,7 @@ description: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to 
 lastmod: '2024-03-13T22:44:40.700457-06:00'
 model: gpt-4-1106-preview
 summary: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
-  \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
-  \ innhold,\u2026"
+  \ flere tekstfragmenter til en lengre tekst."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

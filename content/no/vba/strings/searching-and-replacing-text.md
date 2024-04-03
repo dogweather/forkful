@@ -8,7 +8,7 @@ description: "S\xF8king og erstatning av tekst i Visual Basic for Applications (
 lastmod: '2024-03-13T22:44:40.601764-06:00'
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA) er\
-  \ vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser. Denne\u2026"
+  \ vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser."
 title: "S\xF8ke og erstatte tekst"
 weight: 10
 ---

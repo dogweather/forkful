@@ -7,7 +7,7 @@ description: "\xC5 jobbe med JSON i Elm handler om \xE5 dekode JSON-data til Elm
 lastmod: '2024-03-13T22:44:40.729689-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Elm handler om \xE5 dekode JSON-data til Elm-typer\
-  \ og \xE5 kode Elm-verdier tilbake til JSON. Denne prosessen er avgj\xF8rende for\u2026"
+  \ og \xE5 kode Elm-verdier tilbake til JSON."
 title: Arbeider med JSON
 weight: 38
 ---

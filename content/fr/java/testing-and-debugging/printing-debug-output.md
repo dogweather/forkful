@@ -6,8 +6,7 @@ description: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la conso
 lastmod: '2024-03-13T22:44:57.642880-06:00'
 model: gpt-4-1106-preview
 summary: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la console pour\
-  \ comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs plus\
-  \ vite et\u2026"
+  \ comprendre ce qui se passe dans le code."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

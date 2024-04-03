@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.511091-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer \xE5 analysere\
   \ JSON-data fra strenger til Dart-objekter og omvendt, en vanlig oppgave i web-\
-  \ og\u2026"
+  \ og apputvikling for datautveksling."
 title: Arbeide med JSON
 weight: 38
 ---

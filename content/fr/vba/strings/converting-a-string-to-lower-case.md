@@ -8,8 +8,7 @@ description: "Convertir une cha\xEEne en minuscules implique de transformer tous
 lastmod: '2024-03-13T22:44:57.539152-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules implique de transformer tous les caract\xE8\
-  res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce processus\
-  \ est\u2026"
+  res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules."
 title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---

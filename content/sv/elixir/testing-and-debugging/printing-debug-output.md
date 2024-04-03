@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.569685-06:00'
 model: gpt-4-1106-preview
 summary: "Att skriva ut debug-information i Elixir hj\xE4lper utvecklare att f\xF6\
   rst\xE5 vad deras kod g\xF6r i realtid och varf\xF6r den beter sig p\xE5 ett visst\
-  \ s\xE4tt. Det \xE4r en\u2026"
+  \ s\xE4tt."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

@@ -6,8 +6,7 @@ description: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCbe
 lastmod: '2024-03-13T22:44:54.014262-06:00'
 model: gpt-4-1106-preview
 summary: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCber das\
-  \ Internet auf deinen Computer zu \xFCbertragen. Programmierer tun dies, um Daten\
-  \ zu\u2026"
+  \ Internet auf deinen Computer zu \xFCbertragen."
 title: Webseite herunterladen
 weight: 42
 ---

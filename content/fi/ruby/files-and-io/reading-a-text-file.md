@@ -5,7 +5,7 @@ description: "Tiedostojen lukeminen Rubyssa tarkoittaa tekstitiedostojen sis\xE4
 lastmod: '2024-03-13T22:44:57.104727-06:00'
 model: gpt-4-1106-preview
 summary: "Tiedostojen lukeminen Rubyssa tarkoittaa tekstitiedostojen sis\xE4ll\xF6\
-  n prosessoimista ohjelmallisesti. Ohjelmoijat lukevat tiedostoja, koska se on oleellista\u2026"
+  n prosessoimista ohjelmallisesti."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

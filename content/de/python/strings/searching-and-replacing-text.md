@@ -5,9 +5,8 @@ description: "Suchen und Ersetzen von Text ist ein Standardvorgang, bei dem Zeic
   \ um\u2026"
 lastmod: '2024-03-13T22:44:53.363390-06:00'
 model: gpt-4-1106-preview
-summary: "Suchen und Ersetzen von Text ist ein Standardvorgang, bei dem Zeichenfolgen\
-  \ in Daten durch andere ersetzt werden. Programmierer greifen darauf zur\xFCck,\
-  \ um\u2026"
+summary: Suchen und Ersetzen von Text ist ein Standardvorgang, bei dem Zeichenfolgen
+  in Daten durch andere ersetzt werden.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

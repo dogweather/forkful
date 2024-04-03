@@ -6,7 +6,8 @@ description: "Logging ist der Prozess des Aufzeichnens von Ereignissen, Fehlern 
 lastmod: '2024-03-13T22:44:53.637472-06:00'
 model: gpt-4-1106-preview
 summary: "Logging ist der Prozess des Aufzeichnens von Ereignissen, Fehlern und anderen\
-  \ wichtigen Informationen w\xE4hrend der Ausf\xFChrung eines Programms auf ein\u2026"
+  \ wichtigen Informationen w\xE4hrend der Ausf\xFChrung eines Programms auf ein externes\
+  \ Medium, oft Dateien oder Datenbanken."
 title: Protokollierung
 weight: 17
 ---

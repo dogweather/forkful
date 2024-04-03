@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.857246-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
   \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\
-  relsen\u2026"
+  relsen eller frav\xE6ret av katalogstrukturer."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

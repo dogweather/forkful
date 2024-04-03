@@ -4,8 +4,8 @@ description: "Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen 
   \ zu verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen\u2026"
 lastmod: '2024-03-13T22:44:54.326188-06:00'
 model: gpt-4-1106-preview
-summary: "Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und zu\
-  \ verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen\u2026"
+summary: Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und zu
+  verarbeiten.
 title: Textdatei einlesen
 weight: 22
 ---

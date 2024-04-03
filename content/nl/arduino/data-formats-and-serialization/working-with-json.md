@@ -6,8 +6,10 @@ description: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegev
   \ manipuleert die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"
 lastmod: '2024-03-13T22:44:51.093138-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert\
-  \ die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"
+summary: Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert
+  die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat dat gemakkelijk
+  te lezen en te schrijven is voor mensen, en eenvoudig te ontleden en te genereren
+  voor machines.
 title: Werken met JSON
 weight: 38
 ---

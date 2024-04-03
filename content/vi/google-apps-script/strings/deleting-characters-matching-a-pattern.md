@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "X\xF3a nh\u1EEFng k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EAB\
   u c\u1EE5 th\u1EC3 l\xE0 m\u1ED9t k\u1EF9 thu\u1EADt \u0111\u01B0\u1EE3c s\u1EED\
   \ d\u1EE5ng \u0111\u1EC3 l\xE0m s\u1EA1ch ho\u1EB7c \u0111\u1ECBnh d\u1EA1ng chu\u1ED7\
-  i trong l\u1EADp tr\xECnh. Trong b\u1ED1i c\u1EA3nh c\u1EE7a Google Apps\u2026"
+  i trong l\u1EADp tr\xECnh."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

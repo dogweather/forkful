@@ -8,8 +8,7 @@ description: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamis
 lastmod: '2024-03-13T22:44:56.084611-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista - k\xE4\
-  yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat\
-  \ tekev\xE4t\u2026"
+  yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta."
 title: Alimerkkijonojen erottaminen
 weight: 6
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.026668-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng handler om \xE5 gjenkjenne og\
   \ konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan\
-  \ forst\xE5 og\u2026"
+  \ forst\xE5 og arbeide med."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

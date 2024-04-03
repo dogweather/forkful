@@ -6,8 +6,9 @@ description: "Het genereren van willekeurige getallen in Visual Basic for Applic
   \ (VBA) stelt programma's in staat processen met elementen van kans of\u2026"
 lastmod: '2024-03-13T22:44:50.632411-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Visual Basic for Applications\
-  \ (VBA) stelt programma's in staat processen met elementen van kans of\u2026"
+summary: Het genereren van willekeurige getallen in Visual Basic for Applications
+  (VBA) stelt programma's in staat processen met elementen van kans of variabiliteit
+  te simuleren, zoals dobbelsteenworpen of het steekproefsgewijs verzamelen van gegevens.
 title: Willekeurige getallen genereren
 weight: 12
 ---

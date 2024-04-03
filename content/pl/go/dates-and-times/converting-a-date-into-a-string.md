@@ -8,8 +8,7 @@ description: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u01
 lastmod: '2024-03-13T22:44:34.865173-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u0142ceniu\
-  \ obiektu `time.Time` na czytelny format ci\u0105gu znak\xF3w. Programi\u015Bci\
-  \ cz\u0119sto wykonuj\u0105 t\u0119 operacj\u0119,\u2026"
+  \ obiektu `time."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

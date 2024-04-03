@@ -6,8 +6,7 @@ description: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en da
 lastmod: '2024-03-13T22:44:41.155314-06:00'
 model: gpt-4-1106-preview
 summary: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en dato f\xF8\
-  r eller etter et bestemt startpunkt. Programmerere gj\xF8r dette for \xE5 h\xE5\
-  ndtere\u2026"
+  r eller etter et bestemt startpunkt."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

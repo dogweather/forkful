@@ -6,8 +6,9 @@ description: "Complexe getallen breiden ons getallenstelsel uit met de vierkants
   \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"
 lastmod: '2024-03-13T22:44:50.761518-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
-  \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"
+summary: Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels
+  van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de vierkantswortel
+  van -1.
 title: Werken met complexe getallen
 weight: 14
 ---

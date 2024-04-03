@@ -7,7 +7,9 @@ description: "Inom programmering involverar arbete med CSV-filer (Comma-Separate
 lastmod: '2024-03-13T22:44:38.408195-06:00'
 model: gpt-4-0125-preview
 summary: "Inom programmering involverar arbete med CSV-filer (Comma-Separated Values,\
-  \ komma-separerade v\xE4rden) att l\xE4sa fr\xE5n och skriva data till textfiler\u2026"
+  \ komma-separerade v\xE4rden) att l\xE4sa fr\xE5n och skriva data till textfiler\
+  \ organiserade i rader, d\xE4r varje rad representerar en post och varje posts f\xE4\
+  lt \xE4r separerade med kommatecken."
 title: Arbeta med CSV
 weight: 37
 ---

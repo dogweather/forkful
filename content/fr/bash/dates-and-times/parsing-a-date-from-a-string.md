@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.007776-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Bash consiste \xE0 extraire\
   \ et convertir les informations de date \xE0 partir de donn\xE9es textuelles en\
-  \ un format\u2026"
+  \ un format que Bash peut manipuler ou utiliser pour des processus ult\xE9rieurs."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

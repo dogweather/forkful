@@ -8,7 +8,8 @@ description: "Interaktywna pow\u0142oka (REPL - Read-Evaluate-Print Loop) dla Da
 lastmod: '2024-03-13T22:44:35.093218-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka (REPL - Read-Evaluate-Print Loop) dla Dart umo\u017C\
-  liwia programistom dynamiczne wpisywanie i wykonywanie linijka po linijce kodu Dart\u2026"
+  liwia programistom dynamiczne wpisywanie i wykonywanie linijka po linijce kodu Dart\
+  \ bez konieczno\u015Bci kompilowania ca\u0142ych skrypt\xF3w."
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---

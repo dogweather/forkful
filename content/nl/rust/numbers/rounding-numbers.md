@@ -7,8 +7,8 @@ description: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde 
   \ om\u2026"
 lastmod: '2024-03-13T22:44:50.589005-06:00'
 model: gpt-4-0125-preview
-summary: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele getal\
-  \ of een fractie met een bepaalde precisie. Programmeurs ronden getallen af om\u2026"
+summary: Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele getal
+  of een fractie met een bepaalde precisie.
 title: Afronden van getallen
 weight: 13
 ---

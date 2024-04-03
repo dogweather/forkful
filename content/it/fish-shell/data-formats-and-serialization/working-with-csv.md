@@ -6,8 +6,9 @@ description: "Lavorare con file CSV (Comma Separated Values, Valori Separati da 
   \ comporta l'analisi, manipolazione e generazione di dati in un formato tabellare\u2026"
 lastmod: '2024-03-13T22:44:43.882859-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con file CSV (Comma Separated Values, Valori Separati da Virgola)\
-  \ comporta l'analisi, manipolazione e generazione di dati in un formato tabellare\u2026"
+summary: Lavorare con file CSV (Comma Separated Values, Valori Separati da Virgola)
+  comporta l'analisi, manipolazione e generazione di dati in un formato tabellare
+  ampiamente utilizzato per lo scambio di dati tra applicazioni.
 title: Lavorare con i CSV
 weight: 37
 ---

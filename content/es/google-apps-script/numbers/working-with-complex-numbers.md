@@ -7,7 +7,8 @@ description: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de
 lastmod: '2024-03-13T22:44:58.518198-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de unidades\
-  \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\u2026"
+  \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\
+  \ computacionales, especialmente en ingenier\xEDa, f\xEDsica y matem\xE1ticas aplicadas."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

@@ -8,8 +8,7 @@ description: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5
 lastmod: '2024-03-13T22:44:38.318818-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att den\
-  \ f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener. Detta\
-  \ \xE4r en vanlig uppgift\u2026"
+  \ f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

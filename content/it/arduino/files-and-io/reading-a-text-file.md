@@ -5,7 +5,7 @@ description: "Leggere un file di testo con Arduino significa far s\xEC che il mi
 lastmod: '2024-03-13T22:44:43.700542-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo con Arduino significa far s\xEC che il microcontrollore\
-  \ recuperi e utilizzi dati da un file conservato su una scheda SD o memoria\u2026"
+  \ recuperi e utilizzi dati da un file conservato su una scheda SD o memoria simile."
 title: Lettura di un file di testo
 weight: 22
 ---

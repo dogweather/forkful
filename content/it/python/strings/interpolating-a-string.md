@@ -8,7 +8,7 @@ description: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di e
 lastmod: '2024-03-13T22:44:42.987506-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di espressioni\
-  \ all'interno di letterali di stringa. I programmatori lo usano per inserire\u2026"
+  \ all'interno di letterali di stringa."
 title: Interpolazione di una stringa
 weight: 8
 ---

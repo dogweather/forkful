@@ -4,8 +4,7 @@ description: "Sending an HTTP request is the act of asking a web server for data
   \ action. Programmers do it to interact with APIs, grab web content, or communicate\u2026"
 lastmod: '2024-03-13T22:45:00.125172-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request is the act of asking a web server for data or action.\
-  \ Programmers do it to interact with APIs, grab web content, or communicate\u2026"
+summary: Sending an HTTP request is the act of asking a web server for data or action.
 title: Sending an HTTP request
 weight: 44
 ---

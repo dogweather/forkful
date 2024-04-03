@@ -8,8 +8,7 @@ description: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen
 lastmod: '2024-03-13T22:44:38.367125-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av str\xE4\
-  ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare g\xF6\
-  r detta f\xF6r\u2026"
+  ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

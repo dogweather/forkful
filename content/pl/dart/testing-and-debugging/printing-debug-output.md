@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.094292-06:00'
 model: gpt-4-0125-preview
 summary: "Wypisywanie danych diagnostycznych w Dart polega na wy\u015Bwietlaniu informacji\
   \ w konsoli podczas dzia\u0142ania programu, co pozwala programistom \u015Bledzi\u0107\
-  \ przep\u0142yw\u2026"
+  \ przep\u0142yw wykonania, bada\u0107 stan zmiennych lub identyfikowa\u0107 \u017A\
+  r\xF3d\u0142o b\u0142\u0119d\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

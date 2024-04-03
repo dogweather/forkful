@@ -6,8 +6,7 @@ description: "Partire con un nuovo progetto \xE8 eccitante; \xE8 l'atto di crear
 lastmod: '2024-03-13T22:44:43.218721-06:00'
 model: gpt-4-1106-preview
 summary: "Partire con un nuovo progetto \xE8 eccitante; \xE8 l'atto di creare un ambiente\
-  \ di codice da zero. I programmatori lo fanno perch\xE9 vogliono trasformare le\
-  \ idee\u2026"
+  \ di codice da zero."
 title: Avvio di un nuovo progetto
 weight: 1
 ---

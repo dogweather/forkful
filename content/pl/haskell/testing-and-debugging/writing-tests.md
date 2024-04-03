@@ -8,8 +8,7 @@ description: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje 
 lastmod: '2024-03-13T22:44:35.455450-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
-  \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\
-  ci robi\u0105 to,\u2026"
+  \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

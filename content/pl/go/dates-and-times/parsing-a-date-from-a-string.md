@@ -8,8 +8,7 @@ description: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstaw
 lastmod: '2024-03-13T22:44:34.862726-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstawionej\
-  \ w formie tekstu na bardziej u\u017Cyteczny format (np. `time.Time`). Programi\u015B\
-  ci\u2026"
+  \ w formie tekstu na bardziej u\u017Cyteczny format (np."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

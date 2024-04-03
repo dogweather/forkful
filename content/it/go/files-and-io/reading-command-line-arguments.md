@@ -7,8 +7,9 @@ description: "Leggere gli argomenti da linea di comando in Go implica l'estrazio
   \ o dal\u2026"
 lastmod: '2024-03-13T22:44:42.924842-06:00'
 model: gpt-4-0125-preview
-summary: "Leggere gli argomenti da linea di comando in Go implica l'estrazione degli\
-  \ argomenti forniti a un programma durante la sua invocazione dal terminale o dal\u2026"
+summary: Leggere gli argomenti da linea di comando in Go implica l'estrazione degli
+  argomenti forniti a un programma durante la sua invocazione dal terminale o dal
+  prompt dei comandi.
 title: Lettura degli argomenti da linea di comando
 weight: 23
 ---

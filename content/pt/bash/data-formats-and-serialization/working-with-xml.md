@@ -6,8 +6,7 @@ description: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula
 lastmod: '2024-03-13T22:44:46.777633-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula\xE7\xE3\
-  o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel. Programadores\
-  \ lidam com o XML j\xE1\u2026"
+  o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel."
 title: Trabalhando com XML
 weight: 40
 ---

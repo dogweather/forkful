@@ -8,8 +8,7 @@ description: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och ma
 lastmod: '2024-03-13T22:44:38.410403-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och manipulera\
-  \ XML-dokument med hj\xE4lp av olika bibliotek. Programmerare engagerar sig med\
-  \ XML p\xE5 grund\u2026"
+  \ XML-dokument med hj\xE4lp av olika bibliotek."
 title: Att arbeta med XML
 weight: 40
 ---

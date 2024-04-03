@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:58.186663-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
   \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\
-  \ pour les\u2026"
+  \ pour les applications n\xE9cessitant de conserver des donn\xE9es, telles que des\
+  \ journaux, du contenu g\xE9n\xE9r\xE9 par les utilisateurs ou des param\xE8tres\
+  \ de configuration."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

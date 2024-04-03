@@ -5,9 +5,7 @@ description: "\xC5 dumpe all koden din i en stor haug? D\xE5rlig id\xE9. \xC5 de
   \ \xE5 teste. Ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.714664-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 dumpe all koden din i en stor haug? D\xE5rlig id\xE9. \xC5 dele den\
-  \ opp i funksjoner? God ide. Det holder din Elm-kode ren, gjenbrukbar og lettere\
-  \ \xE5 teste. Ved \xE5\u2026"
+summary: "\xC5 dumpe all koden din i en stor haug."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

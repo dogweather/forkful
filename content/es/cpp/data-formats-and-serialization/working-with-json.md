@@ -6,8 +6,9 @@ description: "JSON (JavaScript Object Notation) es un formato ligero para almace
   \ y transportar datos, lo que lo convierte en un excelente medio para el intercambio\u2026"
 lastmod: '2024-03-13T22:44:59.396282-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) es un formato ligero para almacenar y\
-  \ transportar datos, lo que lo convierte en un excelente medio para el intercambio\u2026"
+summary: JSON (JavaScript Object Notation) es un formato ligero para almacenar y transportar
+  datos, lo que lo convierte en un excelente medio para el intercambio de datos entre
+  servidores y aplicaciones web.
 title: Trabajando con JSON
 weight: 38
 ---

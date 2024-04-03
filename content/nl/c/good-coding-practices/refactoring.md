@@ -7,8 +7,10 @@ description: "Refactoring in programmering betreft het herstructureren van besta
   \ van\u2026"
 lastmod: '2024-03-13T22:44:51.299754-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in programmering betreft het herstructureren van bestaande code\
-  \ zonder het externe gedrag ervan te wijzigen, met als doel het verbeteren van\u2026"
+summary: Refactoring in programmering betreft het herstructureren van bestaande code
+  zonder het externe gedrag ervan te wijzigen, met als doel het verbeteren van niet-functionele
+  attributen zoals leesbaarheid, het verminderen van complexiteit, en het verbeteren
+  van onderhoudbaarheid.
 title: Refactoring
 weight: 19
 ---

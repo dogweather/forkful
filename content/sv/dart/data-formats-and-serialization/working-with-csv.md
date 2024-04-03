@@ -8,7 +8,7 @@ description: "Att jobba med CSV (Comma Separated Values)-filer inneb\xE4r att to
 lastmod: '2024-03-13T22:44:37.636395-06:00'
 model: gpt-4-0125-preview
 summary: "Att jobba med CSV (Comma Separated Values)-filer inneb\xE4r att tolka och\
-  \ generera textfiler d\xE4r varje rad inneh\xE5ller v\xE4rden separerade av kommatecken.\u2026"
+  \ generera textfiler d\xE4r varje rad inneh\xE5ller v\xE4rden separerade av kommatecken."
 title: Arbeta med CSV
 weight: 37
 ---

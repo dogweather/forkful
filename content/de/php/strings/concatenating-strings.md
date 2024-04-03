@@ -4,8 +4,7 @@ description: "String-Konkatenation verbindet einfach zwei oder mehr Strings zu e
   \ Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus\u2026"
 lastmod: '2024-03-13T22:44:53.964604-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.\
-  \ Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus\u2026"
+summary: String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

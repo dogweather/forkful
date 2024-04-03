@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.942260-06:00'
 model: unknown
 summary: "Trabalhar com JSON (JavaScript Object Notation) significa manipular dados\
   \ no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos e simples\
-  \ para\u2026"
+  \ para m\xE1quinas processarem."
 title: Trabalhando com JSON
 weight: 38
 ---

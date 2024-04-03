@@ -6,8 +6,7 @@ description: "Calcular datas futuras ou passadas \xE9 um jeito de lidar com inte
 lastmod: '2024-03-13T22:44:46.339294-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular datas futuras ou passadas \xE9 um jeito de lidar com intervalos\
-  \ de tempo em programa\xE7\xE3o. Programadores fazem isso para agendar eventos,\
-  \ fazer\u2026"
+  \ de tempo em programa\xE7\xE3o."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

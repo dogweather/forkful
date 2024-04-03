@@ -6,8 +6,7 @@ description: "Kun tulostetaan debuggausinformaatiota, ohjelmisto kehitt\xE4j\xE4
 lastmod: '2024-03-13T22:44:56.997167-06:00'
 model: gpt-4-1106-preview
 summary: "Kun tulostetaan debuggausinformaatiota, ohjelmisto kehitt\xE4j\xE4t tulostavat\
-  \ v\xE4liaikaisia muuttujien arvoja tai viestej\xE4. T\xE4m\xE4 auttaa ymm\xE4rt\xE4\
-  m\xE4\xE4n ohjelman\u2026"
+  \ v\xE4liaikaisia muuttujien arvoja tai viestej\xE4."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

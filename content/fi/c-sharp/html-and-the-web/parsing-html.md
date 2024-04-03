@@ -8,7 +8,8 @@ description: "HTML:n j\xE4sennys ohjelmoinnissa tarkoittaa HTML-dokumentin raken
 lastmod: '2024-03-13T22:44:56.570987-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys ohjelmoinnissa tarkoittaa HTML-dokumentin rakenteen analysoimista,\
-  \ mik\xE4 mahdollistaa sen sis\xE4ll\xF6n ohjelmallisen k\xE4sittelyn, muokkaamisen\u2026"
+  \ mik\xE4 mahdollistaa sen sis\xE4ll\xF6n ohjelmallisen k\xE4sittelyn, muokkaamisen\
+  \ ja vuorovaikutuksen."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

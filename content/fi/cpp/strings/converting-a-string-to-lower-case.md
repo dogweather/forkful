@@ -5,8 +5,8 @@ description: "Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien is
   m\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.852293-06:00'
 model: gpt-4-1106-preview
-summary: "Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten\
-  \ muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
+summary: Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten
+  muuntamista niiden pieniksi vastineiksi.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

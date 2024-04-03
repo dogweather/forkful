@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.099404-06:00'
 model: gpt-4-0125-preview
 summary: "S\u1EED d\u1EE5ng m\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay v\xF2ng l\u1EB7\
   p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n l\u1EADp tr\xEC\
-  nh m\u1ED9t c\xE1ch t\u01B0\u01A1ng t\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 \u0111\u1EC3 nhanh ch\xF3ng ki\u1EC3m\u2026"
+  nh m\u1ED9t c\xE1ch t\u01B0\u01A1ng t\xE1c."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

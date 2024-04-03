@@ -4,8 +4,7 @@ description: "Parsing HTML in programming involves extracting data from HTML doc
   \ Programmers do this to interact with or scrape web content for information\u2026"
 lastmod: '2024-03-13T22:44:59.818836-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in programming involves extracting data from HTML documents.\
-  \ Programmers do this to interact with or scrape web content for information\u2026"
+summary: Parsing HTML in programming involves extracting data from HTML documents.
 title: Parsing HTML
 weight: 43
 ---

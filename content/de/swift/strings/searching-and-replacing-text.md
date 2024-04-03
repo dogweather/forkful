@@ -6,8 +6,7 @@ description: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichen
 lastmod: '2024-03-13T22:44:54.211344-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichenketten\
-  \ in einem Text zu finden und sie durch andere zu ersetzen. Das ist n\xFCtzlich,\
-  \ um Daten\u2026"
+  \ in einem Text zu finden und sie durch andere zu ersetzen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

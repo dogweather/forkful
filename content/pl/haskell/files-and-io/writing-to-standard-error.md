@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.469245-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Haskellu pozwala programom\
   \ rozr\xF3\u017Cnia\u0107 ich wyj\u015Bcie pomi\u0119dzy normalnymi wynikami a komunikatami\
-  \ o b\u0142\u0119dach. Jest to\u2026"
+  \ o b\u0142\u0119dach."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

@@ -5,8 +5,8 @@ description: "Deleting characters matching a pattern means stripping out specifi
   \ to meet\u2026"
 lastmod: '2024-03-13T22:45:00.343590-06:00'
 model: gpt-4-1106-preview
-summary: "Deleting characters matching a pattern means stripping out specific sequences\
-  \ from a string. Programmers do this for cleanup, data formatting, or to meet\u2026"
+summary: Deleting characters matching a pattern means stripping out specific sequences
+  from a string.
 title: Deleting characters matching a pattern
 weight: 5
 ---

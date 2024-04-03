@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.115221-06:00'
 model: gpt-4-0125-preview
 summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7c sau\
-  \ m\u1ED9t kho\u1EA3ng th\u1EDDi gian \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh.\
-  \ L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y\u2026"
+  \ m\u1ED9t kho\u1EA3ng th\u1EDDi gian \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

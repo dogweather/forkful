@@ -7,8 +7,8 @@ description: "De lengte van een string vinden, betekent bepalen hoeveel karakter
   \ of\u2026"
 lastmod: '2024-03-13T22:44:50.452916-06:00'
 model: gpt-4-0125-preview
-summary: "De lengte van een string vinden, betekent bepalen hoeveel karakters deze\
-  \ bevat. Programmeurs doen dit om invoer te valideren, limieten af te dwingen of\u2026"
+summary: De lengte van een string vinden, betekent bepalen hoeveel karakters deze
+  bevat.
 title: De lengte van een string vinden
 weight: 7
 ---

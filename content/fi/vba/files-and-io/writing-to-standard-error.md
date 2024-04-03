@@ -7,7 +7,8 @@ description: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohje
 lastmod: '2024-03-13T22:44:56.418527-06:00'
 model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
-  \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"
+  \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen vakiotulosteesta,\
+  \ yleens\xE4 konsoliin tai lokitiedostoon."
 title: Kirjoittaminen vakiovirheeseen
 weight: 25
 ---

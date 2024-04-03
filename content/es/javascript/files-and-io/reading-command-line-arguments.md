@@ -6,7 +6,7 @@ description: "Leer argumentos de la l\xEDnea de comandos permite que tu programa
 lastmod: '2024-03-13T22:44:59.473688-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en JavaScript\
-  \ reciba informaci\xF3n desde el exterior cuando se inicia. Esto es \xFAtil, por\u2026"
+  \ reciba informaci\xF3n desde el exterior cuando se inicia."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

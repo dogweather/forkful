@@ -6,8 +6,7 @@ description: "En HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6re
 lastmod: '2024-03-13T22:44:41.017687-06:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6rer \xE5\
-  \ sende brukernavn og passord over nett for \xE5 verifisere en brukers identitet.\
-  \ Programmerere\u2026"
+  \ sende brukernavn og passord over nett for \xE5 verifisere en brukers identitet."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

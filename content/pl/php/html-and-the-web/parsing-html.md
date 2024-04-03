@@ -8,8 +8,7 @@ description: "Parsowanie HTML w PHP polega na wydobywaniu okre\u015Blonych infor
 lastmod: '2024-03-13T22:44:35.495000-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w PHP polega na wydobywaniu okre\u015Blonych informacji\
-  \ z dokument\xF3w HTML. Programi\u015Bci wykonuj\u0105 to zadanie, aby automatyzowa\u0107\
-  \ ekstrakcj\u0119\u2026"
+  \ z dokument\xF3w HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

@@ -5,9 +5,8 @@ description: "Scaricare una pagina web significa prelevare il suo contenuto via 
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.432761-06:00'
 model: gpt-4-1106-preview
-summary: "Scaricare una pagina web significa prelevare il suo contenuto via HTTP o\
-  \ HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilit\xE0\
-  \ o\u2026"
+summary: Scaricare una pagina web significa prelevare il suo contenuto via HTTP o
+  HTTPS.
 title: Scaricare una pagina web
 weight: 42
 ---

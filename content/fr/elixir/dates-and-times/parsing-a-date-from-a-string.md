@@ -10,7 +10,7 @@ lastmod: '2024-03-13T22:44:57.337589-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 prendre un texte, comme \"2023-04-05\", et \xE0 le convertir en un format\
-  \ de date que votre\u2026"
+  \ de date que votre programme peut comprendre et manipuler."
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 weight: 30
 ---

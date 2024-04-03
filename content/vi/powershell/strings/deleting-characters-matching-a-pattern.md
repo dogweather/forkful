@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu nh\u1EA5\
   t \u0111\u1ECBnh ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng ph\u1EA7n kh\xF4\
   ng mong mu\u1ED1n kh\u1ECFi chu\u1ED7i c\u1EE7a b\u1EA1n - h\xE3y ngh\u0129 \u0111\
-  \u1EBFn vi\u1EC7c l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u ho\u1EB7c ph\xE2n\u2026"
+  \u1EBFn vi\u1EC7c l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u ho\u1EB7c ph\xE2n t\xEDch c\xE1\
+  c t\u1EC7p v\u0103n b\u1EA3n."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

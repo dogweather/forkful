@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.882128-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\xF5\
   es de diagn\xF3stico para acompanhar o fluxo e o estado de um programa enquanto\
-  \ ele roda.\u2026"
+  \ ele roda."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

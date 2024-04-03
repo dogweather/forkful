@@ -8,7 +8,8 @@ description: "Calculer une date dans le futur ou dans le pass\xE9 en Go implique
 lastmod: '2024-03-13T22:44:57.148971-06:00'
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou dans le pass\xE9 en Go implique de manipuler\
-  \ des valeurs de date et d'heure pour d\xE9terminer un point sp\xE9cifique par\u2026"
+  \ des valeurs de date et d'heure pour d\xE9terminer un point sp\xE9cifique par rapport\
+  \ \xE0 une date donn\xE9e."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

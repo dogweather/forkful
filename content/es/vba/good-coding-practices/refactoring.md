@@ -7,7 +7,8 @@ description: "El refactoring en programaci\xF3n implica modificar la estructura 
 lastmod: '2024-03-13T22:44:58.902513-06:00'
 model: gpt-4-0125-preview
 summary: "El refactoring en programaci\xF3n implica modificar la estructura del c\xF3\
-  digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad,\u2026"
+  digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad, mantenibilidad\
+  \ o rendimiento."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

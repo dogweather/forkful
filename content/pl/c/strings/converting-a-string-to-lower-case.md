@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.871649-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119zyku\
   \ C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
-  cuchu na odpowiadaj\u0105ce im ma\u0142e litery.\u2026"
+  cuchu na odpowiadaj\u0105ce im ma\u0142e litery."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -7,7 +7,7 @@ description: "Werken met XML in Visual Basic for Applications (VBA) houdt in het
 lastmod: '2024-03-13T22:44:50.662622-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen,\
-  \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-\u2026"
+  \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-applicaties."
 title: Werken met XML
 weight: 40
 ---

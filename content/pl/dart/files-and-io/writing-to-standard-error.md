@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.110253-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Dart polega na wysy\u0142\
   aniu komunikat\xF3w o b\u0142\u0119dach i diagnostyk do oddzielnego strumienia,\
-  \ r\xF3\u017Cnego od standardowego\u2026"
+  \ r\xF3\u017Cnego od standardowego wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

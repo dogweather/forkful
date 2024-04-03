@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1ED3ng ngh\u0129\
   a v\u1EDBi vi\u1EC7c l\u0103n x\xE3 v\xE0o vi\u1EC7c thi\u1EBFt l\u1EADp m\xF4i\
   \ tr\u01B0\u1EDDng ban \u0111\u1EA7u v\xE0 c\xE1c file cho cu\u1ED9c phi\xEAu l\u01B0\
-  u code c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+  u code c\u1EE7a b\u1EA1n."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

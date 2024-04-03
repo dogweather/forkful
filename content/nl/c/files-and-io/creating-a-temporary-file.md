@@ -8,7 +8,8 @@ description: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van e
 lastmod: '2024-03-13T22:44:51.311087-06:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een bestand\
-  \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\u2026"
+  \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\
+  \ voor gegevensverwerking of opslag."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

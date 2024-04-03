@@ -8,8 +8,7 @@ description: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des porti
 lastmod: '2024-03-13T22:44:57.120759-06:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions sp\xE9\
-  cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs r\xE9\
-  alisent\u2026"
+  cifiques d'une cha\xEEne en fonction de leurs positions."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

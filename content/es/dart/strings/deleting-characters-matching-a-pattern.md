@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.730150-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en cadenas\
   \ de texto es crucial para la validaci\xF3n de datos, la sanitizaci\xF3n o cuando\
-  \ se prepara\u2026"
+  \ se prepara el texto para un procesamiento posterior."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

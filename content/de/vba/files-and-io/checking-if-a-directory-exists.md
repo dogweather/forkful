@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:53.734340-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
   \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
-  \ zu\u2026"
+  \ zu verifizieren, bevor Operationen wie das Speichern von Dateien oder das Erstellen\
+  \ neuer Verzeichnisse durchgef\xFChrt werden."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

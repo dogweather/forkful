@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i l\xE0 qu\xE1 tr\xECnh ch\xE8n tr\u1EF1c ti\u1EBF\
   p gi\xE1 tr\u1ECB bi\u1EBFn v\xE0o trong chu\u1ED7i, th\u01B0\u1EDDng \u0111\u01B0\
   \u1EE3c d\xF9ng \u0111\u1EC3 t\u1EA1o ra c\xE1c th\xF4ng \u0111i\u1EC7p \xFD ngh\u0129\
-  a m\xE0 kh\xF4ng c\u1EA7n \u0111\u1EBFn s\u1EF1 n\u1ED1i chu\u1ED7i\u2026"
+  a m\xE0 kh\xF4ng c\u1EA7n \u0111\u1EBFn s\u1EF1 n\u1ED1i chu\u1ED7i r\u01B0\u1EDD\
+  m r\xE0."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

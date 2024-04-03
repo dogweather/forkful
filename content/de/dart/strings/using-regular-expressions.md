@@ -8,7 +8,8 @@ description: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE
 lastmod: '2024-03-13T22:44:53.569238-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE4hige\
-  \ M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe\u2026"
+  \ M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe\
+  \ Textverarbeitungsaufgaben effizient durchf\xFChren k\xF6nnen."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

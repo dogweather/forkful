@@ -5,7 +5,7 @@ description: "Comparer deux dates permet de d\xE9terminer laquelle est ant\xE9ri
 lastmod: '2024-03-13T22:44:57.655412-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates permet de d\xE9terminer laquelle est ant\xE9rieure,\
-  \ post\xE9rieure ou si elles sont identiques. Les programmeurs utilisent cette comparaison\u2026"
+  \ post\xE9rieure ou si elles sont identiques."
 title: Comparer deux dates
 weight: 27
 ---

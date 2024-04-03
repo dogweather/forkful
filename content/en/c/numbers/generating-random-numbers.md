@@ -4,8 +4,8 @@ description: "Generating random numbers in C involves creating values that are u
   \ and follow a specific distribution, such as uniform or normal. This\u2026"
 lastmod: '2024-03-13T22:45:00.507840-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in C involves creating values that are unpredictable\
-  \ and follow a specific distribution, such as uniform or normal. This\u2026"
+summary: Generating random numbers in C involves creating values that are unpredictable
+  and follow a specific distribution, such as uniform or normal.
 title: Generating random numbers
 weight: 12
 ---

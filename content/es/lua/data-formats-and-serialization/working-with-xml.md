@@ -6,7 +6,7 @@ description: "Trabajar con XML implica analizar y manipular documentos XML usand
 lastmod: '2024-03-13T22:44:59.226933-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML implica analizar y manipular documentos XML usando c\xF3\
-  digo. Los programadores hacen esto para leer, escribir y modificar datos en un\u2026"
+  digo."
 title: Trabajando con XML
 weight: 40
 ---

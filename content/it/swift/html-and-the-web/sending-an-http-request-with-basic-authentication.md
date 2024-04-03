@@ -5,7 +5,7 @@ description: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 
 lastmod: '2024-03-13T22:44:43.769828-06:00'
 model: gpt-4-1106-preview
 summary: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
-  \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"
+  \ per accedere a risorse protette da username e password."
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

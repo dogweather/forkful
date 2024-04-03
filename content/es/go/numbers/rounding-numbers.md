@@ -8,8 +8,7 @@ description: "Redondear n\xFAmeros consiste en ajustar el valor de un n\xFAmero 
 lastmod: '2024-03-13T22:44:58.461611-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros consiste en ajustar el valor de un n\xFAmero al entero\
-  \ m\xE1s cercano o a un n\xFAmero espec\xEDfico de decimales. Los programadores\
-  \ hacen esto por\u2026"
+  \ m\xE1s cercano o a un n\xFAmero espec\xEDfico de decimales."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

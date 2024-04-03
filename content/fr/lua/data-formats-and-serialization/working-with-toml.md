@@ -6,8 +6,7 @@ description: "Travailler avec TOML implique d'analyser et de g\xE9n\xE9rer des d
 lastmod: '2024-03-13T22:44:57.964378-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec TOML implique d'analyser et de g\xE9n\xE9rer des donn\xE9\
-  es TOML (Tom's Obvious, Minimal Language) avec Lua. Les programmeurs utilisent TOML\
-  \ pour\u2026"
+  es TOML (Tom's Obvious, Minimal Language) avec Lua."
 title: Travailler avec TOML
 weight: 39
 ---

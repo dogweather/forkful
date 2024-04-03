@@ -4,8 +4,7 @@ description: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 
   \ De dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling,\u2026"
 lastmod: '2024-03-13T22:44:41.178074-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i). De\
-  \ dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling,\u2026"
+summary: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i)."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

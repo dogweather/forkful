@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av 
 lastmod: '2024-03-13T22:44:40.796403-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av koder\
-  \ og filer for \xE5 bygge en applikasjon eller et bibliotek. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+  \ og filer for \xE5 bygge en applikasjon eller et bibliotek."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

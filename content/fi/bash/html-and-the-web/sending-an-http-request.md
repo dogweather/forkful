@@ -5,9 +5,7 @@ description: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n)
   \ l\xE4hett\xE4miseksi,\u2026"
 lastmod: '2024-03-13T22:44:56.736547-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hakemiskutsu.\
-  \ Ohjelmoijat l\xE4hett\xE4v\xE4t n\xE4it\xE4 pyynt\xF6j\xE4 tietojen noutamiseksi,\
-  \ l\xE4hett\xE4miseksi,\u2026"
+summary: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hakemiskutsu."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -6,8 +6,8 @@ description: "Het parsen van HTML is het proces waarbij een string van HTML word
   \ ontleed en omgezet in een gegevensstructuur die je programma kan begrijpen en\u2026"
 lastmod: '2024-03-13T22:44:50.591948-06:00'
 model: gpt-4-0125-preview
-summary: "Het parsen van HTML is het proces waarbij een string van HTML wordt ontleed\
-  \ en omgezet in een gegevensstructuur die je programma kan begrijpen en\u2026"
+summary: Het parsen van HTML is het proces waarbij een string van HTML wordt ontleed
+  en omgezet in een gegevensstructuur die je programma kan begrijpen en manipuleren.
 title: HTML Parsen
 weight: 43
 ---

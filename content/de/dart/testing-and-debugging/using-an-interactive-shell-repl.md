@@ -8,7 +8,8 @@ description: "Eine interaktive Shell (REPL - Read-Evaluate-Print Loop) f\xFCr Da
 lastmod: '2024-03-13T22:44:53.582779-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell (REPL - Read-Evaluate-Print Loop) f\xFCr Dart erm\xF6\
-  glicht es Programmierern, Dart-Code Zeile f\xFCr Zeile dynamisch zu tippen und\u2026"
+  glicht es Programmierern, Dart-Code Zeile f\xFCr Zeile dynamisch zu tippen und auszuf\xFC\
+  hren, ohne ganze Skripte kompilieren zu m\xFCssen."
 title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---

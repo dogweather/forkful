@@ -8,7 +8,8 @@ description: "Comprobar si un directorio existe trata de determinar la presencia
 lastmod: '2024-03-13T22:44:59.389259-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe trata de determinar la presencia de un\
-  \ directorio en una ruta especificada antes de realizar operaciones como leer o\u2026"
+  \ directorio en una ruta especificada antes de realizar operaciones como leer o\
+  \ escribir en archivos dentro de \xE9l."
 title: Comprobando si un directorio existe
 weight: 20
 ---

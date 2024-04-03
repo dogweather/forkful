@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.515310-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, ett kraftfullt verktyg f\xF6r m\xF6nsterigenk\xE4\
   nning och datahantering, \xE4r essentiella i textbehandlingsuppgifter s\xE5som att\
-  \ validera\u2026"
+  \ validera inmatning, s\xF6ka och ers\xE4tta text."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

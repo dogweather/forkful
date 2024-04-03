@@ -5,7 +5,7 @@ description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr
 lastmod: '2024-03-13T22:44:40.445075-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr\xF8ve\
-  \ ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv\u2026"
+  \ ut kodebiter i sanntid."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

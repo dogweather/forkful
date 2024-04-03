@@ -4,8 +4,8 @@ description: "Complex numbers consist of a real part and an imaginary part, repr
   \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"
 lastmod: '2024-03-13T22:45:00.506080-06:00'
 model: gpt-4-0125-preview
-summary: "Complex numbers consist of a real part and an imaginary part, represented\
-  \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"
+summary: Complex numbers consist of a real part and an imaginary part, represented
+  as `a + bi` where `i` is the square root of `-1`.
 title: Working with complex numbers
 weight: 14
 ---

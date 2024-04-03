@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.064720-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena al\
   \ incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\
-  \ y\u2026"
+  \ y la concatenaci\xF3n de cadenas."
 title: Interpolando una cadena de texto
 weight: 8
 ---

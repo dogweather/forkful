@@ -6,8 +6,8 @@ description: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odo
   \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.090116-06:00'
 model: gpt-4-0125-preview
-summary: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
-  \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
+summary: Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla
+  tavalla erilaisissa olosuhteissa.
 title: Testien kirjoittaminen
 weight: 36
 ---

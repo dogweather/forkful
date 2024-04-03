@@ -8,7 +8,7 @@ description: "PHP:n assosiatiiviset taulukot ovat kuin tehostettuja listoja, joi
 lastmod: '2024-03-13T22:44:56.648789-06:00'
 model: gpt-4-0125-preview
 summary: "PHP:n assosiatiiviset taulukot ovat kuin tehostettuja listoja, joissa jokaista\
-  \ alkiota voidaan k\xE4ytt\xE4\xE4 ihmisen luettavalla avaimella numeroiden sijaan.\u2026"
+  \ alkiota voidaan k\xE4ytt\xE4\xE4 ihmisen luettavalla avaimella numeroiden sijaan."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

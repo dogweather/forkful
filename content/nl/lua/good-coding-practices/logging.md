@@ -7,8 +7,8 @@ description: "Loggen is de praktijk van het vastleggen van gebeurtenissen, foute
   \ een\u2026"
 lastmod: '2024-03-13T22:44:50.943918-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten en andere\
-  \ significante datapunten die zich voordoen binnen de levenscyclus van een\u2026"
+summary: Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten en andere
+  significante datapunten die zich voordoen binnen de levenscyclus van een softwaretoepassing.
 title: Logboekregistratie
 weight: 17
 ---

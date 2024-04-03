@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.074603-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania warto\u015B\
   ci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119sto w celu\
-  \ tworzenia znacz\u0105cych komunikat\xF3w\u2026"
+  \ tworzenia znacz\u0105cych komunikat\xF3w bez uci\u0105\u017Cliwych konkatenacji."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

@@ -6,8 +6,7 @@ description: "Generowanie losowych liczb jest podstawowym zadaniem w programowan
 lastmod: '2024-03-13T22:44:35.834760-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb jest podstawowym zadaniem w programowaniu, u\u017C\
-  ywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier. W Fish Shell\
-  \ u\u017Cycie\u2026"
+  ywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier."
 title: Generowanie liczb losowych
 weight: 12
 ---

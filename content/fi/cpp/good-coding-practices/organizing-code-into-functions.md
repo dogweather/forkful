@@ -6,7 +6,7 @@ description: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiks
 lastmod: '2024-03-13T22:44:56.870709-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi, uudelleenk\xE4\
-  ytett\xE4viksi osiksi. Sen tavoitteena on toiston v\xE4ltt\xE4minen, koodin\u2026"
+  ytett\xE4viksi osiksi."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

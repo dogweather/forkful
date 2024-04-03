@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.999149-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
   \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
-  \ baza kodu\u2026"
+  \ baza kodu dzia\u0142a zgodnie z oczekiwaniami."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

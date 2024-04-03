@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.996991-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou tabelas hash, permitem armazenar dados como pares\
   \ de chave-valor, facilitando a organiza\xE7\xE3o e recupera\xE7\xE3o de informa\xE7\
-  \xF5es por\u2026"
+  \xF5es por chave."
 title: Usando arrays associativos
 weight: 15
 ---

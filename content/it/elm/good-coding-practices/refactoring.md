@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:43.358036-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera nel\
   \ tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\
-  \ il\u2026"
+  \ il comportamento esterno."
 title: Rifattorizzazione
 weight: 19
 ---

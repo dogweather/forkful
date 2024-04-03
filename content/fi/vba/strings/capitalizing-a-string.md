@@ -8,7 +8,8 @@ description: "Merkkijonon alkukirjaimen suurentaminen Visual Basic for Applicati
 lastmod: '2024-03-13T22:44:56.382483-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen Visual Basic for Applications (VBA)\
-  \ -kielell\xE4 tarkoittaa merkkijonon jokaisen sanan ensimm\xE4isen merkin muuttamista\u2026"
+  \ -kielell\xE4 tarkoittaa merkkijonon jokaisen sanan ensimm\xE4isen merkin muuttamista\
+  \ isoksi kirjaimeksi samalla kun varmistetaan, ett\xE4 loput ovat pieni\xE4 kirjaimia."
 title: Merkkijonon alkukirjaimen suurentaminen
 weight: 2
 ---

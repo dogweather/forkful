@@ -8,8 +8,7 @@ description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicat
 lastmod: '2024-03-13T22:44:56.389677-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
-  \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
-  \ Ohjelmoijat\u2026"
+  \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

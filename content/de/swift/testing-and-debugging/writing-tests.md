@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.229016-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Swift umfasst das Erstellen und Ausf\xFChren\
   \ von Code, der die Korrektheit anderer Codeeinheiten in Ihrer Anwendung \xFCberpr\xFC\
-  ft.\u2026"
+  ft."
 title: Tests Schreiben
 weight: 36
 ---

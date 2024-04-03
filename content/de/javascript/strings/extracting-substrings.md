@@ -4,8 +4,8 @@ description: "Das Extrahieren von Teilzeichenketten bedeutet, bestimmte Teile ei
   \ Zeichenkette (String) herauszuziehen. Programmierer tun das, um mit spezifischen\u2026"
 lastmod: '2024-03-13T22:44:54.255267-06:00'
 model: gpt-4-1106-preview
-summary: "Das Extrahieren von Teilzeichenketten bedeutet, bestimmte Teile einer Zeichenkette\
-  \ (String) herauszuziehen. Programmierer tun das, um mit spezifischen\u2026"
+summary: Das Extrahieren von Teilzeichenketten bedeutet, bestimmte Teile einer Zeichenkette
+  (String) herauszuziehen.
 title: Teilstrings extrahieren
 weight: 6
 ---

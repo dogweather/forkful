@@ -6,7 +6,7 @@ description: "Koodin uudelleenj\xE4rjest\xE4minen (refaktorointi) on prosessi, j
 lastmod: '2024-03-13T22:44:56.873512-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin uudelleenj\xE4rjest\xE4minen (refaktorointi) on prosessi, jossa muutetaan\
-  \ tietokoneohjelman sis\xE4ist\xE4 rakennetta muuttamatta sen ulkoista toimintaa.\u2026"
+  \ tietokoneohjelman sis\xE4ist\xE4 rakennetta muuttamatta sen ulkoista toimintaa."
 title: Koodin refaktorointi
 weight: 19
 ---

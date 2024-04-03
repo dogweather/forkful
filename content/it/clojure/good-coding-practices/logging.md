@@ -6,7 +6,8 @@ description: "Il logging \xE8 essenzialmente l'equivalente software di un regist
 lastmod: '2024-03-13T22:44:43.048660-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 essenzialmente l'equivalente software di un registro di\
-  \ bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano mentre\u2026"
+  \ bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano mentre\
+  \ un'applicazione \xE8 in esecuzione."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

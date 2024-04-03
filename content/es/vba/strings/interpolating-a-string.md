@@ -8,7 +8,8 @@ description: "La interpolaci\xF3n de cadenas en Visual Basic para Aplicaciones (
 lastmod: '2024-03-13T22:44:58.875329-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas en Visual Basic para Aplicaciones (VBA) se\
-  \ refiere al proceso de incrustar variables o expresiones dentro de un literal de\u2026"
+  \ refiere al proceso de incrustar variables o expresiones dentro de un literal de\
+  \ cadena, permitiendo la formaci\xF3n din\xE1mica de cadenas."
 title: Interpolando una cadena de texto
 weight: 8
 ---

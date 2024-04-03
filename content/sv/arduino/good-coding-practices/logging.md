@@ -6,8 +6,7 @@ description: "\"Loggning\" inneb\xE4r att man f\xF6r en journal \xF6ver h\xE4nde
 lastmod: '2024-03-13T22:44:38.173624-06:00'
 model: gpt-4-1106-preview
 summary: "\"Loggning\" inneb\xE4r att man f\xF6r en journal \xF6ver h\xE4ndelser,\
-  \ transaktioner eller aktiviteter som sker \xF6ver tid i ett system. Programmerare\
-  \ anv\xE4nder det f\xF6r\u2026"
+  \ transaktioner eller aktiviteter som sker \xF6ver tid i ett system."
 title: Loggning
 weight: 17
 ---

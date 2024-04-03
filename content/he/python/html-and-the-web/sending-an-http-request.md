@@ -4,8 +4,7 @@ description: "HTTP requests are how we ask for stuff on the web. Programmers sen
   \ them to get data, post data, and interact with web services. Essential for web\u2026"
 lastmod: '2024-03-13T22:44:38.630335-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP requests are how we ask for stuff on the web. Programmers send them\
-  \ to get data, post data, and interact with web services. Essential for web\u2026"
+summary: HTTP requests are how we ask for stuff on the web.
 title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP"
 weight: 44
 ---

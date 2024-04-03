@@ -5,9 +5,7 @@ description: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce 
   \ ale nie po jego\u2026"
 lastmod: '2024-03-13T22:44:35.732136-06:00'
 model: gpt-4-1106-preview
-summary: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce do przechowywania\
-  \ danych, kt\xF3re s\u0105 wa\u017Cne w trakcie wykonywania programu, ale nie po\
-  \ jego\u2026"
+summary: ("Co i dlaczego.
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -4,8 +4,10 @@ description: "Creating a temporary file in Dart involves generating a file that 
   \ intended for short-term use, primarily for scenarios such as caching data, temporary\u2026"
 lastmod: '2024-03-13T22:44:59.837861-06:00'
 model: gpt-4-0125-preview
-summary: "Creating a temporary file in Dart involves generating a file that is intended\
-  \ for short-term use, primarily for scenarios such as caching data, temporary\u2026"
+summary: Creating a temporary file in Dart involves generating a file that is intended
+  for short-term use, primarily for scenarios such as caching data, temporary storage
+  for file processing, or holding information that is too sensitive to retain for
+  long.
 title: Creating a temporary file
 weight: 21
 ---

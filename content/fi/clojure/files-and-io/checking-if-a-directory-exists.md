@@ -8,8 +8,7 @@ description: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4
 lastmod: '2024-03-13T22:44:56.198665-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
-  rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\
-  \ T\xE4m\xE4 teht\xE4v\xE4 on\u2026"
+  rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

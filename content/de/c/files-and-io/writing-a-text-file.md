@@ -7,7 +7,8 @@ description: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \
 lastmod: '2024-03-13T22:44:54.373025-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6ffnen\
-  \ einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"
+  \ einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\
+  \ um Textdaten darin zu speichern."
 title: Eine Textdatei schreiben
 weight: 24
 ---

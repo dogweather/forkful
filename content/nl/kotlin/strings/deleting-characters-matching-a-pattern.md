@@ -7,8 +7,9 @@ description: "Karakters verwijderen die overeenkomen met een patroon gaat over h
   \ van\u2026"
 lastmod: '2024-03-13T22:44:50.751568-06:00'
 model: gpt-4-0125-preview
-summary: "Karakters verwijderen die overeenkomen met een patroon gaat over het vinden\
-  \ en verwijderen van specifieke reeksen karakters in een string op basis van\u2026"
+summary: Karakters verwijderen die overeenkomen met een patroon gaat over het vinden
+  en verwijderen van specifieke reeksen karakters in een string op basis van regels
+  (het patroon).
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

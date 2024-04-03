@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.667355-06:00'
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong C# l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD\
   \ nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - gi\u1ED1ng nh\u01B0 v\u1EA5\
-  p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh. Ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3\
-  \ v\u1EA5p ph\u1EA3i d\u1EEF li\u1EC7u x\u1EA5u ho\u1EB7c k\u1EBFt\u2026"
+  p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

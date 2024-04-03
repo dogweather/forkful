@@ -5,7 +5,7 @@ description: "I numeri complessi sono un insieme di numeri della forma `a + bi`,
 lastmod: '2024-03-13T22:44:42.995088-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono un insieme di numeri della forma `a + bi`, dove\
-  \ `a` e `b` sono numeri reali, e `i` \xE8 l'unit\xE0 immaginaria (`i^2 = -1`). In\u2026"
+  \ `a` e `b` sono numeri reali, e `i` \xE8 l'unit\xE0 immaginaria (`i^2 = -1`)."
 title: Lavorare con i numeri complessi
 weight: 14
 ---

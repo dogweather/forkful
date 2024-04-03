@@ -6,8 +6,8 @@ description: "Complexe getallen breiden het idee van eendimensionale getallenlij
   \ uit naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"
 lastmod: '2024-03-13T22:44:51.239023-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen breiden het idee van eendimensionale getallenlijnen uit\
-  \ naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"
+summary: Complexe getallen breiden het idee van eendimensionale getallenlijnen uit
+  naar een tweedimensionaal complex vlak.
 title: Werken met complexe getallen
 weight: 14
 ---

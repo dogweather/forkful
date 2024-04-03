@@ -6,7 +6,7 @@ description: "Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebu
 lastmod: '2024-03-13T22:44:54.104568-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebung f\xFC\
-  r eine bestimmte Aufgabe zu schaffen. Programmierer tun dies, um ihre Ideen zu\u2026"
+  r eine bestimmte Aufgabe zu schaffen."
 title: Einen neuen Projekt starten
 weight: 1
 ---

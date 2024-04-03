@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.585003-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Dart umfasst das Erstellen von Testf\xE4llen,\
   \ um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile Ihres Programms wie\
-  \ erwartet\u2026"
+  \ erwartet funktionieren."
 title: Tests schreiben
 weight: 36
 ---

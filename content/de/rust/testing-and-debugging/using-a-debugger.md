@@ -6,8 +6,7 @@ description: "Rust unterst\xFCtzt verschiedene Debugger, aber ein g\xE4ngiger is
 lastmod: '2024-03-13T22:44:53.677256-06:00'
 model: gpt-4-0125-preview
 summary: "Rust unterst\xFCtzt verschiedene Debugger, aber ein g\xE4ngiger ist `gdb`\
-  \ f\xFCr GNU/Linux oder `lldb` f\xFCr macOS. Man k\xF6nnte auch `rust-gdb` oder\
-  \ `rust-lldb`\u2026"
+  \ f\xFCr GNU/Linux oder `lldb` f\xFCr macOS."
 title: Einsatz eines Debuggers
 weight: 35
 ---

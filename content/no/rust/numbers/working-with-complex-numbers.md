@@ -5,7 +5,7 @@ description: "Komplekse tall har en reell del og en imagin\xE6r del og er essens
 lastmod: '2024-03-13T22:44:40.567938-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall har en reell del og en imagin\xE6r del og er essensielle\
-  \ i forskjellige felt som ingeni\xF8rvitenskap, fysikk, og datagrafikk. Programmerere\u2026"
+  \ i forskjellige felt som ingeni\xF8rvitenskap, fysikk, og datagrafikk."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

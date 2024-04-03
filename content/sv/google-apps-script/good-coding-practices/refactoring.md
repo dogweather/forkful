@@ -8,7 +8,8 @@ description: "Refaktorisering i programmeringslexikonet refererar till processen
 lastmod: '2024-03-13T22:44:37.447951-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering i programmeringslexikonet refererar till processen att omstrukturera\
-  \ befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess externa\u2026"
+  \ befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess externa beteende\u2014\
+  f\xF6r att f\xF6rb\xE4ttra icke-funktionella attribut."
 title: Refaktorering
 weight: 19
 ---

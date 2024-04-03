@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.717862-06:00'
 model: gpt-4-0125-preview
 summary: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
   \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\
-  \ datan vaihdon\u2026"
+  \ datan vaihdon Lualla tehtyjen sovellusten ja verkkopalveluiden tai ulkoisten APIen\
+  \ v\xE4lill\xE4."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

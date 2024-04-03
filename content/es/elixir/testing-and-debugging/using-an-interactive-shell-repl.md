@@ -5,7 +5,7 @@ description: "Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer
 lastmod: '2024-03-13T22:44:58.704112-06:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
-  \ te permite probar fragmentos de c\xF3digo en tiempo real. Los\u2026"
+  \ te permite probar fragmentos de c\xF3digo en tiempo real."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

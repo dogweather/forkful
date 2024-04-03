@@ -6,8 +6,8 @@ description: "Het starten van een nieuw project in TypeScript draait allemaal om
   \ opzetten van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
 lastmod: '2024-03-13T22:44:50.551389-06:00'
 model: gpt-4-0125-preview
-summary: "Het starten van een nieuw project in TypeScript draait allemaal om het opzetten\
-  \ van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
+summary: Het starten van een nieuw project in TypeScript draait allemaal om het opzetten
+  van een solide basis om op te coderen.
 title: Een nieuw project starten
 weight: 1
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.920252-06:00'
 model: gpt-4-0125-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
   \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
-  w linii polece\u0144 w\u2026"
+  w linii polece\u0144 w j\u0119zykach programowania takich jak Python czy Node."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

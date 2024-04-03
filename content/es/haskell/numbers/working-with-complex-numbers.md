@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.113253-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria,\
   \ son esenciales en varios campos computacionales como la ingenier\xEDa, la f\xED\
-  sica\u2026"
+  sica y el procesamiento de se\xF1ales."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

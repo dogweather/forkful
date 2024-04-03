@@ -5,7 +5,7 @@ description: "Descobrir o comprimento de uma string significa contar o n\xFAmero
 lastmod: '2024-03-13T22:44:46.144737-06:00'
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string significa contar o n\xFAmero de caracteres\
-  \ que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
+  \ que ela possui."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

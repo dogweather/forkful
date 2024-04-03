@@ -8,8 +8,7 @@ description: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9cri
 lastmod: '2024-03-13T22:44:57.154895-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9crire des\
-  \ cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant. Les programmeurs\
-  \ font cela\u2026"
+  \ cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant."
 title: "\xC9crire un fichier texte"
 weight: 24
 ---

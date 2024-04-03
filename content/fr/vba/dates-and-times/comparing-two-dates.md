@@ -8,7 +8,7 @@ description: "Comparer deux dates en Visual Basic pour Applications (VBA) consis
 lastmod: '2024-03-13T22:44:57.594636-06:00'
 model: gpt-4-0125-preview
 summary: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste \xE0\
-  \ d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre. Les\u2026"
+  \ d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre."
 title: Comparer deux dates
 weight: 27
 ---

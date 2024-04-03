@@ -7,8 +7,8 @@ description: "Het verwijderen van aanhalingstekens uit een string houdt in dat d
   \ dit\u2026"
 lastmod: '2024-03-13T22:44:50.967607-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een string houdt in dat de aanhalingstekens\
-  \ die de string omsluiten, worden weggestript. Programmeurs willen dit\u2026"
+summary: Het verwijderen van aanhalingstekens uit een string houdt in dat de aanhalingstekens
+  die de string omsluiten, worden weggestript.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

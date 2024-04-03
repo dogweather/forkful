@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.375652-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere tilstedev\xE6\
   relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner som \xE5 lese\
-  \ eller\u2026"
+  \ eller skrive filer."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

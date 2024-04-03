@@ -9,8 +9,7 @@ description: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\x
 lastmod: '2024-03-13T22:44:56.129418-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4llytet\xE4\
-  \xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisesti\
-  \ arvojen\u2026"
+  \xE4n osaksi merkkijonoliteraaleja."
 title: Merkkijonon interpolointi
 weight: 8
 ---

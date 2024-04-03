@@ -6,8 +6,7 @@ description: "Leer argumentos de la l\xEDnea de comandos en PHP permite que tus 
 lastmod: '2024-03-13T22:44:59.175825-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos en PHP permite que tus scripts\
-  \ entiendan e interpreten datos de entrada proporcionados al ejecutarse. \xBFPor\
-  \ qu\xE9? Es\u2026"
+  \ entiendan e interpreten datos de entrada proporcionados al ejecutarse."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

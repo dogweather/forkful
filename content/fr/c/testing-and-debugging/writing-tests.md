@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.376090-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en C implique de cr\xE9er des programmes ou des fonctions\
   \ auxiliaires plus petits qui v\xE9rifient automatiquement la fonctionnalit\xE9\
-  \ de votre\u2026"
+  \ de votre code."
 title: "R\xE9daction de tests"
 weight: 36
 ---

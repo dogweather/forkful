@@ -5,7 +5,7 @@ description: "Die L\xE4nge eines Strings zu ermitteln, bedeutet, die Anzahl der 
 lastmod: '2024-03-13T22:44:53.411120-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu ermitteln, bedeutet, die Anzahl der Zeichen\
-  \ in diesem String zu z\xE4hlen. Programmierer tun das, um Textverarbeitungsaufgaben\u2026"
+  \ in diesem String zu z\xE4hlen."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

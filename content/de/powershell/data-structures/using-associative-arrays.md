@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.094597-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, auch bekannt als Hashtabellen oder W\xF6rterb\xFCcher\
   \ in PowerShell, erm\xF6glichen es Ihnen, Daten in Schl\xFCssel-Wert-Paaren zu speichern,\
-  \ was\u2026"
+  \ was das Abrufen von Daten unkompliziert und effizient macht."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

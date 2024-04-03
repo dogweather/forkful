@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.092958-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para letras min\xFAsculas no Google Apps Script, uma\
   \ linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\
-  s dos\u2026"
+  s dos produtos Google, \xE9 uma tarefa fundamental com o objetivo de padronizar\
+  \ os dados de texto."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

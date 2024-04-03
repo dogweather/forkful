@@ -6,7 +6,7 @@ description: "Un REPL (Read-Eval-Print-Loop, Ciclo de Leer-Evaluar-Imprimir) es 
 lastmod: '2024-03-13T22:44:59.376891-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print-Loop, Ciclo de Leer-Evaluar-Imprimir) es un entorno\
-  \ de programaci\xF3n interactivo y simple. Los programadores lo utilizan para la\u2026"
+  \ de programaci\xF3n interactivo y simple."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

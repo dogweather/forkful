@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.888292-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
   \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
-  \ widzie\u0107 wyniki,\u2026"
+  \ widzie\u0107 wyniki, co u\u0142atwia nauk\u0119 i procesy debugowania."
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---

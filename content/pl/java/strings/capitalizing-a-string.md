@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.260105-06:00'
 model: gpt-4-0125-preview
 summary: "Wielk\u0105 liter\u0105 nazywamy zmodyfikowanie pierwszej litery ka\u017C\
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105c jednocze\u015B\
-  nie, \u017Ce reszta liter pozostaje ma\u0142a.\u2026"
+  nie, \u017Ce reszta liter pozostaje ma\u0142a."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

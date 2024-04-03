@@ -5,7 +5,8 @@ description: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus
 lastmod: '2024-03-13T22:44:59.293872-06:00'
 model: gpt-4-0125-preview
 summary: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas\
-  \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener\u2026"
+  \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener retroalimentaci\xF3\
+  n inmediata."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

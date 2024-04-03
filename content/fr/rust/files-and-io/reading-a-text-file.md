@@ -4,8 +4,8 @@ description: "En Rust, lire un fichier texte, c'est collecter son contenu pour l
   \ dans votre programme. On le fait souvent pour traiter des donn\xE9es en batch,\u2026"
 lastmod: '2024-03-13T22:44:57.509771-06:00'
 model: gpt-4-1106-preview
-summary: "En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser\
-  \ dans votre programme. On le fait souvent pour traiter des donn\xE9es en batch,\u2026"
+summary: En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser
+  dans votre programme.
 title: Lecture d'un fichier texte
 weight: 22
 ---

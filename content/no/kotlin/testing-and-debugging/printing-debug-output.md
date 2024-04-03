@@ -5,8 +5,7 @@ description: "**Hva & Hvorfor?** Printing debug output lar oss vise verdier elle
   \ nyttig\u2026"
 lastmod: '2024-03-13T22:44:40.753129-06:00'
 model: gpt-4-1106-preview
-summary: "**Hva & Hvorfor?** Printing debug output lar oss vise verdier eller meldinger\
-  \ mens programmet kj\xF8rer. Det er som en live-titt inn i appens hjerne, nyttig\u2026"
+summary: '**Hva & Hvorfor.'
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

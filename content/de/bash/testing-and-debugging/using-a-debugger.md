@@ -5,7 +5,8 @@ description: "Bash kommt nicht mit einem eingebauten Debugger wie einige andere 
 lastmod: '2024-03-13T22:44:54.064162-06:00'
 model: gpt-4-0125-preview
 summary: "Bash kommt nicht mit einem eingebauten Debugger wie einige andere Sprachen,\
-  \ aber Sie k\xF6nnen eingebaute Befehle wie `set -x` verwenden, um\u2026"
+  \ aber Sie k\xF6nnen eingebaute Befehle wie `set -x` verwenden, um nachzuvollziehen,\
+  \ was passiert."
 title: Einsatz eines Debuggers
 weight: 35
 ---

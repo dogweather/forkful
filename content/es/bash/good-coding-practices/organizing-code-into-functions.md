@@ -6,8 +6,7 @@ description: "Dividir el c\xF3digo en funciones significa descomponer los script
 lastmod: '2024-03-13T22:44:59.252013-06:00'
 model: gpt-4-1106-preview
 summary: "Dividir el c\xF3digo en funciones significa descomponer los scripts en bloques\
-  \ m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas. Hace que\
-  \ el\u2026"
+  \ m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

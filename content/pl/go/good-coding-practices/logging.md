@@ -7,7 +7,8 @@ description: "Logowanie w rozwoju oprogramowania to proces rejestrowania informa
 lastmod: '2024-03-13T22:44:34.859120-06:00'
 model: gpt-4-0125-preview
 summary: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o\
-  \ wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"
+  \ wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i diagnozowania\
+  \ problem\xF3w."
 title: Logowanie
 weight: 17
 ---

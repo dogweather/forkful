@@ -5,9 +5,8 @@ description: "Calculating a date in the future or past to znalezienie konkretnej
   ugiwa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.553459-06:00'
 model: gpt-4-1106-preview
-summary: "Calculating a date in the future or past to znalezienie konkretnej daty\
-  \ przed lub po wyznaczonej liczbie dni. Programi\u015Bci robi\u0105 to, aby obs\u0142\
-  ugiwa\u0107\u2026"
+summary: Calculating a date in the future or past to znalezienie konkretnej daty przed
+  lub po wyznaczonej liczbie dni.
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

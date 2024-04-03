@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra sc
 lastmod: '2024-03-13T22:44:40.930908-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra scratch\
-  \ \u2013 det legger grunnlaget for hva som skal bygges. Programmerere gj\xF8r dette\
-  \ for \xE5 bringe nye\u2026"
+  \ \u2013 det legger grunnlaget for hva som skal bygges."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

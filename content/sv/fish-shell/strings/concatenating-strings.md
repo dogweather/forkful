@@ -6,8 +6,7 @@ description: "Konkatenering av str\xE4ngar handlar om att smidigt s\xE4tta ihop 
 lastmod: '2024-03-13T22:44:38.327395-06:00'
 model: gpt-4-1106-preview
 summary: "Konkatenering av str\xE4ngar handlar om att smidigt s\xE4tta ihop flera\
-  \ textstycken till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att skapa\
-  \ dynamiska\u2026"
+  \ textstycken till en enda str\xE4ng."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

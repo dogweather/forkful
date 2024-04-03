@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.600639-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster i Visual Basic for\
   \ Applications (VBA) involverer \xE5 identifisere og deretter fjerne tegn eller\
-  \ strenger som\u2026"
+  \ strenger som m\xF8ter visse kriterier."
 title: "Slette tegn som samsvarer med et m\xF8nster"
 weight: 5
 ---

@@ -8,7 +8,7 @@ description: "Travailler avec JSON (JavaScript Object Notation) signifie manipul
 lastmod: '2024-03-13T22:44:57.666644-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) signifie manipuler ce\
-  \ format l\xE9ger d'\xE9change de donn\xE9es au sein de vos applications Java. Les\u2026"
+  \ format l\xE9ger d'\xE9change de donn\xE9es au sein de vos applications Java."
 title: Travailler avec JSON
 weight: 38
 ---

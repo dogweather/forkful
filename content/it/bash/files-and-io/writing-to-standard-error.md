@@ -6,8 +6,9 @@ description: "Scrivere su standard error (stderr) in Bash consiste nel dirigere 
   \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
 lastmod: '2024-03-13T22:44:43.616033-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
-  \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
+summary: Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi
+  di errore o qualsiasi output diagnostico importante separatamente dall'output standard
+  (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

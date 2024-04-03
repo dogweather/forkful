@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Ghi log gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t nh\u1EADt k\xFD\
   \ cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 th\u1EF1c h\xE0nh ghi\
   \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c d\u1EEF li\u1EC7u li\xEA\
-  n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y.\u2026"
+  n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y."
 title: Ghi log
 weight: 17
 ---

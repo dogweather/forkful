@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:35.162985-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values, czyli warto\u015Bciami oddzielonymi\
   \ przecinkami) obejmuje odczytywanie z plik\xF3w CSV oraz zapisywanie do nich, co\
-  \ jest\u2026"
+  \ jest powszechnym formatem wymiany danych u\u017Cywanym ze wzgl\u0119du na jego\
+  \ prostot\u0119 i szerokie wsparcie na r\xF3\u017Cnych platformach i w r\xF3\u017C\
+  nych j\u0119zykach."
 title: Praca z plikami CSV
 weight: 37
 ---

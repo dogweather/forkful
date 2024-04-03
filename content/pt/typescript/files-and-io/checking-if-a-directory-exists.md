@@ -8,7 +8,8 @@ description: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial p
 lastmod: '2024-03-13T22:44:46.340333-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para tarefas\
-  \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\u2026"
+  \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\
+  \ que opera\xE7\xF5es sejam realizadas apenas em diret\xF3rios v\xE1lidos."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

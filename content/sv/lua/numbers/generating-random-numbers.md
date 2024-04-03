@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.034046-06:00'
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga tal i programmering handlar om att producera\
   \ of\xF6ruts\xE4gbara numeriska v\xE4rden som kan anv\xE4ndas f\xF6r en m\xE4ngd\
-  \ olika \xE4ndam\xE5l s\xE5som\u2026"
+  \ olika \xE4ndam\xE5l s\xE5som simuleringar, spel eller s\xE4kerhetstill\xE4mpningar."
 title: Generera slumptal
 weight: 12
 ---

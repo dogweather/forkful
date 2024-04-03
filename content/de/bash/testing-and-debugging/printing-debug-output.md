@@ -6,8 +6,7 @@ description: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, 
 lastmod: '2024-03-13T22:44:54.062185-06:00'
 model: gpt-4-1106-preview
 summary: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem\
-  \ Abl\xE4ufe im Code erkl\xE4rt werden. Programmierer nutzen dies, um Funktionen\
-  \ und ihre\u2026"
+  \ Abl\xE4ufe im Code erkl\xE4rt werden."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

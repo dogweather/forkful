@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.410916-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och h\xE4\
   mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning eller\
-  \ analys. Programmerare\u2026"
+  \ analys."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

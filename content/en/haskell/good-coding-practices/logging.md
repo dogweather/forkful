@@ -4,8 +4,9 @@ description: "Logging in programming is essentially leaving a trail of breadcrum
   \ in the form of recorded events or messages, which can be used to track what your\u2026"
 lastmod: '2024-03-13T22:45:00.134283-06:00'
 model: gpt-4-1106-preview
-summary: "Logging in programming is essentially leaving a trail of breadcrumbs in\
-  \ the form of recorded events or messages, which can be used to track what your\u2026"
+summary: Logging in programming is essentially leaving a trail of breadcrumbs in the
+  form of recorded events or messages, which can be used to track what your application
+  is doing at any given moment.
 title: Logging
 weight: 17
 ---

@@ -4,8 +4,9 @@ description: "Parsing a date from a string involves converting textual represent
   \ of dates and times into a format that can be easily manipulated, stored, or\u2026"
 lastmod: '2024-03-13T22:45:00.214082-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string involves converting textual representations\
-  \ of dates and times into a format that can be easily manipulated, stored, or\u2026"
+summary: Parsing a date from a string involves converting textual representations
+  of dates and times into a format that can be easily manipulated, stored, or compared
+  within a Lua program.
 title: Parsing a date from a string
 weight: 30
 ---

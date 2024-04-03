@@ -6,8 +6,7 @@ description: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017C
 lastmod: '2024-03-13T22:44:35.937814-06:00'
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017Cyteczne\
-  \ fragmenty. Chodzi o to, by kod by\u0142 czytelny, \u0142atwy w zarz\u0105dzaniu\
-  \ i mniej podatny na\u2026"
+  \ fragmenty."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

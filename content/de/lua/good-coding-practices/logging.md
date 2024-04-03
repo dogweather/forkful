@@ -4,8 +4,8 @@ description: "Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere s
   \ Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung\u2026"
 lastmod: '2024-03-13T22:44:54.021632-06:00'
 model: gpt-4-1106-preview
-summary: "Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere signifikante\
-  \ Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung\u2026"
+summary: Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere signifikante
+  Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung auftreten.
 title: Protokollierung
 weight: 17
 ---

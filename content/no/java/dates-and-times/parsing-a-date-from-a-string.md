@@ -7,7 +7,7 @@ description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere 
 lastmod: '2024-03-13T22:44:40.675832-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere en tekstrepresentasjon\
-  \ av en dato og tid til et `Date` objekt eller et mer moderne\u2026"
+  \ av en dato og tid til et `Date` objekt eller et mer moderne `LocalDateTime` objekt."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

@@ -8,8 +8,7 @@ description: "Google Apps Script tilbyr en innebygd feils\xF8ker i Apps Script E
 lastmod: '2024-03-13T22:44:40.320603-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script tilbyr en innebygd feils\xF8ker i Apps Script Editor\
-  \ for \xE5 hjelpe med \xE5 feils\xF8ke skript. Her er hvordan du starter og bruker\
-  \ feils\xF8keren:\u2026"
+  \ for \xE5 hjelpe med \xE5 feils\xF8ke skript."
 title: Bruker en debugger
 weight: 35
 ---

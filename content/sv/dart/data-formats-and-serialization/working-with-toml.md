@@ -8,8 +8,7 @@ description: "TOML, eller Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett konfigura
 lastmod: '2024-03-13T22:44:37.637449-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, eller Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett konfigurationsfilformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av sin tydliga semantik. Programmerare\
-  \ anv\xE4nder\u2026"
+  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av sin tydliga semantik."
 title: Att Arbeta med TOML
 weight: 39
 ---

@@ -6,7 +6,7 @@ description: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra 
 lastmod: '2024-03-13T22:44:40.677831-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra et format\
-  \ Java forst\xE5r til tekst vi mennesker lett leser. Vi gj\xF8r dette for \xE5 vise\u2026"
+  \ Java forst\xE5r til tekst vi mennesker lett leser."
 title: Konvertere en dato til en streng
 weight: 28
 ---

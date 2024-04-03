@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier des
 lastmod: '2024-03-13T22:44:57.348501-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
-  \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires.\
-  \ Les programmeurs le\u2026"
+  \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

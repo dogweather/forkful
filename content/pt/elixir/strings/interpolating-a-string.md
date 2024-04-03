@@ -5,7 +5,7 @@ description: "Interpolar uma string em Elixir significa inserir valores de vari\
 lastmod: '2024-03-13T22:44:46.224578-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string em Elixir significa inserir valores de vari\xE1veis\
-  \ ou express\xF5es diretamente dentro dela. Programadores fazem isso para compor\u2026"
+  \ ou express\xF5es diretamente dentro dela."
 title: Interpolando uma string
 weight: 8
 ---

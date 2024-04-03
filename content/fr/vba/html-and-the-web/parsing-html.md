@@ -7,7 +7,7 @@ description: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (
 lastmod: '2024-03-13T22:44:57.555642-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"
+  \ \xE0 extraire des informations sp\xE9cifiques d'un document HTML."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

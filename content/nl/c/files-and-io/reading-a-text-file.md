@@ -7,8 +7,8 @@ description: "Een tekstbestand lezen in C houdt in dat je een bestand op je syst
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.309061-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent\
-  \ om informatie te extraheren en deze naar behoefte te manipuleren of weer te\u2026"
+summary: Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent
+  om informatie te extraheren en deze naar behoefte te manipuleren of weer te geven.
 title: Een tekstbestand lezen
 weight: 22
 ---

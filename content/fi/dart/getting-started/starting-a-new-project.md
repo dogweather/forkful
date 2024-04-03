@@ -8,8 +8,7 @@ description: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4ris
 lastmod: '2024-03-13T22:44:56.271500-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4rist\xF6\
-  n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua.\
-  \ Ohjelmoijat\u2026"
+  n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

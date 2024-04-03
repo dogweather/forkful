@@ -6,8 +6,9 @@ description: "I file CSV (Comma-Separated Values, Valori Separati da Virgola) so
   \ un formato comune di scambio dati che rappresenta dati tabellari in testo semplice,\u2026"
 lastmod: '2024-03-13T22:44:43.455715-06:00'
 model: gpt-4-0125-preview
-summary: "I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono un\
-  \ formato comune di scambio dati che rappresenta dati tabellari in testo semplice,\u2026"
+summary: I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono un formato
+  comune di scambio dati che rappresenta dati tabellari in testo semplice, utilizzando
+  virgole per separare i valori individuali.
 title: Lavorare con i CSV
 weight: 37
 ---

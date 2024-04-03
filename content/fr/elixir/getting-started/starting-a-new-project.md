@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.327735-06:00'
 model: gpt-4-1106-preview
 summary: "Le d\xE9marrage d'un nouveau projet, c'est un peu aller \xE0 l'aventure\
   \ avec Elixir : on commence avec une id\xE9e et des outils pour cr\xE9er quelque\
-  \ chose d'utile\u2026"
+  \ chose d'utile ou fun."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

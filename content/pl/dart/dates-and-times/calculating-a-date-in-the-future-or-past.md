@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.106591-06:00'
 model: gpt-4-0125-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to powszechne\
   \ zadanie dla programist\xF3w zajmuj\u0105cych si\u0119 planowaniem, przypomnieniami\
-  \ lub jak\u0105kolwiek funkcj\u0105\u2026"
+  \ lub jak\u0105kolwiek funkcj\u0105 zale\u017Cn\u0105 od oblicze\u0144 daty."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

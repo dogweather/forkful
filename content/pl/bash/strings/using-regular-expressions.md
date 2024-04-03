@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.572595-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Bashu pozwalaj\u0105 na przeszukiwanie,\
   \ manipulowanie i obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w oraz plik\xF3w na podstawie\
-  \ okre\u015Blonych wzorc\xF3w.\u2026"
+  \ okre\u015Blonych wzorc\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

@@ -7,7 +7,8 @@ description: "YAML, un linguaggio di serializzazione dati progettato per essere 
 lastmod: '2024-03-13T22:44:43.196300-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, un linguaggio di serializzazione dati progettato per essere amichevole\
-  \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\u2026"
+  \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\
+  \ tra processi e memorizzazione dati."
 title: Lavorare con YAML
 weight: 41
 ---

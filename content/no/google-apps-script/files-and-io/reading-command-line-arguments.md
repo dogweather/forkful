@@ -8,7 +8,8 @@ description: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av 
 lastmod: '2024-03-13T22:44:40.332395-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en misvisende\
-  \ betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i\u2026"
+  \ betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i programmeringsspr\xE5\
+  k som Python eller Node."
 title: Lese kommandolinje-argumenter
 weight: 23
 ---

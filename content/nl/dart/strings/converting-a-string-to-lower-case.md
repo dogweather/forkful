@@ -6,8 +6,9 @@ description: "Een string omzetten naar kleine letters is een fundamentele bewerk
   \ waarbij alle tekens in een gegeven string worden getransformeerd naar hun\u2026"
 lastmod: '2024-03-13T22:44:50.491209-06:00'
 model: gpt-4-0125-preview
-summary: "Een string omzetten naar kleine letters is een fundamentele bewerking waarbij\
-  \ alle tekens in een gegeven string worden getransformeerd naar hun\u2026"
+summary: Een string omzetten naar kleine letters is een fundamentele bewerking waarbij
+  alle tekens in een gegeven string worden getransformeerd naar hun equivalenten in
+  kleine letters.
 title: Een string converteren naar onderkast
 weight: 4
 ---

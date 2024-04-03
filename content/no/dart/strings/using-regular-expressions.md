@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.476279-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Dart tilbyr en kraftfull m\xE5te \xE5 s\xF8\
   ke og manipulere strenger p\xE5, som gj\xF8r det mulig for programmerere \xE5 utf\xF8\
-  re komplekse\u2026"
+  re komplekse tekstbehandlingsoppgaver effektivt."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

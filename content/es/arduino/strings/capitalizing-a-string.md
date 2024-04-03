@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.317952-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica convertir el primer car\xE1cter de cada palabra\
   \ en una cadena a may\xFAsculas mientras se asegura de que el resto permanezcan\
-  \ en\u2026"
+  \ en min\xFAsculas."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:40.499954-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en dato til en streng i Dart er en vanlig oppgave n\xE5\
   r du trenger \xE5 vise datoen og tidspunktet i et format som er leselig for mennesker,\
-  \ eller\u2026"
+  \ eller n\xE5r du har til hensikt \xE5 serialisere data for lagring eller overf\xF8\
+  ring."
 title: Konvertere en dato til en streng
 weight: 28
 ---

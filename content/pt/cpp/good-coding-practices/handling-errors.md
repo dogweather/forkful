@@ -5,9 +5,7 @@ description: "Tratar erros significa planejar para quando as coisas derem errado
   vel para o\u2026"
 lastmod: '2024-03-13T22:44:46.886898-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros significa planejar para quando as coisas derem errado. \xC9\
-  \ vital por ajudar a evitar falhas e tornar seu software robusto e amig\xE1vel para\
-  \ o\u2026"
+summary: Tratar erros significa planejar para quando as coisas derem errado.
 title: Tratamento de erros
 weight: 16
 ---

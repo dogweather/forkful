@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek verzenden is hoe jouw programma data van het web 
   \ een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen\u2026"
 lastmod: '2024-03-13T22:44:50.458916-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,\
-  \ een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen\u2026"
+summary: Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,
+  een beetje zoals je een bibliothecaris om een boek zou vragen.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:41.074598-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) i Arduino-programmering inneb\xE6\
   rer \xE5 dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de\
-  \ ikke\u2026"
+  \ ikke blandes med standard utdata (stdout)."
 title: Skriving til standardfeil
 weight: 25
 ---

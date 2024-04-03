@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:36.441643-06:00'
 model: gpt-4-0125-preview
 summary: "Ghi log trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7\
   c ghi l\u1EA1i th\xF4ng tin v\u1EC1 h\xE0nh vi th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1\
-  ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
+  ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\
+  \ li\u1EC7u."
 title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---

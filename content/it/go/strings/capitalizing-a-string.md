@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:42.889476-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta trasformare il primo carattere di una\
   \ data stringa in maiuscolo se \xE8 in minuscolo, assicurando cos\xEC che la stringa\
-  \ si\u2026"
+  \ si distingua o aderisca a specifiche norme grammaticali."
 title: Capitalizzare una stringa
 weight: 2
 ---

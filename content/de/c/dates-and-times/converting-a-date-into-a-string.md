@@ -7,7 +7,7 @@ description: "Die Umwandlung eines Datums in einen String in C beinhaltet die \x
 lastmod: '2024-03-13T22:44:54.365134-06:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDCbersetzung\
-  \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
+  \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

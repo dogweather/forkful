@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.476353-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4isten\
   \ kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\
-  \ tarvitse\u2026"
+  \ tarvitse k\xE4sitellyss\xE4 tekstiss\xE4."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

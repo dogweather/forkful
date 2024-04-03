@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.780477-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9largissent notre syst\xE8me de nombres pour inclure\
   \ les nombres imaginaires, nous permettant de r\xE9soudre des \xE9quations qui n'ont\
-  \ pas\u2026"
+  \ pas de solutions r\xE9elles."
 title: Manipulation des nombres complexes
 weight: 14
 ---

@@ -5,7 +5,8 @@ description: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fe
 lastmod: '2024-03-13T22:44:54.268690-06:00'
 model: gpt-4-1106-preview
 summary: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fehlern\
-  \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\u2026"
+  \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\
+  \ \xFCberwachen."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

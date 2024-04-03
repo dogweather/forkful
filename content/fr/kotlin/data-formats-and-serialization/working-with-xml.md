@@ -5,7 +5,8 @@ description: "Travailler avec XML implique l'analyse, la cr\xE9ation et la manip
 lastmod: '2024-03-13T22:44:57.767282-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique l'analyse, la cr\xE9ation et la manipulation\
-  \ de documents XML - un langage de balisage pour le stockage et le transfert de\u2026"
+  \ de documents XML - un langage de balisage pour le stockage et le transfert de\
+  \ donn\xE9es."
 title: Travailler avec XML
 weight: 40
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "\u0110\u1ECBnh d\u1EA1ng Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9\
   y (CSV) ph\u1ED5 bi\u1EBFn cho trao \u0111\u1ED5i d\u1EEF li\u1EC7u do t\xEDnh \u0111\
   \u01A1n gi\u1EA3n v\xE0 d\u1EC5 d\xE0ng t\xEDch h\u1EE3p v\u1EDBi h\u1EA7u h\u1EBF\
-  t c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh, bao g\u1ED3m\u2026"
+  t c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh, bao g\u1ED3m c\u1EA3 Go."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

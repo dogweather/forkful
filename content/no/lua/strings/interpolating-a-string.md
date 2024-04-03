@@ -6,8 +6,7 @@ description: "Interpolering av en streng involverer \xE5 sette inn verdier inn i
 lastmod: '2024-03-13T22:44:40.915966-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av en streng involverer \xE5 sette inn verdier inn i en fast\
-  \ tekststreng. Programmerere gj\xF8r dette for \xE5 dynamisk generere tekst, for\
-  \ eksempel\u2026"
+  \ tekststreng."
 title: Interpolering av en streng
 weight: 8
 ---

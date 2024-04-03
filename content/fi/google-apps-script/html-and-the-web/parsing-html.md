@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.094034-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
   \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
-  \ toimitaan verkkosivujen tai\u2026"
+  \ toimitaan verkkosivujen tai web-pohjaisten tietol\xE4hteiden kanssa."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

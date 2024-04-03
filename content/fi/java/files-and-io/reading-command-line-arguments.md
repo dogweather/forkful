@@ -5,9 +5,7 @@ description: "\"Mit\xE4 & Miksi?\" Komennonriviargumentit ovat ohjelmaan ulkoa s
   \ lennossa, ilman\u2026"
 lastmod: '2024-03-13T22:44:56.460635-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mit\xE4 & Miksi?\" Komennonriviargumentit ovat ohjelmaan ulkoa sy\xF6\
-  tett\xE4vi\xE4 parametreja. Niit\xE4 k\xE4ytet\xE4\xE4n ohjelman toiminnan muokkaamiseen\
-  \ lennossa, ilman\u2026"
+summary: "\"Mit\xE4 & Miksi."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

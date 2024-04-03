@@ -7,7 +7,8 @@ description: "Tests in Clojure zu schreiben, \xE4hnlich wie in anderen Programmi
 lastmod: '2024-03-13T22:44:53.423032-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in Clojure zu schreiben, \xE4hnlich wie in anderen Programmiersprachen,\
-  \ umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre\u2026"
+  \ umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre Hauptcodebasis\
+  \ wie erwartet funktioniert."
 title: Tests Schreiben
 weight: 36
 ---

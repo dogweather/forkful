@@ -6,8 +6,7 @@ description: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4l
 lastmod: '2024-03-13T22:44:53.895545-06:00'
 model: gpt-4-1106-preview
 summary: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
-  \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\
-  \ \xFCber schlechte Daten\u2026"
+  \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern."
 title: Fehlerbehandlung
 weight: 16
 ---

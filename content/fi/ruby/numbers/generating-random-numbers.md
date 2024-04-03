@@ -4,8 +4,8 @@ description: "Satunnaislukujen tuottaminen Rubylla tarkoittaa sellaisten lukujen
   \ joita ei voida loogisesti ennustaa. T\xE4m\xE4 on olennaista skenaarioissa, kuten\u2026"
 lastmod: '2024-03-13T22:44:57.080538-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen Rubylla tarkoittaa sellaisten lukujen luomista,\
-  \ joita ei voida loogisesti ennustaa. T\xE4m\xE4 on olennaista skenaarioissa, kuten\u2026"
+summary: Satunnaislukujen tuottaminen Rubylla tarkoittaa sellaisten lukujen luomista,
+  joita ei voida loogisesti ennustaa.
 title: Satunnaislukujen generointi
 weight: 12
 ---

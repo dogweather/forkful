@@ -5,7 +5,8 @@ description: "Generering av tilfeldige tall i programmering handler om \xE5 prod
 lastmod: '2024-03-13T22:44:40.925876-06:00'
 model: gpt-4-0125-preview
 summary: "Generering av tilfeldige tall i programmering handler om \xE5 produsere\
-  \ uforutsigbare numeriske verdier som kan brukes til en rekke form\xE5l, som simuleringer,\u2026"
+  \ uforutsigbare numeriske verdier som kan brukes til en rekke form\xE5l, som simuleringer,\
+  \ spill eller sikkerhetsapplikasjoner."
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.969164-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
   \ i m\xE5nga programmeringsuppgifter, som m\xF6jligg\xF6r villkorliga \xE5tg\xE4\
-  rder baserat p\xE5 n\xE4rvaron\u2026"
+  rder baserat p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

@@ -5,9 +5,7 @@ description: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din
   ndigt och instruerar\u2026"
 lastmod: '2024-03-13T22:44:38.300745-06:00'
 model: gpt-4-1106-preview
-summary: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod.\
-  \ Det \xE4r viktigt eftersom det hj\xE4lper dina program att misslyckas anst\xE4\
-  ndigt och instruerar\u2026"
+summary: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod."
 title: Hantering av fel
 weight: 16
 ---

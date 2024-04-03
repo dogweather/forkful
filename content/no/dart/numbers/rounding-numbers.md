@@ -8,8 +8,7 @@ description: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6r
 lastmod: '2024-03-13T22:44:40.481624-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6rmeste\
-  \ hele tall eller til et spesifisert antall desimalplasser. Programmerere runder\
-  \ ofte av\u2026"
+  \ hele tall eller til et spesifisert antall desimalplasser."
 title: Avrunding av tall
 weight: 13
 ---

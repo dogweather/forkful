@@ -6,8 +6,7 @@ description: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulerin
 lastmod: '2024-03-13T22:44:40.776769-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulering av XML-dokumenter\
-  \ \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring. Programmerere gj\xF8\
-  r dette\u2026"
+  \ \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

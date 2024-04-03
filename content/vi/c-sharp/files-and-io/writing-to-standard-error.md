@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i t\u1EDBi standard error\
   \ (stderr) c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang chuy\u1EC3n th\xF4ng \u0111\
   i\u1EC7p l\u1ED7i c\u1EE7a m\xECnh ra kh\u1ECFi \u0111\u1EA7u ra th\xF4ng th\u01B0\
-  \u1EDDng (stdout). C\xE1c l\u1EADp\u2026"
+  \u1EDDng (stdout)."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

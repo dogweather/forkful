@@ -4,8 +4,8 @@ description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist d
   \ Ermitteln eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum.\u2026"
 lastmod: '2024-03-13T22:44:54.238400-06:00'
 model: gpt-4-1106-preview
-summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das Ermitteln\
-  \ eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum.\u2026"
+summary: Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das Ermitteln
+  eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

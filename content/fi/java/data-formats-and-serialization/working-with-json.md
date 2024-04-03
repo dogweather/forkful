@@ -8,8 +8,7 @@ description: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoit
 lastmod: '2024-03-13T22:44:56.467028-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa t\xE4\
-  m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\
-  \ Ohjelmoijat\u2026"
+  m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

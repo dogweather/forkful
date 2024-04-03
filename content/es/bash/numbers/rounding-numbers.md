@@ -5,7 +5,7 @@ description: "Redondear n\xFAmeros significa cortar los decimales a un valor m\x
 lastmod: '2024-03-13T22:44:59.239290-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1s simple\
-  \ que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"
+  \ que es suficientemente bueno para un contexto dado."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

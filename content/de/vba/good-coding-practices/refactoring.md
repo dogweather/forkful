@@ -7,7 +7,8 @@ description: "Refactoring in der Programmierung beinhaltet das Modifizieren der 
 lastmod: '2024-03-13T22:44:53.727450-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in der Programmierung beinhaltet das Modifizieren der Struktur\
-  \ des Codes, ohne dessen Verhalten zu \xE4ndern, um Aspekte wie Lesbarkeit,\u2026"
+  \ des Codes, ohne dessen Verhalten zu \xE4ndern, um Aspekte wie Lesbarkeit, Wartbarkeit\
+  \ oder Leistung zu verbessern."
 title: Refactoring
 weight: 19
 ---

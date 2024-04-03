@@ -8,8 +8,7 @@ description: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9lim
 lastmod: '2024-03-13T22:44:57.119667-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9liminer les\
-  \ guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e. Les\
-  \ programmeurs ont\u2026"
+  \ guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e."
 title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 weight: 9
 ---

@@ -5,8 +5,9 @@ description: "Generare numeri casuali nei progetti Arduino implica la produzione
   \ come\u2026"
 lastmod: '2024-03-13T22:44:43.679402-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali nei progetti Arduino implica la produzione di valori\
-  \ che sono imprevedibili per progettazione, fondamentale per applicazioni come\u2026"
+summary: Generare numeri casuali nei progetti Arduino implica la produzione di valori
+  che sono imprevedibili per progettazione, fondamentale per applicazioni come giochi,
+  simulazioni e sistemi di sicurezza.
 title: Generazione di numeri casuali
 weight: 12
 ---

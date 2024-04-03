@@ -7,8 +7,8 @@ description: "Een datum parseren vanuit een string in Dart houdt in dat je tekst
   \ is\u2026"
 lastmod: '2024-03-13T22:44:50.515317-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum parseren vanuit een string in Dart houdt in dat je tekstuele weergaven\
-  \ van datums en tijden omzet naar een `DateTime` object. Deze bewerking is\u2026"
+summary: Een datum parseren vanuit een string in Dart houdt in dat je tekstuele weergaven
+  van datums en tijden omzet naar een `DateTime` object.
 title: Een datum ontleden uit een string
 weight: 30
 ---

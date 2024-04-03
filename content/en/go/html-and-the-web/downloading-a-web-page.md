@@ -4,8 +4,8 @@ description: "Downloading a web page is about fetching the HTML content of a web
   \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
 lastmod: '2024-03-13T22:44:59.629853-06:00'
 model: gpt-4-0125-preview
-summary: "Downloading a web page is about fetching the HTML content of a web page\
-  \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
+summary: Downloading a web page is about fetching the HTML content of a web page via
+  HTTP/HTTPS protocol.
 title: Downloading a web page
 weight: 42
 ---

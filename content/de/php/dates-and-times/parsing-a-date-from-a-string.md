@@ -7,7 +7,8 @@ description: "Das Parsen eines Datums aus einem String in PHP beinhaltet das Umw
 lastmod: '2024-03-13T22:44:53.981985-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in PHP beinhaltet das Umwandeln\
-  \ von Text, der ein Datum und/oder eine Zeit repr\xE4sentiert, in ein PHP `DateTime`\u2026"
+  \ von Text, der ein Datum und/oder eine Zeit repr\xE4sentiert, in ein PHP `DateTime`\
+  \ -Objekt oder andere Datums-/Zeitformate."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

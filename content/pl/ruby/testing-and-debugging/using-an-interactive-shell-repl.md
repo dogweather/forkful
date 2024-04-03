@@ -6,8 +6,7 @@ description: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czyt
 lastmod: '2024-03-13T22:44:35.934009-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj),\
-  \ pozwala testowa\u0107 kod w czasie rzeczywistym. Programi\u015Bci u\u017Cywaj\u0105\
-  \u2026"
+  \ pozwala testowa\u0107 kod w czasie rzeczywistym."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

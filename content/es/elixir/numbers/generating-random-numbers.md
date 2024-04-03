@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:58.698289-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Elixir es una tarea de programaci\xF3n\
   \ fundamental, vital para aplicaciones que necesitan resultados impredecibles como\
-  \ en la\u2026"
+  \ en la generaci\xF3n de tokens seguros, el muestreo de datos o en algoritmos de\
+  \ juegos."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

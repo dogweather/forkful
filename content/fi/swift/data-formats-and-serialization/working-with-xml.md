@@ -6,8 +6,7 @@ description: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 j
 lastmod: '2024-03-13T22:44:56.932138-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 ja tuottamista\
-  \ Swiftiss\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 tiedonvaihtoa varten, erityisesti\
-  \ silloin, kun\u2026"
+  \ Swiftiss\xE4."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

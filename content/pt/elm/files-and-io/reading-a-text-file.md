@@ -5,7 +5,7 @@ description: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo ar
 lastmod: '2024-03-13T22:44:46.517039-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo armazenado\
-  \ em um arquivo no formato de texto em seu programa. Programadores fazem isso para\u2026"
+  \ em um arquivo no formato de texto em seu programa."
 title: Lendo um arquivo de texto
 weight: 22
 ---

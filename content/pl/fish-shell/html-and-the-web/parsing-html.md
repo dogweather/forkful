@@ -8,8 +8,7 @@ description: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\
 lastmod: '2024-03-13T22:44:35.838978-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\u015B\
-  ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi. Programi\u015B\
-  ci\u2026"
+  ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

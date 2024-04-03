@@ -8,8 +8,7 @@ description: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5n
 lastmod: '2024-03-13T22:44:37.631142-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5ng till\
-  \ och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+  \ och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

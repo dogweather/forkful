@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.034342-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings, na programa\xE7\xE3o, envolve a constru\xE7\
   \xE3o de strings atrav\xE9s da incorpora\xE7\xE3o de express\xF5es dentro de strings\
-  \ literais. Programadores\u2026"
+  \ literais."
 title: Interpolando uma String
 weight: 8
 ---

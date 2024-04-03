@@ -5,8 +5,8 @@ description: "Removing quotes from a string usually means stripping away extrane
   \ or\u2026"
 lastmod: '2024-03-13T22:44:59.697570-06:00'
 model: gpt-4-1106-preview
-summary: "Removing quotes from a string usually means stripping away extraneous double\
-  \ (\") or single (') quotation marks. Programmers do this to sanitize input or\u2026"
+summary: Removing quotes from a string usually means stripping away extraneous double
+  (") or single (') quotation marks.
 title: Removing quotes from a string
 weight: 9
 ---

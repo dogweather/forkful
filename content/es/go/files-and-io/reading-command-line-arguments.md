@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.485044-06:00'
 model: gpt-4-0125-preview
 summary: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
   \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\
-  nea\u2026"
+  nea de comandos."
 title: "Leyendo argumentos de l\xEDnea de comandos"
 weight: 23
 ---

@@ -6,8 +6,8 @@ description: "Stel je voor dat je er net achter komt dat je een batch-update moe
   \ uitvoeren op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
 lastmod: '2024-03-13T22:44:50.978094-06:00'
 model: gpt-4-0125-preview
-summary: "Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren\
-  \ op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
+summary: Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren
+  op verschillende configuratiebestanden op je server.
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

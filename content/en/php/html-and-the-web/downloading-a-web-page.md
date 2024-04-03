@@ -5,8 +5,8 @@ description: "Downloading a web page means grabbing the online content so you ca
   \ or to\u2026"
 lastmod: '2024-03-13T22:45:00.165594-06:00'
 model: gpt-4-1106-preview
-summary: "Downloading a web page means grabbing the online content so you can use\
-  \ or analyze it offline. Programmers do it for web scraping, data analysis, or to\u2026"
+summary: Downloading a web page means grabbing the online content so you can use or
+  analyze it offline.
 title: Downloading a web page
 weight: 42
 ---

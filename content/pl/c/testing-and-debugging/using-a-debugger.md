@@ -8,8 +8,7 @@ description: "GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017Cywanym debuge
 lastmod: '2024-03-13T22:44:35.891468-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017Cywanym debugerem dla\
-  \ programowania w j\u0119zyku C. Oto kr\xF3tki przewodnik, jak u\u017Cywa\u0107\
-  \ GDB do debugowania prostego\u2026"
+  \ programowania w j\u0119zyku C."
 title: Korzystanie z debugera
 weight: 35
 ---

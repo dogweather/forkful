@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:35.132850-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ oraz cz\u0119\u015Bci urojonej (zwykle zapisywane jako a + bi), umo\u017Cliwiaj\u0105\
-  \ obliczenia, kt\xF3re by\u0142yby\u2026"
+  \ obliczenia, kt\xF3re by\u0142yby niepraktyczne lub niemo\u017Cliwe tylko przy\
+  \ u\u017Cyciu liczb rzeczywistych."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

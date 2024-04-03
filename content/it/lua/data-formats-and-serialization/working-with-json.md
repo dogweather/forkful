@@ -7,9 +7,9 @@ description: "Lavorare con JSON in Lua comporta l'analisi di stringhe in formato
   \ dati\u2026"
 lastmod: '2024-03-13T22:44:43.578372-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON\
-  \ per trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di\
-  \ dati\u2026"
+summary: Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON per
+  trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di dati tra
+  applicazioni Lua e servizi web o API esterne.
 title: Lavorare con JSON
 weight: 38
 ---

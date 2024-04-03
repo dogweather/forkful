@@ -6,8 +6,7 @@ description: "O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permit
 lastmod: '2024-03-13T22:44:46.798623-06:00'
 model: gpt-4-0125-preview
 summary: "O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permite que\
-  \ voc\xEA digite comandos PowerShell e obtenha feedback imediato. Programadores\
-  \ o usam\u2026"
+  \ voc\xEA digite comandos PowerShell e obtenha feedback imediato."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

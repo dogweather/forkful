@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.377996-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
   \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
-  r uppgifter som\u2026"
+  r uppgifter som skiftl\xE4gesok\xE4nsliga j\xE4mf\xF6relser eller textnormalisering."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

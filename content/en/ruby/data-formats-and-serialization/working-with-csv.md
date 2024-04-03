@@ -4,8 +4,8 @@ description: "Working with CSV files in Ruby provides a straightforward approach
   \ handle tabular data. Programmers often engage in this practice for data parsing,\u2026"
 lastmod: '2024-03-13T22:45:00.571473-06:00'
 model: gpt-4-0125-preview
-summary: "Working with CSV files in Ruby provides a straightforward approach to handle\
-  \ tabular data. Programmers often engage in this practice for data parsing,\u2026"
+summary: Working with CSV files in Ruby provides a straightforward approach to handle
+  tabular data.
 title: Working with CSV
 weight: 37
 ---

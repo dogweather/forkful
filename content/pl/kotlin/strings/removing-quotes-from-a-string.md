@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.352359-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza wyci\u0119cie wszelkich\
   \ instancji znak\xF3w cudzys\u0142owu, zar\xF3wno pojedynczych (' ') jak i podw\xF3\
-  jnych (\" \"), z danych\u2026"
+  jnych (\" \"), z danych tekstowych, z kt\xF3rymi pracujesz."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

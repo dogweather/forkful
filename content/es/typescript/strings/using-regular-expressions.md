@@ -7,7 +7,7 @@ description: "Las expresiones regulares, o regex, son una herramienta poderosa p
 lastmod: '2024-03-13T22:44:58.789523-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, son una herramienta poderosa para coincidencia\
-  \ de patrones y b\xFAsqueda en programaci\xF3n. Los programadores utilizan\u2026"
+  \ de patrones y b\xFAsqueda en programaci\xF3n."
 title: Usando expresiones regulares
 weight: 11
 ---

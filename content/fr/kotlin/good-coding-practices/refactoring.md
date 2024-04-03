@@ -5,7 +5,8 @@ description: "Le refactoring est le processus de modification du code existant p
 lastmod: '2024-03-13T22:44:57.748868-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de modification du code existant pour am\xE9\
-  liorer sa structure, sa lisibilit\xE9 et sa performance sans changer son\u2026"
+  liorer sa structure, sa lisibilit\xE9 et sa performance sans changer son comportement\
+  \ externe."
 title: "R\xE9usinage"
 weight: 19
 ---

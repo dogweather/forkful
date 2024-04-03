@@ -6,8 +6,12 @@ description: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: 
   \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"
 lastmod: '2024-03-13T22:44:51.201037-06:00'
 model: gpt-4-0125-preview
-summary: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
-  \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"
+summary: 'Hier is een snel voorbeeld met behulp van JavaScript''s Fetch API:
+
+
+  ```javascript
+
+  const url = ''https://some-protected-resource.'
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

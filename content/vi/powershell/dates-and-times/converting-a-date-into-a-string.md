@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.951419-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
   i trong PowerShell c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i \u0111\u1ED1i t\u01B0\
-  \u1EE3ng `DateTime` th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+  \u1EE3ng `DateTime` th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

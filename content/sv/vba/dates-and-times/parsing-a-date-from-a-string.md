@@ -7,7 +7,7 @@ description: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applic
 lastmod: '2024-03-13T22:44:37.753236-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp.\u2026"
+  \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

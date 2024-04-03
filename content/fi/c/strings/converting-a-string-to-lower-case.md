@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.024975-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi C-kieless\xE4 sis\xE4lt\xE4\
   \xE4 sen, ett\xE4 kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi\
-  \ pieniksi\u2026"
+  \ pieniksi kirjaimiksi."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

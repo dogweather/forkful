@@ -6,8 +6,7 @@ description: "K\xE4ytt\xE4m\xE4ll\xE4 interaktiivista kuorta eli Read-Eval-Print
 lastmod: '2024-03-13T22:44:56.908588-06:00'
 model: gpt-4-0125-preview
 summary: "K\xE4ytt\xE4m\xE4ll\xE4 interaktiivista kuorta eli Read-Eval-Print-Loopia\
-  \ (REPL) voit koodata vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \ Swift-koodinp\xE4tkien\u2026"
+  \ (REPL) voit koodata vuorovaikutteisesti."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

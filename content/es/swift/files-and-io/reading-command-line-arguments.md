@@ -5,7 +5,7 @@ description: "Leer argumentos de la l\xEDnea de comandos permite que tus program
 lastmod: '2024-03-13T22:44:59.431651-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tus programas de\
-  \ Swift acepten datos de entrada al ejecutarse, d\xE1ndoles flexibilidad y adaptabilidad.\u2026"
+  \ Swift acepten datos de entrada al ejecutarse, d\xE1ndoles flexibilidad y adaptabilidad."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

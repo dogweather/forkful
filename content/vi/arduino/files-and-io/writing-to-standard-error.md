@@ -9,9 +9,7 @@ description: "Ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) b\xE1o c\xE1o l\u1ED7i v\x
 lastmod: '2024-03-13T22:44:37.010955-06:00'
 model: gpt-4-0125-preview
 summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) b\xE1o c\xE1o l\u1ED7i v\xE0 ch\u1EA9\
-  n \u0111o\xE1n ri\xEAng bi\u1EC7t t\u1EEB \u0111\u1EA7u ra chu\u1EA9n (stdout).\
-  \ \u0110i\u1EC1u n\xE0y quan tr\u1ECDng cho vi\u1EC7c g\u1EE1 l\u1ED7i v\xE0 l\u01B0\
-  u log, gi\xFAp c\xE1c nh\xE0 ph\xE1t\u2026"
+  n \u0111o\xE1n ri\xEAng bi\u1EC7t t\u1EEB \u0111\u1EA7u ra chu\u1EA9n (stdout)."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

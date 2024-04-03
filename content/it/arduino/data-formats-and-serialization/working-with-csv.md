@@ -7,8 +7,9 @@ description: "Lavorare con i file CSV (Comma-Separated Values) su Arduino compor
   \ scheda\u2026"
 lastmod: '2024-03-13T22:44:43.706799-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con i file CSV (Comma-Separated Values) su Arduino comporta la\
-  \ lettura e la scrittura da e verso file CSV generalmente memorizzati su una scheda\u2026"
+summary: Lavorare con i file CSV (Comma-Separated Values) su Arduino comporta la lettura
+  e la scrittura da e verso file CSV generalmente memorizzati su una scheda SD, consentendo
+  la registrazione dei dati, la configurazione delle impostazioni e altro ancora.
 title: Lavorare con i CSV
 weight: 37
 ---

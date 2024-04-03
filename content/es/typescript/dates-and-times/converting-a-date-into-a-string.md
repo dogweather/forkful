@@ -6,7 +6,7 @@ description: "Convertir una fecha a una cadena de texto permite representarla en
 lastmod: '2024-03-13T22:44:58.813515-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a una cadena de texto permite representarla en un formato\
-  \ m\xE1s legible o compatible con ciertos est\xE1ndares. Los programadores realizan\u2026"
+  \ m\xE1s legible o compatible con ciertos est\xE1ndares."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

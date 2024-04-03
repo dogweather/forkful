@@ -8,7 +8,8 @@ description: "Das Parsen eines Datums aus einem String besteht darin, Text, der 
 lastmod: '2024-03-13T22:44:54.409701-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String besteht darin, Text, der ein Datum\
-  \ repr\xE4sentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das Ruby\u2026"
+  \ repr\xE4sentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das Ruby\
+  \ versteht."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

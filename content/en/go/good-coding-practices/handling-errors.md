@@ -4,8 +4,8 @@ description: "Handling errors in Go involves recognizing and responding to error
   \ in your program. Programmers engage in error handling to ensure their\u2026"
 lastmod: '2024-03-13T22:44:59.637763-06:00'
 model: gpt-4-0125-preview
-summary: "Handling errors in Go involves recognizing and responding to error conditions\
-  \ in your program. Programmers engage in error handling to ensure their\u2026"
+summary: Handling errors in Go involves recognizing and responding to error conditions
+  in your program.
 title: Handling errors
 weight: 16
 ---

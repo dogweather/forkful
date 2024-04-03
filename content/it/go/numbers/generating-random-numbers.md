@@ -8,7 +8,8 @@ description: "Generare numeri casuali nella programmazione riguarda la creazione
 lastmod: '2024-03-13T22:44:42.903510-06:00'
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali nella programmazione riguarda la creazione di una\
-  \ sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che a\u2026"
+  \ sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che a\
+  \ caso."
 title: Generazione di numeri casuali
 weight: 12
 ---

@@ -7,7 +7,7 @@ description: "Arrays associativos, conhecidos como maps em Go, permitem que voc\
 lastmod: '2024-03-13T22:44:46.052862-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como maps em Go, permitem que voc\xEA armazene\
-  \ pares chave-valor onde cada chave \xFAnica mapeia para um valor. Programadores\u2026"
+  \ pares chave-valor onde cada chave \xFAnica mapeia para um valor."
 title: Utilizando arrays associativos
 weight: 15
 ---

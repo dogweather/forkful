@@ -5,8 +5,8 @@ description: "Organizzare il codice in funzioni in Haskell significa suddividere
   \ DRY\u2026"
 lastmod: '2024-03-13T22:44:43.480722-06:00'
 model: gpt-4-1106-preview
-summary: "Organizzare il codice in funzioni in Haskell significa suddividere il tuo\
-  \ codice in blocchi riutilizzabili e nominati. Perch\xE9? Mantenere il codice DRY\u2026"
+summary: Organizzare il codice in funzioni in Haskell significa suddividere il tuo
+  codice in blocchi riutilizzabili e nominati.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

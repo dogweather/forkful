@@ -8,8 +8,7 @@ description: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokum
 lastmod: '2024-03-13T22:44:35.039841-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
-  w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\
-  \ ze stronami internetowymi,\u2026"
+  w HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.053904-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu C-kieless\xE4 tarkoittaa niiden kronologisen\
   \ suhteen m\xE4\xE4ritt\xE4mist\xE4 - onko toinen p\xE4iv\xE4m\xE4\xE4r\xE4 ennen\
-  \ toista tai ovatko ne samat. T\xE4m\xE4 kyky\u2026"
+  \ toista tai ovatko ne samat."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

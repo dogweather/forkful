@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.600025-06:00'
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\xE3 HTML t\u1EEB\
   \ m\u1ED9t URL c\u1EE5 th\u1EC3 \u0111\u1EC3 xem ho\u1EB7c s\u1EED d\u1EE5ng m\u1ED9\
-  t c\xE1ch n\u1ED9i b\u1ED9. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y cho c\xE1c c\xF4ng vi\u1EC7c nh\u01B0 web\u2026"
+  t c\xE1ch n\u1ED9i b\u1ED9."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

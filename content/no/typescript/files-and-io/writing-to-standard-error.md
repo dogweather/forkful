@@ -8,7 +8,8 @@ description: "I TypeScript er skriving til standardfeil (stderr) en prosess for 
 lastmod: '2024-03-13T22:44:40.548467-06:00'
 model: gpt-4-0125-preview
 summary: "I TypeScript er skriving til standardfeil (stderr) en prosess for \xE5 sende\
-  \ feilmeldinger eller logger direkte til milj\xF8ets feilutdatastr\xF8m (for eksempel\u2026"
+  \ feilmeldinger eller logger direkte til milj\xF8ets feilutdatastr\xF8m (for eksempel\
+  \ konsollen i node."
 title: Skriving til standardfeil
 weight: 25
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.234529-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Swift implique l'utilisation de la classe `Date`\
   \ pour acc\xE9der \xE0 la date et \xE0 l'heure auxquelles l'application est ex\xE9\
-  cut\xE9e.\u2026"
+  cut\xE9e."
 title: Obtenir la date actuelle
 weight: 29
 ---

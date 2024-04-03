@@ -5,7 +5,8 @@ description: "Una shell interactiva de Rust, o REPL (Read-Eval-Print Loop, Bucle
 lastmod: '2024-03-13T22:44:58.848200-06:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva de Rust, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
-  \ te permite ejecutar c\xF3digo Rust al instante, viendo\u2026"
+  \ te permite ejecutar c\xF3digo Rust al instante, viendo resultados inmediatos,\
+  \ perfecto para experimentar o aprender."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

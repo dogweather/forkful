@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.455743-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
   \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\
-  \ toiminnoissa, kuten lokitukset,\u2026"
+  \ toiminnoissa, kuten lokitukset, p\xE4iv\xE4m\xE4\xE4r\xE4laskelmat ja aikaan perustuvat\
+  \ ehdot."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

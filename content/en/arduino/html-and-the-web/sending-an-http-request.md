@@ -4,8 +4,8 @@ description: "Sending an HTTP request is the way your Arduino talks to the web, 
   \ asking a server to send back some data. Programmers do it to let their Arduino\u2026"
 lastmod: '2024-03-13T22:45:00.319254-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request is the way your Arduino talks to the web, like asking\
-  \ a server to send back some data. Programmers do it to let their Arduino\u2026"
+summary: Sending an HTTP request is the way your Arduino talks to the web, like asking
+  a server to send back some data.
 title: Sending an HTTP request
 weight: 44
 ---

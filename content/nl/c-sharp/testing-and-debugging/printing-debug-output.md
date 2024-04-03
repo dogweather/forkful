@@ -6,8 +6,8 @@ description: "Debug-output afdrukken gaat over het uitspuwen van informatie die 
   \ is om te begrijpen wat er onder de motorkap van je code gebeurt. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.812778-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-output afdrukken gaat over het uitspuwen van informatie die cruciaal\
-  \ is om te begrijpen wat er onder de motorkap van je code gebeurt. Programmeurs\u2026"
+summary: Debug-output afdrukken gaat over het uitspuwen van informatie die cruciaal
+  is om te begrijpen wat er onder de motorkap van je code gebeurt.
 title: Debug-output afdrukken
 weight: 33
 ---

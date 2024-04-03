@@ -6,8 +6,8 @@ description: "Strings aan elkaar plakken is gewoon een chique manier om te zegge
   \ 'ze achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"
 lastmod: '2024-03-13T22:44:51.326818-06:00'
 model: gpt-4-0125-preview
-summary: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze\
-  \ achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"
+summary: Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze achter
+  elkaar plakken'.
 title: Samenvoegen van strings
 weight: 3
 ---

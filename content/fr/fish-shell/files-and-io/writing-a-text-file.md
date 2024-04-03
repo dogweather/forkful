@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.344133-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker des\
   \ donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration ou\
-  \ la\u2026"
+  \ la manipulation des donn\xE9es soit par le m\xEAme script Fish soit par d'autres\
+  \ programmes."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

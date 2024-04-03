@@ -4,8 +4,8 @@ description: "Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Ma
   \ findet spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer\u2026"
 lastmod: '2024-03-13T22:44:54.000301-06:00'
 model: gpt-4-1106-preview
-summary: "Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet\
-  \ spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer\u2026"
+summary: 'Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet
+  spezifische Textmuster und ersetzt sie durch andere Inhalte.'
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

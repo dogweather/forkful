@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.385477-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med komplexa tal i programmering inneb\xE4r att man hanterar\
   \ tal som har b\xE5de en reell och en imagin\xE4r del, vanligtvis uttryckta som\
-  \ `a + bi`.\u2026"
+  \ `a + bi`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

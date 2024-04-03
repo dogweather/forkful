@@ -7,7 +7,7 @@ description: "Escrever testes em C# envolve criar scripts automatizados para val
 lastmod: '2024-03-13T22:44:46.587569-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em C# envolve criar scripts automatizados para validar a\
-  \ funcionalidade do seu c\xF3digo, assegurando que ele se comporte conforme o\u2026"
+  \ funcionalidade do seu c\xF3digo, assegurando que ele se comporte conforme o esperado."
 title: Escrevendo testes
 weight: 36
 ---

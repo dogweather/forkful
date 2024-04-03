@@ -12,7 +12,7 @@ model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c bi\u1EBF\
   t \u0111\u1EBFn v\u1EDBi t\xEAn g\u1ECDi regex, l\xE0 c\xE1c m\u1EABu \u0111\u01B0\
   \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p k\xFD\
-  \ t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\u2026"
+  \ t\u1EF1 trong chu\u1ED7i."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

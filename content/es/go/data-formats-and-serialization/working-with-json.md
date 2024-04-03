@@ -6,8 +6,8 @@ description: "Trabajar con JSON (JavaScript Object Notation) en Go implica codif
   \ y decodificar datos entre estructuras de datos de Go y el formato JSON. Esta tarea\u2026"
 lastmod: '2024-03-13T22:44:58.493540-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con JSON (JavaScript Object Notation) en Go implica codificar y\
-  \ decodificar datos entre estructuras de datos de Go y el formato JSON. Esta tarea\u2026"
+summary: Trabajar con JSON (JavaScript Object Notation) en Go implica codificar y
+  decodificar datos entre estructuras de datos de Go y el formato JSON.
 title: Trabajando con JSON
 weight: 38
 ---

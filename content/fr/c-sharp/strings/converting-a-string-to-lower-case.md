@@ -6,8 +6,7 @@ description: "Transformer une cha\xEEne en minuscules, c'est passer tous ses car
 lastmod: '2024-03-13T22:44:57.772999-06:00'
 model: gpt-4-1106-preview
 summary: "Transformer une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
-  res en minuscules. Les d\xE9veloppeurs le font pour standardiser les entr\xE9es\
-  \ et faciliter\u2026"
+  res en minuscules."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

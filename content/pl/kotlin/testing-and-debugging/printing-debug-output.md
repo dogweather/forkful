@@ -5,9 +5,7 @@ description: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co rob
   \ aplikacji podczas\u2026"
 lastmod: '2024-03-13T22:44:35.367474-06:00'
 model: gpt-4-1106-preview
-summary: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co robisz?\"\
-  . Programi\u015Bci u\u017Cywaj\u0105 tego do \u015Bledzenia warto\u015Bci i zachowania\
-  \ aplikacji podczas\u2026"
+summary: 'Drukowanie danych debugowania to jak rozmowa z programem: "Co robisz.'
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

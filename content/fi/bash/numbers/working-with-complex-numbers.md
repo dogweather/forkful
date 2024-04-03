@@ -5,9 +5,7 @@ description: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osa
   \ ja\u2026"
 lastmod: '2024-03-13T22:44:56.731689-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\
-  \ ja\u2026"
+summary: Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta.
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

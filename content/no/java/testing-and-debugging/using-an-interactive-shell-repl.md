@@ -6,7 +6,7 @@ description: "En REPL (Read-Eval-Print Loop) er et interaktivt skall som behandl
 lastmod: '2024-03-13T22:44:40.668278-06:00'
 model: gpt-4-0125-preview
 summary: "En REPL (Read-Eval-Print Loop) er et interaktivt skall som behandler enkeltbrukerinndata,\
-  \ utf\xF8rer kode, og returnerer resultatet. Programmerere bruker det\u2026"
+  \ utf\xF8rer kode, og returnerer resultatet."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

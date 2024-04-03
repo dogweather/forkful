@@ -5,9 +5,7 @@ description: "\"Quoi et pourquoi ?\" Transformer une date en cha\xEEne de caract
   \ la\u2026"
 lastmod: '2024-03-13T22:44:58.337117-06:00'
 model: gpt-4-1106-preview
-summary: "\"Quoi et pourquoi ?\" Transformer une date en cha\xEEne de caract\xE8res,\
-  \ c'est convertir l'information temporelle en texte. On le fait pour l'afficher,\
-  \ la\u2026"
+summary: '"Quoi et pourquoi .'
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

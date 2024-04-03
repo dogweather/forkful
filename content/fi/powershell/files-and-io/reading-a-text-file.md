@@ -5,7 +5,7 @@ description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen t
 lastmod: '2024-03-13T22:44:56.799900-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
-  \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"
+  \ tiedoston sis\xE4lt\xE4."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

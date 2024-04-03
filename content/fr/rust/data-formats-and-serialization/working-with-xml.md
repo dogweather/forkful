@@ -6,7 +6,7 @@ description: "XML, abr\xE9viation de eXtensible Markup Language, est comme le co
 lastmod: '2024-03-13T22:44:57.529708-06:00'
 model: gpt-4-0125-preview
 summary: "XML, abr\xE9viation de eXtensible Markup Language, est comme le cousin verbeux\
-  \ de JSON. Vous aurez \xE0 vous d\xE9battre avec XML lors de la manipulation de\u2026"
+  \ de JSON."
 title: Travailler avec XML
 weight: 40
 ---

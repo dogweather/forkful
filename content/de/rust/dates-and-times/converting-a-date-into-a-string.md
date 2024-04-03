@@ -4,8 +4,8 @@ description: "Ein Datum in einen String umwandeln bedeutet, es in eine Zeichenke
   \ umzuformen, die ein Mensch leicht lesen kann. Das ist n\xFCtzlich f\xFCr die Anzeige,\u2026"
 lastmod: '2024-03-13T22:44:53.684312-06:00'
 model: gpt-4-1106-preview
-summary: "Ein Datum in einen String umwandeln bedeutet, es in eine Zeichenkette umzuformen,\
-  \ die ein Mensch leicht lesen kann. Das ist n\xFCtzlich f\xFCr die Anzeige,\u2026"
+summary: Ein Datum in einen String umwandeln bedeutet, es in eine Zeichenkette umzuformen,
+  die ein Mensch leicht lesen kann.
 title: Datum in einen String umwandeln
 weight: 28
 ---

@@ -6,8 +6,7 @@ description: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zd
 lastmod: '2024-03-13T22:44:35.719386-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
-  , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\
-  ci loguj\u0105, aby\u2026"
+  , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

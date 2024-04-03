@@ -4,8 +4,8 @@ description: "Writing tests in Fish Shell involves creating scripts that automat
   \ run your code to validate its behavior against expected outcomes. This practice\u2026"
 lastmod: '2024-03-13T22:45:00.477425-06:00'
 model: gpt-4-0125-preview
-summary: "Writing tests in Fish Shell involves creating scripts that automatically\
-  \ run your code to validate its behavior against expected outcomes. This practice\u2026"
+summary: Writing tests in Fish Shell involves creating scripts that automatically
+  run your code to validate its behavior against expected outcomes.
 title: Writing tests
 weight: 36
 ---

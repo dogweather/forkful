@@ -6,8 +6,7 @@ description: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczas
 lastmod: '2024-03-13T22:44:35.516862-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo, zanim\
-  \ uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105 to, by\
-  \ zarz\u0105dza\u0107 danymi\u2026"
+  \ uko\u0144czymy z nimi co\u015B konkretnego."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

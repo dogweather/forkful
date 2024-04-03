@@ -6,8 +6,7 @@ description: "Travailler avec XML signifie analyser et g\xE9n\xE9rer des donn\xE
 lastmod: '2024-03-13T22:44:58.254615-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie analyser et g\xE9n\xE9rer des donn\xE9es XML\
-  \ en Swift. Les programmeurs font cela pour l'\xE9change de donn\xE9es, surtout\
-  \ lorsqu'ils\u2026"
+  \ en Swift."
 title: Travailler avec XML
 weight: 40
 ---

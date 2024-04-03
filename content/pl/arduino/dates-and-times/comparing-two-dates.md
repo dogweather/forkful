@@ -6,8 +6,7 @@ description: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest
 lastmod: '2024-03-13T22:44:35.683774-06:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
-  niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\
-  \ czas, zarz\u0105dza\u0107 wydarzeniami, lub\u2026"
+  niejsza lub p\xF3\u017Aniejsza."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

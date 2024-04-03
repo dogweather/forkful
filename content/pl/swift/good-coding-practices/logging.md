@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.761334-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
   d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\
-  \ plik lub baza danych. Programi\u015Bci\u2026"
+  \ plik lub baza danych."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

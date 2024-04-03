@@ -4,8 +4,8 @@ description: "Convertir una fecha a texto significa transformar un objeto `datet
   \ en Python a un formato de cadena de caracteres (string). Esto se hace para\u2026"
 lastmod: '2024-03-13T22:44:58.624744-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha a texto significa transformar un objeto `datetime` en\
-  \ Python a un formato de cadena de caracteres (string). Esto se hace para\u2026"
+summary: Convertir una fecha a texto significa transformar un objeto `datetime` en
+  Python a un formato de cadena de caracteres (string).
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

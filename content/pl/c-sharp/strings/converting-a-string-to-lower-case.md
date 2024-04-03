@@ -6,8 +6,7 @@ description: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zami
 lastmod: '2024-03-13T22:44:35.394603-06:00'
 model: gpt-4-1106-preview
 summary: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zamiany wszystkich\
-  \ wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015Bci\
-  \ to robi\u0105, aby\u2026"
+  \ wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

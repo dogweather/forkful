@@ -13,7 +13,8 @@ summary: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu
   t \u0111\u1ECBnh li\xEAn quan \u0111\u1EBFn vi\u1EC7c lo\u1EA1i b\u1ECF c\xE1c k\xFD\
   \ t\u1EF1 ho\u1EB7c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 kh\u1ECFi chu\u1ED7\
   i, d\u1EF1a tr\xEAn c\xE1c quy t\u1EAFc \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECB\
-  nh\u2026"
+  nh b\u1EDFi m\u1ED9t m\u1EABu (th\u01B0\u1EDDng qua bi\u1EC3u th\u1EE9c ch\xEDnh\
+  \ quy)."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\xF4 h\xECnh"
 weight: 5
 ---

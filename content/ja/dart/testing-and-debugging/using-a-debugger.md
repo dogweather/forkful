@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:40.553069-07:00
 description: '#'
 lastmod: '2024-03-13T22:44:41.707859-06:00'
 model: gpt-4-0125-preview
-summary: '#'
+summary: '#.'
 title: "\u30C7\u30D0\u30C3\u30AC\u306E\u4F7F\u7528"
 weight: 35
 ---

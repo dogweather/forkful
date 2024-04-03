@@ -5,9 +5,7 @@ description: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en st
   \ mer\u2026"
 lastmod: '2024-03-13T22:44:41.131273-06:00'
 model: gpt-4-1106-preview
-summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
-  \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
-  \ mer\u2026"
+summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng."
 title: Uthenting av delstrenger
 weight: 6
 ---

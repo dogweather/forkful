@@ -5,7 +5,7 @@ description: "Komplekse tall, de som har en reell del og en imagin\xE6r del (som
 lastmod: '2024-03-13T22:44:41.010253-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, de som har en reell del og en imagin\xE6r del (som 3 + 4i),\
-  \ er essensielle i felt som ingeni\xF8rvitenskap, fysikk og datavitenskap.\u2026"
+  \ er essensielle i felt som ingeni\xF8rvitenskap, fysikk og datavitenskap."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

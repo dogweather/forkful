@@ -5,7 +5,8 @@ description: "Refactoring ist der Prozess der \xDCberarbeitung Ihres Codes, um s
 lastmod: '2024-03-13T22:44:54.151826-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der \xDCberarbeitung Ihres Codes, um seine Struktur\
-  \ und Lesbarkeit zu verbessern, ohne das externe Verhalten oder die\u2026"
+  \ und Lesbarkeit zu verbessern, ohne das externe Verhalten oder die Funktionalit\xE4\
+  t zu \xE4ndern."
 title: Refactoring
 weight: 19
 ---

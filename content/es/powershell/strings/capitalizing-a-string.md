@@ -7,7 +7,8 @@ description: "Capitalizar una cadena en PowerShell implica transformar el primer
 lastmod: '2024-03-13T22:44:59.273248-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en PowerShell implica transformar el primer car\xE1\
-  cter de una cadena dada a may\xFAscula, mientras que el resto de la cadena permanece\u2026"
+  cter de una cadena dada a may\xFAscula, mientras que el resto de la cadena permanece\
+  \ sin cambios."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

@@ -8,7 +8,7 @@ description: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon
 lastmod: '2024-03-13T22:44:40.248985-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og h\xE5\
-  ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling og\u2026"
+  ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling og programvareutvikling."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

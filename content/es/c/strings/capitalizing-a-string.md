@@ -8,7 +8,7 @@ description: "Capitalizar una cadena en C implica convertir el primer car\xE1cte
 lastmod: '2024-03-13T22:44:59.526621-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en C implica convertir el primer car\xE1cter de cada\
-  \ palabra en una cadena dada a may\xFAsculas si es una letra min\xFAscula. Los\u2026"
+  \ palabra en una cadena dada a may\xFAsculas si es una letra min\xFAscula."
 title: Capitalizando una cadena de caracteres
 weight: 2
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.905830-06:00'
 model: gpt-4-0125-preview
 summary: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
   \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
-  \ przep\u0142ywu\u2026"
+  \ przep\u0142ywu wykonania lub b\u0142\u0119d\xF3w komunikat\xF3w podczas uruchamiania."
 title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 weight: 33
 ---

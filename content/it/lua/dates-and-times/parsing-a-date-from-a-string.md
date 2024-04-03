@@ -7,7 +7,8 @@ description: "L'analisi di una data da una stringa comporta la conversione delle
 lastmod: '2024-03-13T22:44:43.566752-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa comporta la conversione delle rappresentazioni\
-  \ testuali di date e orari in un formato che pu\xF2 essere facilmente\u2026"
+  \ testuali di date e orari in un formato che pu\xF2 essere facilmente manipolato,\
+  \ memorizzato o confrontato all'interno di un programma Lua."
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -7,7 +7,8 @@ description: "Le refactoring en programmation implique de modifier la structure 
 lastmod: '2024-03-13T22:44:57.589927-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring en programmation implique de modifier la structure du code\
-  \ sans en changer le comportement, afin d'am\xE9liorer des aspects comme la\u2026"
+  \ sans en changer le comportement, afin d'am\xE9liorer des aspects comme la lisibilit\xE9\
+  , la maintenabilit\xE9 ou la performance."
 title: Refonte
 weight: 19
 ---

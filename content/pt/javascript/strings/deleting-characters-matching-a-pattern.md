@@ -6,8 +6,7 @@ description: "Apagar caracteres que seguem um padr\xE3o espec\xEDfico ajuda a li
 lastmod: '2024-03-13T22:44:46.947144-06:00'
 model: gpt-4-1106-preview
 summary: "Apagar caracteres que seguem um padr\xE3o espec\xEDfico ajuda a limpar e\
-  \ formatar strings para os requisitos do seu aplicativo. Programadores fazem isso\
-  \ para\u2026"
+  \ formatar strings para os requisitos do seu aplicativo."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

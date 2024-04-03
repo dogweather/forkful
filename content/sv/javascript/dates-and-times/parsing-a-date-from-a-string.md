@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.302665-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6r programmerare\
   \ att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\
-  \ vilket\u2026"
+  \ vilket underl\xE4ttar datummanipulationer, j\xE4mf\xF6relser och formateringsoperationer."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

@@ -4,8 +4,8 @@ description: "Deletion of characters matching a pattern is about finding and rem
   \ specific sequences of characters from strings based on rules (like regex).\u2026"
 lastmod: '2024-03-13T22:45:00.073137-06:00'
 model: gpt-4-1106-preview
-summary: "Deletion of characters matching a pattern is about finding and removing\
-  \ specific sequences of characters from strings based on rules (like regex).\u2026"
+summary: Deletion of characters matching a pattern is about finding and removing specific
+  sequences of characters from strings based on rules (like regex).
 title: Deleting characters matching a pattern
 weight: 5
 ---

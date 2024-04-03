@@ -5,7 +5,7 @@ description: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und
 lastmod: '2024-03-13T22:44:53.974909-06:00'
 model: gpt-4-1106-preview
 summary: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus\
-  \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung. Programmierer\u2026"
+  \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

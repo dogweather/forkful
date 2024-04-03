@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.190411-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Arduino inneb\xE4\
   r att l\xE4sa fr\xE5n och skriva till CSV-filer som vanligtvis lagras p\xE5 ett\
-  \ SD-kort, vilket\u2026"
+  \ SD-kort, vilket m\xF6jligg\xF6r datalogging, konfigurationsinst\xE4llningar och\
+  \ mer."
 title: Arbeta med CSV
 weight: 37
 ---

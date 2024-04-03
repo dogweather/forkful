@@ -4,8 +4,9 @@ description: "Searching and replacing text in Google Apps Script involves progra
   \ identifying specific strings in a document, spreadsheet, or any other type of\u2026"
 lastmod: '2024-03-13T22:44:59.655813-06:00'
 model: gpt-4-0125-preview
-summary: "Searching and replacing text in Google Apps Script involves programmatically\
-  \ identifying specific strings in a document, spreadsheet, or any other type of\u2026"
+summary: Searching and replacing text in Google Apps Script involves programmatically
+  identifying specific strings in a document, spreadsheet, or any other type of Google
+  Apps content, and substituting them with other text values.
 title: Searching and replacing text
 weight: 10
 ---

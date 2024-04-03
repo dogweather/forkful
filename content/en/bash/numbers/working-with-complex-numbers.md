@@ -4,8 +4,7 @@ description: "Complex numbers consist of a real part and an imaginary part. Prog
   \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
 lastmod: '2024-03-13T22:45:00.237449-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers consist of a real part and an imaginary part. Programmers\
-  \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
+summary: Complex numbers consist of a real part and an imaginary part.
 title: Working with complex numbers
 weight: 14
 ---

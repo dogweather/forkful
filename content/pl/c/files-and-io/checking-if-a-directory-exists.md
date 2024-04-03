@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.902193-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu systemu\
   \ plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka prowadzi\
-  \ do katalogu.\u2026"
+  \ do katalogu."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

@@ -8,7 +8,8 @@ description: "Att organisera kod i funktioner i Dart handlar om att definiera \x
 lastmod: '2024-03-13T22:44:37.618087-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Dart handlar om att definiera \xE5teranv\xE4\
-  ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta emot indata,\u2026"
+  ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta emot indata,\
+  \ bearbeta data och m\xF6jligtvis returnera utdata."
 title: Organisera kod i funktioner
 weight: 18
 ---

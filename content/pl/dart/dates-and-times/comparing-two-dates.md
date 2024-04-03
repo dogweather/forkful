@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.105425-06:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w Dart polega na ocenie r\xF3\u017Cnicy czasowej\
   \ lub kolejno\u015Bci mi\u0119dzy nimi, co jest kluczow\u0105 funkcjonalno\u015B\
-  ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych\u2026"
+  ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych wydarzeniami, terminami czy jakimikolwiek\
+  \ danymi czasowymi."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

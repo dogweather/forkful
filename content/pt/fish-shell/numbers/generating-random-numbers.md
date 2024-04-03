@@ -6,8 +6,7 @@ description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em prog
 lastmod: '2024-03-13T22:44:46.999836-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em programa\xE7\
-  \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos.\
-  \ No Fish Shell,\u2026"
+  \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

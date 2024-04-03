@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.371147-06:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes consiste \xE0 r\xE9cup\xE9rer des portions\
   \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res bas\xE9es sur leurs positions\
-  \ ou leurs motifs. Les\u2026"
+  \ ou leurs motifs."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

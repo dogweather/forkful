@@ -8,7 +8,8 @@ description: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9th
 lastmod: '2024-03-13T22:44:57.345085-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9thode permettant\
-  \ de diriger les messages d'erreur et les diagnostics \xE0 part de la sortie\u2026"
+  \ de diriger les messages d'erreur et les diagnostics \xE0 part de la sortie principale\
+  \ (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -8,7 +8,8 @@ description: "Le journalisation dans le d\xE9veloppement logiciel est le process
 lastmod: '2024-03-13T22:44:57.141030-06:00'
 model: gpt-4-0125-preview
 summary: "Le journalisation dans le d\xE9veloppement logiciel est le processus d'enregistrement\
-  \ d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour suivre son\u2026"
+  \ d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour suivre son comportement\
+  \ et diagnostiquer les probl\xE8mes."
 title: Journalisation
 weight: 17
 ---

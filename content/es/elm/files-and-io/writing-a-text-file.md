@@ -4,8 +4,8 @@ description: "Escribir un archivo de texto consiste en guardar datos en un docum
   \ que puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
 lastmod: '2024-03-13T22:44:59.012004-06:00'
 model: unknown
-summary: "Escribir un archivo de texto consiste en guardar datos en un documento que\
-  \ puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
+summary: Escribir un archivo de texto consiste en guardar datos en un documento que
+  puedas leer y editar.
 title: Escritura de un archivo de texto
 weight: 24
 ---

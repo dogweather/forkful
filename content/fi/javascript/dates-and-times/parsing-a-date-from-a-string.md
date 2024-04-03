@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.959132-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta mahdollistaa ohjelmoijien\
   \ muuntaa tekstuaaliset p\xE4iv\xE4m\xE4\xE4r\xE4esitykset JavaScriptin `Date`-objekteiksi,\
-  \ mik\xE4 helpottaa\u2026"
+  \ mik\xE4 helpottaa p\xE4iv\xE4m\xE4\xE4rien k\xE4sittely\xE4, vertailua ja muotoiluoperaatioita."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

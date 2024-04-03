@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong C bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\
   \u1ECBnh m\u1ED1i quan h\u1EC7 theo th\u1EDDi gian gi\u1EEFa ch\xFAng -- li\u1EC7\
   u m\u1ED9t ng\xE0y c\xF3 x\u1EA3y ra tr\u01B0\u1EDBc ng\xE0y kia hay ch\xFAng c\xF3\
-  \ gi\u1ED1ng\u2026"
+  \ gi\u1ED1ng nhau."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

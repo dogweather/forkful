@@ -8,7 +8,8 @@ description: "Het verwijderen van tekens die overeenkomen met een bepaald patroo
 lastmod: '2024-03-13T22:44:51.010394-06:00'
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een bepaald patroon gaat\
-  \ over het wegstrippen van ongewenste delen van je strings \u2014 denk aan het opschonen\u2026"
+  \ over het wegstrippen van ongewenste delen van je strings \u2014 denk aan het opschonen\
+  \ van gegevens of het parseren van tekstbestanden."
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

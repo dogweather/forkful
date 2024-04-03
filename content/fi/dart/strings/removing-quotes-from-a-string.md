@@ -8,7 +8,9 @@ description: "Lainausmerkkien poistaminen merkkijonosta Dart-kieless\xE4 tarkoit
 lastmod: '2024-03-13T22:44:56.257564-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta Dart-kieless\xE4 tarkoittaa kaksois-\
-  \ (\") tai yksitt\xE4isten (') lainausmerkkien karsimista merkkijonon alusta ja\u2026"
+  \ (\") tai yksitt\xE4isten (') lainausmerkkien karsimista merkkijonon alusta ja\
+  \ lopusta, joka on hy\xF6dyllist\xE4 tietojen puhdistuksessa tai merkkijonojen valmistelussa\
+  \ jatkok\xE4sittely\xE4 varten."
 title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---

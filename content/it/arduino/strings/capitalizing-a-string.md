@@ -6,8 +6,8 @@ description: "Capitalizzare una stringa implica convertire il primo carattere di
   \ parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.\u2026"
 lastmod: '2024-03-13T22:44:43.667451-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa implica convertire il primo carattere di ogni\
-  \ parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.\u2026"
+summary: Capitalizzare una stringa implica convertire il primo carattere di ogni parola
+  in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.
 title: Capitalizzare una stringa
 weight: 2
 ---

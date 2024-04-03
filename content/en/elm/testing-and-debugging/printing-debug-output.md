@@ -6,8 +6,7 @@ description: "Printing debug output in Elm is about displaying values in the con
 lastmod: '2024-03-13T22:45:00.012849-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output in Elm is about displaying values in the console to\
-  \ understand what\u2019s happening in your code. We do it to catch bugs and ensure\
-  \ the\u2026"
+  \ understand what\u2019s happening in your code."
 title: Printing debug output
 weight: 33
 ---

@@ -6,8 +6,8 @@ description: "Een datum omzetten naar een string in Swift stelt je in staat om d
   \ op te maken voor mensen. Het is essentieel voor de weergave in de UI,\u2026"
 lastmod: '2024-03-13T22:44:51.169206-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum omzetten naar een string in Swift stelt je in staat om datums\
-  \ op te maken voor mensen. Het is essentieel voor de weergave in de UI,\u2026"
+summary: Een datum omzetten naar een string in Swift stelt je in staat om datums op
+  te maken voor mensen.
 title: Een datum converteren naar een string
 weight: 28
 ---

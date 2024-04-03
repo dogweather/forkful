@@ -7,7 +7,9 @@ description: "Het vergelijken van twee datums in Google Apps Script, een afgelei
 lastmod: '2024-03-13T22:44:50.345303-06:00'
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums in Google Apps Script, een afgeleide van\
-  \ JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een\u2026"
+  \ JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een essenti\xEB\
+  le taak voor ontwikkelaars die zich bezighouden met planning, tijdlijnen of enige\
+  \ datumgerelateerde gegevens."
 title: Twee datums vergelijken
 weight: 27
 ---

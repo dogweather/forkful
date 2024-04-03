@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.160397-06:00'
 model: gpt-4-0125-preview
 summary: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
   sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\
-  \ d'int\xE9gration\u2026"
+  \ d'int\xE9gration avec la plupart des langages de programmation, y compris Go."
 title: Travailler avec CSV
 weight: 37
 ---

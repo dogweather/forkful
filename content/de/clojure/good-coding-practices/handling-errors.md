@@ -6,8 +6,7 @@ description: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu mana
 lastmod: '2024-03-13T22:44:53.426901-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen \u2013\
-  \ wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer m\xF6\
-  gen es\u2026"
+  \ wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert."
 title: Fehlerbehandlung
 weight: 16
 ---

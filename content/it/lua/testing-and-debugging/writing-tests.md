@@ -6,8 +6,9 @@ description: "Scrivere test nella programmazione implica la creazione di piccoli
   \ di codice separati per verificare automaticamente che diverse parti della tua\u2026"
 lastmod: '2024-03-13T22:44:43.561100-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test nella programmazione implica la creazione di piccoli pezzi\
-  \ di codice separati per verificare automaticamente che diverse parti della tua\u2026"
+summary: Scrivere test nella programmazione implica la creazione di piccoli pezzi
+  di codice separati per verificare automaticamente che diverse parti della tua applicazione
+  funzionino come previsto.
 title: Scrivere test
 weight: 36
 ---

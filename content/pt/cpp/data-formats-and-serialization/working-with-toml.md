@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.902785-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language - Linguagem M\xEDnima e \xD3bvia do\
   \ Tom) \xE9 um formato de serializa\xE7\xE3o de dados f\xE1cil de ler devido \xE0\
-  \ sua sem\xE2ntica clara.\u2026"
+  \ sua sem\xE2ntica clara."
 title: Trabalhando com TOML
 weight: 39
 ---

@@ -8,7 +8,8 @@ description: "Capitalizar una cadena implica modificar el primer car\xE1cter de 
 lastmod: '2024-03-13T22:44:59.143686-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar el primer car\xE1cter de un texto\
-  \ dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios comiencen\u2026"
+  \ dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios comiencen\
+  \ correctamente en un conjunto de datos."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

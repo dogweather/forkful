@@ -8,8 +8,7 @@ description: "\xC5 sjekke om en katalog eksisterer i filsystemet er essensielt f
 lastmod: '2024-03-13T22:44:41.156287-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i filsystemet er essensielt for \xE5\
-  \ h\xE5ndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gj\xF8\
-  r det mulig for\u2026"
+  \ h\xE5ndtere filstrukturer fra dine Swift-applikasjoner."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

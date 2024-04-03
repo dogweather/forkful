@@ -6,8 +6,10 @@ description: "Nel mondo della programmazione, lavorare con file CSV (Valori Sepa
   \ da Virgola) implica la lettura e la scrittura di dati in file di testo organizzati\u2026"
 lastmod: '2024-03-13T22:44:44.029222-06:00'
 model: gpt-4-0125-preview
-summary: "Nel mondo della programmazione, lavorare con file CSV (Valori Separati da\
-  \ Virgola) implica la lettura e la scrittura di dati in file di testo organizzati\u2026"
+summary: Nel mondo della programmazione, lavorare con file CSV (Valori Separati da
+  Virgola) implica la lettura e la scrittura di dati in file di testo organizzati
+  per righe, dove ogni riga rappresenta un record e i campi di ogni record sono separati
+  da virgole.
 title: Lavorare con CSV
 weight: 37
 ---

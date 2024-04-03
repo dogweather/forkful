@@ -5,8 +5,8 @@ description: "\"Lavorare con XML\" si riferisce al processo di lettura, creazion
   \ I\u2026"
 lastmod: '2024-03-13T22:44:43.025251-06:00'
 model: gpt-4-0125-preview
-summary: "\"Lavorare con XML\" si riferisce al processo di lettura, creazione e modifica\
-  \ dei file XML (eXtensible Markup Language) utilizzando la programmazione. I\u2026"
+summary: '"Lavorare con XML" si riferisce al processo di lettura, creazione e modifica
+  dei file XML (eXtensible Markup Language) utilizzando la programmazione.'
 title: Lavorare con XML
 weight: 40
 ---

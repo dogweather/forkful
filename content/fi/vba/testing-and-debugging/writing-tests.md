@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.404723-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
   \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
-  \u2026"
+  \ ne toimivat odotetusti erilaisissa olosuhteissa."
 title: Testien kirjoittaminen
 weight: 36
 ---

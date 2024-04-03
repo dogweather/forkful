@@ -8,8 +8,7 @@ description: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\x
 lastmod: '2024-03-13T22:44:40.656335-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\xF8nstre\
-  \ for \xE5 s\xF8ke, manipulere eller validere strenger i koden din. Programmerere\
-  \ bruker dem\u2026"
+  \ for \xE5 s\xF8ke, manipulere eller validere strenger i koden din."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

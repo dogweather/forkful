@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.552661-06:00'
 model: gpt-4-0125-preview
 summary: "El registro de actividades en C implica grabar el flujo y los eventos notables\
   \ de un programa durante su tiempo de ejecuci\xF3n, proporcionando una revisi\xF3\
-  n\u2026"
+  n tangible de su comportamiento y rendimiento."
 title: Registro
 weight: 17
 ---

@@ -6,7 +6,7 @@ description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte ned script
 lastmod: '2024-03-13T22:44:40.935776-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte ned scripting til\
-  \ h\xE5ndterbare deler\u2014tenk funksjonelle LEGO-blokker. Vi gj\xF8r det for klarhet,\u2026"
+  \ h\xE5ndterbare deler\u2014tenk funksjonelle LEGO-blokker."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

@@ -8,8 +8,7 @@ description: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en
 lastmod: '2024-03-13T22:44:57.736432-06:00'
 model: gpt-4-0125-preview
 summary: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en quelque\
-  \ chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent\
-  \ le\u2026"
+  \ chose qu'un programme peut comprendre et manipuler."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

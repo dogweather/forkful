@@ -6,8 +6,7 @@ description: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i uro
 lastmod: '2024-03-13T22:44:35.315249-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i urojonych,\
-  \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. S\u0105 kluczowe\
-  \ w dziedzinach\u2026"
+  \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

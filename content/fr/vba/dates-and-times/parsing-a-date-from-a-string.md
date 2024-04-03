@@ -8,7 +8,8 @@ description: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic p
 lastmod: '2024-03-13T22:44:57.591130-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour Applications\
-  \ (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date en un type de\u2026"
+  \ (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date en un type de\
+  \ donn\xE9es date."
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 weight: 30
 ---

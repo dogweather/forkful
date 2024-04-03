@@ -8,7 +8,7 @@ description: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en
 lastmod: '2024-03-13T22:44:38.014500-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en fil och\
-  \ infoga inneh\xE5ll i den. Programmerare g\xF6r detta f\xF6r att bevara data, som\u2026"
+  \ infoga inneh\xE5ll i den."
 title: Att skriva en textfil
 weight: 24
 ---

@@ -5,7 +5,8 @@ description: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-D
 lastmod: '2024-03-13T22:44:53.957634-06:00'
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
-  \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"
+  \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine Phrase durch eine\
+  \ andere austauschen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.136338-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) est un standard de s\xE9rialisation de\
   \ donn\xE9es lisible par l'humain qui peut \xEAtre utilis\xE9 pour les fichiers\
-  \ de\u2026"
+  \ de configuration, la communication entre programmes et le stockage de donn\xE9\
+  es."
 title: Travailler avec YAML
 weight: 41
 ---

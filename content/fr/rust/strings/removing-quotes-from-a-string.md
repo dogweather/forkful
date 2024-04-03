@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.469257-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne en Rust consiste \xE0 \xE9liminer\
   \ les caract\xE8res de guillemets superflus qui pourraient \xEAtre imbriqu\xE9s\
-  \ autour de vos\u2026"
+  \ autour de vos donn\xE9es textuelles."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

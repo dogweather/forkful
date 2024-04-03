@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:42.968342-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire le date in stringhe \xE8 un compito fondamentale che consente\
   \ ai programmatori di manipolare e visualizzare le informazioni relative alle date\
-  \ in\u2026"
+  \ in un formato leggibile dall'uomo."
 title: Convertire una data in una stringa
 weight: 28
 ---

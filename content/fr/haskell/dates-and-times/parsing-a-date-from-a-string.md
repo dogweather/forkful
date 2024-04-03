@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.843591-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en Haskell\
   \ implique la conversion de repr\xE9sentations textuelles de dates en un format\
-  \ structur\xE9\u2026"
+  \ structur\xE9 que le programme peut manipuler."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -8,8 +8,7 @@ description: "C++ t\xEDch h\u1EE3p v\u1EDBi c\xE1c debugger nh\u01B0 GDB hay deb
 lastmod: '2024-03-13T22:44:37.048509-06:00'
 model: gpt-4-0125-preview
 summary: "C++ t\xEDch h\u1EE3p v\u1EDBi c\xE1c debugger nh\u01B0 GDB hay debugger\
-  \ c\u1EE7a Visual Studio. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
-  \ nh\u1ECF s\u1EED d\u1EE5ng GDB: ```C++ #include <iostream> int main() { int a\u2026"
+  \ c\u1EE7a Visual Studio."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

@@ -6,8 +6,8 @@ description: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistami
   \ odotetulla tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"
 lastmod: '2024-03-13T22:44:56.448704-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla\
-  \ tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"
+summary: Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla
+  tavalla eri olosuhteissa.
 title: Testien kirjoittaminen
 weight: 36
 ---

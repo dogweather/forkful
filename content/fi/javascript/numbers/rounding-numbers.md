@@ -6,8 +6,7 @@ description: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan pois
 lastmod: '2024-03-13T22:44:56.944739-06:00'
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa luvusta\
-  \ tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen tarkkuutta,\
-  \ hallinnoidakseen\u2026"
+  \ tietyn pisteen j\xE4lkeen."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

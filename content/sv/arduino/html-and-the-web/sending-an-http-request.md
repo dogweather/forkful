@@ -6,8 +6,7 @@ description: "HTTP-beg\xE4ran skickar data till server f\xF6r att h\xE4mta eller
 lastmod: '2024-03-13T22:44:38.165009-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran skickar data till server f\xF6r att h\xE4mta eller \xE4\
-  ndra resurser. Programmerare skickar dessa f\xF6r att interagera med webbtj\xE4\
-  nster och API:er."
+  ndra resurser."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

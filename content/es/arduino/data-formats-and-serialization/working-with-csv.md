@@ -7,7 +7,8 @@ description: "Trabajar con archivos CSV (Valores Separados por Comas) en Arduino
 lastmod: '2024-03-13T22:44:59.356794-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Arduino implica\
-  \ leer y escribir en archivos CSV generalmente almacenados en una tarjeta SD, lo\u2026"
+  \ leer y escribir en archivos CSV generalmente almacenados en una tarjeta SD, lo\
+  \ que permite el registro de datos, la configuraci\xF3n de ajustes y m\xE1s."
 title: Trabajando con CSV
 weight: 37
 ---

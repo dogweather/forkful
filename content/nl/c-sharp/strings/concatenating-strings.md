@@ -7,8 +7,7 @@ description: "Concatenatie is het proces van het aan elkaar plakken van strings.
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.802037-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenatie is het proces van het aan elkaar plakken van strings. We doen\
-  \ dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten te\u2026"
+summary: Concatenatie is het proces van het aan elkaar plakken van strings.
 title: Samenvoegen van strings
 weight: 3
 ---

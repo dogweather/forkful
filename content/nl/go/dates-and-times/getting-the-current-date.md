@@ -7,9 +7,8 @@ description: "Het verkrijgen van de huidige datum in Go is een fundamentele taak
   \ Het\u2026"
 lastmod: '2024-03-13T22:44:50.298377-06:00'
 model: gpt-4-0125-preview
-summary: "Het verkrijgen van de huidige datum in Go is een fundamentele taak voor\
-  \ programmeurs, vergelijkbaar met \"Hallo, wereld!\" in zijn alomtegenwoordigheid.\
-  \ Het\u2026"
+summary: Het verkrijgen van de huidige datum in Go is een fundamentele taak voor programmeurs,
+  vergelijkbaar met "Hallo, wereld.
 title: De huidige datum krijgen
 weight: 29
 ---

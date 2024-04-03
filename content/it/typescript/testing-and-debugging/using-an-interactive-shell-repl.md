@@ -6,7 +6,7 @@ description: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione 
 lastmod: '2024-03-13T22:44:43.177612-06:00'
 model: gpt-4-0125-preview
 summary: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che prende\
-  \ singoli input dall'utente, li esegue e restituisce il risultato all'utente. I\u2026"
+  \ singoli input dall'utente, li esegue e restituisce il risultato all'utente."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

@@ -7,8 +7,9 @@ description: "Foutafhandeling in Visual Basic for Applications (VBA) verwijst na
   \ of\u2026"
 lastmod: '2024-03-13T22:44:50.644479-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar het\
-  \ proces van anticiperen, detecteren en oplossen van programmeer-, applicatie- of\u2026"
+summary: Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar het
+  proces van anticiperen, detecteren en oplossen van programmeer-, applicatie- of
+  communicatiefouten.
 title: Fouten afhandelen
 weight: 16
 ---

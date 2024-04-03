@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.376995-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string \xE9 uma tarefa comum ao lidar\
   \ com entrada de usu\xE1rio ou leitura de dados de arquivos, o que envolve converter\
-  \ os\u2026"
+  \ os dados em string para um formato de data reconhecido pela linguagem de programa\xE7\
+  \xE3o."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

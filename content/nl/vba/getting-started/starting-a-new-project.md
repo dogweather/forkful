@@ -7,8 +7,9 @@ description: "Een nieuw project starten in Visual Basic for Applications (VBA) h
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.637453-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten in Visual Basic for Applications (VBA) houdt in\
-  \ dat je een omgeving opzet binnen een hosttoepassing, zoals Excel, om taken te\u2026"
+summary: Een nieuw project starten in Visual Basic for Applications (VBA) houdt in
+  dat je een omgeving opzet binnen een hosttoepassing, zoals Excel, om taken te automatiseren
+  of functionaliteit uit te breiden.
 title: Een nieuw project starten
 weight: 1
 ---

@@ -6,8 +6,7 @@ description: "Interpola\xE7\xE3o de string \xE9 o processo de inserir valores de
 lastmod: '2024-03-13T22:44:46.354327-06:00'
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de string \xE9 o processo de inserir valores de vari\xE1\
-  veis dentro de uma string. Programadores fazem isso para construir strings din\xE2\
-  micas que\u2026"
+  veis dentro de uma string."
 title: Interpolando uma string
 weight: 8
 ---

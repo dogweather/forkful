@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.031168-06:00'
 model: gpt-4-0125-preview
 summary: "Associerade arrayer \xE4r som hemliga handslag f\xF6r data i Lua\u2014ist\xE4\
   llet f\xF6r bara siffror som lydigt st\xE4ller upp efter index, kan dina nycklar\
-  \ vara vad du\u2026"
+  \ vara vad du vill, vilket g\xF6r data\xE5terkallning till en barnlek."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

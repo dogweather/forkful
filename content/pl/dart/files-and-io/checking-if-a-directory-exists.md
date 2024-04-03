@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.107796-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
   \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
-  \ plik\xF3w przed wykonaniem\u2026"
+  \ plik\xF3w przed wykonaniem operacji takich jak odczyt lub zapis plik\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

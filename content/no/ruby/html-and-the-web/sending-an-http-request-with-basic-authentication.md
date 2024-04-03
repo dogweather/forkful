@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:41.327670-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ \xE5 tilf\xF8ye brukernavn og passord i en foresp\xF8rsel for \xE5 f\xE5 tilgang\
-  \ til beskyttede\u2026"
+  \ til beskyttede ressurser."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

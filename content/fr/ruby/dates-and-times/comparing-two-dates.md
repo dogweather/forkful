@@ -5,7 +5,7 @@ description: "Comparer deux dates en Ruby permet de d\xE9terminer laquelle est a
 lastmod: '2024-03-13T22:44:58.432838-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates en Ruby permet de d\xE9terminer laquelle est ant\xE9\
-  rieure ou post\xE9rieure, ou bien si elles sont identiques. C'est crucial pour des\u2026"
+  rieure ou post\xE9rieure, ou bien si elles sont identiques."
 title: Comparer deux dates
 weight: 27
 ---

@@ -7,7 +7,7 @@ description: "Las expresiones regulares (regex) en Fish Shell te permiten buscar
 lastmod: '2024-03-13T22:44:59.490077-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Fish Shell te permiten buscar, coincidir\
-  \ y manipular cadenas basadas en patrones espec\xEDficos. Los programadores\u2026"
+  \ y manipular cadenas basadas en patrones espec\xEDficos."
 title: Usando expresiones regulares
 weight: 11
 ---

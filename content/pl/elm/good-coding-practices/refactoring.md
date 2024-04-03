@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.330085-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie kodu\
   \ - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\
-  trznego\u2026"
+  trznego zachowania."
 title: Refaktoryzacja
 weight: 19
 ---

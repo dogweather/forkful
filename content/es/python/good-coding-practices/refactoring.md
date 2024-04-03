@@ -6,7 +6,7 @@ description: "Refactorizar es el proceso de reestructurar c\xF3digo computaciona
 lastmod: '2024-03-13T22:44:58.620987-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de reestructurar c\xF3digo computacional existente\u2014\
-  cambiando el factoreo\u2014sin alterar su comportamiento externo. Los programadores\u2026"
+  cambiando el factoreo\u2014sin alterar su comportamiento externo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

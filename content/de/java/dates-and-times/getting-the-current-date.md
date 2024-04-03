@@ -7,7 +7,8 @@ description: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Ope
 lastmod: '2024-03-13T22:44:53.772974-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
-  \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"
+  \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie Protokollierung,\
+  \ Datumsberechnungen und zeitbasierte Bedingungen zu manipulieren."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

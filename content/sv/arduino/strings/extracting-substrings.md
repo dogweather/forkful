@@ -6,8 +6,7 @@ description: "Att extrahera substr\xE4ngar inneb\xE4r att ta specifika delar fr\
 lastmod: '2024-03-13T22:44:38.157238-06:00'
 model: gpt-4-1106-preview
 summary: "Att extrahera substr\xE4ngar inneb\xE4r att ta specifika delar fr\xE5n en\
-  \ str\xE4ng av text. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera\
-  \ data mer\u2026"
+  \ str\xE4ng av text."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

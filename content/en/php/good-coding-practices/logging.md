@@ -5,8 +5,9 @@ description: "Logging is basically akin to keeping a diary for your code; it's t
   \ when\u2026"
 lastmod: '2024-03-13T22:45:00.172979-06:00'
 model: gpt-4-1106-preview
-summary: "Logging is basically akin to keeping a diary for your code; it's the act\
-  \ of recording events, errors, and other significant data points that happen when\u2026"
+summary: Logging is basically akin to keeping a diary for your code; it's the act
+  of recording events, errors, and other significant data points that happen when
+  your application runs.
 title: Logging
 weight: 17
 ---

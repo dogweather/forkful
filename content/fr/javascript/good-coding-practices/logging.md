@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.282613-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation, en r\xE9sum\xE9, c'est comme tenir un journal pour votre\
   \ application \u2014 elle enregistre les \xE9v\xE9nements, les erreurs et d'autres\
-  \ actions\u2026"
+  \ actions significatives qui se produisent pendant que le logiciel fonctionne."
 title: Journalisation
 weight: 17
 ---

@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1r
 lastmod: '2024-03-13T22:44:46.232281-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria (como\
-  \ `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas de computa\xE7\
-  \xE3o.\u2026"
+  \ `3 + 4i`)."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

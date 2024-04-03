@@ -5,9 +5,7 @@ description: "Let's break down using `pdb`, Python's built-in debugger. Imagine 
   \ ++\u2026"
 lastmod: '2024-03-13T22:44:59.712228-06:00'
 model: gpt-4-1106-preview
-summary: "Let's break down using `pdb`, Python's built-in debugger. Imagine a file,\
-  \ `buggy.py`, with a sneaky bug: ```Python def add_one(number): result = number\
-  \ ++\u2026"
+summary: Let's break down using `pdb`, Python's built-in debugger.
 title: Using a debugger
 weight: 35
 ---

@@ -4,8 +4,7 @@ description: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk pre
   \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
 lastmod: '2024-03-13T22:44:40.527173-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
-  \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
+summary: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon."
 title: Avrunding av tall
 weight: 13
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.707261-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 rediriger les messages\
   \ d'erreur et les diagnostics s\xE9par\xE9ment du r\xE9sultat principal du programme,\
-  \ qui va\u2026"
+  \ qui va \xE0 la sortie standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

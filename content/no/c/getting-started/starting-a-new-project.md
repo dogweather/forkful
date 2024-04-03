@@ -8,8 +8,7 @@ description: "\xC5 starte et nytt prosjekt i C inneb\xE6rer \xE5 sette opp en gr
 lastmod: '2024-03-13T22:44:41.272675-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i C inneb\xE6rer \xE5 sette opp en grunnleggende\
-  \ kodestruktur og milj\xF8 for effektivt \xE5 h\xE5ndtere utviklingsoppgaver. Programmerere\
-  \ gj\xF8r\u2026"
+  \ kodestruktur og milj\xF8 for effektivt \xE5 h\xE5ndtere utviklingsoppgaver."
 title: Starter et nytt prosjekt
 weight: 1
 ---

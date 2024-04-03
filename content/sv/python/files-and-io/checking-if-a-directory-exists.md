@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.497256-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i Python handlar om att verifiera n\xE4\
   rvaron av en mapp i filsystemet innan man utf\xF6r operationer som att l\xE4sa eller\
-  \ skriva\u2026"
+  \ skriva filer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

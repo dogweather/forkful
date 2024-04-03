@@ -7,7 +7,9 @@ description: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksel
 lastmod: '2024-03-13T22:44:57.042175-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
-  \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"
+  \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\
+  \ kirjoittamisen ja v\xE4litt\xF6mien tulosten n\xE4kemisen, mik\xE4 parantaa oppimista\
+  \ ja virheenkorjausta."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 weight: 34
 ---

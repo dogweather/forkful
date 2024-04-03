@@ -4,8 +4,7 @@ description: "Sending an HTTP request means asking a remote server for data or a
   \ Programmers do this to interact with web services, fetch resources, or\u2026"
 lastmod: '2024-03-13T22:45:00.202689-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request means asking a remote server for data or action.\
-  \ Programmers do this to interact with web services, fetch resources, or\u2026"
+summary: Sending an HTTP request means asking a remote server for data or action.
 title: Sending an HTTP request
 weight: 44
 ---

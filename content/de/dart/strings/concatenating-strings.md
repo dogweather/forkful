@@ -7,8 +7,8 @@ description: "Das Verketten von Zeichenfolgen in der Programmierung beinhaltet d
   \ um\u2026"
 lastmod: '2024-03-13T22:44:53.571829-06:00'
 model: gpt-4-0125-preview
-summary: "Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das Kombinieren\
-  \ von zwei oder mehreren Strings zu einem. Programmierer machen dies, um\u2026"
+summary: Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das Kombinieren
+  von zwei oder mehreren Strings zu einem.
 title: "Zeichenketten zusammenf\xFCgen"
 weight: 3
 ---

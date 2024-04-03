@@ -5,7 +5,7 @@ description: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort a
 lastmod: '2024-03-13T22:44:38.156220-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort alla f\xF6\
-  rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten.\u2026"
+  rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

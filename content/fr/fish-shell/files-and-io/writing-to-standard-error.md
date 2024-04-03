@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.342123-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) avec Fish Shell consiste \xE0\
   \ diriger les messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie\
-  \ standard\u2026"
+  \ standard (stdout)."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

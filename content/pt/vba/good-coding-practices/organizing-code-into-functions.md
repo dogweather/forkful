@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.418480-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es no Visual Basic for Applications\
   \ (VBA) envolve dividir um programa em partes menores e gerenci\xE1veis, conhecidas\
-  \ como\u2026"
+  \ como fun\xE7\xF5es."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

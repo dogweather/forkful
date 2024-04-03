@@ -7,8 +7,8 @@ description: "Foutafhandeling in Swift betekent dat je anticipeert op en reageer
   \ chaos te\u2026"
 lastmod: '2024-03-13T22:44:51.164910-06:00'
 model: gpt-4-0125-preview
-summary: "Foutafhandeling in Swift betekent dat je anticipeert op en reageert op problemen\
-  \ die opduiken wanneer je code wordt uitgevoerd. We doen dit om de chaos te\u2026"
+summary: Foutafhandeling in Swift betekent dat je anticipeert op en reageert op problemen
+  die opduiken wanneer je code wordt uitgevoerd.
 title: Fouten afhandelen
 weight: 16
 ---

@@ -7,7 +7,9 @@ description: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzie
 lastmod: '2024-03-13T22:44:34.927919-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
-  \ w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"
+  \ w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu plik\xF3\
+  w tekstowych, gdzie ka\u017Cda linia reprezentuje jeden rekord danych z warto\u015B\
+  ciami rozdzielonymi przecinkami."
 title: Praca z formatem CSV
 weight: 37
 ---

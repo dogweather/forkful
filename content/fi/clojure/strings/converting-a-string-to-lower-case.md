@@ -4,8 +4,7 @@ description: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhd
   vertailuihin ja haun yksinkertaistamiseen.
 lastmod: '2024-03-13T22:44:56.172133-06:00'
 model: gpt-4-1106-preview
-summary: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
-  vertailuihin ja haun yksinkertaistamiseen.
+summary: Muuttaa merkkijonon kaikki kirjaimet pieniksi.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

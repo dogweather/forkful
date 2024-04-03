@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.389608-06:00'
 model: gpt-4-0125-preview
 summary: "Att logga i C inneb\xE4r att man registrerar fl\xF6det och betydande h\xE4\
   ndelser i ett program under dess k\xF6rtid, vilket ger en konkret \xF6versikt av\
-  \ dess beteende\u2026"
+  \ dess beteende och prestanda."
 title: Loggning
 weight: 17
 ---

@@ -7,7 +7,7 @@ description: "Complexe getallen breiden de re\xEBle getallen uit met een extra d
 lastmod: '2024-03-13T22:44:50.413037-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallen uit met een extra deel, de\
-  \ imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen,\u2026"
+  \ imaginaire eenheid 'i'."
 title: Werken met complexe getallen
 weight: 14
 ---

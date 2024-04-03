@@ -4,8 +4,8 @@ description: "Searching and replacing text lets you find specific characters or 
   \ in a text and switch them out for something else. Programmers do it to modify\u2026"
 lastmod: '2024-03-13T22:45:00.308911-06:00'
 model: gpt-4-1106-preview
-summary: "Searching and replacing text lets you find specific characters or strings\
-  \ in a text and switch them out for something else. Programmers do it to modify\u2026"
+summary: Searching and replacing text lets you find specific characters or strings
+  in a text and switch them out for something else.
 title: Searching and replacing text
 weight: 10
 ---

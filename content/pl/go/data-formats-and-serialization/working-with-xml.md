@@ -7,7 +7,7 @@ description: "Praca z XML w Go polega na parsowaniu (czytaniu) i generowaniu (pi
 lastmod: '2024-03-13T22:44:34.880686-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w Go polega na parsowaniu (czytaniu) i generowaniu (pisaniu)\
-  \ dokument\xF3w XML \u2013 standardowym formacie do wymiany strukturyzowanych danych.\u2026"
+  \ dokument\xF3w XML \u2013 standardowym formacie do wymiany strukturyzowanych danych."
 title: Praca z XML
 weight: 40
 ---

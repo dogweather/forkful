@@ -6,8 +6,7 @@ description: "Testen controleert of je code doet wat het moet doen. Het bespaart
   \ door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets\u2026"
 lastmod: '2024-03-13T22:44:50.899004-06:00'
 model: gpt-4-0125-preview
-summary: "Testen controleert of je code doet wat het moet doen. Het bespaart tijd\
-  \ door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets\u2026"
+summary: Testen controleert of je code doet wat het moet doen.
 title: Tests Schrijven
 weight: 36
 ---

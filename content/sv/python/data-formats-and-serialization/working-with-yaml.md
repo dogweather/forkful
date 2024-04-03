@@ -8,8 +8,7 @@ description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett
 lastmod: '2024-03-13T22:44:37.503546-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett format\
-  \ f\xF6r serialisering av data som \xE4r l\xE4sbart f\xF6r m\xE4nniskor. Programmerare\
-  \ anv\xE4nder YAML f\xF6r\u2026"
+  \ f\xF6r serialisering av data som \xE4r l\xE4sbart f\xF6r m\xE4nniskor."
 title: Att Arbeta med YAML
 weight: 41
 ---

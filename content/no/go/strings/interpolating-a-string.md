@@ -7,7 +7,7 @@ description: "Strenginterpolasjon er en metode for \xE5 konstruere strenger som 
 lastmod: '2024-03-13T22:44:40.250403-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolasjon er en metode for \xE5 konstruere strenger som inkorporerer\
-  \ variabler, noe som muliggj\xF8r dynamisk oppretting av strenger. Programmerere\u2026"
+  \ variabler, noe som muliggj\xF8r dynamisk oppretting av strenger."
 title: Interpolering av en streng
 weight: 8
 ---

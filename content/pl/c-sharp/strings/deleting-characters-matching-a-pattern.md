@@ -6,8 +6,7 @@ description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca polega na wybraniu i 
 lastmod: '2024-03-13T22:44:35.391626-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca polega na wybraniu i wyeliminowaniu\
-  \ okre\u015Blonych sekwencji znak\xF3w z tekstu. Programi\u015Bci robi\u0105 to,\
-  \ \u017Ceby oczy\u015Bci\u0107 dane,\u2026"
+  \ okre\u015Blonych sekwencji znak\xF3w z tekstu."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

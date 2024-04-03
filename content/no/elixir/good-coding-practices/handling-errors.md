@@ -6,8 +6,7 @@ description: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan takle at ting
 lastmod: '2024-03-13T22:44:40.450906-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan takle at ting ikke\
-  \ g\xE5r som planlagt. Programmerere gj\xF8r det for \xE5 hindre krasj og for \xE5\
-  \ forsikre seg om at\u2026"
+  \ g\xE5r som planlagt."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

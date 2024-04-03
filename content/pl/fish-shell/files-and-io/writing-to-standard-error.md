@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.858206-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Fish Shell polega na\
   \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki osobno od standardowego\
-  \ wyj\u015Bcia (stdout).\u2026"
+  \ wyj\u015Bcia (stdout)."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

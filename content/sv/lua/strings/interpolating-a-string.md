@@ -6,8 +6,7 @@ description: "Stringinterpolering inneb\xE4r att du injicerar variabler direkt i
 lastmod: '2024-03-13T22:44:38.024519-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolering inneb\xE4r att du injicerar variabler direkt i en textstr\xE4\
-  ng. Programmerare anv\xE4nder det f\xF6r att enkelt bygga dynamiska meddelanden\
-  \ eller\u2026"
+  ng."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

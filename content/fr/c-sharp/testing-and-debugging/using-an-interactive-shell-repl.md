@@ -6,7 +6,7 @@ description: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper 
 lastmod: '2024-03-13T22:44:57.789078-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper du code\
-  \ C# et de l'ex\xE9cuter interactivement. Les programmeurs l'utilisent pour des\u2026"
+  \ C# et de l'ex\xE9cuter interactivement."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

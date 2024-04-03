@@ -6,8 +6,7 @@ description: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-
 lastmod: '2024-03-13T22:44:35.756654-06:00'
 model: gpt-4-0125-preview
 summary: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-wykonaj-drukuj\
-  \ (REPL), pozwala na interaktywne programowanie. Programi\u015Bci u\u017Cywaj\u0105\
-  \ jej do szybkiego\u2026"
+  \ (REPL), pozwala na interaktywne programowanie."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
   ch t\u1EC7p YAML (YAML Ain't Markup Language) - m\u1ED9t chu\u1EA9n h\xF3a xu\u1EA5\
   t nh\u1EADp li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, th\xE0nh\
-  \ c\xE1c\u2026"
+  \ c\xE1c c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u c\u1EE7a Go v\xE0 ng\u01B0\u1EE3c l\u1EA1\
+  i."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

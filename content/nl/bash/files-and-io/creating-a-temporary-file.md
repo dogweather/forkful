@@ -6,8 +6,8 @@ description: "Een tijdelijk bestand aanmaken in Bash betekent het maken van een 
   \ dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.\u2026"
 lastmod: '2024-03-13T22:44:51.003113-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand\
-  \ dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.\u2026"
+summary: Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand
+  dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.475297-06:00'
 model: gpt-4-1106-preview
 summary: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
   \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
-  ng.\u2026"
+  ng."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

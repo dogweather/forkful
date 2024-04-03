@@ -5,9 +5,8 @@ description: "Tworzenie pliku tymczasowego to proces generowania tymczasowego mi
   \ informacje, kt\xF3re\u2026"
 lastmod: '2024-03-13T22:44:35.649182-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca\
-  \ do przechowywania danych. Programi\u015Bci robi\u0105 to, aby przechowa\u0107\
-  \ informacje, kt\xF3re\u2026"
+summary: Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca do
+  przechowywania danych.
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -6,8 +6,7 @@ description: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\
 lastmod: '2024-03-13T22:44:57.899847-06:00'
 model: gpt-4-1106-preview
 summary: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9es\
-  \ de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script.\
-  \ Les programmeurs utilisent des\u2026"
+  \ de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 b\u1EAFt l\u1EA5y\
   \ m\u1ED9t ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i\u2014nh\u01B0\
   \ l\u1EA5y nh\u1EEFng ph\u1EA7n ngon nh\u1EA5t t\u1EEB m\u1ED9t chi\u1EBFc b\xE1\
-  nh sandwich. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
+  nh sandwich."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

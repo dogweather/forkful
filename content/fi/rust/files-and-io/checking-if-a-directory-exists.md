@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.371487-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmistokehityksess\xE4 on usein tarpeen tarkistaa, olemassaoko hakemisto,\
   \ v\xE4ltt\xE4\xE4kseen virheit\xE4 yritt\xE4ess\xE4 p\xE4\xE4st\xE4 k\xE4siksi,\
-  \ lukea tai kirjoittaa\u2026"
+  \ lukea tai kirjoittaa tiedostoja."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

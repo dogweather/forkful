@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.189024-06:00'
 model: gpt-4-0125-preview
 summary: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9giquement\
   \ des d\xE9clarations de journalisation dans votre code pour afficher les valeurs\
-  \ des\u2026"
+  \ des variables, le flux d'ex\xE9cution ou les erreurs de messages pendant l'ex\xE9\
+  cution."
 title: "Affichage du d\xE9bogage"
 weight: 33
 ---

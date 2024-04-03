@@ -5,7 +5,7 @@ description: "Les arguments de ligne de commande sont les donn\xE9es que vous ba
 lastmod: '2024-03-13T22:44:57.804523-06:00'
 model: gpt-4-1106-preview
 summary: "Les arguments de ligne de commande sont les donn\xE9es que vous balancez\
-  \ \xE0 votre programme au d\xE9marrage. Les programmeurs s'en servent pour customiser\u2026"
+  \ \xE0 votre programme au d\xE9marrage."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

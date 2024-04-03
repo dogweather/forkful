@@ -7,7 +7,8 @@ description: "Das Gro\xDFschreiben eines Strings bedeutet, den ersten Buchstaben
 lastmod: '2024-03-13T22:44:53.746748-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings bedeutet, den ersten Buchstaben jedes\
-  \ Wortes im String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Buchstaben\u2026"
+  \ Wortes im String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Buchstaben\
+  \ klein bleiben."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

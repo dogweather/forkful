@@ -5,7 +5,7 @@ description: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re ta
 lastmod: '2024-03-13T22:44:40.702420-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re tall, som\
-  \ `a + bi`, der `i` er kvadratroten av -1. De er n\xF8kkelen i felt som\u2026"
+  \ `a + bi`, der `i` er kvadratroten av -1."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

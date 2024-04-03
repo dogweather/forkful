@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.942850-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty to kluczowe zadanie w niemal ka\u017C\
   dym projekcie programistycznym, od rejestrowania aktywno\u015Bci w aplikacji po\
-  \ generowanie raport\xF3w\u2026"
+  \ generowanie raport\xF3w ze znacznikami czasowymi."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

@@ -7,7 +7,8 @@ description: "Escrever testes em Fish Shell envolve criar scripts que executam a
 lastmod: '2024-03-13T22:44:47.009519-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
-  \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\u2026"
+  \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\
+  \ esperados."
 title: Escrevendo testes
 weight: 36
 ---

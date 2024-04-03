@@ -6,8 +6,8 @@ description: "Associatieve arrays, bekend als woordenboeken in Swift, laten je g
   \ opslaan en beheren als sleutel-waarde paren. Programmeurs gebruiken ze om\u2026"
 lastmod: '2024-03-13T22:44:51.149314-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, bekend als woordenboeken in Swift, laten je gegevens\
-  \ opslaan en beheren als sleutel-waarde paren. Programmeurs gebruiken ze om\u2026"
+summary: Associatieve arrays, bekend als woordenboeken in Swift, laten je gegevens
+  opslaan en beheren als sleutel-waarde paren.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

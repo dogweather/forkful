@@ -6,8 +6,7 @@ description: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re e
 lastmod: '2024-03-13T22:44:40.970254-06:00'
 model: gpt-4-0125-preview
 summary: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re en masseoppdatering\
-  \ p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din. Du kunne ha \xE5\
-  pnet\u2026"
+  \ p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din."
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---

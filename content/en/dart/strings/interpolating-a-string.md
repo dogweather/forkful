@@ -4,8 +4,8 @@ description: "String interpolation is the process of injecting variable values d
   \ into strings, often for creating meaningful messages without cumbersome\u2026"
 lastmod: '2024-03-13T22:44:59.807878-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolation is the process of injecting variable values directly\
-  \ into strings, often for creating meaningful messages without cumbersome\u2026"
+summary: String interpolation is the process of injecting variable values directly
+  into strings, often for creating meaningful messages without cumbersome concatenations.
 title: Interpolating a string
 weight: 8
 ---

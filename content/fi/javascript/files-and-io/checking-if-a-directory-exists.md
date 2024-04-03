@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.964257-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedoston olemassaolon tarkistaminen JavaScriptill\xE4 on olennainen osa\
   \ tiedostojen k\xE4sittelyteht\xE4vi\xE4, mik\xE4 mahdollistaa skriptien varmistaa\
-  \ kansion\u2026"
+  \ kansion olemassaolon ennen siit\xE4 lukemista tai siihen kirjoittamista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

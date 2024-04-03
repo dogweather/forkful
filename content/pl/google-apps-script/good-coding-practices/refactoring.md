@@ -8,7 +8,8 @@ description: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do proce
 lastmod: '2024-03-13T22:44:34.912342-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu restrukturyzacji\
-  \ istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji bez zmiany jego\u2026"
+  \ istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji bez zmiany jego\
+  \ zewn\u0119trznego zachowania \u2013 w celu poprawy atrybut\xF3w niefunkcjonalnych."
 title: Refaktoryzacja
 weight: 19
 ---

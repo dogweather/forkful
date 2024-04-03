@@ -8,7 +8,7 @@ description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair dee
 lastmod: '2024-03-13T22:44:51.328948-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (zoals\
-  \ 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken ermee\u2026"
+  \ 3+4i), zijn een basiscomponent in engineering en fysica."
 title: Werken met complexe getallen
 weight: 14
 ---

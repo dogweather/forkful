@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.546505-06:00'
 model: gpt-4-1106-preview
 summary: "Rejestrowanie (logging) to praktyka zapisywania zdarze\u0144, b\u0142\u0119\
   d\xF3w i innych istotnych punkt\xF3w danych, kt\xF3re wyst\u0119puj\u0105 w cyklu\
-  \ \u017Cycia aplikacji oprogramowania.\u2026"
+  \ \u017Cycia aplikacji oprogramowania."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

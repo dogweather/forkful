@@ -8,8 +8,7 @@ description: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015
 lastmod: '2024-03-13T22:44:35.092180-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015Brodowiska\
-  \ sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu. Programi\u015B\
-  ci inicjuj\u0105 nowe\u2026"
+  \ sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu."
 title: "Rozpocz\u0119cie nowego projektu"
 weight: 1
 ---

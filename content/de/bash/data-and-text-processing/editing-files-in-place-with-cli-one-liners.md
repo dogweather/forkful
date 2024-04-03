@@ -5,7 +5,7 @@ description: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigu
 lastmod: '2024-03-13T22:44:54.055358-06:00'
 model: gpt-4-0125-preview
 summary: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
-  \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"
+  \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen."
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

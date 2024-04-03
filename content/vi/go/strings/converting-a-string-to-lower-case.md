@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
   \ th\u01B0\u1EDDng l\xE0 m\u1ED9t thao t\xE1c c\u01A1 b\u1EA3n gi\xFAp \u0111\u1EA3\
   m b\u1EA3o s\u1EF1 th\u1ED1ng nh\u1EA5t v\xE0 nh\u1EA5t qu\xE1n trong x\u1EED l\xFD\
-  \ v\u0103n b\u1EA3n, r\u1EA5t c\u1EA7n thi\u1EBFt cho c\xE1c t\xE1c\u2026"
+  \ v\u0103n b\u1EA3n, r\u1EA5t c\u1EA7n thi\u1EBFt cho c\xE1c t\xE1c v\u1EE5 nh\u01B0\
+  \ so s\xE1nh kh\xF4ng ph\xE2n bi\u1EC7t ch\u1EEF hoa ch\u1EEF th\u01B0\u1EDDng hay\
+  \ chu\u1EA9n h\xF3a v\u0103n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

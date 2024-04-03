@@ -5,9 +5,7 @@ description: "JSON (JavaScript Object Notation) to format wymiany danych. Progra
   e \u0142atwy do\u2026"
 lastmod: '2024-03-13T22:44:35.300242-06:00'
 model: unknown
-summary: "JSON (JavaScript Object Notation) to format wymiany danych. Programi\u015B\
-  ci u\u017Cywaj\u0105 go, bo jest lekki i \u0142atwy do czytania dla ludzi, a tak\u017C\
-  e \u0142atwy do\u2026"
+summary: JSON (JavaScript Object Notation) to format wymiany danych.
 title: Praca z JSON
 weight: 38
 ---

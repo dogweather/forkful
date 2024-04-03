@@ -5,9 +5,8 @@ description: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan ti
   \ pala dataa\u2026"
 lastmod: '2024-03-13T22:44:56.769479-06:00'
 model: gpt-4-1106-preview
-summary: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa\
-  \ merkkijonosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain pala\
-  \ dataa\u2026"
+summary: Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa
+  merkkijonosta.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

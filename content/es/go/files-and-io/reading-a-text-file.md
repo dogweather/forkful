@@ -7,7 +7,7 @@ description: "Leer un archivo de texto en Go implica acceder y recuperar conteni
 lastmod: '2024-03-13T22:44:58.487891-06:00'
 model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en Go implica acceder y recuperar contenido de\
-  \ un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"
+  \ un archivo almacenado en disco para su procesamiento o an\xE1lisis."
 title: Leyendo un archivo de texto
 weight: 22
 ---

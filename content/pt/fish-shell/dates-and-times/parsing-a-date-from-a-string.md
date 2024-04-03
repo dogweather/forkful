@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.015306-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve extrair informa\xE7\xF5\
   es de data codificadas dentro de strings e convert\xEA-las em um formato estruturado\
-  \ que\u2026"
+  \ que ambientes de programa\xE7\xE3o podem reconhecer e manipular."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

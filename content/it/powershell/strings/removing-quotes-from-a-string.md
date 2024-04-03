@@ -4,8 +4,8 @@ description: "Rimuovere le virgolette da una stringa in PowerShell elimina i seg
   \ di virgoletta singola (`'`) o doppia (`\"`) che incapsulano il tuo testo. I\u2026"
 lastmod: '2024-03-13T22:44:43.629134-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa in PowerShell elimina i segni di\
-  \ virgoletta singola (`'`) o doppia (`\"`) che incapsulano il tuo testo. I\u2026"
+summary: Rimuovere le virgolette da una stringa in PowerShell elimina i segni di virgoletta
+  singola (`'`) o doppia (`"`) che incapsulano il tuo testo.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

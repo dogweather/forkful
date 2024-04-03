@@ -8,7 +8,8 @@ description: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs un
 lastmod: '2024-03-13T22:44:54.359396-06:00'
 model: gpt-4-0125-preview
 summary: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter\
-  \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine\u2026"
+  \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine greifbare\
+  \ \xDCberpr\xFCfung seines Verhaltens und seiner Leistung."
 title: Protokollierung
 weight: 17
 ---

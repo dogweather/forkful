@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.064091-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash involverar\
   \ att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav medan resten\
-  \ av\u2026"
+  \ av str\xE4ngen l\xE4mnas of\xF6r\xE4ndrad."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

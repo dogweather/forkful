@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.566025-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9g\xE9\
-  es par des\u2026"
+  es par des identifiants de nom d'utilisateur et mot de passe."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

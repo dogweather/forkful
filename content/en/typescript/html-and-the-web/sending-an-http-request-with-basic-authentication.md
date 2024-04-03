@@ -5,8 +5,8 @@ description: "In TypeScript, sending an HTTP request with basic authentication m
   \ It's\u2026"
 lastmod: '2024-03-13T22:44:59.858642-06:00'
 model: gpt-4-1106-preview
-summary: "In TypeScript, sending an HTTP request with basic authentication means shooting\
-  \ data across the web with a simple username:password combo for access. It's\u2026"
+summary: In TypeScript, sending an HTTP request with basic authentication means shooting
+  data across the web with a simple username:password combo for access.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

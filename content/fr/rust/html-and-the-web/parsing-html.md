@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.479676-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser du HTML en Rust consiste \xE0 extraire des donn\xE9es de documents\
   \ HTML, ce qui est essentiel pour le web scraping, l'extraction de donn\xE9es ou\
-  \ la\u2026"
+  \ la cr\xE9ation de web crawlers."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

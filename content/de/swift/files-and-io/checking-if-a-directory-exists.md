@@ -8,8 +8,7 @@ description: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im 
 lastmod: '2024-03-13T22:44:54.239375-06:00'
 model: gpt-4-0125-preview
 summary: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
-  \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\
-  \ Diese\u2026"
+  \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

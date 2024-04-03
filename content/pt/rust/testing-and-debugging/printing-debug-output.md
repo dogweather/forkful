@@ -6,8 +6,7 @@ description: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o es
 lastmod: '2024-03-13T22:44:46.370232-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado de\
-  \ vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender e\
-  \ corrigir\u2026"
+  \ vari\xE1veis ou o fluxo do c\xF3digo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

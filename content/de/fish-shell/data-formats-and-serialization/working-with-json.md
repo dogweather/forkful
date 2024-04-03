@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:54.330074-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON in der Fish Shell umfasst das Parsen und Generieren\
   \ von JSON-Daten, eine g\xE4ngige Aufgabe f\xFCr die Konfiguration von Anwendungen,\
-  \ API-\u2026"
+  \ API-Interaktionen und die Optimierung von Befehlszeilen-Workflows."
 title: Arbeiten mit JSON
 weight: 38
 ---

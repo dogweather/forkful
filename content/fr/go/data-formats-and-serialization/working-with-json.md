@@ -8,7 +8,8 @@ description: "Travailler avec le JSON (JavaScript Object Notation) en Go impliqu
 lastmod: '2024-03-13T22:44:57.159240-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) en Go implique l'encodage\
-  \ et le d\xE9codage des donn\xE9es entre les structures de donn\xE9es Go et le format\u2026"
+  \ et le d\xE9codage des donn\xE9es entre les structures de donn\xE9es Go et le format\
+  \ JSON."
 title: Travailler avec JSON
 weight: 38
 ---

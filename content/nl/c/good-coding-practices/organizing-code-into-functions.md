@@ -6,8 +6,8 @@ description: "Code in C organiseren in functies omvat het opsplitsen van complex
   \ taken in kleinere, herbruikbare blokken code. Deze praktijk verbetert de leesbaarheid,\u2026"
 lastmod: '2024-03-13T22:44:51.296864-06:00'
 model: gpt-4-0125-preview
-summary: "Code in C organiseren in functies omvat het opsplitsen van complexe taken\
-  \ in kleinere, herbruikbare blokken code. Deze praktijk verbetert de leesbaarheid,\u2026"
+summary: Code in C organiseren in functies omvat het opsplitsen van complexe taken
+  in kleinere, herbruikbare blokken code.
 title: Code organiseren in functies
 weight: 18
 ---

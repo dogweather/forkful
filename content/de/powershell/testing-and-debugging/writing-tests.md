@@ -7,7 +7,8 @@ description: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skript
 lastmod: '2024-03-13T22:44:54.107516-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten, die\
-  \ automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und\u2026"
+  \ automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und sicherstellen,\
+  \ dass er sich wie erwartet verh\xE4lt."
 title: Tests Schreiben
 weight: 36
 ---

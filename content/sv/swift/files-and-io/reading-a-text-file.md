@@ -6,8 +6,7 @@ description: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information 
 lastmod: '2024-03-13T22:44:38.268242-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
-  \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\
-  \ konfigurera\u2026"
+  \ i en fil p\xE5 disken."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

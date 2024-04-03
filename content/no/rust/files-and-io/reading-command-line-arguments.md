@@ -4,8 +4,7 @@ description: "Kommandolinjeargumenter lar deg ta input direkte ved programstart.
   \ bruker dem for \xE5 tilpasse programkj\xF8ring uten \xE5 endre koden."
 lastmod: '2024-03-13T22:44:40.589369-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandolinjeargumenter lar deg ta input direkte ved programstart. Vi bruker\
-  \ dem for \xE5 tilpasse programkj\xF8ring uten \xE5 endre koden."
+summary: Kommandolinjeargumenter lar deg ta input direkte ved programstart.
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

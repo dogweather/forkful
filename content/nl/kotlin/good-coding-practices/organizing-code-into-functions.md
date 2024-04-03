@@ -7,8 +7,8 @@ description: "Code organiseren in functies betekent dat je jouw programma opdeel
   \ dit\u2026"
 lastmod: '2024-03-13T22:44:50.773352-06:00'
 model: gpt-4-0125-preview
-summary: "Code organiseren in functies betekent dat je jouw programma opdeelt in herbruikbare\
-  \ stukken, waarbij elk stuk een specifieke taak afhandelt. We doen dit\u2026"
+summary: Code organiseren in functies betekent dat je jouw programma opdeelt in herbruikbare
+  stukken, waarbij elk stuk een specifieke taak afhandelt.
 title: Code organiseren in functies
 weight: 18
 ---

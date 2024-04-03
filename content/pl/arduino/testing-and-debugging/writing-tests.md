@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.674857-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w \u015Brodowisku Arduino odnosi si\u0119 do procesu tworzenia\
   \ automatycznych test\xF3w, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 twojego\
-  \ kodu na urz\u0105dzeniach\u2026"
+  \ kodu na urz\u0105dzeniach Arduino."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

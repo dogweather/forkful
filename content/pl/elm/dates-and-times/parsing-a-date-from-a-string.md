@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.331106-06:00'
 model: gpt-4-0125-preview
 summary: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
   \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\
-  e zrozumie\u0107 i\u2026"
+  e zrozumie\u0107 i manipulowa\u0107, a konkretnie na typ `Date`."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

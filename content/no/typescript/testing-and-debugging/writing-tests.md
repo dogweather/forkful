@@ -8,8 +8,7 @@ description: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiser
 lastmod: '2024-03-13T22:44:40.535728-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiserte skript\
-  \ for \xE5 verifisere funksjonaliteten og riktigheten av koden din. Programmerere\
-  \ gj\xF8r dette\u2026"
+  \ for \xE5 verifisere funksjonaliteten og riktigheten av koden din."
 title: Skrive tester
 weight: 36
 ---

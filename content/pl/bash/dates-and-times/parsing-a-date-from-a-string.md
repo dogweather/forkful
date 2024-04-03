@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.594595-06:00'
 model: gpt-4-0125-preview
 summary: "Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji\
   \ daty z danych tekstowych na format, kt\xF3ry Bash mo\u017Ce manipulowa\u0107 lub\
-  \ u\u017Cywa\u0107 do\u2026"
+  \ u\u017Cywa\u0107 do dalszych proces\xF3w."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

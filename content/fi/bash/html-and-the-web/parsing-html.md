@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja s
 lastmod: '2024-03-13T22:44:56.737501-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
-  ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\
-  st\xE4kseen k\xE4siksi\u2026"
+  ll\xF6n seulomista tiedon poimimiseksi."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

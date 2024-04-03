@@ -5,9 +5,7 @@ description: "**Co i Dlaczego?** Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\
   \ by walidowa\u0107 dane wej\u015Bciowe,\u2026"
 lastmod: '2024-03-13T22:44:35.268090-06:00'
 model: gpt-4-1106-preview
-summary: "**Co i Dlaczego?** Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to\
-  \ po prostu sprawdzenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to,\
-  \ by walidowa\u0107 dane wej\u015Bciowe,\u2026"
+summary: '**Co i Dlaczego.'
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

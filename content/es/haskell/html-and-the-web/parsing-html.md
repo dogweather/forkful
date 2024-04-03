@@ -6,8 +6,7 @@ description: "El an\xE1lisis de HTML (parsing HTML) significa examinar el conten
 lastmod: '2024-03-13T22:44:59.116873-06:00'
 model: unknown
 summary: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido de\
-  \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
-  \ lo\u2026"
+  \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada."
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

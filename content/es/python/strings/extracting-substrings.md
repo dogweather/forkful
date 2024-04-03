@@ -6,8 +6,7 @@ description: "Extraer subcadenas es el proceso de seleccionar y copiar un conjun
 lastmod: '2024-03-13T22:44:58.599482-06:00'
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas es el proceso de seleccionar y copiar un conjunto de\
-  \ caracteres espec\xEDficos de una cadena de texto m\xE1s grande. Los programadores\
-  \ lo\u2026"
+  \ caracteres espec\xEDficos de una cadena de texto m\xE1s grande."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

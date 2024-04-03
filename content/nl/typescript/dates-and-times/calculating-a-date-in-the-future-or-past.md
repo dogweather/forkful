@@ -7,8 +7,9 @@ description: "Een toekomstige of verleden datum berekenen gaat over het aanpasse
   \ dagen,\u2026"
 lastmod: '2024-03-13T22:44:50.564746-06:00'
 model: gpt-4-0125-preview
-summary: "Een toekomstige of verleden datum berekenen gaat over het aanpassen van\
-  \ een huidige datum om te zien welke dag het zal zijn, bijvoorbeeld over 10 dagen,\u2026"
+summary: Een toekomstige of verleden datum berekenen gaat over het aanpassen van een
+  huidige datum om te zien welke dag het zal zijn, bijvoorbeeld over 10 dagen, of
+  welke dag het 10 dagen geleden was.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

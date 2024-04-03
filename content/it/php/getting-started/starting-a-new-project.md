@@ -4,8 +4,8 @@ description: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le
   \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"
 lastmod: '2024-03-13T22:44:43.517294-06:00'
 model: gpt-4-1106-preview
-summary: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi\
-  \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"
+summary: Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi del
+  tuo codice.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

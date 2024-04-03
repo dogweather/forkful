@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.247156-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Swift vous permet de stocker de mani\xE8re\
   \ persistante des donn\xE9es de cha\xEEne de caract\xE8res dans le syst\xE8me de\
-  \ fichiers, ce qui est\u2026"
+  \ fichiers, ce qui est essentiel pour des t\xE2ches telles que la sauvegarde des\
+  \ param\xE8tres de configuration, des donn\xE9es utilisateur ou des journaux."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

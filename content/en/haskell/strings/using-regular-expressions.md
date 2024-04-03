@@ -4,8 +4,8 @@ description: "Regular expressions in programming are sequences of characters tha
   \ define a search pattern, typically employed for string searching and manipulation.\u2026"
 lastmod: '2024-03-13T22:45:00.119037-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions in programming are sequences of characters that define\
-  \ a search pattern, typically employed for string searching and manipulation.\u2026"
+summary: Regular expressions in programming are sequences of characters that define
+  a search pattern, typically employed for string searching and manipulation.
 title: Using regular expressions
 weight: 11
 ---

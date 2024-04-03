@@ -6,8 +6,7 @@ description: "GDB (GNU Debugger) is de meest gebruikte debugger voor C-programme
   \ Hier is een beknopte handleiding voor het gebruik van GDB om een eenvoudig\u2026"
 lastmod: '2024-03-13T22:44:51.295896-06:00'
 model: gpt-4-0125-preview
-summary: "GDB (GNU Debugger) is de meest gebruikte debugger voor C-programmering.\
-  \ Hier is een beknopte handleiding voor het gebruik van GDB om een eenvoudig\u2026"
+summary: GDB (GNU Debugger) is de meest gebruikte debugger voor C-programmering.
 title: Een debugger gebruiken
 weight: 35
 ---

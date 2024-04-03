@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.574244-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em C# s\xE3o uma ferramenta poderosa para\
   \ correspond\xEAncia de padr\xF5es dentro de strings, permitindo que programadores\
-  \ procurem,\u2026"
+  \ procurem, substituam, dividam ou extraiam dados de forma eficiente."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

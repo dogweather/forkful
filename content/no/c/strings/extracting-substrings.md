@@ -8,8 +8,7 @@ description: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre s
 lastmod: '2024-03-13T22:44:41.259371-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
-  \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\
-  \ Programmerere\u2026"
+  \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde."
 title: Utdrag av delstrenger
 weight: 6
 ---

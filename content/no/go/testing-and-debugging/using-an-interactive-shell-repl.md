@@ -7,7 +7,7 @@ description: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg ek
 lastmod: '2024-03-13T22:44:40.268656-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere\
-  \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding.\u2026"
+  \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding."
 title: Bruk av interaktiv shell (REPL)
 weight: 34
 ---

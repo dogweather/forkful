@@ -7,9 +7,8 @@ description: "Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in t
   \ per le\u2026"
 lastmod: '2024-03-13T22:44:43.371242-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi Elm\
-  \ e la codifica di valori Elm di nuovo in JSON. Questo processo \xE8 cruciale per\
-  \ le\u2026"
+summary: Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi Elm
+  e la codifica di valori Elm di nuovo in JSON.
 title: Lavorare con JSON
 weight: 38
 ---

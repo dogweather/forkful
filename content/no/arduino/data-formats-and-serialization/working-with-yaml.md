@@ -6,8 +6,9 @@ description: "YAML (YAML Ain't Markup Language) er en menneskelesbar standard fo
   \ serialisering av data som kan brukes for konfigurasjonsfiler, kommunikasjon mellom\u2026"
 lastmod: '2024-03-13T22:44:41.078494-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML Ain't Markup Language) er en menneskelesbar standard for serialisering\
-  \ av data som kan brukes for konfigurasjonsfiler, kommunikasjon mellom\u2026"
+summary: YAML (YAML Ain't Markup Language) er en menneskelesbar standard for serialisering
+  av data som kan brukes for konfigurasjonsfiler, kommunikasjon mellom programmer
+  og datalagring.
 title: Arbeider med YAML
 weight: 41
 ---

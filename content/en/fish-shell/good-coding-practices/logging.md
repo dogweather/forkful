@@ -5,7 +5,7 @@ description: "Logging is essentially jotting down what your application is up to
 lastmod: '2024-03-13T22:45:00.480456-06:00'
 model: gpt-4-1106-preview
 summary: "Logging is essentially jotting down what your application is up to\u2014\
-  a diary, if you will, but for code. Programmers do it to keep track of the nitty-\u2026"
+  a diary, if you will, but for code."
 title: Logging
 weight: 17
 ---

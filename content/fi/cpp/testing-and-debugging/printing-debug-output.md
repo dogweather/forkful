@@ -5,9 +5,7 @@ description: "Kun koodaat, joskus haluat kurkata ohjelman toimintaan \u2013 se o
   \ m\xE4tt\xE4\xE4 tai miten data\u2026"
 lastmod: '2024-03-13T22:44:56.867525-06:00'
 model: gpt-4-1106-preview
-summary: "Kun koodaat, joskus haluat kurkata ohjelman toimintaan \u2013 se on debug-tulostus.\
-  \ Se auttaa sinua n\xE4kem\xE4\xE4n, miss\xE4 pisteess\xE4 ohjelma m\xE4tt\xE4\xE4\
-  \ tai miten data\u2026"
+summary: "Kun koodaat, joskus haluat kurkata ohjelman toimintaan \u2013 se on debug-tulostus."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

@@ -5,8 +5,7 @@ description: "Cosa \xE8 e perch\xE9 si usa il debug? Stampare output per il debu
   \ capire cosa\u2026"
 lastmod: '2024-03-13T22:44:43.436293-06:00'
 model: gpt-4-1106-preview
-summary: "Cosa \xE8 e perch\xE9 si usa il debug? Stampare output per il debug significa\
-  \ visualizzare messaggi interni al programma durante l'esecuzione per capire cosa\u2026"
+summary: "Cosa \xE8 e perch\xE9 si usa il debug."
 title: Stampa dell'output di debug
 weight: 33
 ---

@@ -13,7 +13,7 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB \u0110\u01B0\u1EE3c Ph\
   n C\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0\
   \ vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n, trong\
   \ \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi d\u1EEF li\u1EC7u v\xE0\
-  \ d\u1EA5u\u2026"
+  \ d\u1EA5u ph\u1EA9y ph\xE2n chia m\u1ED7i tr\u01B0\u1EDDng."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.174742-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tehokas ty\xF6kalu kuvioiden tunnistamiseen\
   \ ja datan k\xE4sittelyyn, ovat olennaisia tekstink\xE4sittelyteht\xE4viss\xE4 kuten\
-  \ sy\xF6tteen\u2026"
+  \ sy\xF6tteen validoinnissa, tekstiss\xE4 etsimisess\xE4 ja tekstin korvaamisessa."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

@@ -4,8 +4,8 @@ description: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezi
   \ sich darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.\u2026"
 lastmod: '2024-03-13T22:44:54.197920-06:00'
 model: gpt-4-1106-preview
-summary: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht sich\
-  \ darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.\u2026"
+summary: Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht sich
+  darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

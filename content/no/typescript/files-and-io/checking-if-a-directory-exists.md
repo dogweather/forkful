@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.546587-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i TypeScript er essensielt for filh\xE5\
   ndteringsoppgaver, slik som \xE5 lese fra eller skrive data til filer, og sikre\
-  \ at\u2026"
+  \ at operasjoner kun utf\xF8res p\xE5 gyldige mapper."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

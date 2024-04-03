@@ -5,7 +5,8 @@ description: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione 
 lastmod: '2024-03-13T22:44:43.351417-06:00'
 model: gpt-4-0125-preview
 summary: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
-  \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"
+  \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il risultato\
+  \ all'utente."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

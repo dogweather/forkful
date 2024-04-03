@@ -5,9 +5,7 @@ description: "Elixir levereras med en inbyggd grafisk debugger som heter `:debug
   \ k\xF6rande\u2026"
 lastmod: '2024-03-13T22:44:37.571969-06:00'
 model: gpt-4-0125-preview
-summary: "Elixir levereras med en inbyggd grafisk debugger som heter `:debugger`.\
-  \ F\xF6r att anv\xE4nda den beh\xF6ver du starta den och koppla upp dig mot din\
-  \ k\xF6rande\u2026"
+summary: Elixir levereras med en inbyggd grafisk debugger som heter `:debugger`.
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

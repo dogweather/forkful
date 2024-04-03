@@ -7,7 +7,8 @@ description: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automat
 lastmod: '2024-03-13T22:44:53.891662-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten\
-  \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\u2026"
+  \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\
+  \ dass er sich wie erwartet verh\xE4lt."
 title: Tests Schreiben
 weight: 36
 ---

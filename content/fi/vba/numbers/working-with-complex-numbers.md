@@ -8,8 +8,7 @@ description: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenp
 lastmod: '2024-03-13T22:44:56.393856-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
-  \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
-  \ Ohjelmoijat\u2026"
+  \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa."
 title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---

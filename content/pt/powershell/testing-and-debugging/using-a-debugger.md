@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.801471-06:00'
 model: gpt-4-0125-preview
 summary: "No PowerShell, voc\xEA pode depurar scripts usando o Ambiente de Scripting\
   \ Integrado do PowerShell (ISE) ou o Visual Studio Code (VS Code) com a extens\xE3\
-  o do\u2026"
+  o do PowerShell."
 title: Usando um depurador
 weight: 35
 ---

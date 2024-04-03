@@ -8,8 +8,7 @@ description: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych
 lastmod: '2024-03-13T22:44:35.046553-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
-  w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\
-  \ zapewni\u0107\u2026"
+  w w celu weryfikacji zachowania Twojego kodu."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

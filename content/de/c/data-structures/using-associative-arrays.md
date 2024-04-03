@@ -7,7 +7,8 @@ description: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rt
 lastmod: '2024-03-13T22:44:54.344567-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rterb\xFC\
-  cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\u2026"
+  cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\
+  \ -manipulation genutzt werden."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

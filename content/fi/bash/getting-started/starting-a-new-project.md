@@ -4,8 +4,8 @@ description: "Uuden projektin aloittaminen on puhtaan koodisivun luomista ja pro
   \ rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa\u2026"
 lastmod: '2024-03-13T22:44:56.740147-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion\
-  \ rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa\u2026"
+summary: Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion
+  rakentamista.
 title: Uuden projektin aloittaminen
 weight: 1
 ---

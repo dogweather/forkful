@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.340004-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans le Fish Shell permet aux scripts\
   \ de prendre des d\xE9cisions bas\xE9es sur la pr\xE9sence ou l'absence de structures\
-  \ de\u2026"
+  \ de r\xE9pertoires, facilitant des t\xE2ches comme les op\xE9rations conditionnelles\
+  \ sur les fichiers, les journaux d'activit\xE9 ou la configuration de l'environnement."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.908667-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, kt\xF3ry oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119\
   zykiem znacznik\xF3w), to standard serializacji danych czytelnych dla cz\u0142owieka,\
-  \ kt\xF3ry mo\u017Ce\u2026"
+  \ kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany w r\xF3\u017Cnych aplikacjach, od plik\xF3\
+  w konfiguracyjnych po przechowywanie danych."
 title: Praca z YAML
 weight: 41
 ---

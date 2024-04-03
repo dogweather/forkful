@@ -6,8 +6,7 @@ description: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adi
 lastmod: '2024-03-13T22:44:46.190881-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adicional,\
-  \ a unidade imagin\xE1ria 'i'. Programadores os utilizam em v\xE1rias \xE1reas,\
-  \ incluindo\u2026"
+  \ a unidade imagin\xE1ria 'i'."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

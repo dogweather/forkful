@@ -7,9 +7,7 @@ description: "Je code organiseren in functies splitst je script in herbruikbare 
   \ je\u2026"
 lastmod: '2024-03-13T22:44:51.343980-06:00'
 model: gpt-4-0125-preview
-summary: "Je code organiseren in functies splitst je script in herbruikbare delen.\
-  \ Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van\
-  \ je\u2026"
+summary: Je code organiseren in functies splitst je script in herbruikbare delen.
 title: Code organiseren in functies
 weight: 18
 ---

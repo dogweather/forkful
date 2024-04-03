@@ -9,9 +9,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 x\u1EED 
 lastmod: '2024-03-13T22:44:36.763431-06:00'
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 x\u1EED l\xFD\
-  \ v\xE0 ph\xE2n t\xEDch c\u1EA5u tr\xFAc v\xE0 n\u1ED9i dung c\u1EE7a m\xE3 HTML.\
-  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u1EA5y d\u1EEF\
-  \ li\u1EC7u t\u1EEB trang web, thao t\xE1c\u2026"
+  \ v\xE0 ph\xE2n t\xEDch c\u1EA5u tr\xFAc v\xE0 n\u1ED9i dung c\u1EE7a m\xE3 HTML."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

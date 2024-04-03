@@ -4,8 +4,8 @@ description: "Capitalizing a string in Swift modifies the given string so that i
   \ first character is uppercase, and the remaining characters are lowercase. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.380840-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string in Swift modifies the given string so that its first\
-  \ character is uppercase, and the remaining characters are lowercase. Programmers\u2026"
+summary: Capitalizing a string in Swift modifies the given string so that its first
+  character is uppercase, and the remaining characters are lowercase.
 title: Capitalizing a string
 weight: 2
 ---

@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn trong c\xE1c d\u1EF1 \xE1\
   n Arduino li\xEAn quan \u0111\u1EBFn vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1\
   \ tr\u1ECB kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3\
-  c theo thi\u1EBFt k\u1EBF, r\u1EA5t quan tr\u1ECDng cho\u2026"
+  c theo thi\u1EBFt k\u1EBF, r\u1EA5t quan tr\u1ECDng cho c\xE1c \u1EE9ng d\u1EE5\
+  ng nh\u01B0 tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng, v\xE0 h\u1EC7 th\u1ED1ng b\u1EA3\
+  o m\u1EADt."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

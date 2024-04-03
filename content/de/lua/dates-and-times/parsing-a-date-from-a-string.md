@@ -6,8 +6,9 @@ description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung
   \ textuellen Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines\u2026"
 lastmod: '2024-03-13T22:44:54.024420-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen\
-  \ Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines\u2026"
+summary: Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen
+  Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines Lua-Programms
+  leicht manipuliert, gespeichert oder verglichen werden kann.
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

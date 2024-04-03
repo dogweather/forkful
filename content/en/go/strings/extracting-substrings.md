@@ -4,8 +4,8 @@ description: "Extracting substrings involves retrieving specific portions of a s
   \ based on their positions. Programmers frequently perform this operation to process\u2026"
 lastmod: '2024-03-13T22:44:59.621295-06:00'
 model: gpt-4-0125-preview
-summary: "Extracting substrings involves retrieving specific portions of a string\
-  \ based on their positions. Programmers frequently perform this operation to process\u2026"
+summary: Extracting substrings involves retrieving specific portions of a string based
+  on their positions.
 title: Extracting substrings
 weight: 6
 ---

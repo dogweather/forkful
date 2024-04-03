@@ -7,7 +7,7 @@ description: "Merkkijonojen yhdist\xE4minen Visual Basic for Applications (VBA) 
 lastmod: '2024-03-13T22:44:56.391775-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen yhdist\xE4minen Visual Basic for Applications (VBA) -ohjelmointikieless\xE4\
-  \ tarkoittaa kahden tai useamman merkkijonon liitt\xE4mist\xE4 yhdeksi\u2026"
+  \ tarkoittaa kahden tai useamman merkkijonon liitt\xE4mist\xE4 yhdeksi kokonaisuudeksi."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.413392-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
   \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
-  \ sc\xE9narios tels que\u2026"
+  \ sc\xE9narios tels que les simulations, la cryptographie, et les jeux."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

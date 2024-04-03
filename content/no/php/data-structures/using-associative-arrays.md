@@ -7,7 +7,7 @@ description: "Assosiative tabeller i PHP er som superladde lister der hvert elem
 lastmod: '2024-03-13T22:44:40.878901-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller i PHP er som superladde lister der hvert element kan\
-  \ n\xE5s ved hjelp av en menneskeleselig n\xF8kkel i stedet for bare tall. Programmerere\u2026"
+  \ n\xE5s ved hjelp av en menneskeleselig n\xF8kkel i stedet for bare tall."
 title: Bruke associative tabeller
 weight: 15
 ---

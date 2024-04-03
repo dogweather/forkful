@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.125725-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering inneb\xE4r att\
   \ man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat i Base64, f\xF6\
-  r att bevisa sin\u2026"
+  r att bevisa sin identitet."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

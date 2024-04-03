@@ -6,8 +6,7 @@ description: "Leer un archivo de texto en Java significa extraer la informaci\xF
 lastmod: '2024-03-13T22:44:58.954678-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Java significa extraer la informaci\xF3n contenida\
-  \ en \xE9l. Los programadores lo hacen para trabajar con datos, configuraciones\
-  \ o\u2026"
+  \ en \xE9l."
 title: Lectura de un archivo de texto
 weight: 22
 ---

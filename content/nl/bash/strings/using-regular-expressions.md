@@ -8,7 +8,7 @@ description: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor t
 lastmod: '2024-03-13T22:44:50.969620-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst defini\xEB\
-  ren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren van\u2026"
+  ren."
 title: Reguliere expressies gebruiken
 weight: 11
 ---

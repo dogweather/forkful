@@ -4,8 +4,7 @@ description: "Iniziamo un nuovo progetto per trasformare le idee in codice funzi
   \ I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o\u2026"
 lastmod: '2024-03-13T22:44:43.727053-06:00'
 model: gpt-4-1106-preview
-summary: "Iniziamo un nuovo progetto per trasformare le idee in codice funzionante.\
-  \ I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o\u2026"
+summary: Iniziamo un nuovo progetto per trasformare le idee in codice funzionante.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

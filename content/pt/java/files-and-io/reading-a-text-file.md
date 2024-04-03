@@ -6,8 +6,7 @@ description: "Ler um arquivo de texto em Java \xE9 pegar a informa\xE7\xE3o arma
 lastmod: '2024-03-13T22:44:46.473136-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em Java \xE9 pegar a informa\xE7\xE3o armazenada\
-  \ num arquivo no seu computador e us\xE1-la dentro do seu programa. Fazemos isso\
-  \ porque, \xE0s\u2026"
+  \ num arquivo no seu computador e us\xE1-la dentro do seu programa."
 title: Lendo um arquivo de texto
 weight: 22
 ---

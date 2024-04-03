@@ -6,8 +6,7 @@ description: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprac
 lastmod: '2024-03-13T22:44:53.654040-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
-  \ ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer nutzen\
-  \ es\u2026"
+  \ ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML."
 title: Arbeiten mit TOML
 weight: 39
 ---

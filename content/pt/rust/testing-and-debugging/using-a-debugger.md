@@ -6,8 +6,7 @@ description: "Rust suporta v\xE1rios depuradores, mas um comum \xE9 o `gdb` para
 lastmod: '2024-03-13T22:44:46.372131-06:00'
 model: gpt-4-0125-preview
 summary: "Rust suporta v\xE1rios depuradores, mas um comum \xE9 o `gdb` para GNU/Linux\
-  \ ou `lldb` para macOS. Voc\xEA tamb\xE9m pode usar `rust-gdb` ou `rust-lldb`, que\
-  \ s\xE3o\u2026"
+  \ ou `lldb` para macOS."
 title: Usando um depurador
 weight: 35
 ---

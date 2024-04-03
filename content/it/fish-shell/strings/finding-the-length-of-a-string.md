@@ -5,8 +5,8 @@ description: "In Fish Shell, troviamo la lunghezza di una stringa per sapere qua
   \ e nella\u2026"
 lastmod: '2024-03-13T22:44:43.847119-06:00'
 model: gpt-4-1106-preview
-summary: "In Fish Shell, troviamo la lunghezza di una stringa per sapere quanti caratteri\
-  \ contiene. Quest'operazione \xE8 utile nella manipolazione dei testi e nella\u2026"
+summary: In Fish Shell, troviamo la lunghezza di una stringa per sapere quanti caratteri
+  contiene.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

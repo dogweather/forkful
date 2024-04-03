@@ -7,7 +7,7 @@ description: "Analysering av en dato fra en tekststreng i C# inneb\xE6rer konver
 lastmod: '2024-03-13T22:44:40.806054-06:00'
 model: gpt-4-0125-preview
 summary: "Analysering av en dato fra en tekststreng i C# inneb\xE6rer konvertering\
-  \ av tekstrepresentasjoner av datoer og tider til et `DateTime`-objekt. Dette er\u2026"
+  \ av tekstrepresentasjoner av datoer og tider til et `DateTime`-objekt."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

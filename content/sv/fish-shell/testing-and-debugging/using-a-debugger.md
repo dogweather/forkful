@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:38.342777-06:00'
 model: gpt-4-0125-preview
 summary: "Fish har inte en inbyggd debugger som vissa andra skal, men du kan anv\xE4\
   nda externa verktyg som `gdb` f\xF6r att debugga kompilerade program eller `fish\
-  \ -d`\u2026"
+  \ -d` f\xF6r att k\xF6ra fish med debug-utdata p\xE5 olika niv\xE5er."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

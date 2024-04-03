@@ -6,8 +6,9 @@ description: "Leer un archivo de texto en Google Apps Script (GAS) implica acced
   \ y extraer datos de texto de archivos almacenados en Google Drive u otro\u2026"
 lastmod: '2024-03-13T22:44:58.583047-06:00'
 model: gpt-4-0125-preview
-summary: "Leer un archivo de texto en Google Apps Script (GAS) implica acceder y extraer\
-  \ datos de texto de archivos almacenados en Google Drive u otro\u2026"
+summary: Leer un archivo de texto en Google Apps Script (GAS) implica acceder y extraer
+  datos de texto de archivos almacenados en Google Drive u otro almacenamiento basado
+  en la nube accesible.
 title: Leyendo un archivo de texto
 weight: 22
 ---

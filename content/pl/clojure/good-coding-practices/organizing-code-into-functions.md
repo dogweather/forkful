@@ -6,8 +6,7 @@ description: "Grupowanie kodu w funkcje polega na pakowaniu blok\xF3w kodu, kt\x
 lastmod: '2024-03-13T22:44:35.001597-06:00'
 model: gpt-4-1106-preview
 summary: "Grupowanie kodu w funkcje polega na pakowaniu blok\xF3w kodu, kt\xF3re realizuj\u0105\
-  \ konkretne zadania. Dzi\u0119ki temu kod staje si\u0119 przejrzysty, \u0142atwiejszy\
-  \ w\u2026"
+  \ konkretne zadania."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

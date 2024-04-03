@@ -8,7 +8,7 @@ description: "Extraer subcadenas implica recuperar porciones espec\xEDficas de u
 lastmod: '2024-03-13T22:44:58.454616-06:00'
 model: gpt-4-0125-preview
 summary: "Extraer subcadenas implica recuperar porciones espec\xEDficas de una cadena\
-  \ bas\xE1ndose en sus posiciones. Los programadores realizan frecuentemente esta\u2026"
+  \ bas\xE1ndose en sus posiciones."
 title: Extrayendo subcadenas
 weight: 6
 ---

@@ -5,8 +5,7 @@ description: "Sapere la lunghezza di una stringa significa contarne i caratteri.
   \ per\u2026"
 lastmod: '2024-03-13T22:44:43.588960-06:00'
 model: gpt-4-1106-preview
-summary: "Sapere la lunghezza di una stringa significa contarne i caratteri. Lo facciamo\
-  \ per verificare input dell'utente, per manipolare testo o semplicemente per\u2026"
+summary: Sapere la lunghezza di una stringa significa contarne i caratteri.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

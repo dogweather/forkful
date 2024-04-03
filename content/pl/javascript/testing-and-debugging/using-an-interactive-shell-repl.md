@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.798136-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
   tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
-  \ kod, testowa\u0107 funkcje, algorytmy\u2026"
+  \ kod, testowa\u0107 funkcje, algorytmy lub bawi\u0107 si\u0119 pomys\u0142ami."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

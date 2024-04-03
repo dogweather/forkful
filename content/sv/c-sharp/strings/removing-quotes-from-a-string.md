@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.901135-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i C# inneb\xE4r att du\
   \ tar bort de irriterande dubbla (`\"`) eller enkla (`'`) citationstecken som omsluter\
-  \ din\u2026"
+  \ din text."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

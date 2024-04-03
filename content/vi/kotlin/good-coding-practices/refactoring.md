@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 quy tr\xECnh ch\u1EC9nh s\u1EEDa m\xE3 ngu\u1ED3\
   n hi\u1EC7n c\xF3 nh\u1EB1m c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc, \u0111\u1ED9 d\u1EC5\
   \ \u0111\u1ECDc, v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a n\xF3 m\xE0 kh\xF4ng thay \u0111\
-  \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
+  \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

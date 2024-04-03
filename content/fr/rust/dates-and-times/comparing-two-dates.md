@@ -5,9 +5,7 @@ description: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. Le
   ances, ou calculer des\u2026"
 lastmod: '2024-03-13T22:44:57.495448-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. Les programmeurs\
-  \ font \xE7a pour trier des \xE9l\xE9ments, v\xE9rifier des \xE9ch\xE9ances, ou\
-  \ calculer des\u2026"
+summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique."
 title: Comparer deux dates
 weight: 27
 ---

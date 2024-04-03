@@ -6,7 +6,7 @@ description: "Beregning av en dato i fremtiden eller fortiden er prosessen med \
 lastmod: '2024-03-13T22:44:40.456743-06:00'
 model: gpt-4-1106-preview
 summary: "Beregning av en dato i fremtiden eller fortiden er prosessen med \xE5 legge\
-  \ til eller trekke fra dager, m\xE5neder eller \xE5r fra en bestemt dato. Programmerere\u2026"
+  \ til eller trekke fra dager, m\xE5neder eller \xE5r fra en bestemt dato."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

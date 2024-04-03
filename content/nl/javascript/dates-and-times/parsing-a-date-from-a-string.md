@@ -6,8 +6,8 @@ description: "Een datum uit een string parsen betekent het omzetten van tekst di
   \ een datum vertegenwoordigt naar een datumobject. Programmeurs doen dit omdat het\u2026"
 lastmod: '2024-03-13T22:44:51.211693-06:00'
 model: gpt-4-0125-preview
-summary: "Een datum uit een string parsen betekent het omzetten van tekst die een\
-  \ datum vertegenwoordigt naar een datumobject. Programmeurs doen dit omdat het\u2026"
+summary: Een datum uit een string parsen betekent het omzetten van tekst die een datum
+  vertegenwoordigt naar een datumobject.
 title: Een datum uit een string parsen
 weight: 30
 ---

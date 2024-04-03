@@ -4,8 +4,7 @@ description: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 s
   \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
 lastmod: '2024-03-13T22:44:57.093411-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
-  \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
+summary: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi."
 title: Lokitus
 weight: 17
 ---

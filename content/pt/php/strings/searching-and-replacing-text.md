@@ -6,8 +6,7 @@ description: "Procurar e substituir texto em PHP \xE9 como mudar uma palavra esp
 lastmod: '2024-03-13T22:44:46.652492-06:00'
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto em PHP \xE9 como mudar uma palavra espec\xED\
-  fica em um livro inteiro. Programadores fazem isso para atualizar dados, corrigir\
-  \ erros\u2026"
+  fica em um livro inteiro."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

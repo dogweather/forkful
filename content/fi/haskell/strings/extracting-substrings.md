@@ -5,9 +5,7 @@ description: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohj
   \ segmenttej\xE4 \u2013\u2026"
 lastmod: '2024-03-13T22:44:56.604822-06:00'
 model: gpt-4-1106-preview
-summary: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat\
-  \ tekev\xE4t sit\xE4, kun tarvitsevat k\xE4sitell\xE4 merkkijonojen erityisi\xE4\
-  \ segmenttej\xE4 \u2013\u2026"
+summary: Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

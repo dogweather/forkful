@@ -5,8 +5,8 @@ description: "In Swift, printing debug output means displaying data in a debug a
   \ your\u2026"
 lastmod: '2024-03-13T22:45:00.398771-06:00'
 model: gpt-4-1106-preview
-summary: "In Swift, printing debug output means displaying data in a debug area, typically\
-  \ within an IDE or a console, for monitoring what's happening live in your\u2026"
+summary: In Swift, printing debug output means displaying data in a debug area, typically
+  within an IDE or a console, for monitoring what's happening live in your code.
 title: Printing debug output
 weight: 33
 ---

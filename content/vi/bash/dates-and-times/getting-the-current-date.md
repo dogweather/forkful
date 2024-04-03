@@ -9,9 +9,7 @@ description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u
 lastmod: '2024-03-13T22:44:36.892800-06:00'
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5y\
-  \ ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn\
-  \ c\u1EA7n n\xF3 cho vi\u1EC7c ghi nh\u1EADt k\xFD, \u0111\xE1nh d\u1EA5u th\u1EDD\
-  i gian, ho\u1EB7c l\xEAn l\u1ECBch c\xE1c t\xE1c\u2026"
+  \ ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

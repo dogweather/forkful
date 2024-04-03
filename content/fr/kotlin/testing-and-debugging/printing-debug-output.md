@@ -6,8 +6,7 @@ description: "L'affichage des informations de d\xE9bogage, c'est \xE9crire des d
 lastmod: '2024-03-13T22:44:57.741598-06:00'
 model: gpt-4-1106-preview
 summary: "L'affichage des informations de d\xE9bogage, c'est \xE9crire des donn\xE9\
-  es dans la console pour comprendre ce qui se passe dans le code. Les d\xE9veloppeurs\
-  \ le font\u2026"
+  es dans la console pour comprendre ce qui se passe dans le code."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

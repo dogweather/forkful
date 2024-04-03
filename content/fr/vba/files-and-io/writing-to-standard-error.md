@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.599723-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\
-  \ sortie\u2026"
+  \ sortie standard, habituellement vers la console ou un fichier journal."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -6,8 +6,8 @@ description: "Het verwijderen van aanhalingstekens uit een string betekent het w
   \ van die dubbele of enkele aanhalingstekens die rondom tekstwaarden wikkelen.\u2026"
 lastmod: '2024-03-13T22:44:51.322611-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een string betekent het wegpellen\
-  \ van die dubbele of enkele aanhalingstekens die rondom tekstwaarden wikkelen.\u2026"
+summary: Het verwijderen van aanhalingstekens uit een string betekent het wegpellen
+  van die dubbele of enkele aanhalingstekens die rondom tekstwaarden wikkelen.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

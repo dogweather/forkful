@@ -8,7 +8,7 @@ description: "Ottenere la data corrente in PHP \xE8 un'attivit\xE0 fondamentale 
 lastmod: '2024-03-13T22:44:43.527047-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in PHP \xE8 un'attivit\xE0 fondamentale che permette\
-  \ di recuperare e manipolare la data e l'ora del sistema. Questo \xE8 cruciale per\u2026"
+  \ di recuperare e manipolare la data e l'ora del sistema."
 title: Ottenere la data corrente
 weight: 29
 ---

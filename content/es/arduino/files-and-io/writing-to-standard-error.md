@@ -7,7 +7,8 @@ description: "Escribir en el error est\xE1ndar (stderr) en la programaci\xF3n de
 lastmod: '2024-03-13T22:44:59.349902-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en la programaci\xF3n de Arduino\
-  \ implica dirigir los mensajes de error y diagn\xF3sticos a un canal separado, asegurando\u2026"
+  \ implica dirigir los mensajes de error y diagn\xF3sticos a un canal separado, asegurando\
+  \ que no se mezclen con la salida est\xE1ndar (stdout)."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

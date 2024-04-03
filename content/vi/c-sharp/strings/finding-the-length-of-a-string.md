@@ -11,9 +11,7 @@ lastmod: '2024-03-13T22:44:36.645344-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i \u0111\u1EC1 c\u1EAD\
   p \u0111\u1EBFn vi\u1EC7c \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 c\u1EE7\
-  a n\xF3. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE1\
-  c nh\u1EADn \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, ph\xE2n b\u1ED5\
-  \ t\xE0i\u2026"
+  a n\xF3."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

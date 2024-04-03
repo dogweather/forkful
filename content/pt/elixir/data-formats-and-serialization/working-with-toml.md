@@ -4,8 +4,8 @@ description: "Trabalhar com TOML significa analisar e gerar dados TOML (Tom's Ob
   \ Minimal Language) usando Elixir. Os programadores o utilizam para manipular\u2026"
 lastmod: '2024-03-13T22:44:46.261333-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com TOML significa analisar e gerar dados TOML (Tom's Obvious,\
-  \ Minimal Language) usando Elixir. Os programadores o utilizam para manipular\u2026"
+summary: Trabalhar com TOML significa analisar e gerar dados TOML (Tom's Obvious,
+  Minimal Language) usando Elixir.
 title: Trabalhando com TOML
 weight: 39
 ---

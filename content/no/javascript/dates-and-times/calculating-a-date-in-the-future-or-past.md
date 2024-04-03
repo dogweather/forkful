@@ -5,7 +5,7 @@ description: "I JavaScript kan vi beregne en dato i fremtiden eller fortiden; de
 lastmod: '2024-03-13T22:44:41.196676-06:00'
 model: gpt-4-1106-preview
 summary: "I JavaScript kan vi beregne en dato i fremtiden eller fortiden; det er nyttig\
-  \ for funksjoner som p\xE5minnelser eller historiske dataanalyser. Programmerere\u2026"
+  \ for funksjoner som p\xE5minnelser eller historiske dataanalyser."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

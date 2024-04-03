@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.402103-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt system\
   \ f\xF6r att extrahera information och manipulera eller visa den som det beh\xF6\
-  vs. Programmerare\u2026"
+  vs."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

@@ -6,8 +6,9 @@ description: "Associatieve arrays, of zoals Elm ze noemt, Woordenboeken (Diction
   \ koppelen sleutels aan waarden op een manier die het opzoeken, invoegen en\u2026"
 lastmod: '2024-03-13T22:44:50.717471-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, of zoals Elm ze noemt, Woordenboeken (Dictionaries),\
-  \ koppelen sleutels aan waarden op een manier die het opzoeken, invoegen en\u2026"
+summary: Associatieve arrays, of zoals Elm ze noemt, Woordenboeken (Dictionaries),
+  koppelen sleutels aan waarden op een manier die het opzoeken, invoegen en verwijderen
+  van waarden supersnel maakt.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

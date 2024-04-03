@@ -9,9 +9,7 @@ lastmod: '2024-03-13T22:44:47.260840-06:00'
 model: gpt-4-0125-preview
 summary: "\u8BA9\u6211\u4EEC\u6765\u8BE6\u7EC6\u4E86\u89E3\u4F7F\u7528`pdb`\uFF0C\
   Python\u5185\u7F6E\u7684\u8C03\u8BD5\u5668\u3002\u60F3\u8C61\u4E00\u4E0B\uFF0C\u6709\
-  \u4E00\u4E2A\u6587\u4EF6`buggy.py`\uFF0C\u91CC\u9762\u9690\u85CF\u7740\u4E00\u4E2A\
-  \u9690\u853D\u7684\u9519\u8BEF\uFF1A ```Python def add_one(number): result = number\
-  \ ++ 1 return result print(add_one(7)) ```\u2026"
+  \u4E00\u4E2A\u6587\u4EF6`buggy."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

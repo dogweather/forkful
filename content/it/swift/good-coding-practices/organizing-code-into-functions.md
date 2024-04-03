@@ -5,9 +5,8 @@ description: "Raggruppare il codice in funzioni significa scomporre compiti in b
   \ pi\xF9\u2026"
 lastmod: '2024-03-13T22:44:43.775575-06:00'
 model: gpt-4-0125-preview
-summary: "Raggruppare il codice in funzioni significa scomporre compiti in blocchi\
-  \ riutilizzabili. Ci\xF2 rende il codice pi\xF9 pulito, meno incline a errori e\
-  \ pi\xF9\u2026"
+summary: Raggruppare il codice in funzioni significa scomporre compiti in blocchi
+  riutilizzabili.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

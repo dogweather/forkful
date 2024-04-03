@@ -6,8 +6,7 @@ description: "La refactorisation est le processus de restructuration du code inf
 lastmod: '2024-03-13T22:44:57.649776-06:00'
 model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant\u2014changer la facturation\u2014sans modifier son comportement externe.\
-  \ Les\u2026"
+  \ existant\u2014changer la facturation\u2014sans modifier son comportement externe."
 title: "R\xE9usinage"
 weight: 19
 ---

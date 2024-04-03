@@ -6,8 +6,7 @@ description: "W IDE Arduino mo\u017Cesz u\u017Cywa\u0107 wydruk\xF3w Serial do d
 lastmod: '2024-03-13T22:44:35.675882-06:00'
 model: gpt-4-0125-preview
 summary: "W IDE Arduino mo\u017Cesz u\u017Cywa\u0107 wydruk\xF3w Serial do debugowania,\
-  \ ale to troch\u0119 jak eksplorowanie jaskini z latark\u0105. Dla prawdziwego debugowania,\
-  \ mo\u017Cesz\u2026"
+  \ ale to troch\u0119 jak eksplorowanie jaskini z latark\u0105."
 title: Korzystanie z debugera
 weight: 35
 ---

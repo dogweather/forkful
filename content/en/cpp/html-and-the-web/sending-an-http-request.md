@@ -4,8 +4,7 @@ description: Sending an HTTP request fetches data from a web server. Programmers
   this to interact with web services, gather info, or communicate between systems.
 lastmod: '2024-03-13T22:45:00.354790-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request fetches data from a web server. Programmers do this
-  to interact with web services, gather info, or communicate between systems.
+summary: Sending an HTTP request fetches data from a web server.
 title: Sending an HTTP request
 weight: 44
 ---

@@ -6,8 +6,7 @@ description: "Feilh\xE5ndtering i programmene dine fanger opp de uforutsette tin
 lastmod: '2024-03-13T22:44:41.065295-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering i programmene dine fanger opp de uforutsette tingene som\
-  \ vil pr\xF8ve \xE5 snuble deg opp. Du gj\xF8r det for \xE5 hindre at Arduinoen\
-  \ din f\xE5r et\u2026"
+  \ vil pr\xF8ve \xE5 snuble deg opp."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

@@ -9,9 +9,7 @@ description: "H\xE3y c\xF9ng ph\xE2n t\xEDch c\xE1ch s\u1EED d\u1EE5ng `pdb`, de
 lastmod: '2024-03-13T22:44:36.103016-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE3y c\xF9ng ph\xE2n t\xEDch c\xE1ch s\u1EED d\u1EE5ng `pdb`, debugger\
-  \ c\xF3 s\u1EB5n c\u1EE7a Python. H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng m\u1ED9\
-  t file c\xF3 t\xEAn l\xE0 `buggy.py`, ch\u1EE9a m\u1ED9t l\u1ED7i kh\xF3 t\xECm:\
-  \ ```Python def\u2026"
+  \ c\xF3 s\u1EB5n c\u1EE7a Python."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

@@ -6,8 +6,8 @@ description: "Het omzetten van een string naar kleine letters verandert alle hoo
   \ in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor\u2026"
 lastmod: '2024-03-13T22:44:51.059715-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een string naar kleine letters verandert alle hoofdletters\
-  \ in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor\u2026"
+summary: Het omzetten van een string naar kleine letters verandert alle hoofdletters
+  in de tekst in hun kleine tegenhangers.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

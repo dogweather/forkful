@@ -8,7 +8,7 @@ description: "Debuguitvoer naar de seri\xEBle monitor printen is een manier om e
 lastmod: '2024-03-13T22:44:51.074358-06:00'
 model: gpt-4-0125-preview
 summary: "Debuguitvoer naar de seri\xEBle monitor printen is een manier om een kijkje\
-  \ te nemen in de geest van een Arduino. Programmeurs doen dit om problemen op te\u2026"
+  \ te nemen in de geest van een Arduino."
 title: Debug-output afdrukken
 weight: 33
 ---

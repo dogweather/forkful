@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VBA)\
   \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
   i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
-  \u1EDDng l\xE0 t\u1EDBi\u2026"
+  \u1EDDng l\xE0 t\u1EDBi b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n ho\u1EB7c m\u1ED9t t\u1EC7\
+  p nh\u1EADt k\xFD."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

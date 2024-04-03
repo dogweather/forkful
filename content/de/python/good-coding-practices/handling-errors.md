@@ -5,7 +5,8 @@ description: "Fehlerbehandlung in Python (oder jeder anderen Programmiersprache)
 lastmod: '2024-03-13T22:44:53.386336-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Python (oder jeder anderen Programmiersprache) bedeutet,\
-  \ mit dem Unerwarteten zu rechnen \u2013 es ist die Kunst, anmutig zu handhaben,\u2026"
+  \ mit dem Unerwarteten zu rechnen \u2013 es ist die Kunst, anmutig zu handhaben,\
+  \ wenn etwas in Ihrem Code schiefgeht."
 title: Fehlerbehandlung
 weight: 16
 ---

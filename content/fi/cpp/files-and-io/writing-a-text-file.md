@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.883752-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen C++:lla sis\xE4lt\xE4\xE4 tiedoston luomisen\
   \ tai avaamisen ja sitten datan kirjoittamisen siihen, mik\xE4 on perustavaa laatua\
-  \ oleva\u2026"
+  \ oleva teht\xE4v\xE4 sovelluksille, jotka tarvitsevat tietojen s\xE4ilytt\xE4mist\xE4\
+  , kuten lokit, k\xE4ytt\xE4j\xE4n luoma sis\xE4lt\xF6 tai konfiguraatioasetukset."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

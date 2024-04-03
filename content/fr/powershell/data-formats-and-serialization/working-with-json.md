@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.082935-06:00'
 model: gpt-4-0125-preview
 summary: "L\u2019int\xE9gration de PowerShell avec le JSON (JavaScript Object Notation)\
   \ concerne le parsing (lecture) et la g\xE9n\xE9ration (\xE9criture) de donn\xE9\
-  es JSON, un format\u2026"
+  es JSON, un format courant pour l'\xE9change de donn\xE9es sur le web."
 title: Travailler avec JSON
 weight: 38
 ---

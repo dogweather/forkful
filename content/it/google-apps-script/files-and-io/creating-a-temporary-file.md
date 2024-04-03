@@ -6,8 +6,9 @@ description: "Creare un file temporaneo in Google Apps Script implica la generaz
   \ di un file destinato a un uso a breve termine, tipicamente per l'elaborazione\u2026"
 lastmod: '2024-03-13T22:44:42.977525-06:00'
 model: gpt-4-0125-preview
-summary: "Creare un file temporaneo in Google Apps Script implica la generazione di\
-  \ un file destinato a un uso a breve termine, tipicamente per l'elaborazione\u2026"
+summary: Creare un file temporaneo in Google Apps Script implica la generazione di
+  un file destinato a un uso a breve termine, tipicamente per l'elaborazione intermedia
+  dei dati, il debug, o scopi di cache.
 title: Creazione di un file temporaneo
 weight: 21
 ---

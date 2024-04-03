@@ -6,8 +6,9 @@ description: "JSON (JavaScript Object Notatie) is een lichtgewicht data-uitwisse
   \ dat gemakkelijk te lezen en schrijven is voor mensen en gemakkelijk te\u2026"
 lastmod: '2024-03-13T22:44:50.483270-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notatie) is een lichtgewicht data-uitwisselingsformaat\
-  \ dat gemakkelijk te lezen en schrijven is voor mensen en gemakkelijk te\u2026"
+summary: JSON (JavaScript Object Notatie) is een lichtgewicht data-uitwisselingsformaat
+  dat gemakkelijk te lezen en schrijven is voor mensen en gemakkelijk te ontleden
+  en genereren is voor machines.
 title: Werken met JSON
 weight: 38
 ---

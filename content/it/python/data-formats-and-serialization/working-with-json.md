@@ -7,9 +7,8 @@ description: "Lavorare con JSON (JavaScript Object Notation) implica l'analisi d
   \ per lo\u2026"
 lastmod: '2024-03-13T22:44:43.022383-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON (JavaScript Object Notation) implica l'analisi di stringhe\
-  \ formattate in JSON in oggetti Python e viceversa. Ci\xF2 \xE8 fondamentale per\
-  \ lo\u2026"
+summary: Lavorare con JSON (JavaScript Object Notation) implica l'analisi di stringhe
+  formattate in JSON in oggetti Python e viceversa.
 title: Lavorare con JSON
 weight: 38
 ---

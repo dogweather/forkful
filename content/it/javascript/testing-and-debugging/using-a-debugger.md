@@ -4,8 +4,8 @@ description: "Ecco un po' di codice JavaScript che non si comporta come previsto
   \ ```javascript function buggyMultiply(a, b) { return a + b; // Ops! Questo dovrebbe\u2026"
 lastmod: '2024-03-13T22:44:43.816804-06:00'
 model: gpt-4-0125-preview
-summary: "Ecco un po' di codice JavaScript che non si comporta come previsto: ```javascript\
-  \ function buggyMultiply(a, b) { return a + b; // Ops! Questo dovrebbe\u2026"
+summary: "Ecco un po' di codice JavaScript che non si comporta come previsto:\n\n\
+  ```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Ops."
 title: Utilizzo di un debugger
 weight: 35
 ---

@@ -8,8 +8,7 @@ description: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram
 lastmod: '2024-03-13T22:44:38.386498-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
-  \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
-  r detta\u2026"
+  \ funktioner som automatiskt verifierar din kods funktionalitet."
 title: Skriva tester
 weight: 36
 ---

@@ -8,7 +8,8 @@ description: "Lire un fichier texte en Visual Basic pour Applications (VBA) impl
 lastmod: '2024-03-13T22:44:57.600921-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'acc\xE9\
-  der programmatiquement et d'extraire le contenu d'un fichier texte depuis une\u2026"
+  der programmatiquement et d'extraire le contenu d'un fichier texte depuis une application\
+  \ Office."
 title: Lecture d'un fichier texte
 weight: 22
 ---

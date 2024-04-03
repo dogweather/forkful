@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.522163-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
   n que se utiliza para una mir\xEDada de aplicaciones, tales como simulaciones, juegos\
-  \ y\u2026"
+  \ y sistemas de seguridad."
 title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---

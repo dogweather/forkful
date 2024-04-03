@@ -6,8 +6,7 @@ description: "Tratar erros \xE9 sobre esperar o inesperado; \xE9 como gerenciamo
 lastmod: '2024-03-13T22:44:46.333483-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros \xE9 sobre esperar o inesperado; \xE9 como gerenciamos quando\
-  \ as coisas d\xE3o errado no nosso c\xF3digo. Fazemos isso para evitar falhas e\
-  \ para dar aos\u2026"
+  \ as coisas d\xE3o errado no nosso c\xF3digo."
 title: Tratamento de erros
 weight: 16
 ---

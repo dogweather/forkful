@@ -5,9 +5,7 @@ description: "Mit\xE4 ja miksi? Komentoriviparametrien lukeminen mahdollistaa k\
   \xE4n, koska se\u2026"
 lastmod: '2024-03-13T22:44:56.158909-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 ja miksi? Komentoriviparametrien lukeminen mahdollistaa k\xE4ytt\xE4\
-  j\xE4n antamien arvojen vastaanottamisen suoraan ohjelmaasi. T\xE4t\xE4 tehd\xE4\
-  \xE4n, koska se\u2026"
+summary: "Mit\xE4 ja miksi."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

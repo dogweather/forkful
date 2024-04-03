@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.852231-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
   \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
-  \ czasu systemu. W\u2026"
+  \ czasu systemu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

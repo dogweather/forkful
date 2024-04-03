@@ -6,8 +6,7 @@ description: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de carac
 lastmod: '2024-03-13T22:44:46.230223-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
-  \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\
-  \ mensagens de\u2026"
+  \ para formar um \xFAnico texto."
 title: Concatenando strings
 weight: 3
 ---

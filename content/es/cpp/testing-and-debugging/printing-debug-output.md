@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.377844-06:00'
 model: gpt-4-1106-preview
 summary: "Cuando se programa, imprimir mensajes de depuraci\xF3n es como tener una\
   \ linterna en un t\xFAnel oscuro; nos ayuda a ver qu\xE9 est\xE1 pasando dentro\
-  \ del c\xF3digo. Los\u2026"
+  \ del c\xF3digo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

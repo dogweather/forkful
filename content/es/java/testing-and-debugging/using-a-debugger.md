@@ -6,8 +6,7 @@ description: "Digamos que tienes un programa Java sencillo que est\xE1 actuando 
 lastmod: '2024-03-13T22:44:58.942004-06:00'
 model: gpt-4-0125-preview
 summary: "Digamos que tienes un programa Java sencillo que est\xE1 actuando de manera\
-  \ extra\xF1a, y no puedes descubrir por qu\xE9. As\xED es c\xF3mo iniciar\xEDas\
-  \ un depurador\u2026"
+  \ extra\xF1a, y no puedes descubrir por qu\xE9."
 title: Usando un depurador
 weight: 35
 ---

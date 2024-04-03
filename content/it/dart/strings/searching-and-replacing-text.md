@@ -6,8 +6,8 @@ description: "Cercare e sostituire testo in Dart comporta l'esame di stringhe pe
   \ trovare determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.\u2026"
 lastmod: '2024-03-13T22:44:43.112121-06:00'
 model: gpt-4-0125-preview
-summary: "Cercare e sostituire testo in Dart comporta l'esame di stringhe per trovare\
-  \ determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.\u2026"
+summary: Cercare e sostituire testo in Dart comporta l'esame di stringhe per trovare
+  determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

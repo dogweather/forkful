@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.424800-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string no Visual Basic for Applications (VBA)\
   \ \xE9 um processo usado para mudar o tipo de dados de uma data para um formato\
-  \ de\u2026"
+  \ de string."
 title: Convertendo uma data em uma string
 weight: 28
 ---

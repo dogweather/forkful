@@ -8,7 +8,8 @@ description: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om
 lastmod: '2024-03-13T22:44:37.374841-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om att eliminera\
-  \ vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat p\xE5 regler\u2026"
+  \ vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat p\xE5 regler\
+  \ definierade av ett m\xF6nster (vanligtvis via regulj\xE4ra uttryck)."
 title: "Radera tecken som matchar ett m\xF6nster"
 weight: 5
 ---

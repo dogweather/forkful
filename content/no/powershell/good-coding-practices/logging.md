@@ -5,7 +5,8 @@ description: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler
 lastmod: '2024-03-13T22:44:41.023837-06:00'
 model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
-  \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"
+  \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\
+  \ kj\xF8rer i det fri."
 title: "Loggf\xF8ring"
 weight: 17
 ---

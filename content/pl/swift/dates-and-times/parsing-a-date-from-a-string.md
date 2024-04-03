@@ -6,8 +6,8 @@ description: "Parsowanie daty ze stringa polega na konwertowaniu tekstowych repr
   \ daty i czasu na obiekt `Date`. Proces ten jest niezb\u0119dny w aplikacjach, w\u2026"
 lastmod: '2024-03-13T22:44:35.764172-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji\
-  \ daty i czasu na obiekt `Date`. Proces ten jest niezb\u0119dny w aplikacjach, w\u2026"
+summary: Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji
+  daty i czasu na obiekt `Date`.
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

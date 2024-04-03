@@ -4,8 +4,7 @@ description: "Stringinterpolasjon lar oss flette inn verdier i en streng. Det gj
   r koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av\u2026"
 lastmod: '2024-03-13T22:44:40.560060-06:00'
 model: gpt-4-1106-preview
-summary: "Stringinterpolasjon lar oss flette inn verdier i en streng. Det gj\xF8r\
-  \ koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av\u2026"
+summary: Stringinterpolasjon lar oss flette inn verdier i en streng.
 title: Interpolering av en streng
 weight: 8
 ---

@@ -7,8 +7,9 @@ description: "Trabajar con CSV (Valores Separados por Comas) en JavaScript impli
   \ o\u2026"
 lastmod: '2024-03-13T22:44:59.480801-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con CSV (Valores Separados por Comas) en JavaScript implica analizar\
-  \ o generar archivos CSV para ingerir datos tabulares de fuentes externas o\u2026"
+summary: Trabajar con CSV (Valores Separados por Comas) en JavaScript implica analizar
+  o generar archivos CSV para ingerir datos tabulares de fuentes externas o exportar
+  datos para su uso en otros programas.
 title: Trabajando con CSV
 weight: 37
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.464555-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
   res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
-  re soit une\u2026"
+  re soit une majuscule s'il s'agit d'une lettre, tout en laissant le reste de la\
+  \ cha\xEEne inchang\xE9."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.867140-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana ci\u0105gu na wielkie litery w j\u0119zyku C obejmuje przekszta\u0142\
   cenie pierwszej litery ka\u017Cdego s\u0142owa w danym ci\u0105gu na wielk\u0105\
-  \ liter\u0119, je\u015Bli jest to ma\u0142a\u2026"
+  \ liter\u0119, je\u015Bli jest to ma\u0142a litera."
 title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
 weight: 2
 ---

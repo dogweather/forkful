@@ -4,8 +4,8 @@ description: "Remover aspas de uma string envolve retirar as marcas de aspas que
   \ a string. Programadores frequentemente querem fazer isso para sanear dados de\u2026"
 lastmod: '2024-03-13T22:44:46.739073-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string envolve retirar as marcas de aspas que envolvem\
-  \ a string. Programadores frequentemente querem fazer isso para sanear dados de\u2026"
+summary: Remover aspas de uma string envolve retirar as marcas de aspas que envolvem
+  a string.
 title: Removendo aspas de uma string
 weight: 9
 ---

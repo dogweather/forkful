@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.524802-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string na programa\xE7\xE3o envolve converter o primeiro\
   \ caractere da string em mai\xFAsculo, caso ele n\xE3o seja, o que \xE9 \xFAtil\
-  \ para formatar\u2026"
+  \ para formatar entradas de usu\xE1rio ou exibir texto em uma interface de usu\xE1\
+  rio de maneira mais padronizada ou amig\xE1vel."
 title: Capitalizando uma string
 weight: 2
 ---

@@ -6,8 +6,7 @@ description: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa
 lastmod: '2024-03-13T22:44:56.496113-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa ennakoida\
-  \ ja k\xE4sitell\xE4 ongelmia. Ohjelmoijat tekev\xE4t sit\xE4 v\xE4ltt\xE4\xE4kseen\
-  \ kaatumisia,\u2026"
+  \ ja k\xE4sitell\xE4 ongelmia."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

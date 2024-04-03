@@ -6,8 +6,8 @@ description: "Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten luku
   \ luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta.\u2026"
 lastmod: '2024-03-13T22:44:56.045907-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten lukusarjojen\
-  \ luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta.\u2026"
+summary: Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten lukusarjojen
+  luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta.
 title: Satunnaisten numeroiden generointi
 weight: 12
 ---

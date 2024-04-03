@@ -6,7 +6,7 @@ description: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servido
 lastmod: '2024-03-13T22:44:59.333089-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor de internet\
-  \ que nos mande los datos de una p\xE1gina. Los programadores hacen esto para obtener\u2026"
+  \ que nos mande los datos de una p\xE1gina."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -5,8 +5,8 @@ description: "Generating random numbers in programming is about creating values 
   \ of\u2026"
 lastmod: '2024-03-13T22:44:59.741466-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers in programming is about creating values that cannot\
-  \ be predicted logically ahead of time. Programmers do this for a variety of\u2026"
+summary: Generating random numbers in programming is about creating values that cannot
+  be predicted logically ahead of time.
 title: Generating random numbers
 weight: 12
 ---

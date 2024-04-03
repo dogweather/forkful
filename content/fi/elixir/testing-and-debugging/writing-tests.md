@@ -8,8 +8,7 @@ description: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoi
 lastmod: '2024-03-13T22:44:56.230513-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
-  \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n varmistaakseen\u2026"
+  \ skriptien luomisen koodisi toiminnan varmentamiseksi."
 title: Testien kirjoittaminen
 weight: 36
 ---

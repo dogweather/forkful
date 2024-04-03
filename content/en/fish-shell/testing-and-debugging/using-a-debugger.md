@@ -5,8 +5,9 @@ description: "Fish doesn't have a built-in debugger like some other shells, but 
   \ for\u2026"
 lastmod: '2024-03-13T22:45:00.478501-06:00'
 model: gpt-4-1106-preview
-summary: "Fish doesn't have a built-in debugger like some other shells, but you can\
-  \ use external tools like `gdb` for debugging compiled programs or `fish -d` for\u2026"
+summary: Fish doesn't have a built-in debugger like some other shells, but you can
+  use external tools like `gdb` for debugging compiled programs or `fish -d` for running
+  fish with debug output at different levels.
 title: Using a debugger
 weight: 35
 ---

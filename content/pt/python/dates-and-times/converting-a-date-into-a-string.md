@@ -6,7 +6,7 @@ description: "Converter uma data para uma string significa transformar um objeto
 lastmod: '2024-03-13T22:44:46.165812-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data para uma string significa transformar um objeto que representa\
-  \ datas e hor\xE1rios em texto leg\xEDvel por humanos. Programadores fazem isso\u2026"
+  \ datas e hor\xE1rios em texto leg\xEDvel por humanos."
 title: Convertendo uma data em uma string
 weight: 28
 ---

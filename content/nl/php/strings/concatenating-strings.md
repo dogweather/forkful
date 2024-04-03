@@ -6,8 +6,7 @@ description: "Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar
   \ Denk erover als het maken van een trein uit woorden in plaats van rijtuigen.\u2026"
 lastmod: '2024-03-13T22:44:50.886304-06:00'
 model: gpt-4-0125-preview
-summary: "Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar rijgen.\
-  \ Denk erover als het maken van een trein uit woorden in plaats van rijtuigen.\u2026"
+summary: Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar rijgen.
 title: Samenvoegen van strings
 weight: 3
 ---

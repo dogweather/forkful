@@ -6,8 +6,7 @@ description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att du som programmerare 
 lastmod: '2024-03-13T22:44:37.784339-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att du som programmerare fr\xE5\
-  gar en server om information eller ber den utf\xF6ra en \xE5tg\xE4rd. Det \xE4r\
-  \ kritiskt f\xF6r\u2026"
+  gar en server om information eller ber den utf\xF6ra en \xE5tg\xE4rd."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

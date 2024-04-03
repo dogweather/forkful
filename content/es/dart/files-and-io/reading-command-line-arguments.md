@@ -8,7 +8,9 @@ description: "Leer los argumentos de la l\xEDnea de comandos en Dart permite a l
 lastmod: '2024-03-13T22:44:58.770935-06:00'
 model: gpt-4-0125-preview
 summary: "Leer los argumentos de la l\xEDnea de comandos en Dart permite a los programadores\
-  \ introducir datos directamente en la consola al ejecutar un programa Dart,\u2026"
+  \ introducir datos directamente en la consola al ejecutar un programa Dart, mejorando\
+  \ su interactividad y flexibilidad para varios casos de uso, incluyendo scripts\
+  \ de automatizaci\xF3n, herramientas CLI o procesamiento por lotes."
 title: "Leyendo argumentos de la l\xEDnea de comandos"
 weight: 23
 ---

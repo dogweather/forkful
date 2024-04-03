@@ -6,8 +6,8 @@ description: "Schrijven naar een tekstbestand is het opslaan van gegevens als le
   \ tekens in een bestand op uw opslagapparaat. Programmeurs doen dit om gegevens\u2026"
 lastmod: '2024-03-13T22:44:50.612610-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare\
-  \ tekens in een bestand op uw opslagapparaat. Programmeurs doen dit om gegevens\u2026"
+summary: Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare
+  tekens in een bestand op uw opslagapparaat.
 title: Een tekstbestand schrijven
 weight: 24
 ---

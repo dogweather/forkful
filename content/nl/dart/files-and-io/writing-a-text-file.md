@@ -6,8 +6,8 @@ description: "Het schrijven van een tekstbestand in Dart houdt in dat bestanden 
   \ de schijf worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar\u2026"
 lastmod: '2024-03-13T22:44:50.525037-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van een tekstbestand in Dart houdt in dat bestanden op de\
-  \ schijf worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar\u2026"
+summary: Het schrijven van een tekstbestand in Dart houdt in dat bestanden op de schijf
+  worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar formaat.
 title: Een tekstbestand schrijven
 weight: 24
 ---

@@ -6,8 +6,7 @@ description: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zah
 lastmod: '2024-03-13T22:44:53.414789-06:00'
 model: gpt-4-0125-preview
 summary: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl oder\
-  \ auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie f\xFC\
-  r die\u2026"
+  \ auf eine bestimmte Dezimalgenauigkeit anzupassen."
 title: Zahlen runden
 weight: 13
 ---

@@ -7,7 +7,7 @@ description: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\
 lastmod: '2024-03-13T22:44:38.398949-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5gar\
-  \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
+  \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

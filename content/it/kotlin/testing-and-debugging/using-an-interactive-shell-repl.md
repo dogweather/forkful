@@ -5,7 +5,7 @@ description: "Un REPL (Read-Eval-Print Loop - Ciclo di Lettura-Valutazione-Stamp
 lastmod: '2024-03-13T22:44:43.392666-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop - Ciclo di Lettura-Valutazione-Stampa) \xE8\
-  \ un ambiente di programmazione informatica semplice e interattivo. I programmatori\u2026"
+  \ un ambiente di programmazione informatica semplice e interattivo."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

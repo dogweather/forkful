@@ -5,9 +5,8 @@ description: "Unire le stringhe, o concatenazione, significa attaccare una strin
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.633013-06:00'
 model: gpt-4-1106-preview
-summary: "Unire le stringhe, o concatenazione, significa attaccare una stringa alla\
-  \ fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\
-  \ o\u2026"
+summary: Unire le stringhe, o concatenazione, significa attaccare una stringa alla
+  fine di un'altra.
 title: Concatenazione di stringhe
 weight: 3
 ---

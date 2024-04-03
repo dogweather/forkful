@@ -4,8 +4,8 @@ description: "Trovare la lunghezza di una stringa significa contare il numero di
   \ che contiene. I programmatori lo fanno per convalidare l'input, troncare il\u2026"
 lastmod: '2024-03-13T22:44:43.033260-06:00'
 model: gpt-4-1106-preview
-summary: "Trovare la lunghezza di una stringa significa contare il numero di caratteri\
-  \ che contiene. I programmatori lo fanno per convalidare l'input, troncare il\u2026"
+summary: Trovare la lunghezza di una stringa significa contare il numero di caratteri
+  che contiene.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

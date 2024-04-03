@@ -5,7 +5,8 @@ description: "Modificare file sul posto con righe di comando \xE8 il processo di
 lastmod: '2024-03-13T22:44:43.854493-06:00'
 model: gpt-4-0125-preview
 summary: "Modificare file sul posto con righe di comando \xE8 il processo di apportare\
-  \ cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un\u2026"
+  \ cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un editor\
+  \ di testo."
 title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---

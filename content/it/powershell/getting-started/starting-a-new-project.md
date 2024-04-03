@@ -4,8 +4,8 @@ description: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risol
   \ problemi specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"
 lastmod: '2024-03-13T22:44:43.643277-06:00'
 model: gpt-4-1106-preview
-summary: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi\
-  \ specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"
+summary: Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi
+  specifici.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

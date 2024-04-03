@@ -7,7 +7,8 @@ description: "\xC5 jobbe med YAML inneb\xE6rer parsing og manipulering av YAML-f
 lastmod: '2024-03-13T22:44:41.247830-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med YAML inneb\xE6rer parsing og manipulering av YAML-filer (YAML\
-  \ Ain't Markup Language), et data serialiseringsformat brukt for konfigurasjonsfiler,\u2026"
+  \ Ain't Markup Language), et data serialiseringsformat brukt for konfigurasjonsfiler,\
+  \ i Fish Shell."
 title: Arbeider med YAML
 weight: 41
 ---

@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.976192-06:00'
 model: gpt-4-1106-preview
 summary: "Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein\
   \ puhdistaa sy\xF6tteit\xE4, muotoilla tietoja tai tehd\xE4 merkkijonok\xE4sittely\xE4\
-  .\u2026"
+  ."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

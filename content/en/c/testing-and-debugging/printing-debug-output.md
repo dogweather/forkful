@@ -5,8 +5,9 @@ description: "Printing debug output is about generating temporary, informative l
   \ during\u2026"
 lastmod: '2024-03-13T22:45:00.513874-06:00'
 model: gpt-4-0125-preview
-summary: "Printing debug output is about generating temporary, informative log messages\
-  \ that can help programmers understand the flow and state of a program during\u2026"
+summary: Printing debug output is about generating temporary, informative log messages
+  that can help programmers understand the flow and state of a program during its
+  execution.
 title: Printing debug output
 weight: 33
 ---

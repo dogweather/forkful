@@ -7,7 +7,8 @@ description: "Escrever um arquivo de texto em Swift permite armazenar persistent
 lastmod: '2024-03-13T22:44:46.939092-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
-  \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"
+  \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\
+  \ salvar configura\xE7\xF5es, dados de usu\xE1rios ou logs."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

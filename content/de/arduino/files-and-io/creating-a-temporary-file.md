@@ -5,9 +5,7 @@ description: "Tempor\xE4re Dateien dienen zum vor\xFCbergehenden Speichern von D
   \ kurzzeitig\u2026"
 lastmod: '2024-03-13T22:44:54.162776-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien dienen zum vor\xFCbergehenden Speichern von Daten.\
-  \ Sie werden verwendet, wenn man Daten w\xE4hrend der Ausf\xFChrung eines Programms\
-  \ kurzzeitig\u2026"
+summary: "Tempor\xE4re Dateien dienen zum vor\xFCbergehenden Speichern von Daten."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

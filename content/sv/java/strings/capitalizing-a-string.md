@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.770988-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal inneb\xE4\
   r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan resten\
-  \ g\xF6r man\u2026"
+  \ g\xF6r man till gemener."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

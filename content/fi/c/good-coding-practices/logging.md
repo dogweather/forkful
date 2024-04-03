@@ -7,7 +7,8 @@ description: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapa
 lastmod: '2024-03-13T22:44:57.047257-06:00'
 model: gpt-4-0125-preview
 summary: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
-  \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"
+  \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen k\xE4\
+  ytt\xE4ytymiseen ja suorituskykyyn."
 title: Lokitiedostot
 weight: 17
 ---

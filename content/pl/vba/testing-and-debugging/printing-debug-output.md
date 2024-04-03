@@ -7,7 +7,9 @@ description: "Wypisywanie informacji debugowych w Visual Basic for Applications 
 lastmod: '2024-03-13T22:44:35.234830-06:00'
 model: gpt-4-0125-preview
 summary: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
-  \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"
+  \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby wy\u015B\
+  wietla\u0107 warto\u015Bci zmiennych, przebieg wykonania lub niestandardowe komunikaty\
+  \ debugowe."
 title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 weight: 33
 ---

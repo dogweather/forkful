@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.608493-06:00'
 model: gpt-4-0125-preview
 summary: "Parsear HTML implica analizar el c\xF3digo HTML de una p\xE1gina web para\
   \ extraer informaci\xF3n o elementos espec\xEDficos, una tarea com\xFAn para el\
-  \ web scraping, la\u2026"
+  \ web scraping, la miner\xEDa de datos o la automatizaci\xF3n de interacciones con\
+  \ sitios web."
 title: Analizando HTML
 weight: 43
 ---

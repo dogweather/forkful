@@ -5,7 +5,7 @@ description: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwe
 lastmod: '2024-03-13T22:44:54.405917-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
-  \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"
+  \ Bl\xF6cke auf."
 title: Code in Funktionen organisieren
 weight: 18
 ---

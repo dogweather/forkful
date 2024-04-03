@@ -8,8 +8,7 @@ description: "Iniciar um novo projeto em Dart envolve a configura\xE7\xE3o de um
 lastmod: '2024-03-13T22:44:46.282358-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Dart envolve a configura\xE7\xE3o de um ambiente\
-  \ prop\xEDcio ao desenvolvimento, teste e implementa\xE7\xE3o eficientes. Programadores\
-  \ iniciam\u2026"
+  \ prop\xEDcio ao desenvolvimento, teste e implementa\xE7\xE3o eficientes."
 title: Iniciando um novo projeto
 weight: 1
 ---

@@ -7,7 +7,8 @@ description: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental op
 lastmod: '2024-03-13T22:44:40.676871-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental operasjon\
-  \ som lar programmerere manipulere datoobjekter for operasjoner som logging,\u2026"
+  \ som lar programmerere manipulere datoobjekter for operasjoner som logging, datoberegninger\
+  \ og tidsbaserte vilk\xE5r."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

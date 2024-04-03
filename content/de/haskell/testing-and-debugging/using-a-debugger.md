@@ -4,8 +4,8 @@ description: "Lassen Sie uns einen Spaziergang mit GHCi machen, Haskeals interak
   \ Umgebung, die als einfacher Debugger fungieren kann. Sie starten es mit Ihrem\u2026"
 lastmod: '2024-03-13T22:44:53.935850-06:00'
 model: gpt-4-0125-preview
-summary: "Lassen Sie uns einen Spaziergang mit GHCi machen, Haskeals interaktiver\
-  \ Umgebung, die als einfacher Debugger fungieren kann. Sie starten es mit Ihrem\u2026"
+summary: Lassen Sie uns einen Spaziergang mit GHCi machen, Haskeals interaktiver Umgebung,
+  die als einfacher Debugger fungieren kann.
 title: Einsatz eines Debuggers
 weight: 35
 ---

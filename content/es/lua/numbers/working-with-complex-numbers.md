@@ -6,7 +6,7 @@ description: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9r
 lastmod: '2024-03-13T22:44:59.195895-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica unidimensional\
-  \ al plano bidimensional incluyendo un eje imaginario perpendicular. Los\u2026"
+  \ al plano bidimensional incluyendo un eje imaginario perpendicular."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

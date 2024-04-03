@@ -6,7 +6,7 @@ description: "Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\
 lastmod: '2024-03-13T22:44:56.374669-06:00'
 model: gpt-4-1106-preview
 summary: "Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n saattamista\
-  \ ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat lukevat tiedostoja, koska niist\xE4 saadaan\u2026"
+  \ ohjelman k\xE4ytt\xF6\xF6n."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

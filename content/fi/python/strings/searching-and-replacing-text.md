@@ -6,8 +6,7 @@ description: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijon
 lastmod: '2024-03-13T22:44:56.128133-06:00'
 model: gpt-4-1106-preview
 summary: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijonoa toisella\
-  \ korvaamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 koodin virheit\xE4 korjatessaan\
-  \ tai\u2026"
+  \ korvaamista."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

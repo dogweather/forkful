@@ -5,8 +5,8 @@ description: "Working with TOML involves parsing and generating TOML (Tom's Obvi
   \ to\u2026"
 lastmod: '2024-03-13T22:45:00.226366-06:00'
 model: gpt-4-1106-preview
-summary: "Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal\
-  \ Language) data with Lua. Programmers utilize TOML for config files due to\u2026"
+summary: Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal
+  Language) data with Lua.
 title: Working with TOML
 weight: 39
 ---

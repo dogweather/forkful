@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:50.956502-06:00'
 model: gpt-4-0125-preview
 summary: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken van\
   \ een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
-  \ de\u2026"
+  \ de uitvoering van een programma."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

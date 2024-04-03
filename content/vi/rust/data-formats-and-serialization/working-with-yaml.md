@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang\
   \ x\u1EED l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi \u0111\u1ECBnh d\u1EA1ng \"YAML\
   \ Ain't Markup Language\" \u2013 m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u c\xF3\
-  \ th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c d\xE0nh cho con\u2026"
+  \ th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c d\xE0nh cho con ng\u01B0\u1EDDi."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

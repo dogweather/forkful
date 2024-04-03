@@ -6,8 +6,7 @@ description: "Das Einlesen von Textdateien erm\xF6glicht es, Inhalt von der Fest
 lastmod: '2024-03-13T22:44:53.553045-06:00'
 model: gpt-4-1106-preview
 summary: "Das Einlesen von Textdateien erm\xF6glicht es, Inhalt von der Festplatte\
-  \ in eine Anwendung zu laden. Programmierer ben\xF6tigen diese Funktionalit\xE4\
-  t, um Datei-\u2026"
+  \ in eine Anwendung zu laden."
 title: Textdatei einlesen
 weight: 22
 ---

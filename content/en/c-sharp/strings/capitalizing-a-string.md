@@ -4,8 +4,8 @@ description: "Capitalizing a string in C# involves converting the first characte
   \ of a string to uppercase if it isn't already. This alteration can be crucial for\u2026"
 lastmod: '2024-03-13T22:45:00.072028-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string in C# involves converting the first character of a\
-  \ string to uppercase if it isn't already. This alteration can be crucial for\u2026"
+summary: Capitalizing a string in C# involves converting the first character of a
+  string to uppercase if it isn't already.
 title: Capitalizing a string
 weight: 2
 ---

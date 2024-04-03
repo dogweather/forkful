@@ -8,8 +8,7 @@ description: "Leggere un file di testo in C comporta l'apertura di un file sul t
 lastmod: '2024-03-13T22:44:44.022271-06:00'
 model: gpt-4-0125-preview
 summary: "Leggere un file di testo in C comporta l'apertura di un file sul tuo sistema\
-  \ per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0.\
-  \ I\u2026"
+  \ per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0."
 title: Leggere un file di testo
 weight: 22
 ---

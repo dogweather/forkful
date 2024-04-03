@@ -8,7 +8,7 @@ description: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden
 lastmod: '2024-03-13T22:44:53.368186-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden, um Kombinationen\
-  \ von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie f\xFCr die\u2026"
+  \ von Zeichen in Zeichenketten zu finden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

@@ -7,7 +7,8 @@ description: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamenta
 lastmod: '2024-03-13T22:44:44.069224-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale che\
-  \ consente di conservare output e dati in modo persistente, rendendo possibili\u2026"
+  \ consente di conservare output e dati in modo persistente, rendendo possibili l'accesso\
+  \ o la modifica dei dati in seguito."
 title: Scrivere un file di testo
 weight: 24
 ---

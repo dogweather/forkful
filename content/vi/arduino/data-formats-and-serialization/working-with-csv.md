@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 Tr\u1ECB\
   \ T\xE1ch Bi\u1EC7t B\u1EB1ng D\u1EA5u Ph\u1EA9y) tr\xEAn Arduino gi\xFAp b\u1EA1\
   n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1\
-  ng v\u0103n b\u1EA3n. N\xF3 r\u1EBB, d\u1EC5\u2026"
+  ng v\u0103n b\u1EA3n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

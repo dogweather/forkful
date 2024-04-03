@@ -6,8 +6,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry 
 lastmod: '2024-03-13T22:44:35.329185-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry mo\u017C\
-  e przewidzie\u0107 i poradzi\u0107 sobie z sytuacjami awaryjnymi. Programi\u015B\
-  ci robi\u0105 to, aby zapobiega\u0107 awariom,\u2026"
+  e przewidzie\u0107 i poradzi\u0107 sobie z sytuacjami awaryjnymi."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

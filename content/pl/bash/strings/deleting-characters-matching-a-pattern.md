@@ -6,8 +6,7 @@ description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca w Bashu to oczyszczan
 lastmod: '2024-03-13T22:44:35.566822-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca w Bashu to oczyszczanie ci\u0105\
-  gu znak\xF3w z niepotrzebnych element\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tej\
-  \ metody dla uproszczenia\u2026"
+  gu znak\xF3w z niepotrzebnych element\xF3w."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

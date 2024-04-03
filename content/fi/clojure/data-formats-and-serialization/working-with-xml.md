@@ -5,7 +5,7 @@ description: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on
 lastmod: '2024-03-13T22:44:56.208495-06:00'
 model: gpt-4-0125-preview
 summary: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
-  \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"
+  \ ihmis- ett\xE4 koneellisesti luettavissa."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

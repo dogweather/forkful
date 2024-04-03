@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.738117-06:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Swift polega na modyfikacji\
   \ danego ci\u0105gu znak\xF3w, tak aby jego pierwsza litera by\u0142a wielka, a\
-  \ pozosta\u0142e ma\u0142e.\u2026"
+  \ pozosta\u0142e ma\u0142e."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

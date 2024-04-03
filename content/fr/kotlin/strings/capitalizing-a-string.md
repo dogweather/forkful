@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.717727-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas d\xE9j\xE0\
-  , ce qui est\u2026"
+  , ce qui est utile pour formater les entr\xE9es des utilisateurs ou afficher du\
+  \ texte dans une interface utilisateur de mani\xE8re plus standardis\xE9e ou conviviale."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

@@ -7,7 +7,7 @@ description: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) significa
 lastmod: '2024-03-13T22:44:58.958726-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) significa manejar\
-  \ este formato ligero de intercambio de datos dentro de tus aplicaciones Java. Los\u2026"
+  \ este formato ligero de intercambio de datos dentro de tus aplicaciones Java."
 title: Trabajando con JSON
 weight: 38
 ---

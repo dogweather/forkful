@@ -6,8 +6,8 @@ description: "Om aan de slag te gaan met een debugger in TypeScript, heb je alle
   \ een ondersteunde IDE (zoals Visual Studio Code) en een `launch.json` configuratie\u2026"
 lastmod: '2024-03-13T22:44:50.555406-06:00'
 model: gpt-4-0125-preview
-summary: "Om aan de slag te gaan met een debugger in TypeScript, heb je alleen een\
-  \ ondersteunde IDE (zoals Visual Studio Code) en een `launch.json` configuratie\u2026"
+summary: Om aan de slag te gaan met een debugger in TypeScript, heb je alleen een
+  ondersteunde IDE (zoals Visual Studio Code) en een `launch.
 title: Een debugger gebruiken
 weight: 35
 ---

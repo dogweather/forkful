@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.535454-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir as\
   \ ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria' i\
-  \ \xE9 igual \xE0 raiz\u2026"
+  \ \xE9 igual \xE0 raiz quadrada de -1."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

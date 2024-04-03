@@ -5,7 +5,7 @@ description: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'ut
 lastmod: '2024-03-13T22:44:57.455701-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
-  \ dans votre programme. Les programmeurs le font souvent pour charger des configurations,\u2026"
+  \ dans votre programme."
 title: Lecture d'un fichier texte
 weight: 22
 ---

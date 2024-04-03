@@ -8,7 +8,8 @@ description: "Les tableaux associatifs sont comme des tableaux surpuissants qui 
 lastmod: '2024-03-13T22:44:57.981996-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs sont comme des tableaux surpuissants qui vous permettent\
-  \ d'utiliser des cha\xEEnes de caract\xE8res comme indices, au lieu de se\u2026"
+  \ d'utiliser des cha\xEEnes de caract\xE8res comme indices, au lieu de se limiter\
+  \ aux entiers."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

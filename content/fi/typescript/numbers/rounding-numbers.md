@@ -5,8 +5,7 @@ description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiett
   \ luettavuuden,\u2026"
 lastmod: '2024-03-13T22:44:56.310466-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn tarkkuuteen.\
-  \ Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta luettavuuden,\u2026"
+summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn tarkkuuteen."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

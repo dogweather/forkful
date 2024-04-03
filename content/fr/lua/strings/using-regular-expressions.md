@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.914519-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
   \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\
-  cifiques. Les\u2026"
+  cifiques."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

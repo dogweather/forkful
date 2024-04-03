@@ -5,7 +5,7 @@ description: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come
 lastmod: '2024-03-13T22:44:43.441044-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
-  \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
+  \ sui propri lacci delle scarpe."
 title: Gestione degli errori
 weight: 16
 ---

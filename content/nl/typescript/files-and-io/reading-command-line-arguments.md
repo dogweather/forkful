@@ -7,9 +7,8 @@ description: "Opdrachtregelargumenten stellen gebruikers in staat om gegevens do
   \ om het\u2026"
 lastmod: '2024-03-13T22:44:50.566745-06:00'
 model: gpt-4-0125-preview
-summary: "Opdrachtregelargumenten stellen gebruikers in staat om gegevens door te\
-  \ geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze om\
-  \ het\u2026"
+summary: Opdrachtregelargumenten stellen gebruikers in staat om gegevens door te geven
+  aan een programma wanneer ze het uitvoeren.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

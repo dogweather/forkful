@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck, eller regex, \xE4r ett kraftfullt verktyg f\
 lastmod: '2024-03-13T22:44:37.646237-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, eller regex, \xE4r ett kraftfullt verktyg f\xF6r m\xF6\
-  nstermatchning och s\xF6kning i programmering. Programmerare anv\xE4nder regex f\xF6\
-  r uppgifter som\u2026"
+  nstermatchning och s\xF6kning i programmering."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

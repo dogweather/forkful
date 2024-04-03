@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.080107-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen Google Apps Scriptilla k\xE4sitt\xE4\xE4\
   \ tiettyjen merkkijonojen ohjelmallisen tunnistamisen dokumentissa, laskentataulukossa\
-  \ tai\u2026"
+  \ tai miss\xE4 tahansa muussa Google Apps -sis\xE4lt\xF6tyypiss\xE4 ja niiden korvaamisen\
+  \ toisilla tekstiarvoilla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

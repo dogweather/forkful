@@ -6,7 +6,8 @@ description: "\xC5 generere tilfeldige tall i Bash gir en m\xE5te \xE5 innf\xF8r
 lastmod: '2024-03-13T22:44:40.968256-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Bash gir en m\xE5te \xE5 innf\xF8re uforutsigbarhet\
-  \ i skript p\xE5, noe som er essensielt for oppgaver som \xE5 generere sikre passord,\u2026"
+  \ i skript p\xE5, noe som er essensielt for oppgaver som \xE5 generere sikre passord,\
+  \ simulere data eller for programmering av spill."
 title: Generering av tilfeldige tall
 weight: 12
 ---

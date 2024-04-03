@@ -8,8 +8,7 @@ description: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\x
 lastmod: '2024-03-13T22:44:53.819599-06:00'
 model: gpt-4-0125-preview
 summary: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\xE4tigen,\
-  \ ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen\
-  \ dies,\u2026"
+  \ ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

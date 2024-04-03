@@ -5,7 +5,7 @@ description: "Das Runden von Zahlen ist das Anpassen einer Dezimalzahl auf ihren
 lastmod: '2024-03-13T22:44:53.799666-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das Anpassen einer Dezimalzahl auf ihren n\xE4\
-  chsten ganzzahligen Wert oder auf eine bestimmte Anzahl von Nachkommastellen.\u2026"
+  chsten ganzzahligen Wert oder auf eine bestimmte Anzahl von Nachkommastellen."
 title: Zahlen runden
 weight: 13
 ---

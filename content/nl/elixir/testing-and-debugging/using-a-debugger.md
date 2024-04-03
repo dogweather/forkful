@@ -6,8 +6,7 @@ description: "Elixir wordt geleverd met een ingebouwde grafische debugger genaam
   \ `:debugger`. Om het te gebruiken, moet je het starten en koppelen aan je lopend\u2026"
 lastmod: '2024-03-13T22:44:50.466643-06:00'
 model: gpt-4-0125-preview
-summary: "Elixir wordt geleverd met een ingebouwde grafische debugger genaamd `:debugger`.\
-  \ Om het te gebruiken, moet je het starten en koppelen aan je lopend\u2026"
+summary: Elixir wordt geleverd met een ingebouwde grafische debugger genaamd `:debugger`.
 title: Een debugger gebruiken
 weight: 35
 ---

@@ -6,8 +6,9 @@ description: "Nel contesto della programmazione Arduino, verificare se una direc
   \ esiste su una scheda SD o su un modulo di memoria simile consente di leggere o\u2026"
 lastmod: '2024-03-13T22:44:43.697043-06:00'
 model: gpt-4-0125-preview
-summary: "Nel contesto della programmazione Arduino, verificare se una directory esiste\
-  \ su una scheda SD o su un modulo di memoria simile consente di leggere o\u2026"
+summary: Nel contesto della programmazione Arduino, verificare se una directory esiste
+  su una scheda SD o su un modulo di memoria simile consente di leggere o scrivere
+  file senza errori.
 title: Verifica se una directory esiste
 weight: 20
 ---

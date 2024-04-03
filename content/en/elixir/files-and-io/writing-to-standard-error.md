@@ -4,8 +4,8 @@ description: "Writing to standard error (stderr) in Elixir is a method of direct
   \ error messages and diagnostics separate from the main output (stdout). Programmers\u2026"
 lastmod: '2024-03-13T22:44:59.797174-06:00'
 model: gpt-4-0125-preview
-summary: "Writing to standard error (stderr) in Elixir is a method of directing error\
-  \ messages and diagnostics separate from the main output (stdout). Programmers\u2026"
+summary: Writing to standard error (stderr) in Elixir is a method of directing error
+  messages and diagnostics separate from the main output (stdout).
 title: Writing to standard error
 weight: 25
 ---

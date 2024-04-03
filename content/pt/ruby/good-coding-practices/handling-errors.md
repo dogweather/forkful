@@ -6,8 +6,7 @@ description: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo
 lastmod: '2024-03-13T22:44:47.102756-06:00'
 model: gpt-4-1106-preview
 summary: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
-  \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\
-  \ isso para\u2026"
+  \ gerenciar erros e problemas de forma graciosa sem falhar."
 title: Tratamento de erros
 weight: 16
 ---

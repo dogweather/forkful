@@ -7,7 +7,8 @@ description: "Analizar una fecha de una cadena en Clojure se trata de convertir 
 lastmod: '2024-03-13T22:44:58.666684-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en Clojure se trata de convertir representaciones\
-  \ textuales de fechas y horas en una forma m\xE1s utilizable (por ejemplo,\u2026"
+  \ textuales de fechas y horas en una forma m\xE1s utilizable (por ejemplo, el objeto\
+  \ DateTime de Clojure)."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

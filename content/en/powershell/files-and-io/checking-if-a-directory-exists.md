@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:45:00.297459-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell, checking if a directory exists is a common task that helps\
   \ scripts make decisions based on filesystem structure\u2014such as avoiding errors\
-  \ by\u2026"
+  \ by confirming a target directory is in place before attempting to read from or\
+  \ write to it."
 title: Checking if a directory exists
 weight: 20
 ---

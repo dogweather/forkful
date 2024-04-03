@@ -7,9 +7,8 @@ description: "In de wereld van Arduino laten associatieve arrays je sleutels kop
   \ go-\u2026"
 lastmod: '2024-03-13T22:44:51.065560-06:00'
 model: gpt-4-0125-preview
-summary: "In de wereld van Arduino laten associatieve arrays je sleutels koppelen\
-  \ aan waarden, een beetje zoals je sokken zou matchen met hun paren. Ze zijn een\
-  \ go-\u2026"
+summary: In de wereld van Arduino laten associatieve arrays je sleutels koppelen aan
+  waarden, een beetje zoals je sokken zou matchen met hun paren.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

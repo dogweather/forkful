@@ -6,8 +6,7 @@ description: "Za\u0142\xF3\u017Cmy, \u017Ce masz prosty program Java, kt\xF3ry d
 lastmod: '2024-03-13T22:44:35.281815-06:00'
 model: gpt-4-0125-preview
 summary: "Za\u0142\xF3\u017Cmy, \u017Ce masz prosty program Java, kt\xF3ry dzia\u0142\
-  a niepoprawnie, i nie mo\u017Cesz zrozumie\u0107 dlaczego. Oto jak uruchomi\u0107\
-  \ debuger przy u\u017Cyciu Eclipse, jednego z\u2026"
+  a niepoprawnie, i nie mo\u017Cesz zrozumie\u0107 dlaczego."
 title: Korzystanie z debugera
 weight: 35
 ---

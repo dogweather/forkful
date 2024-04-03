@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.353934-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent i Python som ordb\xF8ker, kartlegger n\xF8kler\
   \ til verdier, noe som gj\xF8r det enkelt \xE5 hente, endre eller spore data via\
-  \ en unik\u2026"
+  \ en unik identifikator."
 title: Bruke associative tabeller
 weight: 15
 ---

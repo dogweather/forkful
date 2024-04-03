@@ -4,8 +4,7 @@ description: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di c
   \ I programmatori lo fanno per costruire messaggi, combinare dati o semplicemente\u2026"
 lastmod: '2024-03-13T22:44:43.034094-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di caratteri.\
-  \ I programmatori lo fanno per costruire messaggi, combinare dati o semplicemente\u2026"
+summary: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di caratteri."
 title: Concatenazione di stringhe
 weight: 3
 ---

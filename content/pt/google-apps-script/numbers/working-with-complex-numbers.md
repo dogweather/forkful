@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:46.100481-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
   \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
-  \ problemas\u2026"
+  \ problemas computacionais, especialmente em engenharia, f\xEDsica e matem\xE1tica\
+  \ aplicada."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

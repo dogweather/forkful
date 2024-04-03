@@ -7,7 +7,7 @@ description: "Felhantering i Visual Basic for Applications (VBA) syftar till pro
 lastmod: '2024-03-13T22:44:37.751109-06:00'
 model: gpt-4-0125-preview
 summary: "Felhantering i Visual Basic for Applications (VBA) syftar till processen\
-  \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller\u2026"
+  \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller kommunikationsfel."
 title: Hantera fel
 weight: 16
 ---

@@ -6,8 +6,7 @@ description: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelleta
 lastmod: '2024-03-13T22:44:56.937141-06:00'
 model: gpt-4-1106-preview
 summary: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan yhten\xE4\
-  ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4t t\xE4\
-  t\xE4\u2026"
+  ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

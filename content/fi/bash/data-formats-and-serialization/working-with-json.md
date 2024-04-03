@@ -8,8 +8,7 @@ description: "JSONin k\xE4sittely Bash-ohjelmoinnissa sis\xE4lt\xE4\xE4 JSON-tie
 lastmod: '2024-03-13T22:44:56.760091-06:00'
 model: gpt-4-0125-preview
 summary: "JSONin k\xE4sittely Bash-ohjelmoinnissa sis\xE4lt\xE4\xE4 JSON-tietojen\
-  \ j\xE4sent\xE4misen, poimimisen ja manipuloinnin suoraan komentorivilt\xE4. Ohjelmoijat\
-  \ tekev\xE4t n\xE4in\u2026"
+  \ j\xE4sent\xE4misen, poimimisen ja manipuloinnin suoraan komentorivilt\xE4."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

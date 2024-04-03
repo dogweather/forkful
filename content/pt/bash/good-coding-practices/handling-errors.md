@@ -6,7 +6,7 @@ description: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem d
 lastmod: '2024-03-13T22:44:46.760156-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar errado\
-  \ e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu script\u2026"
+  \ e lidar com isso de maneira elegante."
 title: Tratamento de erros
 weight: 16
 ---

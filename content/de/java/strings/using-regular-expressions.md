@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.753408-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Java erm\xF6glichen es Ihnen, spezifische\
   \ Muster zu definieren, um Strings in Ihrem Code zu suchen, zu manipulieren oder\
-  \ zu\u2026"
+  \ zu validieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

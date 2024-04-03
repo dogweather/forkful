@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.249910-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
   \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
-  nie od standardowego\u2026"
+  nie od standardowego wyj\u015Bcia, zazwyczaj do konsoli lub pliku dziennika."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

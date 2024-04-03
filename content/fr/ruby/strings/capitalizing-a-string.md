@@ -9,8 +9,7 @@ description: "Capitaliser une cha\xEEne de caract\xE8res signifie g\xE9n\xE9rale
 lastmod: '2024-03-25T19:21:58.508306-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res signifie g\xE9n\xE9ralement convertir\
-  \ le premier caract\xE8re d'une cha\xEEne en majuscule et le reste en minuscule.\
-  \ Mais\u2026"
+  \ le premier caract\xE8re d'une cha\xEEne en majuscule et le reste en minuscule."
 title: "Mettre en majuscule une cha\xEEne de caract\xE8res"
 weight: 2
 ---

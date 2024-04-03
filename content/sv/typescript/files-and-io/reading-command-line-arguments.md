@@ -6,8 +6,7 @@ description: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv
 lastmod: '2024-03-13T22:44:37.671426-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv\xE4ndarinput\
-  \ fr\xE5n konsolen i ditt program. Programmerare g\xF6r det f\xF6r att till\xE5\
-  ta anv\xE4ndare att\u2026"
+  \ fr\xE5n konsolen i ditt program."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

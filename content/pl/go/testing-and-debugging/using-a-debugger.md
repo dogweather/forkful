@@ -8,8 +8,7 @@ description: "Go oferuje wbudowan\u0105 funkcjonalno\u015B\u0107 do debugowania 
 lastmod: '2024-03-13T22:44:34.856538-06:00'
 model: gpt-4-0125-preview
 summary: "Go oferuje wbudowan\u0105 funkcjonalno\u015B\u0107 do debugowania o nazwie\
-  \ `delve`. Jest to pe\u0142noprawne narz\u0119dzie debuguj\u0105ce, kt\xF3re umo\u017C\
-  liwia wykonanie program\xF3w w Go\u2026"
+  \ `delve`."
 title: Korzystanie z debugera
 weight: 35
 ---

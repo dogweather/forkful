@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.520230-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort de omliggende\
   \ enkle (`'`) eller doble (`\"`) anf\xF8rselstegnene som definerer strengliteraler\
-  \ i\u2026"
+  \ i kode."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

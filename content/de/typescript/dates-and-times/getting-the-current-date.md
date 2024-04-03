@@ -7,7 +7,8 @@ description: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScri
 lastmod: '2024-03-13T22:44:53.641273-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden\
-  \ Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"
+  \ Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen Datums-\
+  \ und Zeitinformationen."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

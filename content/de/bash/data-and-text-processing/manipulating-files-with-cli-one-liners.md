@@ -5,7 +5,9 @@ description: "Dateimanipulation mit CLI (Command Line Interface) One-Linern bein
 lastmod: '2024-03-13T22:44:54.054318-06:00'
 model: gpt-4-0125-preview
 summary: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
-  \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
+  \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie Erstellen,\
+  \ Lesen, Aktualisieren oder L\xF6schen direkt aus dem Terminal heraus durchzuf\xFC\
+  hren."
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

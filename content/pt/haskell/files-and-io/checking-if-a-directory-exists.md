@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.639478-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\
-  \ base na presen\xE7a ou\u2026"
+  \ base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3rio."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

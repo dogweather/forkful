@@ -5,9 +5,8 @@ description: "Oto fragment kodu JavaScript, kt\xF3ry nie dzia\u0142a zgodnie z o
   \ by\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.801149-06:00'
 model: gpt-4-0125-preview
-summary: "Oto fragment kodu JavaScript, kt\xF3ry nie dzia\u0142a zgodnie z oczekiwaniami:\
-  \ ```javascript function buggyMultiply(a, b) { return a + b; // Ups! To powinna\
-  \ by\u0107\u2026"
+summary: "Oto fragment kodu JavaScript, kt\xF3ry nie dzia\u0142a zgodnie z oczekiwaniami:\n\
+  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Ups."
 title: Korzystanie z debugera
 weight: 35
 ---

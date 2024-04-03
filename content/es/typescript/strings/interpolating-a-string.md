@@ -5,7 +5,7 @@ description: "La interpolaci\xF3n de strings nos permite insertar valores de var
 lastmod: '2024-03-13T22:44:58.784874-06:00'
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de strings nos permite insertar valores de variables\
-  \ dentro de cadenas de texto. Lo hacemos para construir mensajes din\xE1micos sin\u2026"
+  \ dentro de cadenas de texto."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

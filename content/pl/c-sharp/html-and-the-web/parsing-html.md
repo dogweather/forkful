@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.406212-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu HTML,\
   \ co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego zawarto\u015B\
-  ci\u0105\u2026"
+  ci\u0105 programowo."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

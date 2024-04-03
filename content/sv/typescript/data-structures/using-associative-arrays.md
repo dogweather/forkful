@@ -8,8 +8,7 @@ description: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\x
 lastmod: '2024-03-13T22:44:37.649138-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\xE4nda\
-  \ str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar. Programmerare\
-  \ anv\xE4nder dem f\xF6r mer\u2026"
+  \ str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

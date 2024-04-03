@@ -5,7 +5,7 @@ description: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en 
 lastmod: '2024-03-13T22:44:40.660456-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
-  r enhet, `i`, der `i^2 = -1`. De er avgj\xF8rende i felter som ingeni\xF8rvitenskap,\u2026"
+  r enhet, `i`, der `i^2 = -1`."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

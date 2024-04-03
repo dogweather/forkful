@@ -5,9 +5,7 @@ description: "Gestire gli errori significa pianificare per quando le cose vanno 
   \ facile\u2026"
 lastmod: '2024-03-13T22:44:43.734211-06:00'
 model: gpt-4-1106-preview
-summary: "Gestire gli errori significa pianificare per quando le cose vanno storte.\
-  \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\
-  \ facile\u2026"
+summary: Gestire gli errori significa pianificare per quando le cose vanno storte.
 title: Gestione degli errori
 weight: 16
 ---

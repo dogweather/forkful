@@ -7,8 +7,8 @@ description: "Het vergelijken van twee datums in PowerShell betekent uitzoeken o
   \ om\u2026"
 lastmod: '2024-03-13T22:44:51.042633-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums in PowerShell betekent uitzoeken of de ene\
-  \ eerder, hetzelfde, of later is dan de andere. Programmeurs doen dit vaak om\u2026"
+summary: Het vergelijken van twee datums in PowerShell betekent uitzoeken of de ene
+  eerder, hetzelfde, of later is dan de andere.
 title: Twee datums vergelijken
 weight: 27
 ---

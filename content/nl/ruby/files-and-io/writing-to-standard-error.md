@@ -7,9 +7,9 @@ description: "Standaardfout (`stderr`) is een stroom die los staat van standaard
   \ of\u2026"
 lastmod: '2024-03-13T22:44:51.368450-06:00'
 model: gpt-4-0125-preview
-summary: "Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer\
-  \ (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen\
-  \ of\u2026"
+summary: Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer
+  (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen of
+  diagnostiek.
 title: Schrijven naar standaardfout
 weight: 25
 ---

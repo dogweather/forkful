@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.920814-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Ruby to wzorce u\u017Cywane do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych, co umo\u017Cliwia programistom\
-  \ efektywne\u2026"
+  \ efektywne wyszukiwanie, dopasowywanie i manipulowanie tekstem."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

@@ -7,7 +7,10 @@ description: "Crear un archivo temporal en Dart implica generar un archivo que e
 lastmod: '2024-03-13T22:44:58.775263-06:00'
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Dart implica generar un archivo que est\xE1\
-  \ destinado para uso a corto plazo, principalmente para escenarios como almacenamiento\u2026"
+  \ destinado para uso a corto plazo, principalmente para escenarios como almacenamiento\
+  \ en cach\xE9 de datos, almacenamiento temporal para el procesamiento de archivos\
+  \ o mantener informaci\xF3n que es demasiado sensible para retener durante mucho\
+  \ tiempo."
 title: Creando un archivo temporal
 weight: 21
 ---

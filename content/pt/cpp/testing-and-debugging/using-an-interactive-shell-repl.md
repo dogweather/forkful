@@ -6,8 +6,7 @@ description: "Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) \xE9 um
 lastmod: '2024-03-13T22:44:46.881188-06:00'
 model: gpt-4-0125-preview
 summary: "Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) \xE9 um ambiente\
-  \ de programa\xE7\xE3o simples e interativo. Programadores o utilizam para experimenta\xE7\
-  \xE3o\u2026"
+  \ de programa\xE7\xE3o simples e interativo."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

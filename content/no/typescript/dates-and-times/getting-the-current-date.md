@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.542619-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget p\xE5\
   \ JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5v\xE6\
-  rende datoen og\u2026"
+  rende datoen og tiden."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

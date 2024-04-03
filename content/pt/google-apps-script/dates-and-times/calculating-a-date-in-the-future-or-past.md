@@ -7,7 +7,7 @@ description: "Calcular uma data no futuro ou no passado trata-se de manipular ob
 lastmod: '2024-03-13T22:44:46.123521-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou no passado trata-se de manipular objetos\
-  \ de data para encontrar datas al\xE9m ou antes da data presente, respectivamente.\u2026"
+  \ de data para encontrar datas al\xE9m ou antes da data presente, respectivamente."
 title: Calculando uma data no futuro ou no passado
 weight: 26
 ---

@@ -8,7 +8,8 @@ description: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennai
 lastmod: '2024-03-13T22:44:56.753414-06:00'
 model: gpt-4-0125-preview
 summary: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi,\
-  \ jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo ennen\u2026"
+  \ jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo ennen tiedosto-operaatioiden\
+  \ suorittamista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

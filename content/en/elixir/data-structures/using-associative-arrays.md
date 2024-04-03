@@ -4,8 +4,8 @@ description: "In Elixir, associative arrays, called Maps, are collections of key
   \ pairs where a unique key points to a value. They're super handy for storing and\u2026"
 lastmod: '2024-03-13T22:44:59.776360-06:00'
 model: gpt-4-0125-preview
-summary: "In Elixir, associative arrays, called Maps, are collections of key-value\
-  \ pairs where a unique key points to a value. They're super handy for storing and\u2026"
+summary: In Elixir, associative arrays, called Maps, are collections of key-value
+  pairs where a unique key points to a value.
 title: Using associative arrays
 weight: 15
 ---

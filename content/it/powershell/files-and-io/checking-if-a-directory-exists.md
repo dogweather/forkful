@@ -7,7 +7,9 @@ description: "In PowerShell, verificare l'esistenza di una directory \xE8 un com
 lastmod: '2024-03-13T22:44:43.656843-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito comune\
-  \ che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"
+  \ che aiuta gli script a prendere decisioni basate sulla struttura dei file system\u2014\
+  come evitare errori confermando che una directory di destinazione sia presente prima\
+  \ di tentare di leggerla o scriverci."
 title: Verifica se una directory esiste
 weight: 20
 ---

@@ -7,7 +7,8 @@ description: "Die Arbeit mit CSV-Dateien (Comma Separated Values) beinhaltet das
 lastmod: '2024-03-13T22:44:53.605715-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values) beinhaltet das Parsen\
-  \ und Generieren von Textdateien, bei denen jede Zeile Werte enth\xE4lt, die durch\u2026"
+  \ und Generieren von Textdateien, bei denen jede Zeile Werte enth\xE4lt, die durch\
+  \ Kommas getrennt sind."
 title: Arbeiten mit CSV
 weight: 37
 ---

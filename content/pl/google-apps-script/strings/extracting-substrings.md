@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.889766-06:00'
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na wzi\u0119ciu cz\u0119\u015B\
   ci ci\u0105gu - w zasadzie tworzeniu nowego ci\u0105gu z cz\u0119\u015Bci istniej\u0105\
-  cego. Programi\u015Bci robi\u0105 to z wielu powod\xF3w, w\u2026"
+  cego."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

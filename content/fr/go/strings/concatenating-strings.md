@@ -8,8 +8,7 @@ description: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEE
 lastmod: '2024-03-13T22:44:57.124041-06:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes ou\
-  \ plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\
-  \ cela pour g\xE9n\xE9rer\u2026"
+  \ plus bout \xE0 bout pour former une nouvelle cha\xEEne."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

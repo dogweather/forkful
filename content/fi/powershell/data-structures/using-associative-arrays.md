@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.773203-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 hajautustaulut tai\
   \ sanakirjat PowerShelliss\xE4, mahdollistavat tietojen tallentamisen avain-arvo\
-  \ -pareina,\u2026"
+  \ -pareina, mik\xE4 tekee tietojen hakemisesta suoraviivaista ja tehokasta."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

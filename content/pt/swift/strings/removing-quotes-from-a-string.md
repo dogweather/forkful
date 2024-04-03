@@ -5,7 +5,7 @@ description: "Remover aspas de uma string significa retirar quaisquer aspas que 
 lastmod: '2024-03-13T22:44:46.909170-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa retirar quaisquer aspas que envolvam\
-  \ o conte\xFAdo. Fazemos isso para higienizar entradas, preparar dados para\u2026"
+  \ o conte\xFAdo."
 title: Removendo aspas de uma string
 weight: 9
 ---

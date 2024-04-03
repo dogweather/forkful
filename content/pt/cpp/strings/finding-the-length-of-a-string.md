@@ -6,8 +6,7 @@ description: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string sig
 lastmod: '2024-03-13T22:44:46.870959-06:00'
 model: gpt-4-1106-preview
 summary: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
-  \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\
-  o, seja\u2026"
+  \ descobrir quantos caracteres ela tem."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

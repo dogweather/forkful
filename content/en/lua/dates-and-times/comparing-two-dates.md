@@ -4,8 +4,8 @@ description: "Comparing two dates means figuring out if one date is earlier, lat
   \ or the same as another. Programmers do it to track events, schedule tasks, sort\u2026"
 lastmod: '2024-03-13T22:45:00.216750-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates means figuring out if one date is earlier, later, or\
-  \ the same as another. Programmers do it to track events, schedule tasks, sort\u2026"
+summary: Comparing two dates means figuring out if one date is earlier, later, or
+  the same as another.
 title: Comparing two dates
 weight: 27
 ---

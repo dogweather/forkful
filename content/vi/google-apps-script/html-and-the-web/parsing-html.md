@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Google Apps Script bao g\u1ED3\
   m vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB n\u1ED9i dung HTML, \u0111\
   i\u1EC1u n\xE0y \u0111\u1EB7c bi\u1EC7t h\u1EEFu \xEDch khi t\u01B0\u01A1ng t\xE1\
-  c v\u1EDBi c\xE1c trang\u2026"
+  c v\u1EDBi c\xE1c trang web ho\u1EB7c ngu\u1ED3n d\u1EEF li\u1EC7u d\u1EF1a tr\xEA\
+  n web."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

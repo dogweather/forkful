@@ -6,8 +6,7 @@ description: "Kompleksiluvut laajentavat reaalilukusuoraa lis\xE4\xE4m\xE4ll\xE4
 lastmod: '2024-03-13T22:44:56.438882-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat reaalilukusuoraa lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
-  n, `i`, miss\xE4 `i^2 = -1`. Ne ovat keskeisi\xE4 aloilla kuten insin\xF6\xF6ritiede,\
-  \ fysiikka\u2026"
+  n, `i`, miss\xE4 `i^2 = -1`."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

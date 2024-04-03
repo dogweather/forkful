@@ -5,9 +5,7 @@ description: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\x
   \ kokoonpannut viestit tai\u2026"
 lastmod: '2024-03-13T22:44:56.348907-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\xE4 kutsutaan\
-  \ konkatenoinniksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta saadaan kokoonpannut\
-  \ viestit tai\u2026"
+summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

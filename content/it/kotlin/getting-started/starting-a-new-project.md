@@ -4,8 +4,8 @@ description: "Avviare un nuovo progetto Kotlin significa preparare l'ambiente pe
   \ scrivere codice. Lo facciamo perch\xE9 abbiamo un'idea da trasformare in un'app\u2026"
 lastmod: '2024-03-13T22:44:43.391815-06:00'
 model: gpt-4-1106-preview
-summary: "Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere\
-  \ codice. Lo facciamo perch\xE9 abbiamo un'idea da trasformare in un'app\u2026"
+summary: Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere
+  codice.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

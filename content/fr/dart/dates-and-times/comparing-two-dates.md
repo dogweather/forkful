@@ -8,7 +8,9 @@ description: "Comparer deux dates en Dart consiste \xE0 \xE9valuer la diff\xE9re
 lastmod: '2024-03-13T22:44:57.404220-06:00'
 model: gpt-4-0125-preview
 summary: "Comparer deux dates en Dart consiste \xE0 \xE9valuer la diff\xE9rence temporelle\
-  \ ou l'ordre entre elles, une fonctionnalit\xE9 essentielle dans les applications\u2026"
+  \ ou l'ordre entre elles, une fonctionnalit\xE9 essentielle dans les applications\
+  \ g\xE9rant des \xE9v\xE9nements, des \xE9ch\xE9ances ou toute donn\xE9e sensible\
+  \ au temps."
 title: Comparer deux dates
 weight: 27
 ---

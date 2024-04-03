@@ -4,8 +4,8 @@ description: "Capitalizing a string in C involves converting the first character
   \ each word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.496644-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizing a string in C involves converting the first character of each\
-  \ word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"
+summary: Capitalizing a string in C involves converting the first character of each
+  word in a given string to uppercase if it is a lowercase letter.
 title: Capitalizing a string
 weight: 2
 ---

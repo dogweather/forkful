@@ -7,7 +7,9 @@ description: "Das Parsen eines Datums aus einem String in Arduino umfasst das Ex
 lastmod: '2024-03-13T22:44:54.152852-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
-  \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer\u2026"
+  \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer textuellen\
+  \ Darstellung in ein Format, das f\xFCr die Zeitmessung, Vergleiche oder Manipulationen\
+  \ innerhalb von Skizzen genutzt werden kann."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

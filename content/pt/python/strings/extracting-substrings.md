@@ -6,8 +6,7 @@ description: "Extrair substrings \xE9 o ato de selecionar partes espec\xEDficas 
 lastmod: '2024-03-13T22:44:46.142844-06:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 o ato de selecionar partes espec\xEDficas de uma\
-  \ string. Programadores fazem isso para manipular, analisar, ou verificar dados\
-  \ dentro de\u2026"
+  \ string."
 title: Extraindo substrings
 weight: 6
 ---

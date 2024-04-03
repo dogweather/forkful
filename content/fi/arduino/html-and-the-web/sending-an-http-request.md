@@ -5,9 +5,7 @@ description: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon 
   \ API-kutsuihin ja\u2026"
 lastmod: '2024-03-13T22:44:56.821956-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli palvelimelle.\
-  \ Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 tietojen synkronointiin, API-kutsuihin\
-  \ ja\u2026"
+summary: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli palvelimelle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

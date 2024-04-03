@@ -6,7 +6,7 @@ description: "Att skicka en HTTP-beg\xE4ran med Basic-autentisering inneb\xE4r a
 lastmod: '2024-03-13T22:44:37.828903-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med Basic-autentisering inneb\xE4r att man\
-  \ legitimerar sig mot en server med anv\xE4ndarnamn och l\xF6senord kodat i base64.\u2026"
+  \ legitimerar sig mot en server med anv\xE4ndarnamn och l\xF6senord kodat i base64."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

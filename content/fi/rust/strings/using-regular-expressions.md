@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.346889-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4jille\
   \ merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
-  \u2026"
+  \ kuviohakutekniikoilla."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

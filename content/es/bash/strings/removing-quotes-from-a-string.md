@@ -4,8 +4,8 @@ description: "Eliminar las comillas de una cadena implica quitar las marcas de c
   \ que encierran la cadena. Los programadores a menudo quieren hacer esto para\u2026"
 lastmod: '2024-03-13T22:44:59.232560-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar las comillas de una cadena implica quitar las marcas de comillas\
-  \ que encierran la cadena. Los programadores a menudo quieren hacer esto para\u2026"
+summary: Eliminar las comillas de una cadena implica quitar las marcas de comillas
+  que encierran la cadena.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

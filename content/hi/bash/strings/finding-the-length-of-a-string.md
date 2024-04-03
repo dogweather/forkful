@@ -4,8 +4,7 @@ description: "String ki length jaanna matlab ye hai ki us string me kitne charac
   \ hain. Programmers isliye string ki length jaan'na chahte hain taki wo data ko\u2026"
 lastmod: '2024-03-13T22:44:52.606821-06:00'
 model: gpt-4-1106-preview
-summary: "String ki length jaanna matlab ye hai ki us string me kitne characters hain.\
-  \ Programmers isliye string ki length jaan'na chahte hain taki wo data ko\u2026"
+summary: String ki length jaanna matlab ye hai ki us string me kitne characters hain.
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
   \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
 weight: 7

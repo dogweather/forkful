@@ -7,8 +7,8 @@ description: "Associative arrays, or dictionaries, in Haskell are all about mapp
   \ them\u2026"
 lastmod: '2024-03-13T22:45:00.121643-06:00'
 model: gpt-4-0125-preview
-summary: "Associative arrays, or dictionaries, in Haskell are all about mapping keys\
-  \ to values for quick lookup and efficient data management. Programmers use them\u2026"
+summary: Associative arrays, or dictionaries, in Haskell are all about mapping keys
+  to values for quick lookup and efficient data management.
 title: Using associative arrays
 weight: 15
 ---

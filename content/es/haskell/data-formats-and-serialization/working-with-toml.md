@@ -4,8 +4,8 @@ description: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obv
   \ Minimal Language) con Haskell. Los programadores lo hacen para administrar\u2026"
 lastmod: '2024-03-13T22:44:59.141822-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
-  \ Minimal Language) con Haskell. Los programadores lo hacen para administrar\u2026"
+summary: Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious, Minimal
+  Language) con Haskell.
 title: Trabajando con TOML
 weight: 39
 ---

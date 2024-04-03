@@ -7,8 +7,9 @@ description: "Inviare una richiesta HTTP con autenticazione di base in C comport
   \ con\u2026"
 lastmod: '2024-03-13T22:44:43.997756-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione\
-  \ di una richiesta HTTP che include un'intestazione di Autorizzazione con\u2026"
+summary: Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione
+  di una richiesta HTTP che include un'intestazione di Autorizzazione con le credenziali
+  dell'utente codificate in Base64.
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

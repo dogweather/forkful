@@ -6,8 +6,7 @@ description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu progr
 lastmod: '2024-03-13T22:44:46.547512-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa em\
-  \ partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica. Fazemos\
-  \ isso para tornar\u2026"
+  \ partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

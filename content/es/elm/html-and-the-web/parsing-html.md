@@ -6,8 +6,7 @@ description: "Parsear HTML en Elm implica extraer informaci\xF3n de documentos H
   \ Los programadores lo hacen para interactuar con contenido web o APIs que retornan\u2026"
 lastmod: '2024-03-13T22:44:58.977741-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear HTML en Elm implica extraer informaci\xF3n de documentos HTML. Los\
-  \ programadores lo hacen para interactuar con contenido web o APIs que retornan\u2026"
+summary: "Parsear HTML en Elm implica extraer informaci\xF3n de documentos HTML."
 title: Analizando HTML
 weight: 43
 ---

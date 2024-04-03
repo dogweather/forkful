@@ -8,8 +8,7 @@ description: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatis
 lastmod: '2024-03-13T22:44:37.659615-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatiska skript\
-  \ f\xF6r att verifiera funktionaliteten och korrektheten i koden. Programmerare\
-  \ g\xF6r\u2026"
+  \ f\xF6r att verifiera funktionaliteten och korrektheten i koden."
 title: Skriva tester
 weight: 36
 ---

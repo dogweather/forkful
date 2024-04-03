@@ -7,8 +7,8 @@ description: "Debug-output afdrukken gaat over data uit je programma spugen om t
   \ volgen,\u2026"
 lastmod: '2024-03-13T22:44:50.854976-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-output afdrukken gaat over data uit je programma spugen om te zien\
-  \ wat er onder de motorkap gebeurt. Programmeurs doen dit om variabelen te volgen,\u2026"
+summary: Debug-output afdrukken gaat over data uit je programma spugen om te zien
+  wat er onder de motorkap gebeurt.
 title: Debug-output afdrukken
 weight: 33
 ---

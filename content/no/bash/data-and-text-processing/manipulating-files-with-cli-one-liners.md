@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.969220-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers kommandoer\
   \ involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re handlinger\
-  \ p\xE5\u2026"
+  \ p\xE5 filer, som \xE5 opprette, lese, oppdatere eller slette dem, alt fra terminalen."
 title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---

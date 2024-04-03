@@ -6,8 +6,7 @@ description: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \
 lastmod: '2024-03-13T22:44:59.504210-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \xFAtil\
-  \ para entender qu\xE9 hace tu c\xF3digo. Los programadores lo hacen para rastrear\
-  \ errores y\u2026"
+  \ para entender qu\xE9 hace tu c\xF3digo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

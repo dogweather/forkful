@@ -7,8 +7,8 @@ description: "Het combineren van strings, of concatenatie, is zoals het maken va
   \ of\u2026"
 lastmod: '2024-03-13T22:44:51.018586-06:00'
 model: gpt-4-0125-preview
-summary: "Het combineren van strings, of concatenatie, is zoals het maken van een\
-  \ trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen, of\u2026"
+summary: Het combineren van strings, of concatenatie, is zoals het maken van een trein
+  van woorden.
 title: Samenvoegen van strings
 weight: 3
 ---

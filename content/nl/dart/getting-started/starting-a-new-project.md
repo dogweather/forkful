@@ -7,7 +7,7 @@ description: "Een nieuw project starten in Dart omvat het opzetten van een omgev
 lastmod: '2024-03-13T22:44:50.505555-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Dart omvat het opzetten van een omgeving die\
-  \ bevorderlijk is voor effici\xEBnte ontwikkeling, testen en implementatie.\u2026"
+  \ bevorderlijk is voor effici\xEBnte ontwikkeling, testen en implementatie."
 title: Een nieuw project starten
 weight: 1
 ---

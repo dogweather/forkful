@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:56.197654-06:00'
 model: gpt-4-1106-preview
 summary: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
   \ tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\
-  \ p\xE4iv\xE4st\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
+  \ p\xE4iv\xE4st\xE4."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

@@ -6,8 +6,7 @@ description: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tet
 lastmod: '2024-03-13T22:44:56.546799-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
-  vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\
-  ytt\xE4j\xE4n tarpeisiin mukautuvat\u2026"
+  vi\xE4 tiedonpaloja."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

@@ -10,8 +10,8 @@ model: gpt-4-0125-preview
 summary: "\u041E\u0441\u044C \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0430 \u0434\
   \u0435\u0433\u0443\u0441\u0442\u0430\u0446\u0456\u044F \u0432\u0456\u0434\u043B\u0430\
   \u0433\u043E\u0434\u0436\u0435\u043D\u043D\u044F \u043D\u0430 Kotlin \u0437 IntelliJ\
-  \ IDEA - Sherlock Holmes \u0441\u0435\u0440\u0435\u0434 IDE: ```kotlin fun main()\
-  \ { val mysteryNumber = 42 var guess = 0\u2026"
+  \ IDEA - Sherlock Holmes \u0441\u0435\u0440\u0435\u0434 IDE:\n\n```kotlin\nfun main()\
+  \ {\n    val mysteryNumber = 42\n    var guess = 0\n\n    while (guess ."
 title: "\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0434\
   \u0435\u0431\u0430\u0433\u0435\u0440\u0430"
 weight: 35

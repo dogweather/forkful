@@ -6,8 +6,9 @@ description: "String interpolation in Visual Basic for Applications (VBA) verwij
   \ naar het proces van het inbedden van variabelen of uitdrukkingen binnen een\u2026"
 lastmod: '2024-03-13T22:44:50.622274-06:00'
 model: gpt-4-0125-preview
-summary: "String interpolation in Visual Basic for Applications (VBA) verwijst naar\
-  \ het proces van het inbedden van variabelen of uitdrukkingen binnen een\u2026"
+summary: String interpolation in Visual Basic for Applications (VBA) verwijst naar
+  het proces van het inbedden van variabelen of uitdrukkingen binnen een stringliteral,
+  wat dynamische stringvorming mogelijk maakt.
 title: Een string interpoleren
 weight: 8
 ---

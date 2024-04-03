@@ -6,8 +6,8 @@ description: "Escribir pruebas en Bash implica crear scripts de casos de prueba 
   \ validar la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
 lastmod: '2024-03-13T22:44:59.250142-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Bash implica crear scripts de casos de prueba para validar\
-  \ la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
+summary: Escribir pruebas en Bash implica crear scripts de casos de prueba para validar
+  la funcionalidad de tus scripts de Bash.
 title: Escribiendo pruebas
 weight: 36
 ---

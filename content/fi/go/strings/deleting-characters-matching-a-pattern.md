@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.033444-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t tiettyyn malliin, tarkoittaa\
   \ tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, s\xE4\xE4nt\xF6\
-  jen perusteella,\u2026"
+  jen perusteella, jotka m\xE4\xE4ritell\xE4\xE4n mallilla (yleens\xE4 s\xE4\xE4nn\xF6\
+  llisten lausekkeiden kautta)."
 title: Merkkien poistaminen vastaavan mallin mukaan
 weight: 5
 ---

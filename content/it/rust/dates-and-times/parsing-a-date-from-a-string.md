@@ -8,7 +8,8 @@ description: "L'analisi di una data da una stringa \xE8 un compito comune quando
 lastmod: '2024-03-13T22:44:43.227483-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa \xE8 un compito comune quando si gestiscono\
-  \ input dell'utente o si leggono dati da file, e coinvolge la conversione dei\u2026"
+  \ input dell'utente o si leggono dati da file, e coinvolge la conversione dei dati\
+  \ in stringa in un formato di data riconosciuto dal linguaggio di programmazione."
 title: Analisi di una data da una stringa
 weight: 30
 ---

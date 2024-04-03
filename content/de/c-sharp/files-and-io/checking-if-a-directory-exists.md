@@ -8,7 +8,7 @@ description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involvie
 lastmod: '2024-03-13T22:44:53.902621-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involviert die\
-  \ Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im Dateisystem.\u2026"
+  \ Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im Dateisystem."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

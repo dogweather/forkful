@@ -6,8 +6,7 @@ description: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5
 lastmod: '2024-03-13T22:44:37.827117-06:00'
 model: unknown
 summary: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5got som\
-  \ programmets logik kan hantera. Vi g\xF6r det f\xF6r att kunna manipulera, analysera\
-  \ och\u2026"
+  \ programmets logik kan hantera."
 title: Tolka HTML
 weight: 43
 ---

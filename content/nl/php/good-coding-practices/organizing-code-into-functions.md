@@ -6,8 +6,8 @@ description: "Het organiseren van code in functies gaat over het opsplitsen van 
   \ code in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen\u2026"
 lastmod: '2024-03-13T22:44:50.901030-06:00'
 model: gpt-4-0125-preview
-summary: "Het organiseren van code in functies gaat over het opsplitsen van je code\
-  \ in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen\u2026"
+summary: Het organiseren van code in functies gaat over het opsplitsen van je code
+  in herbruikbare blokken met gedefinieerde doeleinden.
 title: Code organiseren in functies
 weight: 18
 ---

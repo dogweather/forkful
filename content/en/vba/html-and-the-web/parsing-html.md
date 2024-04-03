@@ -4,8 +4,8 @@ description: "Parsing HTML in Visual Basic for Applications (VBA) involves extra
   \ specific information from an HTML document. Programmers do it to automate the\u2026"
 lastmod: '2024-03-13T22:44:59.932364-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in Visual Basic for Applications (VBA) involves extracting\
-  \ specific information from an HTML document. Programmers do it to automate the\u2026"
+summary: Parsing HTML in Visual Basic for Applications (VBA) involves extracting specific
+  information from an HTML document.
 title: Parsing HTML
 weight: 43
 ---

@@ -6,8 +6,8 @@ description: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om 
   \ lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:51.270363-06:00'
 model: gpt-4-0125-preview
-summary: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen\
-  \ en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
+summary: TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen
+  en schrijven en eenvoudig voor machines om te parsen en genereren.
 title: Werken met TOML
 weight: 39
 ---

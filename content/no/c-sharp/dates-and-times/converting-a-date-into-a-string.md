@@ -4,8 +4,7 @@ description: "Konvertering av dato til streng gj\xF8r datoen lesbar for menneske
   \ Dette er nyttig for visning, logging eller formatert utveksling mellom systemer."
 lastmod: '2024-03-13T22:44:40.808271-06:00'
 model: gpt-4-1106-preview
-summary: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker. Dette\
-  \ er nyttig for visning, logging eller formatert utveksling mellom systemer."
+summary: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker."
 title: Konvertere en dato til en streng
 weight: 28
 ---

@@ -8,7 +8,9 @@ description: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeur
 lastmod: '2024-03-13T22:44:57.212958-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs S\xE9\
-  par\xE9es par des Virgules) dans Google Apps Script implique de lire, modifier et\u2026"
+  par\xE9es par des Virgules) dans Google Apps Script implique de lire, modifier et\
+  \ \xE9crire des fichiers en texte brut o\xF9 chaque ligne repr\xE9sente un enregistrement\
+  \ de donn\xE9es avec des valeurs s\xE9par\xE9es par des virgules."
 title: Travailler avec CSV
 weight: 37
 ---

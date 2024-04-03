@@ -7,7 +7,7 @@ description: "Trabajar con n\xFAmeros complejos implica realizar operaciones mat
 lastmod: '2024-03-13T22:44:58.886151-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con n\xFAmeros complejos implica realizar operaciones matem\xE1\
-  ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria. Los programadores\u2026"
+  ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

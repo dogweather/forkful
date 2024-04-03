@@ -4,8 +4,8 @@ description: "Refactoring is the process of reworking your code to improve its s
   \ and readability without altering the external behavior or functionality.\u2026"
 lastmod: '2024-03-13T22:45:00.328658-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is the process of reworking your code to improve its structure\
-  \ and readability without altering the external behavior or functionality.\u2026"
+summary: Refactoring is the process of reworking your code to improve its structure
+  and readability without altering the external behavior or functionality.
 title: Refactoring
 weight: 19
 ---

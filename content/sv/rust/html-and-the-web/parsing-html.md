@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.696102-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
   \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
-  \ webb-\u2026"
+  \ webb-crawlers."
 title: Tolka HTML
 weight: 43
 ---

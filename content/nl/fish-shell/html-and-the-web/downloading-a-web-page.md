@@ -6,8 +6,8 @@ description: "Een webpagina downloaden haalt de inhoud ervan van het web naar je
   \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"
 lastmod: '2024-03-13T22:44:51.246103-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
-  \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"
+summary: Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale
+  machine.
 title: Een webpagina downloaden
 weight: 42
 ---

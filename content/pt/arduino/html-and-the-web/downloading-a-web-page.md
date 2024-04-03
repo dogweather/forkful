@@ -6,8 +6,7 @@ description: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo disp
 lastmod: '2024-03-13T22:44:46.838218-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo dispon\xED\
-  vel em um endere\xE7o espec\xEDfico da internet. Programadores fazem isso para coletar\
-  \ dados,\u2026"
+  vel em um endere\xE7o espec\xEDfico da internet."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

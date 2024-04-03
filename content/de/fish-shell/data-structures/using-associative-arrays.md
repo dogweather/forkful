@@ -7,7 +7,8 @@ description: "Assoziative Arrays oder Hash-Maps erm\xF6glichen es Ihnen, Daten a
 lastmod: '2024-03-13T22:44:54.300756-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays oder Hash-Maps erm\xF6glichen es Ihnen, Daten als Schl\xFC\
-  ssel-Wert-Paare zu speichern, was die Organisation und das Abrufen von\u2026"
+  ssel-Wert-Paare zu speichern, was die Organisation und das Abrufen von Informationen\
+  \ nach Schl\xFCssel erleichtert."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

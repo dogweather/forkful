@@ -8,8 +8,7 @@ description: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le co
 lastmod: '2024-03-13T22:44:57.131999-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
-  \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
-  \ cela pour le\u2026"
+  \ HTML d'une page web via le protocole HTTP/HTTPS."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

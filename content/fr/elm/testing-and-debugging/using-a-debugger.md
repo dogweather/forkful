@@ -6,8 +6,7 @@ description: "Elm n'a pas de d\xE9bogueur int\xE9gr\xE9 au sens traditionnel, co
 lastmod: '2024-03-13T22:44:57.693906-06:00'
 model: gpt-4-0125-preview
 summary: "Elm n'a pas de d\xE9bogueur int\xE9gr\xE9 au sens traditionnel, comme le\
-  \ fait, par exemple, JavaScript avec les outils de d\xE9veloppement du navigateur.\
-  \ Cependant,\u2026"
+  \ fait, par exemple, JavaScript avec les outils de d\xE9veloppement du navigateur."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

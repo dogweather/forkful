@@ -7,7 +7,8 @@ description: "Logging i programvareutvikling er prosessen med \xE5 registrere in
 lastmod: '2024-03-13T22:44:40.273986-06:00'
 model: gpt-4-0125-preview
 summary: "Logging i programvareutvikling er prosessen med \xE5 registrere informasjon\
-  \ om et programs utf\xF8relse, designet for \xE5 spore dets oppf\xF8rsel og diagnostisere\u2026"
+  \ om et programs utf\xF8relse, designet for \xE5 spore dets oppf\xF8rsel og diagnostisere\
+  \ problemer."
 title: Logging
 weight: 17
 ---

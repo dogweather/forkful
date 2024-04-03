@@ -6,7 +6,7 @@ description: "Rounding numbers means adjusting them to the nearest specified pla
 lastmod: '2024-03-13T22:45:00.083603-06:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest specified place value\u2014\
-  think buckling them down to a simpler form. Programmers round off to control\u2026"
+  think buckling them down to a simpler form."
 title: Rounding numbers
 weight: 13
 ---

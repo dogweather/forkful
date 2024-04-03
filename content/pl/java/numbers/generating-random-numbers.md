@@ -6,8 +6,7 @@ description: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych 
 lastmod: '2024-03-13T22:44:35.273264-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekwencji\
-  \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie. Programi\u015Bci u\u017C\
-  ywaj\u0105 tej\u2026"
+  \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie."
 title: Generowanie liczb losowych
 weight: 12
 ---

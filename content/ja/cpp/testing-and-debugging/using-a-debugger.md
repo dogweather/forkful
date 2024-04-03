@@ -10,8 +10,11 @@ model: gpt-4-0125-preview
 summary: "C++\u306FGDB\u3084Visual Studio\u30C7\u30D0\u30C3\u30AC\u30FC\u306E\u3088\
   \u3046\u306A\u30C7\u30D0\u30C3\u30AC\u30FC\u3068\u7D71\u5408\u3057\u3066\u3044\u307E\
   \u3059\u3002\u4EE5\u4E0B\u306BGDB\u3092\u4F7F\u7528\u3057\u305F\u7C21\u5358\u306A\
-  \u4F8B\u3092\u793A\u3057\u307E\u3059\u3002 ```C++ #include <iostream> int main()\
-  \ { int a = 5; int b = 0; int c = a / b; //\u2026"
+  \u4F8B\u3092\u793A\u3057\u307E\u3059\u3002\n\n```C++\n#include <iostream>\n\nint\
+  \ main() {\n    int a = 5;\n    int b = 0;\n    int c = a / b; // \u304A\u3063\u3068\
+  \u3001\u30BC\u30ED\u9664\u7B97\u3067\u3059\uFF01\n    std::cout << c << std::endl;\n\
+  \    return 0;\n}\n\n// \u30B3\u30F3\u30D1\u30A4\u30EB\u3059\u308B\u306B\u306F\uFF1A\
+  \n// g++ -g -o my_program my_program."
 title: "\u30C7\u30D0\u30C3\u30AC\u30FC\u306E\u4F7F\u3044\u65B9"
 weight: 35
 ---

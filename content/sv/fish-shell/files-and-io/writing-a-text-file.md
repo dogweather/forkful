@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.356579-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Fish Shell g\xF6r att du kan lagra data p\xE5\
   \ ett best\xE4ndigt s\xE4tt, vilket m\xF6jligg\xF6r enkel h\xE4mtning eller manipulation\
-  \ av data\u2026"
+  \ av data antingen av samma Fish-script eller andra program."
 title: Att skriva en textfil
 weight: 24
 ---

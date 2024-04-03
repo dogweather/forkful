@@ -7,7 +7,7 @@ description: "Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Ope
 lastmod: '2024-03-13T22:44:54.418797-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Operation,\
-  \ die es Ihnen erm\xF6glicht, Ausgaben und Daten dauerhaft zu speichern. Dadurch\u2026"
+  \ die es Ihnen erm\xF6glicht, Ausgaben und Daten dauerhaft zu speichern."
 title: Eine Textdatei schreiben
 weight: 24
 ---

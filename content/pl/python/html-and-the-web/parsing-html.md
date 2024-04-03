@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:34.947229-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w\
   \ celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\
-  \ powszechnym\u2026"
+  \ powszechnym zadaniem przy web scrapingu, wydobywaniu danych lub automatyzowaniu\
+  \ interakcji ze stronami internetowymi."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

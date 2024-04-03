@@ -7,8 +7,8 @@ description: "Escrever testes em Bash envolve criar scripts de casos de teste pa
   \ para\u2026"
 lastmod: '2024-03-13T22:44:46.756221-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Bash envolve criar scripts de casos de teste para validar\
-  \ a funcionalidade dos seus scripts Bash. Os programadores realizam testes para\u2026"
+summary: Escrever testes em Bash envolve criar scripts de casos de teste para validar
+  a funcionalidade dos seus scripts Bash.
 title: Escrevendo testes
 weight: 36
 ---

@@ -13,7 +13,8 @@ summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i t
   \ Dart kh\xF4ng l\xE0 vi\u1EC7c x\xE1c minh s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7\
   a m\u1ED9t th\u01B0 m\u1EE5c t\u1EA1i m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn \u0111\
   \xE3 ch\u1EC9 \u0111\u1ECBnh tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDB\
-  c\u2026"
+  c khi th\u1EF1c hi\u1EC7n c\xE1c ho\u1EA1t \u0111\u1ED9ng nh\u01B0 \u0111\u1ECD\
+  c ho\u1EB7c ghi t\u1EC7p."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

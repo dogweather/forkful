@@ -4,8 +4,8 @@ description: "Logging in Visual Basic for Applications (VBA) involves recording 
   \ about a program's runtime behavior to a file, console, or database.\u2026"
 lastmod: '2024-03-13T22:44:59.940170-06:00'
 model: gpt-4-0125-preview
-summary: "Logging in Visual Basic for Applications (VBA) involves recording information\
-  \ about a program's runtime behavior to a file, console, or database.\u2026"
+summary: Logging in Visual Basic for Applications (VBA) involves recording information
+  about a program's runtime behavior to a file, console, or database.
 title: Logging
 weight: 17
 ---

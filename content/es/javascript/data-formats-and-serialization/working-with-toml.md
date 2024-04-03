@@ -6,7 +6,7 @@ description: "TOML, abreviatura de Tom's Obvious, Minimal Language, define c\xF3
 lastmod: '2024-03-13T22:44:59.481778-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abreviatura de Tom's Obvious, Minimal Language, define c\xF3mo estructurar\
-  \ archivos de configuraci\xF3n. Los programadores trabajan con TOML porque es\u2026"
+  \ archivos de configuraci\xF3n."
 title: Trabajando con TOML
 weight: 39
 ---

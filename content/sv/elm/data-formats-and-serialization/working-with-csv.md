@@ -7,7 +7,7 @@ description: "Att arbeta med CSV (Comma Separated Values) involverar tolkning oc
 lastmod: '2024-03-13T22:44:37.851959-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma Separated Values) involverar tolkning och generering\
-  \ av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat. Detta\u2026"
+  \ av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat."
 title: Arbeta med CSV
 weight: 37
 ---

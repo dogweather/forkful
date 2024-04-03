@@ -6,7 +6,7 @@ description: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (c
 lastmod: '2024-03-13T22:44:46.914762-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (como 3\
-  \ + 4i). Programadores os utilizam no Swift para tarefas como processamento de sinais,\u2026"
+  \ + 4i)."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

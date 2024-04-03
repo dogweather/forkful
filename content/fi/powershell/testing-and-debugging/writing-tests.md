@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.785742-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen PowerShellill\xE4 tarkoittaa skriptien luomista,\
   \ jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten\
-  \ sen\u2026"
+  \ sen toimivan odotetulla tavalla."
 title: Testien kirjoittaminen
 weight: 36
 ---

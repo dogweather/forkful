@@ -7,7 +7,8 @@ description: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain'
 lastmod: '2024-03-13T22:44:57.015363-06:00'
 model: gpt-4-0125-preview
 summary: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup\
-  \ Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\u2026"
+  \ Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\
+  \ k\xE4ytetty\xE4 datan sarjallistamismuotoa, Fish Shelliss\xE4."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

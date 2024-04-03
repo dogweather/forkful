@@ -8,7 +8,8 @@ description: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere 
 lastmod: '2024-03-13T22:44:41.082810-06:00'
 model: gpt-4-0125-preview
 summary: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det f\xF8\
-  rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5 bokstaver,\u2026"
+  rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5 bokstaver,\
+  \ samtidig som de gjenv\xE6rende tegnene forblir uendret."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

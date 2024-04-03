@@ -8,8 +8,7 @@ description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico e
 lastmod: '2024-03-13T22:44:58.502042-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es una\
-  \ t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n. En el\
-  \ contexto de\u2026"
+  \ t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

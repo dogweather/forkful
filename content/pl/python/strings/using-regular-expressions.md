@@ -8,8 +8,7 @@ description: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce 
 lastmod: '2024-03-13T22:44:34.938694-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce do wyszukiwania\
-  \ kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci wykorzystuj\u0105\
-  \ je do wyszukiwania, edycji\u2026"
+  \ kombinacji znak\xF3w w ci\u0105gach tekstowych."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

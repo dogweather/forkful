@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.677154-06:00'
 model: gpt-4-0125-preview
 summary: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka\
   \ on ihmisten luettavissa ja kirjoitettavissa helposti, sek\xE4 koneiden j\xE4sent\xE4\
-  m\xE4 ja\u2026"
+  m\xE4 ja tuottama vaivattomasti."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

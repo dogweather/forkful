@@ -6,8 +6,7 @@ description: "Oppretting av midlertidige filer lar oss holde data midlertidig un
 lastmod: '2024-03-13T22:44:40.993978-06:00'
 model: gpt-4-1106-preview
 summary: "Oppretting av midlertidige filer lar oss holde data midlertidig under programmets\
-  \ kj\xF8ring. Programmerere gj\xF8r dette for sikkerhetskopiering, for \xE5 unng\xE5\
-  \u2026"
+  \ kj\xF8ring."
 title: Opprette en midlertidig fil
 weight: 21
 ---

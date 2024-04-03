@@ -5,9 +5,7 @@ description: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej p
   \ czytelno\u015Bci, cel\xF3w\u2026"
 lastmod: '2024-03-13T22:44:35.133840-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji.\
-  \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\
-  \ czytelno\u015Bci, cel\xF3w\u2026"
+summary: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

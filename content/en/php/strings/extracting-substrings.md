@@ -5,8 +5,7 @@ description: "Extracting substrings means pulling specific portions from a strin
   \ an\u2026"
 lastmod: '2024-03-13T22:45:00.156628-06:00'
 model: gpt-4-1106-preview
-summary: "Extracting substrings means pulling specific portions from a string. Programmers\
-  \ do it to process or manipulate data, like fetching a username from an\u2026"
+summary: Extracting substrings means pulling specific portions from a string.
 title: Extracting substrings
 weight: 6
 ---

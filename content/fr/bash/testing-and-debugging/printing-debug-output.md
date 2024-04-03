@@ -6,7 +6,7 @@ description: "Imprimer un d\xE9bogage, c'est afficher des infos dans la console 
 lastmod: '2024-03-13T22:44:57.998062-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimer un d\xE9bogage, c'est afficher des infos dans la console pour suivre\
-  \ ce que fait le code. Les d\xE9veloppeurs le font pour rep\xE9rer les bugs et\u2026"
+  \ ce que fait le code."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

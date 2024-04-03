@@ -7,7 +7,7 @@ description: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, re
 lastmod: '2024-03-13T22:44:41.264745-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
-  \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"
+  \ som `a + bi` hvor `i` er kvadratroten av `-1`."
 title: "\xC5 Arbeide med Komplekse Tall"
 weight: 14
 ---

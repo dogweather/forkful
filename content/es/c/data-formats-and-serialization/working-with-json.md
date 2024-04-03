@@ -8,8 +8,7 @@ description: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) en C invo
 lastmod: '2024-03-13T22:44:59.569181-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) en C involucra\
-  \ analizar, generar y manipular estructuras de datos JSON. Los programadores hacen\
-  \ esto\u2026"
+  \ analizar, generar y manipular estructuras de datos JSON."
 title: Trabajando con JSON
 weight: 38
 ---

@@ -6,8 +6,7 @@ description: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\
 lastmod: '2024-03-13T22:44:40.797356-06:00'
 model: gpt-4-0125-preview
 summary: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8re\
-  \ den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8king,\
-  \ eller\u2026"
+  \ den interaktivt."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

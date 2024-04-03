@@ -4,8 +4,8 @@ description: "Imagine you've got a tiny program that's not acting right: ```C# s
   \ void Main() { int result = Sum(1, 2); Console.WriteLine(result); } static int\u2026"
 lastmod: '2024-03-13T22:45:00.093402-06:00'
 model: gpt-4-1106-preview
-summary: "Imagine you've got a tiny program that's not acting right: ```C# static\
-  \ void Main() { int result = Sum(1, 2); Console.WriteLine(result); } static int\u2026"
+summary: "Imagine you've got a tiny program that's not acting right:\n\n```C#\nstatic\
+  \ void Main()\n{\n    int result = Sum(1, 2);\n    Console."
 title: Using a debugger
 weight: 35
 ---

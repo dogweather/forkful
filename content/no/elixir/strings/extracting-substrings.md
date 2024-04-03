@@ -6,8 +6,7 @@ description: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut sp
 lastmod: '2024-03-13T22:44:40.432530-06:00'
 model: gpt-4-1106-preview
 summary: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut spesifikk\
-  \ info fra tekststr\xF8mmer. Du gj\xF8r det fordi du kanskje trenger \xE5 bearbeide\
-  \ eller\u2026"
+  \ info fra tekststr\xF8mmer."
 title: Uthenting av delstrenger
 weight: 6
 ---

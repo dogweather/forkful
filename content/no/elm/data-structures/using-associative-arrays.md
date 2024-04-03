@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.701435-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler n\xF8\
   kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting av\
-  \ verdier super\u2026"
+  \ verdier super kjappe."
 title: Bruke associative tabeller
 weight: 15
 ---

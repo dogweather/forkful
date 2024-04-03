@@ -7,7 +7,9 @@ description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Ru
 lastmod: '2024-03-13T22:44:56.340317-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
-  \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
+  \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\
+  \ suuraakkoseksi, jos se on kirjain, samalla kun loput merkkijonosta j\xE4tet\xE4\
+  \xE4n muuttumattomiksi."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

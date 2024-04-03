@@ -8,8 +8,7 @@ description: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme a
 lastmod: '2024-03-13T22:44:40.256981-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
-  \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\
-  \ \xE5 manipulere\u2026"
+  \ tegn den inneholder."
 title: "\xC5 finne lengden p\xE5 en streng"
 weight: 7
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.354373-06:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte en C consiste \xE0 identifier des\
   \ sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0 les\
-  \ substituer par\u2026"
+  \ substituer par diff\xE9rentes sous-cha\xEEnes."
 title: Rechercher et remplacer du texte
 weight: 10
 ---

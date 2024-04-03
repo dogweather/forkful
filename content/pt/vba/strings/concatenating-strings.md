@@ -8,8 +8,7 @@ description: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolv
 lastmod: '2024-03-13T22:44:46.402726-06:00'
 model: gpt-4-0125-preview
 summary: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve a uni\xE3\
-  o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa fundamental\
-  \ na\u2026"
+  o de duas ou mais strings em uma \xFAnica entidade."
 title: Concatenando strings
 weight: 3
 ---

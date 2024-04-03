@@ -6,7 +6,7 @@ description: "Avrunding av tall betyr \xE5 kutte av desimalene til en bestemt n\
 lastmod: '2024-03-13T22:44:40.880789-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall betyr \xE5 kutte av desimalene til en bestemt n\xF8yaktighet,\
-  \ ofte til hele tall. Programmerere runder av for \xE5 forenkle beregninger, forbedre\u2026"
+  \ ofte til hele tall."
 title: Avrunding av tall
 weight: 13
 ---

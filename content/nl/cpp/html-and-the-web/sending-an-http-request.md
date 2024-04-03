@@ -6,8 +6,7 @@ description: "Het versturen van een HTTP-verzoek haalt gegevens op van een webse
   \ Programmeurs doen dit om te interageren met webservices, informatie te verzamelen\u2026"
 lastmod: '2024-03-13T22:44:51.109582-06:00'
 model: gpt-4-0125-preview
-summary: "Het versturen van een HTTP-verzoek haalt gegevens op van een webserver.\
-  \ Programmeurs doen dit om te interageren met webservices, informatie te verzamelen\u2026"
+summary: Het versturen van een HTTP-verzoek haalt gegevens op van een webserver.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

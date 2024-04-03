@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.244460-06:00'
 model: gpt-4-1106-preview
 summary: "Registros (logging) no desenvolvimento de software \xE9 a t\xE9cnica de\
   \ registrar eventos que ocorrem enquanto um programa est\xE1 em execu\xE7\xE3o,\
-  \ tipicamente em um\u2026"
+  \ tipicamente em um arquivo ou sistema externo."
 title: Registro de Logs
 weight: 17
 ---

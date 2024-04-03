@@ -6,8 +6,7 @@ description: "Att organisera kod i funktioner inneb\xE4r att bryta ner ett stort
 lastmod: '2024-03-13T22:44:37.792761-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner inneb\xE4r att bryta ner ett stort program\
-  \ i hanterbara delar, d\xE4r varje del utf\xF6r en distinkt uppgift. Programmerare\
-  \ g\xF6r\u2026"
+  \ i hanterbara delar, d\xE4r varje del utf\xF6r en distinkt uppgift."
 title: Att organisera kod i funktioner
 weight: 18
 ---

@@ -6,7 +6,8 @@ description: "Mit TOML zu arbeiten bedeutet, dass man Daten in einem Minimalform
 lastmod: '2024-03-13T22:44:53.443641-06:00'
 model: gpt-4-0125-preview
 summary: "Mit TOML zu arbeiten bedeutet, dass man Daten in einem Minimalformat \"\
-  Tom's Obvious, Minimal Language\" handhabt, das f\xFCr Konfigurationsdateien wegen\u2026"
+  Tom's Obvious, Minimal Language\" handhabt, das f\xFCr Konfigurationsdateien wegen\
+  \ seiner leichten Lesbarkeit beliebt ist."
 title: Arbeiten mit TOML
 weight: 39
 ---

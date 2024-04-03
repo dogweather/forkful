@@ -5,8 +5,8 @@ description: "Generating random numbers is a fundamental task in programming, us
   \ of\u2026"
 lastmod: '2024-03-13T22:45:00.468365-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers is a fundamental task in programming, used for\
-  \ everything from data sampling to game development. In Fish Shell, making use of\u2026"
+summary: Generating random numbers is a fundamental task in programming, used for
+  everything from data sampling to game development.
 title: Generating random numbers
 weight: 12
 ---

@@ -8,7 +8,7 @@ description: "YAML, lyhenteen\xE4 ilmaisulle YAML Ain't Markup Language, on ihmi
 lastmod: '2024-03-13T22:44:56.970186-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, lyhenteen\xE4 ilmaisulle YAML Ain't Markup Language, on ihmisen luettavaa\
-  \ tietojen sarjallistamismuotoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein\u2026"
+  \ tietojen sarjallistamismuotoa."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

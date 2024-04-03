@@ -5,9 +5,7 @@ description: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r so
   kerst\xE4lla att deras Rust-\u2026"
 lastmod: '2024-03-13T22:44:37.706250-06:00'
 model: gpt-4-1106-preview
-summary: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som planerat.\
-  \ Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4kerst\xE4\
-  lla att deras Rust-\u2026"
+summary: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som planerat."
 title: Hantering av fel
 weight: 16
 ---

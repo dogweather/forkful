@@ -8,7 +8,8 @@ description: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Sc
 lastmod: '2024-03-13T22:44:37.463272-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE4\
-  r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar en\u2026"
+  r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar en\
+  \ datapost med v\xE4rden separerade av komman."
 title: Att Arbeta med CSV
 weight: 37
 ---

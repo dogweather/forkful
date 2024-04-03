@@ -8,7 +8,7 @@ description: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou m
 lastmod: '2024-03-13T22:44:46.272813-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou mais strings\
-  \ em uma. Os programadores fazem isso para manipular dados de texto com facilidade,\u2026"
+  \ em uma."
 title: Concatenando strings
 weight: 3
 ---

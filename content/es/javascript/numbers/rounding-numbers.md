@@ -6,8 +6,7 @@ description: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un
 lastmod: '2024-03-13T22:44:59.453725-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
-  mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
-  \ o\u2026"
+  mero."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

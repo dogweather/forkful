@@ -8,7 +8,7 @@ description: "YAML, ou \"YAML Ain't Markup Language\" (YAML n'est pas un langage
 lastmod: '2024-03-13T22:44:58.080645-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ou \"YAML Ain't Markup Language\" (YAML n'est pas un langage de balisage),\
-  \ est un langage de s\xE9rialisation de donn\xE9es lisible par l'humain. Les\u2026"
+  \ est un langage de s\xE9rialisation de donn\xE9es lisible par l'humain."
 title: Travailler avec YAML
 weight: 41
 ---

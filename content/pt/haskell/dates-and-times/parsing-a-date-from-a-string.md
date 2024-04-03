@@ -8,7 +8,7 @@ description: "Analisar uma data a partir de uma string em Haskell envolve conver
 lastmod: '2024-03-13T22:44:46.634577-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Haskell envolve converter representa\xE7\
-  \xF5es textuais de datas em um formato estruturado que o programa pode\u2026"
+  \xF5es textuais de datas em um formato estruturado que o programa pode manipular."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

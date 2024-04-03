@@ -5,9 +5,8 @@ description: "Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarte
   \ damit\u2026"
 lastmod: '2024-03-13T22:44:54.022567-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten zu\
-  \ rechnen. Es ist die Kunst, f\xFCr den Fall zu planen, dass Dinge schiefgehen,\
-  \ damit\u2026"
+summary: Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten zu
+  rechnen.
 title: Fehlerbehandlung
 weight: 16
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.079627-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017Cny spos\xF3\
   b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
-  c programistom wykonywanie\u2026"
+  c programistom wykonywanie skomplikowanych zada\u0144 przetwarzania tekstu w spos\xF3\
+  b wydajny."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

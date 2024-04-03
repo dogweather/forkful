@@ -7,7 +7,8 @@ lastmod: '2024-03-13T22:44:59.496563-06:00'
 model: gpt-4-0125-preview
 summary: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata de\
   \ entornos Linux o Unix, manipular archivos directamente desde la interfaz de l\xED\
-  nea de\u2026"
+  nea de comandos (CLI) no es solo una cuesti\xF3n de conveniencia\u2014es una herramienta\
+  \ de poder."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

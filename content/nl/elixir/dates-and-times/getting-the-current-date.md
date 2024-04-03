@@ -7,7 +7,7 @@ description: "De huidige datum opvragen in een programma is alsof je vraagt: \"H
 lastmod: '2024-03-13T22:44:50.472636-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum opvragen in een programma is alsof je vraagt: \"H\xE9,\
-  \ wat is de datum van vandaag?\" We doen dit om gebeurtenissen te tijdstempelen,\u2026"
+  \ wat is de datum van vandaag."
 title: Het huidige datum ophalen
 weight: 29
 ---

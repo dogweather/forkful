@@ -6,8 +6,7 @@ description: "Sammanfogning av str\xE4ngar handlar om att sm\xE4lla ihop textbit
 lastmod: '2024-03-13T22:44:38.072580-06:00'
 model: gpt-4-1106-preview
 summary: "Sammanfogning av str\xE4ngar handlar om att sm\xE4lla ihop textbitar till\
-  \ en enda l\xE4ngre text. Programmerare g\xF6r det f\xF6r att bygga upp meddelanden,\
-  \ kommandon\u2026"
+  \ en enda l\xE4ngre text."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

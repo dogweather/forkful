@@ -10,7 +10,8 @@ lastmod: '2024-03-13T22:44:46.495942-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em Elm envolve o uso do m\xF3dulo `Random`\
   \ para produzir n\xFAmeros pseudoaleat\xF3rios, que s\xE3o \xFAteis para uma variedade\
-  \ de tarefas, como\u2026"
+  \ de tarefas, como jogos, simula\xE7\xF5es e at\xE9 como parte de algoritmos que\
+  \ exigem processos estoc\xE1sticos."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

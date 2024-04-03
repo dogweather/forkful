@@ -9,8 +9,7 @@ description: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir expres
 lastmod: '2024-03-13T22:44:46.140016-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
-  es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
-  \ em\u2026"
+  es dentro de literais de string."
 title: Interpolando uma string
 weight: 8
 ---

@@ -4,8 +4,8 @@ description: "Scaricare una pagina web significa prendere il suo contenuto da in
   \ e salvarlo localmente. I programmatori lo fanno per analizzare dati, testare\u2026"
 lastmod: '2024-03-13T22:44:43.641594-06:00'
 model: gpt-4-1106-preview
-summary: "Scaricare una pagina web significa prendere il suo contenuto da internet\
-  \ e salvarlo localmente. I programmatori lo fanno per analizzare dati, testare\u2026"
+summary: Scaricare una pagina web significa prendere il suo contenuto da internet
+  e salvarlo localmente.
 title: Scaricare una pagina web
 weight: 42
 ---

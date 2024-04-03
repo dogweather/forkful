@@ -5,7 +5,7 @@ description: "TOML er et akronym for Toms Opplagte, Minimale Spr\xE5k, et konfig
 lastmod: '2024-03-13T22:44:40.821681-06:00'
 model: gpt-4-0125-preview
 summary: "TOML er et akronym for Toms Opplagte, Minimale Spr\xE5k, et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"
+  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk."
 title: Jobbe med TOML
 weight: 39
 ---

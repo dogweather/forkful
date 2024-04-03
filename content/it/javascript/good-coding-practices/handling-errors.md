@@ -6,8 +6,7 @@ description: "La gestione degli errori \xE8 il modo in cui si gestiscono le situ
 lastmod: '2024-03-13T22:44:43.819926-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori \xE8 il modo in cui si gestiscono le situazioni\
-  \ impreviste nel codice. \xC8 fondamentale perch\xE9 permette ai tuoi programmi\
-  \ di fallire\u2026"
+  \ impreviste nel codice."
 title: Gestione degli errori
 weight: 16
 ---

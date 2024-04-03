@@ -5,8 +5,8 @@ description: "Rounding numbers means chopping off the decimals to a simpler valu
   \ results,\u2026"
 lastmod: '2024-03-13T22:45:00.238287-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers means chopping off the decimals to a simpler value that's\
-  \ good enough for a given context. Programmers round numbers to simplify results,\u2026"
+summary: Rounding numbers means chopping off the decimals to a simpler value that's
+  good enough for a given context.
 title: Rounding numbers
 weight: 13
 ---

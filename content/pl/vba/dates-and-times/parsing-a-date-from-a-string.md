@@ -8,8 +8,7 @@ description: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applicat
 lastmod: '2024-03-13T22:44:35.242407-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications (VBA)\
-  \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty.\
-  \ Programi\u015Bci\u2026"
+  \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

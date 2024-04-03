@@ -7,7 +7,8 @@ description: "Die L\xE4nge eines Strings in Google Apps Script zu finden, einer 
 lastmod: '2024-03-13T22:44:53.324067-06:00'
 model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Google Apps Script zu finden, einer JavaScript-Cloud-Scripting-Sprache,\
-  \ die es Ihnen erm\xF6glicht, Aufgaben \xFCber Google-Produkte\u2026"
+  \ die es Ihnen erm\xF6glicht, Aufgaben \xFCber Google-Produkte hinweg zu automatisieren,\
+  \ handelt davon, die Anzahl der Zeichen zu bestimmen, die ein String enth\xE4lt."
 title: "Die L\xE4nge eines Strings ermitteln"
 weight: 7
 ---

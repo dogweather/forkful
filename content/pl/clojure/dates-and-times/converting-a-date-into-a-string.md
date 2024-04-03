@@ -6,8 +6,7 @@ description: "Konwersja daty do postaci \u0142a\u0144cucha znak\xF3w umo\u017Cli
 lastmod: '2024-03-13T22:44:35.008444-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja daty do postaci \u0142a\u0144cucha znak\xF3w umo\u017Cliwia jej\
-  \ zapis i wy\u015Bwietlanie w ludzko zrozumia\u0142ym formacie. Programi\u015Bci\
-  \ wykonuj\u0105 t\u0119 operacj\u0119, by \u0142atwiej\u2026"
+  \ zapis i wy\u015Bwietlanie w ludzko zrozumia\u0142ym formacie."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

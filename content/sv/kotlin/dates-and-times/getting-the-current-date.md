@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.881667-06:00'
 model: gpt-4-0125-preview
 summary: "I programmering \xE4r att f\xE5 fram dagens datum en grundl\xE4ggande uppgift\
   \ som m\xF6jligg\xF6r f\xF6r utvecklare att f\xE5 tillg\xE5ng till, visa eller manipulera\
-  \ det aktuella\u2026"
+  \ det aktuella datumet inom sina applikationer."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

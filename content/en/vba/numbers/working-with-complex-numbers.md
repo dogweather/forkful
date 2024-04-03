@@ -4,8 +4,8 @@ description: "Working with complex numbers involves performing mathematical oper
   \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"
 lastmod: '2024-03-13T22:44:59.928948-06:00'
 model: gpt-4-0125-preview
-summary: "Working with complex numbers involves performing mathematical operations\
-  \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"
+summary: Working with complex numbers involves performing mathematical operations
+  on numbers that have both a real part and an imaginary part.
 title: Working with complex numbers
 weight: 14
 ---

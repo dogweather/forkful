@@ -6,8 +6,7 @@ description: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votr
 lastmod: '2024-03-13T22:44:57.640789-06:00'
 model: gpt-4-1106-preview
 summary: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votre code\
-  \ va prendre vie. On le fait pour transformer une id\xE9e en une application qui\
-  \ peut\u2026"
+  \ va prendre vie."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

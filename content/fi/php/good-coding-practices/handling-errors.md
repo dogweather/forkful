@@ -6,7 +6,8 @@ description: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallinta
 lastmod: '2024-03-13T22:44:56.663419-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa ja niihin\
-  \ reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten puuttuvia\u2026"
+  \ reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten puuttuvia\
+  \ tiedostoja tai virheellist\xE4 datan sy\xF6tt\xF6\xE4."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

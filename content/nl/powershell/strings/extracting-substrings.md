@@ -7,8 +7,8 @@ description: "Substrings extraheren betekent kleinere delen uit een string halen
   \ te\u2026"
 lastmod: '2024-03-13T22:44:51.015485-06:00'
 model: gpt-4-0125-preview
-summary: "Substrings extraheren betekent kleinere delen uit een string halen op basis\
-  \ van bepaalde criteria. Programmeurs extraheren substrings om tekstgegevens te\u2026"
+summary: Substrings extraheren betekent kleinere delen uit een string halen op basis
+  van bepaalde criteria.
 title: Substrings extraheren
 weight: 6
 ---

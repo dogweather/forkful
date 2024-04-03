@@ -6,8 +6,7 @@ description: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour
 lastmod: '2024-03-13T22:44:58.316526-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
-  \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\
-  \ le font\u2026"
+  \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques."
 title: Arrondir les nombres
 weight: 13
 ---

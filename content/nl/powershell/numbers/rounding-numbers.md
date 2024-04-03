@@ -6,8 +6,8 @@ description: "Afronden van getallen gaat over het aanpassen van een waarde naar 
   \ dichtstbijzijnde geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"
 lastmod: '2024-03-13T22:44:51.021900-06:00'
 model: gpt-4-0125-preview
-summary: "Afronden van getallen gaat over het aanpassen van een waarde naar het dichtstbijzijnde\
-  \ geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"
+summary: Afronden van getallen gaat over het aanpassen van een waarde naar het dichtstbijzijnde
+  geheel getal of opgegeven decimale plaats.
 title: Afronden van getallen
 weight: 13
 ---

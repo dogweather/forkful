@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.140085-06:00'
 model: gpt-4-0125-preview
 summary: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift som\
   \ hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014till\
-  \ exempel f\xF6r att\u2026"
+  \ exempel f\xF6r att undvika fel genom att bekr\xE4fta att en m\xE5lkatalog finns\
+  \ p\xE5 plats innan man f\xF6rs\xF6ker l\xE4sa fr\xE5n eller skriva till den."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

@@ -6,8 +6,7 @@ description: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kute
 lastmod: '2024-03-13T22:44:56.901291-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten 3 +\
-  \ 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\
-  \ signaalink\xE4sittely,\u2026"
+  \ 4i)."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

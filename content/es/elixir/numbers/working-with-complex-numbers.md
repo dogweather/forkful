@@ -6,8 +6,7 @@ description: "Los n\xFAmeros complejos tienen una parte real y una parte imagina
 lastmod: '2024-03-13T22:44:58.696341-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria (como\
-  \ `3 + 4i`). Se utilizan en ingenier\xEDa, f\xEDsica y ciertos problemas de computaci\xF3\
-  n.\u2026"
+  \ `3 + 4i`)."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

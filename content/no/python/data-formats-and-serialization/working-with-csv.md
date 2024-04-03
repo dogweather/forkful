@@ -8,8 +8,7 @@ description: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fr
 lastmod: '2024-03-13T22:44:40.383329-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
-  \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data. Programmerere\
-  \ gj\xF8r\u2026"
+  \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data."
 title: Arbeide med CSV
 weight: 37
 ---

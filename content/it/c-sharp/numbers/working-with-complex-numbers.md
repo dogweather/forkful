@@ -5,8 +5,8 @@ description: "I numeri complessi ampliano il nostro sistema numerico includendo 
   \ reali.\u2026"
 lastmod: '2024-03-13T22:44:43.428092-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi ampliano il nostro sistema numerico includendo i numeri\
-  \ immaginari, permettendoci di risolvere equazioni che non hanno soluzioni reali.\u2026"
+summary: I numeri complessi ampliano il nostro sistema numerico includendo i numeri
+  immaginari, permettendoci di risolvere equazioni che non hanno soluzioni reali.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

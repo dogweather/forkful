@@ -4,8 +4,7 @@ description: "Extracting substrings means pulling out a specific chunk of a stri
   \ Programmers do it to isolate, analyze, or manipulate specific data within a larger\u2026"
 lastmod: '2024-03-13T22:45:00.195267-06:00'
 model: gpt-4-1106-preview
-summary: "Extracting substrings means pulling out a specific chunk of a string. Programmers\
-  \ do it to isolate, analyze, or manipulate specific data within a larger\u2026"
+summary: Extracting substrings means pulling out a specific chunk of a string.
 title: Extracting substrings
 weight: 6
 ---

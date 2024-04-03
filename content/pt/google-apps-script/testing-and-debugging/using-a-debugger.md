@@ -7,8 +7,8 @@ description: "O Google Apps Script oferece um depurador integrado no Editor de A
   \ o\u2026"
 lastmod: '2024-03-13T22:44:46.113046-06:00'
 model: gpt-4-0125-preview
-summary: "O Google Apps Script oferece um depurador integrado no Editor de Apps Script\
-  \ para ajudar a solucionar problemas nos scripts. Veja como iniciar e usar o\u2026"
+summary: O Google Apps Script oferece um depurador integrado no Editor de Apps Script
+  para ajudar a solucionar problemas nos scripts.
 title: Usando um depurador
 weight: 35
 ---

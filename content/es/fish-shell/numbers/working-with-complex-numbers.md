@@ -6,8 +6,7 @@ description: "Los n\xFAmeros complejos ampl\xEDan la idea de las l\xEDneas num\x
 lastmod: '2024-03-13T22:44:59.493797-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan la idea de las l\xEDneas num\xE9ricas\
-  \ unidimensionales a un plano complejo bidimensional. Los programadores los utilizan\
-  \ en campos\u2026"
+  \ unidimensionales a un plano complejo bidimensional."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

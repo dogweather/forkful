@@ -6,8 +6,7 @@ description: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF
 lastmod: '2024-03-13T22:44:37.482720-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6r att\
-  \ s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+  \ s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

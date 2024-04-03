@@ -6,8 +6,7 @@ description: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodesn
 lastmod: '2024-03-13T22:44:41.022889-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodesnutter\
-  \ som utf\xF8rer spesifikke oppgaver og gi dem et navn. Det gj\xF8res for \xE5 gj\xF8\
-  re koden\u2026"
+  \ som utf\xF8rer spesifikke oppgaver og gi dem et navn."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

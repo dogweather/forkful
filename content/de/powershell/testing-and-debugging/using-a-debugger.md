@@ -5,7 +5,8 @@ description: "In PowerShell k\xF6nnen Sie Skripte mithilfe der eingebauten Power
 lastmod: '2024-03-13T22:44:54.108538-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell k\xF6nnen Sie Skripte mithilfe der eingebauten PowerShell\
-  \ Integrated Scripting Environment (ISE) oder Visual Studio Code (VS Code) mit der\u2026"
+  \ Integrated Scripting Environment (ISE) oder Visual Studio Code (VS Code) mit der\
+  \ PowerShell-Erweiterung debuggen."
 title: Einsatz eines Debuggers
 weight: 35
 ---

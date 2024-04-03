@@ -7,8 +7,8 @@ description: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand hale
   \ te\u2026"
 lastmod: '2024-03-13T22:44:50.913213-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in\
-  \ je script brengen. Programmeurs doen dit om gegevensopslag, configuratie te\u2026"
+summary: Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in
+  je script brengen.
 title: Een tekstbestand lezen
 weight: 22
 ---

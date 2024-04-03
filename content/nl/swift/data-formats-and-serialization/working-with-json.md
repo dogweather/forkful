@@ -6,8 +6,8 @@ description: "Werken met JSON in Swift betekent omgaan met een lichtgewicht data
   \ voor gegevensuitwisseling. Programmeurs gebruiken JSON om gegevens te verzenden\u2026"
 lastmod: '2024-03-13T22:44:51.179408-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met JSON in Swift betekent omgaan met een lichtgewicht dataformaat\
-  \ voor gegevensuitwisseling. Programmeurs gebruiken JSON om gegevens te verzenden\u2026"
+summary: Werken met JSON in Swift betekent omgaan met een lichtgewicht dataformaat
+  voor gegevensuitwisseling.
 title: Werken met JSON
 weight: 38
 ---

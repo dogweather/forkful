@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.124173-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
   \ t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u YAML (Yet Another Markup Language - Ng\xF4\
-  n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python. L\u1EADp tr\xECnh vi\xEA\
-  n\u2026"
+  n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

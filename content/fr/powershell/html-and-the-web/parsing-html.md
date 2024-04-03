@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.044845-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser du HTML en PowerShell consiste \xE0 diss\xE9quer un contenu HTML\
   \ pour extraire des donn\xE9es sp\xE9cifiques ou pour automatiser des t\xE2ches\
-  \ li\xE9es au web. Les\u2026"
+  \ li\xE9es au web."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

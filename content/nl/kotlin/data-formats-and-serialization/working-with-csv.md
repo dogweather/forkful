@@ -6,8 +6,9 @@ description: "Werken met CSV (Comma-Separated Values oftewel door komma's gesche
   \ waarden) betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
 lastmod: '2024-03-13T22:44:50.790120-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden waarden)\
-  \ betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
+summary: Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden waarden)
+  betreft het lezen en schrijven van gegevens in een tekstformaat waarbij elke regel
+  velden heeft die door komma's zijn gescheiden.
 title: Werken met CSV
 weight: 37
 ---

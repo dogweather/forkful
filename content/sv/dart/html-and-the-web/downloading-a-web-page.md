@@ -8,8 +8,7 @@ description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta inneh\xE5llet p\
 lastmod: '2024-03-13T22:44:37.610567-06:00'
 model: gpt-4-0125-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta inneh\xE5llet p\xE5 en\
-  \ webbsida via dess URL f\xF6r bearbetning eller lagring. Programmerare g\xF6r detta\
-  \ f\xF6r att\u2026"
+  \ webbsida via dess URL f\xF6r bearbetning eller lagring."
 title: Ladda ner en webbsida
 weight: 42
 ---

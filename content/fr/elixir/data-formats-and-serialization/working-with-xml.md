@@ -6,8 +6,7 @@ description: "Travailler avec XML en Elixir implique de parser, cr\xE9er et mani
 lastmod: '2024-03-13T22:44:57.353976-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Elixir implique de parser, cr\xE9er et manipuler\
-  \ des donn\xE9es XML. Les programmeurs s'attaquent \xE0 XML car il est largement\
-  \ r\xE9pandu dans\u2026"
+  \ des donn\xE9es XML."
 title: Travailler avec XML
 weight: 40
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.393190-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Python existiert, bedeutet,\
   \ die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen\
-  \ wie das\u2026"
+  \ wie das Lesen oder Schreiben von Dateien durchgef\xFChrt werden."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

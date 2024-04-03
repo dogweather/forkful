@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.467319-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em string \xE9 o processo de transformar a representa\xE7\
   \xE3o de data e hora do seu formato original, geralmente num\xE9rico ou de objeto,\
-  \ para\u2026"
+  \ para uma sequ\xEAncia de caracteres leg\xEDveis."
 title: Convertendo uma data em uma string
 weight: 28
 ---

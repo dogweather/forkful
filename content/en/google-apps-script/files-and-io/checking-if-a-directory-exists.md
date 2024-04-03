@@ -4,8 +4,8 @@ description: "Checking if a directory exists in Google Apps Script involves veri
   \ the presence of a folder within Google Drive. Programmers often perform this check\u2026"
 lastmod: '2024-03-13T22:44:59.682775-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists in Google Apps Script involves verifying\
-  \ the presence of a folder within Google Drive. Programmers often perform this check\u2026"
+summary: Checking if a directory exists in Google Apps Script involves verifying the
+  presence of a folder within Google Drive.
 title: Checking if a directory exists
 weight: 20
 ---

@@ -6,8 +6,8 @@ description: "Comprobar si un directorio existe en Kotlin implica verificar la p
   \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"
 lastmod: '2024-03-13T22:44:59.050314-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe en Kotlin implica verificar la presencia\
-  \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"
+summary: Comprobar si un directorio existe en Kotlin implica verificar la presencia
+  de un directorio en una ruta especificada.
 title: Comprobando si un directorio existe
 weight: 20
 ---

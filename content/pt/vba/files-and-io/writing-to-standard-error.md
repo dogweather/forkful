@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.430124-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em Visual Basic for Applications (VBA) envolve\
   \ direcionar mensagens de erro ou diagn\xF3sticos \xE0 parte da sa\xEDda padr\xE3\
-  o,\u2026"
+  o, geralmente para o console ou um arquivo de log."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

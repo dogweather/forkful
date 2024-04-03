@@ -4,8 +4,8 @@ description: "Downloading a web page in Visual Basic for Applications (VBA) invo
   \ fetching the HTML content of a web page from the Internet. Programmers often\u2026"
 lastmod: '2024-03-13T22:44:59.933229-06:00'
 model: gpt-4-0125-preview
-summary: "Downloading a web page in Visual Basic for Applications (VBA) involves fetching\
-  \ the HTML content of a web page from the Internet. Programmers often\u2026"
+summary: Downloading a web page in Visual Basic for Applications (VBA) involves fetching
+  the HTML content of a web page from the Internet.
 title: Downloading a web page
 weight: 42
 ---

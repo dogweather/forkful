@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.636770-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\xE4\
   \ tiedostojen j\xE4sent\xE4misen ja luomisen, jotka tallentavat taulukkomuotoista\
-  \ dataa\u2026"
+  \ dataa yksinkertaisessa, tekstipohjaisessa muodossa."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

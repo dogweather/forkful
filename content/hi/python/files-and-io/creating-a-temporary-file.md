@@ -5,8 +5,8 @@ description: "Temporary file, yaani asthayi file, ek aisi file hai jo aapko data
   \ ya\u2026"
 lastmod: '2024-03-13T22:44:51.624455-06:00'
 model: gpt-4-1106-preview
-summary: "Temporary file, yaani asthayi file, ek aisi file hai jo aapko data ke short-term\
-  \ storage ke liye chahiye hoti hai. Programmers ise test data, caching, ya\u2026"
+summary: Temporary file, yaani asthayi file, ek aisi file hai jo aapko data ke short-term
+  storage ke liye chahiye hoti hai.
 title: "\u0905\u0938\u094D\u0925\u093E\u092F\u0940 \u092B\u093E\u0907\u0932 \u092C\
   \u0928\u093E\u0928\u093E"
 weight: 21

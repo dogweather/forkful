@@ -5,8 +5,7 @@ description: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipu
   nster,\u2026"
 lastmod: '2024-03-13T22:44:37.591907-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera XML-data.\
-  \ Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4nster,\u2026"
+summary: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera XML-data."
 title: Att arbeta med XML
 weight: 40
 ---

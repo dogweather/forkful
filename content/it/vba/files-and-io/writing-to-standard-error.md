@@ -6,8 +6,9 @@ description: "Scrivere sull'errore standard in Visual Basic for Applications (VB
   \ comporta l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"
 lastmod: '2024-03-13T22:44:43.281503-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere sull'errore standard in Visual Basic for Applications (VBA) comporta\
-  \ l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"
+summary: Scrivere sull'errore standard in Visual Basic for Applications (VBA) comporta
+  l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard, solitamente
+  verso la console o un file di log.
 title: Scrivere sull'errore standard
 weight: 25
 ---

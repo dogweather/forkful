@@ -6,8 +6,7 @@ description: "Imprimir mensajes de depuraci\xF3n nos permite echar un vistazo a 
 lastmod: '2024-03-13T22:44:58.849202-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n nos permite echar un vistazo a lo que\
-  \ est\xE1 pasando en nuestro c\xF3digo en tiempo real. Es esencial para entender\
-  \ bugs y\u2026"
+  \ est\xE1 pasando en nuestro c\xF3digo en tiempo real."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

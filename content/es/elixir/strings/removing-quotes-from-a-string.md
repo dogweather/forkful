@@ -4,8 +4,8 @@ description: "Eliminar las comillas de una cadena significa deshacerse de esos e
   \ extra para obtener el texto limpio dentro. Los programadores hacen esto para\u2026"
 lastmod: '2024-03-13T22:44:58.689516-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar las comillas de una cadena significa deshacerse de esos envoltorios\
-  \ extra para obtener el texto limpio dentro. Los programadores hacen esto para\u2026"
+summary: Eliminar las comillas de una cadena significa deshacerse de esos envoltorios
+  extra para obtener el texto limpio dentro.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

@@ -5,8 +5,8 @@ description: "Misurare la lunghezza di una stringa significa contare i caratteri
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.802803-06:00'
 model: gpt-4-1106-preview
-summary: "Misurare la lunghezza di una stringa significa contare i caratteri che la\
-  \ compongono. I programmatori lo fanno per validare input, manipolare testi, o\u2026"
+summary: Misurare la lunghezza di una stringa significa contare i caratteri che la
+  compongono.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

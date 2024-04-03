@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:58.407417-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en Ruby sont des motifs utilis\xE9\
   s pour associer des combinaisons de caract\xE8res dans des cha\xEEnes de caract\xE8\
-  res,\u2026"
+  res, permettant aux d\xE9veloppeurs de rechercher, d'associer et de manipuler du\
+  \ texte de mani\xE8re efficace."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

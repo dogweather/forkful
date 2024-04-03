@@ -7,7 +7,8 @@ description: "JSON, o JavaScript Object Notation, \xE8 un formato leggero di int
 lastmod: '2024-03-13T22:44:43.705622-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, o JavaScript Object Notation, \xE8 un formato leggero di interscambio\
-  \ di dati, rendendolo perfetto per l'archiviazione di dati o file di configurazione\u2026"
+  \ di dati, rendendolo perfetto per l'archiviazione di dati o file di configurazione\
+  \ nei progetti Arduino."
 title: Lavorare con JSON
 weight: 38
 ---

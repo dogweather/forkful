@@ -6,8 +6,8 @@ description: "Il parsing di HTML si riferisce all'estrazione di dati o informazi
   \ da contenuti HTML, un compito comune quando si gestiscono dati web. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.856460-06:00'
 model: gpt-4-0125-preview
-summary: "Il parsing di HTML si riferisce all'estrazione di dati o informazioni da\
-  \ contenuti HTML, un compito comune quando si gestiscono dati web. I programmatori\u2026"
+summary: Il parsing di HTML si riferisce all'estrazione di dati o informazioni da
+  contenuti HTML, un compito comune quando si gestiscono dati web.
 title: Analisi del HTML
 weight: 43
 ---

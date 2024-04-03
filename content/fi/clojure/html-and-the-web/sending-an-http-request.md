@@ -6,8 +6,7 @@ description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4
 lastmod: '2024-03-13T22:44:56.181429-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4\xE4 tietoa\
-  \ verkossa toimivien palvelimien v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \ dataa vaihtaakseen, API:hin\u2026"
+  \ verkossa toimivien palvelimien v\xE4lill\xE4."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

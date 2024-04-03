@@ -5,9 +5,7 @@ description: "Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego 
   ciowe lub po prostu\u2026"
 lastmod: '2024-03-13T22:44:35.382609-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego na dysku.\
-  \ Programi\u015Bci to robi\u0105, aby wczyta\u0107 konfiguracje, dane wej\u015B\
-  ciowe lub po prostu\u2026"
+summary: Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego na dysku.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

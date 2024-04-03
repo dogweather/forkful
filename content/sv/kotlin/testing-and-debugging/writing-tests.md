@@ -8,7 +8,8 @@ description: "Att skriva tester i Kotlin inneb\xE4r att man skapar kodsnuttar so
 lastmod: '2024-03-13T22:44:37.874620-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Kotlin inneb\xE4r att man skapar kodsnuttar som automatiskt\
-  \ validerar den funktionella korrektheten i dina mjukvarumoduler, f\xF6r att\u2026"
+  \ validerar den funktionella korrektheten i dina mjukvarumoduler, f\xF6r att s\xE4\
+  kerst\xE4lla att de fungerar som f\xF6rv\xE4ntat."
 title: Skriva tester
 weight: 36
 ---

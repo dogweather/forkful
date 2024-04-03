@@ -4,8 +4,7 @@ description: "Creating a temporary file lets your app stash data it doesn't need
   \ It's handy for when you're dealing with large data processing, caching, or\u2026"
 lastmod: '2024-03-13T22:45:00.451800-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file lets your app stash data it doesn't need forever.\
-  \ It's handy for when you're dealing with large data processing, caching, or\u2026"
+summary: Creating a temporary file lets your app stash data it doesn't need forever.
 title: Creating a temporary file
 weight: 21
 ---

@@ -6,7 +6,7 @@ description: "Empezar un nuevo proyecto en Java es configurar un entorno desde c
 lastmod: '2024-03-13T22:44:58.938262-06:00'
 model: gpt-4-1106-preview
 summary: "Empezar un nuevo proyecto en Java es configurar un entorno desde cero para\
-  \ codificar una aplicaci\xF3n fresca. Programadores lo hacen para innovar, resolver\u2026"
+  \ codificar una aplicaci\xF3n fresca."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

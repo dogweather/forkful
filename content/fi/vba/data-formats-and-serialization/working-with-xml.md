@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.427028-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
   \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\
-  \ -sovellusten\u2026"
+  \ -sovellusten kontekstissa."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

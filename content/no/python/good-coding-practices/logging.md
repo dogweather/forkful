@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.367888-06:00'
 model: gpt-4-1106-preview
 summary: "Loggf\xF8ring er prosessen med \xE5 registrere hendelser i en applikasjon\
   \ mens et program kj\xF8rer, og gir en sporlogg for analyse etter hendelsen og overv\xE5\
-  kning\u2026"
+  kning i sanntid."
 title: "Loggf\xF8ring"
 weight: 17
 ---

@@ -6,7 +6,8 @@ description: "I PowerShell kan du feils\xF8ke skript ved \xE5 bruke den innebygd
 lastmod: '2024-03-13T22:44:41.021950-06:00'
 model: gpt-4-0125-preview
 summary: "I PowerShell kan du feils\xF8ke skript ved \xE5 bruke den innebygde PowerShell\
-  \ Integrated Scripting Environment (ISE) eller Visual Studio Code (VS Code) med\u2026"
+  \ Integrated Scripting Environment (ISE) eller Visual Studio Code (VS Code) med\
+  \ PowerShell-utvidelsen."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

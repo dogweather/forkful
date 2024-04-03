@@ -8,7 +8,8 @@ description: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E
 lastmod: '2024-03-13T22:44:53.543841-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E2023-04-05\u201C\
-  \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\u2026"
+  \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\
+  \ mit dem es arbeiten kann."
 title: Eine Datumsauswertung aus einem String
 weight: 30
 ---

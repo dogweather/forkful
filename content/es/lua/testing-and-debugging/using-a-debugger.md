@@ -5,9 +5,8 @@ description: "Lua no viene con un depurador integrado, pero puedes usar otros ex
   \ \xE9l:\u2026"
 lastmod: '2024-03-13T22:44:59.206471-06:00'
 model: gpt-4-0125-preview
-summary: "Lua no viene con un depurador integrado, pero puedes usar otros externos,\
-  \ como ZeroBrane Studio. Aqu\xED tienes una muestra de c\xF3mo trabajar\xEDas con\
-  \ \xE9l:\u2026"
+summary: Lua no viene con un depurador integrado, pero puedes usar otros externos,
+  como ZeroBrane Studio.
 title: Usando un depurador
 weight: 35
 ---

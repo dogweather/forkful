@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.396411-06:00'
 model: gpt-4-0125-preview
 summary: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA) refere-se\
   \ ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal de\
-  \ string,\u2026"
+  \ string, permitindo a forma\xE7\xE3o din\xE2mica de strings."
 title: Interpolando uma string
 weight: 8
 ---

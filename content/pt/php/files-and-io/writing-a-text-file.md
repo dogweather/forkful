@@ -7,7 +7,7 @@ description: "Escrever um arquivo de texto em PHP envolve criar ou abrir um arqu
 lastmod: '2024-03-13T22:44:46.685496-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em PHP envolve criar ou abrir um arquivo e\
-  \ inserir conte\xFAdo nele. Programadores fazem isso para persistir dados, como\u2026"
+  \ inserir conte\xFAdo nele."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

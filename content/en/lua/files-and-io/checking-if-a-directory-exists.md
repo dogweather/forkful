@@ -5,8 +5,9 @@ description: "Checking if a directory exists is a fundamental operation when wri
   \ on\u2026"
 lastmod: '2024-03-13T22:45:00.218507-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists is a fundamental operation when writing scripts\
-  \ that interact with the filesystem, ensuring that your program operates on\u2026"
+summary: Checking if a directory exists is a fundamental operation when writing scripts
+  that interact with the filesystem, ensuring that your program operates on valid
+  paths and prevents errors related to nonexistent directories.
 title: Checking if a directory exists
 weight: 20
 ---

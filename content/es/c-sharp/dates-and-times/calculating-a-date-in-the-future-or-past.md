@@ -5,7 +5,7 @@ description: "Calcular una fecha en el futuro o pasado es simplemente sumar o re
 lastmod: '2024-03-13T22:44:59.091032-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es simplemente sumar o restar d\xED\
-  as, meses o a\xF1os a una fecha existente. Los programadores hacen esto para\u2026"
+  as, meses o a\xF1os a una fecha existente."
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---

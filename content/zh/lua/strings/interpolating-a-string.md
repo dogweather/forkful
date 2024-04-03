@@ -5,8 +5,8 @@ description: "String interpolation is replacing placeholders within a string wit
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:47.896220-06:00'
 model: gpt-4-1106-preview
-summary: "String interpolation is replacing placeholders within a string with actual\
-  \ values, a common practice for crafting messages or assembling texts\u2026"
+summary: String interpolation is replacing placeholders within a string with actual
+  values, a common practice for crafting messages or assembling texts dynamically.
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---

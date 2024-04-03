@@ -6,8 +6,7 @@ description: "Refaktoryzacja to proces zmiany wewn\u0119trznej struktury program
 lastmod: '2024-03-13T22:44:35.721226-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces zmiany wewn\u0119trznej struktury programu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci robi\u0105 to,\
-  \ aby oczy\u015Bci\u0107\u2026"
+  \ bez zmiany jego zewn\u0119trznego zachowania."
 title: Refaktoryzacja
 weight: 19
 ---

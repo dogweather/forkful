@@ -6,8 +6,9 @@ description: "Debuguitvoer printen omvat het strategisch plaatsen van logverklar
   \ in je code om variabele waarden, uitvoeringsstroom of foutmeldingen tijdens\u2026"
 lastmod: '2024-03-13T22:44:50.334368-06:00'
 model: gpt-4-0125-preview
-summary: "Debuguitvoer printen omvat het strategisch plaatsen van logverklaringen\
-  \ in je code om variabele waarden, uitvoeringsstroom of foutmeldingen tijdens\u2026"
+summary: Debuguitvoer printen omvat het strategisch plaatsen van logverklaringen in
+  je code om variabele waarden, uitvoeringsstroom of foutmeldingen tijdens runtime
+  weer te geven.
 title: Afdrukken van debug output
 weight: 33
 ---

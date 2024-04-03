@@ -9,9 +9,7 @@ description: "Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0 m\u1ED9t ph\u1EA7n kh\x
 lastmod: '2024-03-13T22:44:36.439108-06:00'
 model: gpt-4-0125-preview
 summary: "Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0 m\u1ED9t ph\u1EA7n kh\xF4ng th\u1EC3\
-  \ thi\u1EBFu c\u1EE7a Visual Basic Editor (VBE). D\u01B0\u1EDBi \u0111\xE2y l\xE0\
-  \ c\xE1ch b\u1EA1n c\xF3 th\u1EC3 t\u1EADn d\u1EE5ng n\xF3: 1. **\u0110\u1EB7t \u0110\
-  i\u1EC3m D\u1EEBng\u2026"
+  \ thi\u1EBFu c\u1EE7a Visual Basic Editor (VBE)."
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 weight: 35
 ---

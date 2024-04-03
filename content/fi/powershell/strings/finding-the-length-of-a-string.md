@@ -6,8 +6,7 @@ description: "Merkkijonon pituuden selvitt\xE4misess\xE4 saadaan tietoon kuinka 
 lastmod: '2024-03-13T22:44:56.771419-06:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonon pituuden selvitt\xE4misess\xE4 saadaan tietoon kuinka monta\
-  \ merkki\xE4 merkkijonossa on. T\xE4m\xE4 on hy\xF6dyllist\xE4 esimerkiksi datan\
-  \ validoinnissa, tekstin\u2026"
+  \ merkki\xE4 merkkijonossa on."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

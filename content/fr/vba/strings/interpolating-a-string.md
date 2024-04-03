@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.537552-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes dans Visual Basic pour Applications (VBA)\
   \ fait r\xE9f\xE9rence au processus d'int\xE9gration de variables ou d'expressions\
-  \ au sein d'une\u2026"
+  \ au sein d'une litt\xE9rale de cha\xEEne, permettant la formation dynamique de\
+  \ cha\xEEnes."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

@@ -6,8 +6,8 @@ description: "Avviare un nuovo progetto in Go comporta l'impostazione di uno spa
   \ di lavoro e l'inizializzazione dello stesso con i moduli Go necessari. I\u2026"
 lastmod: '2024-03-13T22:44:42.909000-06:00'
 model: gpt-4-0125-preview
-summary: "Avviare un nuovo progetto in Go comporta l'impostazione di uno spazio di\
-  \ lavoro e l'inizializzazione dello stesso con i moduli Go necessari. I\u2026"
+summary: Avviare un nuovo progetto in Go comporta l'impostazione di uno spazio di
+  lavoro e l'inizializzazione dello stesso con i moduli Go necessari.
 title: Iniziare un nuovo progetto
 weight: 1
 ---

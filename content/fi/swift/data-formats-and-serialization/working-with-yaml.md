@@ -8,8 +8,7 @@ description: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE
 lastmod: '2024-03-13T22:44:56.926936-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE4heinen\
-  \ tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat k\xE4\
-  ytt\xE4v\xE4t\u2026"
+  \ tiedon sarjallistamisstandardi kaikille ohjelmointikielille."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

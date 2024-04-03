@@ -7,7 +7,8 @@ description: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std
 lastmod: '2024-03-13T22:44:58.154397-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map`\
-  \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es\u2026"
+  \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es du\
+  \ monde r\xE9el, vous permettant d'utiliser des cl\xE9s significatives."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

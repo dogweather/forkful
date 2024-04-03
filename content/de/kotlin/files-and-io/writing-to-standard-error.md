@@ -7,7 +7,8 @@ description: "Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das
 lastmod: '2024-03-13T22:44:53.862480-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das Ausgeben\
-  \ von Fehlermeldungen und Diagnosen auf einem separaten Stream, abgegrenzt vom\u2026"
+  \ von Fehlermeldungen und Diagnosen auf einem separaten Stream, abgegrenzt vom Standardausgabestream\
+  \ (stdout), was eine bessere Fehlerbehandlung und Protokollierung erm\xF6glicht."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

@@ -6,8 +6,7 @@ description: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s
 lastmod: '2024-03-13T22:44:58.605595-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s cerca\
-  \ de un valor m\xE1s simple o m\xE1s significativo. Los programadores redondean\
-  \ los n\xFAmeros para\u2026"
+  \ de un valor m\xE1s simple o m\xE1s significativo."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

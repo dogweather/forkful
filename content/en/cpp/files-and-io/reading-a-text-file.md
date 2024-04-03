@@ -4,8 +4,8 @@ description: "Reading a text file is about pulling data from a file on disk into
   \ program to work with it. Programmers do this to handle input, configuration, or\u2026"
 lastmod: '2024-03-13T22:45:00.373524-06:00'
 model: gpt-4-1106-preview
-summary: "Reading a text file is about pulling data from a file on disk into your\
-  \ program to work with it. Programmers do this to handle input, configuration, or\u2026"
+summary: Reading a text file is about pulling data from a file on disk into your program
+  to work with it.
 title: Reading a text file
 weight: 22
 ---

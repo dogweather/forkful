@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.052905-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDda de depura\xE7\xE3o trata de gerar mensagens de log tempor\xE1\
   rias e informativas que podem ajudar os programadores a entender o fluxo e o estado\
-  \ de\u2026"
+  \ de um programa durante sua execu\xE7\xE3o."
 title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

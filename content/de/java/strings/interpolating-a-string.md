@@ -5,7 +5,7 @@ description: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in S
 lastmod: '2024-03-13T22:44:53.749649-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
-  \ einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu\u2026"
+  \ einzubetten."
 title: Zeichenketten interpolieren
 weight: 8
 ---

@@ -7,8 +7,9 @@ description: "Rimuovere le virgolette da una stringa in VBA comporta l'eliminazi
   \ o\u2026"
 lastmod: '2024-03-13T22:44:43.249600-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione delle\
-  \ istanze di virgolette singole (`'`) o doppie (`\"`) che possono incapsulare o\u2026"
+summary: Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione delle
+  istanze di virgolette singole (`'`) o doppie (`"`) che possono incapsulare o essere
+  incorporate nella stringa.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

@@ -7,7 +7,7 @@ description: "Das Abrufen des aktuellen Datums in Python ist eine Grundoperation
 lastmod: '2024-03-13T22:44:53.389407-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Python ist eine Grundoperation f\xFC\
-  r viele Anwendungen, wie Protokollierung, Datenanalyse und zeitbasierte\u2026"
+  r viele Anwendungen, wie Protokollierung, Datenanalyse und zeitbasierte Entscheidungsfindung."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

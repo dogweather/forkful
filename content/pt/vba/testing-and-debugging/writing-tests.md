@@ -7,7 +7,8 @@ description: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos e
 lastmod: '2024-03-13T22:44:46.416297-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos espec\xED\
-  ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\u2026"
+  ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\
+  \ garantindo que eles funcionem conforme esperado sob v\xE1rias condi\xE7\xF5es."
 title: Escrevendo testes
 weight: 36
 ---

@@ -7,7 +7,8 @@ description: "Trasformare la prima lettera di una stringa in maiuscolo, garanten
 lastmod: '2024-03-13T22:44:43.458980-06:00'
 model: gpt-4-0125-preview
 summary: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo che\
-  \ il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito\u2026"
+  \ il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito capitalizzazione\
+  \ di una stringa."
 title: Capitalizzare una stringa
 weight: 2
 ---

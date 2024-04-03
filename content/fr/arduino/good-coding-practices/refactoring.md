@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:58.121853-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de retravail de votre code pour am\xE9liorer\
   \ sa structure et sa lisibilit\xE9 sans modifier le comportement ou la fonctionnalit\xE9\
-  \u2026"
+  \ externe."
 title: Refactoring
 weight: 19
 ---

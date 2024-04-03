@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.297080-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania mo\u017Cliwo\u015B\
   ci j\u0119zyka do tworzenia plik\xF3w i zapisywania w nich tre\u015Bci na systemie\
-  \ plik\xF3w.\u2026"
+  \ plik\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

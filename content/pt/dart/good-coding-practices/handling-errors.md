@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.289763-06:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros em Dart consiste em antecipar e gerir exce\xE7\xF5\
   es que surgem durante a execu\xE7\xE3o do programa para aumentar a confiabilidade\
-  \ e\u2026"
+  \ e usabilidade."
 title: Gerenciando erros
 weight: 16
 ---

@@ -5,7 +5,7 @@ description: "String-Interpolation in Ruby erm\xF6glicht es, Variablenwerte inne
 lastmod: '2024-03-13T22:44:54.384153-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation in Ruby erm\xF6glicht es, Variablenwerte innerhalb\
-  \ eines Strings einzusetzen. Es macht den Code lesbarer und schafft dynamische\u2026"
+  \ eines Strings einzusetzen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

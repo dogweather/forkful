@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.604507-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen von\
   \ JSON-Daten aus Strings in Dart-Objekte und umgekehrt, eine g\xE4ngige Aufgabe\
-  \ in\u2026"
+  \ in der Web- und App-Entwicklung f\xFCr den Datenaustausch."
 title: Arbeiten mit JSON
 weight: 38
 ---

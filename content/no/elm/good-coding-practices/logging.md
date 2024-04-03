@@ -6,7 +6,8 @@ description: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser
 lastmod: '2024-03-13T22:44:40.715615-06:00'
 model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser og datautskrifter\
-  \ fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som programvarens\u2026"
+  \ fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som programvarens\
+  \ dagbok."
 title: "Loggf\xF8ring"
 weight: 17
 ---

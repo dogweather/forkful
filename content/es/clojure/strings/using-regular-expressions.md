@@ -7,7 +7,8 @@ description: "Las expresiones regulares, una herramienta poderosa para el empare
 lastmod: '2024-03-13T22:44:58.646576-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
-  \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"
+  \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de procesamiento\
+  \ de texto como validar entradas, buscar y reemplazar texto."
 title: Usando expresiones regulares
 weight: 11
 ---

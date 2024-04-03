@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.709474-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i Rust \xE4r en vanlig uppgift f\xF6r\
   \ s\xE5dana saker som loggning, tidsbaserade operationer eller helt enkelt f\xF6\
-  r att visa datumet.\u2026"
+  r att visa datumet."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

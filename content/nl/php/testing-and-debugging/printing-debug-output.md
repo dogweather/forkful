@@ -6,8 +6,8 @@ description: "Het printen van debug-output gaat over het op het scherm knallen v
   \ de interne data van je code om uit te vogelen wat er aan de hand is. Programmeurs\u2026"
 lastmod: '2024-03-13T22:44:50.897987-06:00'
 model: gpt-4-0125-preview
-summary: "Het printen van debug-output gaat over het op het scherm knallen van de\
-  \ interne data van je code om uit te vogelen wat er aan de hand is. Programmeurs\u2026"
+summary: Het printen van debug-output gaat over het op het scherm knallen van de interne
+  data van je code om uit te vogelen wat er aan de hand is.
 title: Debug-output afdrukken
 weight: 33
 ---

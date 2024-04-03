@@ -4,8 +4,8 @@ description: "Sending an HTTP request is how your program asks for data from the
   \ sorta like how you'd ask a librarian for a book. Programmers do this to fetch,\u2026"
 lastmod: '2024-03-13T22:44:59.779740-06:00'
 model: gpt-4-1106-preview
-summary: "Sending an HTTP request is how your program asks for data from the web,\
-  \ sorta like how you'd ask a librarian for a book. Programmers do this to fetch,\u2026"
+summary: Sending an HTTP request is how your program asks for data from the web, sorta
+  like how you'd ask a librarian for a book.
 title: Sending an HTTP request
 weight: 44
 ---

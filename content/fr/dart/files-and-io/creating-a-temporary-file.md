@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:57.412276-06:00'
 model: gpt-4-0125-preview
 summary: "La cr\xE9ation d'un fichier temporaire en Dart implique de g\xE9n\xE9rer\
   \ un fichier destin\xE9 \xE0 une utilisation \xE0 court terme, principalement pour\
-  \ des sc\xE9narios tels\u2026"
+  \ des sc\xE9narios tels que la mise en cache des donn\xE9es, le stockage temporaire\
+  \ pour le traitement de fichiers, ou le maintien d'informations trop sensibles pour\
+  \ \xEAtre conserv\xE9es longtemps."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

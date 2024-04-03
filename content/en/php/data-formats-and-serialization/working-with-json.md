@@ -5,8 +5,8 @@ description: "JSON, or JavaScript Object Notation, is a lightweight data-interch
   \ and\u2026"
 lastmod: '2024-03-13T22:45:00.186576-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, or JavaScript Object Notation, is a lightweight data-interchange format\
-  \ that's easy for humans to read and write, and easy for machines to parse and\u2026"
+summary: JSON, or JavaScript Object Notation, is a lightweight data-interchange format
+  that's easy for humans to read and write, and easy for machines to parse and generate.
 title: Working with JSON
 weight: 38
 ---

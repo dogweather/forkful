@@ -7,7 +7,7 @@ description: "Reguliere expressies (regex) laten je zoeken naar patronen in teks
 lastmod: '2024-03-13T22:44:51.062612-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
-  denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"
+  denk aan jokertekens op stero\xEFden."
 title: Reguliere expressies gebruiken
 weight: 11
 ---

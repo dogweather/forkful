@@ -5,7 +5,7 @@ description: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in
 lastmod: '2024-03-13T22:44:53.948240-06:00'
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in den Arbeitsspeicher\
-  \ zu laden, um sie mit einem Programm zu verarbeiten. Programmierer\u2026"
+  \ zu laden, um sie mit einem Programm zu verarbeiten."
 title: Textdatei einlesen
 weight: 22
 ---

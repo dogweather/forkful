@@ -8,8 +8,7 @@ description: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 es
 lastmod: '2024-03-13T22:44:46.935197-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
-  \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\
-  \ tarefa\u2026"
+  \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

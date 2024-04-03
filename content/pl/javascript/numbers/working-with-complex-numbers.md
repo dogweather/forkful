@@ -6,8 +6,7 @@ description: "Liczby zespolone to liczby maj\u0105ce cz\u0119\u015B\u0107 rzeczy
 lastmod: '2024-03-13T22:44:35.790445-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone to liczby maj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
-  \ i urojon\u0105 (jak 3 + 4i). Pojawiaj\u0105 si\u0119 one w r\xF3\u017Cnych problemach\
-  \ programistycznych, zw\u0142aszcza w\u2026"
+  \ i urojon\u0105 (jak 3 + 4i)."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -6,8 +6,8 @@ description: "Convertire una stringa in minuscolo in C comporta la trasformazion
   \ di tutte le lettere maiuscole presenti in una stringa data nelle loro equivalenti\u2026"
 lastmod: '2024-03-13T22:44:43.891833-06:00'
 model: gpt-4-0125-preview
-summary: "Convertire una stringa in minuscolo in C comporta la trasformazione di tutte\
-  \ le lettere maiuscole presenti in una stringa data nelle loro equivalenti\u2026"
+summary: Convertire una stringa in minuscolo in C comporta la trasformazione di tutte
+  le lettere maiuscole presenti in una stringa data nelle loro equivalenti minuscole.
 title: Convertire una stringa in minuscolo
 weight: 4
 ---

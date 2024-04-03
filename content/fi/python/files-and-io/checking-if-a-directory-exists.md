@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.157932-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion l\xE4\
   sn\xE4olon varmistamista tiedostoj\xE4rjestelm\xE4ss\xE4 ennen sellaisia toimintoja\
-  \ kuin\u2026"
+  \ kuin tiedostojen lukeminen tai kirjoittaminen."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

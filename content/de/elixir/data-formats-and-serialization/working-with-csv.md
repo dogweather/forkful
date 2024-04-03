@@ -7,8 +7,7 @@ description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetre
   ufige\u2026"
 lastmod: '2024-03-13T22:44:53.558570-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetrennte Werte)\
-  \ umfasst das Lesen von und das Schreiben in diese Dateien, was eine h\xE4ufige\u2026"
+summary: Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt.
 title: Arbeiten mit CSV
 weight: 37
 ---

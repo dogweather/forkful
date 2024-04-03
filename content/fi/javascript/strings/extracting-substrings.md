@@ -4,8 +4,7 @@ description: "Substringit ovat merkkijonoista poimittuja osajonoja. Ne auttavat 
   \ ty\xF6st\xE4m\xE4\xE4n ja analysoimaan teksti\xE4 tarpeen mukaan."
 lastmod: '2024-03-13T22:44:56.939031-06:00'
 model: gpt-4-1106-preview
-summary: "Substringit ovat merkkijonoista poimittuja osajonoja. Ne auttavat meit\xE4\
-  \ ty\xF6st\xE4m\xE4\xE4n ja analysoimaan teksti\xE4 tarpeen mukaan."
+summary: Substringit ovat merkkijonoista poimittuja osajonoja.
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

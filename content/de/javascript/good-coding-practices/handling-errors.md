@@ -5,8 +5,7 @@ description: "Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwa
   \ und\u2026"
 lastmod: '2024-03-13T22:44:54.273587-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwas schiefgeht.\
-  \ Sie ist entscheidend, weil sie hilft, dass Programme anmutig scheitern und\u2026"
+summary: Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwas schiefgeht.
 title: Fehlerbehandlung
 weight: 16
 ---

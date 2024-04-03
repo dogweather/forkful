@@ -6,8 +6,7 @@ description: "XML:n k\xE4sittely Haskellissa k\xE4sitt\xE4\xE4 XML-rakenteiden j
 lastmod: '2024-03-13T22:44:56.638627-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Haskellissa k\xE4sitt\xE4\xE4 XML-rakenteiden j\xE4sent\xE4\
-  misen, muokkaamisen ja luomisen. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4 vuorovaikuttamaan\
-  \ lukuisien\u2026"
+  misen, muokkaamisen ja luomisen."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

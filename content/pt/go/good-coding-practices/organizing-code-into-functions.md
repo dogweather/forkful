@@ -8,8 +8,7 @@ description: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\x
 lastmod: '2024-03-13T22:44:46.066833-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3digo\
-  \ em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\
-  \ abordagem real\xE7a a\u2026"
+  \ em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

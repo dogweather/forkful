@@ -9,7 +9,9 @@ lastmod: '2024-03-13T22:44:58.397094-06:00'
 model: gpt-4-0125-preview
 summary: "Dans le domaine de la programmation, travailler avec des fichiers CSV (Valeurs\
   \ S\xE9par\xE9es par des Virgules) implique de lire et d'\xE9crire des donn\xE9\
-  es dans\u2026"
+  es dans des fichiers texte organis\xE9s par lignes, o\xF9 chaque ligne repr\xE9\
+  sente un enregistrement et les champs de chaque enregistrement sont s\xE9par\xE9\
+  s par des virgules."
 title: Travailler avec CSV
 weight: 37
 ---

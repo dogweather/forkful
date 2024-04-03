@@ -4,8 +4,8 @@ description: "Regular expressions (regex) in Visual Basic for Applications (VBA)
   \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
 lastmod: '2024-03-13T22:44:59.925468-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
-  \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
+summary: Regular expressions (regex) in Visual Basic for Applications (VBA) provide
+  a powerful way to search, match, and manipulate strings.
 title: Using regular expressions
 weight: 11
 ---

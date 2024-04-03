@@ -6,8 +6,7 @@ description: "La creaci\xF3n de registros (logging) en programaci\xF3n es como m
 lastmod: '2024-03-13T22:44:59.597732-06:00'
 model: gpt-4-1106-preview
 summary: "La creaci\xF3n de registros (logging) en programaci\xF3n es como mantener\
-  \ un diario para tu aplicaci\xF3n. Es el registro sistem\xE1tico de eventos, mensajes\
-  \ y puntos\u2026"
+  \ un diario para tu aplicaci\xF3n."
 title: Registro de Actividades
 weight: 17
 ---

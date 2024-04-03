@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.797772-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries, ordnen\
   \ Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von Werten\
-  \ super\u2026"
+  \ super schnell macht."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

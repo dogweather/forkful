@@ -6,8 +6,8 @@ description: "Een HTTP-verzoek verzenden met basisverificatie is wanneer je een 
   \ doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.\u2026"
 lastmod: '2024-03-13T22:44:50.937143-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep\
-  \ doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.\u2026"
+summary: Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep
+  doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

@@ -6,8 +6,9 @@ description: "Fouten afhandelen in Dart gaat over het anticiperen op en beheren 
   \ uitzonderingen die ontstaan tijdens de uitvoering van het programma om de\u2026"
 lastmod: '2024-03-13T22:44:50.513261-06:00'
 model: gpt-4-0125-preview
-summary: "Fouten afhandelen in Dart gaat over het anticiperen op en beheren van uitzonderingen\
-  \ die ontstaan tijdens de uitvoering van het programma om de\u2026"
+summary: Fouten afhandelen in Dart gaat over het anticiperen op en beheren van uitzonderingen
+  die ontstaan tijdens de uitvoering van het programma om de betrouwbaarheid en bruikbaarheid
+  te verbeteren.
 title: Fouten afhandelen
 weight: 16
 ---

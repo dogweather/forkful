@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.182113-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Rust polega na wydobywaniu danych z dokument\xF3w HTML,\
   \ co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web crawler\xF3\
-  w.\u2026"
+  w."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.440697-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att konvertera text\
   \ som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby f\xF6\
-  rst\xE5r.\u2026"
+  rst\xE5r."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

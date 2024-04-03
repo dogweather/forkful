@@ -4,8 +4,8 @@ description: "Refactoring is the art of tweaking existing code to improve its st
   \ readability, and efficiency without altering its external behavior. Programmers\u2026"
 lastmod: '2024-03-13T22:45:00.213214-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is the art of tweaking existing code to improve its structure,\
-  \ readability, and efficiency without altering its external behavior. Programmers\u2026"
+summary: Refactoring is the art of tweaking existing code to improve its structure,
+  readability, and efficiency without altering its external behavior.
 title: Refactoring
 weight: 19
 ---

@@ -6,8 +6,8 @@ description: "De huidige datum ophalen in PowerShell is simpelweg het systeemide
   \ van de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"
 lastmod: '2024-03-13T22:44:51.040433-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum ophalen in PowerShell is simpelweg het systeemidee van\
-  \ de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"
+summary: De huidige datum ophalen in PowerShell is simpelweg het systeemidee van de
+  datum van vandaag verkrijgen.
 title: Het huidige datum ophalen
 weight: 29
 ---

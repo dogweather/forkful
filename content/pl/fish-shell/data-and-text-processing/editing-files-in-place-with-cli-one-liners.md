@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.836796-06:00'
 model: gpt-4-0125-preview
 summary: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105 jednolinijkowc\xF3\
   w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach, bez otwierania ich\
-  \ w\u2026"
+  \ w edytorze tekstu."
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---

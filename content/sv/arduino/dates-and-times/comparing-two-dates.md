@@ -6,8 +6,7 @@ description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att bed\xF6ma deras ordn
 lastmod: '2024-03-13T22:44:38.179825-06:00'
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att bed\xF6ma deras ordning i\
-  \ tiden och avg\xF6ra tidsintervaller. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ och utv\xE4rdera\u2026"
+  \ tiden och avg\xF6ra tidsintervaller."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

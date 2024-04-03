@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.405147-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es matem\xE1\
   ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte imagin\xE1\
-  ria.\u2026"
+  ria."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

@@ -6,8 +6,7 @@ description: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF
 lastmod: '2024-03-13T22:44:38.425370-06:00'
 model: gpt-4-0125-preview
 summary: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6ra vanliga\
-  \ filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script. Det\
-  \ \xE4r\u2026"
+  \ filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script."
 title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---

@@ -8,8 +8,7 @@ description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist
 lastmod: '2024-03-13T22:44:56.313264-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist\xE4 l\xF6\
-  yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekev\xE4\
-  t sit\xE4 vuorovaikuttaakseen\u2026"
+  yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

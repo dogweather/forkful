@@ -7,7 +7,8 @@ description: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Appli
 lastmod: '2024-03-13T22:44:53.705425-06:00'
 model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
-  \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\u2026"
+  \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\
+  \ gegebenen Kriterien."
 title: Teilzeichenketten extrahieren
 weight: 6
 ---

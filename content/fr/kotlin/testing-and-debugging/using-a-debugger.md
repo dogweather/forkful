@@ -6,8 +6,8 @@ description: "Voici un petit avant-go\xFBt du d\xE9bogage en Kotlin avec Intelli
 lastmod: '2024-03-13T22:44:57.744233-06:00'
 model: gpt-4-0125-preview
 summary: "Voici un petit avant-go\xFBt du d\xE9bogage en Kotlin avec IntelliJ IDEA\
-  \ - le Sherlock Holmes des IDEs : ```kotlin fun main() { val mysteryNumber = 42\
-  \ var guess\u2026"
+  \ - le Sherlock Holmes des IDEs :\n\n```kotlin\nfun main() {\n    val mysteryNumber\
+  \ = 42\n    var guess = 0\n\n    while (guess ."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

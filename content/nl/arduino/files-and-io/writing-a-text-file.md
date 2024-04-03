@@ -6,8 +6,8 @@ description: "Een tekstbestand schrijven op Arduino betekent het opslaan van geg
   \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"
 lastmod: '2024-03-13T22:44:51.090188-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens\
-  \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"
+summary: Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens als
+  tekst in een bestand, meestal op een SD-kaart.
 title: Een tekstbestand schrijven
 weight: 24
 ---

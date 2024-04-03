@@ -5,7 +5,7 @@ description: "Ler um arquivo de texto \xE9 simplesmente acessar e interpretar o 
 lastmod: '2024-03-13T22:44:46.213835-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar e interpretar o conte\xFA\
-  do armazenado em um arquivo em seu disco. Programadores fazem isso para manipular\u2026"
+  do armazenado em um arquivo em seu disco."
 title: Lendo um arquivo de texto
 weight: 22
 ---

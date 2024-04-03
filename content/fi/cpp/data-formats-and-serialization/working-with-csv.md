@@ -7,7 +7,8 @@ description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely liittyy da
 lastmod: '2024-03-13T22:44:56.887828-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely liittyy datan k\xE4\
-  sittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen\u2026"
+  sittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen tekstirivi\
+  \ edustaa taulukon rivi\xE4 ja pilkut erottavat yksitt\xE4iset sarakkeet."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

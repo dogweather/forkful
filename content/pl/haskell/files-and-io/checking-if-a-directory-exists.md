@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.467163-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach\
   \ programistycznych, pozwalaj\u0105ca na warunkowe dzia\u0142ania w oparciu o obecno\u015B\
-  \u0107 lub\u2026"
+  \u0107 lub brak struktur katalog\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

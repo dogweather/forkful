@@ -6,8 +6,8 @@ description: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-d
   \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
 lastmod: '2024-03-13T22:44:50.706715-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
-  \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
+summary: Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten
+  met Java in.
 title: Werken met XML
 weight: 40
 ---

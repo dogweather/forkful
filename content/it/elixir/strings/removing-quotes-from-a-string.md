@@ -5,8 +5,8 @@ description: "Rimuovere le virgolette da una stringa significa liberarsi di queg
   \ ci\xF2\u2026"
 lastmod: '2024-03-13T22:44:43.072341-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa significa liberarsi di quegli involucri\
-  \ extra per ottenere il testo pulito all'interno. I programmatori fanno ci\xF2\u2026"
+summary: Rimuovere le virgolette da una stringa significa liberarsi di quegli involucri
+  extra per ottenere il testo pulito all'interno.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

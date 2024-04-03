@@ -8,8 +8,7 @@ description: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipule
 lastmod: '2024-03-13T22:44:41.298281-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering av\
-  \ XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML p\xE5\
-  \ grunn\u2026"
+  \ XML-dokumenter ved bruk av ulike biblioteker."
 title: Arbeider med XML
 weight: 40
 ---

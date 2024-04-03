@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:37.943545-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
   \ bort alla citattecken\u2014enkla (' ') eller dubbla (\" \")\u2014som \xE4r en\
-  \ del av str\xE4ngdatan.\u2026"
+  \ del av str\xE4ngdatan."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

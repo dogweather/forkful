@@ -8,7 +8,7 @@ description: "GDB (GNU Debugger) ist der am h\xE4ufigsten verwendete Debugger f\
 lastmod: '2024-03-13T22:44:54.357324-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) ist der am h\xE4ufigsten verwendete Debugger f\xFCr die\
-  \ C-Programmierung. Hier ist eine kurze Anleitung zur Verwendung von GDB zum Debuggen\u2026"
+  \ C-Programmierung."
 title: Verwenden eines Debuggers
 weight: 35
 ---

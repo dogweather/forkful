@@ -4,8 +4,8 @@ description: "Lavorare con XML significa analizzare, trasformare e generare docu
   \ XML in Elm. Si fa per interagire con molti servizi web e sistemi legacy che usano\u2026"
 lastmod: '2024-03-13T22:44:43.374260-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con XML significa analizzare, trasformare e generare documenti\
-  \ XML in Elm. Si fa per interagire con molti servizi web e sistemi legacy che usano\u2026"
+summary: Lavorare con XML significa analizzare, trasformare e generare documenti XML
+  in Elm.
 title: Lavorare con XML
 weight: 40
 ---

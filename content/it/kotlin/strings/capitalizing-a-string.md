@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:43.375396-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa nella programmazione comporta la conversione del\
   \ primo carattere della stringa in maiuscolo, se non lo \xE8 gi\xE0, il che \xE8\
-  \ utile per\u2026"
+  \ utile per formattare gli input degli utenti o visualizzare testi in un'interfaccia\
+  \ utente in modo pi\xF9 standardizzato o amichevole."
 title: Capitalizzare una stringa
 weight: 2
 ---

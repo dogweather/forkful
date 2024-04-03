@@ -7,7 +7,8 @@ description: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerpr
 lastmod: '2024-03-13T22:44:53.328298-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung,\
-  \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\u2026"
+  \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\
+  \ auf eine bestimmte Anzahl von Dezimalstellen."
 title: Runden von Zahlen
 weight: 13
 ---

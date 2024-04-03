@@ -6,8 +6,9 @@ description: "Het omzetten van een tekenreeks naar kleine letters is een fundame
   \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
 lastmod: '2024-03-13T22:44:50.273985-06:00'
 model: gpt-4-0125-preview
-summary: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
-  \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
+summary: Het omzetten van een tekenreeks naar kleine letters is een fundamentele bewerking
+  die uniformiteit en consistentie in tekstverwerking mogelijk maakt, essentieel voor
+  taken als hoofdletterongevoelige vergelijkingen of tekstnormalisatie.
 title: Een string converteren naar kleine letters
 weight: 4
 ---

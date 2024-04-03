@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.548985-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 ngu\u1ED3\
   n ki\u1EC3m tra xem m\xE3 ch\xEDnh c\u1EE7a b\u1EA1n ho\u1EA1t \u0111\u1ED9ng nh\u01B0\
-  \ mong \u0111\u1EE3i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn ki\u1EC3m th\u1EED\
-  \ \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o\u2026"
+  \ mong \u0111\u1EE3i hay kh\xF4ng."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

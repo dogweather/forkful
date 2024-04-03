@@ -8,10 +8,8 @@ description: "\uC608\uC0C1\uB300\uB85C \uB3D9\uC791\uD558\uC9C0 \uC54A\uB294 Jav
 lastmod: '2024-03-13T22:44:55.797075-06:00'
 model: gpt-4-0125-preview
 summary: "\uC608\uC0C1\uB300\uB85C \uB3D9\uC791\uD558\uC9C0 \uC54A\uB294 JavaScript\
-  \ \uCF54\uB4DC \uC870\uAC01\uC774 \uC5EC\uAE30 \uC788\uC2B5\uB2C8\uB2E4: ```javascript\
-  \ function buggyMultiply(a, b) { return a + b; // \uC774\uB7F0! \uC774\uAC83\uC740\
-  \ \uB367\uC148\uC774 \uC544\uB2CC \uACF1\uC148\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4\
-  . } let result =\u2026"
+  \ \uCF54\uB4DC \uC870\uAC01\uC774 \uC5EC\uAE30 \uC788\uC2B5\uB2C8\uB2E4:\n\n```javascript\n\
+  function buggyMultiply(a, b) {\n    return a + b; // \uC774\uB7F0."
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 weight: 35
 ---

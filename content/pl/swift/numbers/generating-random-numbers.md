@@ -6,8 +6,7 @@ description: "Generowanie losowych liczb w programowaniu dotyczy tworzenia warto
 lastmod: '2024-03-13T22:44:35.750785-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w programowaniu dotyczy tworzenia warto\u015B\
-  ci numerycznych nieterministycznych lub nieprzewidywalnych. Programi\u015Bci u\u017C\
-  ywaj\u0105 liczb\u2026"
+  ci numerycznych nieterministycznych lub nieprzewidywalnych."
 title: Generowanie liczb losowych
 weight: 12
 ---

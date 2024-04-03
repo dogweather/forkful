@@ -6,8 +6,7 @@ description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer ses donn\xE9
 lastmod: '2024-03-13T22:44:57.435525-06:00'
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer ses donn\xE9es (HTML,\
-  \ CSS, scripts) pour les manipuler ou les stocker. Les programmeurs le font pour\
-  \ analyser le\u2026"
+  \ CSS, scripts) pour les manipuler ou les stocker."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

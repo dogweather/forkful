@@ -8,8 +8,7 @@ description: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a c
 lastmod: '2024-03-13T22:44:47.058345-06:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
-  \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\
-  \ fazem isso para\u2026"
+  \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa."
 title: Gerenciando erros
 weight: 16
 ---

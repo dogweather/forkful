@@ -6,8 +6,8 @@ description: "Loggen is in essentie het opschrijven van wat je applicatie doet -
   \ dagboek, als je wilt, maar dan voor code. Programmeurs doen dit om de fijne\u2026"
 lastmod: '2024-03-13T22:44:51.253914-06:00'
 model: gpt-4-0125-preview
-summary: "Loggen is in essentie het opschrijven van wat je applicatie doet - een dagboek,\
-  \ als je wilt, maar dan voor code. Programmeurs doen dit om de fijne\u2026"
+summary: Loggen is in essentie het opschrijven van wat je applicatie doet - een dagboek,
+  als je wilt, maar dan voor code.
 title: Logboekregistratie
 weight: 17
 ---

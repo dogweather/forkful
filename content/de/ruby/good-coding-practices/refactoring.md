@@ -5,7 +5,7 @@ description: "Refactoring ist der Prozess der Umstrukturierung von bestehendem C
 lastmod: '2024-03-13T22:44:54.408707-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der Umstrukturierung von bestehendem Computercode,\
-  \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer f\xFChren ein\u2026"
+  \ ohne dessen externes Verhalten zu \xE4ndern."
 title: Refactoring
 weight: 19
 ---

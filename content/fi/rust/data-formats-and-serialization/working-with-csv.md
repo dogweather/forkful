@@ -7,7 +7,7 @@ description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa t
 lastmod: '2024-03-13T22:44:56.379678-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
-  \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"
+  \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja kirjoittamista."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

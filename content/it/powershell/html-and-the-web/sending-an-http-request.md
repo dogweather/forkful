@@ -4,8 +4,7 @@ description: Mandare una richiesta HTTP significa chiedere al web qualcosa. I pr
   lo fanno per interagire con API, scaricare dati, o altro ancora.
 lastmod: '2024-03-13T22:44:43.639784-06:00'
 model: gpt-4-1106-preview
-summary: Mandare una richiesta HTTP significa chiedere al web qualcosa. I programmatori
-  lo fanno per interagire con API, scaricare dati, o altro ancora.
+summary: Mandare una richiesta HTTP significa chiedere al web qualcosa.
 title: Inviare una richiesta http
 weight: 44
 ---

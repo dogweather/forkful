@@ -4,8 +4,7 @@ description: "Parsing HTML in Elixir involves extracting information from HTML d
   \ Programmers do this to programmatically interact with web pages, scrape data,\u2026"
 lastmod: '2024-03-13T22:44:59.780563-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing HTML in Elixir involves extracting information from HTML documents.\
-  \ Programmers do this to programmatically interact with web pages, scrape data,\u2026"
+summary: Parsing HTML in Elixir involves extracting information from HTML documents.
 title: Parsing HTML
 weight: 43
 ---

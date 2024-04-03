@@ -6,8 +6,8 @@ description: "Il parsing di HTML in Visual Basic for Applications (VBA) implica 
   \ di informazioni specifiche da un documento HTML. I programmatori lo fanno\u2026"
 lastmod: '2024-03-13T22:44:43.260071-06:00'
 model: gpt-4-0125-preview
-summary: "Il parsing di HTML in Visual Basic for Applications (VBA) implica l'estrazione\
-  \ di informazioni specifiche da un documento HTML. I programmatori lo fanno\u2026"
+summary: Il parsing di HTML in Visual Basic for Applications (VBA) implica l'estrazione
+  di informazioni specifiche da un documento HTML.
 title: Analisi del HTML
 weight: 43
 ---

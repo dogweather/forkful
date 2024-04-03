@@ -6,8 +6,7 @@ description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla vilket
 lastmod: '2024-03-13T22:44:38.350746-06:00'
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla vilket som \xE4\
-  r tidigast eller senast, eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6\
-  r att hantera\u2026"
+  r tidigast eller senast, eller om de \xE4r samma."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

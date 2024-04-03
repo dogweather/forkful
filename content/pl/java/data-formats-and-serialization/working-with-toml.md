@@ -5,7 +5,7 @@ description: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny
 lastmod: '2024-03-13T22:44:35.302206-06:00'
 model: gpt-4-0125-preview
 summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny J\u0119\
-  zyk Toma). Jest to format serializacji danych u\u017Cywany w plikach konfiguracyjnych.\u2026"
+  zyk Toma)."
 title: Praca z TOML
 weight: 39
 ---

@@ -6,7 +6,8 @@ description: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\x
 lastmod: '2024-03-13T22:44:38.003732-06:00'
 model: gpt-4-1106-preview
 summary: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5nd som\
-  \ st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller felaktig\u2026"
+  \ st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller felaktig\
+  \ datainmatning."
 title: Hantering av fel
 weight: 16
 ---

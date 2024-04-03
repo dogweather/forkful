@@ -7,7 +7,7 @@ description: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogra
 lastmod: '2024-03-13T22:44:41.275955-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer eller\
-  \ funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"
+  \ funksjoner som automatisk verifiserer funksjonaliteten til koden din."
 title: Skrive tester
 weight: 36
 ---

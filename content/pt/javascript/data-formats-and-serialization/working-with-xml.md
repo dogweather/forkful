@@ -6,8 +6,7 @@ description: "Trabalhar com XML significa analisar, manipular e produzir conte\x
 lastmod: '2024-03-13T22:44:46.986485-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML significa analisar, manipular e produzir conte\xFAdo XML\
-  \ usando c\xF3digo. Programadores fazem isso porque o XML \xE9 amplamente utilizado\
-  \ para\u2026"
+  \ usando c\xF3digo."
 title: Trabalhando com XML
 weight: 40
 ---

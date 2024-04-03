@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.575337-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Lua comporta la creazione o l'apertura di\
   \ un file in modalit\xE0 di scrittura, quindi utilizzare le operazioni sui file\
-  \ per\u2026"
+  \ per inserire testo."
 title: Scrivere un file di testo
 weight: 24
 ---

@@ -6,8 +6,7 @@ description: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valor
 lastmod: '2024-03-13T22:44:46.627804-06:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valores intermedi\xE1\
-  rios para entender o comportamento do programa. Programadores o fazem para encontrar\
-  \ e\u2026"
+  rios para entender o comportamento do programa."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

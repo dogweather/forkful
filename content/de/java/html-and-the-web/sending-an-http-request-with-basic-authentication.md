@@ -5,7 +5,7 @@ description: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet 
 lastmod: '2024-03-13T22:44:53.762853-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das \xDC\
-  bermitteln von Benutzername und Passwort in einem Base64-codierten Header.\u2026"
+  bermitteln von Benutzername und Passwort in einem Base64-codierten Header."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

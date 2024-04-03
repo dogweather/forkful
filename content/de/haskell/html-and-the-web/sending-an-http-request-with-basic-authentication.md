@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:53.931270-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, einem\
   \ Server deine Identit\xE4t zu best\xE4tigen, indem du Benutzername und Passwort\
-  \ kodiert\u2026"
+  \ kodiert im Kopf der Anfrage mitschickst."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

@@ -5,9 +5,7 @@ description: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med va
   r inneh\xE5llet kan\u2026"
 lastmod: '2024-03-13T22:44:37.684150-06:00'
 model: gpt-4-1106-preview
-summary: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig text.\
-  \ Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4r inneh\xE5\
-  llet kan\u2026"
+summary: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig text."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

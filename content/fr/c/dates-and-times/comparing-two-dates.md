@@ -7,7 +7,7 @@ description: "Comparer deux dates en C implique de d\xE9terminer la relation chr
 lastmod: '2024-03-13T22:44:58.385917-06:00'
 model: gpt-4-0125-preview
 summary: "Comparer deux dates en C implique de d\xE9terminer la relation chronologique\
-  \ entre elles - si une date pr\xE9c\xE8de l'autre ou si elles sont identiques. Cette\u2026"
+  \ entre elles - si une date pr\xE9c\xE8de l'autre ou si elles sont identiques."
 title: Comparer deux dates
 weight: 27
 ---

@@ -5,7 +5,7 @@ description: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle
 lastmod: '2024-03-13T22:44:54.171932-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
-  buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"
+  buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

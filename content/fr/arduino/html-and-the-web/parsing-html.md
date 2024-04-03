@@ -7,7 +7,7 @@ description: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire 
 lastmod: '2024-03-13T22:44:58.107167-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des informations\
-  \ des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"
+  \ des pages Web."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

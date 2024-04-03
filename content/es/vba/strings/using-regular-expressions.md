@@ -7,8 +7,8 @@ description: "Las expresiones regulares (regex) en Visual Basic para Aplicacione
   \ texto.\u2026"
 lastmod: '2024-03-13T22:44:58.881616-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en Visual Basic para Aplicaciones (VBA)\
-  \ ofrecen una manera poderosa de buscar, coincidir y manipular cadenas de texto.\u2026"
+summary: Las expresiones regulares (regex) en Visual Basic para Aplicaciones (VBA)
+  ofrecen una manera poderosa de buscar, coincidir y manipular cadenas de texto.
 title: Usando expresiones regulares
 weight: 11
 ---

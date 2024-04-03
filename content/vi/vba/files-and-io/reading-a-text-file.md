@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Visual Basic for\
   \ Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\
   t n\u1ED9i dung c\u1EE7a t\u1EC7p v\u0103n b\u1EA3n m\u1ED9t c\xE1ch l\u1EADp tr\xEC\
-  nh t\u1EEB b\xEAn trong\u2026"
+  nh t\u1EEB b\xEAn trong m\u1ED9t \u1EE9ng d\u1EE5ng Office."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

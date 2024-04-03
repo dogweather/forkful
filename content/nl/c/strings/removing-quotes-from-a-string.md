@@ -6,8 +6,8 @@ description: "Het verwijderen van aanhalingstekens uit een string in C omvat het
   \ van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (\" \")\u2026"
 lastmod: '2024-03-13T22:44:51.277656-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een string in C omvat het extraheren\
-  \ van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (\" \")\u2026"
+summary: Het verwijderen van aanhalingstekens uit een string in C omvat het extraheren
+  van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (" ") aanhalingstekens.
 title: Quotes uit een string verwijderen
 weight: 9
 ---

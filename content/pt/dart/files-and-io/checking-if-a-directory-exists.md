@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.297250-06:00'
 model: gpt-4-0125-preview
 summary: "Checar se um diret\xF3rio existe em Dart \xE9 sobre verificar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado no sistema de arquivos antes de\
-  \ realizar\u2026"
+  \ realizar opera\xE7\xF5es como ler ou escrever arquivos."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

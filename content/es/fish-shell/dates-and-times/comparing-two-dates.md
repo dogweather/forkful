@@ -6,7 +6,7 @@ description: "Comparar dos fechas es b\xE1sicamente medir el tiempo entre ellas 
 lastmod: '2024-03-13T22:44:59.513845-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas es b\xE1sicamente medir el tiempo entre ellas o determinar\
-  \ cu\xE1l es anterior o posterior. Los programadores hacen esto para manejar\u2026"
+  \ cu\xE1l es anterior o posterior."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

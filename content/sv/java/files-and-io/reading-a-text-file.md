@@ -6,8 +6,7 @@ description: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n e
 lastmod: '2024-03-13T22:44:37.804362-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en fil\
-  \ som finns lagrad p\xE5 din dator eller server. Programmerare g\xF6r detta f\xF6\
-  r att kunna arbeta med\u2026"
+  \ som finns lagrad p\xE5 din dator eller server."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

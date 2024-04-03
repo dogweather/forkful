@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:37.020489-06:00'
 model: gpt-4-0125-preview
 summary: "Bi\u1EBFn ch\u1EEF hoa to\xE0n b\u1ED9 chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
   n t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh ch\u1EEF\
-  \ in hoa. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA1\
-  o ra s\u1EF1 th\u1ED1ng nh\u1EA5t, nh\u1EA5n\u2026"
+  \ in hoa."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

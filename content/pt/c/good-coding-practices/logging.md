@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.057271-06:00'
 model: gpt-4-0125-preview
 summary: "Registrar logs em C envolve documentar o fluxo e eventos not\xE1veis de\
   \ um programa durante sua execu\xE7\xE3o, fornecendo uma revis\xE3o tang\xEDvel\
-  \ do seu\u2026"
+  \ do seu comportamento e desempenho."
 title: Registro de Logs
 weight: 17
 ---

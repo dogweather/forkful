@@ -6,7 +6,7 @@ description: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, 
 lastmod: '2024-03-13T22:44:54.299815-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um einen\
-  \ l\xE4ngeren String zu bilden. Programmierer machen das, um dynamische Texte zu\u2026"
+  \ l\xE4ngeren String zu bilden."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

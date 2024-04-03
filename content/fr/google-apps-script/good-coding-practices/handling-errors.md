@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.194503-06:00'
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs dans Google Apps Script consiste \xE0 pr\xE9voir,\
   \ attraper et r\xE9pondre aux exceptions ou erreurs qui surviennent pendant l'ex\xE9\
-  cution du\u2026"
+  cution du script."
 title: Gestion des erreurs
 weight: 16
 ---

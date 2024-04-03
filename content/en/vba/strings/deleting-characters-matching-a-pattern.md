@@ -4,8 +4,9 @@ description: "Deleting characters matching a specific pattern in Visual Basic fo
   \ Applications (VBA) involves identifying and subsequently removing characters or\u2026"
 lastmod: '2024-03-13T22:44:59.920246-06:00'
 model: gpt-4-0125-preview
-summary: "Deleting characters matching a specific pattern in Visual Basic for Applications\
-  \ (VBA) involves identifying and subsequently removing characters or\u2026"
+summary: Deleting characters matching a specific pattern in Visual Basic for Applications
+  (VBA) involves identifying and subsequently removing characters or strings that
+  meet certain criteria.
 title: Deleting characters matching a pattern
 weight: 5
 ---

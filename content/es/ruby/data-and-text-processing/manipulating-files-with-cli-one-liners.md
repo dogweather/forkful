@@ -6,7 +6,8 @@ description: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea e
 lastmod: '2024-03-13T22:44:59.586561-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en Ruby\
-  \ se trata de realizar operaciones comunes con archivos directamente desde tu terminal\u2026"
+  \ se trata de realizar operaciones comunes con archivos directamente desde tu terminal\
+  \ utilizando scripts de Ruby."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

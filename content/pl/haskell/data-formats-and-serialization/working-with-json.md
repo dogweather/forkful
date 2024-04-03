@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.475047-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) w Haskellu polega na parsowaniu\
   \ danych JSON do typ\xF3w Haskell oraz konwertowaniu typ\xF3w Haskell z powrotem\
-  \ na\u2026"
+  \ na JSON."
 title: Praca z JSON
 weight: 38
 ---

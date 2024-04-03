@@ -4,8 +4,9 @@ description: "Regular expressions (regex) in Ruby are patterns used to match cha
   \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"
 lastmod: '2024-03-13T22:45:00.539542-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regex) in Ruby are patterns used to match character\
-  \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"
+summary: Regular expressions (regex) in Ruby are patterns used to match character
+  combinations in strings, enabling developers to search for, match, and manipulate
+  text efficiently.
 title: Using regular expressions
 weight: 11
 ---

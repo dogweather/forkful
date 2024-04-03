@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:47.089512-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que n\xE3\
   o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\xF5\
-  es, criptografia e\u2026"
+  es, criptografia e jogos."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

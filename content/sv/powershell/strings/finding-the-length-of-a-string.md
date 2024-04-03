@@ -6,8 +6,7 @@ description: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i e
 lastmod: '2024-03-13T22:44:38.115187-06:00'
 model: gpt-4-1106-preview
 summary: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en str\xE4\
-  ng. Programmerare g\xF6r detta f\xF6r att validera indata, hantera textdata och\
-  \ optimera prestanda."
+  ng."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

@@ -6,8 +6,8 @@ description: "Scrivere su standard error (stderr) consiste nel dirigere messaggi
   \ errore e output diagnostici su un canale separato, distinto dallo standard output\u2026"
 lastmod: '2024-03-13T22:44:43.573462-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) consiste nel dirigere messaggi di errore\
-  \ e output diagnostici su un canale separato, distinto dallo standard output\u2026"
+summary: Scrivere su standard error (stderr) consiste nel dirigere messaggi di errore
+  e output diagnostici su un canale separato, distinto dallo standard output (stdout).
 title: Scrivere sull'errore standard
 weight: 25
 ---

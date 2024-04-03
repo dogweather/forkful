@@ -4,8 +4,7 @@ description: "Concatenare le stringhe significa unirle fine a fine. I programmat
   \ lo fanno per creare messaggi, comandi, o per manipolare dati che devono essere\u2026"
 lastmod: '2024-03-13T22:44:43.848246-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare le stringhe significa unirle fine a fine. I programmatori lo\
-  \ fanno per creare messaggi, comandi, o per manipolare dati che devono essere\u2026"
+summary: Concatenare le stringhe significa unirle fine a fine.
 title: Concatenazione di stringhe
 weight: 3
 ---

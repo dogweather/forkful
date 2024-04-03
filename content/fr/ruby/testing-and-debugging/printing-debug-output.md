@@ -6,8 +6,7 @@ description: "L'impression du d\xE9bogage, c'est afficher des infos pour compren
 lastmod: '2024-03-13T22:44:58.422551-06:00'
 model: gpt-4-1106-preview
 summary: "L'impression du d\xE9bogage, c'est afficher des infos pour comprendre ce\
-  \ qui se passe dans le code. On le fait parce que \xE7a aide \xE0 rep\xE9rer les\
-  \ bugs\u2026"
+  \ qui se passe dans le code."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

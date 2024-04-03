@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:34.855435-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
   \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
-  \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
+  \ aplikacji."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

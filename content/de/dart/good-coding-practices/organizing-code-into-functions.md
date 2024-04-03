@@ -7,7 +7,8 @@ description: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwend
 lastmod: '2024-03-13T22:44:53.587123-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare Codebl\xF6\
-  cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise\u2026"
+  cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise Eingaben\
+  \ erhalten, Daten verarbeiten und m\xF6glicherweise Ausgaben zur\xFCckgeben."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

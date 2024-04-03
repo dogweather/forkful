@@ -6,8 +6,7 @@ description: "GDB (GNU Debugger) er den mest brukte debuggeren for C-programmeri
   \ Her er en kort guide om hvordan du bruker GDB for \xE5 feils\xF8ke et enkelt C-program.\u2026"
 lastmod: '2024-03-13T22:44:41.276977-06:00'
 model: gpt-4-0125-preview
-summary: "GDB (GNU Debugger) er den mest brukte debuggeren for C-programmering. Her\
-  \ er en kort guide om hvordan du bruker GDB for \xE5 feils\xF8ke et enkelt C-program.\u2026"
+summary: GDB (GNU Debugger) er den mest brukte debuggeren for C-programmering.
 title: "Bruke en feils\xF8ker"
 weight: 35
 ---

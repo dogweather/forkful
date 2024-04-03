@@ -8,8 +8,7 @@ description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \
 lastmod: '2024-03-13T22:44:46.089490-06:00'
 model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 uma\
-  \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No contexto\
-  \ do Google Apps\u2026"
+  \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o."
 title: "Excluindo caracteres correspondentes a um padr\xE3o"
 weight: 5
 ---

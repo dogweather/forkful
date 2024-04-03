@@ -8,8 +8,7 @@ description: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, mani
 lastmod: '2024-03-13T22:44:35.449452-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
-  \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\
-  \ Operacja\u2026"
+  \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

@@ -7,7 +7,9 @@ description: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprec
 lastmod: '2024-03-13T22:44:53.269820-06:00'
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprechen, bezieht\
-  \ sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus\u2026"
+  \ sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus Zeichenketten,\
+  \ basierend auf Regeln, die durch ein Muster definiert sind (normalerweise \xFC\
+  ber regul\xE4re Ausdr\xFCcke)."
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---

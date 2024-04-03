@@ -5,9 +5,7 @@ description: "Chercher et remplacer du texte, c'est update un morceau de texte p
   \ donn\xE9es ou\u2026"
 lastmod: '2024-03-13T22:44:57.311250-06:00'
 model: gpt-4-1106-preview
-summary: "Chercher et remplacer du texte, c'est update un morceau de texte par un\
-  \ autre. Les devs font \xE7a pour corriger des erreurs, mettre \xE0 jour des donn\xE9\
-  es ou\u2026"
+summary: Chercher et remplacer du texte, c'est update un morceau de texte par un autre.
 title: Recherche et remplacement de texte
 weight: 10
 ---

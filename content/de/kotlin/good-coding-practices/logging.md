@@ -4,8 +4,8 @@ description: "Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten 
   \ einer Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole,\u2026"
 lastmod: '2024-03-13T22:44:53.852721-06:00'
 model: gpt-4-1106-preview
-summary: "Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten aus einer\
-  \ Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole,\u2026"
+summary: Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten aus einer
+  Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole, aufzuzeichnen.
 title: Protokollierung
 weight: 17
 ---

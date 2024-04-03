@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:40.569971-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Rust inneb\xE6rer \xE5 bruke biblioteker\
   \ for \xE5 produsere uforutsette numeriske verdier, noe som er uunnv\xE6rlig for\
-  \ oppgaver som\u2026"
+  \ oppgaver som spenner fra kryptografi og simuleringer til spill og tilfeldige algoritmer."
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.043384-06:00'
 model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 sobre\
   \ remover certos caracteres ou sequ\xEAncias de caracteres de strings, com base\
-  \ em regras\u2026"
+  \ em regras definidas por um padr\xE3o (geralmente via express\xF5es regulares)."
 title: "Deletando caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

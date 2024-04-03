@@ -5,8 +5,7 @@ description: "Trova la lunghezza di una stringa significa contare i caratteri ch
   \ e per\u2026"
 lastmod: '2024-03-13T22:44:43.632103-06:00'
 model: gpt-4-1106-preview
-summary: "Trova la lunghezza di una stringa significa contare i caratteri che la compongono.\
-  \ Programmatori lo fanno per validazioni, manipolazione di testo e per\u2026"
+summary: Trova la lunghezza di una stringa significa contare i caratteri che la compongono.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

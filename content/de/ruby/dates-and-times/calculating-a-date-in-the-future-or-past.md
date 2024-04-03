@@ -5,7 +5,8 @@ description: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6gli
 lastmod: '2024-03-13T22:44:54.413519-06:00'
 model: gpt-4-1106-preview
 summary: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht es,\
-  \ mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"
+  \ mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder Ereignisse\
+  \ zu planen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:35.903285-06:00'
 model: gpt-4-0125-preview
 summary: "W programowaniu w j\u0119zyku C, odczytywanie argument\xF3w linii polece\u0144\
   \ pozwala programom na przyjmowanie danych wej\u015Bciowych bezpo\u015Brednio z\
-  \ terminala,\u2026"
+  \ terminala, zwi\u0119kszaj\u0105c elastyczno\u015B\u0107 i u\u017Cyteczno\u015B\
+  \u0107."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.427982-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Visual Basic for Applications (VBA)\
   \ trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos antes\
-  \ de\u2026"
+  \ de realizar opera\xE7\xF5es como salvar arquivos ou criar novos diret\xF3rios."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

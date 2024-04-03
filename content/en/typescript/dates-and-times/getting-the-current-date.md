@@ -4,8 +4,8 @@ description: "Getting the current date in TypeScript, a language built on JavaSc
   \ allows you to access and manipulate the current date and time information.\u2026"
 lastmod: '2024-03-13T22:44:59.868109-06:00'
 model: gpt-4-0125-preview
-summary: "Getting the current date in TypeScript, a language built on JavaScript,\
-  \ allows you to access and manipulate the current date and time information.\u2026"
+summary: Getting the current date in TypeScript, a language built on JavaScript, allows
+  you to access and manipulate the current date and time information.
 title: Getting the current date
 weight: 29
 ---

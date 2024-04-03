@@ -7,7 +7,8 @@ description: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 envoyer des
 lastmod: '2024-03-13T22:44:57.758086-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 envoyer des messages\
-  \ d'erreur et des diagnostics sur un flux s\xE9par\xE9, distinct de la sortie standard\u2026"
+  \ d'erreur et des diagnostics sur un flux s\xE9par\xE9, distinct de la sortie standard\
+  \ (stdout), ce qui permet une meilleure gestion des erreurs et l'analyse des journaux."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

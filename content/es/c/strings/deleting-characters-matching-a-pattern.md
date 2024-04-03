@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:59.527713-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de cadenas\
   \ en C se trata de remover todas las instancias de ciertos caracteres que cumplen\
-  \ con\u2026"
+  \ con criterios predefinidos."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

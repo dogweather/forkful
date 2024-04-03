@@ -7,7 +7,8 @@ description: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, jo
 lastmod: '2024-03-13T22:44:56.256507-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka k\xE4\
-  sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"
+  sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\
+  \ vastineisiin."
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---

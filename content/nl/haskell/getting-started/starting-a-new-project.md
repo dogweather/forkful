@@ -8,9 +8,7 @@ description: "Elk project begint met een eerste stap. Voor programmeurs betekent
   \ dit\u2026"
 lastmod: '2024-03-13T22:44:50.853008-06:00'
 model: gpt-4-0125-preview
-summary: "Elk project begint met een eerste stap. Voor programmeurs betekent dat het\
-  \ opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
-  \ dit\u2026"
+summary: Elk project begint met een eerste stap.
 title: Een nieuw project starten
 weight: 1
 ---

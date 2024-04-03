@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:57.350609-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON implique l'analyse de cha\xEEnes format\xE9es JSON\
   \ en structures de donn\xE9es que Elixir peut manipuler, et la s\xE9rialisation\
-  \ de structures de\u2026"
+  \ de structures de donn\xE9es Elixir de retour en cha\xEEnes JSON."
 title: Travailler avec JSON
 weight: 38
 ---

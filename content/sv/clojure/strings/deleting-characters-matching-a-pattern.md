@@ -6,8 +6,7 @@ description: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tec
 lastmod: '2024-03-13T22:44:37.509728-06:00'
 model: gpt-4-1106-preview
 summary: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken som\
-  \ matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade sekvenser.\
-  \ Detta\u2026"
+  \ matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade sekvenser."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

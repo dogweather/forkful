@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:47.026995-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON no Fish Shell envolve analisar e gerar dados JSON, uma\
   \ tarefa comum para configurar aplica\xE7\xF5es, interagir com APIs e otimizar fluxos\
-  \ de\u2026"
+  \ de trabalho na linha de comando."
 title: Trabalhando com JSON
 weight: 38
 ---

@@ -6,8 +6,7 @@ description: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu e
 lastmod: '2024-03-13T22:44:53.622679-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln,\
-  \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das h\xE4ufig\
-  \ tun, um\u2026"
+  \ wie viele Zeichen der String enth\xE4lt."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

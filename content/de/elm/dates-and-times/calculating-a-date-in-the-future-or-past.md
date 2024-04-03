@@ -5,7 +5,7 @@ description: "Das Berechnen von zuk\xFCnftigen oder vergangenen Daten bedeutet, 
 lastmod: '2024-03-13T22:44:53.818617-06:00'
 model: gpt-4-1106-preview
 summary: "Das Berechnen von zuk\xFCnftigen oder vergangenen Daten bedeutet, einem\
-  \ bestimmten Datum Tage, Monate oder Jahre hinzuzuf\xFCgen oder abzuziehen. Programmierer\u2026"
+  \ bestimmten Datum Tage, Monate oder Jahre hinzuzuf\xFCgen oder abzuziehen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

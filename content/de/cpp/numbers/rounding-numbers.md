@@ -6,7 +6,7 @@ description: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl o
 lastmod: '2024-03-13T22:44:54.179761-06:00'
 model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl oder eine\
-  \ angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen, sich\u2026"
+  \ angegebene Genauigkeit anzupassen."
 title: Zahlen runden
 weight: 13
 ---

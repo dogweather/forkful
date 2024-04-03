@@ -6,8 +6,7 @@ description: "Imprimir sa\xEDda de debug \xE9 como espiar no funcionamento do se
 lastmod: '2024-03-13T22:44:46.502605-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDda de debug \xE9 como espiar no funcionamento do seu c\xF3\
-  digo. Programadores fazem isso para entender o que est\xE1 acontecendo, encontrar\
-  \ bugs e\u2026"
+  digo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

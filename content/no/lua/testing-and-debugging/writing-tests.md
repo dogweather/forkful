@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:40.933710-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage sm\xE5, separate\
   \ deler av kode for automatisk \xE5 verifisere at ulike deler av applikasjonen din\
-  \ fungerer som\u2026"
+  \ fungerer som forventet."
 title: Skrive tester
 weight: 36
 ---

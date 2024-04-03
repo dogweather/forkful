@@ -8,8 +8,7 @@ description: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinit
 lastmod: '2024-03-13T22:44:56.552708-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa liittyy\
-  \ JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
-  n\u2026"
+  \ JSON-datamuodon j\xE4sennys- ja luontitoimiin."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

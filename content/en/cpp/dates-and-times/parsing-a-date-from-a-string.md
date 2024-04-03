@@ -4,8 +4,8 @@ description: "Parsing a date from a string involves interpreting the string form
   \ to extract date components like day, month, and year. Programmers do this to handle\u2026"
 lastmod: '2024-03-13T22:45:00.366106-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing a date from a string involves interpreting the string format to\
-  \ extract date components like day, month, and year. Programmers do this to handle\u2026"
+summary: Parsing a date from a string involves interpreting the string format to extract
+  date components like day, month, and year.
 title: Parsing a date from a string
 weight: 30
 ---

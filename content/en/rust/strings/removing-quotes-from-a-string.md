@@ -4,8 +4,8 @@ description: "Removing quotes from a string in Rust is about stripping away unne
   \ extra quote characters that might be wrapped around your text data. Programmers\u2026"
 lastmod: '2024-03-13T22:44:59.885114-06:00'
 model: gpt-4-1106-preview
-summary: "Removing quotes from a string in Rust is about stripping away unnecessary\
-  \ extra quote characters that might be wrapped around your text data. Programmers\u2026"
+summary: Removing quotes from a string in Rust is about stripping away unnecessary
+  extra quote characters that might be wrapped around your text data.
 title: Removing quotes from a string
 weight: 9
 ---

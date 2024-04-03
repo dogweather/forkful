@@ -8,7 +8,7 @@ description: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\
 lastmod: '2024-03-13T22:44:58.740154-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1s cadenas\
-  \ en una. Los programadores hacen esto para manipular datos de texto f\xE1cilmente,\u2026"
+  \ en una."
 title: Concatenando cadenas de texto
 weight: 3
 ---

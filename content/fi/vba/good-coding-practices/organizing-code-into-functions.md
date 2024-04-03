@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.406766-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications (VBA)\
   \ -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin,\
-  \ joita\u2026"
+  \ joita kutsutaan funktioiksi."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

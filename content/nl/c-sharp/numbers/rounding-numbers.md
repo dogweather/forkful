@@ -6,8 +6,8 @@ description: "Afronden van getallen betekent het aanpassen ervan naar de dichtst
   \ gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere\u2026"
 lastmod: '2024-03-13T22:44:50.804957-06:00'
 model: gpt-4-0125-preview
-summary: "Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde\
-  \ gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere\u2026"
+summary: Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde
+  gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere vorm.
 title: Afronden van getallen
 weight: 13
 ---

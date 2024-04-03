@@ -6,8 +6,7 @@ description: "Handling errors is how your code deals with problems that pop up d
 lastmod: '2024-03-13T22:45:00.055903-06:00'
 model: gpt-4-1106-preview
 summary: "Handling errors is how your code deals with problems that pop up during\
-  \ execution\u2014like handling a curveball without dropping it. Programmers do it\
-  \ to\u2026"
+  \ execution\u2014like handling a curveball without dropping it."
 title: Handling errors
 weight: 16
 ---

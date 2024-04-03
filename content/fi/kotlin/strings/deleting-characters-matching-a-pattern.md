@@ -6,8 +6,7 @@ description: "Kun poistetaan merkkej\xE4, jotka vastaavat tietty\xE4 kaavaa, sii
 lastmod: '2024-03-13T22:44:56.515456-06:00'
 model: gpt-4-1106-preview
 summary: "Kun poistetaan merkkej\xE4, jotka vastaavat tietty\xE4 kaavaa, siivotaan\
-  \ merkkijonoa tarpeettomasta sis\xE4ll\xF6st\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\
-  , jotta voidaan esimerkiksi\u2026"
+  \ merkkijonoa tarpeettomasta sis\xE4ll\xF6st\xE4."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

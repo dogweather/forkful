@@ -6,8 +6,7 @@ description: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych p
 lastmod: '2024-03-13T22:44:35.271224-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych przez dodanie\
-  \ jednostki urojonej, `i`, gdzie `i^2 = -1`. S\u0105 one kluczowe w takich dziedzinach\
-  \ jak\u2026"
+  \ jednostki urojonej, `i`, gdzie `i^2 = -1`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

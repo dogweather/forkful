@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.899243-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\xE4\
   ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\
-  \ formatering och\u2026"
+  \ formatering och sammanfogning av str\xE4ngar."
 title: "Interpolering av en str\xE4ng"
 weight: 8
 ---

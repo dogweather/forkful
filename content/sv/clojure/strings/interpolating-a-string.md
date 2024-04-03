@@ -6,8 +6,7 @@ description: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in
 lastmod: '2024-03-13T22:44:37.511569-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in uttryck\
-  \ eller variabler in i str\xE4ngar. Programmerare g\xF6r det f\xF6r att dynamiskt\
-  \ bygga str\xE4ngar \u2013\u2026"
+  \ eller variabler in i str\xE4ngar."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

@@ -8,7 +8,8 @@ description: "En la programaci\xF3n en C, leer argumentos de la l\xEDnea de coma
 lastmod: '2024-03-13T22:44:59.562662-06:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n en C, leer argumentos de la l\xEDnea de comando permite\
-  \ a los programas aceptar entradas directamente desde el terminal, mejorando la\u2026"
+  \ a los programas aceptar entradas directamente desde el terminal, mejorando la\
+  \ flexibilidad y la usabilidad."
 title: "Leyendo argumentos de l\xEDnea de comandos"
 weight: 23
 ---

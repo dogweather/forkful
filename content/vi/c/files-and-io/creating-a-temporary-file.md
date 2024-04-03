@@ -11,7 +11,9 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong C bao\
   \ g\u1ED3m vi\u1EC7c t\u1EA1o ra m\u1ED9t t\u1EADp tin \u0111\u01B0\u1EE3c d\xF9\
   ng \u0111\u1EC3 s\u1EED d\u1EE5ng trong m\u1ED9t kho\u1EA3ng th\u1EDDi gian ng\u1EAF\
-  n, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng nh\u01B0 m\u1ED9t\u2026"
+  n, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng nh\u01B0 m\u1ED9t kh\xF4\
+  ng gian t\u1EA1m th\u1EDDi cho vi\u1EC7c x\u1EED l\xFD ho\u1EB7c l\u01B0u tr\u1EEF\
+  \ d\u1EEF li\u1EC7u."
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---

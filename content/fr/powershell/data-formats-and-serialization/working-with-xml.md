@@ -6,8 +6,7 @@ description: "Travailler avec XML implique de manipuler et d'acc\xE9der \xE0 des
 lastmod: '2024-03-13T22:44:58.087249-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique de manipuler et d'acc\xE9der \xE0 des donn\xE9\
-  es structur\xE9es en langage XML (eXtensible Markup Language). Les programmeurs\
-  \ travaillent\u2026"
+  es structur\xE9es en langage XML (eXtensible Markup Language)."
 title: Travailler avec XML
 weight: 40
 ---

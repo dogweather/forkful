@@ -6,8 +6,7 @@ description: "Tratar erros significa escrever c\xF3digo que pode antecipar e lid
 lastmod: '2024-03-13T22:44:46.507752-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros significa escrever c\xF3digo que pode antecipar e lidar com\
-  \ situa\xE7\xF5es problem\xE1ticas. Os programadores fazem isso para prevenir falhas,\
-  \ proteger\u2026"
+  \ situa\xE7\xF5es problem\xE1ticas."
 title: Tratamento de erros
 weight: 16
 ---

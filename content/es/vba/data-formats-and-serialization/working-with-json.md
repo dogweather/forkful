@@ -8,7 +8,8 @@ description: "JSON (JavaScript Object Notation) es un formato ligero de intercam
 lastmod: '2024-03-13T22:44:58.917014-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) es un formato ligero de intercambio de\
-  \ datos que es f\xE1cil de leer y escribir para los humanos, y de analizar y generar\u2026"
+  \ datos que es f\xE1cil de leer y escribir para los humanos, y de analizar y generar\
+  \ para las m\xE1quinas."
 title: Trabajando con JSON
 weight: 38
 ---

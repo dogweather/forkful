@@ -11,7 +11,8 @@ model: gpt-4-0125-preview
 summary: "Ch\xFAng ta g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
   c c\u01A1 b\u1EA3n \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\
   \u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EB1ng c\xE1ch bao g\u1ED3m th\xF4ng tin \u0111\
-  \u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng trong\u2026"
+  \u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng trong ti\xEAu \u0111\u1EC1 y\xEA\
+  u c\u1EA7u."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

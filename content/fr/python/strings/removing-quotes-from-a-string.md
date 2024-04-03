@@ -6,8 +6,7 @@ description: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9raleme
 lastmod: '2024-03-13T22:44:57.222440-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement se\
-  \ d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\
-  \ font cela\u2026"
+  \ d\xE9barrasser des guillemets doubles (\") ou simples (') superflus."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

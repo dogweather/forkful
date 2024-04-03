@@ -6,8 +6,8 @@ description: "Karakters verwijderen die overeenkomen met een specifiek patroon i
   \ een techniek die wordt gebruikt om strings op te schonen of te formatteren in\u2026"
 lastmod: '2024-03-13T22:44:50.314294-06:00'
 model: gpt-4-0125-preview
-summary: "Karakters verwijderen die overeenkomen met een specifiek patroon is een\
-  \ techniek die wordt gebruikt om strings op te schonen of te formatteren in\u2026"
+summary: Karakters verwijderen die overeenkomen met een specifiek patroon is een techniek
+  die wordt gebruikt om strings op te schonen of te formatteren in programmeren.
 title: Karakters Verwijderen die Overeenkomen met een Patroon
 weight: 5
 ---

@@ -6,8 +6,7 @@ description: "Baixar uma p\xE1gina da web significa pegar seu conte\xFAdo atrav\
 lastmod: '2024-03-13T22:44:46.366530-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa pegar seu conte\xFAdo atrav\xE9s da\
-  \ internet. Programadores fazem isso para processar dados, verificar status, ou\
-  \ integrar\u2026"
+  \ internet."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

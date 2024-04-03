@@ -6,7 +6,8 @@ description: "Manipular archivos con l\xEDneas de comando \xFAnicas en PowerShel
 lastmod: '2024-03-13T22:44:59.287215-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando \xFAnicas en PowerShell se trata\
-  \ de alterar, mover u obtener datos de archivos directamente desde la l\xEDnea de\u2026"
+  \ de alterar, mover u obtener datos de archivos directamente desde la l\xEDnea de\
+  \ comando de manera r\xE1pida."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

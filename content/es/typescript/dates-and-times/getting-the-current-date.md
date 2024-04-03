@@ -8,7 +8,7 @@ description: "Obtener la fecha actual en TypeScript, un lenguaje construido sobr
 lastmod: '2024-03-13T22:44:58.812508-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en TypeScript, un lenguaje construido sobre JavaScript,\
-  \ te permite acceder y manipular la informaci\xF3n de la fecha y hora actuales.\u2026"
+  \ te permite acceder y manipular la informaci\xF3n de la fecha y hora actuales."
 title: Obteniendo la fecha actual
 weight: 29
 ---

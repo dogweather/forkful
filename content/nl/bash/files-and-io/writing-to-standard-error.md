@@ -6,8 +6,8 @@ description: "Schrijven naar standaardfout, `stderr`, geeft foutberichten apart 
   \ de standaarduitvoer, `stdout`. Programmeurs gebruiken `stderr` om fouten te\u2026"
 lastmod: '2024-03-13T22:44:51.000240-06:00'
 model: gpt-4-0125-preview
-summary: "Schrijven naar standaardfout, `stderr`, geeft foutberichten apart van de\
-  \ standaarduitvoer, `stdout`. Programmeurs gebruiken `stderr` om fouten te\u2026"
+summary: Schrijven naar standaardfout, `stderr`, geeft foutberichten apart van de
+  standaarduitvoer, `stdout`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

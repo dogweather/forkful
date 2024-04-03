@@ -6,8 +6,9 @@ description: "In TypeScript betekent het verzenden van een HTTP-verzoek met basi
   \ het over het web schieten van data met een eenvoudige\u2026"
 lastmod: '2024-03-13T22:44:50.550398-06:00'
 model: gpt-4-0125-preview
-summary: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
-  \ het over het web schieten van data met een eenvoudige\u2026"
+summary: In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie
+  het over het web schieten van data met een eenvoudige gebruikersnaam:wachtwoord
+  combinatie voor toegang.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

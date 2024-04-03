@@ -5,7 +5,7 @@ description: "Creare un file temporaneo significa generare un file che \xE8 dest
 lastmod: '2024-03-13T22:44:43.409984-06:00'
 model: gpt-4-1106-preview
 summary: "Creare un file temporaneo significa generare un file che \xE8 destinato\
-  \ a esistere per breve tempo, spesso solo per la durata dell'esecuzione di un\u2026"
+  \ a esistere per breve tempo, spesso solo per la durata dell'esecuzione di un programma."
 title: Creazione di un file temporaneo
 weight: 21
 ---

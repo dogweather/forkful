@@ -7,8 +7,8 @@ description: "Een string met hoofdletters schrijven betekent alle karakters omze
   \ aan\u2026"
 lastmod: '2024-03-13T22:44:51.227963-06:00'
 model: gpt-4-0125-preview
-summary: "Een string met hoofdletters schrijven betekent alle karakters omzetten naar\
-  \ hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om aan\u2026"
+summary: Een string met hoofdletters schrijven betekent alle karakters omzetten naar
+  hoofdletters.
 title: Een string met hoofdletters maken
 weight: 2
 ---

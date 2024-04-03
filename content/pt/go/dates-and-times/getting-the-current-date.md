@@ -8,8 +8,7 @@ description: "Obter a data atual em Go \xE9 uma tarefa fundamental para programa
 lastmod: '2024-03-13T22:44:46.072411-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Go \xE9 uma tarefa fundamental para programadores,\
-  \ semelhante ao \"Ol\xE1, Mundo!\" em sua onipresen\xE7a. \xC9 essencial para tarefas\
-  \ que v\xE3o\u2026"
+  \ semelhante ao \"Ol\xE1, Mundo."
 title: Obtendo a data atual
 weight: 29
 ---

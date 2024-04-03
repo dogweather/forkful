@@ -6,8 +6,7 @@ description: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som 
 lastmod: '2024-03-13T22:44:38.011620-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som skickas\
-  \ till ett PHP-script fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att\
-  \ till\xE5ta interaktion\u2026"
+  \ till ett PHP-script fr\xE5n terminalen."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

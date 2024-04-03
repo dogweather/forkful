@@ -5,7 +5,7 @@ description: "Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte 
 lastmod: '2024-03-13T22:44:53.877249-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte aus einer\
-  \ l\xE4ngeren Zeichenkette heraus. Programmierer tun das, um Daten zu analysieren,\u2026"
+  \ l\xE4ngeren Zeichenkette heraus."
 title: Teilstrings extrahieren
 weight: 6
 ---

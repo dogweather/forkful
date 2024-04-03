@@ -10,7 +10,7 @@ lastmod: '2024-03-13T22:44:40.453955-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang til\
   \ systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
-  \ eller\u2026"
+  \ eller enhver funksjonalitet som krever kunnskap om den n\xE5v\xE6rende datoen."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

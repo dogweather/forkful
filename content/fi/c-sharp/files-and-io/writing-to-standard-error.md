@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:56.590386-06:00'
 model: gpt-4-0125-preview
 summary: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
   \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\
-  \ tulosteesta (stdout)\u2026"
+  \ tulosteesta (stdout) auttaakseen k\xE4ytt\xE4ji\xE4 ja kehitt\xE4ji\xE4 erottamaan\
+  \ normaalin ohjelman tulosteen ja virheilmoitukset toisistaan."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.529995-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne w programowaniu umo\u017Cliwiaj\u0105 dopasowywanie\
   \ wzorc\xF3w i manipulowanie ci\u0105gami znak\xF3w na podstawie okre\u015Blonych\
-  \ wzor\xF3w. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+  \ wzor\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

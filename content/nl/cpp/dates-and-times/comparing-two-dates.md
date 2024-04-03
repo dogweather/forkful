@@ -6,8 +6,8 @@ description: "Het vergelijken van data gaat over het uitvogelen welke van twee d
   \ vroeger, later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het\u2026"
 lastmod: '2024-03-13T22:44:51.125087-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger,\
-  \ later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het\u2026"
+summary: Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger,
+  later is, of dat ze hetzelfde zijn.
 title: Twee datums vergelijken
 weight: 27
 ---

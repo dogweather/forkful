@@ -6,8 +6,7 @@ description: "XML on merkkauskieli, jota k\xE4ytet\xE4\xE4n datan tallentamiseen
 lastmod: '2024-03-13T22:44:56.680295-06:00'
 model: gpt-4-0125-preview
 summary: "XML on merkkauskieli, jota k\xE4ytet\xE4\xE4n datan tallentamiseen ja siirt\xE4\
-  miseen. Ohjelmoijat ty\xF6skentelev\xE4t XML:n parissa mahdollistaakseen sovellusten\
-  \ ja\u2026"
+  miseen."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

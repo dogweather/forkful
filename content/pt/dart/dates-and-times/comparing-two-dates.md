@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:46.295129-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas em Dart envolve avaliar a diferen\xE7a temporal ou a\
   \ ordem entre elas, uma funcionalidade essencial em aplica\xE7\xF5es que gerenciam\
-  \ eventos,\u2026"
+  \ eventos, prazos ou qualquer dado sens\xEDvel ao tempo."
 title: Comparando duas datas
 weight: 27
 ---

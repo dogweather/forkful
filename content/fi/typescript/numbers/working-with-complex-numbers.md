@@ -6,7 +6,8 @@ description: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4rios
 lastmod: '2024-03-13T22:44:56.309538-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4riosasta (yleens\xE4\
-  \ kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat\u2026"
+  \ kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat k\xE4\
+  yt\xE4nn\xF6ss\xE4 tai periaatteessa mahdottomia pelkill\xE4 reaaliluvuilla."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

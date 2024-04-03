@@ -8,8 +8,7 @@ description: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar e
 lastmod: '2024-03-13T22:44:38.199198-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett s\xF6\
-  km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\
-  \ anv\xE4nder dem f\xF6r\u2026"
+  km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

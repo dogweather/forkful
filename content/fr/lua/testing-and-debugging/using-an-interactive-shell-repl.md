@@ -5,7 +5,7 @@ description: "REPL signifie Read-Eval-Print Loop (Boucle de Lecture-\xC9valuatio
 lastmod: '2024-03-13T22:44:57.937986-06:00'
 model: gpt-4-0125-preview
 summary: "REPL signifie Read-Eval-Print Loop (Boucle de Lecture-\xC9valuation-Affichage),\
-  \ un environnement interactif o\xF9 vous pouvez rapidement tester du code. Les\u2026"
+  \ un environnement interactif o\xF9 vous pouvez rapidement tester du code."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

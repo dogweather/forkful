@@ -4,8 +4,8 @@ description: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a 
   \ servidor web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"
 lastmod: '2024-03-13T22:44:58.797224-06:00'
 model: gpt-4-1106-preview
-summary: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor\
-  \ web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"
+summary: Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor
+  web.
 title: Enviando una solicitud http
 weight: 44
 ---

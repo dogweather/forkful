@@ -6,8 +6,8 @@ description: "Reguliere expressies (regex) zijn krachtige patronen voor het over
   \ van tekstreeksen. Programmeurs gebruiken regex om effici\xEBnt te zoeken,\u2026"
 lastmod: '2024-03-13T22:44:51.016441-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) zijn krachtige patronen voor het overeenkomen\
-  \ van tekstreeksen. Programmeurs gebruiken regex om effici\xEBnt te zoeken,\u2026"
+summary: Reguliere expressies (regex) zijn krachtige patronen voor het overeenkomen
+  van tekstreeksen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

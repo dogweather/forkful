@@ -5,7 +5,7 @@ description: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen
 lastmod: '2024-03-13T22:44:53.789623-06:00'
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
-  \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"
+  \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

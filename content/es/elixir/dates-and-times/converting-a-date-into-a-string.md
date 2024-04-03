@@ -4,8 +4,8 @@ description: "Convertir una fecha a una cadena de texto implica transformar un o
   \ de fecha, que la computadora comprende, en una serie de caracteres legibles para\u2026"
 lastmod: '2024-03-13T22:44:58.713720-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha a una cadena de texto implica transformar un objeto\
-  \ de fecha, que la computadora comprende, en una serie de caracteres legibles para\u2026"
+summary: Convertir una fecha a una cadena de texto implica transformar un objeto de
+  fecha, que la computadora comprende, en una serie de caracteres legibles para humanos.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

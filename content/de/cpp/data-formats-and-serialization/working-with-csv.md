@@ -6,8 +6,10 @@ description: "Die Arbeit mit CSV (Comma Separated Values)-Dateien dreht sich um 
   \ Verarbeitung und Manipulation von Daten, die in einem einfachen Textformat\u2026"
 lastmod: '2024-03-13T22:44:54.206733-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV (Comma Separated Values)-Dateien dreht sich um die Verarbeitung\
-  \ und Manipulation von Daten, die in einem einfachen Textformat\u2026"
+summary: Die Arbeit mit CSV (Comma Separated Values)-Dateien dreht sich um die Verarbeitung
+  und Manipulation von Daten, die in einem einfachen Textformat gespeichert sind,
+  wobei jede Zeile des Textes eine Zeile in einer Tabelle darstellt und Kommas die
+  einzelnen Spalten trennen.
 title: Arbeiten mit CSV
 weight: 37
 ---

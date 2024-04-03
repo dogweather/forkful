@@ -6,7 +6,7 @@ description: "Converter uma data em uma string permite exibir e manipular datas 
 lastmod: '2024-03-13T22:44:46.932039-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string permite exibir e manipular datas num formato\
-  \ leg\xEDvel para humanos. Programadores fazem isso para interagir com usu\xE1rios,\u2026"
+  \ leg\xEDvel para humanos."
 title: Convertendo uma data em uma string
 weight: 28
 ---

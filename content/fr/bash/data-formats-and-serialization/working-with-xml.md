@@ -6,8 +6,7 @@ description: "Travailler avec XML implique d'analyser, d'extraire et de manipule
 lastmod: '2024-03-13T22:44:58.023870-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique d'analyser, d'extraire et de manipuler des\
-  \ donn\xE9es au format Extensible Markup Language. Les programmeurs se d\xE9battent\
-  \ avec\u2026"
+  \ donn\xE9es au format Extensible Markup Language."
 title: Travailler avec XML
 weight: 40
 ---

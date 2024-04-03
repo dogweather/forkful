@@ -8,8 +8,7 @@ description: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 ell
 lastmod: '2024-03-13T22:44:38.373534-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
-  \ str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare utf\xF6\
-  r denna operation f\xF6r\u2026"
+  \ str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng."
 title: "Sammanfoga str\xE4ngar"
 weight: 3
 ---

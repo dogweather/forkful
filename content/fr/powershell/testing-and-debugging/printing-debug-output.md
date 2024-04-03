@@ -6,8 +6,7 @@ description: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs
 lastmod: '2024-03-13T22:44:58.051008-06:00'
 model: gpt-4-1106-preview
 summary: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et les\
-  \ \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
-  \ ce qui se\u2026"
+  \ \xE9tats de votre script pendant son ex\xE9cution."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

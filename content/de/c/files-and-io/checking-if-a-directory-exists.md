@@ -8,7 +8,8 @@ description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhalte
 lastmod: '2024-03-13T22:44:54.368438-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet die\
-  \ Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem\u2026"
+  \ Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem\
+  \ Verzeichnis f\xFChrt."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

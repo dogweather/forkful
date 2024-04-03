@@ -6,8 +6,7 @@ description: "Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, oh
 lastmod: '2024-03-13T22:44:53.939634-06:00'
 model: gpt-4-0125-preview
 summary: "Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, ohne dessen\
-  \ externes Verhalten zu \xE4ndern. Es geht darum, Ihren Code aufzur\xE4umen und\
-  \ zu\u2026"
+  \ externes Verhalten zu \xE4ndern."
 title: Refactoring
 weight: 19
 ---

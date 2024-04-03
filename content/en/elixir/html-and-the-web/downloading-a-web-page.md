@@ -5,7 +5,7 @@ description: "Downloading a web page means fetching its contents over the intern
 lastmod: '2024-03-13T22:44:59.781399-06:00'
 model: gpt-4-1106-preview
 summary: "Downloading a web page means fetching its contents over the internet\u2014\
-  essentially, what your browser does. Programmers do this to automate data extraction,\u2026"
+  essentially, what your browser does."
 title: Downloading a web page
 weight: 42
 ---

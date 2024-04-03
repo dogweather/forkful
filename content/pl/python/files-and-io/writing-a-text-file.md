@@ -8,7 +8,8 @@ description: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3
 lastmod: '2024-03-13T22:44:34.969046-06:00'
 model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3re obejmuje\
-  \ tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu lub\u2026"
+  \ tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu lub\
+  \ nadpisywanie tekstu."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

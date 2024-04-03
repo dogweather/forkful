@@ -8,7 +8,7 @@ description: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, all
 lastmod: '2024-03-13T22:44:54.338244-06:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Gro\xDF\
-  buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu\u2026"
+  buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu transformieren."
 title: Konvertierung eines Strings in Kleinbuchstaben
 weight: 4
 ---

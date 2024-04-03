@@ -6,7 +6,8 @@ description: "Modifier des fichiers sur place avec des lignes de commande est un
 lastmod: '2024-03-13T22:44:58.320122-06:00'
 model: gpt-4-0125-preview
 summary: "Modifier des fichiers sur place avec des lignes de commande est une pratique\
-  \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\u2026"
+  \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\
+  \ ligne de commande, sans les ouvrir dans un \xE9diteur de texte."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

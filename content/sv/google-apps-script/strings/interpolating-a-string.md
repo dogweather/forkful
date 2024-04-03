@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.422727-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk inb\xE4\
   ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av mer l\xE4\
-  sbar och\u2026"
+  sbar och underh\xE5llbar kod."
 title: "Interpolering av en str\xE4ng"
 weight: 8
 ---

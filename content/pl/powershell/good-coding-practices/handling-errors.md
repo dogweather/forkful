@@ -6,8 +6,7 @@ description: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywa
 lastmod: '2024-03-13T22:44:35.637286-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywaniu nieprzewidzianych\
-  \ sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny. Programi\u015Bci robi\u0105\
-  \ to, aby zapobiec\u2026"
+  \ sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

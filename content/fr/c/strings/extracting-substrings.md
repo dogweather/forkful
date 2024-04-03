@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.359144-06:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEEne plus\
   \ petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction de\
-  \ crit\xE8res sp\xE9cifi\xE9s,\u2026"
+  \ crit\xE8res sp\xE9cifi\xE9s, tels que la position et la longueur."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

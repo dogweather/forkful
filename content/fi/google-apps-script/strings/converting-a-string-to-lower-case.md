@@ -7,7 +7,8 @@ description: "Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptill
 lastmod: '2024-03-13T22:44:56.082403-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptill\xE4,\
-  \ pilvipohjaisella skriptauskielell\xE4 Google-tuotteiden automatisointiin, on\u2026"
+  \ pilvipohjaisella skriptauskielell\xE4 Google-tuotteiden automatisointiin, on perusteht\xE4\
+  v\xE4, joka t\xE4ht\xE4\xE4 tekstitiedon standardisointiin."
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:38.364895-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster fr\xE5n str\xE4\
   ngar i C handlar om att eliminera alla instanser av vissa tecken som passar f\xF6\
-  rdefinierade\u2026"
+  rdefinierade kriterier."
 title: "Radera tecken som matchar ett m\xF6nster"
 weight: 5
 ---

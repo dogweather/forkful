@@ -8,8 +8,7 @@ description: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske 
 lastmod: '2024-03-13T22:44:40.611670-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske operasjoner\
-  \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del. Programmerere tar\
-  \ ofte for seg\u2026"
+  \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del."
 title: Arbeide med komplekse tall
 weight: 14
 ---

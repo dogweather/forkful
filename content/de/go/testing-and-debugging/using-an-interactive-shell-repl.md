@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:53.289403-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
   glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
-  hren und\u2026"
+  hren und sofortiges Feedback zu erhalten."
 title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---

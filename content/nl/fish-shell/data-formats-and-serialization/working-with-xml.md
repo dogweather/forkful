@@ -6,8 +6,8 @@ description: "Werken met XML betekent het omgaan met gegevens in een alomtegenwo
   \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"
 lastmod: '2024-03-13T22:44:51.271352-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
-  \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"
+summary: Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,
+  gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en meer.
 title: Werken met XML
 weight: 40
 ---

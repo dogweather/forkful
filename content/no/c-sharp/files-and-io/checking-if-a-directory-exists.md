@@ -8,8 +8,7 @@ description: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifise
 lastmod: '2024-03-13T22:44:40.812204-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere tilstedev\xE6\
-  relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere gj\xF8\
-  r dette\u2026"
+  relsen av en mappe p\xE5 en spesifisert bane i filsystemet."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

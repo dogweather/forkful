@@ -6,8 +6,7 @@ description: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en pla
 lastmod: '2024-03-13T22:44:57.437701-06:00'
 model: gpt-4-1106-preview
 summary: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place les\
-  \ bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\
-  \ id\xE9es\u2026"
+  \ bases du code."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

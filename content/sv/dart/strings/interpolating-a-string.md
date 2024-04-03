@@ -8,7 +8,8 @@ description: "Str\xE4nginterpolation \xE4r processen att injicera variabelv\xE4r
 lastmod: '2024-03-13T22:44:37.596120-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolation \xE4r processen att injicera variabelv\xE4rden direkt\
-  \ i str\xE4ngar, ofta f\xF6r att skapa meningsfulla meddelanden utan omst\xE4ndiga\u2026"
+  \ i str\xE4ngar, ofta f\xF6r att skapa meningsfulla meddelanden utan omst\xE4ndiga\
+  \ konkateneringar."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

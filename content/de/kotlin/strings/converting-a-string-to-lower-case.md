@@ -6,7 +6,7 @@ description: "Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass al
 lastmod: '2024-03-13T22:44:53.834467-06:00'
 model: gpt-4-1106-preview
 summary: "Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass alle Gro\xDF\
-  buchstaben in ihrer kleingeschriebenen Form dargestellt werden. Das ist n\xFCtzlich\u2026"
+  buchstaben in ihrer kleingeschriebenen Form dargestellt werden."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

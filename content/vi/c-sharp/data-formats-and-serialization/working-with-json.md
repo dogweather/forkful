@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:36.685395-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u JSON (Notation \u0111\u1ED1i t\u01B0\
-  \u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+  \u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

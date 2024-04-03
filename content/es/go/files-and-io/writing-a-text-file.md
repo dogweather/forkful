@@ -7,8 +7,8 @@ description: "Escribir un archivo de texto en Go implica crear y escribir cadena
   \ para\u2026"
 lastmod: '2024-03-13T22:44:58.489298-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en Go implica crear y escribir cadenas de datos\
-  \ en un archivo de texto nuevo o existente. Los programadores hacen esto para\u2026"
+summary: Escribir un archivo de texto en Go implica crear y escribir cadenas de datos
+  en un archivo de texto nuevo o existente.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

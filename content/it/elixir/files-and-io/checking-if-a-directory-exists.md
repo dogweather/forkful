@@ -6,8 +6,8 @@ description: "Controllare se una directory esiste in Elixir significa verificare
   \ presenza di una directory in un percorso specificato nel file system. I\u2026"
 lastmod: '2024-03-13T22:44:43.098557-06:00'
 model: gpt-4-0125-preview
-summary: "Controllare se una directory esiste in Elixir significa verificare la presenza\
-  \ di una directory in un percorso specificato nel file system. I\u2026"
+summary: Controllare se una directory esiste in Elixir significa verificare la presenza
+  di una directory in un percorso specificato nel file system.
 title: Verifica se una directory esiste
 weight: 20
 ---

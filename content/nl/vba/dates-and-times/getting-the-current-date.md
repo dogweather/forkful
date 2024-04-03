@@ -6,8 +6,9 @@ description: "In Visual Basic for Applications (VBA), is het ophalen van de huid
   \ datum een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met\u2026"
 lastmod: '2024-03-13T22:44:50.647519-06:00'
 model: gpt-4-0125-preview
-summary: "In Visual Basic for Applications (VBA), is het ophalen van de huidige datum\
-  \ een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met\u2026"
+summary: In Visual Basic for Applications (VBA), is het ophalen van de huidige datum
+  een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met datums
+  in hun macro's of applicaties te werken.
 title: Het verkrijgen van de huidige datum
 weight: 29
 ---

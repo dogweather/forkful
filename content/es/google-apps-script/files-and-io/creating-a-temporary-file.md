@@ -7,7 +7,8 @@ description: "Crear un archivo temporal en Google Apps Script implica generar un
 lastmod: '2024-03-13T22:44:58.585382-06:00'
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
-  \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"
+  \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos intermediario,\
+  \ depuraci\xF3n o prop\xF3sitos de cach\xE9."
 title: Creando un archivo temporal
 weight: 21
 ---

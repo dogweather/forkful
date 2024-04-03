@@ -5,8 +5,9 @@ description: "Deleting characters that match a specific pattern is about removin
   \ by\u2026"
 lastmod: '2024-03-13T22:44:59.617005-06:00'
 model: gpt-4-0125-preview
-summary: "Deleting characters that match a specific pattern is about removing certain\
-  \ characters or sequences of characters from strings, based on rules defined by\u2026"
+summary: Deleting characters that match a specific pattern is about removing certain
+  characters or sequences of characters from strings, based on rules defined by a
+  pattern (usually via regular expressions).
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -6,8 +6,8 @@ description: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomist
   \ ja suorittamista, jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"
 lastmod: '2024-03-13T22:44:56.659384-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista,\
-  \ jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"
+summary: Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista,
+  jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.
 title: Testien kirjoittaminen
 weight: 36
 ---

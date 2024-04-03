@@ -8,7 +8,8 @@ description: "\xC5 skrive til standardfeil (stderr) i C# inneb\xE6rer \xE5 dirig
 lastmod: '2024-03-13T22:44:40.814143-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i C# inneb\xE6rer \xE5 dirigere feilmeldinger\
-  \ og diagnostikk separat fra vanlig utdata (stdout) for \xE5 hjelpe brukere og\u2026"
+  \ og diagnostikk separat fra vanlig utdata (stdout) for \xE5 hjelpe brukere og utviklere\
+  \ til \xE5 skille mellom normalt programutdata og feilnotifikasjoner."
 title: Skriving til standardfeil
 weight: 25
 ---

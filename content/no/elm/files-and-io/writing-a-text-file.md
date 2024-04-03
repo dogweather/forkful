@@ -5,9 +5,7 @@ description: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 d
   \ eller \xE5 eksportere\u2026"
 lastmod: '2024-03-13T22:44:40.726823-06:00'
 model: unknown
-summary: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken.\
-  \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
-  \ eller \xE5 eksportere\u2026"
+summary: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken."
 title: Skriving av en tekstfil
 weight: 24
 ---

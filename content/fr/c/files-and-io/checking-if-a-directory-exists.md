@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:58.388201-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le syst\xE8\
   me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0 un r\xE9\
-  pertoire. Les\u2026"
+  pertoire."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

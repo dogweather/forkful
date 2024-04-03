@@ -6,8 +6,9 @@ description: "Het genereren van willekeurige getallen is een fundamentele taak i
   \ programmeren die wordt gebruikt voor een myriade aan toepassingen, zoals simulaties,\u2026"
 lastmod: '2024-03-13T22:44:50.326640-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen is een fundamentele taak in programmeren\
-  \ die wordt gebruikt voor een myriade aan toepassingen, zoals simulaties,\u2026"
+summary: Het genereren van willekeurige getallen is een fundamentele taak in programmeren
+  die wordt gebruikt voor een myriade aan toepassingen, zoals simulaties, spellen
+  en beveiligingssystemen.
 title: Willekeurige getallen genereren
 weight: 12
 ---

@@ -6,8 +6,7 @@ description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l
 lastmod: '2024-03-13T22:44:37.956700-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5ter\
-  \ dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
-  \ av\u2026"
+  \ dig k\xF6ra kodsnuttar live."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

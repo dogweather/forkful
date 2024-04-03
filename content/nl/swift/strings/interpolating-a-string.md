@@ -6,8 +6,8 @@ description: "Het interpoleren van een string houdt in dat je variabelen in een 
   \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"
 lastmod: '2024-03-13T22:44:51.141943-06:00'
 model: gpt-4-0125-preview
-summary: "Het interpoleren van een string houdt in dat je variabelen in een letterlijke\
-  \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"
+summary: Het interpoleren van een string houdt in dat je variabelen in een letterlijke
+  string invoegt.
 title: Een string interpoleren
 weight: 8
 ---

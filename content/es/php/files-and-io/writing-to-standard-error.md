@@ -8,7 +8,9 @@ description: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirig
 lastmod: '2024-03-13T22:44:59.176839-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirigir mensajes\
-  \ de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar (stdout),\u2026"
+  \ de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar (stdout),\
+  \ permitiendo a los desarrolladores gestionar mejor sus flujos de salida para la\
+  \ depuraci\xF3n y el registro de actividades."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

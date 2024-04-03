@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:37.849862-06:00'
 model: gpt-4-0125-preview
 summary: "Elm st\xF6der inte YAML inbyggt, ett data serialiseringsformat som ofta\
   \ anv\xE4nds f\xF6r konfigurationsfiler eller datadelning, p\xE5 grund av dess starka\
-  \ betoning\u2026"
+  \ betoning p\xE5 typs\xE4kerhet och f\xF6ruts\xE4gbara resultat."
 title: Att Arbeta med YAML
 weight: 41
 ---

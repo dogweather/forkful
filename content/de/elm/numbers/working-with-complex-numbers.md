@@ -6,7 +6,7 @@ description: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4re
 lastmod: '2024-03-13T22:44:53.798766-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren Zahlen,\
-  \ wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend in\u2026"
+  \ wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

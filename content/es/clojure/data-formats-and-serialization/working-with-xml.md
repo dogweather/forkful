@@ -6,7 +6,7 @@ description: "XML es un lenguaje de marcado para codificar documentos de una man
 lastmod: '2024-03-13T22:44:58.683297-06:00'
 model: gpt-4-0125-preview
 summary: "XML es un lenguaje de marcado para codificar documentos de una manera que\
-  \ es legible tanto para humanos como para m\xE1quinas. Es clave en servicios web,\u2026"
+  \ es legible tanto para humanos como para m\xE1quinas."
 title: Trabajando con XML
 weight: 40
 ---

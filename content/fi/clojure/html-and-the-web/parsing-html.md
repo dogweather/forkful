@@ -5,9 +5,7 @@ description: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodi
   \ tietorakenteeksi. Ohjelmoijat\u2026"
 lastmod: '2024-03-13T22:44:56.182512-06:00'
 model: unknown
-summary: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin rakenteen\
-  \ lukemista ja sen sis\xE4ll\xF6n muuntamista k\xE4sitelt\xE4v\xE4ksi tietorakenteeksi.\
-  \ Ohjelmoijat\u2026"
+summary: "(Mit\xE4 & Miksi."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

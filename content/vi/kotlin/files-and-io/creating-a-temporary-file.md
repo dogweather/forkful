@@ -13,7 +13,7 @@ summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 t\u1EA1o ra m\u1ED
   t t\u1EC7p \u0111\u01B0\u1EE3c d\u1EF1 \u0111\u1ECBnh s\u1ED1ng ng\u1EAFn h\u1EA1\
   n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng \u0111\
   \u01B0\u1EE3c s\u1EED d\u1EE5ng cho nh\u1EEFng vi\u1EC7c nh\u01B0 d\u1EEF li\u1EC7\
-  u trung gian.\u2026"
+  u trung gian."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

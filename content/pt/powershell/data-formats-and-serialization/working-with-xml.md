@@ -5,7 +5,7 @@ description: "Trabalhar com XML envolve manipular e acessar dados estruturados n
 lastmod: '2024-03-13T22:44:46.821409-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve manipular e acessar dados estruturados na Linguagem\
-  \ de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language). Os programadores\u2026"
+  \ de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language)."
 title: Trabalhando com XML
 weight: 40
 ---

@@ -4,8 +4,8 @@ description: "Complex numbers expand our number system to include the square roo
   \ of negative numbers, where the 'imaginary' unit i equals the square root of -1.\u2026"
 lastmod: '2024-03-13T22:45:00.042953-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers expand our number system to include the square roots of\
-  \ negative numbers, where the 'imaginary' unit i equals the square root of -1.\u2026"
+summary: Complex numbers expand our number system to include the square roots of negative
+  numbers, where the 'imaginary' unit i equals the square root of -1.
 title: Working with complex numbers
 weight: 14
 ---

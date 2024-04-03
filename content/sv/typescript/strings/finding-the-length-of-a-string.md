@@ -5,9 +5,7 @@ description: "L\xE4ngden p\xE5 en str\xE4ng \xE4r antalet tecken den inneh\xE5ll
   ngar eller j\xE4mf\xF6ra\u2026"
 lastmod: '2024-03-13T22:44:37.647224-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4ngden p\xE5 en str\xE4ng \xE4r antalet tecken den inneh\xE5ller. Programmerare\
-  \ m\xE5ste ofta veta detta f\xF6r att validera inmatning, skapa substr\xE4ngar eller\
-  \ j\xE4mf\xF6ra\u2026"
+summary: "L\xE4ngden p\xE5 en str\xE4ng \xE4r antalet tecken den inneh\xE5ller."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

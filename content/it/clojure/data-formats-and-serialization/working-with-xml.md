@@ -6,8 +6,7 @@ description: "XML \xE8 un linguaggio di marcatura per codificare documenti in un
 lastmod: '2024-03-13T22:44:43.066793-06:00'
 model: gpt-4-0125-preview
 summary: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
-  \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
-  \ web,\u2026"
+  \ che sia leggibile sia dall'uomo che dalla macchina."
 title: Lavorare con XML
 weight: 40
 ---

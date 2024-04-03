@@ -8,7 +8,7 @@ description: "Trabajar con JSON en programaci\xF3n Bash implica analizar, extrae
 lastmod: '2024-03-13T22:44:59.268830-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON en programaci\xF3n Bash implica analizar, extraer y manipular\
-  \ datos JSON directamente desde la l\xEDnea de comandos. Los programadores a\u2026"
+  \ datos JSON directamente desde la l\xEDnea de comandos."
 title: Trabajando con JSON
 weight: 38
 ---

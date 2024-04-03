@@ -6,7 +6,7 @@ description: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des variables ou
 lastmod: '2024-03-13T22:44:57.421805-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des variables ou des expressions\
-  \ au sein d'une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent pour\u2026"
+  \ au sein d'une cha\xEEne de caract\xE8res."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

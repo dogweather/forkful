@@ -5,7 +5,7 @@ description: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om d
 lastmod: '2024-03-13T22:44:40.573571-06:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data fra\
-  \ en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen. Programmerere\u2026"
+  \ en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

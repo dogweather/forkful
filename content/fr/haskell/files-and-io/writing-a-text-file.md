@@ -8,8 +8,7 @@ description: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er 
 lastmod: '2024-03-13T22:44:57.852963-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou mettre\
-  \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique. Les\
-  \ programmeurs\u2026"
+  \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

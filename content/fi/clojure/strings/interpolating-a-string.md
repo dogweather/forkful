@@ -5,8 +5,7 @@ description: "String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osak
   \ koodin\u2026"
 lastmod: '2024-03-13T22:44:56.171334-06:00'
 model: gpt-4-1106-preview
-summary: "String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi merkkijonoja.\
-  \ Koodarit tekev\xE4t t\xE4t\xE4 dynaamisten tekstien luomiseen ja koodin\u2026"
+summary: String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi merkkijonoja.
 title: Merkkijonon interpolointi
 weight: 8
 ---

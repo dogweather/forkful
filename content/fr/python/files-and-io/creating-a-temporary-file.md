@@ -6,8 +6,7 @@ description: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de
 lastmod: '2024-03-13T22:44:57.257318-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de mani\xE8\
-  re \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. Les d\xE9veloppeurs\
-  \ utilisent cette\u2026"
+  re \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

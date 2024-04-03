@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:57.438622-06:00'
 model: gpt-4-0125-preview
 summary: "Un Read-Eval-Print-Loop (REPL) est un environnement de programmation qui\
   \ prend des entr\xE9es utilisateur uniques, les ex\xE9cute et retourne le r\xE9\
-  sultat \xE0\u2026"
+  sultat \xE0 l'utilisateur."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

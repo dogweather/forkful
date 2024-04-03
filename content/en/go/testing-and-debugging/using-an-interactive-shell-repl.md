@@ -4,8 +4,8 @@ description: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you exp
   \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"
 lastmod: '2024-03-13T22:44:59.632592-06:00'
 model: gpt-4-0125-preview
-summary: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment\
-  \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"
+summary: An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment
+  with Go code in real-time, executing commands and getting immediate feedback.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

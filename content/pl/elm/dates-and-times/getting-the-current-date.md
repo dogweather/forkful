@@ -8,8 +8,7 @@ description: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C
 lastmod: '2024-03-13T22:44:35.332407-06:00'
 model: gpt-4-0125-preview
 summary: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
-  cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\
-  , planowa\u0107 zadania lub \u015Bledzi\u0107\u2026"
+  cej daty kalendarzowej z systemu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

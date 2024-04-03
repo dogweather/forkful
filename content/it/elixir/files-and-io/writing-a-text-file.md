@@ -7,7 +7,8 @@ description: "Scrivere su un file di testo in Elixir \xE8 una competenza essenzi
 lastmod: '2024-03-13T22:44:43.102508-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale per\
-  \ gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"
+  \ gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\
+  \ di contenuti in formato leggibile dall'uomo."
 title: Scrivere un file di testo
 weight: 24
 ---

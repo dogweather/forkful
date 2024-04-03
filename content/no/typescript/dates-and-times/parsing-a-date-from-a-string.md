@@ -8,7 +8,8 @@ description: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konver
 lastmod: '2024-03-13T22:44:40.541542-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere tekstlige\
-  \ representasjoner av datoer og tider til et format som kan manipuleres og\u2026"
+  \ representasjoner av datoer og tider til et format som kan manipuleres og analyseres\
+  \ av programmet."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

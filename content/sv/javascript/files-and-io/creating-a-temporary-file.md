@@ -6,8 +6,7 @@ description: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r
 lastmod: '2024-03-13T22:44:38.312680-06:00'
 model: gpt-4-1106-preview
 summary: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
-  \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\
-  \ under en kort period,\u2026"
+  \ f\xF6r data."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

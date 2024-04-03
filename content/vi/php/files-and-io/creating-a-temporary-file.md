@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PHP c\xF3\
   \ ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t t\u1EC7p s\u1EBD t\u1ED3n t\u1EA1i trong\
   \ th\u1EDDi gian ng\u1EAFn \u0111\u1EC3 b\u1EA1n s\u1EED d\u1EE5ng, sau \u0111\xF3\
-  , c\xE1i t\u1EC7p \u0111\xF3 s\u1EBD bi\u1EBFn m\u1EA5t. T\u1EA1i sao l\u1EA1i\u2026"
+  , c\xE1i t\u1EC7p \u0111\xF3 s\u1EBD bi\u1EBFn m\u1EA5t."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

@@ -6,8 +6,7 @@ description: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, 
 lastmod: '2024-03-13T22:44:37.823224-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som `a\
-  \ + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\
-  den som\u2026"
+  \ + bi` d\xE4r `i` \xE4r kvadratroten av -1."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

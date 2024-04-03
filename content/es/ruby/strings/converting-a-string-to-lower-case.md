@@ -5,7 +5,7 @@ description: "Convertir un texto (string) a min\xFAsculas es cambiar todas las l
 lastmod: '2024-03-13T22:44:59.577224-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir un texto (string) a min\xFAsculas es cambiar todas las letras\
-  \ del texto a su versi\xF3n en min\xFAscula. Esto se hace para uniformizar el texto,\u2026"
+  \ del texto a su versi\xF3n en min\xFAscula."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

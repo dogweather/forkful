@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:59.101080-06:00'
 model: gpt-4-0125-preview
 summary: "TOML es un acr\xF3nimo de Tom's Obvious, Minimal Language, un formato de\
   \ archivo de configuraci\xF3n que es f\xE1cil de leer debido a sus sem\xE1nticas\
-  \ claras. Los\u2026"
+  \ claras."
 title: Trabajando con TOML
 weight: 39
 ---

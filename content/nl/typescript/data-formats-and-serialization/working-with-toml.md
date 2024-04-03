@@ -6,8 +6,8 @@ description: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een d
   \ vergelijkbaar met JSON of YAML. Programmeurs gebruiken het\u2026"
 lastmod: '2024-03-13T22:44:50.574835-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat\
-  \ vergelijkbaar met JSON of YAML. Programmeurs gebruiken het\u2026"
+summary: TOML, een afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat
+  vergelijkbaar met JSON of YAML.
 title: Werken met TOML
 weight: 39
 ---

@@ -7,7 +7,8 @@ description: "Analisar uma data a partir de uma string em Elm envolve converter 
 lastmod: '2024-03-13T22:44:46.509675-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Elm envolve converter informa\xE7\
-  \xF5es textuais que representam datas e hor\xE1rios em um formato que o Elm possa\u2026"
+  \xF5es textuais que representam datas e hor\xE1rios em um formato que o Elm possa\
+  \ entender e manipular, especificamente no tipo `Date`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

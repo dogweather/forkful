@@ -6,8 +6,8 @@ description: "Google Apps Script fornisce un debugger integrato all'interno dell
   \ di Apps Script per aiutare a risolvere i problemi degli script. Ecco come\u2026"
 lastmod: '2024-03-13T22:44:42.960241-06:00'
 model: gpt-4-0125-preview
-summary: "Google Apps Script fornisce un debugger integrato all'interno dell'Editor\
-  \ di Apps Script per aiutare a risolvere i problemi degli script. Ecco come\u2026"
+summary: Google Apps Script fornisce un debugger integrato all'interno dell'Editor
+  di Apps Script per aiutare a risolvere i problemi degli script.
 title: Utilizzo di un debugger
 weight: 35
 ---

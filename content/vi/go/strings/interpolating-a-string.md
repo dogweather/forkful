@@ -10,8 +10,7 @@ lastmod: '2024-03-13T22:44:35.962186-06:00'
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i l\xE0 m\u1ED9t ph\u01B0\u01A1ng ph\xE1p \u0111\u1EC3\
   \ x\xE2y d\u1EF1ng chu\u1ED7i c\xF3 ch\u1EE9a bi\u1EBFn, cho ph\xE9p t\u1EA1o chu\u1ED7\
-  i \u0111\u1ED9ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ t\xF9y ch\u1EC9nh th\xF4ng \u0111i\u1EC7p, x\xE2y d\u1EF1ng\u2026"
+  i \u0111\u1ED9ng."
 title: "N\u1ED9i suy m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

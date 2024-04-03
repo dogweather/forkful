@@ -6,8 +6,7 @@ description: "Fouten verwerken betekent plannen maken voor wanneer dingen verkee
   \ gaan. Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
 lastmod: '2024-03-13T22:44:51.120340-06:00'
 model: gpt-4-0125-preview
-summary: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan.\
-  \ Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
+summary: Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan.
 title: Fouten afhandelen
 weight: 16
 ---

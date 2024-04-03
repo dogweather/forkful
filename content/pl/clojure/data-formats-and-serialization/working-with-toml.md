@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:35.021104-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z TOML oznacza obs\u0142ug\u0119 danych w formacie Minimal \"Tom's\
   \ Obvious, Minimal Language\", popularnym w przypadku plik\xF3w konfiguracyjnych\
-  \ ze wzgl\u0119du na\u2026"
+  \ ze wzgl\u0119du na \u0142atwo\u015B\u0107 odczytu."
 title: Praca z TOML
 weight: 39
 ---

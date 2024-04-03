@@ -4,8 +4,8 @@ description: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio 
   \ trabajo para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"
 lastmod: '2024-03-13T22:44:59.417226-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de trabajo\
-  \ para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"
+summary: Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de trabajo
+  para dar vida a tus ideas.
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

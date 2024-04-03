@@ -6,8 +6,7 @@ description: "Converter uma data em uma string em Go envolve transformar um obje
   \ `time.Time` em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"
 lastmod: '2024-03-13T22:44:46.073413-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma data em uma string em Go envolve transformar um objeto `time.Time`\
-  \ em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"
+summary: Converter uma data em uma string em Go envolve transformar um objeto `time.
 title: Convertendo uma data em uma string
 weight: 28
 ---

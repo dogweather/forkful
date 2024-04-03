@@ -4,8 +4,8 @@ description: "Il parsing HTML consiste nel trasformare il codice HTML in una str
   \ dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre\u2026"
 lastmod: '2024-03-13T22:44:43.081705-06:00'
 model: unknown
-summary: "Il parsing HTML consiste nel trasformare il codice HTML in una struttura\
-  \ dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre\u2026"
+summary: Il parsing HTML consiste nel trasformare il codice HTML in una struttura
+  dati manipolabile, come mappe o liste.
 title: Analisi dell'HTML
 weight: 43
 ---

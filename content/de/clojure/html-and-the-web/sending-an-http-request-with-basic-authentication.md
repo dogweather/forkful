@@ -6,8 +6,7 @@ description: "HTTP-Anfragen mit Basisauthentifizierung f\xFCgen Zugangsdaten im 
 lastmod: '2024-03-13T22:44:53.419317-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung f\xFCgen Zugangsdaten im Header\
-  \ hinzu, um gesch\xFCtzte Ressourcen zu erreichen. Programmierer nutzen dies, um\
-  \ sich bei\u2026"
+  \ hinzu, um gesch\xFCtzte Ressourcen zu erreichen."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

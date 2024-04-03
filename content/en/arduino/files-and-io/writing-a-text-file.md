@@ -5,8 +5,8 @@ description: "Writing a text file in Arduino involves saving data to a file on a
   \ do\u2026"
 lastmod: '2024-03-13T22:45:00.337458-06:00'
 model: gpt-4-0125-preview
-summary: "Writing a text file in Arduino involves saving data to a file on an SD card\
-  \ or similar storage module, often for data logging purposes. Programmers do\u2026"
+summary: Writing a text file in Arduino involves saving data to a file on an SD card
+  or similar storage module, often for data logging purposes.
 title: Writing a text file
 weight: 24
 ---

@@ -7,7 +7,8 @@ description: "Estrarre sottostringhe in C comporta la creazione di una stringa p
 lastmod: '2024-03-13T22:44:43.894170-06:00'
 model: gpt-4-0125-preview
 summary: "Estrarre sottostringhe in C comporta la creazione di una stringa pi\xF9\
-  \ piccola (sottostringa) da una stringa pi\xF9 grande basandosi su criteri specificati,\u2026"
+  \ piccola (sottostringa) da una stringa pi\xF9 grande basandosi su criteri specificati,\
+  \ come la posizione e la lunghezza."
 title: Estrazione di sottosequenze
 weight: 6
 ---

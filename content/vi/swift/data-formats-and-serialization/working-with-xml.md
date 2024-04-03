@@ -9,9 +9,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED
 lastmod: '2024-03-13T22:44:37.129630-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c trao \u0111\u1ED5\
-  i d\u1EEF li\u1EC7u, \u0111\u1EB7c\u2026"
+  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

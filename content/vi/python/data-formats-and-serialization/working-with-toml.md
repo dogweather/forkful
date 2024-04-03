@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
   \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u t\u01B0\
   \u01A1ng t\u1EF1 nh\u01B0 JSON ho\u1EB7c YAML, nh\u01B0ng m\u1EE5c ti\xEAu l\xE0\
-  \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 d\u1EC5\u2026"
+  \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 d\u1EC5 \u0111\u1ECDc."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

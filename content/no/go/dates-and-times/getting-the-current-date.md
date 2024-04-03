@@ -8,8 +8,7 @@ description: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende opp
 lastmod: '2024-03-13T22:44:40.278356-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave for\
-  \ programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse. Det\
-  \ er vesentlig for\u2026"
+  \ programmerere, p\xE5 linje med \"Hello, World."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

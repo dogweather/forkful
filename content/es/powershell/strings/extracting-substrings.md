@@ -5,7 +5,7 @@ description: "Extraer substrings (subcadenas) significa tomar un pedazo espec\xE
 lastmod: '2024-03-13T22:44:59.279344-06:00'
 model: gpt-4-1106-preview
 summary: "Extraer substrings (subcadenas) significa tomar un pedazo espec\xEDfico\
-  \ de una cadena de texto. Los programadores lo hacen para aislar datos, limpiar\u2026"
+  \ de una cadena de texto."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

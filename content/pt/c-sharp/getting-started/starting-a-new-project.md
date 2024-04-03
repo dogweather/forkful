@@ -7,7 +7,7 @@ lastmod: '2024-03-13T22:44:46.584812-06:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto em C# \xE9 criar uma base de c\xF3digo do zero\
   \ que pode evoluir para qualquer coisa, desde uma aplica\xE7\xE3o simples at\xE9\
-  \ um sistema\u2026"
+  \ um sistema complexo."
 title: Iniciando um novo projeto
 weight: 1
 ---

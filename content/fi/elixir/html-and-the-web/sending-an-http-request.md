@@ -6,8 +6,7 @@ description: "HTTP-pyynt\xF6 on tapa siirt\xE4\xE4 tietoa verkossa palvelimien j
 lastmod: '2024-03-13T22:44:56.223651-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 on tapa siirt\xE4\xE4 tietoa verkossa palvelimien ja asiakkaiden\
-  \ v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa hakeakseen\
-  \ dataa, l\xE4hett\xE4\xE4kseen dataa\u2026"
+  \ v\xE4lill\xE4."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

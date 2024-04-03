@@ -4,8 +4,9 @@ description: "Checking if a directory exists is a fundamental operation in many 
   \ tasks, allowing for conditional actions based on the presence or absence of\u2026"
 lastmod: '2024-03-13T22:45:00.141503-06:00'
 model: gpt-4-0125-preview
-summary: "Checking if a directory exists is a fundamental operation in many programming\
-  \ tasks, allowing for conditional actions based on the presence or absence of\u2026"
+summary: Checking if a directory exists is a fundamental operation in many programming
+  tasks, allowing for conditional actions based on the presence or absence of directory
+  structures.
 title: Checking if a directory exists
 weight: 20
 ---

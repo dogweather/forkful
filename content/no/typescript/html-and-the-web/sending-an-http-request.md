@@ -6,8 +6,7 @@ description: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og server
 lastmod: '2024-03-13T22:44:40.528995-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og servere snakker\
-  \ med hverandre p\xE5; du sp\xF8r etter data, den returnerer data. Programmerere\
-  \ gj\xF8r dette for\u2026"
+  \ med hverandre p\xE5; du sp\xF8r etter data, den returnerer data."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

@@ -6,8 +6,7 @@ description: "Manipular arquivos com one-liners CLI em Ruby trata de realizar op
 lastmod: '2024-03-13T22:44:47.090466-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
-  \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
-  \ um m\xE9todo\u2026"
+  \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby."
 title: Manipulando arquivos com one-liners de CLI
 weight: 31
 ---

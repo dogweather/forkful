@@ -8,8 +8,7 @@ description: "L'analyse (parsing) du HTML en PHP consiste \xE0 extraire des info
 lastmod: '2024-03-13T22:44:57.875822-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse (parsing) du HTML en PHP consiste \xE0 extraire des informations\
-  \ sp\xE9cifiques des documents HTML. Les programmeurs r\xE9alisent cette t\xE2che\
-  \ pour\u2026"
+  \ sp\xE9cifiques des documents HTML."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

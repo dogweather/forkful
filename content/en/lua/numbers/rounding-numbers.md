@@ -4,8 +4,8 @@ description: "Rounding numbers means adjusting them to the nearest integer or sp
   \ decimal place. It's a staple in programming for reducing complexity, enhancing\u2026"
 lastmod: '2024-03-13T22:45:00.200963-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers means adjusting them to the nearest integer or specified\
-  \ decimal place. It's a staple in programming for reducing complexity, enhancing\u2026"
+summary: Rounding numbers means adjusting them to the nearest integer or specified
+  decimal place.
 title: Rounding numbers
 weight: 13
 ---

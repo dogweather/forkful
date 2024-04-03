@@ -6,8 +6,8 @@ description: "Concatenar strings envolve unir duas ou mais strings de ponta a po
   \ para formar uma nova string. Os programadores fazem isso para gerar texto\u2026"
 lastmod: '2024-03-13T22:44:46.051885-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenar strings envolve unir duas ou mais strings de ponta a ponta para\
-  \ formar uma nova string. Os programadores fazem isso para gerar texto\u2026"
+summary: Concatenar strings envolve unir duas ou mais strings de ponta a ponta para
+  formar uma nova string.
 title: Concatenando strings
 weight: 3
 ---

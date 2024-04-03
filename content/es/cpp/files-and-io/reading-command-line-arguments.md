@@ -6,7 +6,7 @@ description: "Leer argumentos de la l\xEDnea de comandos permite que tu programa
 lastmod: '2024-03-13T22:44:59.390278-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en C++\
-  \ sea flexible y reciba datos externos al iniciarse. Los programamos as\xED para\u2026"
+  \ sea flexible y reciba datos externos al iniciarse."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

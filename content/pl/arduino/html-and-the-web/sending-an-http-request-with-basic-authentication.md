@@ -6,8 +6,7 @@ description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnien
 lastmod: '2024-03-13T22:44:35.672073-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem pozwala\
-  \ Arduino komunikowa\u0107 si\u0119 z zabezpieczonymi serwerami. Programi\u015B\
-  ci u\u017Cywaj\u0105 tej metody, aby\u2026"
+  \ Arduino komunikowa\u0107 si\u0119 z zabezpieczonymi serwerami."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

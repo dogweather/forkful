@@ -6,8 +6,7 @@ description: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTM
 lastmod: '2024-03-13T22:44:46.539426-06:00'
 model: unknown
 summary: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML em uma\
-  \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
-  \ fazem isso para\u2026"
+  \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

@@ -6,8 +6,8 @@ description: "H\xE4r \xE4r en liten f\xF6rsmak av fels\xF6kning i Kotlin med Int
 lastmod: '2024-03-13T22:44:37.875764-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE4r \xE4r en liten f\xF6rsmak av fels\xF6kning i Kotlin med IntelliJ\
-  \ IDEA - Sherlock Holmes bland IDE:er: ```kotlin fun main() { val mysteryNumber\
-  \ = 42 var guess =\u2026"
+  \ IDEA - Sherlock Holmes bland IDE:er:\n\n```kotlin\nfun main() {\n    val mysteryNumber\
+  \ = 42\n    var guess = 0\n\n    while (guess ."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

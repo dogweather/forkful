@@ -8,8 +8,7 @@ description: "Escribir pruebas en C implica crear programas o funciones auxiliar
 lastmod: '2024-03-13T22:44:59.549509-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C implica crear programas o funciones auxiliares m\xE1\
-  s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3digo.\
-  \ Los\u2026"
+  s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3digo."
 title: Escribir pruebas
 weight: 36
 ---

@@ -6,8 +6,7 @@ description: "Beim Vergleichen von zwei Daten wird gepr\xFCft, ob sie gleich sin
 lastmod: '2024-03-13T22:44:53.774829-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Vergleichen von zwei Daten wird gepr\xFCft, ob sie gleich sind, oder\
-  \ welches fr\xFCher bzw. sp\xE4ter liegt. Entwickler nutzen das, um Zeitabl\xE4\
-  ufe zu steuern,\u2026"
+  \ welches fr\xFCher bzw."
 title: Vergleich von zwei Daten
 weight: 27
 ---

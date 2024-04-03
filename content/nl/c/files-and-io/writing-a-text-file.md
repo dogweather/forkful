@@ -6,8 +6,9 @@ description: "Een tekstbestand schrijven in C houdt in dat je een bestand maakt 
   \ opent in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om\u2026"
 lastmod: '2024-03-13T22:44:51.310033-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven in C houdt in dat je een bestand maakt of opent\
-  \ in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om\u2026"
+summary: Een tekstbestand schrijven in C houdt in dat je een bestand maakt of opent
+  in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om tekstgegevens
+  erin op te slaan.
 title: Een tekstbestand schrijven
 weight: 24
 ---

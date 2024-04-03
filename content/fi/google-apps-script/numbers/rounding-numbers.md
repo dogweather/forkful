@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.090851-06:00'
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen, perusk\xE4site tietokoneohjelmoinnissa, tarkoittaa\
   \ luvun s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn m\xE4\
-  \xE4r\xE4\xE4n desimaalipaikkoja.\u2026"
+  \xE4r\xE4\xE4n desimaalipaikkoja."
 title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---

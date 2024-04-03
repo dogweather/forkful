@@ -4,8 +4,9 @@ description: "Working with JSON (JavaScript Object Notation) involves parsing JS
   \ data from strings into Dart objects and vice versa, a common task in web and app\u2026"
 lastmod: '2024-03-13T22:44:59.839568-06:00'
 model: gpt-4-0125-preview
-summary: "Working with JSON (JavaScript Object Notation) involves parsing JSON data\
-  \ from strings into Dart objects and vice versa, a common task in web and app\u2026"
+summary: Working with JSON (JavaScript Object Notation) involves parsing JSON data
+  from strings into Dart objects and vice versa, a common task in web and app development
+  for data interchange.
 title: Working with JSON
 weight: 38
 ---

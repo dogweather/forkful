@@ -11,7 +11,7 @@ model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
   ng c\xF3 ngh\u0129a l\xE0 x\xE1c minh th\u01B0 m\u1EE5c \u0111\xF3 c\xF3 m\u1EB7\
   t tr\u01B0\u1EDBc khi b\u1EA1n c\u1ED1 g\u1EAFng \u0111\u1ECDc ho\u1EB7c ghi c\xE1\
-  c t\u1EC7p v\xE0o trong \u0111\xF3. L\u1EADp tr\xECnh vi\xEAn\u2026"
+  c t\u1EC7p v\xE0o trong \u0111\xF3."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

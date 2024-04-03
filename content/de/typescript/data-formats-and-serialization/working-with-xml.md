@@ -4,8 +4,8 @@ description: "Mit XML zu arbeiten bedeutet, XML-Daten mithilfe der Programmierun
   \ zu parsen, zu manipulieren und zu schreiben. Programmierer handhaben XML, um Daten\u2026"
 lastmod: '2024-03-13T22:44:53.654985-06:00'
 model: gpt-4-0125-preview
-summary: "Mit XML zu arbeiten bedeutet, XML-Daten mithilfe der Programmierung zu parsen,\
-  \ zu manipulieren und zu schreiben. Programmierer handhaben XML, um Daten\u2026"
+summary: Mit XML zu arbeiten bedeutet, XML-Daten mithilfe der Programmierung zu parsen,
+  zu manipulieren und zu schreiben.
 title: Arbeiten mit XML
 weight: 40
 ---

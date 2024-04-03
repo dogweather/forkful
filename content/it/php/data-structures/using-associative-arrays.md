@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:43.509785-06:00'
 model: gpt-4-0125-preview
 summary: "Gli array associativi in PHP sono come liste super-potenziati dove ogni\
   \ elemento pu\xF2 essere accesso utilizzando una chiave leggibile dall'uomo invece\
-  \ che\u2026"
+  \ che semplici numeri."
 title: Utilizzo di array associativi
 weight: 15
 ---

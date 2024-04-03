@@ -7,7 +7,9 @@ description: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleelli
 lastmod: '2024-03-13T22:44:56.329363-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen osa\
-  \ tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"
+  \ tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\
+  \ kirjoittamista, varmistaen, ett\xE4 toimenpiteet suoritetaan ainoastaan validioiden\
+  \ hakemistojen kanssa."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

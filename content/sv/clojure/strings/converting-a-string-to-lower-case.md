@@ -6,8 +6,7 @@ description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r at
 lastmod: '2024-03-13T22:44:37.512490-06:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att \xE4\
-  ndra varje bokstav till dess motsvarighet i gemener. Programmerare g\xF6r detta\
-  \ f\xF6r att normalisera\u2026"
+  ndra varje bokstav till dess motsvarighet i gemener."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

@@ -5,8 +5,8 @@ description: "Organizzare il codice in funzioni significa suddividere il program
   \ rendere\u2026"
 lastmod: '2024-03-13T22:44:43.223534-06:00'
 model: gpt-4-1106-preview
-summary: "Organizzare il codice in funzioni significa suddividere il programma in\
-  \ blocchi riutilizzabili e modulari identificati da un nome. Lo facciamo per rendere\u2026"
+summary: Organizzare il codice in funzioni significa suddividere il programma in blocchi
+  riutilizzabili e modulari identificati da un nome.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

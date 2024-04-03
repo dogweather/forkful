@@ -8,7 +8,8 @@ description: "Het vergelijken van twee datums in Dart omvat het evalueren van he
 lastmod: '2024-03-13T22:44:50.518397-06:00'
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums in Dart omvat het evalueren van het tijdelijk\
-  \ verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit in\u2026"
+  \ verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit in applicaties\
+  \ die gebeurtenissen, deadlines of andere tijdgevoelige gegevens beheren."
 title: Twee datums vergelijken
 weight: 27
 ---

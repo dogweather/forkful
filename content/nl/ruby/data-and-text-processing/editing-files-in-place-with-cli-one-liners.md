@@ -6,8 +6,10 @@ description: "Bestanden ter plaatse bewerken met CLI (Command Line Interface) on
   \ in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te\u2026"
 lastmod: '2024-03-13T22:44:51.333622-06:00'
 model: gpt-4-0125-preview
-summary: "Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners\
-  \ in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te\u2026"
+summary: Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners
+  in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te wijzigen,
+  zonder ze in een editor te hoeven openen, wijzigingen aan te brengen en ze terug
+  op te slaan.
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

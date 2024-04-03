@@ -8,8 +8,7 @@ description: "Concatenar strings envolve combinar duas ou mais strings em uma \x
 lastmod: '2024-03-13T22:44:46.098398-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar strings envolve combinar duas ou mais strings em uma \xFAnica\
-  \ string. Programadores fazem isso para construir dinamicamente mensagens, URLs,\
-  \ ou\u2026"
+  \ string."
 title: Concatenando strings
 weight: 3
 ---

@@ -6,8 +6,7 @@ description: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar o
 lastmod: '2024-03-13T22:44:46.965121-06:00'
 model: gpt-4-1106-preview
 summary: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar onde as\
-  \ coisas d\xE3o errado. Imprimir sa\xEDdas de debug \xE9 deixar migalhas de p\xE3\
-  o pelo c\xF3digo,\u2026"
+  \ coisas d\xE3o errado."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

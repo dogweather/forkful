@@ -6,8 +6,8 @@ description: "Los arrays asociativos, o mapas, en Kotlin son colecciones que alm
   \ pares clave-valor. Los programadores los utilizan para organizar y recuperar\u2026"
 lastmod: '2024-03-13T22:44:59.028741-06:00'
 model: gpt-4-0125-preview
-summary: "Los arrays asociativos, o mapas, en Kotlin son colecciones que almacenan\
-  \ pares clave-valor. Los programadores los utilizan para organizar y recuperar\u2026"
+summary: Los arrays asociativos, o mapas, en Kotlin son colecciones que almacenan
+  pares clave-valor.
 title: Uso de matrices asociativas
 weight: 15
 ---

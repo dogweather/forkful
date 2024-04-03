@@ -5,7 +5,7 @@ description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende d
 lastmod: '2024-03-13T22:44:40.983155-06:00'
 model: gpt-4-0125-preview
 summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Det er en vital praksis for \xE5 redusere\u2026"
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel."
 title: Refaktorering
 weight: 19
 ---

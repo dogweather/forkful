@@ -7,7 +7,7 @@ description: "El manejo de errores en Google Apps Script trata sobre prever, cap
 lastmod: '2024-03-13T22:44:58.542193-06:00'
 model: gpt-4-0125-preview
 summary: "El manejo de errores en Google Apps Script trata sobre prever, capturar\
-  \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script.\u2026"
+  \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script."
 title: Manejo de errores
 weight: 16
 ---

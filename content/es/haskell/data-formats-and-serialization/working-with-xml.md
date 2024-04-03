@@ -4,8 +4,8 @@ description: "Trabajar con XML en Haskell implica analizar, manipular y generar 
   \ XML. Los programadores manejan XML para interactuar con numerosas\u2026"
 lastmod: '2024-03-13T22:44:59.142688-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con XML en Haskell implica analizar, manipular y generar estructuras\
-  \ XML. Los programadores manejan XML para interactuar con numerosas\u2026"
+summary: Trabajar con XML en Haskell implica analizar, manipular y generar estructuras
+  XML.
 title: Trabajando con XML
 weight: 40
 ---

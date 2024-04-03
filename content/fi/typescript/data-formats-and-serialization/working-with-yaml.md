@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:56.335129-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on usein\
   \ k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4 viestinn\xE4\
-  ss\xE4 ja tietojen\u2026"
+  ss\xE4 ja tietojen tallennuksessa."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -6,8 +6,7 @@ description: "Laten we het gebruik van `pdb`, Python's ingebouwde debugger, uite
   \ Stel je een bestand voor, `buggy.py`, met een stiekeme bug: ```Python def\u2026"
 lastmod: '2024-03-13T22:44:50.381209-06:00'
 model: gpt-4-0125-preview
-summary: "Laten we het gebruik van `pdb`, Python's ingebouwde debugger, uiteenzetten.\
-  \ Stel je een bestand voor, `buggy.py`, met een stiekeme bug: ```Python def\u2026"
+summary: Laten we het gebruik van `pdb`, Python's ingebouwde debugger, uiteenzetten.
 title: Een debugger gebruiken
 weight: 35
 ---

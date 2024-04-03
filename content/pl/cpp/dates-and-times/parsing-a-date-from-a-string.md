@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.722242-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na interpretacji formatu ci\u0105gu znak\xF3\
   w w celu wyodr\u0119bnienia sk\u0142adnik\xF3w daty, takich jak dzie\u0144, miesi\u0105\
-  c i rok. Programi\u015Bci\u2026"
+  c i rok."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

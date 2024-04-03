@@ -6,8 +6,7 @@ description: "\xC5 starte et nytt prosjekt i Elixir inneb\xE6rer \xE5 sette opp 
 lastmod: '2024-03-13T22:44:40.444217-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt i Elixir inneb\xE6rer \xE5 sette opp en ny\
-  \ mix-applikasjon. Programmerere gj\xF8r dette for \xE5 lage en organisert, modul\xE6\
-  r base for \xE5\u2026"
+  \ mix-applikasjon."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

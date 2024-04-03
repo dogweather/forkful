@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:38.352695-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Fish Shell g\xF6r att skript kan ta\
   \ beslut baserade p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer, vilket\
-  \ m\xF6jligg\xF6r\u2026"
+  \ m\xF6jligg\xF6r uppgifter som villkorliga filoperationer, loggning eller milj\xF6\
+  konfigurering."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

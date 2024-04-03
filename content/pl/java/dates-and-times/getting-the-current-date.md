@@ -9,7 +9,7 @@ lastmod: '2024-03-13T22:44:35.288166-06:00'
 model: gpt-4-0125-preview
 summary: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3ra\
   \ pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\
-  \ obliczenia\u2026"
+  \ obliczenia dat i warunki oparte na czasie."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

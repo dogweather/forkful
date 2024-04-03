@@ -6,8 +6,7 @@ description: "Aloitetaan uusi projekti tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 l\
 lastmod: '2024-03-13T22:44:56.316060-06:00'
 model: gpt-4-1106-preview
 summary: "Aloitetaan uusi projekti tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 l\xE4ht\xF6\
-  \xE4, uuden sovelluksen tai kirjaston kehitt\xE4mist\xE4. Ohjelmoijat tekev\xE4\
-  t t\xE4m\xE4n, kun heill\xE4 on uusi\u2026"
+  \xE4, uuden sovelluksen tai kirjaston kehitt\xE4mist\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

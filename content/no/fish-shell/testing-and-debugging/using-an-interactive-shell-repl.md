@@ -5,7 +5,7 @@ description: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programm
 lastmod: '2024-03-13T22:44:41.228415-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programmeringsmilj\xF8\
-  \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet.\u2026"
+  \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

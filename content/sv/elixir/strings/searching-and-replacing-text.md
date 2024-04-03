@@ -6,8 +6,7 @@ description: "Att s\xF6ka och ers\xE4tta text \xE4r processen d\xE4r specifika s
 lastmod: '2024-03-13T22:44:37.552341-06:00'
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text \xE4r processen d\xE4r specifika str\xE4\
-  ngm\xF6nster identifieras och byts ut mot andra str\xE4ngar. Programmerare anv\xE4\
-  nder detta f\xF6r att\u2026"
+  ngm\xF6nster identifieras och byts ut mot andra str\xE4ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

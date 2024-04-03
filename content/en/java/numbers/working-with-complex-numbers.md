@@ -4,8 +4,8 @@ description: "Complex numbers expand the real number line through the addition o
   \ an imaginary unit, `i`, where `i^2 = -1`. They're crucial in fields like engineering,\u2026"
 lastmod: '2024-03-13T22:44:59.967108-06:00'
 model: gpt-4-1106-preview
-summary: "Complex numbers expand the real number line through the addition of an imaginary\
-  \ unit, `i`, where `i^2 = -1`. They're crucial in fields like engineering,\u2026"
+summary: Complex numbers expand the real number line through the addition of an imaginary
+  unit, `i`, where `i^2 = -1`.
 title: Working with complex numbers
 weight: 14
 ---

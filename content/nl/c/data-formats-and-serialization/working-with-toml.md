@@ -6,8 +6,8 @@ description: "TOML (Tom's Obvious, Minimal Language) is een configuratiebestands
   \ dat makkelijk te lezen is door zijn duidelijke semantiek. Programmeurs gebruiken\u2026"
 lastmod: '2024-03-13T22:44:51.315442-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat\
-  \ dat makkelijk te lezen is door zijn duidelijke semantiek. Programmeurs gebruiken\u2026"
+summary: TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat
+  dat makkelijk te lezen is door zijn duidelijke semantiek.
 title: Werken met TOML
 weight: 39
 ---

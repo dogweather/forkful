@@ -6,8 +6,9 @@ description: "Eliminare i caratteri che corrispondono a uno specifico pattern da
   \ stringhe in C consiste nel rimuovere tutte le istanze di certi caratteri che\u2026"
 lastmod: '2024-03-13T22:44:43.887851-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe\
-  \ in C consiste nel rimuovere tutte le istanze di certi caratteri che\u2026"
+summary: Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe
+  in C consiste nel rimuovere tutte le istanze di certi caratteri che soddisfano criteri
+  predefiniti.
 title: Eliminazione dei caratteri corrispondenti a un pattern
 weight: 5
 ---

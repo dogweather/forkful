@@ -8,7 +8,8 @@ description: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA
 lastmod: '2024-03-13T22:44:56.392811-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA) -ymp\xE4\
-  rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien luoda avain-\u2026"
+  rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien luoda avain-arvo\
+  \ -pareja sis\xE4lt\xE4vi\xE4 kokoelmia."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

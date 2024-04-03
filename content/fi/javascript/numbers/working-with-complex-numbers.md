@@ -4,8 +4,8 @@ description: "Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen 
   \ (kuten 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti\u2026"
 lastmod: '2024-03-13T22:44:56.943825-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten\
-  \ 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti\u2026"
+summary: Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten
+  3 + 4i).
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

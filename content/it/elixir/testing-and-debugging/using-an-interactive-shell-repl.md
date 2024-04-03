@@ -4,8 +4,8 @@ description: "Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettu
   \ permette di provare frammenti di codice in tempo reale. I\u2026"
 lastmod: '2024-03-13T22:44:43.085158-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettura-Valutazione-Stampa),\
-  \ permette di provare frammenti di codice in tempo reale. I\u2026"
+summary: Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettura-Valutazione-Stampa),
+  permette di provare frammenti di codice in tempo reale.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

@@ -8,8 +8,7 @@ description: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF
 lastmod: '2024-03-13T22:44:41.287661-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8rre filsystemet\
-  \ for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere utf\xF8\
-  rer\u2026"
+  \ for \xE5 verifisere om en spesifikk bane leder til en mappe."
 title: Sjekke om en mappe eksisterer
 weight: 20
 ---

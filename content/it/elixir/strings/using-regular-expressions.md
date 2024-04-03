@@ -6,8 +6,8 @@ description: "Le espressioni regolari (regex) in Elixir vengono utilizzate per c
   \ abbinare e manipolare stringhe basate su specifici schemi. I programmatori\u2026"
 lastmod: '2024-03-13T22:44:43.074189-06:00'
 model: gpt-4-0125-preview
-summary: "Le espressioni regolari (regex) in Elixir vengono utilizzate per cercare,\
-  \ abbinare e manipolare stringhe basate su specifici schemi. I programmatori\u2026"
+summary: Le espressioni regolari (regex) in Elixir vengono utilizzate per cercare,
+  abbinare e manipolare stringhe basate su specifici schemi.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

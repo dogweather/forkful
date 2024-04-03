@@ -9,7 +9,8 @@ lastmod: '2024-03-13T22:44:57.156530-06:00'
 model: gpt-4-0125-preview
 summary: "La cr\xE9ation d'un fichier temporaire en Go permet la g\xE9n\xE9ration\
   \ d'un fichier non persistant destin\xE9 \xE0 une utilisation \xE0 court terme,\
-  \ principalement pour\u2026"
+  \ principalement pour des t\xE2ches telles que le stockage de donn\xE9es provisoires\
+  \ ou l'assistance dans des travaux de traitement par lots."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
